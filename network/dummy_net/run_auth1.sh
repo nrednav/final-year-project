@@ -8,6 +8,11 @@ geth \
 --wsapi 'personal,admin,net,eth,db,web3,txpool,clique,miner' \
 --wsport 9546 \
 --wsorigins '*' \
+--rpc \
+--rpcaddr '0.0.0.0' \
+--rpcport 10546 \
+--rpcapi 'personal,admin,net,eth,db,web3,txpool,clique,miner' \
+--rpccorsdomain '*' \
 --networkid 1337 \
 --identity 'auth1' \
 --gasprice '1' \

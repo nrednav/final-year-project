@@ -11,6 +11,7 @@ services:
          /dummy_net/run_auth1.sh
       ports:
          - 9546:9546
+         - 10546:10546
          - 30303:30303
       networks:
          dn:
@@ -29,6 +30,7 @@ services:
          /dummy_net/run_auth2.sh
       ports:
          - 9547:9547
+         - 10547:10547
          - 30305:30303
       networks:
          dn:

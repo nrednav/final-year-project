@@ -14,9 +14,12 @@
 - [x] Add MongoDB service to the docker-compose file
 
 ## Setup smart contracts
-- [ ] Configure truffle to deploy to the dummy test network
+- [x] Configure truffle to deploy to the dummy test network
 - [ ] Write the smart contracts and put them under 'Contracts/contracts'
-- [ ] Handle compilation + migration using truffle
+	- [ ] Holding deposit contract
+	- [x] Property Verification contract
+	- [x] Escrow contract
+- [x] Test compilation + migration using truffle
 - [ ] Write Mocha tests for each smart contract
   - [ ] Property Verification contract
   - [ ] Holding Deposit contract
