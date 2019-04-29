@@ -3,10 +3,10 @@
 ## Create FYP directory
 - [x] Start markdown checklist
 - [x] Initialize the git repo
-- [ ] Create the top level directories (Client, Servers, Network, Contracts)
-  - [ ] Use Vue-Create for Client
-  - [ ] Make blank directories for Servers & Network
-  - [ ] Create 'Contracts' and then use ``` truffle init ```
+- [x] Create the top level directories (Client, Servers, Network, Contracts)
+  - [x] Use Vue-Create for Client
+  - [x] Make blank directories for Servers & Network
+  - [x] Create 'Contracts' and then use ``` truffle init ```
 
 ## Setup dummy docker network
 - [ ] Add private ethereum network
@@ -21,7 +21,7 @@
   - [ ] Property Verification contract
   - [ ] Holding Deposit contract
   - [ ] Escrow contract
-  
+
 ## Create all user interfaces
 ...
 
