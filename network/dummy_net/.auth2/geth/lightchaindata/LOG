@@ -1,0 +1,6 @@
+=============== Apr 29, 2019 (DST) ===============
+10:34:24.749006 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+10:34:24.759478 db@open opening
+10:34:24.761915 version@stat F·[] S·0B[] Sc·[]
+10:34:24.765337 db@janitor F·2 G·0
+10:34:24.765402 db@open done T·5.836ms

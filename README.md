@@ -9,9 +9,9 @@
   - [x] Create 'Contracts' and then use ``` truffle init ```
 
 ## Setup dummy docker network
-- [ ] Add private ethereum network
-  - [ ] Copy over "dummy_net" under the network dir
-- [ ] Add MongoDB service to the docker-compose file
+- [x] Add private ethereum network
+  - [x] Copy over "dummy_net" under the network dir
+- [x] Add MongoDB service to the docker-compose file
 
 ## Setup smart contracts
 - [ ] Configure truffle to deploy to the dummy test network
