@@ -15,15 +15,15 @@
 
 ## Setup smart contracts
 - [x] Configure truffle to deploy to the dummy test network
-- [ ] Write the smart contracts and put them under 'Contracts/contracts'
-	- [ ] Holding deposit contract
+- [x] Write the smart contracts and put them under 'Contracts/contracts'
+	- [x] Holding deposit contract
 	- [x] Property Verification contract
 	- [x] Escrow contract
 - [x] Test compilation + migration using truffle
-- [ ] Write Mocha tests for each smart contract
-  - [ ] Property Verification contract
-  - [ ] Holding Deposit contract
-  - [ ] Escrow contract
+- [x] Write Mocha tests for each smart contract
+  - [x] Property Verification contract
+  - [x] Holding Deposit contract
+  - [x] Escrow contract
 
 ## Create all user interfaces
 ...
