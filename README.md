@@ -26,13 +26,29 @@
   - [x] Escrow contract
 
 ## Create all user interfaces
-...
+- [ ] Create registration interfaces
+	- [ ] Create the signup/login slider form
+- [ ] Create buyer interfaces
+- [ ] Create seller interfaces
+- [ ] Create interfaces involving both
 
-## Setup the servers
-...
+## Setup the server
+- [ ] Create the server using express-generator
+- [ ] Install initial dependencies
+	- [ ] Middleware such as Joi, Volleyball, Body-Parser etc (Check if already added by express-generator)
+	- [ ] Testware such as Mocha/Chai/Supertest
+- [ ] Setup authentication API with JWT (Coding Garden Vids)
+	- [ ] Setup database
+		- [ ] Create document schema's following s1_registration.txt
+		- [ ] Obtain connection to MongoDB server in dummy_net
+	- [ ] Setup routing
+	- [ ] Test routing & database via Mocha/Chai
+- [ ] ...
 
 ## Wire everything together (Client + Server)
-...
+- [ ] Link registration interfaces to authentication API
+	- [ ] Test registration (register + login)
+- [ ] ...
 
 ## Setup the main docker network
 - [ ] Add private blockchain network
