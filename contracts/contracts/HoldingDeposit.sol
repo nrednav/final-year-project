@@ -39,6 +39,7 @@ contract HoldingDeposit {
 	bool seller_status = false;
 	bool buyer_status = false;
 	bool open = false;
+	bool locked = false;
 	bool deposit_refundable = true;
 
 	mapping(address => bool) signatures;
@@ -80,7 +81,9 @@ contract HoldingDeposit {
 	function deposit_funds()
 	public payable openHolding
 	{
+		require(!locked, "No more deposits");
 		require(msg.sender != seller, "Seller cannot deposit into their own holding.");
+		locked = true;
 
 		buyer = msg.sender;
 		deposit = msg.value;
@@ -125,20 +128,24 @@ contract HoldingDeposit {
 	{
 		require(_receiver == seller || _receiver == buyer, "Only participants can have funds withdrawn.");
 
-		uint deposit_amount = deposit;
-		address payable receiver;
+		if (deposit != 0) {
 
-		// Determine receiver of deposit
-		if (_receiver == seller) {
-			receiver = seller;
-		}
-		else {
-			receiver = buyer;
-		}
+			uint deposit_amount = deposit;
+			deposit = 0;
+			address payable receiver;
 
-		// Withraw the deposit
-		receiver.transfer(deposit_amount);
-		emit deposit_withdrawn(receiver, deposit_amount);
+			// Determine receiver of deposit
+			if (_receiver == seller) {
+				receiver = seller;
+			}
+			else {
+				receiver = buyer;
+			}
+
+			// Withraw the deposit
+			receiver.transfer(deposit_amount);
+			emit deposit_withdrawn(receiver, deposit_amount);
+		}
 
 		// Close the holding deposit contract
 		open = false;
@@ -169,7 +176,7 @@ contract HoldingDeposit {
 	public view
 	returns (address, address)
 	{
-		return (buyer, seller);
+		return (seller, buyer);
 	}
 
 	function is_refundable()
