@@ -108,31 +108,58 @@ contract("EscrowFactory", accounts => {
 						"The error msg doesn't contain the require() error message");
 				}
 		});
-	});
 
-//	beforeEach(() => {
-//		EscrowFactory.deployed()
-//			.then(async instance => {
-//				let session_id_hash = "0xdc345837d24517858368a28c2022936404ae5a64e78dcac16331108d53eeca9c";
-//				// let result = await instance.open_escrow(session_id_hash, session_id_hash);
-//				// let event_args = result.logs[0].args;
-//
-//				let result = instance.open_escrow(session_id_hash, session_id_hash)
-//					.then(async result => {
-//						let event_args = result.logs[0].args;
-//
-//						// Check that emitted session_id hash matches the one used in creation
-//						assert.equal(result.logs[0].args.session_id_hash, session_id_hash);
-//
-//						// Compare emitted escrow contract address to one stored by factory
-//						let created_escrow = instance.get_escrow(result.logs[0].args.session_id_hash)
-//							.then(result => {
-//								assert.equal(result, event_args.escrow_contract);
-//							});
-//
-//						escrow_contract = await Escrow.at(event_args.escrow_contract);
-//					});
-//
-//			});
-//	});
+		it('should prevent anyone but the buyer and seller from greenlighting the disbursement',
+			async () => {
+
+				try {
+					let tx = await escrow_contract.greenlight(true, {
+						from: accounts[2]
+					});
+				}
+				catch (err) {
+					assert.include(err.message, "revert", "Only the buyer and seller can request disbursement of funds");
+				}
+		});
+
+		it('should disburse funds to the seller upon receiving the greenlights', async () => {
+			let seller_balance_pre_disbursement = await web3.eth.getBalance(accounts[0]);
+
+			// Buyer deposits funds
+			let tx0 = await escrow_contract.deposit({
+				from: accounts[1],
+				value: web3.utils.toWei('5', 'ether')
+			});
+
+			let tx1 = await escrow_contract.greenlight(true, {
+				from: accounts[0]
+			});
+
+			let tx2 = await escrow_contract.greenlight(true, {
+				from: accounts[1]
+			});
+
+			let seller_balance_post_disbursement = await web3.eth.getBalance(accounts[0]);
+
+			assert.isAbove(Number(seller_balance_post_disbursement), Number(seller_balance_pre_disbursement));
+		});
+
+		it('should close the escrow after disbursement of funds', async () => {
+			let tx0 = await escrow_contract.deposit({
+				from: accounts[1],
+				value: web3.utils.toWei('5', 'ether')
+			});
+
+			let tx1 = await escrow_contract.greenlight(true, {
+				from: accounts[0]
+			});
+
+			let tx2 = await escrow_contract.greenlight(true, {
+				from: accounts[1]
+			});
+
+			let open = await escrow_contract.is_open();
+			assert.equal(false, open, "Escrow is still open");
+		});
+	});
 });
