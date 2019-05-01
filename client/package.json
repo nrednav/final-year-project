@@ -9,8 +9,11 @@
   },
   "dependencies": {
     "core-js": "^2.6.5",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3",
+    "vuetify": "^1.5.14",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
@@ -32,7 +35,10 @@
       "plugin:vue/essential",
       "@vue/standard"
     ],
-    "rules": {},
+    "rules": {
+		 "indent": [2, "tab"],
+		 "no-tabs": 0
+	 },
     "parserOptions": {
       "parser": "babel-eslint"
     }
