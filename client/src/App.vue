@@ -25,4 +25,7 @@ export default {
 </script>
 
 <style>
+.heading {
+	text-align: center;
+}
 </style>
