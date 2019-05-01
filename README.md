@@ -34,12 +34,21 @@
 - [ ] Create user interfaces w/ Vuetify
 	- [ ] Create registration interfaces
 		- [x] Create the signup/login slider form
+			- [ ] Add client-side validation to form with Joi
+			- [ ] Prevent user from registering or logging in unless metamask is enabled
 		- [ ] Create profile selection screen
 		- [ ] Create buyer dashboard
 		- [ ] Create seller dashboard
+		- [ ] Add validation
 	- [ ] Create buyer interfaces
+		- [ ] ...
+		- [ ] Add validation
 	- [ ] Create seller interfaces
+		- [ ] ...
+		- [ ] Add validation
 	- [ ] Create interfaces involving both
+		- [ ] ...
+		- [ ] Add validation
 - [ ] Create NodeJS oracles
 - [ ] Create NodeJS Smart Contract Event Listener linked to database?
 
@@ -54,23 +63,19 @@
 			- [ ] Create document schema's following s1_registration.txt
 			- [ ] Obtain connection to MongoDB server in dummy_net
 		- [ ] Setup routing
-		- [ ] Test routing & database via Mocha/Chai
 	- [ ] Setup Property API
 		- [ ] Setup database
 		- [ ] Setup routing
-		- [ ] Test routing & database
 	- [ ] Setup Land Registry API
 		- [ ] Setup database
 		- [ ] Setup routing
-		- [ ] Test routing & database
 	- [ ] Setup Background Screening API
 		- [ ] Setup database
 		- [ ] Setup routing
-		- [ ] Test routing & database
 	- [ ] Setup Session API
 		- [ ] Setup database
 		- [ ] Setup routing
-		- [ ] Test routing & database
+- [ ] Test API's routing & database with Mocha/Chai/Supertest?
 
 ## Wire everything together (Client + Server)
 - [ ] Link registration interfaces to authentication API
