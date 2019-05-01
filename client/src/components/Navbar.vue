@@ -24,28 +24,36 @@
 						</v-list-tile-content>
 					</v-list-tile>
 
-					<v-list-tile
-								class="tile pt-4 pb-4"
-								v-for="link in links"
-								:key="link.route"
-								router :to="link.route">
-						<v-list-tile-action>
-							<v-icon
-								color="p_text"
-								large
-								>
-								{{ link.icon }}
-							</v-icon>
-						</v-list-tile-action>
-						<v-list-tile-content>
-							<v-list-tile-title class="white--text text-xs-center">
-								{{ link.text }}
-							</v-list-tile-title>
-						</v-list-tile-content>
-					</v-list-tile>
+					<v-divider class="p_text darken-1"></v-divider>
+
+					<template v-for="(link, index) in links">
+						<v-list-tile
+									class="tile pt-4 pb-4"
+									:key="link.route"
+									router :to="link.route">
+							<v-list-tile-action>
+								<v-icon
+									color="p_text"
+									large
+									>
+									{{ link.icon }}
+								</v-icon>
+							</v-list-tile-action>
+							<v-list-tile-content>
+								<v-list-tile-title class="white--text text-xs-center">
+									{{ link.text }}
+								</v-list-tile-title>
+							</v-list-tile-content>
+						</v-list-tile>
+						<v-divider v-if="index + 1 < links.length" :key="`divider-${index}`" class="p_text darken-1"></v-divider>
+					</template>
+					<v-divider class="p_text darken-1"></v-divider>
 				</v-list>
 
 				<v-list>
+
+					<v-divider class="p_text darken-1"></v-divider>
+
 					<v-list-tile class="tile pt-4 pb-4" to="/register">
 						<v-list-tile-action>
 							<v-icon
@@ -62,7 +70,25 @@
 						</v-list-tile-content>
 					</v-list-tile>
 
-					<v-list-tile class="tile pt-4 pb-4" to="/login">
+					<v-divider class="p_text darken-1"></v-divider>
+
+					<v-list-tile v-if="!logged_in" class="tile pt-4 pb-4" to="/login">
+						<v-list-tile-action>
+							<v-icon
+								:color="login_status"
+								large
+								>
+								fas fa-power-off
+							</v-icon>
+						</v-list-tile-action>
+						<v-list-tile-content>
+							<v-list-tile-title class="white--text text-xs-center">
+								{{ login_status_text }}
+							</v-list-tile-title>
+						</v-list-tile-content>
+					</v-list-tile>
+
+					<v-list-tile v-if="logged_in" class="tile pt-4 pb-4" to="/logout">
 						<v-list-tile-action>
 							<v-icon
 								:color="login_status"
@@ -109,6 +135,11 @@ export default {
 			} else {
 				return 'LOGIN'
 			}
+		}
+	},
+	methods: {
+		logout: {
+
 		}
 	}
 }

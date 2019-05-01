@@ -12,7 +12,8 @@
     "vue": "^2.6.10",
     "vue-router": "^3.0.3",
     "vuetify": "^1.5.14",
-    "vuex": "^3.0.1"
+    "vuex": "^3.0.1",
+    "web3": "^1.0.0-beta.53"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.8.1",

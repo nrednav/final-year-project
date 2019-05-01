@@ -26,10 +26,17 @@
   - [x] Escrow contract
 
 ## Setup the client
-- [ ] Add Vuetify to project & configure it
+- [x] Add Vuetify to project & configure it
+- [ ] Configure vue-router
+	- [ ] Create routes folder with routes.js
+	- [ ] Import each route into routes.js
+	- [ ] Import routes.js into router.js and set it on the vue-router
 - [ ] Create user interfaces w/ Vuetify
 	- [ ] Create registration interfaces
-		- [ ] Create the signup/login slider form
+		- [x] Create the signup/login slider form
+		- [ ] Create profile selection screen
+		- [ ] Create buyer dashboard
+		- [ ] Create seller dashboard
 	- [ ] Create buyer interfaces
 	- [ ] Create seller interfaces
 	- [ ] Create interfaces involving both
@@ -51,7 +58,7 @@
 	- [ ] Setup Property API
 		- [ ] Setup database
 		- [ ] Setup routing
-		- [ ] Test routing & database 
+		- [ ] Test routing & database
 	- [ ] Setup Land Registry API
 		- [ ] Setup database
 		- [ ] Setup routing

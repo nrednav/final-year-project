@@ -5,36 +5,50 @@
 		<v-container class="my-5 mx-5">
 			<v-layout align-center justify-center column>
 				<v-flex>
-					<v-card class="auth_container primary" id="auth_container">
+					<v-card elevation="4" class="auth_container primary" id="auth_container">
 						<div class="form-container register-container">
-							<form action="#">
+							<form>
 								<h1 class="pb-4">Register</h1>
-								<input type="text" placeholder="First Name" />
-								<input type="text" placeholder="Last Name" />
-								<input type="email" placeholder="Email" />
-								<input type="password" placeholder="Password" />
-								<v-btn round outline color="p_blue">REGISTER</v-btn>
+								<input type="text" placeholder="First Name" v-model="register_details.fname" />
+								<input type="text" placeholder="Last Name" v-model="register_details.lname"/>
+								<div id="acc_addr" class="white--text text-xs-left pt-2 pb-2">
+									Selected Account:
+									<span class="grey--text">{{ selected_addr }} </span>
+								</div>
+								<input type="email" placeholder="Email" v-model="register_details.email"/>
+								<input type="password" placeholder="Password" v-model="register_details.password"/>
+								<v-btn round outline color="p_blue"
+															v-on:click="register">REGISTER</v-btn>
 							</form>
 						</div>
 						<div class="form-container login-container">
 							<form action="#">
 								<h1 class="pb-4">Login</h1>
-								<input type="email" placeholder="Email" />
-								<input type="password" placeholder="Password" />
-								<v-btn round outline color="p_blue">LOGIN</v-btn>
+								<input type="email" placeholder="Email" v-model="login_details.email"/>
+								<input type="password" placeholder="Password" v-model="login_details.password">
+								<div id="acc_addr" class="white--text text-xs-left pt-2 pb-2">
+									Selected Account:
+									<span class="grey--text">{{ selected_addr }}</span>
+								</div >
+								<v-btn round outline color="p_blue"
+															v-on:click="login">
+									LOGIN
+								</v-btn>
 							</form>
 						</div>
 						<div class="overlay-container">
 							<div class="overlay">
 								<div class="overlay-panel overlay-left">
 									<h1>Welcome</h1>
-									<v-btn round outline color="white" v-on:click="login">
+									<v-btn round outline color="white"
+																v-on:click="load_login_form">
 										LOGIN
 									</v-btn>
 								</div>
 								<div class="overlay-panel overlay-right">
 									<h1>Hello</h1>
-									<v-btn id="bob" round outline color="white" v-on:click="register">
+									<v-btn id="bob" round outline color="white"
+																			v-on:click="load_register_form">
 										REGISTER
 									</v-btn>
 								</div>
@@ -48,28 +62,87 @@
 </template>
 
 <script>
+import web3 from '../web3'
+
 export default {
 	data () {
 		return {
-			account_addresses: ['0x001', '0x002']
+			selected_addr: '',
+			login_details: {
+				email: '',
+				password: ''
+			},
+			register_details: {
+				fname: '',
+				lname: '',
+				email: '',
+				password: ''
+			}
 		}
 	},
 	methods: {
-		login: function () {
+		load_login_form: function () {
 			const container = document.getElementById('auth_container')
 			this.$router.push('/login')
 			container.classList.remove('right-panel-active')
 		},
-		register: function () {
+		load_register_form: function () {
 			const container = document.getElementById('auth_container')
 			this.$router.push('/register')
 			container.classList.add('right-panel-active')
+		},
+		async load_accounts () {
+			let addresses = await window.ethereum.enable()
+			this.selected_addr = addresses[0]
+		},
+		login: function () {
+			const formData = new FormData()
+			formData.append('email', this.login_details.email)
+			formData.append('account_address', this.selected_addr)
+			formData.append('password', this.login_details.password)
+
+			try {
+				this.login_details = {
+					email: '',
+					password: ''
+				}
+			} catch (err) {
+				throw err
+			}
+		},
+		register: function () {
+			const formData = new FormData()
+			formData.append('fname', this.register_details.fname)
+			formData.append('lname', this.register_details.lname)
+			formData.append('email', this.register_details.email)
+			formData.append('account_address', this.selected_addr)
+			formData.append('password', this.register_details.password)
+
+			try {
+				this.register_details = {
+					fname: '',
+					lname: '',
+					email: '',
+					password: ''
+				}
+
+				// Send to database and redirect to login form
+				if (this.register_details.fname === '') {
+					this.load_login_form()
+				}
+			} catch (err) {
+				throw err
+			}
 		}
 	},
 	mounted () {
+		this.load_accounts()
 		if (this.$route.path === '/register') {
-			this.register()
+			this.load_register_form()
 		}
+		window.ethereum.on('accountsChanged', (accounts) => {
+			this.selected_addr = accounts[0]
+		})
 	}
 }
 </script>
@@ -79,7 +152,7 @@ export default {
 .auth_container {
 	background-color: #1e232a;
 	border-radius: 10px;
-	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+	/* box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25), 0px 5px 5px rgba(0, 0, 0, 0.22); */
 	position: relative;
 	overflow: hidden;
 	width: 768px;
@@ -149,8 +222,8 @@ export default {
 
 .overlay {
 	background: #ff6161;
-	background: -webkit-linear-gradient(to right, #3699db, #ff6161);
-	background: linear-gradient(to right, #3699db, #ff6161);
+	background: -webkit-linear-gradient(#3699db, #ff6161);
+	background: linear-gradient(#3699db, #ff6161);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;
@@ -222,5 +295,16 @@ export default {
 
 .auth_container form h1 {
 	color: #697a94;
+}
+
+#acc_addr {
+	background-color: #2a313b;
+	border-radius: 10px;
+	color: #fff;
+	border: none;
+	padding: 12px 15px;
+	margin: 8px 0;
+	width: 100%;
+	word-wrap: break-word;
 }
 </style>
