@@ -1,6 +1,6 @@
 <template>
 	<v-app class="p_dark">
-		<Navbar />
+		<Navbar v-if="!logged_in" />
 		<v-content>
 			<v-container fluid>
 				<router-view></router-view>
@@ -18,7 +18,7 @@ export default {
 	},
 	data () {
 		return {
-
+			logged_in: false
 		}
 	}
 }

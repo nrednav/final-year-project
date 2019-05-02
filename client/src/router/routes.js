@@ -16,6 +16,13 @@ export const routes = [
 			component: () => import('@/views/general/Contact.vue')
 		},
 
+		// Both
+		{
+			path: '/:user/dashboard',
+			name: 'dashboard',
+			component: () => import('@/views/both/Dashboard.vue')
+		},
+
 		// Registration
 		{
 			path: '/register',
