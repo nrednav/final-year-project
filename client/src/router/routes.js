@@ -26,5 +26,10 @@ export const routes = [
 			path: '/login',
 			name: 'login',
 			component: () => import('@/components/Authentication.vue')
+		},
+		{
+			path: '/select-profile',
+			name: 'select-profile',
+			component: () => import('@/views/both/Profile_Selection.vue')
 		}
 ];
