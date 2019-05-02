@@ -27,18 +27,17 @@
 
 ## Setup the client
 - [x] Add Vuetify to project & configure it
-- [ ] Configure vue-router
-	- [ ] Create routes folder with routes.js
-	- [ ] Import each route into routes.js
-	- [ ] Import routes.js into router.js and set it on the vue-router
+- [x] Configure vue-router
+	- [x] Create routes folder with routes.js
+	- [x] Import routes.js into router.js and set it on the vue-router
 - [ ] Create user interfaces w/ Vuetify
-	- [ ] Create registration interfaces
+	- [x] Create registration interfaces
 		- [x] Create the signup/login slider form
 			- [ ] Add client-side validation to form with Joi
 			- [ ] Prevent user from registering or logging in unless metamask is enabled
-		- [ ] Create profile selection screen
-		- [ ] Create buyer dashboard
-		- [ ] Create seller dashboard
+		- [x] Create profile selection screen
+		- [x] Create buyer dashboard
+		- [x] Create seller dashboard
 		- [ ] Add validation
 	- [ ] Create buyer interfaces
 		- [ ] ...
