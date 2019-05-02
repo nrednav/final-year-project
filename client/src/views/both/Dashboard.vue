@@ -10,10 +10,10 @@
 				</v-card>
 
 				<v-card class="info-panel primary text-xs-center pa-4 p_text--text">
-					<v-card-media>
+					<v-responsive>
 						<v-img src="https://cdn.vuetifyjs.com/images/cards/docks.jpg">
 						</v-img>
-					</v-card-media>
+					</v-responsive>
 
 					<v-card-text class="headline">
 						Bob Jenkins
@@ -45,10 +45,10 @@
 
 			<v-container v-if="user == 'Seller'" class="seller-dashboard white--text">
 				<v-card class="info-panel primary text-xs-center pa-4 p_text--text">
-					<v-card-media>
+					<v-responsive>
 						<v-img src="https://cdn.vuetifyjs.com/images/cards/docks.jpg">
 						</v-img>
-					</v-card-media>
+					</v-responsive>
 
 					<v-card-text class="headline">
 						Bob Jenkins

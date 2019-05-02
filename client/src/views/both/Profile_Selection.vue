@@ -2,18 +2,16 @@
 	<div class="profile_selection">
 		<h1 class="heading white--text">Profile Selection</h1>
 
-		<v-container class="my-5 mx-5">
-			<v-layout row wrap>
-				<v-flex v-for="profile in profiles" :key="profile.type" class="pa-4">
-					<v-card elevation="4" class="primary" :to="profile.route">
-						<v-card-text class="p_text--text display-1 text-xs-center">
-							{{ profile.type }}
-						</v-card-text>
-						<v-img src="https://cdn.vuetifyjs.com/images/cards/house.jpg">
-						</v-img>
-					</v-card>
-				</v-flex>
-			</v-layout>
+		<v-container class="profile-selection">
+			<v-flex v-for="profile in profiles" :key="profile.type" class="pa-4">
+				<v-card elevation="4" class="clickable-card primary" @click="selectProfile(profile.type)">
+					<v-card-text class="p_text--text display-1 text-xs-center">
+						{{ profile.type }}
+					</v-card-text>
+					<v-img src="https://cdn.vuetifyjs.com/images/cards/house.jpg">
+					</v-img>
+				</v-card>
+			</v-flex>
 		</v-container>
 	</div>
 </template>
@@ -27,10 +25,28 @@ export default {
 				{ type: 'SELLER', route: '/seller/dashboard' }
 			]
 		}
+	},
+	methods: {
+		selectProfile (type) {
+			this.$store.state.user = type.toLowerCase()
+			this.$router.push('/' + type.toLowerCase() + '/dashboard')
+		}
 	}
 }
 </script>
 
 <style>
 
+.clickable-card {
+	border-radius: 20px;
+	cursor: pointer;
+}
+
+.profile-selection {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(1, minmax(50vh, auto));
+	grid-gap: 50px;
+	max-width: 100vw;
+}
 </style>

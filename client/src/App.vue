@@ -1,6 +1,13 @@
 <template>
 	<v-app class="p_dark">
-		<Navbar v-if="!logged_in" />
+		<template v-if="!logged_in">
+			<Navbar />
+		</template>
+		<template v-else>
+			<Navbar v-if="user == ''" />
+			<BuyerNavbar v-if="user == 'buyer'" />
+			<SellerNavbar v-if="user == 'seller'" />
+		</template>
 		<v-content>
 			<v-container fluid>
 				<router-view></router-view>
@@ -10,15 +17,27 @@
 </template>
 
 <script>
-import Navbar from '@/components/Navbar'
+import Navbar from '@/components/Navbar/Navbar'
+import BuyerNavbar from '@/components/Navbar/BuyerNavbar'
+import SellerNavbar from '@/components/Navbar/SellerNavbar'
+
 export default {
 	name: 'App',
 	components: {
-		Navbar
+		Navbar,
+		BuyerNavbar,
+		SellerNavbar
 	},
 	data () {
 		return {
-			logged_in: false
+		}
+	},
+	computed: {
+		logged_in () {
+			return this.$store.state.logged_in
+		},
+		user () {
+			return this.$store.state.user
 		}
 	}
 }

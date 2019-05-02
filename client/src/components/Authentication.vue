@@ -106,6 +106,9 @@ export default {
 					email: '',
 					password: ''
 				}
+				this.$store.state.logged_in = true
+				this.$store.state.user = ''
+				this.$router.push('/select-profile')
 			} catch (err) {
 				throw err
 			}

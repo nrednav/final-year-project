@@ -1,7 +1,6 @@
 <template>
 	<nav>
 		<v-navigation-drawer
-			v-model="drawer"
 			app
 			permanent
 			width="200"
@@ -19,7 +18,7 @@
 						</v-list-tile-action>
 						<v-list-tile-content>
 							<v-list-tile-title class="white--text text-xs-center">
-								HOME
+								BUYER
 							</v-list-tile-title>
 						</v-list-tile-content>
 					</v-list-tile>
@@ -54,7 +53,7 @@
 
 					<v-divider class="black"></v-divider>
 
-					<v-list-tile class="tile pt-4 pb-4" to="/register">
+					<v-list-tile class="tile pt-4 pb-4" v-on:click="register">
 						<v-list-tile-action>
 							<v-icon
 								color="p_text"
@@ -72,7 +71,7 @@
 
 					<v-divider class="black"></v-divider>
 
-					<v-list-tile v-if="!logged_in" class="tile pt-4 pb-4" to="/login">
+					<v-list-tile v-if="!logged_in" class="tile pt-4 pb-4" v-on:click="login">
 						<v-list-tile-action>
 							<v-icon
 								:color="login_status"
@@ -88,7 +87,7 @@
 						</v-list-tile-content>
 					</v-list-tile>
 
-					<v-list-tile v-if="logged_in" class="tile pt-4 pb-4" to="/logout">
+					<v-list-tile v-if="logged_in" class="tile pt-4 pb-4" v-on:click="logout">
 						<v-list-tile-action>
 							<v-icon
 								:color="login_status"
@@ -114,11 +113,22 @@
 export default {
 	data () {
 		return {
-			logged_in: false,
 			links: [
 				{ icon: 'fas fa-info-circle', route: '/about', text: 'ABOUT' },
 				{ icon: 'fas fa-phone', route: '/contact', text: 'CONTACT' }
 			]
+		}
+	},
+	methods: {
+		register () {
+			this.$router.push('/register')
+		},
+		login () {
+			this.$router.push('/login')
+		},
+		logout () {
+			this.$store.state.logged_in = false
+			this.$router.push('/')
 		}
 	},
 	computed: {
@@ -135,11 +145,9 @@ export default {
 			} else {
 				return 'LOGIN'
 			}
-		}
-	},
-	methods: {
-		logout: {
-
+		},
+		logged_in () {
+			return this.$store.state.logged_in
 		}
 	}
 }
