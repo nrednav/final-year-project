@@ -53,7 +53,7 @@
 
 					<v-divider class="black"></v-divider>
 
-					<v-list-tile v-if="!logged_in" class="tile pt-4 pb-4" v-on:click="register">
+					<v-list-tile v-if="!user_authenticated" class="tile pt-4 pb-4" v-on:click="register">
 						<v-list-tile-action>
 							<v-icon
 								color="p_text"
@@ -69,9 +69,7 @@
 						</v-list-tile-content>
 					</v-list-tile>
 
-					<v-divider class="black"></v-divider>
-
-					<v-list-tile v-if="logged_in" class="tile pt-4 pb-4" v-on:click="selectProfile">
+					<v-list-tile v-if="user_authenticated" class="tile pt-4 pb-4" v-on:click="selectProfile">
 						<v-list-tile-action>
 							<v-icon
 								color="p_text"
@@ -89,7 +87,7 @@
 
 					<v-divider class="black"></v-divider>
 
-					<v-list-tile v-if="!logged_in" class="tile pt-4 pb-4" v-on:click="login">
+					<v-list-tile v-if="!user_authenticated" class="tile pt-4 pb-4" v-on:click="login">
 						<v-list-tile-action>
 							<v-icon
 								:color="login_status"
@@ -105,7 +103,7 @@
 						</v-list-tile-content>
 					</v-list-tile>
 
-					<v-list-tile v-if="logged_in" class="tile pt-4 pb-4" v-on:click="logout">
+					<v-list-tile v-if="user_authenticated" class="tile pt-4 pb-4" v-on:click="logout">
 						<v-list-tile-action>
 							<v-icon
 								:color="login_status"
@@ -146,8 +144,9 @@ export default {
 			this.$router.push('/login')
 		},
 		logout () {
-			this.$store.state.logged_in = false
-			this.$router.push('/')
+			localStorage.removeItem('token')
+			this.$store.dispatch('update_user_status', { type: '' })
+			this.$router.push('/login')
 		},
 		selectProfile () {
 			this.$router.push('/select-profile')
@@ -155,22 +154,22 @@ export default {
 	},
 	computed: {
 		login_status: function () {
-			if (this.logged_in) {
+			if (this.user_authenticated) {
 				return 'p_red'
 			} else {
 				return 'p_blue'
 			}
 		},
 		login_status_text: function () {
-			if (this.logged_in) {
+			if (this.user_authenticated) {
 				return 'LOGOUT'
 			} else {
 				return 'LOGIN'
 			}
 		},
-		...mapGetters({
-			logged_in: 'logged_in'
-		})
+		...mapGetters([
+			'user_authenticated'
+		])
 	}
 }
 </script>

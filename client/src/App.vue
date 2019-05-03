@@ -1,12 +1,12 @@
 <template>
 	<v-app class="p_dark">
-		<template v-if="!logged_in">
+		<template v-if="!user_authenticated">
 			<Navbar />
 		</template>
-		<template v-else>
-			<Navbar v-if="user == ''" />
-			<BuyerNavbar v-if="user == 'buyer'" />
-			<SellerNavbar v-if="user == 'seller'" />
+		<template v-else-if="user_authenticated">
+			<Navbar v-if="user_type == ''" />
+			<BuyerNavbar v-if="user_type == 'buyer'" />
+			<SellerNavbar v-if="user_type == 'seller'" />
 		</template>
 		<v-content>
 			<v-container fluid>
@@ -35,10 +35,10 @@ export default {
 		}
 	},
 	computed: {
-		...mapGetters({
-			logged_in: 'logged_in',
-			user: 'user'
-		})
+		...mapGetters([
+			'user_authenticated',
+			'user_type'
+		])
 	}
 }
 </script>

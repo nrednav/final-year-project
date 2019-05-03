@@ -1,3 +1,21 @@
+function redirect_if_logged_in(to, from, next) {
+	if (localStorage.token) {
+		next('/select-profile')
+	}
+	else {
+		next()
+	}
+}
+
+function logged_in(to, from, next) {
+	if (localStorage.token) {
+		next()
+	}
+	else {
+		next('/login')
+	}
+}
+
 export const routes = [
 	// General
 	{
@@ -27,16 +45,19 @@ export const routes = [
 	{
 		path: '/register',
 		name: 'register',
-		component: () => import('@/components/Authentication.vue')
+		component: () => import('@/components/Authentication.vue'),
+		beforeEnter: redirect_if_logged_in
 	},
 	{
 		path: '/login',
 		name: 'login',
-		component: () => import('@/components/Authentication.vue')
+		component: () => import('@/components/Authentication.vue'),
+		beforeEnter: redirect_if_logged_in
 	},
 	{
 		path: '/select-profile',
 		name: 'select-profile',
-		component: () => import('@/views/both/Profile_Selection.vue')
+		component: () => import('@/views/both/Profile_Selection.vue'),
+		beforeEnter: logged_in
 	}
 ]

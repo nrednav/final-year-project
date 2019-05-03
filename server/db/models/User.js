@@ -19,12 +19,12 @@ const UserSchema = new mongoose.Schema({
 		type: String,
 		require: true
 	},
+	created_at: {
+		type: Date,
+		default: Date.now
+	},
 	profiles: {
 		buyer: {
-			created_at: {
-				type: Date,
-				default: Date.now
-			},
 			session_count: Number,
 			offer_count: Number,
 			purchase_count: Number,
@@ -41,9 +41,6 @@ const UserSchema = new mongoose.Schema({
 			]
 		},
 		seller: {
-			created_at: {
-
-			},
 			property_count: Number,
 			verified_count: Number,
 			listed_count: Number,

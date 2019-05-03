@@ -2,9 +2,9 @@ var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
-var volleyball = require('volleyball');
+var logger = require('volleyball');
 var cors = require('cors');
-var logger = volleyball.custom({ debug: true });
+require('dotenv').config();
 
 var indexRouter = require('./routes/index');
 var authRouter = require('./routes/api/auth');

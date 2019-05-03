@@ -53,7 +53,32 @@
 
 					<v-tooltip right color="p_text">
 						<template v-slot:activator="{ on }">
-							<v-list-tile v-if="logged_in" class="tile pt-4 pb-4"
+							<v-list-tile v-if="user_authenticated" class="tile pt-4 pb-4"
+																	v-on:click="switchProfile"
+																	v-on="on">
+								<v-list-tile-action>
+									<v-icon
+										color="p_orange"
+										large
+										>
+										fas fa-random
+									</v-icon>
+								</v-list-tile-action>
+								<v-list-tile-content>
+									<v-list-tile-title class="white--text text-xs-center">
+										SWITCH PROFILE
+									</v-list-tile-title>
+								</v-list-tile-content>
+							</v-list-tile>
+						</template>
+						<span>SWITCH PROFILE</span>
+					</v-tooltip>
+
+					<v-divider class="black"></v-divider>
+
+					<v-tooltip right color="p_text">
+						<template v-slot:activator="{ on }">
+							<v-list-tile v-if="user_authenticated" class="tile pt-4 pb-4"
 																	v-on:click="logout"
 																	v-on="on">
 								<v-list-tile-action>
@@ -106,28 +131,33 @@ export default {
 			this.$router.push('/login')
 		},
 		logout () {
-			this.$store.state.logged_in = false
+			localStorage.removeItem('token')
+			this.$store.dispatch('update_user_status', { type: '' })
 			this.$router.push('/')
+		},
+		switchProfile () {
+			this.$store.dispatch('update_user_status', { type: '' })
+			this.$router.push('/select-profile')
 		}
 	},
 	computed: {
 		login_status: function () {
-			if (this.logged_in) {
+			if (this.user_authenticated) {
 				return 'p_red'
 			} else {
 				return 'p_blue'
 			}
 		},
 		login_status_text: function () {
-			if (this.logged_in) {
+			if (this.user_authenticated) {
 				return 'LOGOUT'
 			} else {
 				return 'LOGIN'
 			}
 		},
-		...mapGetters({
-			logged_in: 'logged_in'
-		})
+		...mapGetters([
+			'user_authenticated'
+		])
 	}
 }
 </script>

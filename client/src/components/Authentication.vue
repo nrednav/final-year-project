@@ -65,6 +65,8 @@
 import web3 from '../web3'
 import axios from 'axios'
 
+const authUri = 'http://localhost:3000/api/auth'
+
 export default {
 	data () {
 		return {
@@ -96,23 +98,26 @@ export default {
 			let addresses = await window.ethereum.enable()
 			this.selected_addr = addresses[0]
 		},
-		login: function () {
-			const formData = new FormData()
-			formData.append('email', this.login_details.email)
-			formData.append('account_address', this.selected_addr)
-			formData.append('password', this.login_details.password)
-
-			try {
-				this.login_details = {
-					email: '',
-					password: ''
-				}
-				this.$store.state.logged_in = true
-				this.$store.state.user = ''
-				this.$router.push('/select-profile')
-			} catch (err) {
-				throw err
+		login () {
+			const body = {
+				email: this.login_details.email,
+				password: this.login_details.password,
+				account_address: this.selected_addr
 			}
+
+			axios.post(authUri + '/login', body)
+				.then(res => {
+					if (res.statusText === 'OK') {
+						localStorage.token = res.data.token
+						this.login_details = {
+							email: '',
+							password: ''
+						}
+						this.$store.dispatch('update_user_status', { type: '' })
+						this.$router.push('/select-profile')
+					}
+				})
+				.catch(err => console.error(err))
 		},
 		register: function () {
 			const body = {
@@ -129,20 +134,16 @@ export default {
 					console.log(err)
 				})
 
-			try {
-				this.register_details = {
-					fname: '',
-					lname: '',
-					email: '',
-					password: ''
-				}
+			this.register_details = {
+				fname: '',
+				lname: '',
+				email: '',
+				password: ''
+			}
 
-				// Send to database and redirect to login form
-				if (this.register_details.fname === '') {
-					this.load_login_form()
-				}
-			} catch (err) {
-				throw err
+			// Send to database and redirect to login form
+			if (this.register_details.fname === '') {
+				this.load_login_form()
 			}
 		}
 	},

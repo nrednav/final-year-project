@@ -27,9 +27,9 @@ export default {
 		}
 	},
 	methods: {
-		selectProfile (type) {
-			this.$store.state.user = type.toLowerCase()
-			this.$router.push('/' + type.toLowerCase() + '/dashboard')
+		selectProfile (_type) {
+			this.$store.dispatch('update_user_status', { type: _type.toLowerCase() })
+			this.$router.push('/' + _type.toLowerCase() + '/dashboard')
 		}
 	}
 }
