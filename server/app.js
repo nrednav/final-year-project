@@ -4,9 +4,11 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('volleyball');
 var cors = require('cors');
+var auth_middleware = require('./routes/api/auth/middleware');
 require('dotenv').config();
 
 var indexRouter = require('./routes/index');
+var usersRouter = require('./routes/users');
 var authRouter = require('./routes/api/auth');
 
 var app = express();
@@ -22,10 +24,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(auth_middleware.verify_token);
 
 // Routing
 app.use('/', indexRouter);
 app.use('/api/auth', authRouter);
+app.use('/api/users', auth_middleware.verify_login_status, usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

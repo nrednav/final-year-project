@@ -38,7 +38,8 @@ export const routes = [
 	{
 		path: '/:user/dashboard',
 		name: 'dashboard',
-		component: () => import('@/views/both/Dashboard.vue')
+		component: () => import('@/views/both/Dashboard.vue'),
+		beforeEnter: logged_in
 	},
 
 	// Registration

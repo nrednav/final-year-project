@@ -25,26 +25,30 @@ const UserSchema = new mongoose.Schema({
 	},
 	profiles: {
 		buyer: {
-			session_count: Number,
-			offer_count: Number,
-			purchase_count: Number,
+			purchase_count: {
+				type: Number,
+				default: 0
+			},
 			notifications: [
 			],
 			sessions: [
 			],
 			offers: [
-				{
-					property_id: String,
-					price: Number,
-					timestamp: Date
-				}
 			]
 		},
 		seller: {
-			property_count: Number,
-			verified_count: Number,
-			listed_count: Number,
-			sale_count: Number,
+			verified_count: {
+				type: Number,
+				default: 0
+			},
+			listed_count: {
+				type: Number,
+				default: 0
+			},
+			sale_count: {
+				type: Number,
+				default: 0
+			},
 			properties: [
 			],
 			sessions: [

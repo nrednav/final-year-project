@@ -1,7 +1,7 @@
 <template>
 	<v-layout column>
 		<div class="dashboard">
-			<v-container v-if="user == 'Buyer'" class="buyer-dashboard white--text">
+			<v-container v-if="user_type == 'buyer'" class="buyer-dashboard white--text">
 				<v-card to="/buyer/search" class="browse-properties primary">
 					<div class="text-xs-center pa-4 p_text--text
 									display-1">
@@ -11,22 +11,24 @@
 
 				<v-card class="info-panel primary text-xs-center pa-4 p_text--text">
 					<v-responsive>
-						<v-img src="https://cdn.vuetifyjs.com/images/cards/docks.jpg">
+						<v-img :src="picture" max-height="200">
 						</v-img>
 					</v-responsive>
 
 					<v-card-text class="headline">
-						Bob Jenkins
+						{{ user.name }}
 					</v-card-text>
 
 					<v-divider class="p_text darken-2"></v-divider>
 
-					<v-card-text class="subheading text-xs-left">
-						Member since:
+					<v-card-text class="subheading text-xs-center pt-4">
+						Member since: {{ user.created_at.substring(0,10) }}
 						<br><br>
-						# Offers:
+						# Offers: {{ buyer_profile.offers.length }}
 						<br><br>
-						# Bought:
+						# Bought: {{ buyer_profile.purchase_count }}
+						<br><br>
+						# Sessions: {{ buyer_profile.sessions.length }}
 					</v-card-text>
 				</v-card>
 
@@ -43,27 +45,31 @@
 				</v-card>
 			</v-container>
 
-			<v-container v-if="user == 'Seller'" class="seller-dashboard white--text">
+			<v-container v-if="user_type == 'seller'" class="seller-dashboard white--text">
 				<v-card class="info-panel primary text-xs-center pa-4 p_text--text">
 					<v-responsive>
-						<v-img src="https://cdn.vuetifyjs.com/images/cards/docks.jpg">
+						<v-img :src="picture" max-height="150">
 						</v-img>
 					</v-responsive>
 
 					<v-card-text class="headline">
-						Bob Jenkins
+						{{ user.name }}
 					</v-card-text>
 
 					<v-divider class="p_text darken-2"></v-divider>
 
-					<v-card-text class="subheading text-xs-left">
-						Member since:
+					<v-card-text class="subheading text-xs-center">
+						Member since: {{ user.created_at.substring(0,10) }}
 						<br><br>
-						# Added:
+						# Added: {{ seller_profile.properties.length }}
 						<br><br>
-						# Verified:
+						# Verified: {{ seller_profile.verified_count }}
 						<br><br>
-						# Listed:
+						# Listed: {{ seller_profile.listed_count }}
+						<br><br>
+						# Sold: {{ seller_profile.sale_count }}
+						<br><br>
+						# Sessions: {{ seller_profile.sessions.length }}
 					</v-card-text>
 				</v-card>
 
@@ -88,21 +94,61 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+import axios from 'axios'
+
 export default {
 	data () {
 		return {
-			user: ''
+			user: null
 		}
 	},
 	methods: {
-
+		authorize_user () {
+			axios.get('http://localhost:3000/', {
+				headers: {
+					Authorization: 'Bearer ' + localStorage.token
+				}
+			})
+				.then((result) => {
+					console.log(result.data.user)
+					if (result.data.user) {
+						this.get_user(result.data.user)
+						// this.user = result.data.user
+					} else {
+						localStorage.removeItem('token')
+						this.$store.dispatch('update_user_status', { type: '' })
+						this.$router.push('/login')
+					}
+				})
+				.catch((error) => console.error(error))
+		},
+		get_user (result) {
+			axios.get('http://localhost:3000/api/users/' + result._id, {
+				headers: {
+					Authorization: 'Bearer ' + localStorage.token
+				}
+			})
+				.then((result) => {
+					this.user = result.data.user
+				})
+				.catch((error) => console.error(error))
+		}
 	},
 	computed: {
-
+		...mapGetters([
+			'user_type',
+			'picture'
+		]),
+		seller_profile () {
+			return this.user.profiles.seller
+		},
+		buyer_profile () {
+			return this.user.profiles.buyer
+		}
 	},
 	mounted () {
-		let user = this.$route.params.user
-		this.user = user[0].toUpperCase() + user.slice(1)
+		this.authorize_user()
 	}
 }
 </script>

@@ -8,7 +8,7 @@
 					<v-card-text class="p_text--text display-1 text-xs-center">
 						{{ profile.type }}
 					</v-card-text>
-					<v-img src="https://cdn.vuetifyjs.com/images/cards/house.jpg">
+					<v-img height="250">
 					</v-img>
 				</v-card>
 			</v-flex>
@@ -17,6 +17,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
 	data () {
 		return {
@@ -31,6 +33,11 @@ export default {
 			this.$store.dispatch('update_user_status', { type: _type.toLowerCase() })
 			this.$router.push('/' + _type.toLowerCase() + '/dashboard')
 		}
+	},
+	computed: {
+		...mapGetters([
+			'picture'
+		])
 	}
 }
 </script>

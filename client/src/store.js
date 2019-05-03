@@ -11,6 +11,7 @@ export default new Vuex.Store({
 			type: '',
 			authenticated: false
 		},
+		picture: require('@/assets/Blue_Mountains.jpg')
 	},
 	getters: {
 		user_authenticated: state => {
@@ -18,6 +19,9 @@ export default new Vuex.Store({
 		},
 		user_type: state => {
 			return state.user.type
+		},
+		picture: state => {
+			return state.picture
 		}
 	},
 	mutations: {
