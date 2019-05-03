@@ -63,6 +63,7 @@
 
 <script>
 import web3 from '../web3'
+import axios from 'axios'
 
 export default {
 	data () {
@@ -114,12 +115,19 @@ export default {
 			}
 		},
 		register: function () {
-			const formData = new FormData()
-			formData.append('fname', this.register_details.fname)
-			formData.append('lname', this.register_details.lname)
-			formData.append('email', this.register_details.email)
-			formData.append('account_address', this.selected_addr)
-			formData.append('password', this.register_details.password)
+			const body = {
+				email: this.register_details.email,
+				password: this.register_details.password,
+				name: this.register_details.fname + ' ' + this.register_details.lname,
+				account_address: this.selected_addr
+			}
+
+			axios.post('http://localhost:3000/api/auth/register', body).then((res) => {
+				console.log(res)
+			})
+				.catch((err) => {
+					console.log(err)
+				})
 
 			try {
 				this.register_details = {
