@@ -84,6 +84,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
 	data () {
 		return {
@@ -123,9 +125,9 @@ export default {
 				return 'LOGIN'
 			}
 		},
-		logged_in () {
-			return this.$store.state.logged_in
-		}
+		...mapGetters({
+			logged_in: 'logged_in'
+		})
 	}
 }
 </script>

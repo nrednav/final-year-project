@@ -17,6 +17,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 import Navbar from '@/components/Navbar/Navbar'
 import BuyerNavbar from '@/components/Navbar/BuyerNavbar'
 import SellerNavbar from '@/components/Navbar/SellerNavbar'
@@ -33,12 +35,10 @@ export default {
 		}
 	},
 	computed: {
-		logged_in () {
-			return this.$store.state.logged_in
-		},
-		user () {
-			return this.$store.state.user
-		}
+		...mapGetters({
+			logged_in: 'logged_in',
+			user: 'user'
+		})
 	}
 }
 </script>

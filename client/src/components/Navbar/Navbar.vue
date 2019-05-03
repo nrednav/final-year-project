@@ -3,7 +3,7 @@
 		<v-navigation-drawer
 			app
 			permanent
-			width="200"
+			width="250"
 			class="primary">
 			<v-layout justify-space-between column fill-height>
 				<v-list>
@@ -53,7 +53,7 @@
 
 					<v-divider class="black"></v-divider>
 
-					<v-list-tile class="tile pt-4 pb-4" v-on:click="register">
+					<v-list-tile v-if="!logged_in" class="tile pt-4 pb-4" v-on:click="register">
 						<v-list-tile-action>
 							<v-icon
 								color="p_text"
@@ -65,6 +65,24 @@
 						<v-list-tile-content>
 							<v-list-tile-title class="white--text text-xs-center">
 								REGISTER
+							</v-list-tile-title>
+						</v-list-tile-content>
+					</v-list-tile>
+
+					<v-divider class="black"></v-divider>
+
+					<v-list-tile v-if="logged_in" class="tile pt-4 pb-4" v-on:click="selectProfile">
+						<v-list-tile-action>
+							<v-icon
+								color="p_text"
+								large
+								>
+								fas fa-users
+							</v-icon>
+						</v-list-tile-action>
+						<v-list-tile-content>
+							<v-list-tile-title class="white--text text-xs-center">
+								SELECT PROFILE
 							</v-list-tile-title>
 						</v-list-tile-content>
 					</v-list-tile>
@@ -110,6 +128,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
 	data () {
 		return {
@@ -129,6 +148,9 @@ export default {
 		logout () {
 			this.$store.state.logged_in = false
 			this.$router.push('/')
+		},
+		selectProfile () {
+			this.$router.push('/select-profile')
 		}
 	},
 	computed: {
@@ -146,9 +168,9 @@ export default {
 				return 'LOGIN'
 			}
 		},
-		logged_in () {
-			return this.$store.state.logged_in
-		}
+		...mapGetters({
+			logged_in: 'logged_in'
+		})
 	}
 }
 </script>
