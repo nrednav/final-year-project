@@ -124,7 +124,7 @@ export default {
 				.catch((error) => console.error(error))
 		},
 		get_user (result) {
-			axios.get('http://localhost:3000/api/users/' + result._id, {
+			axios.get('http://localhost:3000/api/users/get/' + result._id, {
 				headers: {
 					Authorization: 'Bearer ' + localStorage.token
 				}

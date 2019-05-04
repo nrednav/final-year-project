@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
 });
 
 /* GET user */
-router.get('/:id', (req, res, next) => {
+router.get('/get/:id', (req, res, next) => {
 	const user_id = req.params.id;
 	User.findOne({
 		_id: user_id

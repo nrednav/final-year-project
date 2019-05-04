@@ -11,7 +11,8 @@ export default new Vuex.Store({
 			type: '',
 			authenticated: false
 		},
-		picture: require('@/assets/Blue_Mountains.jpg')
+		picture: require('@/assets/Blue_Mountains.jpg'),
+		session_critical: false
 	},
 	getters: {
 		user_authenticated: state => {

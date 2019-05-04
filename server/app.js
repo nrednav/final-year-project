@@ -10,6 +10,7 @@ require('dotenv').config();
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var authRouter = require('./routes/api/auth');
+var sessionRouter = require('./routes/api/session');
 
 var app = express();
 
@@ -30,6 +31,7 @@ app.use(auth_middleware.verify_token);
 app.use('/', indexRouter);
 app.use('/api/auth', authRouter);
 app.use('/api/users', auth_middleware.verify_login_status, usersRouter);
+app.use('/api/sessions', auth_middleware.verify_login_status, sessionRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

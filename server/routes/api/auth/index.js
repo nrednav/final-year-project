@@ -67,13 +67,6 @@ router.post('/register', (req, res, next) => {
 			}
 			else {
 				bcrypt.hash(req.body.password.trim(), 5).then(hashed_password => {
-					const new_user = new UserModel({
-						email: req.body.email,
-						password: hashed_password,
-						name: req.body.name,
-						account_address: req.body.account_address
-					});
-
 					UserModel.create({
 						email: req.body.email,
 						password: hashed_password,
