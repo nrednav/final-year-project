@@ -3,7 +3,7 @@ var router = express.Router();
 
 const Session = require('../../../db/models/Session').Session;
 
-/* GET users listing. */
+/* GET session listing. */
 router.get('/', function(req, res, next) {
 	Session.find((err, docs) => {
 		if (err) console.error(err);
