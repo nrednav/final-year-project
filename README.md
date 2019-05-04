@@ -33,6 +33,8 @@
 - [ ] Create user interfaces w/ Vuetify
 	- [x] Create registration interfaces
 		- [x] Create the signup/login slider form
+			- [ ] Increase size of form
+			- [ ] Add confirm password and confirm email input fields
 			- [ ] Add client-side validation to form with Joi
 			- [ ] Prevent user from registering or logging in unless metamask is enabled
 		- [x] Create profile selection screen
@@ -52,33 +54,33 @@
 - [ ] Create NodeJS Smart Contract Event Listener linked to database?
 
 ## Setup the server
-- [ ] Create the server using express-generator
-- [ ] Install initial dependencies?
-	- [ ] Middleware such as Joi, Volleyball, Body-Parser etc (Check if already added by express-generator)
+- [x] Create the server using express-generator
+- [x] Install initial dependencies?
+	- [x] Middleware such as Joi, Volleyball, Body-Parser etc (Check if already added by express-generator)
 	- [ ] Testware such as Mocha/Chai/Supertest
 - [ ] Setup API's
-	- [ ] Setup authentication API with JWT (Coding Garden Vids)
-		- [ ] Setup database
-			- [ ] Create document schema's following s1_registration.txt
-			- [ ] Obtain connection to MongoDB server in dummy_net
-		- [ ] Setup routing
-	- [ ] Setup Property API
-		- [ ] Setup database
-		- [ ] Setup routing
-	- [ ] Setup Land Registry API
-		- [ ] Setup database
-		- [ ] Setup routing
-	- [ ] Setup Background Screening API
+	- [x] Setup authentication API with JWT (Coding Garden Vids)
+		- [x] Setup database
+			- [x] Create document schema's following s1_registration.txt
+			- [x] Obtain connection to MongoDB server in dummy_net
+		- [x] Setup routing
+	- [x] Setup Property API (Create, Read, Delete)
+		- [x] Setup database
+		- [x] Setup routing
+	- [ ] Setup Land Registry API (Create, Read)
 		- [ ] Setup database
 		- [ ] Setup routing
-	- [ ] Setup Session API
+	- [ ] Setup Background Screening API (Create, Read)
 		- [ ] Setup database
 		- [ ] Setup routing
+	- [x] Setup Session API (Create, Read, Update, Delete)
+		- [x] Setup database
+		- [x] Setup routing
 - [ ] Test API's routing & database with Mocha/Chai/Supertest?
 
 ## Wire everything together (Client + Server)
-- [ ] Link registration interfaces to authentication API
-	- [ ] Test registration (register + login)
+- [x] Link registration interfaces to authentication API
+	- [x] Test registration (register + login)
 - [ ] ...
 
 ## Setup the main docker network
