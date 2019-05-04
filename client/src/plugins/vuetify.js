@@ -14,6 +14,8 @@ Vue.use(Vuetify, {
 		p_green: '#4FC44B',
 		p_yellow: '#F0DC59',
 		p_purple: '#8A53DB',
-		p_orange: '#FF9061'
+		p_orange: '#FF9061',
+		p_input: '#2A313B',
+		p_input_text: '#707070'
 	}
 })

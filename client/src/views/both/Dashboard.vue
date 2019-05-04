@@ -82,7 +82,7 @@
 				</v-card>
 
 				<v-card class="add-properties primary text-xs-center pa-4 p_text--text display-1" to="/seller/properties/add">
-					<p>ADD PROPERTIES</p>
+					<p>ADD PROPERTY</p>
 				</v-card>
 
 				<v-card class="view-properties primary text-xs-center pa-4 p_text--text display-1" to="/seller/properties">

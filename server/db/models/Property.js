@@ -37,10 +37,6 @@ const PropertySchema = new mongoose.Schema({
 			type: String,
 			require: true
 		},
-		sub_type: {
-			type: String,
-			require: true
-		},
 		bedroom_count: {
 			type: Number,
 			require: true
