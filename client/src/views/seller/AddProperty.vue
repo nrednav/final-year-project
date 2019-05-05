@@ -1,16 +1,25 @@
 <template>
 	<v-layout column>
+		<v-alert v-model="formInvalid" dismissible type="error">
+			<span><b>Please correct the following error(s):- </b></span>
+			<ul>
+				<li v-for="(error, index) in errors" :key="index">
+					{{ error }}
+				</li>
+			</ul>
+		</v-alert>
+
 		<v-container class="panel white--text">
 
 			<v-card class="property-details primary">
 				<div class="details">
 					<input v-model="property.details.name" type="text" placeholder="Property Name" class="property-name pa-4 p_input_text--text p_input title">
-					<input v-model="property.details.street" type="text" placeholder="Street" class="street pa-4 p_input_text--text p_input title">
-					<input v-model="property.details.city" type="text" placeholder="City" class="city pa-4 p_input_text--text p_input title">
-					<input v-model="property.details.country" type="text" placeholder="Country" class="country pa-4 p_input_text--text p_input title">
-					<input v-model="property.details.post_code" type="text" placeholder="Post Code" class="post-code pa-4 p_input_text--text p_input title">
-					<input v-model="property.details.bed_count" type="text" placeholder="Bedroom Count" class="bed-count pa-4 p_input_text--text p_input title">
-					<input v-model="property.details.bath_count" type="text" placeholder="Bathroom Count" class="bath-count pa-4 p_input_text--text p_input title">
+					<input v-model="property.details.address.street" type="text" placeholder="Street" class="street pa-4 p_input_text--text p_input title">
+					<input v-model="property.details.address.city" type="text" placeholder="City" class="city pa-4 p_input_text--text p_input title">
+					<input v-model="property.details.address.country" type="text" placeholder="Country" class="country pa-4 p_input_text--text p_input title">
+					<input v-model="property.details.address.post_code" type="text" placeholder="Post Code" class="post-code pa-4 p_input_text--text p_input title">
+					<input v-model="property.details.bedroom_count" type="text" placeholder="Bedroom Count" class="bed-count pa-4 p_input_text--text p_input title">
+					<input v-model="property.details.bathroom_count" type="text" placeholder="Bathroom Count" class="bath-count pa-4 p_input_text--text p_input title">
 					<select class="property-type pa-4 p_input_text--text p_input title" v-model="property.details.type">
 						<option disabled value="">Select property type</option>
 						<option v-for="(index,type) in types" v-bind:key="type">{{ types[type] }}</option>
@@ -21,7 +30,7 @@
 
 			<v-card class="property-details-2 primary">
 				<div class="details-2">
-					<input v-model="property.details.price" type="text" placeholder="Listing Price" class="p-price pa-4 p_input_text--text p_input title">
+					<input v-model="property.details.listing_price" type="text" placeholder="Listing Price" class="p-price pa-4 p_input_text--text p_input title">
 					<input v-model="property.details.deposit" type="text" placeholder="Deposit" class="p-deposit pa-4 p_input_text--text p_input title">
 					<label class="p-date-label pa-4 p_input_text--text title text-xs-right">
 						Available from:
@@ -38,16 +47,14 @@
 					<vue-upload-multiple-image
 						@upload-success="imagesUploaded"
 						@edit-image="imageEdited"
-						@before-remove="removeImage"
+						@before-remove="beforeRemovingImage"
 						@data-change="selectImages"
-						:data-images="property.details.images"
 						dragText="Drag your images here or"
 						browseText="Click here to browse"
 						primaryText="Default"
 						markIsPrimaryText="Set as default image"
 						popupText="This image will be set as the default"
 						dropText="Drag 'n' Drop"
-						maxImage=5
 						multiple>
 					</vue-upload-multiple-image>
 				</div>
@@ -59,8 +66,8 @@
 			</v-card>
 
 			<div class="button_container">
-				<v-btn outline color="p_red" class="title button">CANCEL</v-btn>
-				<v-btn outline color="p_blue" class="title button">SAVE</v-btn>
+				<v-btn @click="cancel" outline color="p_red" class="title button">CANCEL</v-btn>
+				<v-btn @click="saveForm" outline color="p_blue" class="title button">SAVE</v-btn>
 			</div>
 
 		</v-container>
@@ -68,8 +75,10 @@
 </template>
 
 <script>
+import axios from 'axios'
 import moment from 'moment'
 import VueUploadMultipleImage from 'vue-upload-multiple-image'
+import { mapGetters } from 'vuex'
 
 export default {
 	components: {
@@ -78,51 +87,128 @@ export default {
 	data () {
 		return {
 			menu: false,
+			images: [],
 			property: {
 				details: {
 					name: '',
 					description: '',
-					street: '',
-					city: '',
-					country: '',
-					post_code: '',
+					address: {
+						street: '',
+						city: '',
+						country: '',
+						post_code: ''
+					},
 					type: '',
-					bed_count: null,
-					bath_count: null,
+					bedroom_count: null,
+					bathroom_count: null,
 					size: '',
-					price: null,
+					listing_price: null,
 					deposit: null,
-					available_from: new Date().toISOString().substr(0, 7),
-					images: []
+					available_from: new Date().toISOString().substr(0, 7)
 				}
 			},
-			types: ['Apartment', 'Detached House', 'Attached House', 'Condominium', 'Townhouse']
+			types: ['Apartment', 'Detached House', 'Attached House', 'Condominium', 'Townhouse'],
+			errors: [],
+			formInvalid: false
 		}
 	},
 	methods: {
 		selectImages (data) {
-			console.log(data)
-			// const images = this.$refs.images.files
-			// this.property.details.images = [ ...this.property.details.images, ...images ]
+			console.log('data-changed', data)
 		},
-		imagesUploaded (formData, index, fileList) {
-			console.log('data', formData, index, fileList)
+		imagesUploaded (formData, index, fileList, imageFiles) {
+			this.images = imageFiles
 		},
-		imageEdited (formData, index, fileList) {
-			console.log('edited data', formData, index, fileList)
+		imageEdited (formData, index, fileList, imageFiles) {
+			this.images = imageFiles
 		},
-		removeImage (index, done, fileList) {
-			console.log('index', index, fileList)
+		beforeRemovingImage (index, done, fileList, imageFiles) {
+			this.images = imageFiles
 			var response = confirm('Are you sure you want to remove this image?')
 			if (response) {
 				done()
 			}
+		},
+		validateFormNotEmpty () {
+			let form = this.property.details
+			for (var key in form) {
+				if (form[key] === null || form[key] === '') {
+					this.errors.push('One or more fields have been left empty in the form')
+					return false
+				}
+			}
+			return true
+		},
+		validateForm () {
+			this.errors = []
+			let details = this.property.details
+
+			if (this.validateFormNotEmpty()) {
+				if (isNaN(details.listing_price)) {
+					this.errors.push('Please enter a number for the listing price.')
+				}
+				if (isNaN(details.deposit)) {
+					this.errors.push('Please enter a number for the deposit')
+				}
+				if (isNaN(details.bedroom_count)) {
+					this.errors.push('Please enter a number for the bedroom count')
+				}
+				if (isNaN(details.bathroom_count)) {
+					this.errors.push('Please enter a number for the bathroom count')
+				}
+				if (this.images.length < 1) {
+					this.errors.push('Please upload at least one image of your property.')
+				}
+
+				if (this.errors.length > 0) {
+					this.formError()
+					return false
+				}
+			} else {
+				this.formError()
+				return false
+			}
+			return true
+		},
+		async saveForm () {
+			const validated = this.validateForm()
+
+			if (validated) {
+				const formData = new FormData()
+				this.property.details.owner = this.user_id
+				formData.append('property', JSON.stringify(this.property))
+				for (var i in this.images) {
+					formData.append('files', this.images[i])
+				}
+				try {
+					let result = await axios.post('http://localhost:3000/api/properties/create', formData, {
+						headers: {
+							Authorization: 'Bearer ' + localStorage.token
+						}
+					})
+					if (result.status === 200) {
+						this.$router.push('/seller/dashboard')
+					}
+				} catch (err) {
+					throw err
+				}
+			}
+		},
+		cancel () {
+
+		},
+		formError () {
+			this.formInvalid = true
+			window.scrollTo(0, 0)
 		}
 	},
 	computed: {
 		available_from () {
 			return this.property.details.available_from ? moment(this.property.details.available_from).format('MMMM YYYY') : ''
-		}
+		},
+		...mapGetters([
+			'user_id'
+		])
 	}
 }
 </script>

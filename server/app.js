@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('volleyball');
 var cors = require('cors');
+// var bodyParser = require('body-parser');
 var auth_middleware = require('./routes/api/auth/middleware');
 require('dotenv').config();
 
@@ -22,6 +23,7 @@ app.set('view engine', 'jade');
 // Middleware
 app.use(logger);
 app.use(cors());
+// app.use(bodyParser.json());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -37,18 +39,19 @@ app.use('/api/properties', auth_middleware.verify_login_status, propertyRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  next(createError(404));
+	next(createError(404));
 });
 
 // error handler
 app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+	// set locals, only providing error in development
+	console.log(err);
+	res.locals.message = err.message;
+	res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
+	// render the error page
+	res.status(err.status || 500);
+	res.render('error');
 });
 
 module.exports = app;

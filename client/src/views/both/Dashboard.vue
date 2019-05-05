@@ -131,6 +131,7 @@ export default {
 			})
 				.then((result) => {
 					this.user = result.data.user
+					this.$store.dispatch('add_user_id', { user_id: result.data.user._id })
 				})
 				.catch((error) => console.error(error))
 		}

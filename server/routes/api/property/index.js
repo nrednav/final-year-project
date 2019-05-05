@@ -1,7 +1,13 @@
 var express = require('express');
+var mongoose = require('mongoose');
+var path = require('path');
 var router = express.Router();
+var multer = require('multer');
+var crypto = require('crypto');
+var grid_fs_storage = require('multer-gridfs-storage');
+var grid = require('gridfs-stream');
 
-const Property = require('../../../db/models/Property').Property;
+var Property = require('../../../db/models/Property').Property;
 
 /* GET property listing. */
 router.get('/', function(req, res, next) {
@@ -26,12 +32,50 @@ router.get('/get/:property_id', (req, res, next) => {
 	});
 });
 
+
+// DB Setup
+const mongo_uri = 'mongodb://localhost:27017/fyp';
+
+	// Create connection
+const conn = mongoose.createConnection(mongo_uri, {
+	useNewUrlParser: true
+});
+
+let gfs;
+conn.once('open', () => {
+	gfs = grid(conn.db, mongoose.mongo);
+});
+
+var storage = new grid_fs_storage({
+	url: 'mongodb://localhost:27017/fyp',
+	file: (req, file) => {
+		return new Promise((resolve, reject) => {
+			crypto.randomBytes(16, (err, buf) => {
+				if (err) {
+					return reject(err);
+				}
+
+				const filename = buf.toString('hex') + path.extname(file.originalname);
+				const file_info = {
+					filename: filename,
+					bucketname: 'uploads'
+				};
+				resolve(file_info);
+			});
+		});
+	}
+});
+const upload = multer({ storage });
+
 /* POST - create a property */
-router.post('/create', (req, res, next) => {
+router.post('/create', upload.array('files'), (req, res, next) => {
+	let new_property = JSON.parse(req.body.property);
+	console.log(new_property);
+	console.log(req.files);
 	Property.findOne({
-		name: req.body.details.name,
-		description: req.body.details.description,
-		address: req.body.details.address
+		name: new_property.details.name,
+		description: new_property.details.description,
+		address: new_property.details.address
 	})
 	.then(property => {
 		if (property) {
@@ -40,10 +84,13 @@ router.post('/create', (req, res, next) => {
 		}
 		else {
 			console.log("Creating a new property");
-			const new_property = req.body
+			new_property.details.images = []
+			for (var i in req.files) {
+				new_property.details.images[i] = (req.files[i].id);
+			}
 			Property.create(new_property, (error, result) => {
 				if (error) {
-					console.log(error.name);
+					console.log(error);
 					res.send(error.name);
 				}
 				else {

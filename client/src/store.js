@@ -9,7 +9,8 @@ export default new Vuex.Store({
 	state: {
 		user: {
 			type: '',
-			authenticated: false
+			authenticated: false,
+			id: ''
 		},
 		picture: require('@/assets/Blue_Mountains.jpg'),
 		session_critical: false
@@ -20,6 +21,9 @@ export default new Vuex.Store({
 		},
 		user_type: state => {
 			return state.user.type
+		},
+		user_id: state => {
+			return state.user.id
 		},
 		picture: state => {
 			return state.picture
@@ -33,11 +37,17 @@ export default new Vuex.Store({
 				state.user.authenticated = false
 			}
 			state.user.type = payload.type
+		},
+		add_user_id (state, payload) {
+			state.user.id = payload.user_id
 		}
 	},
 	actions: {
 		update_user_status (context, payload) {
 			context.commit('update_user_status', payload)
+		},
+		add_user_id (context, payload) {
+			context.commit('add_user_id', payload)
 		}
 	}
 })
