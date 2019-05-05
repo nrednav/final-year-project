@@ -33,22 +33,24 @@
 				</div>
 			</v-card>
 
-			<v-card class="image-upload-panel primary">
-				<v-container class="dropbox text-xs-center p_input_text--text">
-					<p class="display-1">
-						Drag images of your property here <br>
-						or click below to browse.
-					</p>
-					<input type="file" multiple ref="images" @change="selectImages" class="file-input" placeholder="Drag images of your property here <br> or click here to browse.">
-					<div class="selected-images headline">
-						You added the following files:-<br>
-						<ul>
-							<li v-for="(image, index) in property.details.images" :key="index">
-								{{ image.name }}
-							</li>
-						</ul>
-					</div>
-				</v-container>
+			<v-card class="image-upload-container primary">
+				<div class="upload-panel">
+					<vue-upload-multiple-image
+						@upload-success="imagesUploaded"
+						@edit-image="imageEdited"
+						@before-remove="removeImage"
+						@data-change="selectImages"
+						:data-images="property.details.images"
+						dragText="Drag your images here or"
+						browseText="Click here to browse"
+						primaryText="Default"
+						markIsPrimaryText="Set as default image"
+						popupText="This image will be set as the default"
+						dropText="Drag 'n' Drop"
+						maxImage=5
+						multiple>
+					</vue-upload-multiple-image>
+				</div>
 			</v-card>
 
 			<v-card class="property-description primary">
@@ -56,7 +58,9 @@
 				</textarea>
 			</v-card>
 
-			<div class="buttons primary">
+			<div class="button_container">
+				<v-btn outline color="p_red" class="title button">CANCEL</v-btn>
+				<v-btn outline color="p_blue" class="title button">SAVE</v-btn>
 			</div>
 
 		</v-container>
@@ -65,8 +69,12 @@
 
 <script>
 import moment from 'moment'
+import VueUploadMultipleImage from 'vue-upload-multiple-image'
 
 export default {
+	components: {
+		VueUploadMultipleImage
+	},
 	data () {
 		return {
 			menu: false,
@@ -92,9 +100,23 @@ export default {
 		}
 	},
 	methods: {
-		selectImages () {
-			const images = this.$refs.images.files
-			this.property.details.images = [ ...this.property.details.images, ...images ]
+		selectImages (data) {
+			console.log(data)
+			// const images = this.$refs.images.files
+			// this.property.details.images = [ ...this.property.details.images, ...images ]
+		},
+		imagesUploaded (formData, index, fileList) {
+			console.log('data', formData, index, fileList)
+		},
+		imageEdited (formData, index, fileList) {
+			console.log('edited data', formData, index, fileList)
+		},
+		removeImage (index, done, fileList) {
+			console.log('index', index, fileList)
+			var response = confirm('Are you sure you want to remove this image?')
+			if (response) {
+				done()
+			}
 		}
 	},
 	computed: {
@@ -226,10 +248,10 @@ export default {
 		padding: 10px;
 	}
 
-	.p-available-from {
+	.p-available-from.v-input .v-input__slot {
 		grid-column: 1 / 3;
 		grid-row: 2;
-		border-radius: 25px;
+		border-radius: 15px;
 		padding: 10px;
 	}
 
@@ -253,41 +275,106 @@ export default {
 		border-radius: 20px;
 	}
 
-.image-upload-panel {
+.image-upload-container {
 	display: grid;
 	grid-template-columns: repeat(1, 1fr);
-	grid-template-rows: repeat(2, auto);
+	grid-template-rows: repeat(1, auto);
 	grid-row: 2 / 4;
 	padding: 20px;
 	border-radius: 20px;
 }
 
-	.dropbox {
-		grid-column: 1;
-		grid-row: 1;
-		border-radius: 25px;
-		width: 100%;
-		height: 100%;
-		cursor: pointer;
+.upload-panel {
+	grid-row: 1;
+	grid-column: 1;
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	grid-template-rows: repeat(1, auto);
+	width: 100%;
+	height: 100%;
+}
+
+.image-center {
+	background: #2a313b;
+	border-radius: 20px;
+}
+
+.image-container[data-v-10e59822] {
+	width: 100%;
+	height: 50vh;
+	border: 1px solid #707070;
+	border-radius: 20px;
+	background-color: #2a313b;
+}
+
+	.browse-text[data-v-10e59822] {
+		color: white;
 	}
 
-	.file-input {
-		opacity: 0;
-		height: 100%;
-		width: 100%;
-		cursor: pointer;
+	.preview-image[data-v-10e59822] {
+		height: 90%;
 	}
 
-	.selected-images {
-		grid-column: 1;
-		grid-row: 2;
+	.image-icon-delete[data-v-10e59822] {
+		height: 20px;
+		width: 20px;
+		fill: white;
 	}
 
-.buttons {
+	.image-icon-edit[data-v-10e59822] {
+		height: 20px;
+		width: 20px;
+		fill: white;
+	}
+
+	.add-image-svg[data-v-10e59822] {
+		height: 20px;
+		width: 20px;
+		fill: white;
+	}
+
+	.image-icon-info[data-v-10e59822] {
+		height: 20px;
+		width: 20px;
+		fill: white;
+	}
+
+	.mark-text-primary[data-v-10e59822] {
+		color: white;
+	}
+
+	.image-overlay[data-v-10e59822] {
+		background: rgba(30,35,42,.7);
+	}
+
+	.show-img[data-v-10e59822] {
+		max-height: 250px;
+		height: 250px;
+		max-width: 250px;
+		width: 250px;
+		border-radius: 20px;
+	}
+
+	.image-list-container[data-v-10e59822] {
+		padding-top: 20px;
+	}
+
+	.image-list-item[data-v-10e59822] {
+		width: 50px;
+		height: 50px;
+	}
+
+.button_container {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	border-radius: 20px;
+}
+
+.button {
+	border-radius: 10px;
+	width: 20vw;
+	height: 10vh;
 }
 
 </style>
