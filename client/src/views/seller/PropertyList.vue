@@ -85,7 +85,7 @@ export default {
 			this.properties = result.data.properties
 		},
 		viewProperty (propertyId) {
-			this.$router.push('/seller/properties/' + propertyId)
+			this.$router.push({ path: `/seller/properties/${propertyId}` })
 		}
 	},
 	mounted () {
@@ -108,64 +108,6 @@ export default {
 
 	.property-card:hover {
 		cursor: pointer;
-	}
-
-.property-list {
-	display: grid;
-	grid-template-columns: repeat(1, 1fr);
-	grid-auto-rows: 40vh;
-	grid-gap: 50px;
-	max-width: 100vw;
-}
-
-.property-list-card {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: repeat(2, auto);
-	padding: 2vh;
-	border-radius: 25px;
-}
-
-	.card-image {
-		grid-column: 1;
-		grid-row: 1 / 3;
-		height: 100%;
-		border-radius: 25px;
-	}
-
-	#property-id {
-		display: flex;
-		justify-content: center;
-		padding-top: 2vh;
-		align-items: top;
-		grid-column: 2 / 3;
-	}
-
-	#date-added {
-		display: flex;
-		justify-content: center;
-		padding-top: 2vh;
-		align-items: top;
-		grid-column: 2 / 3;
-		grid-row: 2;
-	}
-
-	#verified-status {
-		display: flex;
-		justify-content: center;
-		padding-top: 2vh;
-		align-items: top;
-		grid-column: 3 / 3;
-		grid-row: 1;
-	}
-
-	#listed-status {
-		display: flex;
-		justify-content: center;
-		padding-top: 2vh;
-		align-items: top;
-		grid-column: 3 / 3;
-		grid-row: 2;
 	}
 
 </style>

@@ -1,0 +1,360 @@
+<template>
+	<v-layout column :key="renderKey">
+		<v-container class="panel white--text">
+
+			<v-card class="property-details primary">
+				<div class="details">
+					<div
+						class="property-name pa-4 title p_input_text--text p_input">
+						<span class="p_text--text pr-4">Property Name: </span>
+						{{ property.details.name }}
+					</div>
+					<div
+						class="street pa-4 title p_input_text--text p_input">
+						<span class="p_text--text pr-4">Street: </span>
+						{{ property.details.address.street }}
+					</div>
+					<div
+						class="city pa-4 title p_input_text--text p_input">
+						<span class="p_text--text pr-4">City: </span>
+						{{ property.details.address.city }}
+					</div>
+					<div
+						class="country pa-4 title p_input_text--text p_input">
+						<span class="p_text--text pr-4">Country: </span>
+						{{ property.details.address.country }}
+					</div>
+					<div
+						class="post-code pa-4 title p_input_text--text p_input">
+						<span class="p_text--text pr-4">Post Code: </span>
+						{{ property.details.address.post_code }}
+					</div>
+					<div
+						class="property-type pa-4 title p_input_text--text p_input">
+						<span class="p_text--text pr-4">Type: </span>
+						{{ property.details.type }}
+					</div>
+					<div
+						class="p-size pa-4 title p_input_text--text p_input">
+						<span class="p_text--text pr-4">Size: </span>
+						{{ property.details.size }}
+					</div>
+					<div
+						class="bed-count pa-4 title p_input_text--text p_input">
+						<span class="p_text--text pr-4">Bedroom Count: </span>
+						{{ property.details.bedroom_count }}
+					</div>
+					<div
+						class="bath-count pa-4 title p_input_text--text p_input">
+						<span class="p_text--text pr-4">Bathroom Count: </span>
+						{{ property.details.bathroom_count }}
+					</div>
+				</div>
+			</v-card>
+
+			<v-card class="property-details-2 primary">
+				<div class="details-2">
+					<div
+						class="p-price pa-4 title p_input_text--text p_input">
+						<span class="p_text--text pr-4">Price: </span>
+						{{ property.details.listing_price }}
+					</div>
+					<div
+						class="p-deposit pa-4 title p_input_text--text p_input">
+						<span class="p_text--text pr-4">Deposit: </span>
+						{{ property.details.deposit }}
+					</div>
+					<div
+						class="p-available-from pa-4 title p_input_text--text p_input">
+						<span class="p_text--text pr-4">Available From: </span>
+						{{ property.details.available_from.substr(0,7) }}
+					</div>
+				</div>
+			</v-card>
+
+			<v-card class="image-upload-container primary">
+				<div class="upload-panel">
+				</div>
+			</v-card>
+
+			<v-card class="property-description primary">
+				<div
+					class="p-description pa-4 title p_input_text--text p_input">
+					<span class="p_text--text pr-4">Description: </span>
+					{{ property.details.description }}
+				</div>
+			</v-card>
+
+			<div class="button_container">
+				<v-btn id="btnVerify" @click="verifyProperty" outline color="p_purple" class="title button">VERIFY</v-btn>
+				<v-btn v-if="!property.listed" id="btnList" @click="listProperty" outline color="p_blue" class="title button">LIST</v-btn>
+				<v-btn v-if="property.listed" id="btnUnlist" @click="unlistProperty" outline color="p_orange" class="title button">UNLIST</v-btn>
+				<v-btn id="btnBack" @click="back" outline color="p_text" class="title button">BACK</v-btn>
+				<v-btn id="btnRemove" @click="removeProperty" outline color="p_red" class="title button">REMOVE PROPERTY</v-btn>
+			</div>
+		</v-container>
+	</v-layout>
+</template>
+
+<script>
+import axios from 'axios'
+
+export default {
+	data () {
+		return {
+			property: null,
+			renderKey: 0
+		}
+	},
+	methods: {
+		async get_property () {
+			const response = await axios.get('http://localhost:3000/api/properties/' + this.propertyId,
+				{
+					headers: {
+						Authorization: 'Bearer ' + localStorage.token
+					}
+				})
+			this.property = response.data.result
+		},
+
+		verifyProperty () {
+
+		},
+
+		async listProperty () {
+			const config = {
+				headers: {
+					Authorization: 'Bearer ' + localStorage.token
+				}
+			}
+			await axios.put('http://localhost:3000/api/properties/' + this.propertyId + '/update', { listed: true }, config)
+
+			this.$router.push('/seller/properties')
+		},
+
+		async unlistProperty () {
+			const config = {
+				headers: {
+					Authorization: 'Bearer ' + localStorage.token
+				}
+			}
+			await axios.put('http://localhost:3000/api/properties/' + this.propertyId + '/update', { listed: false }, config)
+
+			this.$router.push('/seller/properties')
+		},
+
+		async removeProperty () {
+			const config = {
+				headers: {
+					Authorization: 'Bearer ' + localStorage.token
+				}
+			}
+
+			await axios.delete('http://localhost:3000/api/properties/delete/' + this.propertyId, config)
+			this.$router.push('/seller/properties')
+		},
+
+		back () {
+			this.$router.push('/seller/properties')
+		},
+
+		forceRerender () {
+			this.renderKey += 1
+		}
+
+	},
+	computed: {
+		propertyId () {
+			return this.$route.params.property_id
+		}
+	},
+	mounted () {
+		this.forceRerender()
+		this.get_property()
+	}
+}
+</script>
+
+<style>
+.panel {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(4, minmax(20vh, auto));
+	grid-gap: 50px;
+	max-width: 100%;
+}
+
+.property-details {
+	grid-row: 1 / 3;
+	border-radius: 20px;
+}
+
+	.details {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		grid-template-rows: repeat(5, minmax(10vh, auto));
+		grid-gap: 20px;
+		padding: 2vw;
+	}
+
+	.property-name {
+		grid-column: 1 / 3;
+		grid-row: 1;
+		padding: 10px;
+		border-radius: 25px;
+		word-wrap: break-word;
+	}
+
+	.street {
+		grid-column: 1 / 2;
+		grid-row: 2;
+		padding: 10px;
+		border-radius: 25px;
+		overflow-wrap: break-word;
+		word-wrap: break-word;
+		hyphens: auto;
+	}
+
+	.city {
+		grid-column: 2 / 3;
+		grid-row: 2;
+		padding: 10px;
+		border-radius: 25px;
+		overflow-wrap: break-word;
+		word-wrap: break-word;
+		hyphens: auto;
+	}
+
+	.country {
+		grid-column: 1 / 2;
+		grid-row: 3;
+		padding: 10px;
+		border-radius: 25px;
+	}
+
+	.post-code {
+		grid-column: 2 / 3;
+		grid-row: 3;
+		padding: 10px;
+		border-radius: 25px;
+	}
+
+	.property-type {
+		grid-column: 1 / 2;
+		grid-row: 4;
+		border-radius: 25px;
+		padding: 10px;
+	}
+
+	.property-type option {
+		background-color: #1e232a;
+	}
+
+	.p-size {
+		grid-column: 2 / 3;
+		grid-row: 4;
+		border-radius: 25px;
+		padding: 10px;
+	}
+
+	.bed-count {
+		grid-column: 1 / 2;
+		grid-row: 5;
+		border-radius: 25px;
+		padding: 10px;
+	}
+
+	.bath-count {
+		grid-column: 2 / 3;
+		grid-row: 5;
+		border-radius: 25px;
+		padding: 10px;
+	}
+
+.property-details-2 {
+	border-radius: 20px;
+}
+
+	.details-2 {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(2, minmax(10vh, auto));
+		grid-gap: 20px;
+		padding: 2vw;
+		max-width: 100%;
+	}
+
+	.p-price {
+		grid-column: 1 / 2;
+		grid-row: 1;
+		border-radius: 25px;
+		padding: 10px;
+	}
+
+	.p-deposit {
+		grid-column: 2 / 3;
+		grid-row: 1;
+		border-radius: 25px;
+		padding: 10px;
+	}
+
+	.p-available-from {
+		grid-column: 1 / 3;
+		grid-row: 2;
+		border-radius: 25px;
+		padding: 10px;
+	}
+
+.property-description {
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	grid-row: 3 / 5;
+	padding: 20px;
+	border-radius: 20px;
+}
+
+	.property-description p-description {
+		border-radius: 20px;
+	}
+
+.image-upload-container {
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	grid-template-rows: repeat(1, auto);
+	grid-row: 2 / 4;
+	padding: 20px;
+	border-radius: 20px;
+}
+
+.upload-panel {
+	grid-row: 1;
+	grid-column: 1;
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	grid-template-rows: repeat(1, auto);
+	width: 100%;
+	height: 100%;
+}
+
+.button_container {
+	grid-row: 4 / 5;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(2, 15vh);
+	align-items: center;
+	justify-content: center;
+	border-radius: 20px;
+}
+
+.button {
+	border-radius: 10px;
+	width: 20vw;
+	height: 10vh;
+}
+
+.v-chip {
+	white-space: normal;
+	flex-wrap: wrap;
+}
+
+</style>

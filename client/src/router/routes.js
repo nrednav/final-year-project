@@ -1,4 +1,4 @@
-function redirect_if_logged_in(to, from, next) {
+function redirect_if_logged_in (to, from, next) {
 	if (localStorage.token) {
 		next('/select-profile')
 	} else {
@@ -6,7 +6,7 @@ function redirect_if_logged_in(to, from, next) {
 	}
 }
 
-function logged_in(to, from, next) {
+function logged_in (to, from, next) {
 	if (localStorage.token) {
 		next()
 	} else {

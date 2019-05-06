@@ -196,7 +196,7 @@ export default {
 			}
 		},
 		cancel () {
-
+			this.$router.push('/seller/dashboard')
 		},
 		formError () {
 			this.formInvalid = true

@@ -58,7 +58,7 @@ router.get('/', function(req, res, next) {
 });
 
 /* GET property by id*/
-router.get('/get/:property_id', (req, res, next) => {
+router.get('/:property_id', (req, res, next) => {
 	const property_id = req.params.property_id;
 	Property.findOne({
 		_id: property_id
@@ -81,6 +81,20 @@ router.get('/:property_id/images/:image_id', (req, res, next) => {
 		console.log(file);
 		res.contentType(file.contentType);
 		res.send(file);
+	});
+});
+
+
+/* PUT - update property details */
+router.put('/:property_id/update', (req, res, next) => {
+	console.log(req.body.listed)
+	console.log(req.params.property_id)
+	Property.updateOne({
+		_id: req.params.property_id
+	}, {$set: { listed: req.body.listed }}, (err, result) => {
+		res.json({
+			result
+		});
 	});
 });
 
