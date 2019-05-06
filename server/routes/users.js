@@ -45,6 +45,25 @@ router.get('/:user_id/properties', (req, res, next) => {
 	});
 });
 
+
+/* PUT update user */
+router.put('/:user_id/remove/:property_id', (req, res, next) => {
+	console.log(req.params);
+	let user_id = new mongoose.Types.ObjectId(req.params.user_id)
+	let property_id = new mongoose.Types.ObjectId(req.params.property_id)
+	User.update({}, {
+		$pull: {
+			'profiles.seller.properties':  property_id
+		}
+	}, {
+		multi: true
+	}, (err, result) => {
+		res.json({
+			result
+		});
+	});
+});
+
 function getProperty(property_id) {
 	Property.findOne({
 		_id: property_id

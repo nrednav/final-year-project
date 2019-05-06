@@ -1,6 +1,6 @@
 <template>
 	<div class="property-list-container">
-		<v-container>
+		<v-container v-if="properties.length > 0">
 
 			<v-card @click="viewProperty(property._id)" class="pa-4 primary property-card" v-for="property in properties" :key="property._id">
 				<v-layout row wrap class="">
@@ -63,6 +63,11 @@
 			</v-card>
 
 		</v-container>
+
+		<div v-if="properties.length == 0" class="pa-4 display-1 p_text--text font-weight-bold text-xs-center">
+			No properties found
+		</div>
+
 	</div>
 </template>
 

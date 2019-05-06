@@ -151,6 +151,8 @@ export default {
 			}
 
 			await axios.delete('http://localhost:3000/api/properties/delete/' + this.propertyId, config)
+			await axios.put('http://localhost:3000/api/users/' + this.property.details.owner + '/remove/' + this.propertyId, { id: this.propertyId }, config)
+
 			this.$router.push('/seller/properties')
 		},
 
