@@ -118,6 +118,7 @@ export default {
 		},
 		imagesUploaded (formData, index, fileList, imageFiles) {
 			this.images = imageFiles
+			console.log(imageFiles)
 		},
 		imageEdited (formData, index, fileList, imageFiles) {
 			this.images = imageFiles

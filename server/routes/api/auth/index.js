@@ -57,10 +57,10 @@ router.post('/register', (req, res, next) => {
 	const result = Joi.validate(req.body, registration_schema);
 
 	if (result.error === null) {
-		UserModel.find({
+		UserModel.findOne({
 			email: req.body.email
 		}).then(user => {
-			if (user.length != 0) {
+			if (user) {
 				const error = new Error('That email is already taken.');
 				res.status(409);
 				next(error);
