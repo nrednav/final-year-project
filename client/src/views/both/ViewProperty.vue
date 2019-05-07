@@ -86,8 +86,35 @@
 			</v-card>
 
 			<div class="button_container">
-				<v-btn id="btnVerify" @click="verifyProperty" outline color="p_purple" class="title button">VERIFY</v-btn>
-				<v-btn v-if="!property.listed" id="btnList" @click="listProperty" outline color="p_blue" class="title button">LIST</v-btn>
+				<v-btn
+					v-if="!property.verified"
+					id="btnVerify"
+					@click="verifyProperty"
+					outline
+					color="p_purple"
+					class="title button">VERIFY</v-btn>
+				<v-btn
+					v-if="verification_underway"
+					id="btnVerify"
+					outline
+					color="p_purple"
+					class="title button">VERIFYING</v-btn>
+				<v-btn
+					v-if="property.verified"
+					outline
+					color="p_purple"
+					class="title button">
+					<v-icon class="pr-4 p_green--text">fas fa-check-circle</v-icon>
+					VERIFIED
+				</v-btn>
+				<v-btn
+					v-if="!property.listed"
+					id="btnList"
+					@click="listProperty"
+					outline
+					color="p_blue"
+					:class="{'disable-click': !property.verified}"
+					class="title button">LIST</v-btn>
 				<v-btn v-if="property.listed" id="btnUnlist" @click="unlistProperty" outline color="p_orange" class="title button">UNLIST</v-btn>
 				<v-btn id="btnBack" @click="back" outline color="p_text" class="title button">BACK</v-btn>
 				<v-btn id="btnRemove" @click="removeProperty" outline color="p_red" class="title button">REMOVE PROPERTY</v-btn>
@@ -97,6 +124,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import axios from 'axios'
 
 export default {
@@ -168,7 +196,11 @@ export default {
 	computed: {
 		propertyId () {
 			return this.$route.params.property_id
-		}
+		},
+		verification_underway () {
+			return (!this.property.verified && (this.property_verification_status !== ''))
+		},
+		...mapGetters(['property_verification_status'])
 	},
 	mounted () {
 		this.forceRerender()
@@ -362,6 +394,11 @@ export default {
 .v-chip {
 	white-space: normal;
 	flex-wrap: wrap;
+}
+
+.disable-click {
+	pointer-events: none;
+	opacity: 0.5;
 }
 
 </style>

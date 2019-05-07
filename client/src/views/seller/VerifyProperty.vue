@@ -1,21 +1,253 @@
 <template>
-	<v-layout column>
-		<v-flex>
-			Hello
-		</v-flex>
+	<v-layout column class="main-container">
+		<h1 class="display-3 p_text--text font-weight-bold">Property Verification</h1>
+
+		<div class="card-container">
+			<v-card
+				v-if="verificationRequested"
+				class="primary p_text--text pa-4 loading-container display-1">
+				<v-progress-circular
+					:size="250"
+					:width="10"
+					color="p_green"
+					indeterminate>
+				</v-progress-circular>
+				<div class="pa-4 headline loading-msg">
+					You property is now being verified. You may wait here or proceed
+					to the home screen.
+				</div>
+				<v-btn @click="goBack"
+					color="p_text"
+					outline
+					class="title btnBack">
+					BACK
+				</v-btn>
+			</v-card>
+			<v-card v-if="!verificationRequested" class="primary p_text--text pa-4 verification-card display-1">
+
+				<div class="property-meta-container headline p_text--text">
+					<div class="pa-4 p-meta-id">
+						Property ID:
+						<span class="p_input_text--text pa-4">
+							{{ property._id }}
+						</span>
+					</div>
+					<div class="pa-4 p-meta-name">
+						Property Name:
+						<span class="p_input_text--text pa-4">
+							{{ property.details.name }}
+						</span>
+					</div>
+					<div class="pa-4 p-meta-address">
+						Address:
+						<span class="p_input_text--text pa-4">
+							{{ property.details.address.street }},
+							{{ property.details.address.city }},
+							{{ property.details.address.country }},
+							{{ property.details.address.post_code }}
+						</span>
+					</div>
+				</div>
+
+				<div class="pt-4 upload-container headline">
+					Please upload a copy of your title deed to continue:-
+					<v-btn
+						@click="$refs.fileInput.click()"
+						id="btnUpload"
+						color="p_blue"
+						outline
+						class="title">
+						UPLOAD DOCUMENT
+					</v-btn>
+					<input
+						id="input"
+						v-show="false"
+						ref="fileInput" type="file" @change="upload_document">
+
+					<div class="tdh-container title">
+						Your document's hash is:
+						<span>
+							<b class="p_green--text">
+								{{ title_deed_hash }}
+							</b>
+						</span>
+					</div>
+				</div>
+
+				<div class="pt-4 button-container">
+					<v-btn
+						@click="goBack"
+						color="p_text"
+						outline
+						class="title btnBack">
+						BACK
+					</v-btn>
+					<v-btn
+						@click="verifyProperty"
+						color="p_purple"
+						outline
+						:class="{'disable-click': !documentUploaded }"
+						class="title btnVerify">
+						VERIFY
+					</v-btn>
+				</div>
+
+			</v-card>
+		</div>
 	</v-layout>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+import web3 from '@/web3.js'
+import axios from 'axios'
+
 export default {
 	data () {
 		return {
-
+			title_deed_hash: '',
+			documentUploaded: false,
+			verificationRequested: false
 		}
+	},
+	methods: {
+		get_property () {
+			this.$store.dispatch('get_property_data', { property_id: this.propertyId })
+		},
+
+		async upload_document (event) {
+			var files = event.target.files
+			var selectedFile = files[0]
+			var reader = new FileReader()
+
+			reader.onload = async (event) => {
+				let hash = await web3.utils.sha3(event.target.result)
+
+				await axios.post('http://localhost:3000/api/land-registry/add-entry', {
+					title_deed_hash: hash,
+					owner_name: this.property.details.owner
+				}, { headers: { Authorization: 'a1b2c3d4e5f6g7' } })
+					.then((response) => {
+						this.title_deed_hash = hash
+						this.documentUploaded = true
+					})
+
+				// this.documentUploaded = true
+			}
+
+			reader.readAsBinaryString(selectedFile)
+		},
+
+		verifyProperty () {
+			this.verificationRequested = true
+		},
+
+		goBack () {
+			this.$router.go(-1)
+		}
+	},
+	computed: {
+		...mapGetters([
+			'property',
+			'user_id'
+		]),
+		propertyId () {
+			return this.$route.params.property_id
+		}
+	},
+	mounted () {
+		this.get_property()
 	}
 }
 </script>
 
 <style>
+
+.main-container {
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	justify-items: center;
+	align-items: center;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	hyphens: auto;
+}
+
+.card-container {
+	width: 90%;
+	height: 75%;
+}
+
+	.verification-card {
+		height: 100%;
+		border-radius: 25px;
+		display: grid;
+		grid-template-rows: repeat(3, 1fr);
+		align-items: center;
+		justify-items: center;
+	}
+
+.upload-container {
+	display: flex;
+	grid-row: 2;
+	flex-direction: column;
+	justify-items: center;
+	align-items: center;
+	padding: 10px;
+	flex-wrap: wrap
+}
+
+	#btnUpload {
+		width: 50%;
+		height: 10vh;
+		border-radius: 15px;
+		margin: 25px;
+	}
+
+.property-meta-container {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(2, auto);
+	align-items: center;
+	justify-items: center;
+}
+
+.p-meta-address {
+	grid-column: 1 / 3;
+	grid-row: 2;
+}
+
+.button-container {
+	grid-row: 3 / 4;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	border-radius: 20px;
+	width: 100%;
+}
+
+.btnBack {
+	height: 10vh;
+	border-radius: 10px;
+}
+
+.btnVerify {
+	height: 10vh;
+	border-radius: 10px;
+}
+
+.disable-click {
+	pointer-events: none;
+	opacity: 0.5;
+}
+
+.loading-container {
+	display: grid;
+	align-items: center;
+	justify-items: center;
+}
+
+	.loading-msg {
+		text-align: center;
+	}
 
 </style>
