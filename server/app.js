@@ -14,6 +14,7 @@ var authRouter = require('./routes/api/auth');
 var sessionRouter = require('./routes/api/session');
 var propertyRouter = require('./routes/api/property');
 var screeningRouter = require('./routes/api/background-screening');
+var landregistryRouter = require('./routes/api/land-registry');
 
 var app = express();
 
@@ -38,6 +39,7 @@ app.use('/api/screening', screeningRouter);
 app.use('/api/users', auth_middleware.verify_login_status, usersRouter);
 app.use('/api/sessions', auth_middleware.verify_login_status, sessionRouter);
 app.use('/api/properties', auth_middleware.verify_login_status, propertyRouter);
+app.use('/api/land-registry', auth_middleware.verify_requester, landregistryRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

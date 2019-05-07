@@ -32,7 +32,20 @@ function verify_login_status(req, res, next) {
 	}
 }
 
+function verify_requester(req, res, next) {
+	const auth_header = req.get('authorization')
+
+	if (auth_header == 'a1b2c3d4e5f6g7') {
+		next();
+	} else {
+		res.json({
+			error: 'You are not authorized to make this request'
+		});
+	}
+}
+
 module.exports = {
 	verify_token,
-	verify_login_status
+	verify_login_status,
+	verify_requester
 };
