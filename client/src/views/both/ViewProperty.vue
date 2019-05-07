@@ -87,20 +87,20 @@
 
 			<div class="button_container">
 				<v-btn
-					v-if="!property.verified"
+					v-if="property.verified == 0"
 					id="btnVerify"
 					@click="verifyProperty"
 					outline
 					color="p_purple"
 					class="title button">VERIFY</v-btn>
 				<v-btn
-					v-if="verification_underway"
+					v-if="property.verified == 1 || property.verified == 2"
 					id="btnVerify"
 					outline
 					color="p_purple"
 					class="title button">VERIFYING</v-btn>
 				<v-btn
-					v-if="property.verified"
+					v-if="property.verified == 3"
 					outline
 					color="p_purple"
 					class="title button">
@@ -113,7 +113,7 @@
 					@click="listProperty"
 					outline
 					color="p_blue"
-					:class="{'disable-click': !property.verified}"
+					:class="{'disable-click': property.verified == 0}"
 					class="title button">LIST</v-btn>
 				<v-btn v-if="property.listed" id="btnUnlist" @click="unlistProperty" outline color="p_orange" class="title button">UNLIST</v-btn>
 				<v-btn id="btnBack" @click="back" outline color="p_text" class="title button">BACK</v-btn>
@@ -136,51 +136,34 @@ export default {
 	},
 	methods: {
 		async get_property () {
-			const response = await axios.get('http://localhost:3000/api/properties/' + this.propertyId,
-				{
-					headers: {
-						Authorization: 'Bearer ' + localStorage.token
-					}
-				})
+			const response = await axios.get('http://localhost:3000/api/properties/' + this.propertyId, this.route_config)
 			this.property = response.data.result
 		},
 
 		verifyProperty () {
-			this.$router.push('/seller/properties/' + this.propertyId + '/verify')
+			const options = {
+				verified: 1
+			}
+			axios.put('http://localhost:3000/api/properties/' + this.propertyId + '/update', options, this.route_config).then((response) => {
+				if (response.status === 200) {
+					this.$router.push('/seller/properties/' + this.propertyId + '/verify')
+				}
+			})
 		},
 
 		async listProperty () {
-			const config = {
-				headers: {
-					Authorization: 'Bearer ' + localStorage.token
-				}
-			}
-			await axios.put('http://localhost:3000/api/properties/' + this.propertyId + '/update', { listed: true }, config)
-
+			await axios.put('http://localhost:3000/api/properties/' + this.propertyId + '/update', { listed: true }, this.route_config)
 			this.$router.push('/seller/properties')
 		},
 
 		async unlistProperty () {
-			const config = {
-				headers: {
-					Authorization: 'Bearer ' + localStorage.token
-				}
-			}
-			await axios.put('http://localhost:3000/api/properties/' + this.propertyId + '/update', { listed: false }, config)
-
+			await axios.put('http://localhost:3000/api/properties/' + this.propertyId + '/list', { listed: false }, this.route_config)
 			this.$router.push('/seller/properties')
 		},
 
 		async removeProperty () {
-			const config = {
-				headers: {
-					Authorization: 'Bearer ' + localStorage.token
-				}
-			}
-
-			await axios.delete('http://localhost:3000/api/properties/delete/' + this.propertyId, config)
-			await axios.put('http://localhost:3000/api/users/' + this.property.details.owner + '/remove/' + this.propertyId, { id: this.propertyId }, config)
-
+			await axios.delete('http://localhost:3000/api/properties/delete/' + this.propertyId, this.route_config)
+			await axios.put('http://localhost:3000/api/users/' + this.property.details.owner + '/remove/' + this.propertyId, { id: this.propertyId }, this.route_config)
 			this.$router.push('/seller/properties')
 		},
 
@@ -197,10 +180,7 @@ export default {
 		propertyId () {
 			return this.$route.params.property_id
 		},
-		verification_underway () {
-			return (!this.property.verified && (this.property_verification_status !== ''))
-		},
-		...mapGetters(['property_verification_status'])
+		...mapGetters(['route_config'])
 	},
 	mounted () {
 		this.forceRerender()

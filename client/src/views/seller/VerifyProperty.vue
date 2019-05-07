@@ -1,10 +1,12 @@
 <template>
 	<v-layout column class="main-container">
-		<h1 class="display-3 p_text--text font-weight-bold">Property Verification</h1>
+		<h1
+			v-if="property.verified == 1 || property.verified == 2"
+			class="display-3 p_text--text font-weight-bold">Property Verification</h1>
 
 		<div class="card-container">
 			<v-card
-				v-if="verificationRequested"
+				v-if="property.verified == 2 || verificationRequested"
 				class="primary p_text--text pa-4 loading-container display-1">
 				<v-progress-circular
 					:size="250"
@@ -13,7 +15,7 @@
 					indeterminate>
 				</v-progress-circular>
 				<div class="pa-4 headline loading-msg">
-					You property is now being verified. You may wait here or proceed
+					Your property is now being verified. You may choose to wait here or proceed
 					to the home screen.
 				</div>
 				<v-btn @click="goBack"
@@ -22,8 +24,12 @@
 					class="title btnBack">
 					BACK
 				</v-btn>
+				<div
+					v-if="property.verified == 3" class="pa-4 display-1 p_text--text font-weight-bold text-xs-center">
+					Your property has already been verified.
+				</div>
 			</v-card>
-			<v-card v-if="!verificationRequested" class="primary p_text--text pa-4 verification-card display-1">
+			<v-card v-if="property.verified == 1" class="primary p_text--text pa-4 verification-card display-1">
 
 				<div class="property-meta-container headline p_text--text">
 					<div class="pa-4 p-meta-id">
@@ -131,25 +137,27 @@ export default {
 						this.title_deed_hash = hash
 						this.documentUploaded = true
 					})
-
-				// this.documentUploaded = true
 			}
-
 			reader.readAsBinaryString(selectedFile)
 		},
 
-		verifyProperty () {
+		async verifyProperty () {
+			const options = {
+				verified: 2
+			}
+			await axios.put('http://localhost:3000/api/properties/' + this.propertyId + '/update', options, this.route_config)
 			this.verificationRequested = true
 		},
 
 		goBack () {
-			this.$router.go(-1)
+			this.$router.push('/seller/properties/' + this.propertyId)
 		}
 	},
 	computed: {
 		...mapGetters([
 			'property',
-			'user_id'
+			'user_id',
+			'route_config'
 		]),
 		propertyId () {
 			return this.$route.params.property_id

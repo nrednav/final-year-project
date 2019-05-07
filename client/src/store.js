@@ -16,8 +16,7 @@ export default new Vuex.Store({
 		},
 		picture: require('@/assets/Blue_Mountains.jpg'),
 		session_critical: false,
-		property: null,
-		property_verification_status: 'pending'
+		property: null
 	},
 	getters: {
 		user_authenticated: state => {
@@ -35,8 +34,13 @@ export default new Vuex.Store({
 		property: state => {
 			return state.property
 		},
-		property_verification_status: state => {
-			return state.property_verification_status
+		route_config: state => {
+			const config = {
+				headers: {
+					Authorization: 'Bearer ' + localStorage.token
+				}
+			}
+			return config
 		}
 	},
 	mutations: {
@@ -53,9 +57,6 @@ export default new Vuex.Store({
 		},
 		add_property_data (state, payload) {
 			state.property = payload.property
-		},
-		update_property_verification_status (state, payload) {
-			state.property_verification_status = payload.status
 		}
 	},
 	actions: {

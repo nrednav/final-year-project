@@ -86,12 +86,28 @@ router.get('/:property_id/images/:image_id', (req, res, next) => {
 
 
 /* PUT - update property details */
-router.put('/:property_id/update', (req, res, next) => {
+router.put('/:property_id/list', (req, res, next) => {
 	console.log(req.body.listed)
 	console.log(req.params.property_id)
 	Property.updateOne({
 		_id: req.params.property_id
 	}, {$set: { listed: req.body.listed }}, (err, result) => {
+		res.json({
+			result
+		});
+	});
+});
+
+/* PUT - update property with options */
+router.put('/:property_id/update', (req, res, next) => {
+	console.log('Got request....');
+	console.log('Options received are:-');
+	console.log(req.body.options);
+	console.log('Commiting update now...');
+	Property.updateOne({
+		_id: req.params.property_id
+	}, {$set: req.body.options}, (err, result) => {
+		if (err) console.log(err);
 		res.json({
 			result
 		});

@@ -64,8 +64,8 @@ const PropertySchema = new mongoose.Schema({
 		images: [String]
 	},
 	verified: {
-		type: Boolean,
-		default: false
+		type: Number,
+		default: 0
 	},
 	listed: {
 		type: Boolean,

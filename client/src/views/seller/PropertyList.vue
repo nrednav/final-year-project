@@ -16,10 +16,17 @@
 					</v-flex>
 
 					<v-flex xs12 md6>
-						<div class="title p_text--text font-weight-bold">Verified</div>
-						<div>
-							<v-icon color="p_green" v-if="property.verified">fas fa-check</v-icon>
-							<v-icon color="p_red" v-if="!property.verified">fas fa-times</v-icon>
+						<div class="title p_text--text font-weight-bold">Verification Status</div>
+						<div class="p_yellow--text">
+							<v-icon color="p_green" v-if="property.verified == 3">fas fa-check</v-icon>
+							<v-icon
+								color="p_yellow"
+								v-if="property.verified == 1 || property.verified == 2">
+								fas fa-spinner</v-icon>
+							<v-icon color="p_red" v-if="property.verified == 0">fas fa-times</v-icon>
+							<span v-if="property.verified == 0" class="p_red--text pl-2">-- Incomplete</span>
+							<span v-if="property.verified == 1 || property.verified == 2" class="p_yellow--text pl-2">-- Pending</span>
+							<span v-if="property.verified == 3" class="p_green--text pl-2">-- Complete</span>
 						</div>
 					</v-flex>
 
@@ -72,6 +79,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import axios from 'axios'
 
 export default {
@@ -82,11 +90,7 @@ export default {
 	},
 	methods: {
 		async get_properties () {
-			const result = await axios.get('http://localhost:3000/api/users/' + this.user_id + '/properties', {
-				headers: {
-					Authorization: 'Bearer ' + localStorage.token
-				}
-			})
+			const result = await axios.get('http://localhost:3000/api/users/' + this.user_id + '/properties', this.route_config)
 			this.properties = result.data.properties
 		},
 		viewProperty (propertyId) {
@@ -99,7 +103,8 @@ export default {
 	computed: {
 		user_id () {
 			return this.$store.state.user.id
-		}
+		},
+		...mapGetters(['route_config'])
 	}
 }
 </script>
