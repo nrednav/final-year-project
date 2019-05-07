@@ -61,9 +61,9 @@ router.post('/register', (req, res, next) => {
 			email: req.body.email
 		}).then(user => {
 			if (user) {
-				const error = new Error('That email is already taken.');
-				res.status(409);
-				next(error);
+				res.json({
+					error: 'email taken'
+				});
 			}
 			else {
 				bcrypt.hash(req.body.password.trim(), 5).then(hashed_password => {
@@ -75,6 +75,9 @@ router.post('/register', (req, res, next) => {
 					}, (err, user) => {
 						if (err) next(err);
 						console.log(user);
+						res.json({
+							error: 'none'
+						});
 					});
 				});
 			}

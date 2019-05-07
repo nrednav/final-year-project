@@ -2,6 +2,15 @@
 	<div class="authentication">
 		<h1 class="heading white--text">Authentication</h1>
 
+		<v-alert v-model="formInvalid" dismissible type="error">
+			<span><b>Please correct the following error(s):- </b></span>
+			<ul>
+				<li v-for="(error, index) in errors" :key="index">
+					{{ error }}
+				</li>
+			</ul>
+		</v-alert>
+
 		<v-container class="my-5 mx-5">
 			<v-layout align-center justify-center column>
 				<v-flex>
@@ -80,7 +89,9 @@ export default {
 				lname: '',
 				email: '',
 				password: ''
-			}
+			},
+			formInvalid: false,
+			errors: []
 		}
 	},
 	methods: {
@@ -95,55 +106,107 @@ export default {
 			container.classList.add('right-panel-active')
 		},
 		async load_accounts () {
-			let addresses = await window.ethereum.enable()
-			this.selected_addr = addresses[0]
+			if (window.ethereum !== 'undefined') {
+				let addresses = await window.ethereum.enable()
+				this.selected_addr = addresses[0]
+			} else {
+				alert('Please download and install the Metamask browser addon to continue')
+			}
+		},
+		isRegisterFormEmpty () {
+			this.errors = []
+			if (this.register_details.fname === '' ||
+				this.register_details.lname === '' ||
+				this.register_details.email === '' ||
+				this.register_details.password === '') {
+				this.formInvalid = true
+				this.errors.push('One or more fields have been left empty')
+				return true
+			}
+			this.formInvalid = false
+			return false
+		},
+		isLoginFormEmpty () {
+			this.errors = []
+			if (this.login_details.email === '' || this.login_details.password === '') {
+				this.formInvalid = true
+				this.errors.push('One or more fields have been left empty')
+				return true
+			}
+			this.formInvalid = false
+			return false
 		},
 		login () {
-			const body = {
-				email: this.login_details.email,
-				password: this.login_details.password,
-				account_address: this.selected_addr
-			}
-
-			axios.post(authUri + '/login', body)
-				.then(res => {
-					if (res.statusText === 'OK') {
-						localStorage.token = res.data.token
-						this.login_details = {
-							email: '',
-							password: ''
-						}
-						this.$store.dispatch('update_user_status', { type: '' })
-						this.$router.push('/select-profile')
+			if (!this.isLoginFormEmpty()) {
+				if (this.selected_addr !== '') {
+					const body = {
+						email: this.login_details.email,
+						password: this.login_details.password,
+						account_address: this.selected_addr
 					}
-				})
-				.catch(err => console.error(err))
+
+					axios.post(authUri + '/login', body)
+						.then(res => {
+							if (res.statusText === 'OK') {
+								localStorage.token = res.data.token
+								this.login_details = {
+									email: '',
+									password: ''
+								}
+								this.$store.dispatch('update_user_status', { type: '' })
+								this.$router.push('/select-profile')
+							}
+						})
+						.catch(err => {
+							console.log(err)
+							this.errors = []
+							this.errors.push('Incorrect email or password entered')
+							this.formInvalid = true
+						})
+				} else {
+					alert('Please login to metamask to continue')
+				}
+			}
 		},
 		register: function () {
-			const body = {
-				email: this.register_details.email,
-				password: this.register_details.password,
-				name: this.register_details.fname + ' ' + this.register_details.lname,
-				account_address: this.selected_addr
-			}
+			if (!this.isRegisterFormEmpty()) {
+				if (this.selected_addr !== '') {
+					const body = {
+						email: this.register_details.email,
+						password: this.register_details.password,
+						name: this.register_details.fname + ' ' + this.register_details.lname,
+						account_address: this.selected_addr
+					}
 
-			axios.post('http://localhost:3000/api/auth/register', body).then((res) => {
-				console.log(res)
-			})
-				.catch((err) => {
-					console.log(err)
-				})
+					axios.post('http://localhost:3000/api/auth/register', body).then((res) => {
+						console.log(res)
+						if (res.data.error === 'email taken') {
+							this.errors = []
+							this.errors.push('Sorry, that email address is already taken.')
+							this.formInvalid = true
+						} else if (res.data.error === 'none') {
+							this.register_details = {
+								fname: '',
+								lname: '',
+								email: '',
+								password: ''
+							}
 
-			this.register_details = {
-				fname: '',
-				lname: '',
-				email: '',
-				password: ''
-			}
-
-			// Send to database and redirect to login form
-			if (this.register_details.fname === '') {
-				this.load_login_form()
+							// Send to database and redirect to login form
+							if (this.register_details.fname === '') {
+								this.load_login_form()
+							}
+						}
+					})
+						.catch((err) => {
+							console.log(err)
+							this.errors = []
+							this.errors.push('Invalid first name, last name or email address')
+							this.formInvalid = true
+						})
+				} else {
+					alert('Please login to metamask to continue')
+				}
 			}
 		}
 	},

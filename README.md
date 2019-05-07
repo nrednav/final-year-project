@@ -35,12 +35,12 @@
 		- [x] Create the signup/login slider form
 			- [ ] Increase size of form
 			- [ ] Add confirm password and confirm email input fields
-			- [ ] Add client-side validation to form with Joi
-			- [ ] Prevent user from registering or logging in unless metamask is enabled
+			- [x] Add client-side validation manually
+			- [x] Prevent user from registering or logging in unless metamask is enabled
 		- [x] Create profile selection screen
 		- [x] Create buyer dashboard
 		- [x] Create seller dashboard
-		- [ ] Add validation
+		- [x] Add validation
 	- [ ] Create buyer interfaces
 		- [ ] ...
 		- [ ] Add validation
