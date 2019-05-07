@@ -13,6 +13,7 @@ var usersRouter = require('./routes/users');
 var authRouter = require('./routes/api/auth');
 var sessionRouter = require('./routes/api/session');
 var propertyRouter = require('./routes/api/property');
+var screeningRouter = require('./routes/api/background-screening');
 
 var app = express();
 
@@ -33,6 +34,7 @@ app.use(auth_middleware.verify_token);
 // Routing
 app.use('/', indexRouter);
 app.use('/api/auth', authRouter);
+app.use('/api/screening', screeningRouter);
 app.use('/api/users', auth_middleware.verify_login_status, usersRouter);
 app.use('/api/sessions', auth_middleware.verify_login_status, sessionRouter);
 app.use('/api/properties', auth_middleware.verify_login_status, propertyRouter);
