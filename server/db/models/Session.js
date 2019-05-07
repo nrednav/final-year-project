@@ -62,6 +62,10 @@ const SessionSchema = new mongoose.Schema({
 				type: String,
 				default: "ASR",
 				enum: ["ASR", "Pending", "Verified", "Failed"]
+			},
+			buyer_screening_uid: {
+				type: String,
+				default: ""
 			}
 		},
 		3: {

@@ -1,25 +1,46 @@
 var express = require('express');
+var mongoose = require('mongoose');
 var router = express.Router();
 
 const ScreeningReport = require('../../../db/models/ScreeningReport').ScreeningReport;
+const User = require('../../../db/models/User').User;
 
 /* Create report */
 router.post('/add-report', (req, res, next) => {
-	console.log("Request received, got address:", req.body.account_address);
-	ScreeningReport.create({ buyer_address: req.body.account_address }, (err, report) => {
+	let buyer_address = req.body.account_address;
+	let screening_uid = req.body.uid;
+	let user_id = new mongoose.Types.ObjectId(req.body.user_id);
+
+	ScreeningReport.create({
+		buyer_address: buyer_address,
+		screening_uid: screening_uid,
+	}, (err, report) => {
 		if (err) console.log(err);
-		res.json({
-			report_id: report._id
-		});
+
+		// Add to users buyer profile
+		if (report) {
+			User.findOneAndUpdate({
+				_id: user_id
+			}, {
+				'profiles.buyer.screening_uid': screening_uid
+			}, (err, result) => {
+				console.log(result);
+				res.json({
+					result
+				});
+			});
+		}
 	});
 });
 
 /* Verify user */
-router.get('/get-report/:account_address', (req, res, next) => {
+router.get('/get-report/:screening_uid', (req, res, next) => {
 	const auth_header = req.get('authorization');
 
 	if (auth_header == 'a1b2c3d4e5f6g7') {
-		ScreeningReport.findOne({ buyer_address: req.params.account_address },
+		ScreeningReport.findOne({
+			screening_uid: req.params.screening_uid
+		},
 			(err, result) => {
 				if (err) console.log(err);
 				console.log(result)
@@ -36,5 +57,6 @@ router.get('/get-report/:account_address', (req, res, next) => {
 		});
 	}
 });
+
 
 module.exports = router;

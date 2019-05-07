@@ -45,7 +45,6 @@ router.get('/:user_id/properties', (req, res, next) => {
 	});
 });
 
-
 /* PUT update user */
 router.put('/:user_id/remove/:property_id', (req, res, next) => {
 	console.log(req.params);

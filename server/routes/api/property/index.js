@@ -146,13 +146,41 @@ router.post('/create', upload.array('files'), (req, res, next) => {
 
 /* DELETE - delete a property */
 router.delete('/delete/:property_id', (req, res, next) => {
-	Property.deleteOne({
+
+	let image_ids = []
+
+	// Get image id's
+	Property.findOne({
 		_id: req.params.property_id
-	}, (err) => {
-		if (err) handleError(err, res, next);
-		res.send(`Property ${req.params.property_id} was deleted successfully`);
+	}, (err, property) => {
+		image_ids = property.details.images;
+
+		for (var i in image_ids) {
+			deletePropertyImage(image_ids[i]);
+		}
+
+		deleteProperty(req.params.property_id, res, next);
 	});
 });
+
+function deletePropertyImage(image_id) {
+	gfs.remove({
+		_id: image_id
+	}, (err, gridStore) => {
+		if (err) console.log(err);
+		console.log('Deleted property image');
+	});
+}
+
+// Delete property by id
+function deleteProperty(property_id, res, next) {
+	Property.deleteOne({
+		_id: property_id
+	}, (err) => {
+		if (err) handleError(err, res, next);
+		res.send(`Property ${property_id} was deleted successfully`);
+	});
+}
 
 // Error handling
 function handleError(errorMsg, res, next) {

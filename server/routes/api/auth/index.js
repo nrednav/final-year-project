@@ -76,7 +76,8 @@ router.post('/register', (req, res, next) => {
 						if (err) next(err);
 						console.log(user);
 						res.json({
-							error: 'none'
+							error: 'none',
+							user_id: user._id
 						});
 					});
 				});

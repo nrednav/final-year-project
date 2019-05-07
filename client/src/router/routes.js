@@ -142,7 +142,7 @@ export const routes = [
 		beforeEnter: logged_in
 	},
 	{
-		path: 'seller/property/:property_id/verify',
+		path: '/seller/properties/:property_id/verify',
 		name: 'verify-property',
 		component: () => import('@/views/seller/VerifyProperty.vue'),
 		beforeEnter: logged_in

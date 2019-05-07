@@ -25,6 +25,9 @@ const UserSchema = new mongoose.Schema({
 	},
 	profiles: {
 		buyer: {
+			screening_uid: {
+				type: String
+			},
 			purchase_count: {
 				type: Number,
 				default: 0

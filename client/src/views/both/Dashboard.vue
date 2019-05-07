@@ -111,10 +111,8 @@ export default {
 				}
 			})
 				.then((result) => {
-					console.log(result.data.user)
 					if (result.data.user) {
 						this.get_user(result.data.user)
-						// this.user = result.data.user
 					} else {
 						localStorage.removeItem('token')
 						this.$store.dispatch('update_user_status', { type: '' })

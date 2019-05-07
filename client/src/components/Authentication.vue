@@ -179,23 +179,13 @@ export default {
 					}
 
 					axios.post('http://localhost:3000/api/auth/register', body).then((res) => {
-						console.log(res)
+						// console.log(res)
 						if (res.data.error === 'email taken') {
 							this.errors = []
 							this.errors.push('Sorry, that email address is already taken.')
 							this.formInvalid = true
 						} else if (res.data.error === 'none') {
-							this.register_details = {
-								fname: '',
-								lname: '',
-								email: '',
-								password: ''
-							}
-
-							// Send to database and redirect to login form
-							if (this.register_details.fname === '') {
-								this.load_login_form()
-							}
+							this.addToScreeningDb(res.data.user_id)
 						}
 					})
 						.catch((err) => {
@@ -207,6 +197,44 @@ export default {
 				} else {
 					alert('Please login to metamask to continue')
 				}
+			}
+		},
+		async addToScreeningDb (userId) {
+			let userUid = await web3.utils.sha3(this.selected_addr + this.register_details.email)
+			const body = {
+				account_address: this.selected_addr,
+				uid: userUid,
+				user_id: userId
+			}
+
+			axios.post('http://localhost:3000/api/screening/add-report', body)
+				.then((res) => {
+					// this.clearForm()
+					this.register_details = {
+						fname: '',
+						lname: '',
+						email: '',
+						password: ''
+					}
+
+					if (this.register_details.fname === '') {
+						this.load_login_form()
+					}
+				})
+				.catch(error => {
+					console.log(error)
+				})
+		},
+		clearForm () {
+			this.register_details = {
+				fname: '',
+				lname: '',
+				email: '',
+				password: ''
+			}
+
+			if (this.register_details.fname === '') {
+				this.load_login_form()
 			}
 		}
 	},

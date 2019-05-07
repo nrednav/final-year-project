@@ -6,6 +6,10 @@ const ScreeningReportSchema = new mongoose.Schema({
 		type: String,
 		require: true
 	},
+	screening_uid: {
+		type: String,
+		require: true
+	},
 	identity_check: {
 		type: Boolean,
 		default: true

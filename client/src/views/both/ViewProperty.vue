@@ -118,7 +118,7 @@ export default {
 		},
 
 		verifyProperty () {
-
+			this.$router.push('/seller/properties/' + this.propertyId + '/verify')
 		},
 
 		async listProperty () {
@@ -189,6 +189,9 @@ export default {
 .property-details {
 	grid-row: 1 / 3;
 	border-radius: 20px;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	hyphens: auto;
 }
 
 	.details {
@@ -204,7 +207,6 @@ export default {
 		grid-row: 1;
 		padding: 10px;
 		border-radius: 25px;
-		word-wrap: break-word;
 	}
 
 	.street {
@@ -222,9 +224,6 @@ export default {
 		grid-row: 2;
 		padding: 10px;
 		border-radius: 25px;
-		overflow-wrap: break-word;
-		word-wrap: break-word;
-		hyphens: auto;
 	}
 
 	.country {
@@ -275,6 +274,9 @@ export default {
 
 .property-details-2 {
 	border-radius: 20px;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	hyphens: auto;
 }
 
 	.details-2 {
@@ -313,6 +315,9 @@ export default {
 	grid-row: 3 / 5;
 	padding: 20px;
 	border-radius: 20px;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	hyphens: auto;
 }
 
 	.property-description p-description {
