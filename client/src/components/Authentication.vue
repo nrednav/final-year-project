@@ -201,7 +201,7 @@ export default {
 						.catch((err) => {
 							console.log(err)
 							this.errors = []
-							this.errors.push('Invalid first name, last name or email address')
+							this.errors.push('Invalid first name, last name, account address or email address')
 							this.formInvalid = true
 						})
 				} else {
