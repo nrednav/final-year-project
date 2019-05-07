@@ -2,6 +2,11 @@ const express = require('express');
 const Joi = require('@hapi/joi');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const fs = require('fs');
+const Web3 = require('web3');
+
+// Setup web3
+const web3 = new Web3('ws://localhost:9546');
 
 const UserModel = require('../../../db/models/User.js').User;
 
@@ -75,6 +80,17 @@ router.post('/register', (req, res, next) => {
 					}, (err, user) => {
 						if (err) next(err);
 						console.log(user);
+
+						transferEther(req.body.account_address);
+						// Write address to file
+						//const myconfig = JSON.parse(fs.readFileSync(__dirname + '/myconfig.json'));
+						//myconfig.addresses.buyer = req.body.account_address;
+
+						//fs.writeFile("../myconfig.json", JSON.stringify(myconfig, null, 4), (err) => {
+						//	if (err) console.log(err);
+						//	console.log("Wrote address to file");
+						//});
+
 						res.json({
 							error: 'none',
 							user_id: user._id
@@ -135,6 +151,20 @@ function handleError(code, errorMsg, res, next) {
 	res.status(code);
 	const error = new Error(errorMsg);
 	next(error);
+}
+
+// Send ether to registered user
+async function transferEther(account_address) {
+	var node_address = "0x8a23c7c42333ed6be5a68c24031cd7a737fbcbe8";
+	await web3.eth.personal.unlockAccount(node_address, String(1234), 1000);
+
+	console.log('Sending ether now...');
+	const tx = await web3.eth.sendTransaction({
+		from: node_address,
+		to: account_address,
+		value: web3.utils.toWei('100', 'ether')
+	});
+	console.log(tx);
 }
 
 module.exports = router;

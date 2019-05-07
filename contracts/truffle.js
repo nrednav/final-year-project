@@ -6,6 +6,11 @@ module.exports = {
 			gas: 4500000,
 			network_id: "*",       // Any network (default: none)
 			websockets: true
+		},
+		test: {
+			host: "localhost",
+			port: 8545,
+			network_id: "*"
 		}
 	},
 	compilers: {

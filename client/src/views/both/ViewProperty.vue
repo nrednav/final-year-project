@@ -113,7 +113,7 @@
 					@click="listProperty"
 					outline
 					color="p_blue"
-					:class="{'disable-click': property.verified == 0}"
+					:class="{'disable-click': property.verified == 0 || property.verified == 1 || property.verified == 2}"
 					class="title button">LIST</v-btn>
 				<v-btn v-if="property.listed" id="btnUnlist" @click="unlistProperty" outline color="p_orange" class="title button">UNLIST</v-btn>
 				<v-btn id="btnBack" @click="back" outline color="p_text" class="title button">BACK</v-btn>
@@ -126,6 +126,7 @@
 <script>
 import { mapGetters } from 'vuex'
 import axios from 'axios'
+import fs from 'fs'
 
 export default {
 	data () {
@@ -141,10 +142,13 @@ export default {
 		},
 
 		verifyProperty () {
-			const options = {
-				verified: 1
+			const body = {
+				options: {
+					verified: 1
+				}
 			}
-			axios.put('http://localhost:3000/api/properties/' + this.propertyId + '/update', options, this.route_config).then((response) => {
+			axios.put('http://localhost:3000/api/properties/' + this.propertyId + '/update', body, this.route_config).then((response) => {
+				console.log(response)
 				if (response.status === 200) {
 					this.$router.push('/seller/properties/' + this.propertyId + '/verify')
 				}
@@ -152,7 +156,7 @@ export default {
 		},
 
 		async listProperty () {
-			await axios.put('http://localhost:3000/api/properties/' + this.propertyId + '/update', { listed: true }, this.route_config)
+			await axios.put('http://localhost:3000/api/properties/' + this.propertyId + '/list', { listed: true }, this.route_config)
 			this.$router.push('/seller/properties')
 		},
 
@@ -173,8 +177,10 @@ export default {
 
 		forceRerender () {
 			this.renderKey += 1
-		}
+		},
 
+		async get_verifier_contract() {
+		}
 	},
 	computed: {
 		propertyId () {

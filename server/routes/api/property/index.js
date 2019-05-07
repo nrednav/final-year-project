@@ -103,6 +103,7 @@ router.put('/:property_id/update', (req, res, next) => {
 	console.log('Got request....');
 	console.log('Options received are:-');
 	console.log(req.body.options);
+	console.log(req.body);
 	console.log('Commiting update now...');
 	Property.updateOne({
 		_id: req.params.property_id

@@ -4,6 +4,11 @@
 			v-if="property.verified == 1 || property.verified == 2"
 			class="display-3 p_text--text font-weight-bold">Property Verification</h1>
 
+		<div
+			v-if="property.verified == 3" class="pa-4 display-1 p_text--text font-weight-bold text-xs-center">
+			Your property has already been verified.
+		</div>
+
 		<div class="card-container">
 			<v-card
 				v-if="property.verified == 2 || verificationRequested"
@@ -24,12 +29,8 @@
 					class="title btnBack">
 					BACK
 				</v-btn>
-				<div
-					v-if="property.verified == 3" class="pa-4 display-1 p_text--text font-weight-bold text-xs-center">
-					Your property has already been verified.
-				</div>
 			</v-card>
-			<v-card v-if="property.verified == 1" class="primary p_text--text pa-4 verification-card display-1">
+			<v-card v-if="property.verified == 1 && !verificationRequested" class="primary p_text--text pa-4 verification-card display-1">
 
 				<div class="property-meta-container headline p_text--text">
 					<div class="pa-4 p-meta-id">
@@ -142,10 +143,12 @@ export default {
 		},
 
 		async verifyProperty () {
-			const options = {
-				verified: 2
+			const body = {
+				options: {
+					verified: 2
+				}
 			}
-			await axios.put('http://localhost:3000/api/properties/' + this.propertyId + '/update', options, this.route_config)
+			await axios.put('http://localhost:3000/api/properties/' + this.propertyId + '/update', body, this.route_config)
 			this.verificationRequested = true
 		},
 

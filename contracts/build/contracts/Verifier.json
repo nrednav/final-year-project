@@ -1231,10 +1231,16 @@
       "links": {},
       "address": "0x6A3356ceE3178Cd7374441dD7495625D8B4Ac590",
       "transactionHash": "0x4fcba2ec0bd0df7e3146d4fdb4d7a4320ae2ad21b4620ba92bb5c5ddeb0809f2"
+    },
+    "1557239165937": {
+      "events": {},
+      "links": {},
+      "address": "0xE330AD12CB1e1264882509E5E4731e061c43b37a",
+      "transactionHash": "0x6d186cff73f27f5655f6b91961f06392c9e609de9058be1b530ddff448fa42d7"
     }
   },
   "schemaVersion": "3.0.5",
-  "updatedAt": "2019-04-30T18:42:12.506Z",
+  "updatedAt": "2019-05-07T14:31:42.930Z",
   "devdoc": {
     "methods": {}
   },

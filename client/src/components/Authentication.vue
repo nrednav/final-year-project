@@ -209,22 +209,13 @@ export default {
 
 			axios.post('http://localhost:3000/api/screening/add-report', body)
 				.then((res) => {
-					// this.clearForm()
-					this.register_details = {
-						fname: '',
-						lname: '',
-						email: '',
-						password: ''
-					}
-
-					if (this.register_details.fname === '') {
-						this.load_login_form()
-					}
+					this.clearForm()
 				})
 				.catch(error => {
 					console.log(error)
 				})
 		},
+
 		clearForm () {
 			this.register_details = {
 				fname: '',
