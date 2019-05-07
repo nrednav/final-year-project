@@ -106,15 +106,17 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import web3 from '@/web3.js'
 import axios from 'axios'
+import web3 from '@/web3'
+import verifier from '@/contracts/verifier'
 
 export default {
 	data () {
 		return {
 			title_deed_hash: '',
 			documentUploaded: false,
-			verificationRequested: false
+			verificationRequested: false,
+			selected_addr: ''
 		}
 	},
 	methods: {
@@ -150,23 +152,41 @@ export default {
 			}
 			await axios.put('http://localhost:3000/api/properties/' + this.propertyId + '/update', body, this.route_config)
 			this.verificationRequested = true
+
+			let name = this.user_object.name.split(' ')
+			let fname = name[0]
+			let lname = name[1]
+			const result = await verifier.methods.verify(this.title_deed_hash, fname, lname).send({
+				from: this.selected_addr
+			})
+			console.log(result)
 		},
 
 		goBack () {
 			this.$router.push('/seller/properties/' + this.propertyId)
+		},
+		async load_accounts () {
+			if (window.ethereum !== 'undefined') {
+				let addresses = await window.ethereum.enable()
+				this.selected_addr = addresses[0]
+			} else {
+				alert('Please download and install the Metamask browser addon to continue')
+			}
 		}
 	},
 	computed: {
 		...mapGetters([
 			'property',
 			'user_id',
-			'route_config'
+			'route_config',
+			'user_object'
 		]),
 		propertyId () {
 			return this.$route.params.property_id
 		}
 	},
 	mounted () {
+		this.load_accounts()
 		this.get_property()
 	}
 }

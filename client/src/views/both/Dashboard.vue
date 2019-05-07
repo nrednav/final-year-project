@@ -129,7 +129,8 @@ export default {
 			})
 				.then((result) => {
 					this.user = result.data.user
-					this.$store.dispatch('add_user_id', { user_id: result.data.user._id })
+					this.$store.dispatch('add_user_id', { user_id: result.data.user._id,
+						user_object: result.data.user })
 				})
 				.catch((error) => console.error(error))
 		}

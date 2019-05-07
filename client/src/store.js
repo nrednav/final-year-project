@@ -12,7 +12,9 @@ export default new Vuex.Store({
 		user: {
 			type: '',
 			authenticated: false,
-			id: ''
+			id: '',
+			name: '',
+			object: null
 		},
 		picture: require('@/assets/Blue_Mountains.jpg'),
 		session_critical: false,
@@ -28,6 +30,9 @@ export default new Vuex.Store({
 		user_id: state => {
 			return state.user.id
 		},
+		user_object: state => {
+			return state.user.object
+		},
 		picture: state => {
 			return state.picture
 		},
@@ -41,7 +46,7 @@ export default new Vuex.Store({
 				}
 			}
 			return config
-		}
+		},
 	},
 	mutations: {
 		update_user_status (state, payload) {
@@ -54,6 +59,7 @@ export default new Vuex.Store({
 		},
 		add_user_id (state, payload) {
 			state.user.id = payload.user_id
+			state.user.object = payload.user_object
 		},
 		add_property_data (state, payload) {
 			state.property = payload.property

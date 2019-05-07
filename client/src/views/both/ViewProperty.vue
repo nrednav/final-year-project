@@ -126,7 +126,8 @@
 <script>
 import { mapGetters } from 'vuex'
 import axios from 'axios'
-import fs from 'fs'
+import web3 from '@/web3'
+import verifier from '@/contracts/verifier'
 
 export default {
 	data () {
@@ -177,9 +178,6 @@ export default {
 
 		forceRerender () {
 			this.renderKey += 1
-		},
-
-		async get_verifier_contract() {
 		}
 	},
 	computed: {
@@ -191,6 +189,7 @@ export default {
 	mounted () {
 		this.forceRerender()
 		this.get_property()
+		console.log(verifier.contract)
 	}
 }
 </script>
