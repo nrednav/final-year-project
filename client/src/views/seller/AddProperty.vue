@@ -182,11 +182,7 @@ export default {
 					formData.append('files', this.images[i])
 				}
 				try {
-					let result = await axios.post('http://localhost:3000/api/properties/create', formData, {
-						headers: {
-							Authorization: 'Bearer ' + localStorage.token
-						}
-					})
+					let result = await axios.post('http://localhost:3000/api/properties/create', formData, this.route_config)
 					if (result.status === 200) {
 						this.$router.push('/seller/dashboard')
 					}
@@ -208,7 +204,8 @@ export default {
 			return this.property.details.available_from ? moment(this.property.details.available_from).format('MMMM YYYY') : ''
 		},
 		...mapGetters([
-			'user_id'
+			'user_id',
+			'route_config'
 		])
 	}
 }

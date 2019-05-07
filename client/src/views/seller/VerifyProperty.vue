@@ -134,7 +134,7 @@ export default {
 
 				await axios.post('http://localhost:3000/api/land-registry/add-entry', {
 					title_deed_hash: hash,
-					owner_name: this.property.details.owner
+					owner_name: this.user_object.name
 				}, { headers: { Authorization: 'a1b2c3d4e5f6g7' } })
 					.then((response) => {
 						this.title_deed_hash = hash
@@ -188,6 +188,13 @@ export default {
 	mounted () {
 		this.load_accounts()
 		this.get_property()
+		verifier.getPastEvents('verification_requested', {
+			fromBlock: 0,
+			toBlock: 'latest'
+		}, (error, events) => {
+			if (error) console.log(error)
+			console.log(events)
+		})
 	}
 }
 </script>

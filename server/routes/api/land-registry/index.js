@@ -21,6 +21,7 @@ router.post('/add-entry', (req, res, next) => {
 /* Get entry */
 router.get('/get-entry', (req, res, next) => {
 	let owner_name = req.body.owner_name;
+	console.log(owner_name);
 	LandRegistry.find({
 		owner_name: owner_name
 	}, (err, results) => {
