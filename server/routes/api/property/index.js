@@ -109,6 +109,7 @@ router.put('/:property_id/update', (req, res, next) => {
 		_id: req.params.property_id
 	}, {$set: req.body.options}, (err, result) => {
 		if (err) console.log(err);
+		console.log(result);
 		res.json({
 			result
 		});

@@ -18,15 +18,15 @@
 					<v-flex xs12 md6>
 						<div class="title p_text--text font-weight-bold">Verification Status</div>
 						<div class="p_yellow--text">
-							<v-icon color="p_green" v-if="property.verified == 3">fas fa-check</v-icon>
+							<v-icon color="p_green" v-if="property.verified == 2">fas fa-check</v-icon>
 							<v-icon
 								color="p_yellow"
-								v-if="property.verified == 1 || property.verified == 2">
+								v-if="property.verified == 1">
 								fas fa-spinner</v-icon>
 							<v-icon color="p_red" v-if="property.verified == 0">fas fa-times</v-icon>
 							<span v-if="property.verified == 0" class="p_red--text pl-2">-- Incomplete</span>
-							<span v-if="property.verified == 1 || property.verified == 2" class="p_yellow--text pl-2">-- Pending</span>
-							<span v-if="property.verified == 3" class="p_green--text pl-2">-- Complete</span>
+							<span v-if="property.verified == 1" class="p_yellow--text pl-2">-- Pending</span>
+							<span v-if="property.verified == 2" class="p_green--text pl-2">-- Complete</span>
 						</div>
 					</v-flex>
 

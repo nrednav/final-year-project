@@ -2,6 +2,10 @@ import axios from 'axios';
 import web3 from './web3';
 import verifier from './contracts/verifier'
 
+var mongoose = require('mongoose');
+var User = require('../db/models/User').User;
+var Property = require('../db/models/Property').Property;
+
 class VerifierOracle {
 
 	constructor() {
@@ -18,35 +22,31 @@ class VerifierOracle {
 
 			// Listen for verification_requested event
 			this.contract.events.verification_requested({
-				fromBlock: 0,
+				fromBlock: "latest",
 				toBlock: "latest"
 			}, (error, event) => {
+
 				if (error) console.log('Error: ' + error);
+				console.log('Found event:-\n', event.event);
 
-				console.log('Found event:-');
-				console.log(event);
-
-				let returnValues = event.returnValues;
-				let title_deed_hash = returnValues.title_deed_hash;
-				let owner_fname = returnValues.owner_forename;
-				let owner_lname = returnValues.owner_surname;
-				let owner_name = owner_fname + ' ' + owner_lname;
+				let property_uid = event.returnValues.property_uid;
 
 				var config = {
 					headers: {
 						Authorization: 'a1b2c3d4e5f6g7'
 					},
 					params: {
-						owner_name: owner_name,
-						title_deed_hash: title_deed_hash
+						property_uid: property_uid
 					}
 				}
 
 				console.log("Requesting information from land registry...");
+
 				axios.get('http://localhost:3000/api/land-registry/get-entry', config)
 				.then((res) => {
 					console.log("Got information from land registry...");
 					console.log("Verifying information received...");
+					console.log(res.data.entry);
 					this.verifyEntry(res.data.entry);
 				})
 				.catch((err) => console.log(err));
@@ -57,23 +57,34 @@ class VerifierOracle {
 	verifyEntry(entry) {
 		if (entry.liens == false) {
 			console.log("This property has no liens attached");
-			this.sendVerificationResult(entry.title_deed_hash, true);
+			this.sendVerificationResult(entry.property_uid, entry.owner_id, true);
 		} else {
-			this.sendVerificationResult(entry.title_deed_hash, false);
+			this.sendVerificationResult(entry.property_uid, entry.owner_id, false);
 			console.log("This property has liens attached to it");
 		}
 	}
 
-	sendVerificationResult(title_deed_hash, result) {
-		console.log("Sending verification result to smart contract...");
-		this.web3.eth.getAccounts().then(async accounts => {
-			console.log(accounts);
-			this.contract.methods.verified(title_deed_hash, result).send({
-				from: accounts[0]
-			}).then((tx_receipt) => {
-				console.log("... Verification sent");
-				console.log("TX Receipt: " + tx_receipt);
-			});
+	sendVerificationResult(property_uid, owner_id, result) {
+		// Update property
+		Property.updateOne({
+			'details.property_uid': property_uid
+		},
+		{
+			$set: {
+				verified: 2
+			}
+		}, (err, result) => {
+			if (err) console.log(err);
+			console.log(result);
+		});
+
+		// Notify the user
+		var notification = `Your property with UID: ${property_uid}, is now verified.`;
+		User.updateOne({
+			_id: owner_id
+		}, { $push: { 'profiles.seller.notifications': notification }}, (err, result) => {
+			if (err) console.log(err);
+			console.log('Successfully notified user\n', result);
 		});
 	}
 }

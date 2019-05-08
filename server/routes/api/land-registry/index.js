@@ -5,40 +5,38 @@ const LandRegistry = require('../../../db/models/LandRegistry').LandRegistry;
 
 /* Add entry */
 router.post('/add-entry', (req, res, next) => {
+	let property_uid = req.body.property_uid;
 	let title_deed_hash = req.body.title_deed_hash;
-	let owner_name = req.body.owner_name;
+	let owner_id = req.body.owner_id;
 	LandRegistry.create({
-		title_deed_hash: title_deed_hash,
-		owner_name: owner_name
+		property_uid: property_uid,
+		owner_id: owner_id,
+		title_deed_hash: title_deed_hash
 	}, (err, entry) => {
 		console.log(entry)
 		res.json({
-			message: 'Title deed was successfully registered'
+			message: 'Property was successfully registered'
 		});
 	});
 });
 
 /* Get entry */
 router.get('/get-entries', (req, res, next) => {
-	let owner_name = req.query.owner_name
-	console.log(owner_name);
+	let owner_id = req.query.owner_id
 	LandRegistry.find({
-		owner_name: owner_name
+		owner_id: owner_id
 	}, (err, results) => {
-		console.log(results);
 		res.json({
 			results
 		});
 	});
 });
 
-/* Get entry by name and title hash */
+/* Get entry by property_uid */
 router.get('/get-entry', (req, res, next) => {
-	let owner_name = req.query.owner_name
-	let title_deed_hash = req.query.title_deed_hash
+	let property_uid = req.query.property_uid
 	LandRegistry.findOne({
-		owner_name: owner_name,
-		title_deed_hash: title_deed_hash
+		property_uid: property_uid
 	}, (err, entry) => {
 		res.json({
 			entry
@@ -48,14 +46,17 @@ router.get('/get-entry', (req, res, next) => {
 
 /* Update entry */
 router.put('/update-entry', (req, res, next) => {
-	let old_owner_name = req.body.old_owner_name;
-	let title_deed_hash = req.body.title_deed_hash;
-	let new_owner_name = req.body.new_owner_name;
+
+	let old_owner_id = req.body.old_owner_id;
+	let old_property_uid = req.body.old_property_uid
+
+	let new_owner_id = req.body.new_owner_id;
+	let new_property_uid = req.body.new_property_uid;
+
 	LandRegistry.findOneAndUpdate({
-		owner_name: old_owner_name,
-		title_deed_hash: title_deed_hash
-	}, { owner_name: new_owner_name }, (err, result) => {
-		console.log(result);
+		owner_id: old_owner_id,
+		property_uid: old_property_uid
+	}, { owner_id: new_owner_id, property_uid: new_property_uid }, (err, result) => {
 		res.json({
 			result
 		});

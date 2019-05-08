@@ -114,9 +114,11 @@ export default {
 	data () {
 		return {
 			title_deed_hash: '',
+			property_uid: '',
 			documentUploaded: false,
 			verificationRequested: false,
-			selected_addr: ''
+			selected_addr: '',
+			verification_transaction_receipt: ''
 		}
 	},
 	methods: {
@@ -131,39 +133,51 @@ export default {
 
 			reader.onload = async (event) => {
 				let hash = await web3.utils.sha3(event.target.result)
+				let propertyUid = await web3.utils.sha3(this.user_object.name + hash)
 
 				await axios.post('http://localhost:3000/api/land-registry/add-entry', {
 					title_deed_hash: hash,
-					owner_name: this.user_object.name
+					owner_id: this.property.details.owner,
+					property_uid: propertyUid
 				}, { headers: { Authorization: 'a1b2c3d4e5f6g7' } })
 					.then((response) => {
 						this.title_deed_hash = hash
+						this.property_uid = propertyUid
+						this.addPropertyUid(this.propertyId, propertyUid)
 						this.documentUploaded = true
 					})
 			}
 			reader.readAsBinaryString(selectedFile)
 		},
 
+		async addPropertyUid (propertyId, propertyUid) {
+			await axios.put('http://localhost:3000/api/properties/' + propertyId + '/update',
+				{ options: { 'details.property_uid': propertyUid } }, this.route_config)
+		},
+
 		async verifyProperty () {
-			const body = {
-				options: {
-					verified: 1
+			if (this.selected_addr !== '') {
+				const body = {
+					options: {
+						verified: 1
+					}
 				}
+
+				await axios.put('http://localhost:3000/api/properties/' + this.propertyId + '/update', body, this.route_config)
+
+				this.verificationRequested = true
+
+				verifier.methods.verify(this.property_uid).send({
+					from: this.selected_addr
+				}).then((receipt) => {
+					this.verification_tx_receipt = receipt
+				}).catch((error) => {
+					console.log(error)
+					this.verificationRequested = false
+				})
+			} else {
+				alert('Please login to metamask to continue.')
 			}
-			await axios.put('http://localhost:3000/api/properties/' + this.propertyId + '/update', body, this.route_config)
-			this.verificationRequested = true
-
-			let name = this.user_object.name.split(' ')
-			let fname = name[0]
-			let lname = name[1]
-			verifier.methods.verify(this.title_deed_hash, fname, lname).send({
-				from: this.selected_addr
-			}).then((result) => {
-
-			}).catch((error) => {
-				console.log(error)
-				this.verificationRequested = false
-			})
 		},
 
 		goBack () {

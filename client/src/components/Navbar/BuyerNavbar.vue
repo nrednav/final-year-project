@@ -132,6 +132,7 @@ export default {
 		},
 		logout () {
 			localStorage.removeItem('token')
+			localStorage.removeItem('vuex')
 			this.$store.dispatch('update_user_status', { type: '' })
 			this.$router.push('/')
 		},

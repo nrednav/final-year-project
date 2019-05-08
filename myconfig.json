@@ -1,8 +1,8 @@
 {
     "addresses": {
-        "verifier_oracle": "0x4B730D3E688DbDa81738A5C98a04753e2eF772b2",
-        "holding_deposit": "0x33ea9B9768E4a3ee0da8b7063F73877d3fD5C069",
-        "escrow": "0xB42Af3665aB6D589f83c4818C3A01c5a489E465d",
+        "verifier_oracle": "0xC984601F953b2AB3157E83732786026CA066635c",
+        "holding_deposit": "0xB5B6895fAb1cef57335DF13f451567e8fA189E36",
+        "escrow": "0x239092aD5Cc71675C6bbEDFb32D9106983ef95Bb",
         "buyer": "0x952284dc87db754eb2449c95ba60fac77be57a7b"
     },
     "abi": {

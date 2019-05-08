@@ -7,6 +7,9 @@
 - [x] Handle user click reject on metamask
 - [ ] Prevent users from accessing other users property information
 - [ ] Fix the interface stretch problems on view property screen
+- [ ] After transfering title, update the property_uid on the property
+- [ ] Check how to display image preview from uploaded file
+	- [ ] Check how the viet dude does it in his component
 
 ## Create FYP directory
 - [x] Start markdown checklist

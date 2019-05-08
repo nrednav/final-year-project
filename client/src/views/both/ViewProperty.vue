@@ -113,7 +113,7 @@
 					@click="listProperty"
 					outline
 					color="p_blue"
-					:class="{'disable-click': property.verified == 0 || property.verified == 1 || property.verified == 2}"
+					:class="{'disable-click': property.verified == 0 || property.verified == 1}"
 					class="title button">LIST</v-btn>
 				<v-btn v-if="property.listed" id="btnUnlist" @click="unlistProperty" outline color="p_orange" class="title button">UNLIST</v-btn>
 				<v-btn id="btnBack" @click="back" outline color="p_text" class="title button">BACK</v-btn>
