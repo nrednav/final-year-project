@@ -1,8 +1,8 @@
 {
     "addresses": {
-        "verifier_oracle": "0xC984601F953b2AB3157E83732786026CA066635c",
-        "holding_deposit": "0xB5B6895fAb1cef57335DF13f451567e8fA189E36",
-        "escrow": "0x239092aD5Cc71675C6bbEDFb32D9106983ef95Bb",
+        "verifier_oracle": "0x4B730D3E688DbDa81738A5C98a04753e2eF772b2",
+        "holding_deposit": "0x33ea9B9768E4a3ee0da8b7063F73877d3fD5C069",
+        "escrow": "0xB42Af3665aB6D589f83c4818C3A01c5a489E465d",
         "buyer": "0x952284dc87db754eb2449c95ba60fac77be57a7b"
     },
     "abi": {
@@ -12,56 +12,20 @@
                 "inputs": [
                     {
                         "indexed": false,
-                        "name": "title_deed_hash",
+                        "name": "property_uid",
                         "type": "bytes32"
-                    },
-                    {
-                        "indexed": false,
-                        "name": "owner_forename",
-                        "type": "string"
-                    },
-                    {
-                        "indexed": false,
-                        "name": "owner_surname",
-                        "type": "string"
                     }
                 ],
                 "name": "verification_requested",
                 "type": "event",
-                "signature": "0x9fbd31b535511545b1681575ad3f18613afa630fe2c3d98bb44aadf9e79c8123"
-            },
-            {
-                "anonymous": false,
-                "inputs": [
-                    {
-                        "indexed": false,
-                        "name": "title_deed_hash",
-                        "type": "bytes32"
-                    },
-                    {
-                        "indexed": false,
-                        "name": "result",
-                        "type": "bool"
-                    }
-                ],
-                "name": "verification_completed",
-                "type": "event",
-                "signature": "0x884dfe8ab4f14322c38e8db986f673303325b3dc6e7a1a5056c5c052b8261c96"
+                "signature": "0xe67ea319ad509472f8fe19f76c94905173d83826e5405408a0f4f22aa90934c9"
             },
             {
                 "constant": false,
                 "inputs": [
                     {
-                        "name": "_title_deed_hash",
+                        "name": "_property_uid",
                         "type": "bytes32"
-                    },
-                    {
-                        "name": "_owner_forename",
-                        "type": "string"
-                    },
-                    {
-                        "name": "_owner_surname",
-                        "type": "string"
                     }
                 ],
                 "name": "verify",
@@ -69,26 +33,7 @@
                 "payable": false,
                 "stateMutability": "nonpayable",
                 "type": "function",
-                "signature": "0x0ec1b057"
-            },
-            {
-                "constant": false,
-                "inputs": [
-                    {
-                        "name": "_title_deed_hash",
-                        "type": "bytes32"
-                    },
-                    {
-                        "name": "_result",
-                        "type": "bool"
-                    }
-                ],
-                "name": "verified",
-                "outputs": [],
-                "payable": false,
-                "stateMutability": "nonpayable",
-                "type": "function",
-                "signature": "0x3831e0d1"
+                "signature": "0x75e36616"
             }
         ],
         "holding_deposit_factory": [
