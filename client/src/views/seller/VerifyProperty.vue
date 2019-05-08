@@ -81,7 +81,7 @@
 					</div>
 				</div>
 
-				<div class="pt-4 button-container">
+				<div class="pt-4 pv-button-container">
 					<v-btn
 						@click="goBack"
 						color="p_text"
@@ -135,17 +135,23 @@ export default {
 				let hash = await web3.utils.sha3(event.target.result)
 				let propertyUid = await web3.utils.sha3(this.user_object.name + hash)
 
-				await axios.post('http://localhost:3000/api/land-registry/add-entry', {
+				axios.post('http://localhost:3000/api/land-registry/add-entry', {
 					title_deed_hash: hash,
 					owner_id: this.property.details.owner,
 					property_uid: propertyUid
 				}, { headers: { Authorization: 'a1b2c3d4e5f6g7' } })
 					.then((response) => {
-						this.title_deed_hash = hash
-						this.property_uid = propertyUid
-						this.addPropertyUid(this.propertyId, propertyUid)
-						this.documentUploaded = true
+						console.log(response)
+						if (response.data.error) {
+							alert('Please pick a different document')
+						} else if (response.data.message) {
+							this.title_deed_hash = hash
+							this.property_uid = propertyUid
+							this.addPropertyUid(this.propertyId, propertyUid)
+							this.documentUploaded = true
+						}
 					})
+					.catch((error) => console.log(error))
 			}
 			reader.readAsBinaryString(selectedFile)
 		},
@@ -220,18 +226,17 @@ export default {
 	overflow-wrap: break-word;
 	word-wrap: break-word;
 	hyphens: auto;
+	height: 100vh;
 }
 
 .card-container {
 	width: 90%;
-	height: 75%;
 }
 
 	.verification-card {
-		height: 100%;
 		border-radius: 25px;
 		display: grid;
-		grid-template-rows: repeat(3, 1fr);
+		grid-template-rows: repeat(3, 25vh);
 		align-items: center;
 		justify-items: center;
 	}
@@ -266,7 +271,7 @@ export default {
 	grid-row: 2;
 }
 
-.button-container {
+.pv-button-container {
 	grid-row: 3 / 4;
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);

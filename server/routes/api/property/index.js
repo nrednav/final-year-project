@@ -15,7 +15,7 @@ var User = require('../../../db/models/User').User;
 // DB Setup
 const mongo_uri = 'mongodb://localhost:27017/fyp';
 
-	// Create connection
+// Create connection
 const conn = mongoose.createConnection(mongo_uri, {
 	useNewUrlParser: true
 });
@@ -46,6 +46,23 @@ var storage = new grid_fs_storage({
 });
 const upload = multer({ storage });
 
+
+/* SEARCH for properties via text indexing */
+router.get('/search', (req, res, next) => {
+	let location_criteria = req.query.location
+	Property.find({
+		$text: { $search: location_criteria }}, (err, properties) => {
+//		'details.listing_price': { $gte: Number(req.query.minprice), $lte: Number(req.query.maxprice) },
+//		'details.type': { $eq: req.query.type },
+//		'details.bedroom_count': { $eq: Number(req.query.bedcount) },
+		//'details.bathroom_count': { $eq: Number(req.query.bathcount) }}).exec((err, properties) => {
+		if (err) console.log(err);
+		console.log(properties);
+		res.json({
+			properties
+		});
+	});
+});
 
 /* GET property listing. */
 router.get('/', function(req, res, next) {
@@ -126,40 +143,40 @@ router.post('/create', upload.array('files'), (req, res, next) => {
 		description: new_property.details.description,
 		address: new_property.details.address
 	})
-	.then(property => {
-		if (property) {
-			console.log(property);
-			handleError("Property with those details already exists", res, next);
-		}
-		else {
-			console.log("Creating a new property");
-			new_property.details.images = []
-			for (var i in req.files) {
-				console.log(req.files[i]);
-				new_property.details.images[i] = req.files[i].id;
+		.then(property => {
+			if (property) {
+				console.log(property);
+				handleError("Property with those details already exists", res, next);
 			}
-			console.log(new_property.details.images);
-			Property.create(new_property, async (error, result) => {
-				if (error) {
-					console.log(error);
-					res.send(error.name);
+			else {
+				console.log("Creating a new property");
+				new_property.details.images = []
+				for (var i in req.files) {
+					console.log(req.files[i]);
+					new_property.details.images[i] = req.files[i].id;
 				}
-				else {
-					console.log(result);
-					let property_id = result._id;
-					User.updateOne({
-						_id: result.details.owner
-					}, { $push: { 'profiles.seller.properties': property_id }}, (err) => {
-						if (err) handleError(err, res, next);
-						console.log(`Successfully added property ${result._id} to user ${result.details.owner}`);
-						res.json({
-							result
+				console.log(new_property.details.images);
+				Property.create(new_property, async (error, result) => {
+					if (error) {
+						console.log(error);
+						res.send(error.name);
+					}
+					else {
+						console.log(result);
+						let property_id = result._id;
+						User.updateOne({
+							_id: result.details.owner
+						}, { $push: { 'profiles.seller.properties': property_id }}, (err) => {
+							if (err) handleError(err, res, next);
+							console.log(`Successfully added property ${result._id} to user ${result.details.owner}`);
+							res.json({
+								result
+							});
 						});
-					});
-				}
-			});
-		}
-	});
+					}
+				});
+			}
+		});
 });
 
 /* DELETE - delete a property */

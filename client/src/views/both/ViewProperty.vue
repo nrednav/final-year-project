@@ -1,9 +1,9 @@
 <template>
 	<v-layout column :key="renderKey">
-		<v-container class="panel white--text">
+		<v-container class="vp-panel white--text">
 
-			<v-card class="property-details primary">
-				<div class="details">
+			<v-card class="vp-property-details primary">
+				<div class="vp-details">
 					<div
 						class="property-name pa-4 title p_input_text--text p_input">
 						<span class="p_text--text pr-4">Property Name: </span>
@@ -52,7 +52,7 @@
 				</div>
 			</v-card>
 
-			<v-card class="property-details-2 primary">
+			<v-card class="pd2 primary">
 				<div class="details-2">
 					<div
 						class="p-price pa-4 title p_input_text--text p_input">
@@ -73,19 +73,19 @@
 			</v-card>
 
 			<v-card class="image-upload-container primary">
-				<div class="upload-panel">
+				<div class="vp-upload-panel">
 				</div>
 			</v-card>
 
-			<v-card class="property-description primary">
+			<v-card class="vp-property-description primary">
 				<div
-					class="p-description pa-4 title p_input_text--text p_input">
+					class="vp-description pa-4 title p_input_text--text p_input">
 					<span class="p_text--text pr-4">Description: </span>
 					{{ property.details.description }}
 				</div>
 			</v-card>
 
-			<div class="button_container">
+			<div class="vp-button_container">
 				<v-btn
 					v-if="property.verified == 0"
 					id="btnVerify"
@@ -180,14 +180,14 @@ export default {
 </script>
 
 <style>
-.panel {
+.vp-panel {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	grid-template-rows: repeat(4, minmax(20vh, auto));
 	grid-gap: 50px;
 }
 
-.property-details {
+.vp-property-details {
 	grid-row: 1 / 3;
 	grid-column: 1 / 2;
 	border-radius: 20px;
@@ -196,7 +196,7 @@ export default {
 	hyphens: auto;
 }
 
-	.details {
+	.vp-details {
 		display: grid;
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 		grid-template-rows: repeat(5, minmax(10vh, auto));
@@ -204,7 +204,7 @@ export default {
 		padding: 2vw;
 	}
 
-	.property-name {
+	.vp-property-name {
 		grid-column: 1 / 3;
 		grid-row: 1;
 		padding: 10px;
@@ -274,9 +274,9 @@ export default {
 		padding: 10px;
 	}
 
-.property-details-2 {
+.pd2 {
 	grid-row: 1;
-	grid-column: 2 / 3;
+	grid-column: 2;
 	border-radius: 20px;
 	overflow-wrap: break-word;
 	word-wrap: break-word;
@@ -284,6 +284,8 @@ export default {
 }
 
 	.details-2 {
+		grid-column: 1;
+		grid-row: 1;
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		grid-template-rows: repeat(2, minmax(10vh, auto));
@@ -313,7 +315,7 @@ export default {
 		padding: 10px;
 	}
 
-.property-description {
+.vp-property-description {
 	display: grid;
 	grid-template-columns: repeat(1, 1fr);
 	grid-row: 3 / 5;
@@ -324,7 +326,7 @@ export default {
 	hyphens: auto;
 }
 
-	.property-description p-description {
+	.vp-property-description vp-description {
 		border-radius: 20px;
 	}
 
@@ -337,7 +339,7 @@ export default {
 	border-radius: 20px;
 }
 
-.upload-panel {
+.vp-upload-panel {
 	grid-row: 1;
 	grid-column: 1;
 	display: grid;
@@ -347,7 +349,7 @@ export default {
 	height: 100%;
 }
 
-.button_container {
+.vp-button_container {
 	grid-row: 4 / 5;
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);

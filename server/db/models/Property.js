@@ -100,7 +100,15 @@ PropertySchema.path('details.images').validate((value) => {
 	return value.length;
 }, "'Images' cannot be an empty array");
 
+
 PropertySchema.index({ 'details.name': 1, 'details.description': 1, 'details.address': 1 }, { unique: true });
+
+PropertySchema.index({
+	'details.address.street': 'text',
+	'details.address.city': 'text',
+	'details.address.country': 'text',
+	'details.address.post_code': 'text'
+});
 
 const Property = db.model('Property', PropertySchema);
 

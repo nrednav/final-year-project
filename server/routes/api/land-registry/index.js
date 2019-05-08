@@ -13,10 +13,16 @@ router.post('/add-entry', (req, res, next) => {
 		owner_id: owner_id,
 		title_deed_hash: title_deed_hash
 	}, (err, entry) => {
-		console.log(entry)
-		res.json({
-			message: 'Property was successfully registered'
-		});
+		console.log(typeof entry)
+		if (typeof entry === 'undefined') {
+			res.json({
+				error: 'UID exists'
+			});
+		} else {
+			res.json({
+				message: 'Property was successfully registered'
+			});
+		}
 	});
 });
 
