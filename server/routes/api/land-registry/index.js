@@ -19,14 +19,29 @@ router.post('/add-entry', (req, res, next) => {
 });
 
 /* Get entry */
-router.get('/get-entry', (req, res, next) => {
-	let owner_name = req.body.owner_name;
+router.get('/get-entries', (req, res, next) => {
+	let owner_name = req.query.owner_name
 	console.log(owner_name);
 	LandRegistry.find({
 		owner_name: owner_name
 	}, (err, results) => {
+		console.log(results);
 		res.json({
 			results
+		});
+	});
+});
+
+/* Get entry by name and title hash */
+router.get('/get-entry', (req, res, next) => {
+	let owner_name = req.query.owner_name
+	let title_deed_hash = req.query.title_deed_hash
+	LandRegistry.findOne({
+		owner_name: owner_name,
+		title_deed_hash: title_deed_hash
+	}, (err, entry) => {
+		res.json({
+			entry
 		});
 	});
 });

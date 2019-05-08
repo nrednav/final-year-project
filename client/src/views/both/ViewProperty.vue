@@ -94,13 +94,13 @@
 					color="p_purple"
 					class="title button">VERIFY</v-btn>
 				<v-btn
-					v-if="property.verified == 1 || property.verified == 2"
+					v-if="property.verified == 1"
 					id="btnVerify"
 					outline
 					color="p_purple"
 					class="title button">VERIFYING</v-btn>
 				<v-btn
-					v-if="property.verified == 3"
+					v-if="property.verified == 2"
 					outline
 					color="p_purple"
 					class="title button">
@@ -126,14 +126,11 @@
 <script>
 import { mapGetters } from 'vuex'
 import axios from 'axios'
-import web3 from '@/web3'
-import verifier from '@/contracts/verifier'
 
 export default {
 	data () {
 		return {
-			property: null,
-			renderKey: 0
+			property: null
 		}
 	},
 	methods: {
@@ -143,17 +140,7 @@ export default {
 		},
 
 		verifyProperty () {
-			const body = {
-				options: {
-					verified: 1
-				}
-			}
-			axios.put('http://localhost:3000/api/properties/' + this.propertyId + '/update', body, this.route_config).then((response) => {
-				console.log(response)
-				if (response.status === 200) {
-					this.$router.push('/seller/properties/' + this.propertyId + '/verify')
-				}
-			})
+			this.$router.push('/seller/properties/' + this.propertyId + '/verify')
 		},
 
 		async listProperty () {
@@ -172,12 +159,12 @@ export default {
 			this.$router.push('/seller/properties')
 		},
 
-		back () {
-			this.$router.push('/seller/properties')
+		handleContractEvent (event) {
+
 		},
 
-		forceRerender () {
-			this.renderKey += 1
+		back () {
+			this.$router.push('/seller/properties')
 		}
 	},
 	computed: {
@@ -187,9 +174,7 @@ export default {
 		...mapGetters(['route_config'])
 	},
 	mounted () {
-		this.forceRerender()
 		this.get_property()
-		console.log(verifier.contract)
 	}
 }
 </script>
@@ -200,11 +185,11 @@ export default {
 	grid-template-columns: repeat(2, 1fr);
 	grid-template-rows: repeat(4, minmax(20vh, auto));
 	grid-gap: 50px;
-	max-width: 100%;
 }
 
 .property-details {
 	grid-row: 1 / 3;
+	grid-column: 1 / 2;
 	border-radius: 20px;
 	overflow-wrap: break-word;
 	word-wrap: break-word;
@@ -290,6 +275,8 @@ export default {
 	}
 
 .property-details-2 {
+	grid-row: 1;
+	grid-column: 2 / 3;
 	border-radius: 20px;
 	overflow-wrap: break-word;
 	word-wrap: break-word;

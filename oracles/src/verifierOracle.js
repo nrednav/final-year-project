@@ -8,35 +8,7 @@ class VerifierOracle {
 		this.web3 = web3;
 		this.contract = verifier;
 
-		console.log(this.contract);
-
 		this.startListening();
-	}
-
-	async verifyProperty(title_deed_hash, owner_name) {
-		console.log('Sending request...');
-
-		let body = {
-			"owner_name": owner_name
-		}
-
-		const result = await axios.get('http://localhost:3000/api/land-registry/get-entry',
-			body,
-			{
-				headers:
-				{
-					Authorization: 'a1b2c3d4e5f6g7'
-				}
-			}, (err, entries) => {
-				if (err) console.log(err);
-				 // console.log(entries);
-			});
-
-		// this.sendVerificationResult();
-	}
-
-	async sendVerificationResult() {
-		console.log('hello');
 	}
 
 	startListening() {
@@ -60,9 +32,47 @@ class VerifierOracle {
 				let owner_lname = returnValues.owner_surname;
 				let owner_name = owner_fname + ' ' + owner_lname;
 
-				console.log(owner_name);
+				var config = {
+					headers: {
+						Authorization: 'a1b2c3d4e5f6g7'
+					},
+					params: {
+						owner_name: owner_name,
+						title_deed_hash: title_deed_hash
+					}
+				}
 
-				this.verifyProperty(title_deed_hash, owner_name);
+				console.log("Requesting information from land registry...");
+				axios.get('http://localhost:3000/api/land-registry/get-entry', config)
+				.then((res) => {
+					console.log("Got information from land registry...");
+					console.log("Verifying information received...");
+					this.verifyEntry(res.data.entry);
+				})
+				.catch((err) => console.log(err));
+			});
+		});
+	}
+
+	verifyEntry(entry) {
+		if (entry.liens == false) {
+			console.log("This property has no liens attached");
+			this.sendVerificationResult(entry.title_deed_hash, true);
+		} else {
+			this.sendVerificationResult(entry.title_deed_hash, false);
+			console.log("This property has liens attached to it");
+		}
+	}
+
+	sendVerificationResult(title_deed_hash, result) {
+		console.log("Sending verification result to smart contract...");
+		this.web3.eth.getAccounts().then(async accounts => {
+			console.log(accounts);
+			this.contract.methods.verified(title_deed_hash, result).send({
+				from: accounts[0]
+			}).then((tx_receipt) => {
+				console.log("... Verification sent");
+				console.log("TX Receipt: " + tx_receipt);
 			});
 		});
 	}

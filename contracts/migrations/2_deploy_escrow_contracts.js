@@ -6,7 +6,6 @@ const EscrowFactory = artifacts.require("EscrowFactory");
 module.exports = function(deployer) {
 	deployer.deploy(EscrowFactory)
 	.then(() => {
-		console.log(EscrowFactory);
 		// Write contract address to file
 		var myconfig = JSON.parse(fs.readFileSync("../myconfig.json"));
 		myconfig.addresses.escrow = EscrowFactory.address;

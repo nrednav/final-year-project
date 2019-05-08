@@ -9,7 +9,7 @@
     "byzantiumBlock": 4,
     "constantinopleBlock": 5,
     "clique": {
-      "period": 15,
+      "period": 1,
       "epoch": 30000
     }
   },

@@ -1,17 +1,17 @@
 <template>
 	<v-layout column class="main-container">
 		<h1
-			v-if="property.verified == 1 || property.verified == 2"
+			v-if="property.verified == 0"
 			class="display-3 p_text--text font-weight-bold">Property Verification</h1>
 
 		<div
-			v-if="property.verified == 3" class="pa-4 display-1 p_text--text font-weight-bold text-xs-center">
+			v-if="property.verified == 2" class="pa-4 display-1 p_text--text font-weight-bold text-xs-center">
 			Your property has already been verified.
 		</div>
 
 		<div class="card-container">
 			<v-card
-				v-if="property.verified == 2 || verificationRequested"
+				v-if="property.verified == 1 || verificationRequested"
 				class="primary p_text--text pa-4 loading-container display-1">
 				<v-progress-circular
 					:size="250"
@@ -30,7 +30,7 @@
 					BACK
 				</v-btn>
 			</v-card>
-			<v-card v-if="property.verified == 1 && !verificationRequested" class="primary p_text--text pa-4 verification-card display-1">
+			<v-card v-if="property.verified == 0 && !verificationRequested" class="primary p_text--text pa-4 verification-card display-1">
 
 				<div class="property-meta-container headline p_text--text">
 					<div class="pa-4 p-meta-id">
@@ -147,7 +147,7 @@ export default {
 		async verifyProperty () {
 			const body = {
 				options: {
-					verified: 2
+					verified: 1
 				}
 			}
 			await axios.put('http://localhost:3000/api/properties/' + this.propertyId + '/update', body, this.route_config)
@@ -156,10 +156,14 @@ export default {
 			let name = this.user_object.name.split(' ')
 			let fname = name[0]
 			let lname = name[1]
-			const result = await verifier.methods.verify(this.title_deed_hash, fname, lname).send({
+			verifier.methods.verify(this.title_deed_hash, fname, lname).send({
 				from: this.selected_addr
+			}).then((result) => {
+
+			}).catch((error) => {
+				console.log(error)
+				this.verificationRequested = false
 			})
-			console.log(result)
 		},
 
 		goBack () {
@@ -188,13 +192,6 @@ export default {
 	mounted () {
 		this.load_accounts()
 		this.get_property()
-		verifier.getPastEvents('verification_requested', {
-			fromBlock: 0,
-			toBlock: 'latest'
-		}, (error, events) => {
-			if (error) console.log(error)
-			console.log(events)
-		})
 	}
 }
 </script>

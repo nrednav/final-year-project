@@ -1,5 +1,13 @@
 # Implementation Checklist
 
+## Backlog
+- [ ] Update all data models
+- [ ] import mapGetters globally?
+- [ ] Change smart contracts to accept fullname instead of part names
+- [x] Handle user click reject on metamask
+- [ ] Prevent users from accessing other users property information
+- [ ] Fix the interface stretch problems on view property screen
+
 ## Create FYP directory
 - [x] Start markdown checklist
 - [x] Initialize the git repo
@@ -33,8 +41,6 @@
 - [ ] Create user interfaces w/ Vuetify
 	- [x] Create registration interfaces
 		- [x] Create the signup/login slider form
-			- [ ] Increase size of form
-			- [ ] Add confirm password and confirm email input fields
 			- [x] Add client-side validation manually
 			- [x] Prevent user from registering or logging in unless metamask is enabled
 		- [x] Create profile selection screen
@@ -51,6 +57,7 @@
 		- [ ] ...
 		- [ ] Add validation
 - [ ] Create NodeJS oracles
+	- [x] Created verifier oracle
 - [ ] Create NodeJS Smart Contract Event Listener linked to database?
 
 ## Setup the server
@@ -58,7 +65,7 @@
 - [x] Install initial dependencies?
 	- [x] Middleware such as Joi, Volleyball, Body-Parser etc (Check if already added by express-generator)
 	- [ ] Testware such as Mocha/Chai/Supertest
-- [ ] Setup API's
+- [x] Setup API's
 	- [x] Setup authentication API with JWT (Coding Garden Vids)
 		- [x] Setup database
 			- [x] Create document schema's following s1_registration.txt
@@ -67,12 +74,12 @@
 	- [x] Setup Property API (Create, Read, Delete)
 		- [x] Setup database
 		- [x] Setup routing
-	- [ ] Setup Land Registry API (Create, Read)
-		- [ ] Setup database
-		- [ ] Setup routing
-	- [ ] Setup Background Screening API (Create, Read)
-		- [ ] Setup database
-		- [ ] Setup routing
+	- [x] Setup Land Registry API (Create, Read)
+		- [x] Setup database
+		- [x] Setup routing
+	- [x] Setup Background Screening API (Create, Read)
+		- [x] Setup database
+		- [x] Setup routing
 	- [x] Setup Session API (Create, Read, Update, Delete)
 		- [x] Setup database
 		- [x] Setup routing
