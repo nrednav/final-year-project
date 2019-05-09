@@ -165,6 +165,42 @@ router.put('/:property_id/list', (req, res, next) => {
 	});
 });
 
+/* POST - add offer */
+router.post('/:property_id/add-offer', (req, res, next) => {
+	const body = req.body
+	const offer = {
+		buyer_account_address: body.buyer_account_address,
+		buyer_name: req.body.buyer_name,
+		price: body.offer
+	}
+	Property.updateOne({
+		_id: body.property_id
+	}, {
+		$push: {
+			'offers': offer
+		}
+	}, (err, result) => {
+		if (err) console.log(err);
+
+		User.updateOne({
+			_id: req.body.user_id
+		}, {
+			$push: {
+				'profiles.buyer.offers': {
+					property_id: req.params.property_id,
+					price: req.body.offer
+				}
+			}
+		}, (err, result) => {
+			if (err) console.log(err);
+			console.log(result);
+			res.json({
+				result
+			});
+		});
+	});
+});
+
 /* PUT - update property with options */
 router.put('/:property_id/update', (req, res, next) => {
 	console.log('Got request....');
@@ -186,8 +222,6 @@ router.put('/:property_id/update', (req, res, next) => {
 /* POST - create a property */
 router.post('/create', upload.array('files'), (req, res, next) => {
 	let new_property = JSON.parse(req.body.property);
-	console.log(new_property);
-	console.log(req.files);
 	Property.findOne({
 		name: new_property.details.name,
 		description: new_property.details.description,
@@ -200,19 +234,19 @@ router.post('/create', upload.array('files'), (req, res, next) => {
 			}
 			else {
 				console.log("Creating a new property");
+
 				new_property.details.images = []
 				for (var i in req.files) {
 					console.log(req.files[i]);
 					new_property.details.images[i] = req.files[i].id;
 				}
-				console.log(new_property.details.images);
+
 				Property.create(new_property, async (error, result) => {
 					if (error) {
 						console.log(error);
 						res.send(error.name);
 					}
 					else {
-						console.log(result);
 						let property_id = result._id;
 						User.updateOne({
 							_id: result.details.owner

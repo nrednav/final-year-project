@@ -145,12 +145,9 @@
 					@click="back" outline color="p_text" class="title button">
 					BACK</v-btn>
 
-				<v-btn
-					id="btnSubmitOffer"
-					@click="verifyProperty"
-					outline
-					color="p_blue"
-					class="title button">SUBMIT OFFER</v-btn>
+				<div class="offer-dialog-container">
+					<OfferPopup />
+				</div>
 
 			</div>
 
@@ -162,7 +159,12 @@
 import { mapGetters } from 'vuex'
 import axios from 'axios'
 
+import OfferPopup from '@/views/buyer/OfferPopup'
+
 export default {
+	components: {
+		OfferPopup
+	},
 	data () {
 		return {
 			property: null
@@ -192,6 +194,10 @@ export default {
 			await axios.delete('http://localhost:3000/api/properties/delete/' + this.propertyId, this.route_config)
 			await axios.put('http://localhost:3000/api/users/' + this.property.details.owner + '/remove/' + this.propertyId, { id: this.propertyId }, this.route_config)
 			this.$router.push('/seller/properties')
+		},
+
+		openOfferCard () {
+
 		},
 
 		back () {

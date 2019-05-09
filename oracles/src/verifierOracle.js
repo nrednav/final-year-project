@@ -25,32 +25,38 @@ class VerifierOracle {
 				fromBlock: "latest",
 				toBlock: "latest"
 			}, (error, event) => {
+				if (error) {
+					//console.log('Error: ' + error);
+					throw error
+				} else {
+					console.log('Found event:-\n', event.event);
 
-				if (error) console.log('Error: ' + error);
-				console.log('Found event:-\n', event.event);
+					let property_uid = event.returnValues.property_uid;
 
-				let property_uid = event.returnValues.property_uid;
-
-				var config = {
-					headers: {
-						Authorization: 'a1b2c3d4e5f6g7'
-					},
-					params: {
-						property_uid: property_uid
+					var config = {
+						headers: {
+							Authorization: 'a1b2c3d4e5f6g7'
+						},
+						params: {
+							property_uid: property_uid
+						}
 					}
+
+					console.log("Requesting information from land registry...");
+
+					axios.get('http://localhost:3000/api/land-registry/get-entry', config)
+					.then((res) => {
+						console.log("Got information from land registry...");
+						console.log("Verifying information received...");
+						console.log(res.data.entry);
+						this.verifyEntry(res.data.entry);
+					})
+					.catch((err) => console.log(err));
 				}
-
-				console.log("Requesting information from land registry...");
-
-				axios.get('http://localhost:3000/api/land-registry/get-entry', config)
-				.then((res) => {
-					console.log("Got information from land registry...");
-					console.log("Verifying information received...");
-					console.log(res.data.entry);
-					this.verifyEntry(res.data.entry);
-				})
-				.catch((err) => console.log(err));
 			});
+		})
+		.catch((error) => {
+			console.log('Error: could not find any accounts\n' + error);
 		});
 	}
 

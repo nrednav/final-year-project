@@ -36,8 +36,18 @@ const UserSchema = new mongoose.Schema({
 			],
 			sessions: [
 			],
-			offers: [
-			]
+			offers: [{
+				property_id: {
+					type: String
+				},
+				price: {
+					type: Number
+				},
+				timestamp: {
+					type: Date,
+					default: Date.now
+				}
+			}]
 		},
 		seller: {
 			verified_count: {
