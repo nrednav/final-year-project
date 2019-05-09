@@ -1,13 +1,11 @@
 # Implementation Checklist
 
 ## Backlog
+- [ ] Finish user interface components
 - [ ] Update all data models
 - [ ] import mapGetters globally?
 - [ ] Change smart contracts to accept fullname instead of part names
-- [x] Handle user click reject on metamask
 - [ ] Prevent users from accessing other users property information
-- [ ] Fix the interface stretch problems on view property screen
-- [ ] After transfering title, update the property_uid on the property
 - [ ] Check how to display image preview from uploaded file
 	- [ ] Check how the viet dude does it in his component
 
@@ -51,14 +49,19 @@
 		- [x] Create seller dashboard
 		- [x] Add validation
 	- [ ] Create buyer interfaces
-		- [ ] ...
-		- [ ] Add validation
+		- [ ] SearchResults (copy of seller's property list)
 	- [ ] Create seller interfaces
-		- [ ] ...
-		- [ ] Add validation
+		- [ ] Add offer panel under 'view property' panel
 	- [ ] Create interfaces involving both
-		- [ ] ...
-		- [ ] Add validation
+		- [ ] Offers (carbon copy of notifications)
+			* Static information on cards, no click to view more functionality
+		- [ ]	Background Screening
+		- [ ] Escrow
+		- [ ] Holding Deposit
+		- [ ] Notifications (mini copy of sellers prop list)
+		- [ ] SessionList (copy of seller's property list)
+		- [ ] ViewSession
+- [ ] Add validation where necessary
 - [ ] Create NodeJS oracles
 	- [x] Created verifier oracle
 - [ ] Create NodeJS Smart Contract Event Listener linked to database?
@@ -102,6 +105,13 @@
 - [ ] Open two clients on different ports
 
 ## Final work
+- [ ] Create project makefile/script
+	- [ ] Start/Stop/Restart network
+	- [ ] Use truffle to deploy contracts
+	- [ ] Open 3 additional sessions
+		- [ ] Start oracles
+		- [ ] Start client
+		- [ ] Start server
 - [ ] Create instruction files
   - [ ] File containing all the versions of tools/software used
   - [ ] File containing instructions on how to setup the project
