@@ -85,7 +85,8 @@
 				</div>
 			</v-card>
 
-			<div class="vp-button_container">
+			<div class="vp-button_container" v-if="user_type == 'seller'">
+
 				<v-btn
 					v-if="property.verified == 0"
 					id="btnVerify"
@@ -93,12 +94,14 @@
 					outline
 					color="p_purple"
 					class="title button">VERIFY</v-btn>
+
 				<v-btn
 					v-if="property.verified == 1"
 					id="btnVerify"
 					outline
 					color="p_purple"
 					class="title button">VERIFYING</v-btn>
+
 				<v-btn
 					v-if="property.verified == 2"
 					outline
@@ -107,6 +110,7 @@
 					<v-icon class="pr-4 p_green--text">fas fa-check-circle</v-icon>
 					VERIFIED
 				</v-btn>
+
 				<v-btn
 					v-if="!property.listed"
 					id="btnList"
@@ -115,10 +119,41 @@
 					color="p_blue"
 					:class="{'disable-click': property.verified == 0 || property.verified == 1}"
 					class="title button">LIST</v-btn>
-				<v-btn v-if="property.listed" id="btnUnlist" @click="unlistProperty" outline color="p_orange" class="title button">UNLIST</v-btn>
-				<v-btn id="btnBack" @click="back" outline color="p_text" class="title button">BACK</v-btn>
-				<v-btn id="btnRemove" @click="removeProperty" outline color="p_red" class="title button">REMOVE PROPERTY</v-btn>
+
+				<v-btn
+					v-if="property.listed"
+					id="btnUnlist"
+					@click="unlistProperty"
+					outline color="p_orange" class="title button">UNLIST</v-btn>
+
+				<v-btn
+					id="btnBack"
+					@click="back" outline color="p_text" class="title button">
+					BACK</v-btn>
+
+				<v-btn
+					id="btnRemove"
+					@click="removeProperty" outline color="p_red" class="title button">
+					REMOVE PROPERTY</v-btn>
+
 			</div>
+
+			<div class="vp-button_container" v-if="user_type == 'buyer'">
+
+				<v-btn
+					id="btnBack"
+					@click="back" outline color="p_text" class="title button">
+					BACK</v-btn>
+
+				<v-btn
+					id="btnSubmitOffer"
+					@click="verifyProperty"
+					outline
+					color="p_blue"
+					class="title button">SUBMIT OFFER</v-btn>
+
+			</div>
+
 		</v-container>
 	</v-layout>
 </template>
@@ -144,12 +179,12 @@ export default {
 		},
 
 		async listProperty () {
-			await axios.put('http://localhost:3000/api/properties/' + this.propertyId + '/list', { listed: true }, this.route_config)
+			await axios.put('http://localhost:3000/api/properties/' + this.propertyId + '/list', { listed: true, user_id: this.user_id }, this.route_config)
 			this.$router.push('/seller/properties')
 		},
 
 		async unlistProperty () {
-			await axios.put('http://localhost:3000/api/properties/' + this.propertyId + '/list', { listed: false }, this.route_config)
+			await axios.put('http://localhost:3000/api/properties/' + this.propertyId + '/list', { listed: false, user_id: this.user_id }, this.route_config)
 			this.$router.push('/seller/properties')
 		},
 
@@ -159,19 +194,19 @@ export default {
 			this.$router.push('/seller/properties')
 		},
 
-		handleContractEvent (event) {
-
-		},
-
 		back () {
-			this.$router.push('/seller/properties')
+			if (this.user_type === 'buyer') {
+				this.$router.go(-1)
+			} else if (this.user_type === 'seller') {
+				this.$router.push('/seller/properties')
+			}
 		}
 	},
 	computed: {
 		propertyId () {
 			return this.$route.params.property_id
 		},
-		...mapGetters(['route_config'])
+		...mapGetters(['route_config', 'user_id', 'user_type'])
 	},
 	mounted () {
 		this.get_property()
@@ -356,7 +391,6 @@ export default {
 	grid-template-columns: repeat(2, 1fr);
 	grid-template-rows: repeat(2, 15vh);
 	align-items: center;
-	justify-content: center;
 	border-radius: 20px;
 }
 

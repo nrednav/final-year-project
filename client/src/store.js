@@ -18,7 +18,8 @@ export default new Vuex.Store({
 		},
 		picture: require('@/assets/Blue_Mountains.jpg'),
 		session_critical: false,
-		property: null
+		property: null,
+		search_results: []
 	},
 	getters: {
 		user_authenticated: state => {
@@ -47,6 +48,9 @@ export default new Vuex.Store({
 			}
 			return config
 		},
+		search_results: state => {
+			return state.search_results
+		}
 	},
 	mutations: {
 		update_user_status (state, payload) {
@@ -63,6 +67,9 @@ export default new Vuex.Store({
 		},
 		add_property_data (state, payload) {
 			state.property = payload.property
+		},
+		add_search_results (state, payload) {
+			state.search_results = payload.results
 		}
 	},
 	actions: {

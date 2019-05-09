@@ -116,7 +116,7 @@ export const routes = [
 		beforeEnter: logged_in
 	},
 	{
-		path: '/buyer/search/results/property/:property_id',
+		path: '/buyer/search/results/:property_id',
 		name: 'buyer-view-property',
 		component: () => import('@/views/both/ViewProperty.vue'),
 		beforeEnter: logged_in

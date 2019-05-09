@@ -14,6 +14,14 @@
 			</ul>
 		</v-alert>
 
+		<v-alert v-model="propertiesNotFound" dismissible type="warning">
+			<ul>
+				<li v-for="(error, index) in errors" :key="index">
+					{{ error }}
+				</li>
+			</ul>
+		</v-alert>
+
 		<div class="ps-card-container">
 
 			<v-card class="primary p_text--text pa-4 ps-card display-1">
@@ -108,7 +116,9 @@ export default {
 			countries: Object.keys(countryData),
 			cities: countryData,
 			invalidForm: false,
-			errors: []
+			propertiesNotFound: false,
+			errors: [],
+			search_results: []
 		}
 	},
 	methods: {
@@ -117,6 +127,8 @@ export default {
 			var form = this.search_criteria
 			const validForm = this.validateFormFilled(form)
 			if (validForm) {
+				this.errors = []
+
 				const config = this.route_config
 				config.params = {
 					country: form.country,
@@ -131,6 +143,18 @@ export default {
 				axios.get('http://localhost:3000/api/properties/search', config)
 					.then((response) => {
 						console.log(response.data.properties)
+						this.search_results = response.data.properties
+
+						if (this.search_results.length > 0) {
+							this.propertiesNotFound = false
+							this.$store.commit('add_search_results', {
+								results: this.search_results
+							})
+							this.$router.push({ name: 'search-results' })
+						} else {
+							this.errors.push('Could not find any properties matching those search criteria')
+							this.propertiesNotFound = true
+						}
 					})
 					.catch((error) => console.log(error))
 			}

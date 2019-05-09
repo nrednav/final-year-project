@@ -59,10 +59,10 @@ router.get('/search', (req, res, next) => {
 
 	Property.find({
 		$and: [
+			{ 'details.address.country': country },
+			{ 'details.address.city': city },
 			{
 				$or: [
-					{ 'details.address.country': country },
-					{ 'details.address.city': city },
 					{ 'details.type': { $eq: type }},
 					{ 'details.listing_price': {
 						$gt: min_price,
@@ -80,7 +80,8 @@ router.get('/search', (req, res, next) => {
 				'details.bathroom_count': {
 					$lte: bath_count
 				}
-			}
+			},
+			{ listed: true }
 		]
 	}, (err, properties) => {
 		if (err) console.log(err);
@@ -133,12 +134,34 @@ router.get('/:property_id/images/:image_id', (req, res, next) => {
 router.put('/:property_id/list', (req, res, next) => {
 	console.log(req.body.listed)
 	console.log(req.params.property_id)
+
+	// Update property listed status
 	Property.updateOne({
 		_id: req.params.property_id
 	}, {$set: { listed: req.body.listed }}, (err, result) => {
-		res.json({
-			result
-		});
+		// Update listed count on user profile
+		var inc_amount;
+		if (req.body.listed) {
+			User.updateOne({
+				_id: req.body.user_id
+			}, { $inc: { 'profiles.seller.listed_count': 1 }}, (err, result) => {
+				if (err) console.log(err);
+				console.log('Updated listed count on user profile', result);
+				res.json({
+					result
+				});
+			});
+		} else {
+			User.updateOne({
+				_id: req.body.user_id
+			}, { $inc: { 'profiles.seller.listed_count': -1 }}, (err, result) => {
+				if (err) console.log(err);
+				console.log('Updated listed count on user profile', result);
+				res.json({
+					result
+				});
+			});
+		}
 	});
 });
 
@@ -221,7 +244,7 @@ router.delete('/delete/:property_id', (req, res, next) => {
 			deletePropertyImage(image_ids[i]);
 		}
 
-		deleteProperty(req.params.property_id, res, next);
+		deleteProperty(property, req.params.property_id, res, next);
 	});
 });
 
@@ -230,17 +253,37 @@ function deletePropertyImage(image_id) {
 		_id: image_id
 	}, (err, gridStore) => {
 		if (err) console.log(err);
-		console.log('Deleted property image');
 	});
 }
 
 // Delete property by id
-function deleteProperty(property_id, res, next) {
+function deleteProperty(property, property_id, res, next) {
 	Property.deleteOne({
 		_id: property_id
 	}, (err) => {
 		if (err) handleError(err, res, next);
-		res.send(`Property ${property_id} was deleted successfully`);
+		updateProfileCounts(property.details.owner, res, next);
+	});
+}
+
+function updateProfileCounts(owner_id, res, next) {
+	User.updateOne({
+		_id: owner_id,
+		$and: [
+			{ 'profiles.seller.listed_count': {
+				$ne: 0
+			}},
+			{ 'profiles.seller.verified_count': {
+				$ne: 0
+			}}
+		],
+	}, { $inc: { 'profiles.seller.listed_count': -1,
+	'profiles.seller.verified_count': -1 }}, (err, result) => {
+		if (err) console.log(err);
+		console.log('Updated listed count on user profile', result);
+		res.json({
+			result
+		});
 	});
 }
 

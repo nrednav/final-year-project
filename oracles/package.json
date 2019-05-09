@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "oracle": "babel-node ./src/verifierOracle.js",
-    "client": "babel-node ./src/client.js"
+    "verifier": "babel-node ./src/verifierOracle.js"
   },
   "author": "",
   "license": "ISC",
