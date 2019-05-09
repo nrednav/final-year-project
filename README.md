@@ -2,12 +2,23 @@
 
 ## Backlog
 - [ ] Finish user interface components
-- [ ] Update all data models
-- [ ] import mapGetters globally?
 - [ ] Change smart contracts to accept fullname instead of part names
+	- [x] Verifier contract
+	- [x] Escrow contract
+	- [x] Holding deposit contract
+
+## Stuff to do at end
+- [ ] Display offers to buyer
+	- [ ] Offer status, property id, timestamp
 - [ ] Prevent users from accessing other users property information
-- [ ] Check how to display image preview from uploaded file
-	- [ ] Check how the viet dude does it in his component
+- [ ] Prevent sellers from making offers on their own property
+	- [ ] Filter the search results
+- [ ] Prevent sellers from making multiple offers against the same property
+	- [ ] Filter the search results
+- [ ] Import mapGetters / axios globally?
+- [ ] Figure out how to display gridfs images on view property component
+
+---
 
 ## Create FYP directory
 - [x] Start markdown checklist
