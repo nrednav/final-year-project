@@ -9,41 +9,63 @@
 			</ul>
 		</v-alert>
 
-		<v-container class="panel white--text">
+		<v-container class="ap-panel white--text">
 
-			<v-card class="property-details primary">
-				<div class="details">
-					<input v-model="property.details.name" type="text" placeholder="Property Name" class="property-name pa-4 p_input_text--text p_input title">
-					<input v-model="property.details.address.street" type="text" placeholder="Street" class="street pa-4 p_input_text--text p_input title">
-					<input v-model="property.details.address.city" type="text" placeholder="City" class="city pa-4 p_input_text--text p_input title">
-					<input v-model="property.details.address.country" type="text" placeholder="Country" class="country pa-4 p_input_text--text p_input title">
-					<input v-model="property.details.address.post_code" type="text" placeholder="Post Code" class="post-code pa-4 p_input_text--text p_input title">
-					<input v-model="property.details.bedroom_count" type="text" placeholder="Bedroom Count" class="bed-count pa-4 p_input_text--text p_input title">
-					<input v-model="property.details.bathroom_count" type="text" placeholder="Bathroom Count" class="bath-count pa-4 p_input_text--text p_input title">
-					<select class="property-type pa-4 p_input_text--text p_input title" v-model="property.details.type">
+			<v-card class="ap-property-details primary">
+
+				<div class="ap-details">
+
+					<input v-model="property.details.name" type="text" placeholder="Property Name" class="ap-property-name pa-4 p_input_text--text p_input title">
+
+					<input v-model="property.details.address.street" type="text" placeholder="Street" class="ap-street pa-4 p_input_text--text p_input title">
+
+					<select class="ap-country pa-4 p_input_text--text p_input title" v-model="property.details.address.country">
+						<option disabled value="">Select a country</option>
+						<option v-for="(index, country) in countries" :key="country">
+						{{ countries[country] }}</option>
+					</select>
+
+					<select
+						v-if="property.details.address.country !== ''"
+						class="ap-city pa-4 p_input_text--text p_input title" v-model="property.details.address.city">
+						<option disabled value="">Select a city</option>
+						<option
+							v-for="city in cities[property.details.address.country]" :key="city">
+						{{ city }}</option>
+					</select>
+
+					<input v-model="property.details.address.post_code" type="text" placeholder="Post Code" class="ap-post-code pa-4 p_input_text--text p_input title">
+					<input v-model="property.details.bedroom_count" type="text" placeholder="Bedroom Count" class="ap-bed-count pa-4 p_input_text--text p_input title">
+
+					<input v-model="property.details.bathroom_count" type="text" placeholder="Bathroom Count" class="ap-bath-count pa-4 p_input_text--text p_input title">
+
+					<select class="ap-property-type pa-4 p_input_text--text p_input title" v-model="property.details.type">
 						<option disabled value="">Select property type</option>
 						<option v-for="(index,type) in types" v-bind:key="type">{{ types[type] }}</option>
 					</select>
-					<input v-model="property.details.size" type="text" placeholder="Size" class="p-size pa-4 p_input_text--text p_input title">
+
+					<input v-model="property.details.size" type="text" placeholder="Size" class="ap-p-size pa-4 p_input_text--text p_input title">
+
 				</div>
+
 			</v-card>
 
-			<v-card class="property-details-2 primary">
-				<div class="details-2">
-					<input v-model="property.details.listing_price" type="text" placeholder="Listing Price" class="p-price pa-4 p_input_text--text p_input title">
-					<input v-model="property.details.deposit" type="text" placeholder="Deposit" class="p-deposit pa-4 p_input_text--text p_input title">
-					<label class="p-date-label pa-4 p_input_text--text title text-xs-right">
+			<v-card class="ap-property-details-2 primary">
+				<div class="ap-details-2">
+					<input v-model="property.details.listing_price" type="text" placeholder="Listing Price" class="ap-p-price pa-4 p_input_text--text p_input title">
+					<input v-model="property.details.deposit" type="text" placeholder="Deposit" class="ap-p-deposit pa-4 p_input_text--text p_input title">
+					<label class="ap-p-date-label pa-4 p_input_text--text title text-xs-right">
 						Available from:
 					</label>
 					<v-menu>
-						<v-text-field background-color="p_input" class="p-available-from" dark :value="available_from" slot="activator"></v-text-field>
-						<v-date-picker class="p-date-picker" color="p_text" v-model="property.details.available_from" type="month"></v-date-picker>
+						<v-text-field background-color="p_input" class="ap-p-available-from" dark :value="available_from" slot="activator"></v-text-field>
+						<v-date-picker class="ap-p-date-picker" color="p_text" v-model="property.details.available_from" type="month"></v-date-picker>
 					</v-menu>
 				</div>
 			</v-card>
 
 			<v-card class="image-upload-container primary">
-				<div class="upload-panel">
+				<div class="ap-upload-panel">
 					<vue-upload-multiple-image
 						@upload-success="imagesUploaded"
 						@edit-image="imageEdited"
@@ -60,12 +82,12 @@
 				</div>
 			</v-card>
 
-			<v-card class="property-description primary">
+			<v-card class="ap-property-description primary">
 				<textarea v-model="property.details.description" placeholder="Add a description" class="p-description pa-4 p_input_text--text p_input title">
 				</textarea>
 			</v-card>
 
-			<div class="button_container">
+			<div class="ap-button_container">
 				<v-btn @click="cancel" outline color="p_red" class="title button">CANCEL</v-btn>
 				<v-btn @click="saveForm" outline color="p_blue" class="title button">SAVE</v-btn>
 			</div>
@@ -79,6 +101,8 @@ import axios from 'axios'
 import moment from 'moment'
 import VueUploadMultipleImage from 'vue-upload-multiple-image'
 import { mapGetters } from 'vuex'
+
+import countryData from '@/assets/countries.json'
 
 export default {
 	components: {
@@ -94,7 +118,7 @@ export default {
 					description: '',
 					address: {
 						street: '',
-						city: '',
+						city: 'default',
 						country: '',
 						post_code: ''
 					},
@@ -108,6 +132,8 @@ export default {
 				}
 			},
 			types: ['Apartment', 'Detached House', 'Attached House', 'Condominium', 'Townhouse'],
+			countries: Object.keys(countryData),
+			cities: countryData,
 			errors: [],
 			formInvalid: false
 		}
@@ -147,18 +173,18 @@ export default {
 			if (this.validateFormNotEmpty()) {
 				if (isNaN(details.listing_price)) {
 					this.errors.push('Please enter a number for the listing price.')
-				}
-				if (isNaN(details.deposit)) {
+				} else if (isNaN(details.deposit)) {
 					this.errors.push('Please enter a number for the deposit')
-				}
-				if (isNaN(details.bedroom_count)) {
+				} else if (isNaN(details.bedroom_count)) {
 					this.errors.push('Please enter a number for the bedroom count')
-				}
-				if (isNaN(details.bathroom_count)) {
+				} else if (isNaN(details.bathroom_count)) {
 					this.errors.push('Please enter a number for the bathroom count')
-				}
-				if (this.images.length < 1) {
+				} else if (this.images.length < 1) {
 					this.errors.push('Please upload at least one image of your property.')
+				} else if (details.address.country === '') {
+					this.errors.push('Please select a country')
+				} else if (details.address.city === 'default') {
+					this.errors.push('Please select a city')
 				}
 
 				if (this.errors.length > 0) {
@@ -172,7 +198,7 @@ export default {
 			return true
 		},
 		async saveForm () {
-			const validated = this.validateForm()
+			var validated = this.validateForm()
 
 			if (validated) {
 				const formData = new FormData()
@@ -213,7 +239,7 @@ export default {
 
 <style>
 
-.panel {
+.ap-panel {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	grid-template-rows: repeat(4, minmax(20vh, auto));
@@ -221,12 +247,16 @@ export default {
 	max-width: 100vw;
 }
 
-.property-details {
+.ap-property-details {
 	grid-row: 1 / 3;
+	grid-column: 1 / 2;
 	border-radius: 20px;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	hyphens: auto;
 }
 
-	.details {
+	.ap-details {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		grid-template-rows: repeat(5, minmax(10vh, auto));
@@ -235,81 +265,85 @@ export default {
 		max-width: 100%;
 	}
 
-	.property-name {
+	.ap-property-name {
 		grid-column: 1 / 3;
 		grid-row: 1;
 		padding: 10px;
 		border-radius: 25px;
 	}
 
-	.street {
-		grid-column: 1 / 2;
-		grid-row: 2;
-		padding: 10px;
-		border-radius: 25px;
-	}
-
-	.city {
-		grid-column: 2 / 3;
-		grid-row: 2;
-		padding: 10px;
-		border-radius: 25px;
-	}
-
-	.country {
+	.ap-street {
 		grid-column: 1 / 2;
 		grid-row: 3;
 		padding: 10px;
 		border-radius: 25px;
 	}
 
-	.post-code {
+	.ap-city {
+		grid-column: 2 / 3;
+		grid-row: 2;
+		padding: 10px;
+		border-radius: 25px;
+	}
+
+	.ap-country {
+		grid-column: 1 / 2;
+		grid-row: 2;
+		padding: 10px;
+		border-radius: 25px;
+	}
+
+	.ap-post-code {
 		grid-column: 2 / 3;
 		grid-row: 3;
 		padding: 10px;
 		border-radius: 25px;
 	}
 
-	.property-type {
+	.ap-property-type {
 		grid-column: 1 / 2;
 		grid-row: 4;
 		border-radius: 25px;
 		padding: 10px;
 	}
 
-	.property-type option {
+	.ap-property-type option {
 		background-color: #1e232a;
 	}
 
-	.p-size {
+	.ap-p-size {
 		grid-column: 2 / 3;
 		grid-row: 4;
 		border-radius: 25px;
 		padding: 10px;
 	}
 
-	.bed-count {
+	.ap-bed-count {
 		grid-column: 1 / 2;
 		grid-row: 5;
 		border-radius: 25px;
 		padding: 10px;
 	}
 
-	.bath-count {
+	.ap-bath-count {
 		grid-column: 2 / 3;
 		grid-row: 5;
 		border-radius: 25px;
 		padding: 10px;
 	}
 
-.property-details-2 {
-	display: flex;
-	align-items: center;
-	justify-content: center;
+.ap-property-details-2 {
+	grid-row: 1;
+	grid-column: 2;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	hyphens: auto;
 	border-radius: 20px;
 }
 
-	.details-2 {
+	.ap-details-2 {
+		grid-column: 1;
+		grid-row: 1;
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		grid-template-rows: repeat(2, minmax(10vh, auto));
@@ -318,36 +352,36 @@ export default {
 		max-width: 100%;
 	}
 
-	.p-price {
+	.ap-p-price {
 		grid-column: 1 / 2;
 		grid-row: 1;
 		border-radius: 25px;
 		padding: 10px;
 	}
 
-	.p-deposit {
+	.ap-p-deposit {
 		grid-column: 2 / 3;
 		grid-row: 1;
 		border-radius: 25px;
 		padding: 10px;
 	}
 
-	.p-available-from.v-input .v-input__slot {
+	.ap-p-available-from.v-input .v-input__slot {
 		grid-column: 1 / 3;
 		grid-row: 2;
 		border-radius: 15px;
 		padding: 10px;
 	}
 
-		.p-available-from input {
+		.ap-p-available-from input {
 			text-align: center;
 		}
 
-	.p-date-picker {
+	.ap-p-date-picker {
 		border-radius: 25px;
 	}
 
-.property-description {
+.ap-property-description {
 	display: grid;
 	grid-template-columns: repeat(1, 1fr);
 	grid-row: 3 / 5;
@@ -355,7 +389,7 @@ export default {
 	border-radius: 20px;
 }
 
-	.property-description p-description {
+	.ap-property-description p-description {
 		border-radius: 20px;
 	}
 
@@ -368,7 +402,7 @@ export default {
 	border-radius: 20px;
 }
 
-.upload-panel {
+.ap-upload-panel {
 	grid-row: 1;
 	grid-column: 1;
 	display: grid;
@@ -448,7 +482,7 @@ export default {
 		height: 50px;
 	}
 
-.button_container {
+.ap-button_container {
 	display: flex;
 	align-items: center;
 	justify-content: center;

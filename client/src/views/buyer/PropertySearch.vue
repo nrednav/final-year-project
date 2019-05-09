@@ -20,11 +20,22 @@
 
 				<div class="search-criteria pa-4">
 
-					<input
-						v-model="search_criteria.location"
-						type="text"
-						placeholder="Enter a location, e.g. City, Town, Country or Post code"
-						class="search-location pa-4 p_input_text--text p_input title">
+					<select
+						class="search-country pa-4 p_input_text--text p_input title"
+						v-model="search_criteria.country">
+						<option disabled value="">Select a country</option>
+						<option v-for="(index, country) in countries" :key="country">
+						{{ countries[country] }}</option>
+					</select>
+
+					<select
+						class="search-city pa-4 p_input_text--text p_input title"
+						v-model="search_criteria.city">
+						<option disabled value="">Select a city</option>
+						<option
+							v-for="city in cities[search_criteria.country]" :key="city">
+						{{ city }}</option>
+					</select>
 
 					<input
 						v-model="search_criteria.bed_count"
@@ -61,10 +72,9 @@
 				</div>
 
 				<div class="ps-button-container">
-					<v-btn @click="submitSearch"
-						color="p_blue"
-						outline
-						class="title btnSearch">
+					<v-btn
+						@click="submitSearch"
+						color="p_blue" outline class="title btnSearch">
 						SEARCH
 					</v-btn>
 				</div>
@@ -80,12 +90,14 @@
 <script>
 import { mapGetters } from 'vuex'
 import axios from 'axios'
+import countryData from '@/assets/countries.json'
 
 export default {
 	data () {
 		return {
 			search_criteria: {
-				location: '',
+				country: '',
+				city: '',
 				bed_count: '',
 				bath_count: '',
 				type: '',
@@ -93,6 +105,8 @@ export default {
 				max_price: ''
 			},
 			types: ['Apartment', 'Detached House', 'Attached House', 'Condominium', 'Townhouse'],
+			countries: Object.keys(countryData),
+			cities: countryData,
 			invalidForm: false,
 			errors: []
 		}
@@ -103,19 +117,15 @@ export default {
 			var form = this.search_criteria
 			const validForm = this.validateFormFilled(form)
 			if (validForm) {
-				var minPrice = Number(form.min_price)
-				var maxPrice = Number(form.max_price)
-				var bedCount = Number(form.bed_count)
-				var bathCount = Number(form.bath_count)
-
 				const config = this.route_config
 				config.params = {
-					location: form.location,
+					country: form.country,
+					city: form.city,
 					type: form.type,
-					bedcount: bedCount,
-					bathcount: bathCount,
-					minprice: minPrice,
-					maxprice: maxPrice
+					bedcount: form.bed_count,
+					bathcount: form.bath_count,
+					minprice: form.min_price,
+					maxprice: form.max_price
 				}
 
 				axios.get('http://localhost:3000/api/properties/search', config)
@@ -128,8 +138,10 @@ export default {
 
 		validateFormFilled (form) {
 			this.errors = []
-			if (form.location === '') {
-				this.errors.push('Please enter a location')
+			if (form.country === '') {
+				this.errors.push('Please select a country')
+			} else if (form.city === '') {
+				this.errors.push('Please select a city')
 			} else if (form.bed_count === '' || form.bath_count === '') {
 				this.errors.push('Please enter a bedroom count and bathroom count')
 			} else if (form.type === '') {
@@ -196,14 +208,14 @@ export default {
 	width: 90%;
 }
 
-	.ps-card {
-		border-radius: 25px;
-		display: grid;
-		grid-template-columns: repeat(1, 1fr);
-		grid-template-rows: repeat(2, minmax(15vh, auto));
-		align-items: center;
-		justify-items: center;
-	}
+.ps-card {
+	border-radius: 25px;
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	grid-template-rows: repeat(2, minmax(15vh, auto));
+	align-items: center;
+	justify-items: center;
+}
 
 .search-criteria {
 	display: grid;
@@ -213,47 +225,55 @@ export default {
 	align-items: center;
 	height: 100%;
 }
-	.search-location {
-		grid-column: 1 / 4;
-		grid-row: 1;
-		padding: 10px;
-		border-radius: 25px;
-	}
 
-	.search-bed-count {
-		grid-column: 1 / 2;
-		grid-row: 2;
-		padding: 10px;
-		border-radius: 25px;
-	}
+.search-country {
+	grid-column: 1 / 2;
+	grid-row: 1;
+	padding: 10px;
+	border-radius: 25px;
+}
 
-	.search-bath-count {
-		grid-column: 2 / 3;
-		grid-row: 2;
-		padding: 10px;
-		border-radius: 25px;
-	}
+.search-city {
+	grid-column: 2 / 4;
+	grid-row: 1;
+	padding: 10px;
+	border-radius: 25px;
+}
 
-	.search-type {
-		grid-column: 1 / 3;
-		grid-row: 3;
-		padding: 10px;
-		border-radius: 25px;
-	}
+.search-bed-count {
+	grid-column: 1 / 2;
+	grid-row: 2;
+	padding: 10px;
+	border-radius: 25px;
+}
 
-	.search-min-price {
-		grid-column: 3 / 4;
-		grid-row: 2;
-		padding: 10px;
-		border-radius: 25px;
-	}
+.search-bath-count {
+	grid-column: 2 / 3;
+	grid-row: 2;
+	padding: 10px;
+	border-radius: 25px;
+}
 
-	.search-max-price {
-		grid-column: 3 / 4;
-		grid-row: 3;
-		padding: 10px;
-		border-radius: 25px;
-	}
+.search-type {
+	grid-column: 1 / 3;
+	grid-row: 3;
+	padding: 10px;
+	border-radius: 25px;
+}
+
+.search-min-price {
+	grid-column: 3 / 4;
+	grid-row: 2;
+	padding: 10px;
+	border-radius: 25px;
+}
+
+.search-max-price {
+	grid-column: 3 / 4;
+	grid-row: 3;
+	padding: 10px;
+	border-radius: 25px;
+}
 
 .ps-button-container {
 	width: 100%;

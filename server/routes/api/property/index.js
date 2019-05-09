@@ -49,13 +49,40 @@ const upload = multer({ storage });
 
 /* SEARCH for properties via text indexing */
 router.get('/search', (req, res, next) => {
-	let location_criteria = req.query.location
+	let country = req.query.country
+	let city = req.query.city
+	let type = req.query.type
+	let min_price = req.query.minprice;
+	let max_price = req.query.maxprice;
+	let bed_count = Number(req.query.bedcount);
+	let bath_count = Number(req.query.bathcount);
+
 	Property.find({
-		$text: { $search: location_criteria }}, (err, properties) => {
-//		'details.listing_price': { $gte: Number(req.query.minprice), $lte: Number(req.query.maxprice) },
-//		'details.type': { $eq: req.query.type },
-//		'details.bedroom_count': { $eq: Number(req.query.bedcount) },
-		//'details.bathroom_count': { $eq: Number(req.query.bathcount) }}).exec((err, properties) => {
+		$and: [
+			{
+				$or: [
+					{ 'details.address.country': country },
+					{ 'details.address.city': city },
+					{ 'details.type': { $eq: type }},
+					{ 'details.listing_price': {
+						$gt: min_price,
+						$lt: max_price
+					}}
+				]
+			},
+			{
+				'details.bedroom_count': {
+					$lte: bed_count
+				}
+			},
+			{
+
+				'details.bathroom_count': {
+					$lte: bath_count
+				}
+			}
+		]
+	}, (err, properties) => {
 		if (err) console.log(err);
 		console.log(properties);
 		res.json({

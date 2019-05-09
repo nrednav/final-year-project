@@ -1,11 +1,11 @@
 <template>
-	<v-layout column :key="renderKey">
+	<v-layout column>
 		<v-container class="vp-panel white--text">
 
 			<v-card class="vp-property-details primary">
 				<div class="vp-details">
 					<div
-						class="property-name pa-4 title p_input_text--text p_input">
+						class="vp-property-name pa-4 title p_input_text--text p_input">
 						<span class="p_text--text pr-4">Property Name: </span>
 						{{ property.details.name }}
 					</div>
@@ -185,6 +185,7 @@ export default {
 	grid-template-columns: repeat(2, 1fr);
 	grid-template-rows: repeat(4, minmax(20vh, auto));
 	grid-gap: 50px;
+	max-width: 100vw;
 }
 
 .vp-property-details {
