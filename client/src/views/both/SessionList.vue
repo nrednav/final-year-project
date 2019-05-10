@@ -8,6 +8,7 @@
 		<v-container v-if="sessions.length > 0">
 
 			<v-card
+				@click="viewSession(session._id)"
 				class="pa-4 primary session-card"
 				v-for="(session, index) in sessions"
 				:key="session._id">
@@ -88,6 +89,10 @@ export default {
 					this.properties = response.data.properties
 				})
 				.catch((error) => console.log(error))
+		},
+
+		viewSession (id) {
+			this.$router.push({ path: `/${this.user_type}/sessions/${id}` })
 		}
 	},
 

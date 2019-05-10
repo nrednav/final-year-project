@@ -46,7 +46,7 @@ export const routes = [
 		beforeEnter: logged_in
 	},
 	{
-		path: '/:user/session/:session_id',
+		path: '/:user/sessions/:session_id',
 		name: 'session',
 		component: () => import('@/views/both/ViewSession.vue'),
 		beforeEnter: logged_in
