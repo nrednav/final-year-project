@@ -151,6 +151,13 @@
 
 			</div>
 
+			<div
+				v-if="user_type == 'seller'"
+				class="offers-container">
+				<h1 class="p_text--text">Offers</h1>
+				<OfferList :offers="property.offers" :propertyId="propertyId" :property="property"/>
+			</div>
+
 		</v-container>
 	</v-layout>
 </template>
@@ -160,10 +167,12 @@ import { mapGetters } from 'vuex'
 import axios from 'axios'
 
 import OfferPopup from '@/views/buyer/OfferPopup'
+import OfferList from '@/views/seller/OfferList'
 
 export default {
 	components: {
-		OfferPopup
+		OfferPopup,
+		OfferList
 	},
 	data () {
 		return {
@@ -186,8 +195,12 @@ export default {
 		},
 
 		async unlistProperty () {
-			await axios.put('http://localhost:3000/api/properties/' + this.propertyId + '/list', { listed: false, user_id: this.user_id }, this.route_config)
-			this.$router.push('/seller/properties')
+			if (this.property.offers.length > 0) {
+				alert('There are currently offers made on this property, please reject them first before unlisting this property')
+			} else {
+				await axios.put('http://localhost:3000/api/properties/' + this.propertyId + '/list', { listed: false, user_id: this.user_id }, this.route_config)
+				this.$router.push('/seller/properties')
+			}
 		},
 
 		async removeProperty () {
@@ -414,6 +427,11 @@ export default {
 .disable-click {
 	pointer-events: none;
 	opacity: 0.5;
+}
+
+.offers-container {
+	grid-row: 5;
+	grid-column: 1 / 3;
 }
 
 </style>

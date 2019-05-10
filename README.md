@@ -10,6 +10,7 @@
 ## Stuff to do at end
 - [ ] Display offers to buyer
 	- [ ] Offer status, property id, timestamp
+- [ ] Fix add property preview image from going over the date picker
 - [ ] Prevent users from accessing other users property information
 - [ ] Prevent sellers from making offers on their own property
 	- [ ] Filter the search results

@@ -282,6 +282,39 @@ router.delete('/delete/:property_id', (req, res, next) => {
 	});
 });
 
+/* Accept offer */
+router.post('/:property_id/offers/accept', (req, res, next) => {
+	Property.updateOne({
+		_id: req.params.property_id,
+		'offers._id': req.body.offerId
+	},{
+		$pull: { 'offers': { _id: req.body.offerId } },
+		$set: { 'session_underway': true }
+	},(err, result) => {
+		if (err) console.log(err);
+		console.log(result);
+		res.json({
+			result
+		});
+	});
+});
+
+/* Reject offer */
+router.post('/:property_id/offers/reject', (req, res, next) => {
+	Property.updateOne({
+		_id: req.params.property_id,
+		'offers._id': req.body.offerId
+	},{
+		$pull: { 'offers': { _id: req.body.offerId } }
+	},(err, result) => {
+		if (err) console.log(err);
+		console.log(result);
+		res.json({
+			result
+		});
+	});
+});
+
 function deletePropertyImage(image_id) {
 	gfs.remove({
 		_id: image_id

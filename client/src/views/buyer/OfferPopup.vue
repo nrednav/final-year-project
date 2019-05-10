@@ -8,7 +8,7 @@
 			color="p_blue"
 			class="title button">SUBMIT OFFER</v-btn>
 
-		<v-card class="pa-4 primary p_text--text display-1 offer-card">
+		<v-card class="pa-4 primary p_text--text display-1 submit-offer-card">
 			<v-btn
 				id="btnSubmitOffer"
 				@click="submitOffer"
@@ -93,7 +93,7 @@ export default {
 	border-radius: 25px;
 }
 
-.offer-card {
+.submit-offer-card {
 	height: 100%;
 	border-radius: 25px;
 	display: grid;

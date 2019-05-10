@@ -66,6 +66,12 @@
 
 			</v-card>
 
+			<div class="back-button-container">
+				<v-btn
+					@click="back" outline color="p_text" class="title sr-button">
+					BACK</v-btn>
+			</div>
+
 		</v-container>
 
 	</div>
@@ -84,6 +90,10 @@ export default {
 	methods: {
 		viewProperty (id) {
 			this.$router.push({ path: `/buyer/search/results/${id}` })
+		},
+
+		back () {
+			this.$router.go(-1)
 		}
 	},
 
@@ -104,5 +114,17 @@ export default {
 	.search-results-card:hover {
 		cursor: pointer;
 	}
+
+.back-button-container {
+	display: grid;
+	align-items: center;
+	justify-items: center;
+}
+
+.sr-button {
+	border-radius: 10px;
+	width: 20vw;
+	height: 10vh;
+}
 
 </style>
