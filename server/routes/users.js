@@ -4,6 +4,7 @@ var router = express.Router();
 
 const User = require('../db/models/User').User;
 const Property = require('../db/models/Property').Property;
+const Session = require('../db/models/Session').Session;
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -33,13 +34,39 @@ router.get('/:user_id/properties', (req, res, next) => {
 	}, (err, result) => {
 		if (err) console.error(err);
 		let property_ids = result.profiles.seller.properties;
-		let my_properties = [];
 		Property.find({
 			_id: {$in: property_ids}
 		}, (err, result) => {
 			if (err) console.error(err);
 			res.json({
 				properties: result
+			});
+		});
+	});
+});
+
+/* GET user sessions */
+router.get('/:user_id/:user_type/sessions', (req, res, next) => {
+	const user_id = new mongoose.Types.ObjectId(req.params.user_id);
+	const user_type = req.params.user_type
+	User.findOne({
+		_id: user_id
+	}, (err, result) => {
+		if (err) console.log(err);
+		var session_ids = [];
+
+		if (user_type == 'seller') {
+			session_ids = result.profiles.seller.sessions;
+		} else if (user_type == 'buyer') {
+			session_ids = result.profiles.buyer.sessions;
+		}
+
+		Session.find({
+			_id: {$in: session_ids}
+		}, (err, result) => {
+			if (err) console.error(err);
+			res.json({
+				sessions: result
 			});
 		});
 	});

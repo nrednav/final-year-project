@@ -102,6 +102,19 @@ router.get('/', function(req, res, next) {
 	});
 });
 
+/* Get properties based on some array */
+router.post('/find-by-ids', (req, res, next) => {
+	var property_ids = JSON.parse(req.body.propertyIds);
+	Property.find({
+		_id: {$in: property_ids}
+	}, (err, result) => {
+		if (err) console.error(err);
+		res.json({
+			properties: result
+		});
+	});
+});
+
 /* GET property by id*/
 router.get('/:property_id', (req, res, next) => {
 	const property_id = req.params.property_id;

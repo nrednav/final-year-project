@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 const Session = require('../../../db/models/Session').Session;
+const User = require('../../../db/models/User').User;
 
 /* GET session listing. */
 router.get('/', function(req, res, next) {
@@ -44,13 +45,40 @@ router.post('/create', (req, res, next) => {
 				seller_id: req.body.seller_id
 			}, (err, session) => {
 				if (err) console.error(err);
-				res.json({
-					session_id: session._id
-				});
+				linkSessionToParticipants(session._id, session.buyer_id, session.seller_id,
+				res, next);
 			});
 		}
 	});
 });
+
+function linkSessionToParticipants(session_id, buyer_id, seller_id, res, next) {
+	// First the seller
+	User.updateOne({
+		_id: seller_id
+	}, {
+		$push: {
+			'profiles.seller.sessions': session_id
+		}
+	}, (err, result) => {
+		if (err) console.log(err);
+		console.log(result);
+		// Then the buyer
+		User.updateOne({
+			_id: buyer_id
+		}, {
+			$push: {
+				'profiles.buyer.sessions': session_id
+			}
+		}, (err, result) => {
+			if (err) console.log(err);
+			console.log(result);
+			res.json({
+				message: 'Linked session to participants successfully'
+			});
+		});
+	});
+}
 
 /* PUT - update a session */
 router.put('/update/:session_id', (req, res, next) =>  {
