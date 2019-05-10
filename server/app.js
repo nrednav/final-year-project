@@ -37,7 +37,7 @@ app.use('/', indexRouter);
 app.use('/api/auth', authRouter);
 app.use('/api/screening', screeningRouter);
 app.use('/api/users', auth_middleware.verify_login_status, usersRouter);
-app.use('/api/sessions', auth_middleware.verify_login_status, sessionRouter);
+app.use('/api/sessions', auth_middleware.verify_requester, sessionRouter);
 app.use('/api/properties', auth_middleware.verify_login_status, propertyRouter);
 app.use('/api/land-registry', auth_middleware.verify_requester, landregistryRouter);
 

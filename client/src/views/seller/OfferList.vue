@@ -1,6 +1,12 @@
 <template>
 	<div class="offer-list-container">
 		<v-container>
+
+			<div v-if="property.session_underway || decisionMade"
+				class="pa-4 display-1 p_yellow--text font-weight-bold text-xs-center">
+				Session in progress
+			</div>
+
 			<v-card
 				v-for="(offer, index) in offers"
 				:key="index"
@@ -20,8 +26,8 @@
 
 				<v-btn
 					outline
-					:class="{'disable-click': property.session_underway}"
-					@click="acceptOffer(index, offer._id)"
+					:class="{'disable-click': property.session_underway || decisionMade}"
+					@click="acceptOffer(index, offer._id, offer.buyer_id)"
 					color="p_green"
 					class="title accept-offer-btn">
 					Accept
@@ -29,7 +35,7 @@
 
 				<v-btn
 					outline
-					:class="{'disable-click': property.session_underway}"
+					:class="{'disable-click': property.session_underway || decisionMade}"
 					@click="rejectOffer(index, offer._id)"
 					color="p_red"
 					class="title reject-offer-btn">
@@ -50,15 +56,18 @@ const apiUrl = 'http://localhost:3000/api/properties/'
 export default {
 	data () {
 		return {
-
+			decisionMade: false
 		}
 	},
 	props: ['offers', 'propertyId', 'property'],
 
 	methods: {
-		acceptOffer (index, offerId) {
-			axios.post(apiUrl + this.propertyId + '/offers/accept', { offerId },
+		acceptOffer (index, offerId, buyerId) {
+			var sellerId = this.user_id
+			axios.post(apiUrl + this.propertyId + '/offers/accept', { offerId, buyerId, sellerId },
 				this.route_config).then((response) => {
+				this.removeOfferFromList(index)
+				this.decisionMade = true
 				console.log(response)
 			})
 				.catch((error) => console.log(error))
@@ -67,14 +76,19 @@ export default {
 		rejectOffer (index, offerId) {
 			axios.post(apiUrl + this.propertyId + '/offers/reject', { offerId },
 				this.route_config).then((response) => {
+				this.removeOfferFromList(index)
 				console.log(response)
 			})
 				.catch((error) => console.log(error))
+		},
+
+		removeOfferFromList (index) {
+			this.offers.splice(index)
 		}
 	},
 
 	computed: {
-		...mapGetters(['route_config'])
+		...mapGetters(['route_config', 'user_id'])
 	}
 }
 </script>

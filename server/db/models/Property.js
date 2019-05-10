@@ -76,6 +76,9 @@ const PropertySchema = new mongoose.Schema({
 		default: false
 	},
 	offers: [{
+		buyer_id: {
+			type: String
+		},
 		buyer_account_address: {
 			type: String
 		},

@@ -169,6 +169,7 @@ router.put('/:property_id/list', (req, res, next) => {
 router.post('/:property_id/add-offer', (req, res, next) => {
 	const body = req.body
 	const offer = {
+		buyer_id: body.user_id,
 		buyer_account_address: body.buyer_account_address,
 		buyer_name: req.body.buyer_name,
 		price: body.offer
@@ -293,9 +294,12 @@ router.post('/:property_id/offers/accept', (req, res, next) => {
 	},(err, result) => {
 		if (err) console.log(err);
 		console.log(result);
-		res.json({
-			result
-		});
+		var details = {
+			buyer_id: req.body.buyerId,
+			seller_id: req.body.sellerId,
+			property_id: req.params.property_id
+		}
+		createSession(details, res, next);
 	});
 });
 
@@ -314,6 +318,19 @@ router.post('/:property_id/offers/reject', (req, res, next) => {
 		});
 	});
 });
+
+
+function createSession(details, res, next) {
+	axios.post('http://localhost:3000/api/sessions/create', details, {
+		headers: {
+			Authorization: 'a1b2c3d4e5f6g7'
+		}
+	}).then((response) => {
+		res.json({
+			message: 'Session was created successfully'
+		});
+	}).catch((error) => console.log(error));
+}
 
 function deletePropertyImage(image_id) {
 	gfs.remove({
