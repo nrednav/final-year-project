@@ -78,7 +78,8 @@ export default {
 
 		viewStage (stageNumber) {
 			var sessionId = this.$route.params.session_id
-			var toRoute = `/seller/sessions/${sessionId}/stage/${stageNumber}`
+			var toRoute = `/${this.user_type}/sessions/${sessionId}/stage/${stageNumber}`
+			this.$store.commit('add_session', { session: this.session })
 			this.$router.push(toRoute)
 		},
 
@@ -99,7 +100,7 @@ export default {
 	},
 
 	computed: {
-		...mapGetters(['user_id'])
+		...mapGetters(['user_id', 'user_type'])
 	},
 
 	mounted () {

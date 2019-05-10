@@ -81,7 +81,7 @@ function linkSessionToParticipants(session_id, buyer_id, seller_id, res, next) {
 }
 
 /* PUT - update a session */
-router.put('/update/:session_id', (req, res, next) =>  {
+router.put('/:session_id/update', (req, res, next) =>  {
 	Session.updateOne({
 		_id: req.params.session_id
 	}, req.body.updateOptions, (err) => {
@@ -91,7 +91,7 @@ router.put('/update/:session_id', (req, res, next) =>  {
 });
 
 /* DELETE - delete a session */
-router.delete('/delete/:session_id', (req, res, next) => {
+router.delete('/:session_id/delete', (req, res, next) => {
 	Session.deleteOne({
 		_id: req.params.session_id
 	}, (err) => {

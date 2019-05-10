@@ -34,6 +34,10 @@ const SessionSchema = new mongoose.Schema({
 				default: "Pending",
 				enum: ["Pending", "In Progress", "Completed"]
 			},
+			holding_deposit_address: {
+				type: String,
+				default: ''
+			},
 			deposit_amount: {
 				type: Number,
 				default: 0

@@ -18,7 +18,8 @@ export default new Vuex.Store({
 		},
 		picture: require('@/assets/Blue_Mountains.jpg'),
 		session_critical: false,
-		property: null,
+		property: {},
+		session: {},
 		search_results: []
 	},
 	getters: {
@@ -39,6 +40,9 @@ export default new Vuex.Store({
 		},
 		property: state => {
 			return state.property
+		},
+		session: state => {
+			return state.session
 		},
 		route_config: state => {
 			const config = {
@@ -64,6 +68,9 @@ export default new Vuex.Store({
 		add_user_id (state, payload) {
 			state.user.id = payload.user_id
 			state.user.object = payload.user_object
+		},
+		add_session (state, payload) {
+			state.session = payload.session
 		},
 		add_property_data (state, payload) {
 			state.property = payload.property

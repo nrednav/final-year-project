@@ -52,25 +52,25 @@ export const routes = [
 		beforeEnter: logged_in
 	},
 	{
-		path: '/:user/session/:session_id/stage/1',
+		path: '/:user/sessions/:session_id/stage/1',
 		name: 'holding-deposit',
 		component: () => import('@/views/both/HoldingDeposit.vue'),
 		beforeEnter: logged_in
 	},
 	{
-		path: '/:user/session/:session_id/stage/2',
+		path: '/:user/sessions/:session_id/stage/2',
 		name: 'background-screening',
 		component: () => import('@/views/both/BackgroundScreening.vue'),
 		beforeEnter: logged_in
 	},
 	{
-		path: '/:user/session/:session_id/stage/3',
+		path: '/:user/sessions/:session_id/stage/3',
 		name: 'sales-contract',
 		component: () => import('@/views/both/SalesContract.vue'),
 		beforeEnter: logged_in
 	},
 	{
-		path: '/:user/session/:session_id/stage/4',
+		path: '/:user/sessions/:session_id/stage/4',
 		name: 'escrow',
 		component: () => import('@/views/both/Escrow.vue'),
 		beforeEnter: logged_in
