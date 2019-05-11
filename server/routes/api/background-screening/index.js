@@ -34,22 +34,29 @@ router.post('/add-report', (req, res, next) => {
 });
 
 /* Verify user */
-router.get('/get-report/:screening_uid', (req, res, next) => {
+router.get('/get-report/:user_address', (req, res, next) => {
 	const auth_header = req.get('authorization');
 
 	if (auth_header == 'a1b2c3d4e5f6g7') {
 		ScreeningReport.findOne({
-			screening_uid: req.params.screening_uid
+			buyer_address: req.params.user_address
 		},
 			(err, result) => {
-				if (err) console.log(err);
-				console.log(result)
-				let verified = result.identity_check &&
-									result.financial_check &&
-									result.criminal_check;
-				res.json({
-					verified: verified
-				});
+				if (err) {
+					console.log(err);
+				} else {
+					console.log('Got report... verifying now.');
+					let verified = result.identity_check &&
+										result.financial_check &&
+										result.criminal_check;
+
+					console.log('Verification finished... sending result');
+
+					res.json({
+						verified: verified,
+						screening_uid: result.screening_uid
+					});
+				}
 			});
 	} else {
 		res.json({
