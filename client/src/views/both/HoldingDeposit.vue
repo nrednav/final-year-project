@@ -11,7 +11,7 @@
 				<div class="hd-amount">
 					Amount:
 					<span
-						v-if="user_type == 'buyer' || depositStatus == 'ABP'"
+						v-if="user_type == 'buyer' || depositStatus != 'ASR'"
 						class="hd-amount-value p_input_text--text">
 						{{ session.stages['1'].deposit_amount }}</span>
 					<input
@@ -32,7 +32,7 @@
 				<div class="hd-deadline pr-4">
 					Deadline:
 					<span
-						v-if="user_type == 'buyer' || depositStatus == 'ABP'"
+						v-if="user_type == 'buyer' || depositStatus != 'ASR'"
 						class="hd-deadline-input p_input_text--text">
 						{{ session.stages['1'].deadline.substr(0,10) }}
 					</span>
@@ -53,7 +53,7 @@
 
 					<v-btn
 						@click="payDeposit"
-						v-if="depositStatus != 'Paid'"
+						v-if="depositStatus != 'Paid' && !depositPaid"
 						:class="{'disable-click': depositStatus == 'ASR' }"
 						color="p_blue" outline class="title hd-btnPayDeposit">
 						PAY DEPOSIT
@@ -93,7 +93,8 @@ export default {
 		return {
 			selectedAddr: '',
 			selectedDeadline: '',
-			selectedDeposit: ''
+			selectedDeposit: '',
+			depositPaid: false
 		}
 	},
 
@@ -187,15 +188,19 @@ export default {
 					}
 
 					axios.put(requestUrl, body, config).then((response) => {
-						var depositAmount = this.session.stages['1'].deposit_amount / 1000
+						var depositAmount = this.session.stages['1'].deposit_amount / 10000
 						// Make the deposit
 						holdingDeposit.address = hdAddress
 						holdingDeposit.methods.deposit_funds().send({
 							from: this.selectedAddr,
 							value: web3.utils.toWei(depositAmount.toString(), 'ether')
-						}).then((receipt) => {
-							console.log(receipt)
-						}).catch((error) => console.log(error))
+						}).on('transactionHash', (hash) => {
+							console.log(hash)
+							this.depositPaid = true
+						}).catch((error) => {
+							console.log(error)
+							this.depositPaid = false
+						})
 					}).catch((error) => console.log(error))
 				}
 			} else {

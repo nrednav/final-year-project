@@ -35,11 +35,13 @@ class HdOracle {
 
 					this.contract.address = event.address;
 
-					var participants = await this.contract.methods.get_participants().call();
-					var sellerAddress = participants[0];
-					var buyerAddress = participants[1];
-
-					this.updateSession(sellerAddress, buyerAddress);
+					this.contract.methods.get_participants().call().then((result) => {
+						var participants = result;
+						var sellerAddress = participants[0].toString();
+						var buyerAddress = participants[1].toString();
+						console.log(participants);
+						this.updateSession(sellerAddress, buyerAddress);
+					}).catch((error) => console.log(error));
 				}
 			});
 		})
@@ -49,14 +51,16 @@ class HdOracle {
 	}
 
 	updateSession(sellerAddress, buyerAddress) {
-		Session.findOne({
-			buyer_address: buyerAddress,
-			seller_address: sellerAddress
-		}, (err, session) => {
-
+		console.log(sellerAddress, buyerAddress);
+		Session.find({
+			buyer_address: buyerAddress.toLowerCase(),
+			seller_address: sellerAddress.toLowerCase()
+		}, (err, sessions) => {
 			if (err) {
 				console.log(err);
-			} else {
+			} else if (sessions.length > 0) {
+				console.log(sessions);
+				var session = sessions[0]
 				var requestUrl = `http://localhost:3000/api/sessions/${session._id}/update`
 				var config = { headers: { Authorization: 'a1b2c3d4e5f6g7' } }
 				var body = {
@@ -68,6 +72,11 @@ class HdOracle {
 						}
 					}
 				}
+				axios.put(requestUrl, body, config).then((response) => {
+					console.log(response);
+				}).catch((error) => console.log(error));
+			} else {
+				console.log('could not find any sessions with those addresses');
 			}
 		});
 	}

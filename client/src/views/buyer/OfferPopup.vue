@@ -59,6 +59,8 @@ export default {
 				alert('Please enter a value for your offer price')
 			} else if (this.price.match(/[a-z]/i)) {
 				alert('Please enter a number for your offer price')
+			} else if (this.price <= 0) {
+				alert('Please enter a positive non-zero value for your offer')
 			} else {
 				// add offer to property
 				var propertyId = this.$route.params.property_id

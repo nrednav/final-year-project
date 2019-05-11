@@ -306,7 +306,7 @@ router.post('/:property_id/offers/accept', (req, res, next) => {
 		$set: { 'session_underway': true }
 	},(err, result) => {
 		if (err) console.log(err);
-		console.log(result);
+		console.log('Updated property, removed offer and set session underway to true');
 		var details = {
 			buyer_id: req.body.buyerId,
 			seller_id: req.body.sellerId,
@@ -314,6 +314,7 @@ router.post('/:property_id/offers/accept', (req, res, next) => {
 			buyer_address: req.body.buyerAddress,
 			seller_address: req.body.sellerAddress
 		}
+		console.log('Requesting creaiton of session now');
 		createSession(details, res, next);
 	});
 });
@@ -336,6 +337,7 @@ router.post('/:property_id/offers/reject', (req, res, next) => {
 
 
 function createSession(details, res, next) {
+	console.log('Creating a session with the following details...\n' + details);
 	axios.post('http://localhost:3000/api/sessions/create', details, {
 		headers: {
 			Authorization: 'a1b2c3d4e5f6g7'

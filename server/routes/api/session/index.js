@@ -42,9 +42,12 @@ router.post('/create', (req, res, next) => {
 			Session.create({
 				property_id: req.body.property_id,
 				buyer_id: req.body.buyer_id,
-				seller_id: req.body.seller_id
+				seller_id: req.body.seller_id,
+				buyer_address: req.body.buyer_address,
+				seller_address: req.body.seller_address
 			}, (err, session) => {
 				if (err) console.error(err);
+				console.log('Linking session to participants...');
 				linkSessionToParticipants(session._id, session.buyer_id, session.seller_id,
 				res, next);
 			});
@@ -63,6 +66,7 @@ function linkSessionToParticipants(session_id, buyer_id, seller_id, res, next) {
 	}, (err, result) => {
 		if (err) console.log(err);
 		console.log(result);
+		console.log('Finished linking session to seller... now buyer...');
 		// Then the buyer
 		User.updateOne({
 			_id: buyer_id
@@ -73,6 +77,7 @@ function linkSessionToParticipants(session_id, buyer_id, seller_id, res, next) {
 		}, (err, result) => {
 			if (err) console.log(err);
 			console.log(result);
+			console.log('Finished linking session to buyer');
 			res.json({
 				message: 'Linked session to participants successfully'
 			});
@@ -82,6 +87,7 @@ function linkSessionToParticipants(session_id, buyer_id, seller_id, res, next) {
 
 /* PUT - update a session */
 router.put('/:session_id/update', (req, res, next) =>  {
+	console.log('Updating session with id: ' + req.params.session_id);
 	Session.updateOne({
 		_id: req.params.session_id
 	}, req.body.updateOptions, (err) => {
