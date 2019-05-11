@@ -310,7 +310,9 @@ router.post('/:property_id/offers/accept', (req, res, next) => {
 		var details = {
 			buyer_id: req.body.buyerId,
 			seller_id: req.body.sellerId,
-			property_id: req.params.property_id
+			property_id: req.params.property_id,
+			buyer_address: req.body.buyerAddress,
+			seller_address: req.body.sellerAddress
 		}
 		createSession(details, res, next);
 	});

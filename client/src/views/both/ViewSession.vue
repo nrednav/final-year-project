@@ -35,11 +35,23 @@
 
 		<div class="session-meta-container">
 			<v-card class="session-meta-card primary p_text--text display-1">
-				Hello
+				<div class="vs-session-metadata">
+					Session Metadata
+				</div>
+				<div class="vs-property-metadata">
+					Property Metadata
+				</div>
 			</v-card>
 		</div>
 
 		<div class="pa-4 vs-button-container">
+			<v-btn
+				@click="goBack"
+				color="p_text"
+				outline
+				class="title btn-vs-back">
+				BACK
+			</v-btn>
 			<v-btn
 				@click="openLeaveSessionDialog"
 				color="p_red"
@@ -78,9 +90,25 @@ export default {
 
 		viewStage (stageNumber) {
 			var sessionId = this.$route.params.session_id
-			var toRoute = `/${this.user_type}/sessions/${sessionId}/stage/${stageNumber}`
-			this.$store.commit('add_session', { session: this.session })
-			this.$router.push(toRoute)
+			var viewable = false
+			var prevStage = stageNumber - 1
+			prevStage = prevStage.toString()
+
+			if (stageNumber === 1) {
+				viewable = true
+			} else {
+				if (this.session.stages[prevStage].status !== 'Completed') {
+					alert('You have not yet completed the previous stage')
+				} else {
+					viewable = true
+				}
+			}
+
+			if (viewable) {
+				var toRoute = `/${this.user_type}/sessions/${sessionId}/stage/${stageNumber}`
+				this.$store.commit('add_session', { session: this.session })
+				this.$router.push(toRoute)
+			}
 		},
 
 		statusColor (stageNumber) {
@@ -96,6 +124,10 @@ export default {
 
 		openLeaveSessionDialog () {
 
+		},
+
+		goBack () {
+			this.$router.go(-1)
 		}
 	},
 
@@ -175,17 +207,39 @@ export default {
 	border-radius: 25px;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: repeat(3, 1fr);
+	grid-template-rows: repeat(2, 1fr);
 	grid-gap: 5vmax;
 	align-items: center;
+	justify-items: center;
 	height: 67vh;
 	padding: 3vmax;
+}
+
+.vs-session-metadata {
+	grid-row: 1;
+	grid-column: 1 / 4;
+}
+
+.vs-property-metadata {
+	grid-row: 2;
+	grid-column: 1 / 4;
 }
 
 .vs-button-container {
 	margin-top: 5vh;
 }
 
+.btnLeaveSession {
+	border-radius: 10px;
+	width: 20vw;
+	height: 10vh;
+}
+
+.btn-vs-back {
+	border-radius: 10px;
+	width: 20vw;
+	height: 10vh;
+}
 .btnLeaveSession {
 	border-radius: 10px;
 	width: 20vw;

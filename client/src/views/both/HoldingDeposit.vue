@@ -53,6 +53,7 @@
 
 					<v-btn
 						@click="payDeposit"
+						v-if="depositStatus != 'Paid'"
 						:class="{'disable-click': depositStatus == 'ASR' }"
 						color="p_blue" outline class="title hd-btnPayDeposit">
 						PAY DEPOSIT
@@ -114,7 +115,7 @@ export default {
 			axios.put(requestUrl, body, config).then((response) => {
 				console.log(response)
 				if (response.data.includes('Success')) {
-					this.createHdContract()
+					this.$router.go(-1)
 				}
 			}).catch((error) => console.log(error))
 		},
@@ -126,8 +127,9 @@ export default {
 
 					holdingDepositFactory.methods.open_holding_deposit(sessionIdHash).send({
 						from: this.selectedAddr
-					}).then((receipt) => {
-						console.log(receipt)
+					}).on('transactionHash', (hash) => {
+						console.log(hash)
+						this.setRequestData()
 					}).catch((error) => console.log(error))
 				} else {
 					alert('Please switch accounts to the one you used during registration')
@@ -159,7 +161,8 @@ export default {
 		requestDeposit () {
 			var validInputs = this.validateInputs()
 			if (validInputs) {
-				this.setRequestData()
+				// this.setRequestData()
+				this.createHdContract()
 			}
 		},
 
@@ -173,15 +176,26 @@ export default {
 					var hdAddress = await holdingDepositFactory.methods.get_holding_deposit_contract(sessionIdHash).call()
 
 					// Update the session to store this HD address in stage 1
+					var requestUrl = `http://localhost:3000/api/sessions/${this.session._id}/update`
+					var config = { headers: { Authorization: 'a1b2c3d4e5f6g7' } }
+					var body = {
+						updateOptions: {
+							$set: {
+								'stages.1.holding_deposit_address': hdAddress
+							}
+						}
+					}
 
-					var depositAmount = this.session.deposit_amount / 1000
-					// Make the deposit
-					holdingDeposit.address = hdAddress
-					holdingDeposit.methods.deposit_funds().send({
-						from: this.selectedAddr,
-						value: web3.utils.toWei(`${depositAmount}`, 'ether')
-					}).then((receipt) => {
-						console.log(receipt)
+					axios.put(requestUrl, body, config).then((response) => {
+						var depositAmount = this.session.stages['1'].deposit_amount / 1000
+						// Make the deposit
+						holdingDeposit.address = hdAddress
+						holdingDeposit.methods.deposit_funds().send({
+							from: this.selectedAddr,
+							value: web3.utils.toWei(depositAmount.toString(), 'ether')
+						}).then((receipt) => {
+							console.log(receipt)
+						}).catch((error) => console.log(error))
 					}).catch((error) => console.log(error))
 				}
 			} else {
@@ -193,7 +207,6 @@ export default {
 			if (window.ethereum !== 'undefined') {
 				let addresses = await window.ethereum.enable()
 				this.selectedAddr = addresses[0]
-				console.log(this.selected_addr)
 			} else {
 				alert('Please download and install the Metamask browser addon to continue')
 			}

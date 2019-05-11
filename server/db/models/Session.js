@@ -11,7 +11,15 @@ const SessionSchema = new mongoose.Schema({
 		type: String,
 		require: true
 	},
+	buyer_address: {
+		type: String,
+		require: true
+	},
 	seller_id: {
+		type: String,
+		require: true
+	},
+	seller_address: {
 		type: String,
 		require: true
 	},

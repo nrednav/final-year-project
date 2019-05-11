@@ -88,7 +88,7 @@ class VerifierOracle {
 		var notification = `Your property with UID: ${property_uid}, is now verified.`;
 		User.updateOne({
 			_id: owner_id
-		}, { $push: { 'profiles.seller.notifications': notification },
+		}, { $push: { 'profiles.seller.notifications': { message: notification }},
 			$inc: { 'profiles.seller.verified_count': 1 }}, (err, result) => {
 			if (err) console.log(err);
 			console.log('Successfully notified user\n', result);

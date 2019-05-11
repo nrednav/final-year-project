@@ -169,6 +169,12 @@ export default {
 					}
 				}
 
+				const body_revert = {
+					options: {
+						verified: 0
+					}
+				}
+
 				await axios.put('http://localhost:3000/api/properties/' + this.propertyId + '/update', body, this.route_config)
 
 				this.verificationRequested = true
@@ -177,8 +183,9 @@ export default {
 					from: this.selected_addr
 				}).then((receipt) => {
 					this.verification_tx_receipt = receipt
-				}).catch((error) => {
+				}).catch(async (error) => {
 					console.log(error)
+					await axios.put('http://localhost:3000/api/properties/' + this.propertyId + '/update', body_revert, this.route_config)
 					this.verificationRequested = false
 				})
 			} else {

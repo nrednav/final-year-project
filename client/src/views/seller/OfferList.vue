@@ -27,7 +27,7 @@
 				<v-btn
 					outline
 					:class="{'disable-click': property.session_underway || decisionMade}"
-					@click="acceptOffer(index, offer._id, offer.buyer_id)"
+					@click="acceptOffer(index, offer._id, offer.buyer_id, offer.buyer_account_address)"
 					color="p_green"
 					class="title accept-offer-btn">
 					Accept
@@ -62,9 +62,19 @@ export default {
 	props: ['offers', 'propertyId', 'property'],
 
 	methods: {
-		acceptOffer (index, offerId, buyerId) {
+		acceptOffer (index, offerId, buyerId, buyerAddress) {
 			var sellerId = this.user_id
-			axios.post(apiUrl + this.propertyId + '/offers/accept', { offerId, buyerId, sellerId },
+			var sellerAddress = this.user_object.account_address
+
+			var body = {
+				offerId,
+				buyerId,
+				buyerAddress,
+				sellerId,
+				sellerAddress
+			}
+
+			axios.post(apiUrl + this.propertyId + '/offers/accept', body,
 				this.route_config).then((response) => {
 				this.removeOfferFromList(index)
 				this.decisionMade = true
@@ -87,7 +97,7 @@ export default {
 	},
 
 	computed: {
-		...mapGetters(['route_config', 'user_id'])
+		...mapGetters(['route_config', 'user_id', 'user_object'])
 	}
 }
 </script>
