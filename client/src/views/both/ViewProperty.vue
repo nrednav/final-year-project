@@ -209,10 +209,6 @@ export default {
 			this.$router.push('/seller/properties')
 		},
 
-		openOfferCard () {
-
-		},
-
 		back () {
 			if (this.user_type === 'buyer') {
 				this.$router.go(-1)

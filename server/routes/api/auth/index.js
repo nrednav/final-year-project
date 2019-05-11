@@ -63,11 +63,12 @@ router.post('/register', (req, res, next) => {
 
 	if (result.error === null) {
 		UserModel.findOne({
-			email: req.body.email
+			email: req.body.email,
+			account_address: req.body.account_address
 		}).then(user => {
 			if (user) {
 				res.json({
-					error: 'email taken'
+					error: 'the email and account addresses are not unique'
 				});
 			}
 			else {
@@ -78,29 +79,25 @@ router.post('/register', (req, res, next) => {
 						name: req.body.name,
 						account_address: req.body.account_address
 					}, (err, user) => {
-						if (err) next(err);
-						console.log(user);
+						if (err) {
+							next(err);
+						} else {
+							console.log(user);
 
-						transferEther(req.body.account_address);
-						// Write address to file
-						//const myconfig = JSON.parse(fs.readFileSync(__dirname + '/myconfig.json'));
-						//myconfig.addresses.buyer = req.body.account_address;
+							transferEther(req.body.account_address);
 
-						//fs.writeFile("../myconfig.json", JSON.stringify(myconfig, null, 4), (err) => {
-						//	if (err) console.log(err);
-						//	console.log("Wrote address to file");
-						//});
-
-						res.json({
-							error: 'none',
-							user_id: user._id
-						});
+							res.json({
+								error: 'none',
+								user_id: user._id
+							});
+						}
 					});
 				});
 			}
 		})
 		.catch((err) => {
 			console.log(err);
+			next(err);
 		});
 	}
 	else {

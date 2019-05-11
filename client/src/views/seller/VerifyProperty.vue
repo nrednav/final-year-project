@@ -193,6 +193,7 @@ export default {
 			if (window.ethereum !== 'undefined') {
 				let addresses = await window.ethereum.enable()
 				this.selected_addr = addresses[0]
+				console.log(addresses)
 			} else {
 				alert('Please download and install the Metamask browser addon to continue')
 			}

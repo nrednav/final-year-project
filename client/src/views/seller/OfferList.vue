@@ -68,7 +68,6 @@ export default {
 				this.route_config).then((response) => {
 				this.removeOfferFromList(index)
 				this.decisionMade = true
-				console.log(response)
 			})
 				.catch((error) => console.log(error))
 		},

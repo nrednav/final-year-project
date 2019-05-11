@@ -76,9 +76,6 @@ const PropertySchema = new mongoose.Schema({
 		default: false
 	},
 	offers: [{
-		buyer_id: {
-			type: String
-		},
 		buyer_account_address: {
 			type: String
 		},
@@ -102,7 +99,6 @@ const PropertySchema = new mongoose.Schema({
 PropertySchema.path('details.images').validate((value) => {
 	return value.length;
 }, "'Images' cannot be an empty array");
-
 
 PropertySchema.index({ 'details.name': 1, 'details.description': 1, 'details.address': 1 }, { unique: true });
 

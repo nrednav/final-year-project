@@ -28,23 +28,16 @@ const UserSchema = new mongoose.Schema({
 			screening_uid: {
 				type: String
 			},
+			purchase_count: {
+				type: Number,
+				default: 0
+			},
 			notifications: [
 			],
 			sessions: [
 			],
-			offers: [{
-				property_id: {
-					type: String
-				},
-				price: {
-					type: Number
-				},
-				timestamp: {
-					type: Date,
-					default: Date.now
-				}
-			}],
-			purchased: []
+			offers: [
+			]
 		},
 		seller: {
 			verified_count: {
@@ -55,22 +48,16 @@ const UserSchema = new mongoose.Schema({
 				type: Number,
 				default: 0
 			},
+			sale_count: {
+				type: Number,
+				default: 0
+			},
 			properties: [
 			],
 			sessions: [
 			],
 			notifications: [
-				{
-					message: {
-						type: String
-					},
-					timestamp: {
-						type: Date,
-						default: Date.now
-					}
-				}
-			],
-			sold: []
+			]
 		}
 	}
 });

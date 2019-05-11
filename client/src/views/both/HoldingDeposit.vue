@@ -10,8 +10,16 @@
 
 				<div class="hd-amount">
 					Amount:
-					<span class="hd-amount-value p_input_text--text">
+					<span
+						v-if="user_type == 'buyer' || depositStatus == 'ABP'"
+						class="hd-amount-value p_input_text--text">
 						{{ session.stages['1'].deposit_amount }}</span>
+					<input
+						v-if="user_type == 'seller' && depositStatus == 'ASR'"
+						v-model="selectedDeposit"
+						type="text"
+						placeholder="Enter a deposit amount"
+						class="hd-deposit-input pa-4 p_input_text--text p_input title">
 				</div>
 
 				<div class="hd-status">
@@ -23,9 +31,17 @@
 
 				<div class="hd-deadline pr-4">
 					Deadline:
-					<span class="hd-deadline-value p_input_text--text">
+					<span
+						v-if="user_type == 'buyer' || depositStatus == 'ABP'"
+						class="hd-deadline-input p_input_text--text">
 						{{ session.stages['1'].deadline.substr(0,10) }}
 					</span>
+					<input
+						v-if="user_type == 'seller' && depositStatus == 'ASR'"
+						v-model="selectedDeadline"
+						type="text"
+						placeholder="(YYYY-MM-DD)"
+						class="hd-deposit-input pa-4 p_input_text--text p_input title">
 				</div>
 
 				<div v-if="user_type == 'buyer'" class="hdb-button-container">
@@ -37,7 +53,7 @@
 
 					<v-btn
 						@click="payDeposit"
-						:class="{'disable-click': depositStatus != 'ABP' }"
+						:class="{'disable-click': depositStatus == 'ASR' }"
 						color="p_blue" outline class="title hd-btnPayDeposit">
 						PAY DEPOSIT
 					</v-btn>
@@ -51,15 +67,8 @@
 					</v-btn>
 
 					<v-btn
-						@click="setDeadline"
-						:class="{'disable-click': depositStatus != 'ASR' }"
-						color="p_purple" outline class="title hd-btnSetDeadline">
-						SET DEADLINE
-					</v-btn>
-
-					<v-btn
+						v-if="depositStatus == 'ASR'"
 						@click="requestDeposit"
-						:class="{'disable-click': depositStatus != 'ASR' }"
 						color="p_blue" outline class="title hd-btnRequestDeposit">
 						REQUEST DEPOSIT
 					</v-btn>
@@ -76,59 +85,115 @@ import { mapGetters } from 'vuex'
 import axios from 'axios'
 import web3 from '@/web3'
 import holdingDepositFactory from '@/contracts/holdingDepositFactory'
+import holdingDeposit from '@/contracts/holdingDeposit'
 
 export default {
 	data () {
 		return {
 			selectedAddr: '',
-			selectedDeadline: ''
+			selectedDeadline: '',
+			selectedDeposit: ''
 		}
 	},
 
 	methods: {
 
-		decodeDepositStatus () {
-			var status = this.depositStatus
-			if (status === 'ASR') {
-				return 'Awaiting seller\'s request'
-			} else if (status === 'ABP') {
-				return 'Awaiting buyer\'s payment'
-			}
-			return 'Paid'
-		},
-
-		setDeadline () {
+		setRequestData () {
 			var requestUrl = `http://localhost:3000/api/sessions/${this.session._id}/update`
 			var config = { headers: { Authorization: 'a1b2c3d4e5f6g7' } }
 			var body = {
 				updateOptions: {
-					$set: { 'deadline': this.selectedDeadline }
+					$set: {
+						'stages.1.deadline': this.selectedDeadline,
+						'stages.1.deposit_amount': Number(this.selectedDeposit),
+						'stages.1.status': 'In Progress',
+						'stages.1.deposit_status': 'ABP'
+					}
 				}
 			}
 			axios.put(requestUrl, body, config).then((response) => {
 				console.log(response)
+				if (response.data.includes('Success')) {
+					this.createHdContract()
+				}
 			}).catch((error) => console.log(error))
 		},
 
-		requestDeposit () {
+		async createHdContract () {
+			if (this.selectedAddr !== '') {
+				if (this.selectedAddr === this.user_object.account_address) {
+					var sessionIdHash = await web3.utils.sha3(this.session._id)
 
+					holdingDepositFactory.methods.open_holding_deposit(sessionIdHash).send({
+						from: this.selectedAddr
+					}).then((receipt) => {
+						console.log(receipt)
+					}).catch((error) => console.log(error))
+				} else {
+					alert('Please switch accounts to the one you used during registration')
+				}
+			} else {
+				alert('Please login to metamask to continue')
+			}
+		},
+
+		validateInputs () {
+			var deadlineRegex = /^\d{4}-\d{2}-\d{2}$/
+			if (!this.selectedDeadline.match(deadlineRegex)) {
+				alert('Please enter a date in the format YYYY-MM-DD')
+				return false
+			} else if (Number(this.selectedDeadline.substr(5, 2)) > 12) {
+				alert('Invalid month entered')
+				return false
+			} else if (Number(this.selectedDeadline.substr(8, 2)) > 31) {
+				alert('Invalid day entered')
+				return false
+			}
+			if (this.selectedDeposit.match(/[a-z]/i)) {
+				alert('Please enter a number for the deposit amount')
+				return false
+			}
+			return true
+		},
+
+		requestDeposit () {
+			var validInputs = this.validateInputs()
+			if (validInputs) {
+				this.setRequestData()
+			}
 		},
 
 		async payDeposit () {
 			if (this.selectedAddr !== '') {
-				alert('Please login to metamask to continue')
-				if (this.selectAddr !== this.user_object.account_address) {
+				if (this.selectedAddr !== this.user_object.account_address) {
 					alert('Please use the account that you signed up with')
+				} else {
+					// Make payment to hd contract
+					var sessionIdHash = web3.utils.sha3(this.session._id)
+					var hdAddress = await holdingDepositFactory.methods.get_holding_deposit_contract(sessionIdHash).call()
+
+					// Update the session to store this HD address in stage 1
+
+					var depositAmount = this.session.deposit_amount / 1000
+					// Make the deposit
+					holdingDeposit.address = hdAddress
+					holdingDeposit.methods.deposit_funds().send({
+						from: this.selectedAddr,
+						value: web3.utils.toWei(`${depositAmount}`, 'ether')
+					}).then((receipt) => {
+						console.log(receipt)
+					}).catch((error) => console.log(error))
 				}
 			} else {
-				// Make payment to hd contract
+				alert('Please login to metamask to continue')
 			}
 		},
 
 		async load_accounts () {
 			if (window.ethereum !== 'undefined') {
 				let addresses = await window.ethereum.enable()
-				this.selected_addr = addresses[0]
+				this.selectedAddr = addresses[0]
+				console.log(this.selected_addr)
 			} else {
 				alert('Please download and install the Metamask browser addon to continue')
 			}
@@ -140,7 +205,7 @@ export default {
 	},
 
 	computed: {
-		...mapGetters(['session', 'user_type']),
+		...mapGetters(['session', 'user_type', 'user_object']),
 
 		depositStatus () {
 			return this.session.stages['1'].deposit_status
@@ -230,7 +295,7 @@ export default {
 	border-radius: 10px;
 }
 
-.hd-btnSetDeadline {
+.hd-btnRequestDeposit {
 	grid-column: 2 / 3;
 	grid-row: 3;
 	height: 10vh;
@@ -238,17 +303,21 @@ export default {
 	border-radius: 10px;
 }
 
-.hd-btnRequestDeposit {
-	grid-column: 3 / 3;
-	grid-row: 3;
-	height: 10vh;
-	width: 25vw;
-	border-radius: 10px;
+.hd-deposit-input {
+	grid-column: 2;
+	text-align: center;
+	padding: 10px;
+	border-radius: 25px;
+}
+
+.hd-deadline-input {
+	grid-column: 2;
+	text-align: center;
+	padding: 10px;
+	border-radius: 25px;
 }
 
 .hds-button-container {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
 	justify-items: center;
 	grid-column: 1 / 3;
 	width: 100%;
@@ -263,6 +332,5 @@ export default {
 	pointer-events: none;
 	opacity: 0.5;
 }
-
 
 </style>

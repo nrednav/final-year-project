@@ -4,7 +4,8 @@ const db = require('../connection');
 const UserSchema = new mongoose.Schema({
 	account_address: {
 		type: String,
-		require: true
+		require: true,
+		unique: true
 	},
 	email: {
 		type: String,
