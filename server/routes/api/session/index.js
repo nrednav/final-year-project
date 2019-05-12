@@ -169,7 +169,8 @@ router.post('/create', (req, res, next) => {
 				buyer_id: req.body.buyer_id,
 				seller_id: req.body.seller_id,
 				buyer_address: req.body.buyer_address,
-				seller_address: req.body.seller_address
+				seller_address: req.body.seller_address,
+				'stages.3.agreed_sale_price': req.body.agreed_sale_price
 			}, (err, session) => {
 				if (err) console.error(err);
 				console.log('Linking session to participants...');

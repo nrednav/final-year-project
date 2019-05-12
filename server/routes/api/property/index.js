@@ -312,7 +312,8 @@ router.post('/:property_id/offers/accept', (req, res, next) => {
 			seller_id: req.body.sellerId,
 			property_id: req.params.property_id,
 			buyer_address: req.body.buyerAddress,
-			seller_address: req.body.sellerAddress
+			seller_address: req.body.sellerAddress,
+			agreed_sale_price: req.body.listingPrice
 		}
 		console.log('Requesting creaiton of session now');
 		createSession(details, res, next);

@@ -7,7 +7,6 @@
 
 		<div class="sc-card-container">
 			<v-card
-				v-if="session.stages['3'].contract_status != 'ASCH'"
 				class="primary p_text--text pa-4 sc-card display-1">
 
 				<div class="sdoc-status">
@@ -42,17 +41,18 @@
 
 				<div class="sc-contract-status">
 					<span class="sc-contract-status-label headline">
-						Contract Status:
+						Status:
 					</span>
 					<span class="sc-contract-status-value headline p_yellow--text">
 						{{ this.session.stages['3'].contract_status }}
 					</span>
 				</div>
 
-				<div class="uldl-buttons-container">
+				<div
+					class="uldl-buttons-container">
 
 					<v-btn
-						v-if="user_type == 'seller'"
+						v-if="user_type == 'seller' && stageNotCompleted"
 						@click="$refs.scFileInput.click()"
 						outline
 						color="p_purple"
@@ -84,7 +84,7 @@
 					</v-btn>
 
 					<v-btn
-						v-if="user_type == 'buyer' && saleContractAvailable"
+						v-if="user_type == 'buyer' && saleContractAvailable && stageNotCompleted"
 						@click="$refs.scFileInput.click()"
 						outline
 						color="p_purple"
@@ -106,7 +106,7 @@
 
 					<v-btn
 						v-if="saleContractAvailable && signedSaleContractAvailable
-								&& user_type == 'seller'"
+								&& user_type == 'seller' && stageNotCompleted"
 						@click="handleContinue"
 						outline
 						color="p_blue"
@@ -118,11 +118,6 @@
 
 			</v-card>
 
-			<v-card
-				v-if="session.stages['3'].contract_status == 'ASCH'"
-				class="primary p_text--text pa-4 sc-card display-1">
-
-			</v-card>
 		</div>
 
 	</v-layout>
@@ -140,27 +135,6 @@ export default {
 	},
 
 	methods: {
-
-		updateSession (screeningUID, result) {
-			var requestUrl = `http://localhost:3000/api/sessions/${this.session._id}/update`
-			var config = { headers: { Authorization: 'a1b2c3d4e5f6g7' } }
-			var body = {
-				updateOptions: {
-					$set: {
-						'stages.2.buyer_screening_uid': screeningUID,
-						'stages.2.verification_status': result,
-						'stages.2.status': 'Completed'
-					}
-				}
-			}
-
-			axios.put(requestUrl, body, config).then((response) => {
-				console.log(response)
-				this.verificationRequested = true
-			}).catch((error) => {
-				console.log(error)
-			})
-		},
 
 		uploadDocument () {
 			var files = event.target.files
@@ -199,7 +173,25 @@ export default {
 		},
 
 		handleContinue () {
+			var requestUrl = `http://localhost:3000/api/sessions/${this.session._id}/update`
+			var config = {
+				headers: {
+					Authorization: 'a1b2c3d4e5f6g7'
+				}
+			}
+			var body = {
+				updateOptions: {
+					$set: {
+						'stages.3.status': 'Completed',
+						'stages.3.contract_status': 'Signed',
+						'progress': 3
+					}
+				}
+			}
 
+			axios.put(requestUrl, body, config).then((response) => {
+				this.$router.go(-1)
+			}).catch((error) => console.log(error))
 		},
 
 		goBack () {
@@ -219,6 +211,11 @@ export default {
 		signedSaleContractAvailable () {
 			var signedSaleContractId = this.session.stages['3'].signed_sale_contract_id
 			return (signedSaleContractId !== '')
+		},
+
+		stageNotCompleted () {
+			var stageStatus = this.session.stages['3'].status
+			return (stageStatus !== 'Completed')
 		}
 	},
 
@@ -282,6 +279,7 @@ export default {
 	grid-row: 3;
 	width: 100%;
 	height: 100%;
+
 	display: grid;
 	grid-template-columns: repeat(2, auto);
 	align-items: center;

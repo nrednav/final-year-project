@@ -65,13 +65,15 @@ export default {
 		acceptOffer (index, offerId, buyerId, buyerAddress) {
 			var sellerId = this.user_id
 			var sellerAddress = this.user_object.account_address
+			var listingPrice = this.property.details.listing_price
 
 			var body = {
 				offerId,
 				buyerId,
 				buyerAddress,
 				sellerId,
-				sellerAddress
+				sellerAddress,
+				listingPrice
 			}
 
 			axios.post(apiUrl + this.propertyId + '/offers/accept', body,

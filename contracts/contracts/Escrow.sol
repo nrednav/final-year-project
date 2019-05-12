@@ -29,7 +29,7 @@ contract EscrowFactory {
 contract Escrow {
 
 	// State
-	address buyer;
+	address payable buyer;
 	address payable seller;
 	uint funds;
 	bytes32 title_transfer_hash;
@@ -39,6 +39,7 @@ contract Escrow {
 
 	bool open = false;
 	bool locked = true;
+	bool terminated = false;
 
 
 	// Events
@@ -46,6 +47,8 @@ contract Escrow {
 	event title_transfer_requested(string session_id, bytes32 title_transfer_hash);
 	event funds_disbursed();
 	event escrow_closed();
+	event escrow_terminated(address requester);
+	event release_holding_deposit(address seller, address buyer);
 
 
 	// Constructor
@@ -62,6 +65,11 @@ contract Escrow {
 	// Modifiers
 	modifier openEscrow() {
 		require(open, "The escrow is closed.");
+		_;
+	}
+
+	modifier notTerminated() {
+		require(!terminated, "The escrow was terminated.");
 		_;
 	}
 
@@ -121,14 +129,27 @@ contract Escrow {
 		seller.transfer(amount);
 
 		emit funds_disbursed();
-
-		// ! INSERT SOME CODE HERE TO INIATE REFUND OF HOLDING DEPOSIT TO BUYER ! //
+		emit release_holding_deposit(seller, buyer);
 
 		open = false;
 
 		emit escrow_closed();
 	}
 
+		// Handle requests to leave the session
+	function terminate_escrow()
+	public openEscrow notTerminated
+	{
+		require(msg.sender == seller || msg.sender == buyer);
+
+		// Release funds back to buyer
+		uint amount = funds;
+		funds = 0;
+		buyer.transfer(amount);
+
+		terminated = true;
+		emit escrow_terminated(msg.sender);
+	}
 
 	// Getters
 	function get_participants()

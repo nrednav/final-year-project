@@ -42,8 +42,6 @@ contract HoldingDeposit {
 	bool locked = false;
 	bool deposit_refundable = true;
 
-	mapping(address => bool) signatures;
-
 
 	// Constructor
 	constructor(address payable _seller)
@@ -72,7 +70,6 @@ contract HoldingDeposit {
 	// Events
 	event funds_deposited(address buyer, uint value);
 	event status_updated(address sender, bool status);
-	event signature_added(address approver);
 	event deposit_status_updated(bool status);
 	event deposit_withdrawn(address receiver, uint amount);
 	event contract_closed();
@@ -107,17 +104,9 @@ contract HoldingDeposit {
 		check_deposit_status();
 	}
 
-	function approve_deposit_status_update()
-	public openHolding onlyParticipants
-	{
-		signatures[msg.sender] = true;
-		emit signature_added(msg.sender);
-	}
-
 	function update_deposit_status(bool _status)
 	public openHolding onlyParticipants
 	{
-		require(signatures[buyer] && signatures[seller], "Need both signatures to make any changes to the deposit status");
 		require(msg.sender == seller, "Only the seller can initiate an update to the deposit status");
 		deposit_refundable = _status;
 		emit deposit_status_updated(_status);
