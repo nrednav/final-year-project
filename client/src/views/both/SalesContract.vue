@@ -6,7 +6,9 @@
 		</h1>
 
 		<div class="sc-card-container">
-			<v-card class="primary p_text--text pa-4 sc-card display-1">
+			<v-card
+				v-if="session.stages['3'].contract_status != 'ASCH'"
+				class="primary p_text--text pa-4 sc-card display-1">
 
 				<div class="sdoc-status">
 					<span class="sdoc-status-label headline">
@@ -17,7 +19,7 @@
 							<v-icon large color="p_green" v-if="saleContractAvailable">
 								fas fa-check
 							</v-icon>
-							<v-icon color="p_red" v-if="!saleContractAvailable">
+							<v-icon large color="p_red" v-if="!saleContractAvailable">
 								fas fa-times
 							</v-icon>
 					</span>
@@ -29,10 +31,10 @@
 					</span>
 					<span
 						class="bdoc-status-value headline p_yellow--text">
-							<v-icon color="p_green" v-if="signedSaleContractAvailable">
+							<v-icon large color="p_green" v-if="signedSaleContractAvailable">
 								fas fa-check
 							</v-icon>
-							<v-icon color="p_red" v-if="!signedSaleContractAvailable">
+							<v-icon large color="p_red" v-if="!signedSaleContractAvailable">
 								fas fa-times
 							</v-icon>
 					</span>
@@ -103,7 +105,8 @@
 					</v-btn>
 
 					<v-btn
-						v-if="saleContractAvailable && signedSaleContractAvailable"
+						v-if="saleContractAvailable && signedSaleContractAvailable
+								&& user_type == 'seller'"
 						@click="handleContinue"
 						outline
 						color="p_blue"
@@ -112,6 +115,12 @@
 					</v-btn>
 
 				</div>
+
+			</v-card>
+
+			<v-card
+				v-if="session.stages['3'].contract_status == 'ASCH'"
+				class="primary p_text--text pa-4 sc-card display-1">
 
 			</v-card>
 		</div>
@@ -167,7 +176,7 @@ export default {
 
 			axios.post(requestUrl, formData, config).then((response) => {
 				console.log(response)
-				window.location.reload()
+				this.$router.go()
 			}).catch((error) => console.log(error))
 		},
 

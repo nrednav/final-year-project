@@ -99,7 +99,8 @@ export default {
 					$set: {
 						'stages.2.buyer_screening_uid': screeningUID,
 						'stages.2.verification_status': result,
-						'stages.2.status': 'Completed'
+						'stages.2.status': 'Completed',
+						'progress': 2
 					}
 				}
 			}

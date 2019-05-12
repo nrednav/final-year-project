@@ -52,7 +52,9 @@ router.post('/:session_id/upload-sc/', upload.single('file'), (req, res,next) =>
 	Session.updateOne({
 		_id: req.params.session_id
 	}, { $set: {
-		'stages.3.sale_contract_id': fileId
+		'stages.3.sale_contract_id': fileId,
+		'stages.3.status': 'In Progress',
+		'stages.3.contract_status': 'ASCB'
 	}}, (error, result) => {
 		if (error) {
 			console.log(error);
@@ -71,7 +73,7 @@ router.post('/:session_id/upload-ssc/', upload.single('file'), (req, res,next) =
 	Session.updateOne({
 		_id: req.params.session_id
 	}, { $set: {
-		'stages.3.signed_sale_contract_id': fileId
+		'stages.3.signed_sale_contract_id': fileId,
 	}}, (error, result) => {
 		if (error) {
 			console.log(error);
@@ -84,7 +86,7 @@ router.post('/:session_id/upload-ssc/', upload.single('file'), (req, res,next) =
 	});
 });
 
-/* GET - sale contract (sc or ssc) */
+/* GET - download sale contract (sc or ssc) */
 router.get('/:session_id/contract/:type', (req, res, next) => {
 	// Get contract id
 	Session.findOne({
