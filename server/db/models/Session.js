@@ -95,11 +95,11 @@ const SessionSchema = new mongoose.Schema({
 				default: "ASCS",
 				enum: ["ASCS", "ASCB", "ASCH", "Signed"]
 			},
-			buyer_signed_contract_hash: {
+			sale_contract_id: {
 				type: String,
 				default: ""
 			},
-			seller_signed_contract_hash: {
+			signed_sale_contract_id: {
 				type: String,
 				default: ""
 			},

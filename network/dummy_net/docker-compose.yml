@@ -59,6 +59,7 @@ services:
          dockerfile: ./ipfs_node/Dockerfile
       image: ipfs/go-ipfs:dummy_net
       container_name: ipfs_node
+      command: ipfs help
       volumes:
          - staging:/export
          - data:/data/ipfs

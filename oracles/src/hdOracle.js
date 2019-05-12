@@ -52,15 +52,14 @@ class HdOracle {
 
 	updateSession(sellerAddress, buyerAddress) {
 		console.log(sellerAddress, buyerAddress);
-		Session.find({
+		Session.findOne({
 			buyer_address: buyerAddress.toLowerCase(),
 			seller_address: sellerAddress.toLowerCase()
-		}, (err, sessions) => {
+		}, (err, session) => {
 			if (err) {
 				console.log(err);
-			} else if (sessions.length > 0) {
-				console.log(sessions);
-				var session = sessions[0]
+			} else if (session) {
+				console.log(session);
 				var requestUrl = `http://localhost:3000/api/sessions/${session._id}/update`
 				var config = { headers: { Authorization: 'a1b2c3d4e5f6g7' } }
 				var body = {
@@ -76,7 +75,7 @@ class HdOracle {
 					console.log(response);
 				}).catch((error) => console.log(error));
 			} else {
-				console.log('could not find any sessions with those addresses');
+				console.log('could not find any session with that addresses');
 			}
 		});
 	}
