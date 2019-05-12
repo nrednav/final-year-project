@@ -53,24 +53,6 @@ services:
          dn:
             ipv4_address: 172.26.0.3
 
-   ipfs_node:
-      build:
-         context: ./
-         dockerfile: ./ipfs_node/Dockerfile
-      image: ipfs/go-ipfs:dummy_net
-      container_name: ipfs_node
-      command: ipfs help
-      volumes:
-         - staging:/export
-         - data:/data/ipfs
-      ports:
-         - "127.0.0.1:9080:8080"
-         - "127.0.0.1:5001:5001"
-         - "4001:4001"
-      networks:
-         dn:
-            ipv4_address: 172.26.0.6
-
    mongodb_server:
       image: mongo:latest
       container_name: mongodb_server

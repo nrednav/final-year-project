@@ -51,7 +51,6 @@ class HdOracle {
 	}
 
 	updateSession(sellerAddress, buyerAddress) {
-		console.log(sellerAddress, buyerAddress);
 		Session.findOne({
 			buyer_address: buyerAddress.toLowerCase(),
 			seller_address: sellerAddress.toLowerCase()
@@ -59,7 +58,6 @@ class HdOracle {
 			if (err) {
 				console.log(err);
 			} else if (session) {
-				console.log(session);
 				var requestUrl = `http://localhost:3000/api/sessions/${session._id}/update`
 				var config = { headers: { Authorization: 'a1b2c3d4e5f6g7' } }
 				var body = {

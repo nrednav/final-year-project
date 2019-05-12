@@ -73,7 +73,8 @@
 			</v-card>
 
 			<v-card class="image-upload-container primary">
-				<div class="vp-upload-panel">
+				<div class="vp-upload-panel p_text--text text-xs-center display-1">
+					Property Images
 				</div>
 			</v-card>
 

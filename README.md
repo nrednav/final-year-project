@@ -1,11 +1,7 @@
 # Implementation Checklist
 
 ## Backlog
-- [ ] Finish user interface components
-- [ ] Change smart contracts to accept fullname instead of part names
-	- [x] Verifier contract
-	- [x] Escrow contract
-	- [x] Holding deposit contract
+- [ ] Finish escrow stage interface + backend
 
 ## Stuff to do at end
 - [ ] Display offers to buyer
@@ -60,23 +56,23 @@
 		- [x] Create buyer dashboard
 		- [x] Create seller dashboard
 		- [x] Add validation
-	- [ ] Create buyer interfaces
-		- [ ] SearchResults (copy of seller's property list)
-	- [ ] Create seller interfaces
-		- [ ] Add offer panel under 'view property' panel
+	- [x] Create buyer interfaces
+		- [x] SearchResults (copy of seller's property list)
+	- [x] Create seller interfaces
+		- [x] Add offer panel under 'view property' panel
 	- [ ] Create interfaces involving both
 		- [ ] Offers (carbon copy of notifications)
 			* Static information on cards, no click to view more functionality
-		- [ ]	Background Screening
 		- [ ] Escrow
-		- [ ] Holding Deposit
 		- [ ] Notifications (mini copy of sellers prop list)
-		- [ ] SessionList (copy of seller's property list)
-		- [ ] ViewSession
-- [ ] Add validation where necessary
+		- [x] Holding Deposit
+		- [x]	Background Screening
+		- [x] SessionList (copy of seller's property list)
+		- [x] ViewSession
 - [ ] Create NodeJS oracles
-	- [x] Created verifier oracle
-- [ ] Create NodeJS Smart Contract Event Listener linked to database?
+	- [x] Create verifier oracle
+	- [x] Create hd oracle
+	- [ ] Create escrow oracle
 
 ## Setup the server
 - [x] Create the server using express-generator
@@ -110,7 +106,6 @@
 
 ## Setup the main docker network
 - [ ] Add private blockchain network
-- [ ] Add ipfs node
 - [ ] Add mongodb server
 
 ## Test the entire platform
