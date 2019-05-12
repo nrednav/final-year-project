@@ -8,21 +8,42 @@
 		<div class="sc-card-container">
 			<v-card class="primary p_text--text pa-4 sc-card display-1">
 
-				<div class="sdoc-hash">
-					<span class="sdoc-hash-label headline">
-						Sale contract IPFS hash:-
+				<div class="sdoc-status">
+					<span class="sdoc-status-label headline">
+						Sale contract available:
 					</span>
-					<span class="sdoc-hash-value headline p_yellow--text">
-						{{ contractIpfsHash }}
+					<span
+						class="sdoc-status-value headline p_yellow--text">
+							<v-icon large color="p_green" v-if="saleContractAvailable">
+								fas fa-check
+							</v-icon>
+							<v-icon color="p_red" v-if="!saleContractAvailable">
+								fas fa-times
+							</v-icon>
 					</span>
 				</div>
 
-				<div class="bdoc-hash">
-					<span class="bdoc-hash-label headline">
-						Signed sale contract IPFS hash:-
+				<div class="bdoc-status">
+					<span class="bdoc-status-label headline">
+						Signed sale contract available:
 					</span>
-					<span class="bdoc-hash-value headline p_yellow--text">
-						{{ signedContractIpfsHash }}
+					<span
+						class="bdoc-status-value headline p_yellow--text">
+							<v-icon color="p_green" v-if="signedSaleContractAvailable">
+								fas fa-check
+							</v-icon>
+							<v-icon color="p_red" v-if="!signedSaleContractAvailable">
+								fas fa-times
+							</v-icon>
+					</span>
+				</div>
+
+				<div class="sc-contract-status">
+					<span class="sc-contract-status-label headline">
+						Contract Status:
+					</span>
+					<span class="sc-contract-status-value headline p_yellow--text">
+						{{ this.session.stages['3'].contract_status }}
 					</span>
 				</div>
 
@@ -38,7 +59,7 @@
 					</v-btn>
 
 					<v-btn
-						v-if="user_type == 'buyer'"
+						v-if="user_type == 'buyer' && saleContractAvailable"
 						@click="downloadDocument"
 						outline
 						color="p_orange"
@@ -52,7 +73,7 @@
 						ref="scFileInput" type="file" @change="uploadDocument">
 
 					<v-btn
-						v-if="user_type == 'seller'"
+						v-if="user_type == 'seller' && signedSaleContractAvailable"
 						@click="downloadDocument"
 						outline
 						color="p_orange"
@@ -61,7 +82,7 @@
 					</v-btn>
 
 					<v-btn
-						v-if="user_type == 'buyer'"
+						v-if="user_type == 'buyer' && saleContractAvailable"
 						@click="$refs.scFileInput.click()"
 						outline
 						color="p_purple"
@@ -82,6 +103,7 @@
 					</v-btn>
 
 					<v-btn
+						v-if="saleContractAvailable && signedSaleContractAvailable"
 						@click="handleContinue"
 						outline
 						color="p_blue"
@@ -100,6 +122,7 @@
 <script>
 import { mapGetters } from 'vuex'
 import axios from 'axios'
+import FileSaver from 'file-saver'
 
 export default {
 	data () {
@@ -144,17 +167,25 @@ export default {
 
 			axios.post(requestUrl, formData, config).then((response) => {
 				console.log(response)
+				window.location.reload()
 			}).catch((error) => console.log(error))
 		},
 
 		downloadDocument () {
 			var contractType = (this.user_type === 'seller') ? 'ssc' : 'sc'
 			var requestUrl = `http://localhost:3000/api/sessions/${this.session._id}/contract/${contractType}`
-			var config = { headers: { Authorization: 'a1b2c3d4e5f6g7' } }
+			var config = {
+				headers: {
+					Authorization: 'a1b2c3d4e5f6g7'
+				},
+				responseType: 'blob'
+			}
 
 			axios.get(requestUrl, config).then((response) => {
-				console(response)
-				return response
+				console.log(response)
+				var fileType = response.headers['content-type']
+				var fileName = (contractType === 'ssc') ? 'signed-sale-contract' : 'sale-contract'
+				FileSaver.saveAs(response.data, fileName, { type: fileType })
 			}).catch((error) => console.log(error))
 		},
 
@@ -171,12 +202,14 @@ export default {
 
 		...mapGetters(['session', 'user_type', 'user_object']),
 
-		contractIpfsHash () {
-			return this.session.stages['3'].seller_signed_contract_hash
+		saleContractAvailable () {
+			var saleContractId = this.session.stages['3'].sale_contract_id
+			return (saleContractId !== '')
 		},
 
-		signedContractIpfsHash () {
-			return this.session.stages['3'].buyer_signed_contract_hash
+		signedSaleContractAvailable () {
+			var signedSaleContractId = this.session.stages['3'].signed_sale_contract_id
+			return (signedSaleContractId !== '')
 		}
 	},
 
@@ -209,31 +242,39 @@ export default {
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: repeat(3, minmax(10vh, auto));
 	column-gap: 10vmax;
+	row-gap: 2vmax;
 	align-items: center;
-	justify-items: center;
 }
 
-.sdoc-hash {
-	margin-top: 5vmax;
+.sdoc-status {
 	grid-column: 1 / 3;
 	grid-row: 1;
 	width: 100%;
 	height: 100%;
 
 	display: grid;
-	grid-template-rows: repeat(2, 10vh);
+	grid-template-columns: repeat(2, auto);
 	align-items: center;
-	justify-items: center;
 }
 
-.bdoc-hash {
+.bdoc-status {
 	grid-column: 1 / 3;
 	grid-row: 2;
 	width: 100%;
 	height: 100%;
 
 	display: grid;
-	grid-template-rows: repeat(2, 10vh);
+	grid-template-columns: repeat(2, auto);
+	align-items: center;
+}
+
+.sc-contract-status {
+	grid-column: 1 / 3;
+	grid-row: 3;
+	width: 100%;
+	height: 100%;
+	display: grid;
+	grid-template-columns: repeat(2, auto);
 	align-items: center;
 	justify-items: center;
 }
@@ -252,7 +293,7 @@ export default {
 
 .nav-buttons-container {
 	grid-column: 1 / 4;
-	grid-row: 3;
+	grid-row: 4;
 	width: 100%;
 	height: 100%;
 
@@ -261,6 +302,10 @@ export default {
 	align-items: center;
 	justify-items: center;
 	margin-top: 3vmax;
+}
+
+.scb-button-upload {
+	grid-row: 2;
 }
 
 .sc-button-back {
