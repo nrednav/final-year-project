@@ -2,6 +2,7 @@
 
 ## Backlog
 - [ ] Finish escrow stage interface + backend
+- [ ] Try putting entire project into docker, via dockerfile (so as to manage dependencies)
 
 ## Stuff to do at end
 - [ ] Display offers to buyer
