@@ -137,88 +137,70 @@ const SessionSchema = new mongoose.Schema({
 				default: ""
 			},
 			mini_stages: {
-				1:
-				{
-					name: {
-						type: String,
-						default: "Deposits"
-					},
+
+				1: {
 					status: {
 						type: String,
-						default: "Pending",
-						enum: ["Pending", "In Progress", "Completed"]
+						default: "ASD"
 					},
 					buyer_deposit_status: {
-						type: String,
-						default: "Pending",
-						enum: ["Pending", "Complete"]
+						type: Boolean,
+						default: false
 					},
 					seller_deposit_status: {
-						type: String,
-						default: "Pending",
-						enum: ["Pending", "Complete"]
-					}
-				},
-				2:
-				{
-					name: {
-						type: String,
-						default: "Verification"
+						type: Boolean,
+						default: false
 					},
-					status: {
-						type: String,
-						default: "ATTR",
-						enum: ["ATTR", "APR", "Complete"]
-					},
-					title_transfer_receipt: {
+					title_transfer_document_id: {
 						type: String,
 						default: ""
 					},
-					buyer_approval: {
-						type: Boolean,
-						default: false
-					},
-					seller_approval: {
-						type: Boolean,
-						default: false
+					title_transfer_document_hash: {
+						type: String,
+						default: ""
 					}
 				},
-				3:
-				{
-					name: {
-						type: String,
-						default: "Disbursement"
-					},
+
+
+				2: {
 					status: {
 						type: String,
 						default: "Pending",
-						enum: ["Pending", "Complete"]
+					}
+				},
+
+
+				3: {
+					status: {
+						type: String,
+						default: "Pending",
 					},
-					buyer_greenlight: {
-						type: Boolean,
-						default: false
+					title_deed_draft_id: {
+						type: String,
+						default: ""
+					}
+				},
+
+				4: {
+					status: {
+						type: String,
+						default: "Pending"
 					},
-					seller_greenlight: {
-						type: Boolean,
-						default: false
+					title_deed_id: {
+						type: String,
+						default: ""
 					},
-					disbursements: {
-						buyer: {
-							title_deed_hash: {
-								type: String,
-								default: ""
-							},
-							holding_deposit_tx_receipt: {
-								type: String,
-								default: ""
-							}
-						},
-						seller: {
-							payment_tx_receipt: {
-								type: String,
-								default: ""
-							}
-						}
+					hd_release_receipt: {
+						type: String,
+						default: ""
+					},
+					disbursement_receipt: {
+						type: String,
+						default: ""
+					},
+					finished_at: {
+						type: String,
+						default: ""
 					}
 				}
 			},

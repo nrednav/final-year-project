@@ -3,6 +3,15 @@
 ## Backlog
 - [ ] Finish escrow stage interface + backend
 - [ ] Try putting entire project into docker, via dockerfile (so as to manage dependencies)
+- [ ] Prevent session duplication when seller tries to click accept on an offer, in which
+a session already exists with the offer makers and sellers id's
+purchased arrays
+- [ ] Remove sold and purchased arrays from the user model
+- [ ] Remove the leave session button
+- [ ] After escrow is finished, show one final interface which says session is complete and shows the necessary information to both the buyer and seller
+	- [ ] For the seller, show the tx receipt
+	- [ ] For the buyer, show the holding deposit tx receipt, the tx receipt, a button to download the title deed
+	- [ ] For both, show the date the escrow finished
 
 ## Stuff to do at end
 - [ ] Display offers to buyer

@@ -149,6 +149,10 @@ contract Escrow {
 
 		terminated = true;
 		emit escrow_terminated(msg.sender);
+
+		open = false;
+
+		emit escrow_closed();
 	}
 
 	// Getters
