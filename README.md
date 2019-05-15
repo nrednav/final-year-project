@@ -6,6 +6,7 @@
 - [ ] Prevent session duplication when seller tries to click accept on an offer, in which
 a session already exists with the offer makers and sellers id's
 purchased arrays
+- [ ] When escrow finishes, remove the property (mimic the button from "view property" interface)
 - [ ] Remove sold and purchased arrays from the user model
 - [ ] Remove the leave session button
 - [ ] After escrow is finished, show one final interface which says session is complete and shows the necessary information to both the buyer and seller

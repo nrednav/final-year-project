@@ -1,5 +1,8 @@
 import axios from 'axios';
 import web3 from './web3';
+import fs from 'fs';
+import path from 'path';
+
 import escrow from './contracts/escrow'
 import escrowFactory from './contracts/escrowFactory'
 
@@ -111,8 +114,36 @@ class escrowOracle {
 				}
 
 				this.updateSession(sellerAddress, buyerAddress, updateOptions);
+				this.uploadTitleDeedDraft();
 			} else {
 				console.log('could not find any session with that addresses');
+			}
+		});
+	}
+
+	uploadTitleDeedDraft() {
+		/*
+		 * Use this link to find out how: https://github.com/zishon89us/node-cheat/blob/master/gridfs/direct_upload_gridfs/app.js
+		 * Also this one maybe: https://stackoverflow.com/questions/31252063/using-mongodb-express-node-js-and-gridfs-stream-for-storing-video-and-picture
+		 *
+		 * CREATE THE HANDLER IN THE SESSION ROUTER
+		 * AND THEN TEST IT USING THE NODE CONSOLE &
+		 * ALSO TEST IT USING POSTMAN
+		 */
+		fs.writeFile('./titleDeedDraft.txt', 'Title Deed Draft', (err) => {
+			if (err) {
+				throw err;
+			} else {
+				console.log('Created title deed draft');
+				const titleDeedDraft = fs.readFileSync(path.resolve(__dirname,
+					'./titleDeedDraft.txt'));
+
+				// Make request to session server router to upload file
+				let requestUrl = 'http://localhost:3000/api/sessions/upload/ttd'
+				let config = { headers: { Authorization: 'a1b2c3d4e5f6g7' } }
+				let body = {
+					titleDeedDraft
+				}
 			}
 		});
 	}
