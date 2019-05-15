@@ -34,6 +34,7 @@ contract HoldingDeposit {
 	// State
 	address payable buyer;
 	address payable seller;
+	address private authority = "0x8a23c7C42333ed6be5a68c24031cd7A737fbcBE8";
 	uint deposit;
 
 	bool seller_status = false;
@@ -72,7 +73,7 @@ contract HoldingDeposit {
 	event status_updated(address sender, bool status);
 	event deposit_status_updated(bool status);
 	event deposit_withdrawn(address receiver, uint amount);
-	event contract_closed();
+	event hd_closed();
 
 	// Functions
 	function deposit_funds()
@@ -138,7 +139,7 @@ contract HoldingDeposit {
 
 		// Close the holding deposit contract
 		open = false;
-		emit contract_closed();
+		emit hd_closed();
 	}
 
 	function check_deposit_status()
@@ -157,6 +158,14 @@ contract HoldingDeposit {
 				withdraw(seller);
 			}
 		}
+	}
+
+		// Release deposit upon escrow completion
+	function release_deposit()
+	public
+	{
+		require(msg.sender == authority, "Authorization unsuccessful");
+		withdraw(buyer);
 	}
 
 

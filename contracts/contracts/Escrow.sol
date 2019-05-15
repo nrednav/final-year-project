@@ -12,7 +12,7 @@ contract EscrowFactory {
 	function open_escrow(bytes32 _title_transfer_hash, bytes32 _session_id_hash)
 	public
 	{
-		address escrow = address(new Escrow(_title_transfer_hash, msg.sender));
+		address escrow = address(new Escrow(_title_transfer_hash, msg.sender, _session_id_hash));
 		escrow_contracts[_session_id_hash] = escrow;
 
 		emit escrow_opened(_session_id_hash, escrow);
@@ -31,34 +31,44 @@ contract Escrow {
 	// State
 	address payable buyer;
 	address payable seller;
+	address private escrowOracle = "0x8a23c7C42333ed6be5a68c24031cd7A737fbcBE8";
 	uint funds;
-	bytes32 title_transfer_hash;
 
-	bool buyer_greenlight;
-	bool seller_greenlight;
+	bytes32 title_transfer_hash;
+	bytes32 session_id_hash;
+	bytes32 title_draft_hash;
+
+	bool buyer_transfer_greenlight = false;
+	bool seller_transfer_greenlight = false;
+
+	bool buyer_title_draft_greenlight = false;
+	bool seller_title_draft_greenlight = false;
 
 	bool open = false;
-	bool locked = true;
+	bool locked = false;
 	bool terminated = false;
 
 
 	// Events
 	event buyer_deposit_complete();
-	event title_transfer_requested(string session_id, bytes32 title_transfer_hash);
+	event title_transfer_requested();
 	event funds_disbursed();
 	event escrow_closed();
 	event escrow_terminated(address requester);
+	event commit_title_transfer();
 	event release_holding_deposit(address seller, address buyer);
 
 
 	// Constructor
-	constructor(bytes32 _title_transfer_hash, address payable _seller)
+	constructor(bytes32 _title_transfer_hash, address payable _seller, bytes32 _session_id_hash)
 	public
 	{
+		// Setup the seller
 		seller = _seller;
 		title_transfer_hash = _title_transfer_hash;
+		session_id_hash = _session_id_hash;
+		seller_transfer_greenlight = true;
 		open = true;
-		locked = false;
 	}
 
 
@@ -77,42 +87,55 @@ contract Escrow {
 	// Behaviour
 
 		// Handle deposits
-	function deposit()
+	function deposit(bytes32 _title_transfer_hash)
 	public payable openEscrow
 	{
 		require(msg.sender != seller);
 		require(locked == false, "Sorry the escrow is now locked");
+		require(_title_transfer_hash == title_transfer_hash, "Sorry that is an invalid
+				  title transfer hash");
 
 		locked = true;
 
 		buyer = msg.sender;
 		funds = msg.value;
+		buyer_transfer_greenlight = true;
 
 		emit buyer_deposit_complete();
 	}
 
 		// Handle title transfer request
-	function request_title_transfer(string memory _session_id)
+	function request_title_transfer()
 	public openEscrow
 	{
 		require(msg.sender == seller, "Only the seller can request a title transfer.");
-		emit title_transfer_requested(_session_id, title_transfer_hash);
+		emit title_transfer_requested();
+	}
+
+		// Handle title transfer response
+	function title_transfer_response(bytes32 _title_draft_hash)
+	public openEscrow
+	{
+		require(msg.sender == escrowOracle, "Authorization unsuccessful");
+		title_draft_hash = _title_draft_hash;
 	}
 
 		// Handle buyer and seller responses to title transfer completion
-	function greenlight(bool _response)
+	function title_draft_greenlight(bytes32 _title_draft_hash, bool _status)
 	public openEscrow
 	{
 		require(msg.sender == seller || msg.sender == buyer);
+		require(_title_draft_hash == title_draft_hash, "Title draft hash mismatch");
 
 		if (msg.sender == seller) {
-			seller_greenlight = _response;
+			seller_title_draft_greenlight = _status;
 		}
 		else if (msg.sender == buyer) {
-			buyer_greenlight = _response;
+			buyer_title_draft_greenlight = _status;
 		}
 
-		if (buyer_greenlight && seller_greenlight) {
+		if (buyer_title_draft_greenlight && seller_title_draft_greenlight) {
+			emit commit_title_transfer();
 			disburse_funds();
 		}
 	}
@@ -121,7 +144,7 @@ contract Escrow {
 	function disburse_funds()
 	private openEscrow
 	{
-		require(buyer_greenlight == true && seller_greenlight == true,
+		require(buyer_title_draft_greenlight == true && seller_title_draft_greenlight == true,
 				  "Need both parties to agree before any funds are disbursed.");
 
 		uint amount = funds;
@@ -129,10 +152,9 @@ contract Escrow {
 		seller.transfer(amount);
 
 		emit funds_disbursed();
-		emit release_holding_deposit(seller, buyer);
+		emit release_holding_deposit();
 
 		open = false;
-
 		emit escrow_closed();
 	}
 
@@ -151,7 +173,6 @@ contract Escrow {
 		emit escrow_terminated(msg.sender);
 
 		open = false;
-
 		emit escrow_closed();
 	}
 
