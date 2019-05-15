@@ -34,7 +34,7 @@ contract HoldingDeposit {
 	// State
 	address payable buyer;
 	address payable seller;
-	address private authority = "0x8a23c7C42333ed6be5a68c24031cd7A737fbcBE8";
+	address private authority = 0x8a23c7C42333ed6be5a68c24031cd7A737fbcBE8;
 	uint deposit;
 
 	bool seller_status = false;

@@ -8,7 +8,7 @@ module.exports = function(deployer) {
 	.then(() => {
 		// Write contract address to file
 		var myconfig = JSON.parse(fs.readFileSync("../myconfig.json"));
-		myconfig.addresses.escrow = EscrowFactory.address;
+		myconfig.addresses.escrow_factory = EscrowFactory.address;
 		myconfig.abi.escrow_factory = EscrowFactory.abi;
 
 		fs.writeFile("../myconfig.json", JSON.stringify(myconfig, null, 4), (err) => {

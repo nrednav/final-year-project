@@ -24,7 +24,7 @@ class HdOracle {
 
 			// Listen for verification_requested event
 			this.contract.events.funds_deposited({
-				fromBlock: 0,
+				fromBlock: "latest",
 				toBlock: "latest"
 			}, async (error, event) => {
 				if (error) {

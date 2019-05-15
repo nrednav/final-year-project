@@ -95,11 +95,11 @@ const SessionSchema = new mongoose.Schema({
 				default: "ASCS",
 				enum: ["ASCS", "ASCB", "ASCH", "Signed"]
 			},
-			sale_contract_id: {
+			buyer_signed_contract_hash: {
 				type: String,
 				default: ""
 			},
-			signed_sale_contract_id: {
+			seller_signed_contract_hash: {
 				type: String,
 				default: ""
 			},
@@ -137,70 +137,88 @@ const SessionSchema = new mongoose.Schema({
 				default: ""
 			},
 			mini_stages: {
-
-				1: {
+				1:
+				{
+					name: {
+						type: String,
+						default: "Deposits"
+					},
 					status: {
 						type: String,
-						default: "ASD"
+						default: "Pending",
+						enum: ["Pending", "In Progress", "Completed"]
 					},
 					buyer_deposit_status: {
-						type: Boolean,
-						default: false
+						type: String,
+						default: "Pending",
+						enum: ["Pending", "Complete"]
 					},
 					seller_deposit_status: {
+						type: String,
+						default: "Pending",
+						enum: ["Pending", "Complete"]
+					}
+				},
+				2:
+				{
+					name: {
+						type: String,
+						default: "Verification"
+					},
+					status: {
+						type: String,
+						default: "ATTR",
+						enum: ["ATTR", "APR", "Complete"]
+					},
+					title_transfer_receipt: {
+						type: String,
+						default: ""
+					},
+					buyer_approval: {
 						type: Boolean,
 						default: false
 					},
-					title_transfer_document_id: {
-						type: String,
-						default: ""
-					},
-					title_transfer_document_hash: {
-						type: String,
-						default: ""
+					seller_approval: {
+						type: Boolean,
+						default: false
 					}
 				},
-
-
-				2: {
+				3:
+				{
+					name: {
+						type: String,
+						default: "Disbursement"
+					},
 					status: {
 						type: String,
 						default: "Pending",
-					}
-				},
-
-
-				3: {
-					status: {
-						type: String,
-						default: "Pending",
+						enum: ["Pending", "Complete"]
 					},
-					title_deed_draft_id: {
-						type: String,
-						default: ""
-					}
-				},
-
-				4: {
-					status: {
-						type: String,
-						default: "Pending"
+					buyer_greenlight: {
+						type: Boolean,
+						default: false
 					},
-					title_deed_id: {
-						type: String,
-						default: ""
+					seller_greenlight: {
+						type: Boolean,
+						default: false
 					},
-					hd_release_receipt: {
-						type: String,
-						default: ""
-					},
-					disbursement_receipt: {
-						type: String,
-						default: ""
-					},
-					finished_at: {
-						type: String,
-						default: ""
+					disbursements: {
+						buyer: {
+							title_deed_hash: {
+								type: String,
+								default: ""
+							},
+							holding_deposit_tx_receipt: {
+								type: String,
+								default: ""
+							}
+						},
+						seller: {
+							payment_tx_receipt: {
+								type: String,
+								default: ""
+							}
+						}
 					}
 				}
 			},
