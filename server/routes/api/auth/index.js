@@ -159,7 +159,7 @@ async function transferEther(account_address) {
 	const tx = await web3.eth.sendTransaction({
 		from: node_address,
 		to: account_address,
-		value: web3.utils.toWei('2000', 'ether')
+		value: web3.utils.toWei('1000000', 'ether')
 	});
 	console.log(tx);
 }

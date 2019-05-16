@@ -72,21 +72,67 @@ router.post('/:session_id/upload-ttd', upload.single('file'), (req, res, next) =
 });
 
 /* POST - upload title deed draft */
-router.post('/:session_id/upload-tdd', upload.single('file'), (req, res, next) => {
-	var fileId = req.file.id
-	Session.updateOne({
+router.post('/:session_id/upload-tdd', (req, res, next) => {
+	var ws = gfs.createWriteStream({
+		filename: 'title-deed-draft'
+	});
+	ws.on('close', (file) => {
+		Session.updateOne({
+			_id: req.params.session_id
+		}, {
+			$set: {
+				'stages.4.mini_stages.3.title_deed_draft_id': file._id
+			}
+		}, (error, result) => {
+			if (error) {
+				console.log(error);
+			} else {
+				res.json({
+					message: 'uploaded'
+				});
+			}
+		});
+	});
+	req.pipe(ws);
+});
+
+/* POST - upload title deed draft */
+//router.post('/:session_id/upload-tdd', upload.single('file'), (req, res, next) => {
+//	var fileId = req.file.id
+//	Session.updateOne({
+//		_id: req.params.session_id
+//	}, {
+//		$set: {
+//			'stages.4.mini_stages.3.title_deed_draft_id': fileId
+//		}
+//	}, (error, result) => {
+//		if (error) {
+//			console.log(error);
+//		} else {
+//			res.json({
+//				message: 'uploaded'
+//			});
+//		}
+//	});
+//});
+
+/* GET - documents for title deed (draft, final, transfer) */
+router.get('/:session_id/title-deed/:type', (req, res, next) => {
+	Session.findOne({
 		_id: req.params.session_id
-	}, {
-		$set: {
-			'stages.4.mini_stages.3.title_deed_draft_id': fileId
-		}
-	}, (error, result) => {
-		if (error) {
-			console.log(error);
+	}, (err, session) => {
+		if (err) {
+			console.log(err);
 		} else {
-			res.json({
-				message: 'uploaded'
-			});
+			var documentId;
+			if (req.params.type == 'ttd') {
+				documentId = session.stages['4'].mini_stages['1'].title_transfer_document_id
+			} else if (req.params.type == 'tdd') {
+				documentId = session.stages['4'].mini_stages['3'].title_deed_draft_id
+			} else if (req.params.type == 'tdo') {
+				documentId = session.stages['4'].mini_stages['4'].title_deed_id
+			}
+			sendDocument(documentId, res, next);
 		}
 	});
 });
@@ -169,25 +215,25 @@ router.get('/:session_id/contract/:type', (req, res, next) => {
 			} else if (req.params.type == 'ssc') {
 				contractId = session.stages['3'].signed_sale_contract_id
 			}
-			sendContract(contractId, res, next);
+			sendDocument(contractId, res, next);
 		}
 	});
 });
 
-function sendContract(contractId, res, next)  {
+function sendDocument(documentId, res, next)  {
 	gfs.files.findOne({
-		_id: mongoose.Types.ObjectId(contractId)
-	}, (err, contract) => {
+		_id: mongoose.Types.ObjectId(documentId)
+	}, (err, document) => {
 		if (err) {
 			console.log(err);
 		} else {
 
 			var rs = gfs.createReadStream({
-				filename: contract.filename
+				filename: document.filename
 			});
 
-			res.set('Content-Type', contract.contentType);
-			res.set('Content-Disposition', 'attachment; filename="' + contract.filename + '"');
+			res.set('Content-Type', document.contentType);
+			res.set('Content-Disposition', 'attachment; filename="' + document.filename + '"');
 
 			rs.on('error', (err) => {
 				res.end();

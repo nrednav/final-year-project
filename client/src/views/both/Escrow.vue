@@ -12,7 +12,7 @@
 				class="primary p_text--text pa-4 ec-ms1-card display-1">
 
 				<v-btn
-					v-if="user_type == 'seller' && status('ms1') == 'ASD'"
+					v-if="user_type == 'seller' && miniStageStatus(1) == 'ASD'"
 					@click="$refs.ecFileInput.click()"
 					outline
 					color="p_purple"
@@ -25,7 +25,16 @@
 					ref="ecFileInput" type="file" @change="uploadTTD">
 
 				<v-btn
-					v-if="user_type == 'seller' && status('ms1') == 'ASD'"
+					v-if="user_type == 'buyer' && miniStageStatus(1) == 'ABD'"
+					@click="downloadDocument('ttd')"
+					outline
+					color="p_orange"
+					class="title ec-button">
+					DOWNLOAD
+				</v-btn>
+
+				<v-btn
+					v-if="user_type == 'seller' && miniStageStatus(1) == 'ASD'"
 					@click="createEscrow"
 					outline
 					color="p_blue"
@@ -33,12 +42,37 @@
 					CREATE ESCROW
 				</v-btn>
 
+				<v-btn
+					v-if="user_type == 'buyer' && miniStageStatus(1) == 'ABD' && downloadClicked"
+					@click="acceptTTD"
+					outline
+					color="p_blue"
+					class="title ec-button">
+					ACCEPT
+				</v-btn>
+
+				<v-btn
+					v-if="user_type == 'buyer' && miniStageStatus(1) == 'ABD' && downloadClicked"
+					outline
+					color="p_red"
+					class="title ec-button">
+					REJECT
+				</v-btn>
+
+				<v-btn
+					v-if="user_type == 'seller' && miniStageStatus(1) == 'ATTR'"
+					@click="requestTitleTransfer"
+					outline
+					color="p_blue"
+					class="title ec-button">
+					REQUEST TITLE TRANSFER
+				</v-btn>
+
 			</v-card>
 
 			<v-card
 				v-if="activeMiniStage == 2"
 				class="primary p_text--text pa-4 ec-ms2-card display-1">
-				Mini stage 2
 			</v-card>
 
 			<v-card
@@ -62,6 +96,7 @@
 import { mapGetters } from 'vuex'
 import axios from 'axios'
 import web3 from '@/web3'
+import FileSaver from 'file-saver'
 
 import escrow from '@/contracts/escrow'
 import escrowFactory from '@/contracts/escrowFactory'
@@ -71,11 +106,16 @@ export default {
 	data () {
 		return {
 			ttdHash: '',
-			selectedAddr: ''
+			selectedAddr: '',
+			downloadClicked: false
 		}
 	},
 
 	methods: {
+
+		get_property () {
+			this.$store.dispatch('get_property_data', { property_id: this.session.property_id })
+		},
 
 		uploadTTD (event) {
 			console.log('file uploaded')
@@ -100,6 +140,49 @@ export default {
 			reader.readAsBinaryString(selectedFile)
 		},
 
+		downloadDocument (docType) {
+			let requestUrl = `http://localhost:3000/api/sessions/${this.session._id}/title-deed/${docType}`
+			let config = {
+				headers: {
+					Authorization: 'a1b2c3d4e5f6g7'
+				},
+				responseType: 'blob'
+			}
+
+			axios.get(requestUrl, config).then((response) => {
+				console.log(response)
+				this.downloadClicked = true
+				let fileType = response.headers['content-type']
+				let fileName
+
+				if (docType === 'ttd') {
+					fileName = 'title-transfer-document'
+				} else if (docType === 'tdd') {
+					fileName = 'title-deed-draft'
+				} else if (docType === 'tdo') {
+					fileName = 'title-deed'
+				}
+
+				FileSaver.saveAs(response.data, fileName, { type: fileType })
+			}).catch((error) => console.log(error))
+		},
+
+		async acceptTTD () {
+			let ttdHash = this.session.stages['4'].mini_stages['1'].title_transfer_document_hash
+			let price = this.property.details.listing_price / 1000
+			let sessionIdHash = await web3.utils.sha3(this.session._id)
+			let escrowContractAddress = await escrowFactory.methods.get_escrow(sessionIdHash).call()
+			escrow.address = escrowContractAddress
+
+			escrow.methods.deposit(ttdHash).send({
+				from: this.selectedAddr,
+				value: web3.utils.toWei(price.toString(), 'ether')
+			}).on('confirmation', (confirmationNumber, receipt) => {
+				console.log(receipt)
+				this.$router.push('/buyer/sessions/' + this.session._id)
+			}).catch((error) => console.log(error))
+		},
+
 		async createEscrow () {
 			if (this.selectedAddr !== '') {
 				if (this.selectedAddr === this.user_object.account_address) {
@@ -108,7 +191,7 @@ export default {
 						from: this.selectedAddr,
 						gasPrice: web3.utils.toWei('42', 'gwei')
 					}).on('confirmation', (confirmationNumber, receipt) => {
-						this.$router.go(-1)
+						this.$router.push(`/seller/sessions/${this.session._id}`)
 					}).catch((error) => console.log(error))
 				} else {
 					alert('Please switch accounts to the one you used during registration')
@@ -116,6 +199,25 @@ export default {
 			} else {
 				alert('Please login to metamask to continue')
 			}
+		},
+
+		async requestTitleTransfer () {
+			let updateOptions = {
+				$set: {
+					'stages.4.mini_stages.1.status': 'Completed',
+					'active_mini_stage': 2,
+					'stages.4.mini_stages.2.status': 'In Progress'
+				}
+			}
+			this.updateSession(updateOptions)
+
+			let sessionIdHash = await web3.utils.sha3(this.session._id)
+			escrow.address = await escrowFactory.methods.get_escrow(sessionIdHash).call()
+			escrow.methods.request_title_transfer().send({
+				from: this.selectedAddr
+			}).once('confirmation', (confirmationNumber, receipt) => {
+				console.log(receipt)
+			}).catch((error) => console.log(error))
 		},
 
 		updateSession (updateOptions) {
@@ -130,8 +232,8 @@ export default {
 			}).catch((error) => console.log(error))
 		},
 
-		status (miniStageNumber) {
-			return this.session.stages['4'].mini_stages['1'].status
+		miniStageStatus (stageNumber) {
+			return this.session.stages['4'].mini_stages[`${stageNumber}`].status
 		},
 
 		async load_accounts () {
@@ -146,7 +248,7 @@ export default {
 
 	computed: {
 
-		...mapGetters(['session', 'user_type', 'user_object']),
+		...mapGetters(['session', 'user_type', 'user_object', 'property']),
 
 		activeMiniStage () {
 			return this.session.stages['4'].active_mini_stage
@@ -155,6 +257,7 @@ export default {
 
 	mounted () {
 		this.load_accounts()
+		this.get_property()
 	}
 }
 </script>

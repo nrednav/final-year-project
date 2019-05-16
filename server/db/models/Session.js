@@ -206,7 +206,7 @@ const SessionSchema = new mongoose.Schema({
 			},
 			active_mini_stage: {
 				type: Number,
-				default: 0
+				default: 1
 			}
 		}
 	}

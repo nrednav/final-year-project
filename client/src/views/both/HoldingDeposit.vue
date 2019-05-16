@@ -194,8 +194,7 @@ export default {
 						holdingDeposit.address = hdAddress
 						holdingDeposit.methods.deposit_funds().send({
 							from: this.selectedAddr,
-							value: web3.utils.toWei(depositAmount.toString(), 'ether'),
-							gasPrice: web3.utils.toWei('42', 'gwei')
+							value: web3.utils.toWei(depositAmount.toString(), 'ether')
 						}).on('transactionHash', (hash) => {
 							console.log(hash)
 							this.depositPaid = true

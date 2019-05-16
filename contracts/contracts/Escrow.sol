@@ -31,7 +31,7 @@ contract Escrow {
 	// State
 	address payable buyer;
 	address payable seller;
-	address private escrowOracle = 0x8a23c7C42333ed6be5a68c24031cd7A737fbcBE8;
+	address private escrowOracle;
 	uint funds;
 
 	bytes32 title_transfer_hash;
@@ -68,6 +68,7 @@ contract Escrow {
 		title_transfer_hash = _title_transfer_hash;
 		session_id_hash = _session_id_hash;
 		seller_transfer_greenlight = true;
+		escrowOracle = 0x8a23c7C42333ed6be5a68c24031cd7A737fbcBE8;
 		open = true;
 	}
 

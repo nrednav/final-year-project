@@ -150,7 +150,7 @@ export default {
 
 			axios.post(requestUrl, formData, config).then((response) => {
 				console.log(response)
-				this.$router.go()
+				this.$router.go(-1)
 			}).catch((error) => console.log(error))
 		},
 

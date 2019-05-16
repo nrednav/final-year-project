@@ -2,10 +2,10 @@ import web3 from './web3';
 import fs from 'fs';
 import FormData from 'form-data';
 import path from 'path';
+const axios = require('axios');
 
 const mongoose = require('mongoose');
 const grid = require('gridfs-stream');
-const axios = require('axios');
 grid.mongo = mongoose.mongo;
 
 import escrow from './contracts/escrow'
@@ -56,10 +56,12 @@ class escrowOracle {
 
 					this.contract.address = event.address;
 
-					let participants = this.contract.methods.get_participants().call();
+					console.log('Getting participants...');
+					let participants = await this.contract.methods.get_participants().call();
 					let sellerAddress = participants[0];
 					let buyerAddress = participants[1];
 
+					console.log('Updating session...');
 					let updateOptions = {
 						$set: {
 							'stages.4.mini_stages.1.status': 'ATTR',
@@ -81,8 +83,10 @@ class escrowOracle {
 					console.log('Found event:-\n', event.event);
 					console.log(event);
 
+					this.contract.address = event.address;
+
 					// Get participants
-					let participants = this.contract.methods.get_participants().call();
+					let participants = await this.contract.methods.get_participants().call();
 					let sellerAddress = participants[0];
 					let buyerAddress = participants[1];
 					this.transferTitle(sellerAddress, buyerAddress);
@@ -97,7 +101,12 @@ class escrowOracle {
 				if (error) {
 					throw error
 				} else {
-					let participants = this.contract.methods.get_participants().call();
+					console.log('Found event:-\n', event.event);
+					console.log(event);
+
+					this.contract.address = event.address;
+
+					let participants = await this.contract.methods.get_participants().call();
 					let sellerAddress = participants[0];
 					let buyerAddress = participants[1];
 					this.uploadTitleDeed(sellerAddress, buyerAddress);
@@ -112,7 +121,12 @@ class escrowOracle {
 				if (error) {
 					throw error
 				} else {
-					let participants = this.contract.methods.get_participants().call();
+					console.log('Found event:-\n', event.event);
+					console.log(event);
+
+					this.contract.address = event.address;
+
+					let participants = await this.contract.methods.get_participants().call();
 					let sellerAddress = participants[0];
 					let buyerAddress = participants[1];
 					this.requestPropertyRemoval(sellerAddress, buyerAddress);
@@ -133,36 +147,75 @@ class escrowOracle {
 			if (err) {
 				console.log(err);
 			} else if (session) {
+				console.log(session);
 
-				// Get property uid
-				let oldPropertyUID = this.getPropertyUID(session.property_id);
-				let buyerName = this.getBuyerName(session.buyer_id);
-				let titleDeedHash = this.getTitleDeedHash(propertyUID);
-				let newPropertyUID = this.web3.utils.sha3(buyerName + titleDeedHash);
+			//	var oldPropertyUID;
+			//	var buyerName;
+			//	var titleDeedHash;
 
-				// Transfer the title
-				var requestUrl = `http://localhost:3000/api/land-registry/update-entry`
-				var config = { headers: { Authorization: 'a1b2c3d4e5f6g7' } }
-				var body = {
-					old_owner_id: session.seller_id,
-					old_property_uid: oldPropertyUID,
-					new_owner_id: session.buyer_id,
-					new_property_uid: newPropertyUID
-				}
-				axios.put(requestUrl, body, config).then((response) => {
-					console.log('Successfully transfered title: \n' + response);
-				}).catch((error) => console.log(error));
+				console.log('Collecting necessary information for title transfer...');
 
-				let updateOptions = {
-					$set: {
-						'stages.4.mini_stages.2.status': 'Completed',
-						'active_mini_stage': 3,
-						'stages.4.mini_stages.3.status': 'In Progress'
+				// Get old property uid first
+				Property.findOne({
+					_id: new mongoose.Types.ObjectId(session.property_id)
+				}, (err, property) => {
+					if (err) {
+						throw err;
+					} else {
+						var oldPropertyUID = property.details.property_uid;
+
+						// Get buyer's name next
+						User.findOne({
+							_id: new mongoose.Types.ObjectId(session.buyer_id)
+						}, (err, user) => {
+							if (err) {
+								throw err;
+							} else {
+								var buyerName = user.name;
+
+								// Get title deed hash
+								LandRegistry.findOne({
+									property_uid: oldPropertyUID
+								}, async (err, entry) => {
+									if (err) {
+										throw err;
+									} else {
+										var titleDeedHash = entry.title_deed_hash;
+
+										console.log('Generating new property uid...');
+										let newPropertyUID = await this.web3.utils.sha3(buyerName + titleDeedHash);
+										// Transfer the title
+										console.log('Transferring title...');
+										var requestUrl = `http://localhost:3000/api/land-registry/update-entry`
+										var config = { headers: { Authorization: 'a1b2c3d4e5f6g7' } }
+										var body = {
+											old_owner_id: session.seller_id,
+											old_property_uid: oldPropertyUID,
+											new_owner_id: session.buyer_id,
+											new_property_uid: newPropertyUID
+										}
+
+										axios.put(requestUrl, body, config).then((response) => {
+											console.log('Successfully transfered title: \n' + response);
+
+											let updateOptions = {
+												$set: {
+													'stages.4.mini_stages.2.status': 'Completed',
+													'active_mini_stage': 3,
+													'stages.4.mini_stages.3.status': 'In Progress'
+												}
+											}
+
+											this.updateSession(sellerAddress, buyerAddress, updateOptions);
+											this.uploadTitleDeedDraft(session._id);
+										}).catch((error) => console.log(error));
+									}
+								});
+							}
+						});
 					}
-				}
+				});
 
-				this.updateSession(sellerAddress, buyerAddress, updateOptions);
-				this.uploadTitleDeedDraft(session._id);
 			} else {
 				console.log('could not find any session with that addresses');
 			}
@@ -211,13 +264,13 @@ class escrowOracle {
 		 * AND THEN TEST IT USING THE NODE CONSOLE &
 		 * ALSO TEST IT USING POSTMAN
 		 */
-		fs.writeFile('./titleDeedDraft.txt', 'Title Deed Draft', (err) => {
+		fs.writeFile(path.join(__dirname, '/titleDeedDraft.txt'), 'Title Deed Draft', (err) => {
 			if (err) {
 				throw err;
 			} else {
 				console.log('Created title deed draft');
-				const titleDeedDraft = fs.readFileSync(path.resolve(__dirname,
-					'./titleDeedDraft.txt'));
+				const titleDeedDraft = fs.readFileSync(path.join(__dirname,
+					'/titleDeedDraft.txt'));
 
 				// Make request to session server router to upload file
 				let requestUrl = `http://localhost:3000/api/sessions/${sessionId}/upload-tdd`
@@ -228,7 +281,7 @@ class escrowOracle {
 
 				axios.post(requestUrl, formData, config).then((response) => {
 					console.log(response);
-					this.respondToTTR(titleDeedDraft, sellerId, buyerId);
+					this.respondToTTR(titleDeedDraft);
 				}).catch((error) => console.log(error));
 			}
 		});
@@ -242,41 +295,9 @@ class escrowOracle {
 		let tx = this.contract.methods.title_transfer_response(titleDraftHash).send({
 			from: nodeAddress,
 			gasPrice: 42000
-		}).on('confirmation', (confirmationNumber, receipt) => {
+		}).once('receipt', (receipt) => {
 			console.log(receipt);
-		});
-	}
-
-	getPropertyUID(propertyID) {
-		Property.findOne({
-			_id: propertyID
-		}, (err, property) => {
-			return property.details.property_uid
-		});
-	}
-
-	getBuyerName(buyerID) {
-		User.findOne({
-			_id: buyerID
-		}, (err, user) => {
-			if (err) {
-				throw err;
-			} else {
-				return user.name;
-			}
-		});
-	}
-
-	getTitleDeedHash(propertyUID) {
-		LandRegistry.findOne({
-			property_uid: propertyUID
-		}, (err, entry) => {
-			if (err) {
-				throw err;
-			} else {
-				return entry.title_deed_hash;
-			}
-		});
+		}).catch((error) => console.log(error))
 	}
 
 	updateSession(sellerAddress, buyerAddress, updateOptions) {

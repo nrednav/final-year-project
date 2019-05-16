@@ -1,0 +1,13 @@
+mqJW ——> OPTIONS /api/properties/5cddaeef8d2edd3c96c06fde 
+mqJW <—— 204 No Content (<—> 0.9 ms)
+WTQ1 ——> GET /api/properties/5cddaeef8d2edd3c96c06fde 
+WTQ1 <—— 304 Not Modified (<—> 13.8 ms)
+LQMj ——> OPTIONS /api/sessions/5cddb1b38d2edd3c96c06ff2/update 
+LQMj <—— 204 No Content (<—> 0.9 ms)
+OS2o ——> PUT /api/sessions/5cddb1b38d2edd3c96c06ff2/update 140 B application/json;charset=utf-8
+Updating session with id: 5cddb1b38d2edd3c96c06ff2
+OS2o <—— 200 OK 56 B text/html; charset=utf-8 (<—> 6.5 ms)
+2hda ——> PUT /api/land-registry/update-entry 261 B application/json;charset=utf-8
+2hda <—— 200 OK 276 B application/json; charset=utf-8 (<—> 8.2 ms)
+zYWY ——> POST /api/sessions/5cddb1b38d2edd3c96c06ff2/upload-tdd application/x-www-form-urlencoded
+zYWY <—— 200 OK 22 B application/json; charset=utf-8 (<—> 30.5 ms)

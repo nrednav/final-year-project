@@ -1,0 +1,10 @@
+
+> server@0.0.0 dev /c/Users/Vandern Rodrigues/Projects/fyp/server
+> nodemon ./bin/www
+
+[33m[nodemon] 1.19.0[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching: *.*[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+CuV0 ——> GET / 
+CuV0 <—— 200 OK 21 B application/json; charset=utf-8 (<—> 14.2 ms)
