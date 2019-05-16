@@ -127,7 +127,8 @@ export default {
 					var sessionIdHash = await web3.utils.sha3(this.session._id)
 
 					holdingDepositFactory.methods.open_holding_deposit(sessionIdHash).send({
-						from: this.selectedAddr
+						from: this.selectedAddr,
+						gasPrice: 42000
 					}).on('transactionHash', (hash) => {
 						console.log(hash)
 						this.setRequestData()
@@ -193,7 +194,8 @@ export default {
 						holdingDeposit.address = hdAddress
 						holdingDeposit.methods.deposit_funds().send({
 							from: this.selectedAddr,
-							value: web3.utils.toWei(depositAmount.toString(), 'ether')
+							value: web3.utils.toWei(depositAmount.toString(), 'ether'),
+							gasPrice: 42000
 						}).on('transactionHash', (hash) => {
 							console.log(hash)
 							this.depositPaid = true
