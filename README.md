@@ -13,6 +13,8 @@ purchased arrays
 	- [ ] For the seller, show the tx receipt
 	- [ ] For the buyer, show the holding deposit tx receipt, the tx receipt, a button to download the title deed
 	- [ ] For both, show the date the escrow finished
+- [ ] Rename some oracles to services because they're not only serving as oracles
+- [ ] Clean up all comments across all files
 - [ ] Add mocha tests for changes to Holding Deposit & Escrow smart contracts
 
 ## Stuff to do at end

@@ -1,12 +1,16 @@
-import axios from 'axios';
 import web3 from './web3';
 import fs from 'fs';
+import FormData from 'form-data';
 import path from 'path';
+
+const mongoose = require('mongoose');
+const grid = require('gridfs-stream');
+const axios = require('axios');
+grid.mongo = mongoose.mongo;
 
 import escrow from './contracts/escrow'
 import escrowFactory from './contracts/escrowFactory'
 
-var mongoose = require('mongoose');
 var User = require('../db/models/User').User;
 var Property = require('../db/models/Property').Property;
 var Session = require('../db/models/Session').Session;
@@ -17,6 +21,19 @@ class escrowOracle {
 	constructor() {
 		this.web3 = web3;
 		this.contract = escrow;
+
+		// DB Setup
+		const mongo_uri = 'mongodb://localhost:27017/fyp';
+
+		// Create connection
+		const conn = mongoose.createConnection(mongo_uri, {
+			useNewUrlParser: true
+		});
+
+		this.gfs;
+		conn.once('open', () => {
+			this.gfs = grid(conn.db);
+		});
 
 		this.startListening();
 	}
@@ -39,7 +56,7 @@ class escrowOracle {
 
 					this.contract.address = event.address;
 
-					let participants = escrowFactory.methods.get_participants().call();
+					let participants = this.contract.methods.get_participants().call();
 					let sellerAddress = participants[0];
 					let buyerAddress = participants[1];
 
@@ -65,12 +82,43 @@ class escrowOracle {
 					console.log(event);
 
 					// Get participants
-					let participants = escrowFactory.methods.get_participants().call();
+					let participants = this.contract.methods.get_participants().call();
 					let sellerAddress = participants[0];
 					let buyerAddress = participants[1];
 					this.transferTitle(sellerAddress, buyerAddress);
 				}
 			});
+
+			// Handle title deed commital
+			this.contract.events.commit_title_transfer({
+				fromBlock: "latest",
+				toBlock: "latest"
+			}, async (error, event) => {
+				if (error) {
+					throw error
+				} else {
+					let participants = this.contract.methods.get_participants().call();
+					let sellerAddress = participants[0];
+					let buyerAddress = participants[1];
+					this.uploadTitleDeed(sellerAddress, buyerAddress);
+				}
+			});
+
+			// Handle escrow closing
+			this.contract.events.escrow_closed({
+				fromBlock: "latest",
+				toBlock: "latest",
+			}, async (error, event) => {
+				if (error) {
+					throw error
+				} else {
+					let participants = this.contract.methods.get_participants().call();
+					let sellerAddress = participants[0];
+					let buyerAddress = participants[1];
+					this.requestPropertyRemoval(sellerAddress, buyerAddress);
+				}
+			});
+
 		})
 		.catch((error) => {
 			console.log('Error: could not find any accounts\n' + error);
@@ -114,14 +162,47 @@ class escrowOracle {
 				}
 
 				this.updateSession(sellerAddress, buyerAddress, updateOptions);
-				this.uploadTitleDeedDraft();
+				this.uploadTitleDeedDraft(session._id);
 			} else {
 				console.log('could not find any session with that addresses');
 			}
 		});
 	}
 
-	uploadTitleDeedDraft() {
+	uploadTitleDeed(sellerAddress, buyerAddress) {
+		Session.findOne({
+			buyer_address: buyerAddress.toLowerCase(),
+			seller_address: sellerAddress.toLowerCase()
+		}, (err, session) => {
+			if (err) {
+				throw err;
+			} else {
+
+				fs.writeFile('./titleDeed.txt', 'Title Deed', (err) => {
+					if (err) {
+						throw err;
+					} else {
+						console.log('Created title deed');
+						const titleDeed = fs.readFileSync(path.resolve(__dirname,
+							'./titleDeed.txt'));
+
+						// Make request to session server router to upload file
+						let requestUrl = `http://localhost:3000/api/sessions/${sessionId}/upload-td`
+						let config = { headers: { Authorization: 'a1b2c3d4e5f6g7' } }
+
+						let formData = new FormData();
+						formData.append('file', titleDeed);
+
+						axios.post(requestUrl, formData, config).then((response) => {
+							console.log(response);
+						}).catch((error) => console.log(error));
+					}
+				});
+			}
+		});
+	}
+
+	uploadTitleDeedDraft(sessionId) {
 		/*
 		 * Use this link to find out how: https://github.com/zishon89us/node-cheat/blob/master/gridfs/direct_upload_gridfs/app.js
 		 * Also this one maybe: https://stackoverflow.com/questions/31252063/using-mongodb-express-node-js-and-gridfs-stream-for-storing-video-and-picture
@@ -139,12 +220,30 @@ class escrowOracle {
 					'./titleDeedDraft.txt'));
 
 				// Make request to session server router to upload file
-				let requestUrl = 'http://localhost:3000/api/sessions/upload/ttd'
+				let requestUrl = `http://localhost:3000/api/sessions/${sessionId}/upload-tdd`
 				let config = { headers: { Authorization: 'a1b2c3d4e5f6g7' } }
-				let body = {
-					titleDeedDraft
-				}
+
+				let formData = new FormData();
+				formData.append('file', titleDeedDraft);
+
+				axios.post(requestUrl, formData, config).then((response) => {
+					console.log(response);
+					this.respondToTTR(titleDeedDraft, sellerId, buyerId);
+				}).catch((error) => console.log(error));
 			}
+		});
+	}
+
+	async respondToTTR(file) {
+		let titleDraftHash = await this.web3.utils.sha3(file);
+		let nodeAddress = "0x8a23c7c42333ed6be5a68c24031cd7a737fbcbe8";
+		await web3.eth.personal.unlockAccount(nodeAddress, String(1234), 1000);
+
+		let tx = this.contract.methods.title_transfer_response(titleDraftHash).send({
+			from: nodeAddress,
+			gasPrice: 42000
+		}).on('confirmation', (confirmationNumber, receipt) => {
+			console.log(receipt);
 		});
 	}
 
@@ -199,6 +298,54 @@ class escrowOracle {
 				});
 			} else {
 				console.log('could not find any session with those addresses');
+			}
+		});
+	}
+
+	requestPropertyRemoval(sellerAddress, buyerAddress) {
+		Session.findOne({
+			seller_address: sellerAddress,
+			buyer_address: buyerAddress
+		}, (err, session) => {
+			if (err) {
+				throw err
+			} else {
+				let propertyId = session.property_id;
+				let image_ids = []
+
+				// Get image id's
+				Property.findOne({
+					_id: propertyId
+				}, (err, property) => {
+					image_ids = property.details.images;
+
+					for (var i in image_ids) {
+						this.deletePropertyImage(image_ids[i]);
+					}
+
+					this.deleteProperty(property, propertyId);
+				});
+			}
+		});
+	}
+
+	deletePropertyImage(imageId) {
+		this.gfs.remove({
+			_id: imageId
+		}, (err, gridStore) => {
+			if (err) console.log(err);
+		});
+	}
+
+	// Delete property by id
+	deleteProperty(property, propertyId) {
+		Property.deleteOne({
+			_id: propertyId
+		}, (err) => {
+			if (err) {
+				throw err
+			} else {
+				console.log('successfully deleted property from seller');
 			}
 		});
 	}

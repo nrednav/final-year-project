@@ -46,6 +46,49 @@ var storage = new gridFsStorage({
 });
 const upload = multer({ storage });
 
+/* POST - upload title deed draft */
+router.post('/:session_id/upload-tdd', upload.single('file'), (req, res, next) => {
+	var fileId = req.file.id
+	Session.updateOne({
+		_id: req.params.session_id
+	}, {
+		$set: {
+			'stages.4.mini_stages.3.title_deed_draft_id': fileId
+		}
+	}, (error, result) => {
+		if (error) {
+			console.log(error);
+		} else {
+			res.json({
+				message: 'uploaded'
+			});
+		}
+	});
+});
+
+/* POST - upload title deed */
+router.post('/:session_id/upload-td', upload.single('file'), (req, res, next) => {
+	var fileId = req.file.id
+	Session.updateOne({
+		_id: req.params.session_id
+	}, {
+		$set: {
+			'stages.4.mini_stages.3.status': 'Completed',
+			'active_mini_stage': 4
+			'stages.4.mini_stages.4.status': 'In Progress',
+			'stages.4.mini_stages.4.title_deed_id': fileId
+		}
+	}, (error, result) => {
+		if (error) {
+			console.log(error);
+		} else {
+			res.json({
+				message: 'uploaded'
+			});
+		}
+	});
+});
+
 /* POST - upload sale contract */
 router.post('/:session_id/upload-sc/', upload.single('file'), (req, res,next) => {
 	var fileId = req.file.id
