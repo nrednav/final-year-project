@@ -181,7 +181,7 @@ export default {
 
 				verifier.methods.verify(this.property_uid).send({
 					from: this.selected_addr,
-					gasPrice: 42000
+					gasPrice: web3.utils.toWei('42', 'gwei')
 				}).then((receipt) => {
 					this.verification_tx_receipt = receipt
 				}).catch(async (error) => {

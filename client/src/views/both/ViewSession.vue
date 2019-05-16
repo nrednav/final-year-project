@@ -52,13 +52,6 @@
 				class="title btn-vs-back">
 				BACK
 			</v-btn>
-			<v-btn
-				@click="openLeaveSessionDialog"
-				color="p_red"
-				outline
-				class="title btnLeaveSession">
-				LEAVE SESSION
-			</v-btn>
 		</div>
 
 	</v-layout>
@@ -227,12 +220,6 @@ export default {
 
 .vs-button-container {
 	margin-top: 5vh;
-}
-
-.btnLeaveSession {
-	border-radius: 10px;
-	width: 20vw;
-	height: 10vh;
 }
 
 .btn-vs-back {

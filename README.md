@@ -7,8 +7,9 @@
 a session already exists with the offer makers and sellers id's
 purchased arrays
 - [ ] When escrow finishes, remove the property (mimic the button from "view property" interface)
+	- [ ] Set progress to '4'
 - [ ] Remove sold and purchased arrays from the user model
-- [ ] Remove the leave session button
+- [x] Remove the leave session button
 - [ ] After escrow is finished, show one final interface which says session is complete and shows the necessary information to both the buyer and seller
 	- [ ] For the seller, show the tx receipt
 	- [ ] For the buyer, show the holding deposit tx receipt, the tx receipt, a button to download the title deed

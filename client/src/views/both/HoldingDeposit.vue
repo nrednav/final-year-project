@@ -128,7 +128,7 @@ export default {
 
 					holdingDepositFactory.methods.open_holding_deposit(sessionIdHash).send({
 						from: this.selectedAddr,
-						gasPrice: 42000
+						gasPrice: web3.utils.toWei('42', 'gwei')
 					}).on('transactionHash', (hash) => {
 						console.log(hash)
 						this.setRequestData()
@@ -195,7 +195,7 @@ export default {
 						holdingDeposit.methods.deposit_funds().send({
 							from: this.selectedAddr,
 							value: web3.utils.toWei(depositAmount.toString(), 'ether'),
-							gasPrice: 42000
+							gasPrice: web3.utils.toWei('42', 'gwei')
 						}).on('transactionHash', (hash) => {
 							console.log(hash)
 							this.depositPaid = true
