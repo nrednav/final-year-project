@@ -140,3 +140,98 @@ $ vue-cli-service serve
   - Local:   http://localhost:8080/ 
   - Network: http://192.168.0.15:8080/
 
+ WAIT  Compiling...3:58:20 PM
+
+yarn run v1.15.2
+$ vue-cli-service serve
+ INFO  Starting development server...
+ DONE  Compiled successfully in 21290ms3:58:46 PM
+
+
+  App running at:
+  - Local:   http://localhost:8080/ 
+  - Network: http://192.168.0.15:8080/
+
+  Note that the development build is not optimized.
+  To create a production build, run yarn build.
+
+ WAIT  Compiling...4:02:12 PM
+
+yarn run v1.15.2
+$ vue-cli-service serve
+ INFO  Starting development server...
+ DONE  Compiled successfully in 18964ms4:02:35 PM
+
+
+  App running at:
+  - Local:   http://localhost:8080/ 
+  - Network: http://192.168.0.15:8080/
+
+  Note that the development build is not optimized.
+  To create a production build, run yarn build.
+
+ WAIT  Compiling...4:02:48 PM
+
+yarn run v1.15.2
+$ vue-cli-service serve
+ INFO  Starting development server...
+ DONE  Compiled successfully in 19064ms4:03:12 PM
+
+
+  App running at:
+  - Local:   http://localhost:8080/ 
+  - Network: http://192.168.0.15:8080/
+
+  Note that the development build is not optimized.
+  To create a production build, run yarn build.
+
+ WAIT  Compiling...4:05:16 PM
+
+yarn run v1.15.2
+$ vue-cli-service serve
+ INFO  Starting development server...
+ DONE  Compiled successfully in 20116ms4:05:41 PM
+
+
+  App running at:
+  - Local:   http://localhost:8080/ 
+  - Network: http://192.168.0.15:8080/
+
+  Note that the development build is not optimized.
+  To create a production build, run yarn build.
+
+ WAIT  Compiling...4:05:50 PM
+
+yarn run v1.15.2
+$ vue-cli-service serve
+ INFO  Starting development server...
+ DONE  Compiled successfully in 23065ms4:06:19 PM
+
+
+  App running at:
+  - Local:   http://localhost:8080/ 
+  - Network: http://192.168.0.15:8080/
+
+  Note that the development build is not optimized.
+  To create a production build, run yarn build.
+
+ WAIT  Compiling...4:07:46 PM
+
+yarn run v1.15.2
+$ vue-cli-service serve
+ INFO  Starting development server...
+ DONE  Compiled successfully in 20929ms4:08:12 PM
+
+
+  App running at:
+  - Local:   http://localhost:8080/ 
+  - Network: http://192.168.0.15:8080/
+
+  Note that the development build is not optimized.
+  To create a production build, run yarn build.
+
+ WAIT  Compiling...4:08:58 PM
+
+yarn run v1.15.2
+$ vue-cli-service serve
+ INFO  Starting development server...

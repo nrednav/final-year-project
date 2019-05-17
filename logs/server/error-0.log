@@ -18,3 +18,7 @@
 (node:11845) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
 (node:11900) DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
 (node:11900) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
+(node:11900) DeprecationWarning: GridStore is deprecated, and will be removed in a future version. Please use GridFSBucket instead
+(node:11900) DeprecationWarning: Mongoose: `findOneAndUpdate()` and `findOneAndDelete()` without the `useFindAndModify` option set to false are deprecated. See: https://mongoosejs.com/docs/deprecations.html#-findandmodify-
+(node:11900) DeprecationWarning: collection.findAndModify is deprecated. Use findOneAndUpdate, findOneAndReplace or findOneAndDelete instead.
+(node:11900) DeprecationWarning: collection.save is deprecated. Use insertOne, insertMany, updateOne, or updateMany instead.

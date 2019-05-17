@@ -46,3 +46,20 @@ This property has no liens attached
 Successfully notified user
  { n: 1, nModified: 1, ok: 1 }
 { n: 1, nModified: 1, ok: 1 }
+Found event:-
+ verification_requested
+Requesting information from land registry...
+Got information from land registry...
+Verifying information received...
+{ liens: false,
+  _id: '5cded91ebf2cce2e7cd9d3b0',
+  property_uid:
+   '0x9387771e125104c3dd230242f5bf6fa410c8d5586e765c5da4c71af7c3212fa0',
+  owner_id: '5cdec80a3c651b2c930758c7',
+  title_deed_hash:
+   '0x808ecbc07a07034a725f799a833d9400156c8fd09c129f48689c6aabe212e8f8',
+  __v: 0 }
+This property has no liens attached
+{ n: 1, nModified: 1, ok: 1 }
+Successfully notified user
+ { n: 1, nModified: 1, ok: 1 }

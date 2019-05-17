@@ -39,3 +39,4 @@ npm ERR!     /home/vandern/.npm/_logs/2019-05-17T14_16_25_089Z-debug.log
 (node:11397) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
 (node:11397) DeprecationWarning: GridStore is deprecated, and will be removed in a future version. Please use GridFSBucket instead
 (node:11397) DeprecationWarning: collection.remove is deprecated. Use deleteOne, deleteMany, or bulkWrite instead.
+(node:15300) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.

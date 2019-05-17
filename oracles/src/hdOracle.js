@@ -2,6 +2,8 @@ import axios from 'axios';
 import web3 from './web3';
 import hd from './contracts/holdingDeposit'
 import hdFactory from './contracts/holdingDepositFactory'
+import escrow from './contracts/escrow'
+import escrowFactory from './contracts/escrowFactory'
 
 var mongoose = require('mongoose');
 var User = require('../db/models/User').User;
@@ -13,6 +15,7 @@ class HdOracle {
 	constructor() {
 		this.web3 = web3;
 		this.contract = hd;
+		this.escrow_contract = escrow;
 
 		this.startListening();
 	}
@@ -42,6 +45,27 @@ class HdOracle {
 						console.log(participants);
 						this.updateSession(sellerAddress, buyerAddress);
 					}).catch((error) => console.log(error));
+				}
+			});
+
+			// Listen release holding deposit event
+			this.escrow_contract.events.release_holding_deposit({
+				fromBlock: "latest",
+				toBlock: "latest"
+			}, async (error, event) => {
+				if (error) {
+					throw error
+				} else {
+					console.log('Found event:-\n', event.event);
+					console.log(event);
+
+					this.escrow_contract.address = event.address;
+
+					// Get participants
+					let participants = await this.escrow_contract.methods.get_participants().call();
+					let sellerAddress = participants[0];
+					let buyerAddress = participants[1];
+					this.releaseHoldingDeposit(sellerAddress, buyerAddress);
 				}
 			});
 		})
@@ -75,6 +99,31 @@ class HdOracle {
 			} else {
 				console.log('could not find any session with that addresses');
 			}
+		});
+	}
+
+	releaseHoldingDeposit(sellerAddress, buyerAddress) {
+		Session.findOne({
+			seller_address: sellerAddress.toLowerCase(),
+			buyer_address: buyerAddress.toLowerCase()
+		}, (err, session) => {
+			if (err) throw err;
+
+			console.log('Getting hd contract address from session...');
+			let hdContract = hd;
+			hdContract.address = session.stages['1'].holding_deposit_address
+
+			console.log('Configuring node address...');
+			let nodeAddress = "0x8a23c7c42333ed6be5a68c24031cd7a737fbcbe8";
+			await web3.eth.personal.unlockAccount(nodeAddress, String(1234), 1000);
+
+			console.log('Releasing deposit...');
+			let tx = hdContract.methods.release_deposit().send({
+				from: nodeAddress,
+				gasPrice: 42000
+			}).once('receipt', (receipt) => {
+				console.log(receipt);
+			}).catch((error) => console.log(error))
 		});
 	}
 }

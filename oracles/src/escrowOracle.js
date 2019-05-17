@@ -201,7 +201,7 @@ class escrowOracle {
 											let updateOptions = {
 												$set: {
 													'stages.4.mini_stages.2.status': 'Completed',
-													'active_mini_stage': 3,
+													'stages.4.active_mini_stage': 3,
 													'stages.4.mini_stages.3.status': 'In Progress'
 												}
 											}
@@ -343,7 +343,7 @@ class escrowOracle {
 						this.deletePropertyImage(image_ids[i]);
 					}
 
-					this.transferPropertyOwnership(property, session.seller_id, session.buyer_id);
+					this.deleteProperty(property, propertyId);
 				});
 			}
 		});
@@ -358,45 +358,15 @@ class escrowOracle {
 	}
 
 	// Delete property by id
-	transferPropertyOwnership(property, from, to) {
-		// Find the seller
-		User.updateOne({
-			_id: from
-		}, {
-			$pull: {
-				'profiles.seller.properties': property._id
+	deleteProperty(property, propertyId) {
+		Property.deleteOne({
+			_id: propertyId
+		}, (err) => {
+			if (err) {
+				throw err
+			} else {
+				console.log('successfully deleted property from seller');
 			}
-		}, (err, result) => {
-			if (err) throw err;
-			console.log('Removed property from seller');
-			console.log(result);
-		});
-
-		// Transfer property to buyer
-		User.updateOne({
-			_id: to
-		}, {
-			$push: {
-				'profiles.seller.properties': property._id
-			}
-		}, (err, result) => {
-			if (err) throw err;
-			console.log('Added property to buyer');
-			console.log(result);
-		});
-
-		// Update property information
-		Property.updateOne({
-			_id: property._id
-		}, {
-			'details.owner': to,
-			'verified': 0,
-			'listed': false,
-			'session_underway': false
-		}, (err, result) => {
-			if (err) throw err;
-			console.log('Updated property information to set buyer as owner');
-			console.log(result);
 		});
 	}
 }

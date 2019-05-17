@@ -11,12 +11,52 @@
 				v-if="activeMiniStage == 1"
 				class="primary p_text--text pa-4 ec-ms1-card display-1">
 
+				<div
+					v-if="user_type == 'seller' && miniStageStatus(1) == 'ASD'"
+					class="pa-4 headline title-transfer-info">
+					Please upload your title transfer document:
+				</div>
+
+				<div
+					class="pa-4 headline ec-ttdu-status">
+					Title transfer document submission status:
+				</div>
+				<div class="pa-4 headline ec-ttdu-status-value p_yellow--text">
+					{{ session.stages['4'].mini_stages['1'].seller_deposit_status }}
+				</div>
+
+				<div class="ec-ttd-hash-info">
+					<div
+						class="pa-4 headline ec-ttd-hash">
+						Title transfer document hash:
+					</div>
+					<div class="pa-4 headline ec-ttdh-value p_yellow--text">
+						{{ session.stages['4'].mini_stages['1'].title_transfer_document_hash }}
+					</div>
+				</div>
+
+				<div
+					class="pa-4 headline ec-status">
+					Status:
+				</div>
+				<div class="pa-4 headline ec-status-value p_yellow--text">
+					{{ session.stages['4'].mini_stages['1'].status }}
+				</div>
+
+				<div
+					class="pa-4 headline ec-bp-status">
+					Buyer payment status:
+				</div>
+				<div class="pa-4 headline ec-bp-status-value p_yellow--text">
+					{{ session.stages['4'].mini_stages['1'].buyer_deposit_status }}
+				</div>
+
 				<v-btn
 					v-if="user_type == 'seller' && miniStageStatus(1) == 'ASD'"
 					@click="$refs.ecFileInput.click()"
 					outline
 					color="p_purple"
-					class="title ec-button">
+					class="title ec-button upload-ttd-btn">
 					UPLOAD DOCUMENT
 				</v-btn>
 				<input
@@ -25,21 +65,21 @@
 					ref="ecFileInput" type="file" @change="uploadTTD">
 
 				<v-btn
+					v-if="user_type == 'seller' && miniStageStatus(1) == 'ASD' && ttdUploaded"
+					@click="createEscrow"
+					outline
+					color="p_blue"
+					class="title ec-button create-escrow-btn">
+					CREATE ESCROW
+				</v-btn>
+
+				<v-btn
 					v-if="user_type == 'buyer' && miniStageStatus(1) == 'ABD'"
 					@click="downloadDocument('ttd')"
 					outline
 					color="p_orange"
-					class="title ec-button">
+					class="title ec-button download-ttd-btn">
 					DOWNLOAD
-				</v-btn>
-
-				<v-btn
-					v-if="user_type == 'seller' && miniStageStatus(1) == 'ASD'"
-					@click="createEscrow"
-					outline
-					color="p_blue"
-					class="title ec-button">
-					CREATE ESCROW
 				</v-btn>
 
 				<v-btn
@@ -47,7 +87,7 @@
 					@click="acceptTTD"
 					outline
 					color="p_blue"
-					class="title ec-button">
+					class="title ec-button accept-ttd-btn">
 					ACCEPT
 				</v-btn>
 
@@ -55,7 +95,8 @@
 					v-if="user_type == 'buyer' && miniStageStatus(1) == 'ABD' && downloadClicked"
 					outline
 					color="p_red"
-					class="title ec-button">
+					:class="{'disable-click': true}"
+					class="title ec-button reject-ttd-btn">
 					REJECT
 				</v-btn>
 
@@ -64,7 +105,7 @@
 					@click="requestTitleTransfer"
 					outline
 					color="p_blue"
-					class="title ec-button">
+					class="title ec-button ec-request-tt-btn">
 					REQUEST TITLE TRANSFER
 				</v-btn>
 
@@ -72,7 +113,7 @@
 
 			<v-card
 				v-if="activeMiniStage == 2"
-				class="primary p_text--text pa-4 ec-ms2-card display-1">
+				class="primary p_yellow--text pa-4 text-xs-center ec-ms2-card display-1">
 				TRANSFER IN PROGRESS
 			</v-card>
 
@@ -114,6 +155,14 @@
 				Mini stage 4
 			</v-card>
 
+			<v-btn
+				@click="goBack"
+				outline
+				color="p_text"
+				class="title ec-button ec-button-back">
+				BACK
+			</v-btn>
+
 		</div>
 
 	</v-layout>
@@ -133,6 +182,7 @@ export default {
 	data () {
 		return {
 			ttdHash: '',
+			ttdUploaded: false,
 			selectedAddr: '',
 			downloadClicked: false
 		}
@@ -152,6 +202,7 @@ export default {
 
 			reader.onload = async (event) => {
 				let ttdHash = await web3.utils.sha3(event.target.result)
+				this.ttdUploaded = true
 				var requestUrl = `http://localhost:3000/api/sessions/${this.session._id}/upload-ttd`
 				var config = { headers: { Authorization: 'a1b2c3d4e5f6g7' } }
 
@@ -198,8 +249,8 @@ export default {
 			let ttdHash = this.session.stages['4'].mini_stages['1'].title_transfer_document_hash
 			let price = this.property.details.listing_price / 1000
 			let sessionIdHash = await web3.utils.sha3(this.session._id)
-			let escrowContractAddress = await escrowFactory.methods.get_escrow(sessionIdHash).call()
-			escrow.address = escrowContractAddress
+			escrow.address = await escrowFactory.methods.get_escrow(sessionIdHash).call()
+			console.log(escrow.address)
 
 			escrow.methods.deposit(ttdHash).send({
 				from: this.selectedAddr,
@@ -296,6 +347,10 @@ export default {
 			} else {
 				alert('Please download and install the Metamask browser addon to continue')
 			}
+		},
+
+		goBack () {
+			this.$router.go(-1)
 		}
 	},
 
@@ -332,7 +387,96 @@ export default {
 	width: 90%;
 }
 
-.ec-card {
+.ec-ms1-card {
+	border-radius: 25px;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(4, minmax(1fr, auto));
+	grid-gap: 2vmax;
+}
+
+	.title-transfer-info {
+		grid-column: 1 / 4;
+		grid-row: 1;
+	}
+
+	.upload-ttd-btn {
+		grid-column: 4;
+		grid-row: 1;
+	}
+
+	.download-ttd-btn {
+		grid-column: 4;
+		grid-row: 2;
+	}
+
+	.accept-ttd-btn {
+		grid-column: 4;
+		grid-row: 4;
+	}
+
+	.reject-ttd-btn {
+		grid-column: 4;
+		grid-row: 5;
+	}
+
+	.create-escrow-btn {
+		grid-column: 4;
+		grid-row: 2;
+	}
+
+	.ec-status {
+		grid-column: 1;
+		grid-row: 4;
+	}
+
+	.ec-status-value {
+		grid-column: 3;
+		grid-row: 4;
+	}
+
+	.ec-ttdu-status {
+		grid-column: 1 / 3;
+		grid-row: 2;
+	}
+
+	.ec-ttdu-status-value {
+		grid-column: 3;
+		grid-row: 2;
+	}
+
+	.ec-ttd-hash-info {
+		grid-column: 1 / 3;
+		grid-row: 3;
+		display: grid;
+		grid-template-rows: repeat(2, minmax(1fr, auto));
+	}
+
+		.ec-ttd-hash {
+			grid-row: 1;
+		}
+
+		.ec-ttdh-value {
+			grid-column: 1;
+			grid-row: 2;
+		}
+
+	.ec-bp-status {
+		grid-column: 1 / 3;
+		grid-row: 5;
+	}
+
+	.ec-bp-status-value {
+		grid-column: 3;
+		grid-row: 5;
+	}
+
+	.ec-request-tt-btn {
+		grid-column: 4;
+		grid-row: 2;
+	}
+
+.ec-ms2-card {
 	border-radius: 25px;
 }
 
@@ -340,6 +484,15 @@ export default {
 	height: 10vh;
 	width: 25vw;
 	border-radius: 10px;
+}
+
+.ec-button-back {
+	margin-top: 2vmax;
+}
+
+.disable-click {
+	pointer-events: none;
+	opacity: 0.5;
 }
 
 </style>
