@@ -24,6 +24,7 @@
     "morgan": "~1.9.0",
     "multer": "^1.4.1",
     "multer-gridfs-storage": "^3.2.3",
+    "pdfkit": "^0.9.1",
     "volleyball": "^1.5.1",
     "web3": "^1.0.0-beta.54"
   },

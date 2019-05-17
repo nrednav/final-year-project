@@ -1,0 +1,709 @@
+
+> oracles@1.0.0 escrow /c/Users/Vandern Rodrigues/Projects/fyp/oracles
+> babel-node ./src/escrowOracle.js
+
+
+> oracles@1.0.0 escrow /c/Users/Vandern Rodrigues/Projects/fyp/oracles
+> babel-node ./src/escrowOracle.js
+
+
+> oracles@1.0.0 escrow /c/Users/Vandern Rodrigues/Projects/fyp/oracles
+> babel-node ./src/escrowOracle.js
+
+
+> oracles@1.0.0 escrow /c/Users/Vandern Rodrigues/Projects/fyp/oracles
+> babel-node ./src/escrowOracle.js
+
+
+> oracles@1.0.0 escrow /c/Users/Vandern Rodrigues/Projects/fyp/oracles
+> babel-node ./src/escrowOracle.js
+
+
+> oracles@1.0.0 escrow /c/Users/Vandern Rodrigues/Projects/fyp/oracles
+> babel-node ./src/escrowOracle.js
+
+
+> oracles@1.0.0 escrow /c/Users/Vandern Rodrigues/Projects/fyp/oracles
+> babel-node ./src/escrowOracle.js
+
+
+> oracles@1.0.0 escrow /c/Users/Vandern Rodrigues/Projects/fyp/oracles
+> babel-node ./src/escrowOracle.js
+
+
+> oracles@1.0.0 escrow /c/Users/Vandern Rodrigues/Projects/fyp/oracles
+> babel-node ./src/escrowOracle.js
+
+
+> oracles@1.0.0 escrow /c/Users/Vandern Rodrigues/Projects/fyp/oracles
+> babel-node ./src/escrowOracle.js
+
+
+> oracles@1.0.0 escrow /c/Users/Vandern Rodrigues/Projects/fyp/oracles
+> babel-node ./src/escrowOracle.js
+
+
+> oracles@1.0.0 escrow /c/Users/Vandern Rodrigues/Projects/fyp/oracles
+> babel-node ./src/escrowOracle.js
+
+
+> oracles@1.0.0 escrow /c/Users/Vandern Rodrigues/Projects/fyp/oracles
+> babel-node ./src/escrowOracle.js
+
+
+> oracles@1.0.0 escrow /c/Users/Vandern Rodrigues/Projects/fyp/oracles
+> babel-node ./src/escrowOracle.js
+
+
+> oracles@1.0.0 escrow /c/Users/Vandern Rodrigues/Projects/fyp/oracles
+> babel-node ./src/escrowOracle.js
+
+
+> oracles@1.0.0 escrow /c/Users/Vandern Rodrigues/Projects/fyp/oracles
+> babel-node ./src/escrowOracle.js
+
+The escrow oracle is now listening for events...
+Escrow Oracle started...
+Found event:-
+ buyer_deposit_complete
+{ address: '0xF24029A0a501aa2694ee3b32b60a68069675E6fC',
+  blockNumber: 4314,
+  transactionHash:
+   '0xa278895ac66e8ead50def4484e25a4ebb101f88704e44b894f0758bb411f483e',
+  transactionIndex: 0,
+  blockHash:
+   '0x54a7f320ba1eb7a31de141e283fc1c785941222dabee3e63b38559573a6672fc',
+  logIndex: 0,
+  removed: false,
+  id:
+   'log_0x5e0160e8dabfd7ea3817a0800c0024e5973a15a8417269853d0b3d4e14563c3c',
+  returnValues: {},
+  event: 'buyer_deposit_complete',
+  signature:
+   '0x43270d591744ea0d1e0029cd7d0c92a69a1e4d6d14aa575c812c62300dc42b03',
+  raw:
+   { data: null,
+     topics:
+      [ '0x43270d591744ea0d1e0029cd7d0c92a69a1e4d6d14aa575c812c62300dc42b03' ] } }
+Getting participants...
+Updating session...
+Successfully updated Session #: 5cde94cb4e293a1a7217973a
+Found event:-
+ title_transfer_requested
+{ address: '0xF24029A0a501aa2694ee3b32b60a68069675E6fC',
+  blockNumber: 4327,
+  transactionHash:
+   '0x2d41c6a975b242216d7720997aa3c877197970a6ccd0560ffcc28df743fd9882',
+  transactionIndex: 0,
+  blockHash:
+   '0x438a0cc1aa88966e12b2168e5098d8c9d9e0b0ba4f7f8b07f60e0c4a27163a69',
+  logIndex: 0,
+  removed: false,
+  id:
+   'log_0x6c57b75cd678aa98df34e382616ae83310ad28920da7bfa63d852d65beb3de1f',
+  returnValues: {},
+  event: 'title_transfer_requested',
+  signature:
+   '0xa65551aa3a105e8f97709f58b42ccca7365b7f76b8ae65c2257b92c3b088a7a5',
+  raw:
+   { data: null,
+     topics:
+      [ '0xa65551aa3a105e8f97709f58b42ccca7365b7f76b8ae65c2257b92c3b088a7a5' ] } }
+{ stages:
+   { '1':
+      { name: 'Holding Deposit',
+        status: 'Completed',
+        holding_deposit_address: '0xe94F827B15bf4010b22dCe82439758Efebccb1af',
+        deposit_amount: 2500,
+        deposit_status: 'Paid',
+        deadline: 2019-09-09T00:00:00.000Z },
+     '2':
+      { name: 'Background Screening',
+        status: 'Completed',
+        verification_status: 'Verified',
+        buyer_screening_uid:
+         '0xd772829b6ed4a3260a0e792db0eca2fc5ccbaee706a9d7825113a77105f84d0a' },
+     '3':
+      { sc_hashes: [Object],
+        name: 'Sales Contract',
+        status: 'Completed',
+        contract_status: 'Signed',
+        sale_contract_id: '5cde95374e293a1a7217973b',
+        signed_sale_contract_id: '5cde95414e293a1a72179743',
+        sc_hash_status: false,
+        agreed_sale_price: 45000 },
+     '4':
+      { mini_stages: [Object],
+        name: 'Escrow',
+        status: 'In Progress',
+        escrow_contract_address: '',
+        active_mini_stage: 1 } },
+  progress: 3,
+  _id: 5cde94cb4e293a1a7217973a,
+  property_id: '5cde94394e293a1a72179736',
+  buyer_id: '5cde648413777a03a52e5db3',
+  seller_id: '5cde650513777a03a52e5db5',
+  buyer_address: '0x5d722814b213600fc7f520c1de42dde1fa9e57e1',
+  seller_address: '0x28ecf3c553961b48eb883ee3eb720f4a3114a508',
+  created_at: 2019-05-17T11:02:35.029Z,
+  __v: 0 }
+Collecting necessary information for title transfer...
+Generating new property uid...
+Transferring title...
+Successfully transfered title: 
+[object Object]
+Successfully updated Session #: 5cde94cb4e293a1a7217973a
+{ status: 200,
+  statusText: 'OK',
+  headers:
+   { 'x-powered-by': 'Express',
+     'access-control-allow-origin': '*',
+     'content-type': 'application/json; charset=utf-8',
+     'content-length': '22',
+     etag: 'W/"16-uLmXED9y+nvsaXhkkRngekVCElY"',
+     date: 'Fri, 17 May 2019 11:07:19 GMT',
+     connection: 'close' },
+  config:
+   { adapter: [Function: httpAdapter],
+     transformRequest: { '0': [Function: transformRequest] },
+     transformResponse: { '0': [Function: transformResponse] },
+     timeout: 0,
+     xsrfCookieName: 'XSRF-TOKEN',
+     xsrfHeaderName: 'X-XSRF-TOKEN',
+     maxContentLength: -1,
+     validateStatus: [Function: validateStatus],
+     headers:
+      { Accept: 'application/json, text/plain, */*',
+        'Content-Type': 'application/json;charset=utf-8',
+        Authorization: 'a1b2c3d4e5f6g7',
+        'User-Agent': 'axios/0.18.0',
+        'Content-Length': 15 },
+     method: 'post',
+     url:
+      'http://localhost:3000/api/sessions/5cde94cb4e293a1a7217973a/upload-tdd',
+     data: '{"upload":true}' },
+  request:
+   ClientRequest {
+     _events:
+      [Object: null prototype] {
+        socket: [Function],
+        abort: [Function],
+        aborted: [Function],
+        error: [Function],
+        timeout: [Function],
+        prefinish: [Function: requestOnPrefinish] },
+     _eventsCount: 6,
+     _maxListeners: undefined,
+     outputData: [],
+     outputSize: 0,
+     writable: true,
+     _last: true,
+     chunkedEncoding: false,
+     shouldKeepAlive: false,
+     useChunkedEncodingByDefault: true,
+     sendDate: false,
+     _removedConnection: false,
+     _removedContLen: false,
+     _removedTE: false,
+     _contentLength: null,
+     _hasBody: true,
+     _trailer: '',
+     finished: true,
+     _headerSent: true,
+     socket:
+      Socket {
+        connecting: false,
+        _hadError: false,
+        _parent: null,
+        _host: 'localhost',
+        _readableState: [ReadableState],
+        readable: true,
+        _events: [Object],
+        _eventsCount: 7,
+        _maxListeners: undefined,
+        _writableState: [WritableState],
+        writable: false,
+        allowHalfOpen: false,
+        _sockname: null,
+        _pendingData: null,
+        _pendingEncoding: '',
+        server: null,
+        _server: null,
+        parser: null,
+        _httpMessage: [Circular],
+        [Symbol(asyncId)]: 1682,
+        [Symbol(kHandle)]: [TCP],
+        [Symbol(lastWriteQueueSize)]: 0,
+        [Symbol(timeout)]: null,
+        [Symbol(kBytesRead)]: 0,
+        [Symbol(kBytesWritten)]: 0 },
+     connection:
+      Socket {
+        connecting: false,
+        _hadError: false,
+        _parent: null,
+        _host: 'localhost',
+        _readableState: [ReadableState],
+        readable: true,
+        _events: [Object],
+        _eventsCount: 7,
+        _maxListeners: undefined,
+        _writableState: [WritableState],
+        writable: false,
+        allowHalfOpen: false,
+        _sockname: null,
+        _pendingData: null,
+        _pendingEncoding: '',
+        server: null,
+        _server: null,
+        parser: null,
+        _httpMessage: [Circular],
+        [Symbol(asyncId)]: 1682,
+        [Symbol(kHandle)]: [TCP],
+        [Symbol(lastWriteQueueSize)]: 0,
+        [Symbol(timeout)]: null,
+        [Symbol(kBytesRead)]: 0,
+        [Symbol(kBytesWritten)]: 0 },
+     _header:
+      'POST /api/sessions/5cde94cb4e293a1a7217973a/upload-tdd HTTP/1.1\r\nAccept: application/json, text/plain, */*\r\nContent-Type: application/json;charset=utf-8\r\nAuthorization: a1b2c3d4e5f6g7\r\nUser-Agent: axios/0.18.0\r\nContent-Length: 15\r\nHost: localhost:3000\r\nConnection: close\r\n\r\n',
+     _onPendingData: [Function: noopPendingOutput],
+     agent:
+      Agent {
+        _events: [Object],
+        _eventsCount: 1,
+        _maxListeners: undefined,
+        defaultPort: 80,
+        protocol: 'http:',
+        options: [Object],
+        requests: {},
+        sockets: [Object],
+        freeSockets: {},
+        keepAliveMsecs: 1000,
+        keepAlive: false,
+        maxSockets: Infinity,
+        maxFreeSockets: 256 },
+     socketPath: undefined,
+     timeout: undefined,
+     method: 'POST',
+     path: '/api/sessions/5cde94cb4e293a1a7217973a/upload-tdd',
+     _ended: true,
+     res:
+      IncomingMessage {
+        _readableState: [ReadableState],
+        readable: false,
+        _events: [Object],
+        _eventsCount: 3,
+        _maxListeners: undefined,
+        socket: [Socket],
+        connection: [Socket],
+        httpVersionMajor: 1,
+        httpVersionMinor: 1,
+        httpVersion: '1.1',
+        complete: true,
+        headers: [Object],
+        rawHeaders: [Array],
+        trailers: {},
+        rawTrailers: [],
+        aborted: false,
+        upgrade: false,
+        url: '',
+        method: null,
+        statusCode: 200,
+        statusMessage: 'OK',
+        client: [Socket],
+        _consuming: false,
+        _dumped: false,
+        req: [Circular],
+        responseUrl:
+         'http://localhost:3000/api/sessions/5cde94cb4e293a1a7217973a/upload-tdd',
+        redirects: [] },
+     aborted: false,
+     timeoutCb: null,
+     upgradeOrConnect: false,
+     parser: null,
+     maxHeadersCount: null,
+     _redirectable:
+      Writable {
+        _writableState: [WritableState],
+        writable: true,
+        _events: [Object],
+        _eventsCount: 2,
+        _maxListeners: undefined,
+        _options: [Object],
+        _ended: true,
+        _ending: true,
+        _redirectCount: 0,
+        _redirects: [],
+        _requestBodyLength: 15,
+        _requestBodyBuffers: [],
+        _onNativeResponse: [Function],
+        _currentRequest: [Circular],
+        _currentUrl:
+         'http://localhost:3000/api/sessions/5cde94cb4e293a1a7217973a/upload-tdd' },
+     [Symbol(isCorked)]: false,
+     [Symbol(outHeadersKey)]:
+      [Object: null prototype] {
+        accept: [Array],
+        'content-type': [Array],
+        authorization: [Array],
+        'user-agent': [Array],
+        'content-length': [Array],
+        host: [Array] } },
+  data: { message: 'uploaded' } }
+
+> oracles@1.0.0 escrow /c/Users/Vandern Rodrigues/Projects/fyp/oracles
+> babel-node ./src/escrowOracle.js
+
+The escrow oracle is now listening for events...
+Escrow Oracle started...
+Found event:-
+ buyer_deposit_complete
+{ address: '0x7d64d94f145626bdE46694Cbf73213fBaB3e3297',
+  blockNumber: 4538,
+  transactionHash:
+   '0xe04c9ce321bbd699c0f2f659c602758a8ef6bd2b0d526a5abf97a16c682a0478',
+  transactionIndex: 0,
+  blockHash:
+   '0x1e43e5cfe97a23fb5fedb24d82caf8db327ee27f2e867d13f77ed6e8440dbb15',
+  logIndex: 0,
+  removed: false,
+  id:
+   'log_0x77bf482b296af6130314a96baf6f0652bb5f077d83462d5723449074306005b5',
+  returnValues: {},
+  event: 'buyer_deposit_complete',
+  signature:
+   '0x43270d591744ea0d1e0029cd7d0c92a69a1e4d6d14aa575c812c62300dc42b03',
+  raw:
+   { data: null,
+     topics:
+      [ '0x43270d591744ea0d1e0029cd7d0c92a69a1e4d6d14aa575c812c62300dc42b03' ] } }
+Getting participants...
+Updating session...
+Successfully updated Session #: 5cde97534e293a1a7217975f
+Found event:-
+ title_transfer_requested
+{ address: '0x7d64d94f145626bdE46694Cbf73213fBaB3e3297',
+  blockNumber: 4546,
+  transactionHash:
+   '0x38c5fbd6d2966ef952f3d74d4315e64a73cb8af94d2b53912d378ab9f9986576',
+  transactionIndex: 0,
+  blockHash:
+   '0xc05463f3fef693061a0c7fc0c24d9e701dcf2e78580ab008d5a13af042d65cf2',
+  logIndex: 0,
+  removed: false,
+  id:
+   'log_0x01668cb88ef5e9ee630cc5d5f32b83ef4f1d2e92de7abb4dc2f12b8add36e87a',
+  returnValues: {},
+  event: 'title_transfer_requested',
+  signature:
+   '0xa65551aa3a105e8f97709f58b42ccca7365b7f76b8ae65c2257b92c3b088a7a5',
+  raw:
+   { data: null,
+     topics:
+      [ '0xa65551aa3a105e8f97709f58b42ccca7365b7f76b8ae65c2257b92c3b088a7a5' ] } }
+{ stages:
+   { '1':
+      { name: 'Holding Deposit',
+        status: 'Completed',
+        holding_deposit_address: '0xCAd6eA0253C1391256C59cD6970B8f3acF7F8967',
+        deposit_amount: 2500,
+        deposit_status: 'Paid',
+        deadline: 2019-09-09T00:00:00.000Z },
+     '2':
+      { name: 'Background Screening',
+        status: 'Completed',
+        verification_status: 'Verified',
+        buyer_screening_uid:
+         '0xd772829b6ed4a3260a0e792db0eca2fc5ccbaee706a9d7825113a77105f84d0a' },
+     '3':
+      { sc_hashes: [Object],
+        name: 'Sales Contract',
+        status: 'Completed',
+        contract_status: 'Signed',
+        sale_contract_id: '5cde97a94e293a1a72179760',
+        signed_sale_contract_id: '5cde98044e293a1a72179770',
+        sc_hash_status: false,
+        agreed_sale_price: 45000 },
+     '4':
+      { mini_stages: [Object],
+        name: 'Escrow',
+        status: 'In Progress',
+        escrow_contract_address: '',
+        active_mini_stage: 1 } },
+  progress: 3,
+  _id: 5cde97534e293a1a7217975f,
+  property_id: '5cde94394e293a1a72179736',
+  buyer_id: '5cde648413777a03a52e5db3',
+  seller_id: '5cde650513777a03a52e5db5',
+  buyer_address: '0x5d722814b213600fc7f520c1de42dde1fa9e57e1',
+  seller_address: '0x28ecf3c553961b48eb883ee3eb720f4a3114a508',
+  created_at: 2019-05-17T11:13:23.143Z,
+  __v: 0 }
+Collecting necessary information for title transfer...
+Generating new property uid...
+Transferring title...
+Successfully transfered title: 
+[object Object]
+Successfully updated Session #: 5cde97534e293a1a7217975f
+{ status: 200,
+  statusText: 'OK',
+  headers:
+   { 'x-powered-by': 'Express',
+     'access-control-allow-origin': '*',
+     'content-type': 'application/json; charset=utf-8',
+     'content-length': '22',
+     etag: 'W/"16-uLmXED9y+nvsaXhkkRngekVCElY"',
+     date: 'Fri, 17 May 2019 11:18:16 GMT',
+     connection: 'close' },
+  config:
+   { adapter: [Function: httpAdapter],
+     transformRequest: { '0': [Function: transformRequest] },
+     transformResponse: { '0': [Function: transformResponse] },
+     timeout: 0,
+     xsrfCookieName: 'XSRF-TOKEN',
+     xsrfHeaderName: 'X-XSRF-TOKEN',
+     maxContentLength: -1,
+     validateStatus: [Function: validateStatus],
+     headers:
+      { Accept: 'application/json, text/plain, */*',
+        'Content-Type': 'application/json;charset=utf-8',
+        Authorization: 'a1b2c3d4e5f6g7',
+        'User-Agent': 'axios/0.18.0',
+        'Content-Length': 15 },
+     method: 'post',
+     url:
+      'http://localhost:3000/api/sessions/5cde97534e293a1a7217975f/upload-tdd',
+     data: '{"upload":true}' },
+  request:
+   ClientRequest {
+     _events:
+      [Object: null prototype] {
+        socket: [Function],
+        abort: [Function],
+        aborted: [Function],
+        error: [Function],
+        timeout: [Function],
+        prefinish: [Function: requestOnPrefinish] },
+     _eventsCount: 6,
+     _maxListeners: undefined,
+     outputData: [],
+     outputSize: 0,
+     writable: true,
+     _last: true,
+     chunkedEncoding: false,
+     shouldKeepAlive: false,
+     useChunkedEncodingByDefault: true,
+     sendDate: false,
+     _removedConnection: false,
+     _removedContLen: false,
+     _removedTE: false,
+     _contentLength: null,
+     _hasBody: true,
+     _trailer: '',
+     finished: true,
+     _headerSent: true,
+     socket:
+      Socket {
+        connecting: false,
+        _hadError: false,
+        _parent: null,
+        _host: 'localhost',
+        _readableState: [ReadableState],
+        readable: true,
+        _events: [Object],
+        _eventsCount: 7,
+        _maxListeners: undefined,
+        _writableState: [WritableState],
+        writable: false,
+        allowHalfOpen: false,
+        _sockname: null,
+        _pendingData: null,
+        _pendingEncoding: '',
+        server: null,
+        _server: null,
+        parser: null,
+        _httpMessage: [Circular],
+        [Symbol(asyncId)]: 2322,
+        [Symbol(kHandle)]: [TCP],
+        [Symbol(lastWriteQueueSize)]: 0,
+        [Symbol(timeout)]: null,
+        [Symbol(kBytesRead)]: 0,
+        [Symbol(kBytesWritten)]: 0 },
+     connection:
+      Socket {
+        connecting: false,
+        _hadError: false,
+        _parent: null,
+        _host: 'localhost',
+        _readableState: [ReadableState],
+        readable: true,
+        _events: [Object],
+        _eventsCount: 7,
+        _maxListeners: undefined,
+        _writableState: [WritableState],
+        writable: false,
+        allowHalfOpen: false,
+        _sockname: null,
+        _pendingData: null,
+        _pendingEncoding: '',
+        server: null,
+        _server: null,
+        parser: null,
+        _httpMessage: [Circular],
+        [Symbol(asyncId)]: 2322,
+        [Symbol(kHandle)]: [TCP],
+        [Symbol(lastWriteQueueSize)]: 0,
+        [Symbol(timeout)]: null,
+        [Symbol(kBytesRead)]: 0,
+        [Symbol(kBytesWritten)]: 0 },
+     _header:
+      'POST /api/sessions/5cde97534e293a1a7217975f/upload-tdd HTTP/1.1\r\nAccept: application/json, text/plain, */*\r\nContent-Type: application/json;charset=utf-8\r\nAuthorization: a1b2c3d4e5f6g7\r\nUser-Agent: axios/0.18.0\r\nContent-Length: 15\r\nHost: localhost:3000\r\nConnection: close\r\n\r\n',
+     _onPendingData: [Function: noopPendingOutput],
+     agent:
+      Agent {
+        _events: [Object],
+        _eventsCount: 1,
+        _maxListeners: undefined,
+        defaultPort: 80,
+        protocol: 'http:',
+        options: [Object],
+        requests: {},
+        sockets: [Object],
+        freeSockets: {},
+        keepAliveMsecs: 1000,
+        keepAlive: false,
+        maxSockets: Infinity,
+        maxFreeSockets: 256 },
+     socketPath: undefined,
+     timeout: undefined,
+     method: 'POST',
+     path: '/api/sessions/5cde97534e293a1a7217975f/upload-tdd',
+     _ended: true,
+     res:
+      IncomingMessage {
+        _readableState: [ReadableState],
+        readable: false,
+        _events: [Object],
+        _eventsCount: 3,
+        _maxListeners: undefined,
+        socket: [Socket],
+        connection: [Socket],
+        httpVersionMajor: 1,
+        httpVersionMinor: 1,
+        httpVersion: '1.1',
+        complete: true,
+        headers: [Object],
+        rawHeaders: [Array],
+        trailers: {},
+        rawTrailers: [],
+        aborted: false,
+        upgrade: false,
+        url: '',
+        method: null,
+        statusCode: 200,
+        statusMessage: 'OK',
+        client: [Socket],
+        _consuming: false,
+        _dumped: false,
+        req: [Circular],
+        responseUrl:
+         'http://localhost:3000/api/sessions/5cde97534e293a1a7217975f/upload-tdd',
+        redirects: [] },
+     aborted: false,
+     timeoutCb: null,
+     upgradeOrConnect: false,
+     parser: null,
+     maxHeadersCount: null,
+     _redirectable:
+      Writable {
+        _writableState: [WritableState],
+        writable: true,
+        _events: [Object],
+        _eventsCount: 2,
+        _maxListeners: undefined,
+        _options: [Object],
+        _ended: true,
+        _ending: true,
+        _redirectCount: 0,
+        _redirects: [],
+        _requestBodyLength: 15,
+        _requestBodyBuffers: [],
+        _onNativeResponse: [Function],
+        _currentRequest: [Circular],
+        _currentUrl:
+         'http://localhost:3000/api/sessions/5cde97534e293a1a7217975f/upload-tdd' },
+     [Symbol(isCorked)]: false,
+     [Symbol(outHeadersKey)]:
+      [Object: null prototype] {
+        accept: [Array],
+        'content-type': [Array],
+        authorization: [Array],
+        'user-agent': [Array],
+        'content-length': [Array],
+        host: [Array] } },
+  data: { message: 'uploaded' } }
+{ blockHash:
+   '0xd604d365d70be0ae4ebbabaec41f42ba22baae49d1b544eb0fb44f85b68eb3cb',
+  blockNumber: 4548,
+  contractAddress: null,
+  cumulativeGasUsed: 44291,
+  from: '0x8a23c7C42333ed6be5a68c24031cd7A737fbcBE8',
+  gasUsed: 44291,
+  logsBloom:
+   '0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000',
+  status: true,
+  to: '0x7d64d94f145626bdE46694Cbf73213fBaB3e3297',
+  transactionHash:
+   '0x9a770d52c4f3242fae485c1ad3da2ccae0328d63c384aba961036cc93f29a531',
+  transactionIndex: 0,
+  nonce: undefined,
+  gas: undefined,
+  events: {} }
+Found event:-
+ escrow_closed
+{ address: '0x7d64d94f145626bdE46694Cbf73213fBaB3e3297',
+  blockNumber: 5558,
+  transactionHash:
+   '0x70e5fc212e59bf746df6b59d8be4dc82ba53b08ec4dee298b00f95c50af9d853',
+  transactionIndex: 0,
+  blockHash:
+   '0x06fd016a5d5f383b8f8941678811232728933630f7a70bc3429f22592cecc145',
+  logIndex: 3,
+  removed: false,
+  id:
+   'log_0x05d4c8a70e1a0ea804a4ac7adb219d5af7890bfa64fef5db30fc00aee82dc7a1',
+  returnValues: {},
+  event: 'escrow_closed',
+  signature:
+   '0xe1760e1470c9ffbe1944bf685aff5b043b446cc4cbb2ca06dfe196a5c031008f',
+  raw:
+   { data: null,
+     topics:
+      [ '0xe1760e1470c9ffbe1944bf685aff5b043b446cc4cbb2ca06dfe196a5c031008f' ] } }
+Found event:-
+ commit_title_transfer
+{ address: '0x7d64d94f145626bdE46694Cbf73213fBaB3e3297',
+  blockNumber: 5558,
+  transactionHash:
+   '0x70e5fc212e59bf746df6b59d8be4dc82ba53b08ec4dee298b00f95c50af9d853',
+  transactionIndex: 0,
+  blockHash:
+   '0x06fd016a5d5f383b8f8941678811232728933630f7a70bc3429f22592cecc145',
+  logIndex: 0,
+  removed: false,
+  id:
+   'log_0xa4b5d0886dfbe5679da1138c426ea0a188b4c5fe49cab7944f561883eb7e1964',
+  returnValues: {},
+  event: 'commit_title_transfer',
+  signature:
+   '0x15bcf09c9c3c9a97f930a992ea1d7cebdaf63d8f42692f9147beadd45d835629',
+  raw:
+   { data: null,
+     topics:
+      [ '0x15bcf09c9c3c9a97f930a992ea1d7cebdaf63d8f42692f9147beadd45d835629' ] } }
+
+> oracles@1.0.0 escrow /c/Users/Vandern Rodrigues/Projects/fyp/oracles
+> babel-node ./src/escrowOracle.js
+
+The escrow oracle is now listening for events...
+Escrow Oracle started...

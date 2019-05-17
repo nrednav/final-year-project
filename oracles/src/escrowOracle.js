@@ -148,11 +148,6 @@ class escrowOracle {
 				console.log(err);
 			} else if (session) {
 				console.log(session);
-
-			//	var oldPropertyUID;
-			//	var buyerName;
-			//	var titleDeedHash;
-
 				console.log('Collecting necessary information for title transfer...');
 
 				// Get old property uid first
@@ -205,9 +200,17 @@ class escrowOracle {
 													'stages.4.mini_stages.3.status': 'In Progress'
 												}
 											}
-
-											this.updateSession(sellerAddress, buyerAddress, updateOptions);
-											this.uploadTitleDeedDraft(session._id);
+											Session.updateOne({
+												_id: session._id
+											}, updateOptions, (err, result) => {
+												if (err) {
+													throw err;
+												} else  {
+													console.log(result);
+													console.log(`Successfully updated Session #: ${session._id}`);
+													this.uploadTitleDeedDraft(session._id);
+												}
+											});
 										}).catch((error) => console.log(error));
 									}
 								});
@@ -230,27 +233,11 @@ class escrowOracle {
 			if (err) {
 				throw err;
 			} else {
-
-				fs.writeFile('./titleDeed.txt', 'Title Deed', (err) => {
-					if (err) {
-						throw err;
-					} else {
-						console.log('Created title deed');
-						const titleDeed = fs.readFileSync(path.resolve(__dirname,
-							'./titleDeed.txt'));
-
-						// Make request to session server router to upload file
-						let requestUrl = `http://localhost:3000/api/sessions/${sessionId}/upload-td`
-						let config = { headers: { Authorization: 'a1b2c3d4e5f6g7' } }
-
-						let formData = new FormData();
-						formData.append('file', titleDeed);
-
-						axios.post(requestUrl, formData, config).then((response) => {
-							console.log(response);
-						}).catch((error) => console.log(error));
-					}
-				});
+				let requestUrl = `http://localhost:3000/api/sessions/${session._id}/upload-td`
+				let config = { headers: { Authorization: 'a1b2c3d4e5f6g7' } }
+				axios.post(requestUrl, { upload: true }, config).then((response) => {
+					console.log(response);
+				}).catch((error) => console.log(error));
 			}
 		});
 	}
@@ -264,40 +251,31 @@ class escrowOracle {
 		 * AND THEN TEST IT USING THE NODE CONSOLE &
 		 * ALSO TEST IT USING POSTMAN
 		 */
-		fs.writeFile(path.join(__dirname, '/titleDeedDraft.txt'), 'Title Deed Draft', (err) => {
-			if (err) {
-				throw err;
-			} else {
-				console.log('Created title deed draft');
-				const titleDeedDraft = fs.readFileSync(path.join(__dirname,
-					'/titleDeedDraft.txt'));
-
-				// Make request to session server router to upload file
-				let requestUrl = `http://localhost:3000/api/sessions/${sessionId}/upload-tdd`
-				let config = { headers: { Authorization: 'a1b2c3d4e5f6g7' } }
-
-				let formData = new FormData();
-				formData.append('file', titleDeedDraft);
-
-				axios.post(requestUrl, formData, config).then((response) => {
-					console.log(response);
-					this.respondToTTR(titleDeedDraft);
-				}).catch((error) => console.log(error));
-			}
-		});
+		let requestUrl = `http://localhost:3000/api/sessions/${sessionId}/upload-tdd`
+		let config = { headers: { Authorization: 'a1b2c3d4e5f6g7' } }
+		axios.post(requestUrl, { upload: true } , config).then((response) => {
+			console.log(response.data);
+			this.respondToTTR(sessionId);
+		}).catch((error) => console.log(error));
 	}
 
-	async respondToTTR(file) {
-		let titleDraftHash = await this.web3.utils.sha3(file);
-		let nodeAddress = "0x8a23c7c42333ed6be5a68c24031cd7a737fbcbe8";
-		await web3.eth.personal.unlockAccount(nodeAddress, String(1234), 1000);
+	async respondToTTR(sessionId) {
+		// Get file
+		let requestUrl = `http://localhost:3000/api/sessions/${sessionId}/title-deed/tdd`
+		let config = { headers: { Authorization: 'a1b2c3d4e5f6g7' } }
+		axios.get(requestUrl, config).then(async (response) => {
 
-		let tx = this.contract.methods.title_transfer_response(titleDraftHash).send({
-			from: nodeAddress,
-			gasPrice: 42000
-		}).once('receipt', (receipt) => {
-			console.log(receipt);
-		}).catch((error) => console.log(error))
+			let titleDraftHash = await this.web3.utils.sha3(response.data);
+			let nodeAddress = "0x8a23c7c42333ed6be5a68c24031cd7a737fbcbe8";
+			await web3.eth.personal.unlockAccount(nodeAddress, String(1234), 1000);
+
+			let tx = this.contract.methods.title_transfer_response(titleDraftHash).send({
+				from: nodeAddress,
+				gasPrice: 42000
+			}).once('receipt', (receipt) => {
+				console.log(receipt);
+			}).catch((error) => console.log(error))
+		});
 	}
 
 	updateSession(sellerAddress, buyerAddress, updateOptions) {

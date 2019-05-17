@@ -1,0 +1,1178 @@
+KL0i ——> OPTIONS /api/properties/5cde94394e293a1a72179736 
+KL0i <—— 204 No Content (<—> 0.7 ms)
+kG3K ——> GET /api/properties/5cde94394e293a1a72179736 
+kG3K <—— 304 Not Modified (<—> 5.1 ms)
+7rlJ ——> OPTIONS /api/land-registry/add-entry 
+7rlJ <—— 204 No Content (<—> 0.7 ms)
+glwB ——> POST /api/land-registry/add-entry 210 B application/json;charset=utf-8
+object
+glwB <—— 200 OK 50 B application/json; charset=utf-8 (<—> 7.9 ms)
+HNKe ——> OPTIONS /api/properties/5cde94394e293a1a72179736/update 
+HNKe <—— 204 No Content (<—> 0.9 ms)
+9chl ——> PUT /api/properties/5cde94394e293a1a72179736/update 105 B application/json;charset=utf-8
+Got request....
+Options received are:-
+{ 'details.property_uid':
+   '0x2e9f28d8824e603397acab7dbdf8f64552bb48cd94d0f336e3d95ba1d940c511' }
+{ options:
+   { 'details.property_uid':
+      '0x2e9f28d8824e603397acab7dbdf8f64552bb48cd94d0f336e3d95ba1d940c511' } }
+Commiting update now...
+{ n: 1, nModified: 1, ok: 1 }
+9chl <—— 200 OK 39 B application/json; charset=utf-8 (<—> 8.8 ms)
+3Czp ——> OPTIONS /api/properties/5cde94394e293a1a72179736/update 
+3Czp <—— 204 No Content (<—> 0.9 ms)
+Kr0X ——> PUT /api/properties/5cde94394e293a1a72179736/update 26 B application/json;charset=utf-8
+Got request....
+Options received are:-
+{ verified: 1 }
+{ options: { verified: 1 } }
+Commiting update now...
+{ n: 1, nModified: 1, ok: 1 }
+Kr0X <—— 200 OK 39 B application/json; charset=utf-8 (<—> 6.2 ms)
+13fS ——> GET /api/land-registry/get-entry?property_uid=0x2e9f28d8824e603397acab7dbdf8f64552bb48cd94d0f336e3d95ba1d940c511 
+13fS <—— 200 OK 275 B application/json; charset=utf-8 (<—> 6.8 ms)
+vvrj ——> OPTIONS /api/properties/5cde94394e293a1a72179736 
+vvrj <—— 204 No Content (<—> 0.7 ms)
+5f4n ——> GET /api/properties/5cde94394e293a1a72179736 
+5f4n <—— 200 OK 577 B application/json; charset=utf-8 (<—> 8.4 ms)
+16Ku ——> OPTIONS /api/properties/5cde94394e293a1a72179736/list 
+16Ku <—— 204 No Content (<—> 0.6 ms)
+WWjt ——> PUT /api/properties/5cde94394e293a1a72179736/list 52 B application/json;charset=utf-8
+true
+5cde94394e293a1a72179736
+Updated listed count on user profile { n: 1, nModified: 1, ok: 1 }
+WWjt <—— 200 OK 39 B application/json; charset=utf-8 (<—> 10.5 ms)
+hIRd ——> OPTIONS /api/users/5cde650513777a03a52e5db5/properties 
+hIRd <—— 204 No Content (<—> 0.7 ms)
+Hko2 ——> GET /api/users/5cde650513777a03a52e5db5/properties 
+Hko2 <—— 200 OK 1.14 KB application/json; charset=utf-8 (<—> 16.0 ms)
+0z7q ——> OPTIONS /api/properties/search?country=Albania&city=Tirana&type=Apartment&bedcount=2&bathcount=2&minprice=1&maxprice=123213123 
+0z7q <—— 204 No Content (<—> 3.0 ms)
+0qOb ——> GET /api/properties/search?country=Albania&city=Tirana&type=Apartment&bedcount=2&bathcount=2&minprice=1&maxprice=123213123 
+[ { details:
+     { address: [Object],
+       property_uid:
+        '0x2e9f28d8824e603397acab7dbdf8f64552bb48cd94d0f336e3d95ba1d940c511',
+       images: [Array],
+       name: 'hgfhgfhgfh',
+       description: 'fdfsf',
+       type: 'Apartment',
+       bedroom_count: 2,
+       bathroom_count: 2,
+       size: 'dsfsdf',
+       listing_price: 45000,
+       deposit: 2500,
+       available_from: 2019-12-01T00:00:00.000Z,
+       owner: '5cde650513777a03a52e5db5' },
+    verified: 2,
+    listed: true,
+    session_underway: false,
+    _id: 5cde94394e293a1a72179736,
+    offers: [],
+    __v: 0 } ]
+0qOb <—— 200 OK 582 B application/json; charset=utf-8 (<—> 17.0 ms)
+vDRP ——> OPTIONS /api/properties/5cde94394e293a1a72179736?country=Albania&city=Tirana&type=Apartment&bedcount=2&bathcount=2&minprice=1&maxprice=123213123 
+vDRP <—— 204 No Content (<—> 0.7 ms)
+APwB ——> GET /api/properties/5cde94394e293a1a72179736?country=Albania&city=Tirana&type=Apartment&bedcount=2&bathcount=2&minprice=1&maxprice=123213123 
+APwB <—— 200 OK 576 B application/json; charset=utf-8 (<—> 11.8 ms)
+mJrZ ——> OPTIONS /api/properties/5cde94394e293a1a72179736/add-offer?country=Albania&city=Tirana&type=Apartment&bedcount=2&bathcount=2&minprice=1&maxprice=123213123 
+mJrZ <—— 204 No Content (<—> 0.7 ms)
+p7fL ——> POST /api/properties/5cde94394e293a1a72179736/add-offer?country=Albania&city=Tirana&type=Apartment&bedcount=2&bathcount=2&minprice=1&maxprice=123213123 189 B application/json;charset=UTF-8
+{ n: 1, nModified: 1, ok: 1 }
+p7fL <—— 200 OK 39 B application/json; charset=utf-8 (<—> 21.1 ms)
+N8mS ——> OPTIONS / 
+N8mS <—— 204 No Content (<—> 5.8 ms)
+JfTG ——> GET / 
+JfTG <—— 304 Not Modified (<—> 2.8 ms)
+3c3v ——> OPTIONS /api/users/get/5cde648413777a03a52e5db3 
+3c3v <—— 204 No Content (<—> 6.1 ms)
+Zha6 ——> GET /api/users/get/5cde648413777a03a52e5db3 
+Zha6 <—— 200 OK 910 B application/json; charset=utf-8 (<—> 12.5 ms)
+2wd2 ——> OPTIONS /api/properties/5cde94394e293a1a72179736 
+2wd2 <—— 204 No Content (<—> 0.6 ms)
+sorK ——> GET /api/properties/5cde94394e293a1a72179736 
+sorK <—— 200 OK 795 B application/json; charset=utf-8 (<—> 7.9 ms)
+Hnmg ——> OPTIONS /api/properties/5cde94394e293a1a72179736/offers/accept 
+Hnmg <—— 204 No Content (<—> 1.0 ms)
+GPtz ——> POST /api/properties/5cde94394e293a1a72179736/offers/accept 255 B application/json;charset=utf-8
+Updated property, removed offer and set session underway to true
+Requesting creaiton of session now
+Creating a session with the following details...
+[object Object]
+hc93 ——> POST /api/sessions/create 268 B application/json;charset=utf-8
+Creating a new session
+Linking session to participants...
+{ n: 1, nModified: 1, ok: 1 }
+Finished linking session to seller... now buyer...
+{ n: 1, nModified: 1, ok: 1 }
+Finished linking session to buyer
+hc93 <—— 200 OK 57 B application/json; charset=utf-8 (<—> 22.1 ms)
+GPtz <—— 200 OK 46 B application/json; charset=utf-8 (<—> 35.2 ms)
+kBha ——> OPTIONS /api/users/5cde650513777a03a52e5db5/seller/sessions 
+kBha <—— 204 No Content (<—> 1.0 ms)
+TG0W ——> GET /api/users/5cde650513777a03a52e5db5/seller/sessions 
+TG0W <—— 200 OK 2.78 KB application/json; charset=utf-8 (<—> 19.9 ms)
+pude ——> OPTIONS /api/properties/find-by-ids 
+pude <—— 204 No Content (<—> 0.8 ms)
+CsCi ——> POST /api/properties/find-by-ids 77 B application/json;charset=utf-8
+CsCi <—— 200 OK 1.14 KB application/json; charset=utf-8 (<—> 9.2 ms)
+z1Gu ——> OPTIONS /api/users/5cde648413777a03a52e5db3/buyer/sessions?country=Albania&city=Tirana&type=Apartment&bedcount=2&bathcount=2&minprice=1&maxprice=123213123 
+z1Gu <—— 204 No Content (<—> 4.9 ms)
+0Szr ——> GET /api/users/5cde648413777a03a52e5db3/buyer/sessions?country=Albania&city=Tirana&type=Apartment&bedcount=2&bathcount=2&minprice=1&maxprice=123213123 
+0Szr <—— 200 OK 2.78 KB application/json; charset=utf-8 (<—> 31.9 ms)
+A4RS ——> OPTIONS /api/properties/find-by-ids?country=Albania&city=Tirana&type=Apartment&bedcount=2&bathcount=2&minprice=1&maxprice=123213123 
+A4RS <—— 204 No Content (<—> 0.8 ms)
+gcK7 ——> POST /api/properties/find-by-ids?country=Albania&city=Tirana&type=Apartment&bedcount=2&bathcount=2&minprice=1&maxprice=123213123 77 B application/json;charset=UTF-8
+gcK7 <—— 200 OK 1.14 KB application/json; charset=utf-8 (<—> 10.2 ms)
+UGlj ——> OPTIONS /api/sessions/get/5cde94cb4e293a1a7217973a 
+UGlj <—— 204 No Content (<—> 1.4 ms)
+srUa ——> GET /api/sessions/get/5cde94cb4e293a1a7217973a 
+srUa <—— 200 OK 1.25 KB application/json; charset=utf-8 (<—> 21.7 ms)
+fIs5 ——> OPTIONS /api/sessions/get/5cde94cb4e293a1a7217973a 
+fIs5 <—— 204 No Content (<—> 1.1 ms)
+vfwT ——> GET /api/sessions/get/5cde94cb4e293a1a7217973a 
+vfwT <—— 200 OK 1.25 KB application/json; charset=utf-8 (<—> 9.4 ms)
+HsYV ——> OPTIONS /api/users/5cde650513777a03a52e5db5/seller/sessions 
+HsYV <—— 204 No Content (<—> 0.8 ms)
+PYQf ——> GET /api/users/5cde650513777a03a52e5db5/seller/sessions 
+PYQf <—— 200 OK 1.25 KB application/json; charset=utf-8 (<—> 13.9 ms)
+ZNdF ——> OPTIONS /api/properties/find-by-ids 
+ZNdF <—— 204 No Content (<—> 0.6 ms)
+9KsK ——> POST /api/properties/find-by-ids 48 B application/json;charset=utf-8
+9KsK <—— 200 OK 581 B application/json; charset=utf-8 (<—> 7.5 ms)
+QCj6 ——> OPTIONS /api/users/5cde650513777a03a52e5db5/seller/sessions 
+QCj6 <—— 204 No Content (<—> 1.9 ms)
+jyms ——> GET /api/users/5cde650513777a03a52e5db5/seller/sessions 
+jyms <—— 304 Not Modified (<—> 14.7 ms)
+csAa ——> OPTIONS /api/properties/find-by-ids 
+csAa <—— 204 No Content (<—> 0.8 ms)
+ONqM ——> POST /api/properties/find-by-ids 48 B application/json;charset=utf-8
+ONqM <—— 200 OK 581 B application/json; charset=utf-8 (<—> 6.6 ms)
+UFnK ——> OPTIONS /api/users/5cde648413777a03a52e5db3/buyer/sessions?country=Albania&city=Tirana&type=Apartment&bedcount=2&bathcount=2&minprice=1&maxprice=123213123 
+UFnK <—— 204 No Content (<—> 4.0 ms)
+QEwj ——> GET /api/users/5cde648413777a03a52e5db3/buyer/sessions?country=Albania&city=Tirana&type=Apartment&bedcount=2&bathcount=2&minprice=1&maxprice=123213123 
+QEwj <—— 200 OK 1.25 KB application/json; charset=utf-8 (<—> 34.3 ms)
+rv6w ——> OPTIONS /api/properties/find-by-ids?country=Albania&city=Tirana&type=Apartment&bedcount=2&bathcount=2&minprice=1&maxprice=123213123 
+rv6w <—— 204 No Content (<—> 0.6 ms)
+kRey ——> POST /api/properties/find-by-ids?country=Albania&city=Tirana&type=Apartment&bedcount=2&bathcount=2&minprice=1&maxprice=123213123 48 B application/json;charset=UTF-8
+kRey <—— 200 OK 581 B application/json; charset=utf-8 (<—> 11.8 ms)
+mp4u ——> OPTIONS /api/sessions/get/5cde94cb4e293a1a7217973a 
+mp4u <—— 204 No Content (<—> 0.8 ms)
+ECSB ——> GET /api/sessions/get/5cde94cb4e293a1a7217973a 
+ECSB <—— 304 Not Modified (<—> 12.3 ms)
+XkX7 ——> OPTIONS /api/sessions/get/5cde94cb4e293a1a7217973a 
+XkX7 <—— 204 No Content (<—> 0.9 ms)
+tlSP ——> GET /api/sessions/get/5cde94cb4e293a1a7217973a 
+tlSP <—— 304 Not Modified (<—> 9.6 ms)
+1jxw ——> OPTIONS /api/sessions/5cde94cb4e293a1a7217973a/update 
+1jxw <—— 204 No Content (<—> 0.8 ms)
+08KZ ——> PUT /api/sessions/5cde94cb4e293a1a7217973a/update 156 B application/json;charset=utf-8
+Updating session with id: 5cde94cb4e293a1a7217973a
+08KZ <—— 200 OK 56 B text/html; charset=utf-8 (<—> 6.9 ms)
+0GAc ——> OPTIONS /api/sessions/get/5cde94cb4e293a1a7217973a 
+0GAc <—— 204 No Content (<—> 0.7 ms)
+LvtL ——> GET /api/sessions/get/5cde94cb4e293a1a7217973a 
+LvtL <—— 200 OK 1.25 KB application/json; charset=utf-8 (<—> 8.4 ms)
+uQco ——> OPTIONS /api/sessions/get/5cde94cb4e293a1a7217973a 
+uQco <—— 204 No Content (<—> 1.6 ms)
+6XRA ——> GET /api/sessions/get/5cde94cb4e293a1a7217973a 
+6XRA <—— 200 OK 1.25 KB application/json; charset=utf-8 (<—> 38.1 ms)
+hFeW ——> OPTIONS /api/sessions/5cde94cb4e293a1a7217973a/update 
+hFeW <—— 204 No Content (<—> 1.7 ms)
+vFoo ——> PUT /api/sessions/5cde94cb4e293a1a7217973a/update 108 B application/json;charset=UTF-8
+Updating session with id: 5cde94cb4e293a1a7217973a
+vFoo <—— 200 OK 56 B text/html; charset=utf-8 (<—> 17.4 ms)
+T1R6 ——> PUT /api/sessions/5cde94cb4e293a1a7217973a/update 104 B application/json;charset=utf-8
+Updating session with id: 5cde94cb4e293a1a7217973a
+T1R6 <—— 200 OK 56 B text/html; charset=utf-8 (<—> 14.0 ms)
+b5yW ——> OPTIONS /api/sessions/get/5cde94cb4e293a1a7217973a 
+b5yW <—— 204 No Content (<—> 0.7 ms)
+4SMI ——> GET /api/sessions/get/5cde94cb4e293a1a7217973a 
+4SMI <—— 200 OK 1.29 KB application/json; charset=utf-8 (<—> 30.6 ms)
+SqOq ——> OPTIONS /api/sessions/get/5cde94cb4e293a1a7217973a 
+SqOq <—— 204 No Content (<—> 1.4 ms)
+cCXO ——> GET /api/sessions/get/5cde94cb4e293a1a7217973a 
+cCXO <—— 200 OK 1.29 KB application/json; charset=utf-8 (<—> 11.4 ms)
+HKqM ——> OPTIONS /api/screening/get-report/0x5d722814b213600fc7f520c1de42dde1fa9e57e1 
+HKqM <—— 204 No Content (<—> 0.7 ms)
+gFL1 ——> GET /api/screening/get-report/0x5d722814b213600fc7f520c1de42dde1fa9e57e1 
+Got report... verifying now.
+Verification finished... sending result
+gFL1 <—— 304 Not Modified (<—> 5.7 ms)
+hGfp ——> OPTIONS /api/sessions/5cde94cb4e293a1a7217973a/update 
+hGfp <—— 204 No Content (<—> 0.8 ms)
+dVQU ——> PUT /api/sessions/5cde94cb4e293a1a7217973a/update 213 B application/json;charset=utf-8
+Updating session with id: 5cde94cb4e293a1a7217973a
+dVQU <—— 200 OK 56 B text/html; charset=utf-8 (<—> 6.8 ms)
+nJCu ——> OPTIONS /api/sessions/get/5cde94cb4e293a1a7217973a 
+nJCu <—— 204 No Content (<—> 0.6 ms)
+BX9W ——> GET /api/sessions/get/5cde94cb4e293a1a7217973a 
+BX9W <—— 200 OK 1.36 KB application/json; charset=utf-8 (<—> 8.5 ms)
+iorj ——> OPTIONS /api/sessions/5cde94cb4e293a1a7217973a/upload-sc 
+iorj <—— 204 No Content (<—> 0.9 ms)
+FWth ——> POST /api/sessions/5cde94cb4e293a1a7217973a/upload-sc 1.56 MB multipart/form-data; boundary=---------------------------171411341726679
+{ n: 1, nModified: 1, ok: 1 }
+FWth <—— 200 OK 22 B application/json; charset=utf-8 (<—> 126.6 ms)
+23rY ——> OPTIONS /api/sessions/get/5cde94cb4e293a1a7217973a 
+23rY <—— 204 No Content (<—> 0.5 ms)
+2AvV ——> GET /api/sessions/get/5cde94cb4e293a1a7217973a 
+2AvV <—— 200 OK 1.39 KB application/json; charset=utf-8 (<—> 5.7 ms)
+BT1Y ——> OPTIONS /api/sessions/get/5cde94cb4e293a1a7217973a 
+BT1Y <—— 204 No Content (<—> 0.7 ms)
+NsuV ——> GET /api/sessions/get/5cde94cb4e293a1a7217973a 
+NsuV <—— 200 OK 1.39 KB application/json; charset=utf-8 (<—> 34.4 ms)
+HegB ——> OPTIONS /api/sessions/5cde94cb4e293a1a7217973a/upload-ssc 
+HegB <—— 204 No Content (<—> 0.6 ms)
+3GBm ——> POST /api/sessions/5cde94cb4e293a1a7217973a/upload-ssc 2.6 MB multipart/form-data; boundary=----WebKitFormBoundaryqcpwrHOIVNAJB7BV
+{ n: 1, nModified: 1, ok: 1 }
+3GBm <—— 200 OK 22 B application/json; charset=utf-8 (<—> 904.9 ms)
+U0QF ——> OPTIONS /api/sessions/get/5cde94cb4e293a1a7217973a 
+U0QF <—— 204 No Content (<—> 0.8 ms)
+xxKj ——> GET /api/sessions/get/5cde94cb4e293a1a7217973a 
+xxKj <—— 200 OK 1.42 KB application/json; charset=utf-8 (<—> 40.9 ms)
+aiLZ ——> OPTIONS /api/sessions/get/5cde94cb4e293a1a7217973a 
+aiLZ <—— 204 No Content (<—> 0.7 ms)
+5Ry9 ——> GET /api/sessions/get/5cde94cb4e293a1a7217973a 
+5Ry9 <—— 200 OK 1.42 KB application/json; charset=utf-8 (<—> 7.7 ms)
+EGkY ——> OPTIONS /api/sessions/5cde94cb4e293a1a7217973a/update 
+EGkY <—— 204 No Content (<—> 0.7 ms)
+Y2NT ——> PUT /api/sessions/5cde94cb4e293a1a7217973a/update 107 B application/json;charset=utf-8
+Updating session with id: 5cde94cb4e293a1a7217973a
+Y2NT <—— 200 OK 56 B text/html; charset=utf-8 (<—> 5.5 ms)
+e1HV ——> OPTIONS /api/sessions/get/5cde94cb4e293a1a7217973a 
+e1HV <—— 204 No Content (<—> 0.8 ms)
+l0U9 ——> GET /api/sessions/get/5cde94cb4e293a1a7217973a 
+l0U9 <—— 200 OK 1.42 KB application/json; charset=utf-8 (<—> 9.8 ms)
+owML ——> OPTIONS /api/properties/5cde94394e293a1a72179736 
+owML <—— 204 No Content (<—> 0.9 ms)
+06WX ——> GET /api/properties/5cde94394e293a1a72179736 
+06WX <—— 200 OK 575 B application/json; charset=utf-8 (<—> 7.8 ms)
+00Zk ——> OPTIONS /api/sessions/get/5cde94cb4e293a1a7217973a 
+00Zk <—— 204 No Content (<—> 0.8 ms)
+tE5E ——> GET /api/sessions/get/5cde94cb4e293a1a7217973a 
+tE5E <—— 200 OK 1.42 KB application/json; charset=utf-8 (<—> 123.6 ms)
+sSsP ——> OPTIONS / 
+sSsP <—— 204 No Content (<—> 0.7 ms)
+6glq ——> GET / 
+6glq <—— 304 Not Modified (<—> 3.7 ms)
+losy ——> OPTIONS /api/users/get/5cde648413777a03a52e5db3 
+losy <—— 204 No Content (<—> 1.6 ms)
+HK94 ——> GET /api/users/get/5cde648413777a03a52e5db3 
+HK94 <—— 200 OK 937 B application/json; charset=utf-8 (<—> 5.9 ms)
+rZib ——> OPTIONS /api/users/5cde648413777a03a52e5db3/buyer/sessions 
+rZib <—— 204 No Content (<—> 2.2 ms)
+M1FC ——> GET /api/users/5cde648413777a03a52e5db3/buyer/sessions 
+M1FC <—— 200 OK 1.42 KB application/json; charset=utf-8 (<—> 29.7 ms)
+KC4Y ——> OPTIONS /api/properties/find-by-ids 
+KC4Y <—— 204 No Content (<—> 0.6 ms)
+JWAQ ——> POST /api/properties/find-by-ids 48 B application/json;charset=UTF-8
+JWAQ <—— 200 OK 581 B application/json; charset=utf-8 (<—> 36.2 ms)
+HwjU ——> OPTIONS /api/sessions/get/5cde94cb4e293a1a7217973a 
+HwjU <—— 204 No Content (<—> 0.6 ms)
+1mqL ——> GET /api/sessions/get/5cde94cb4e293a1a7217973a 
+1mqL <—— 304 Not Modified (<—> 8.6 ms)
+gahz ——> OPTIONS /api/sessions/get/5cde94cb4e293a1a7217973a 
+gahz <—— 204 No Content (<—> 5.0 ms)
+A4wP ——> GET /api/sessions/get/5cde94cb4e293a1a7217973a 
+A4wP <—— 304 Not Modified (<—> 17.9 ms)
+yfDO ——> OPTIONS /api/properties/5cde94394e293a1a72179736 
+yfDO <—— 204 No Content (<—> 53.8 ms)
+ydUr ——> GET /api/properties/5cde94394e293a1a72179736 
+ydUr <—— 200 OK 575 B application/json; charset=utf-8 (<—> 16.0 ms)
+WJ1Q ——> OPTIONS /api/sessions/5cde94cb4e293a1a7217973a/upload-ttd 
+WJ1Q <—— 204 No Content (<—> 0.6 ms)
+tQvk ——> POST /api/sessions/5cde94cb4e293a1a7217973a/upload-ttd 2.25 MB multipart/form-data; boundary=---------------------------9597204919202
+tQvk <—— 200 OK 22 B application/json; charset=utf-8 (<—> 189.1 ms)
+zB29 ——> OPTIONS /api/sessions/get/5cde94cb4e293a1a7217973a 
+zB29 <—— 204 No Content (<—> 0.6 ms)
+6GB7 ——> GET /api/sessions/get/5cde94cb4e293a1a7217973a 
+6GB7 <—— 200 OK 1.51 KB application/json; charset=utf-8 (<—> 7.3 ms)
+nWbc ——> OPTIONS /api/sessions/get/5cde94cb4e293a1a7217973a 
+nWbc <—— 204 No Content (<—> 6.0 ms)
+bbq8 ——> GET /api/sessions/get/5cde94cb4e293a1a7217973a 
+bbq8 <—— 200 OK 1.51 KB application/json; charset=utf-8 (<—> 40.1 ms)
+Olab ——> GET /api/sessions/get/5cde94cb4e293a1a7217973a 
+Olab <—— 304 Not Modified (<—> 67.9 ms)
+HyvE ——> OPTIONS /api/properties/5cde94394e293a1a72179736 
+HyvE <—— 204 No Content (<—> 0.5 ms)
+Kgcp ——> GET /api/properties/5cde94394e293a1a72179736 
+Kgcp <—— 304 Not Modified (<—> 8.0 ms)
+0JJJ ——> OPTIONS /api/sessions/5cde94cb4e293a1a7217973a/title-deed/ttd 
+0JJJ <—— 204 No Content (<—> 0.6 ms)
+xMI1 ——> GET /api/sessions/5cde94cb4e293a1a7217973a/title-deed/ttd 
+xMI1 <—— 200 OK image/png (<—> 431.4 ms)
+wbqH ——> OPTIONS /api/sessions/get/5cde94cb4e293a1a7217973a 
+wbqH <—— 204 No Content (<—> 1.6 ms)
+ZxSD ——> GET /api/sessions/get/5cde94cb4e293a1a7217973a 
+ZxSD <—— 200 OK 1.51 KB application/json; charset=utf-8 (<—> 39.2 ms)
+eR4q ——> OPTIONS /api/properties/5cde94394e293a1a72179736 
+eR4q <—— 204 No Content (<—> 3.6 ms)
+pvXq ——> GET /api/properties/5cde94394e293a1a72179736 
+pvXq <—— 304 Not Modified (<—> 54.6 ms)
+rK8h ——> OPTIONS /api/properties/5cde94394e293a1a72179736 
+rK8h <—— 204 No Content (<—> 0.7 ms)
+aTkJ ——> GET /api/properties/5cde94394e293a1a72179736 
+aTkJ <—— 304 Not Modified (<—> 7.1 ms)
+4VFr ——> OPTIONS /api/sessions/get/5cde94cb4e293a1a7217973a 
+4VFr <—— 204 No Content (<—> 0.7 ms)
+WtLb ——> GET /api/sessions/get/5cde94cb4e293a1a7217973a 
+WtLb <—— 200 OK 1.51 KB application/json; charset=utf-8 (<—> 8.0 ms)
+RFJs ——> OPTIONS /api/properties/5cde94394e293a1a72179736 
+RFJs <—— 204 No Content (<—> 0.8 ms)
+tRnM ——> GET /api/properties/5cde94394e293a1a72179736 
+tRnM <—— 304 Not Modified (<—> 5.5 ms)
+opOW ——> OPTIONS /api/sessions/get/5cde94cb4e293a1a7217973a 
+opOW <—— 204 No Content (<—> 0.8 ms)
+cBw9 ——> GET /api/sessions/get/5cde94cb4e293a1a7217973a 
+cBw9 <—— 304 Not Modified (<—> 7.3 ms)
+wBRz ——> OPTIONS /api/sessions/get/5cde94cb4e293a1a7217973a 
+wBRz <—— 204 No Content (<—> 0.6 ms)
+dpCU ——> GET /api/sessions/get/5cde94cb4e293a1a7217973a 
+dpCU <—— 304 Not Modified (<—> 6.2 ms)
+dG6j ——> PUT /api/land-registry/update-entry 261 B application/json;charset=utf-8
+dG6j <—— 200 OK 276 B application/json; charset=utf-8 (<—> 9.0 ms)
+1AYP ——> POST /api/sessions/5cde94cb4e293a1a7217973a/upload-tdd 15 B application/json;charset=utf-8
+5cde95e74e293a1a7217975b
+{ n: 1, nModified: 1, ok: 1 }
+1AYP <—— 200 OK 22 B application/json; charset=utf-8 (<—> 87.4 ms)
+tBtV ——> OPTIONS /api/sessions/5cde94cb4e293a1a7217973a/update 
+tBtV <—— 204 No Content (<—> 0.6 ms)
+KHQq ——> PUT /api/sessions/5cde94cb4e293a1a7217973a/update 140 B application/json;charset=utf-8
+Updating session with id: 5cde94cb4e293a1a7217973a
+KHQq <—— 200 OK 56 B text/html; charset=utf-8 (<—> 4.8 ms)
+r8S1 ——> OPTIONS /api/users/5cde650513777a03a52e5db5/seller/sessions 
+r8S1 <—— 204 No Content (<—> 0.7 ms)
+4VwV ——> GET /api/users/5cde650513777a03a52e5db5/seller/sessions 
+4VwV <—— 200 OK 15 B application/json; charset=utf-8 (<—> 14.8 ms)
+EN0H ——> OPTIONS /api/properties/find-by-ids 
+EN0H <—— 204 No Content (<—> 0.9 ms)
+lWbg ——> POST /api/properties/find-by-ids 20 B application/json;charset=utf-8
+lWbg <—— 200 OK 17 B application/json; charset=utf-8 (<—> 4.8 ms)
+mk1S ——> OPTIONS /api/users/5cde648413777a03a52e5db3/buyer/sessions 
+mk1S <—— 204 No Content (<—> 1.6 ms)
+YvWD ——> GET /api/users/5cde648413777a03a52e5db3/buyer/sessions 
+YvWD <—— 200 OK 15 B application/json; charset=utf-8 (<—> 20.5 ms)
+wviy ——> OPTIONS /api/properties/find-by-ids 
+wviy <—— 204 No Content (<—> 1.6 ms)
+qRZs ——> POST /api/properties/find-by-ids 20 B application/json;charset=UTF-8
+qRZs <—— 200 OK 17 B application/json; charset=utf-8 (<—> 9.3 ms)
+SWtn ——> OPTIONS /api/properties/5cde94394e293a1a72179736 
+SWtn <—— 204 No Content (<—> 2.9 ms)
+MAc2 ——> GET /api/properties/5cde94394e293a1a72179736 
+MAc2 <—— 200 OK 576 B application/json; charset=utf-8 (<—> 6.7 ms)
+epG1 ——> OPTIONS /api/properties/5cde94394e293a1a72179736/add-offer 
+epG1 <—— 204 No Content (<—> 6.8 ms)
+M3LX ——> POST /api/properties/5cde94394e293a1a72179736/add-offer 189 B application/json;charset=UTF-8
+{ n: 1, nModified: 1, ok: 1 }
+M3LX <—— 200 OK 39 B application/json; charset=utf-8 (<—> 26.7 ms)
+tdUA ——> OPTIONS / 
+tdUA <—— 204 No Content (<—> 6.5 ms)
+vO6R ——> GET / 
+vO6R <—— 304 Not Modified (<—> 8.3 ms)
+Vhvz ——> OPTIONS /api/users/get/5cde648413777a03a52e5db3 
+Vhvz <—— 204 No Content (<—> 2.1 ms)
+Yqq7 ——> GET /api/users/get/5cde648413777a03a52e5db3 
+Yqq7 <—— 200 OK 1.04 KB application/json; charset=utf-8 (<—> 8.9 ms)
+d4c3 ——> OPTIONS /api/users/5cde650513777a03a52e5db5/seller/sessions 
+d4c3 <—— 204 No Content (<—> 0.8 ms)
+CDXI ——> GET /api/users/5cde650513777a03a52e5db5/seller/sessions 
+CDXI <—— 304 Not Modified (<—> 13.0 ms)
+JC4Z ——> OPTIONS /api/properties/find-by-ids 
+JC4Z <—— 204 No Content (<—> 0.6 ms)
+KVe4 ——> POST /api/properties/find-by-ids 20 B application/json;charset=utf-8
+KVe4 <—— 200 OK 17 B application/json; charset=utf-8 (<—> 8.8 ms)
+z7vs ——> OPTIONS /api/users/5cde650513777a03a52e5db5/properties 
+z7vs <—— 204 No Content (<—> 1.3 ms)
+AuKl ——> GET /api/users/5cde650513777a03a52e5db5/properties 
+AuKl <—— 200 OK 1.36 KB application/json; charset=utf-8 (<—> 13.0 ms)
+721K ——> OPTIONS /api/properties/5cde94394e293a1a72179736 
+721K <—— 204 No Content (<—> 0.6 ms)
+1jyi ——> GET /api/properties/5cde94394e293a1a72179736 
+1jyi <—— 200 OK 795 B application/json; charset=utf-8 (<—> 7.2 ms)
+S967 ——> OPTIONS /api/properties/5cde94394e293a1a72179736/offers/accept 
+S967 <—— 204 No Content (<—> 0.7 ms)
+dnwC ——> POST /api/properties/5cde94394e293a1a72179736/offers/accept 255 B application/json;charset=utf-8
+Updated property, removed offer and set session underway to true
+Requesting creaiton of session now
+Creating a session with the following details...
+[object Object]
+KrdA ——> POST /api/sessions/create 268 B application/json;charset=utf-8
+Creating a new session
+Linking session to participants...
+{ n: 1, nModified: 1, ok: 1 }
+Finished linking session to seller... now buyer...
+{ n: 1, nModified: 1, ok: 1 }
+Finished linking session to buyer
+KrdA <—— 200 OK 57 B application/json; charset=utf-8 (<—> 20.1 ms)
+dnwC <—— 200 OK 46 B application/json; charset=utf-8 (<—> 30.6 ms)
+1SoV ——> OPTIONS /api/users/5cde650513777a03a52e5db5/seller/sessions 
+1SoV <—— 204 No Content (<—> 0.8 ms)
+9S4L ——> GET /api/users/5cde650513777a03a52e5db5/seller/sessions 
+9S4L <—— 200 OK 1.25 KB application/json; charset=utf-8 (<—> 10.6 ms)
+15Ab ——> OPTIONS /api/properties/find-by-ids 
+15Ab <—— 204 No Content (<—> 0.7 ms)
+iqOC ——> POST /api/properties/find-by-ids 48 B application/json;charset=utf-8
+iqOC <—— 200 OK 581 B application/json; charset=utf-8 (<—> 7.1 ms)
+l6bV ——> OPTIONS /api/users/5cde648413777a03a52e5db3/buyer/sessions 
+l6bV <—— 204 No Content (<—> 0.7 ms)
+0MLj ——> GET /api/users/5cde648413777a03a52e5db3/buyer/sessions 
+0MLj <—— 200 OK 1.25 KB application/json; charset=utf-8 (<—> 26.7 ms)
+VFDf ——> OPTIONS /api/properties/find-by-ids 
+VFDf <—— 204 No Content (<—> 3.5 ms)
+Xp99 ——> POST /api/properties/find-by-ids 48 B application/json;charset=UTF-8
+Xp99 <—— 200 OK 581 B application/json; charset=utf-8 (<—> 6.8 ms)
+pWmC ——> OPTIONS /api/sessions/get/5cde97534e293a1a7217975f 
+pWmC <—— 204 No Content (<—> 9.1 ms)
+hQ9J ——> GET /api/sessions/get/5cde97534e293a1a7217975f 
+hQ9J <—— 200 OK 1.25 KB application/json; charset=utf-8 (<—> 10.5 ms)
+zJdv ——> OPTIONS /api/sessions/get/5cde97534e293a1a7217975f 
+zJdv <—— 204 No Content (<—> 0.7 ms)
+mA0h ——> GET /api/sessions/get/5cde97534e293a1a7217975f 
+mA0h <—— 200 OK 1.25 KB application/json; charset=utf-8 (<—> 8.5 ms)
+Xegn ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+Xegn <—— 204 No Content (<—> 0.6 ms)
+oGLX ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 156 B application/json;charset=utf-8
+Updating session with id: 5cde97534e293a1a7217975f
+oGLX <—— 200 OK 56 B text/html; charset=utf-8 (<—> 5.1 ms)
+I79m ——> OPTIONS /api/sessions/get/5cde97534e293a1a7217975f 
+I79m <—— 204 No Content (<—> 1.6 ms)
+mxo1 ——> GET /api/sessions/get/5cde97534e293a1a7217975f 
+mxo1 <—— 200 OK 1.25 KB application/json; charset=utf-8 (<—> 8.3 ms)
+6Ubn ——> OPTIONS /api/sessions/get/5cde97534e293a1a7217975f 
+6Ubn <—— 204 No Content (<—> 16.2 ms)
+6xRY ——> GET /api/sessions/get/5cde97534e293a1a7217975f 
+6xRY <—— 200 OK 1.25 KB application/json; charset=utf-8 (<—> 24.7 ms)
+DodU ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+DodU <—— 204 No Content (<—> 0.7 ms)
+5pQg ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 108 B application/json;charset=UTF-8
+Updating session with id: 5cde97534e293a1a7217975f
+5pQg <—— 200 OK 56 B text/html; charset=utf-8 (<—> 8.0 ms)
+9oEQ ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 104 B application/json;charset=utf-8
+Updating session with id: 5cde97534e293a1a7217975f
+9oEQ <—— 200 OK 56 B text/html; charset=utf-8 (<—> 5.8 ms)
+0bpb ——> OPTIONS /api/sessions/get/5cde97534e293a1a7217975f 
+0bpb <—— 204 No Content (<—> 6.5 ms)
+35l7 ——> GET /api/sessions/get/5cde97534e293a1a7217975f 
+35l7 <—— 200 OK 1.29 KB application/json; charset=utf-8 (<—> 11.9 ms)
+ffnY ——> OPTIONS /api/sessions/get/5cde97534e293a1a7217975f 
+ffnY <—— 204 No Content (<—> 0.9 ms)
+6Q7q ——> GET /api/sessions/get/5cde97534e293a1a7217975f 
+6Q7q <—— 200 OK 1.29 KB application/json; charset=utf-8 (<—> 8.2 ms)
+ecsI ——> OPTIONS /api/screening/get-report/0x5d722814b213600fc7f520c1de42dde1fa9e57e1 
+ecsI <—— 204 No Content (<—> 0.7 ms)
+88Yi ——> GET /api/screening/get-report/0x5d722814b213600fc7f520c1de42dde1fa9e57e1 
+Got report... verifying now.
+Verification finished... sending result
+88Yi <—— 304 Not Modified (<—> 8.1 ms)
+FWwP ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+FWwP <—— 204 No Content (<—> 0.7 ms)
+jtg5 ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 213 B application/json;charset=utf-8
+Updating session with id: 5cde97534e293a1a7217975f
+jtg5 <—— 200 OK 56 B text/html; charset=utf-8 (<—> 6.0 ms)
+txmp ——> OPTIONS /api/sessions/get/5cde97534e293a1a7217975f 
+txmp <—— 204 No Content (<—> 0.8 ms)
+ahnU ——> GET /api/sessions/get/5cde97534e293a1a7217975f 
+ahnU <—— 200 OK 1.36 KB application/json; charset=utf-8 (<—> 8.6 ms)
+Llx8 ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/upload-sc 
+Llx8 <—— 204 No Content (<—> 1.1 ms)
+Rur2 ——> POST /api/sessions/5cde97534e293a1a7217975f/upload-sc 3.61 MB multipart/form-data; boundary=---------------------------321171676121302
+{ n: 1, nModified: 1, ok: 1 }
+Rur2 <—— 200 OK 22 B application/json; charset=utf-8 (<—> 369.6 ms)
+bJEy ——> OPTIONS /api/sessions/get/5cde97534e293a1a7217975f 
+bJEy <—— 204 No Content (<—> 0.8 ms)
+qnP3 ——> GET /api/sessions/get/5cde97534e293a1a7217975f 
+qnP3 <—— 200 OK 1.39 KB application/json; charset=utf-8 (<—> 11.5 ms)
+k1rw ——> OPTIONS /api/sessions/get/5cde97534e293a1a7217975f 
+k1rw <—— 204 No Content (<—> 0.5 ms)
+irPG ——> GET /api/sessions/get/5cde97534e293a1a7217975f 
+irPG <—— 200 OK 1.39 KB application/json; charset=utf-8 (<—> 35.5 ms)
+neEL ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/upload-ssc 
+neEL <—— 204 No Content (<—> 4.3 ms)
+RW3o ——> POST /api/sessions/5cde97534e293a1a7217975f/upload-ssc 2.13 MB multipart/form-data; boundary=----WebKitFormBoundaryUvDQvOrBm4xce2D4
+{ n: 1, nModified: 1, ok: 1 }
+RW3o <—— 200 OK 22 B application/json; charset=utf-8 (<—> 1002.0 ms)
+NQLV ——> OPTIONS /api/sessions/get/5cde97534e293a1a7217975f 
+NQLV <—— 204 No Content (<—> 29.1 ms)
+YQAW ——> GET /api/sessions/get/5cde97534e293a1a7217975f 
+YQAW <—— 200 OK 1.42 KB application/json; charset=utf-8 (<—> 106.3 ms)
+Pu0A ——> OPTIONS /api/sessions/get/5cde97534e293a1a7217975f 
+Pu0A <—— 204 No Content (<—> 1.1 ms)
+tC9v ——> GET /api/sessions/get/5cde97534e293a1a7217975f 
+tC9v <—— 200 OK 1.42 KB application/json; charset=utf-8 (<—> 9.8 ms)
+5c8r ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+5c8r <—— 204 No Content (<—> 0.6 ms)
+WWp5 ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 107 B application/json;charset=utf-8
+Updating session with id: 5cde97534e293a1a7217975f
+WWp5 <—— 200 OK 56 B text/html; charset=utf-8 (<—> 5.8 ms)
+meLk ——> OPTIONS /api/sessions/get/5cde97534e293a1a7217975f 
+meLk <—— 204 No Content (<—> 0.8 ms)
+FEnB ——> GET /api/sessions/get/5cde97534e293a1a7217975f 
+FEnB <—— 200 OK 1.42 KB application/json; charset=utf-8 (<—> 8.4 ms)
+adHW ——> OPTIONS /api/properties/5cde94394e293a1a72179736 
+adHW <—— 204 No Content (<—> 0.8 ms)
+XmBM ——> GET /api/properties/5cde94394e293a1a72179736 
+XmBM <—— 200 OK 575 B application/json; charset=utf-8 (<—> 8.9 ms)
+reEb ——> OPTIONS /api/sessions/get/5cde97534e293a1a7217975f 
+reEb <—— 204 No Content (<—> 7.5 ms)
+EFMw ——> GET /api/sessions/get/5cde97534e293a1a7217975f 
+EFMw <—— 200 OK 1.42 KB application/json; charset=utf-8 (<—> 23.2 ms)
+QotJ ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/upload-ttd 
+QotJ <—— 204 No Content (<—> 0.5 ms)
+4H9b ——> POST /api/sessions/5cde97534e293a1a7217975f/upload-ttd 1.11 MB multipart/form-data; boundary=---------------------------22099283957817
+4H9b <—— 200 OK 22 B application/json; charset=utf-8 (<—> 120.1 ms)
+RVIo ——> OPTIONS /api/users/5cde650513777a03a52e5db5/seller/sessions 
+RVIo <—— 204 No Content (<—> 0.5 ms)
+MGDw ——> GET /api/users/5cde650513777a03a52e5db5/seller/sessions 
+MGDw <—— 200 OK 1.51 KB application/json; charset=utf-8 (<—> 15.9 ms)
+Qo58 ——> OPTIONS /api/properties/find-by-ids 
+Qo58 <—— 204 No Content (<—> 1.1 ms)
+eQ0Q ——> POST /api/properties/find-by-ids 48 B application/json;charset=utf-8
+eQ0Q <—— 200 OK 581 B application/json; charset=utf-8 (<—> 8.8 ms)
+Hstr ——> OPTIONS /api/sessions/get/5cde97534e293a1a7217975f 
+Hstr <—— 204 No Content (<—> 0.7 ms)
+Nc47 ——> GET /api/sessions/get/5cde97534e293a1a7217975f 
+Nc47 <—— 200 OK 1.51 KB application/json; charset=utf-8 (<—> 7.0 ms)
+fyqb ——> OPTIONS /api/properties/5cde94394e293a1a72179736 
+fyqb <—— 204 No Content (<—> 0.7 ms)
+7JcT ——> GET /api/properties/5cde94394e293a1a72179736 
+7JcT <—— 304 Not Modified (<—> 7.8 ms)
+qJcI ——> OPTIONS /api/users/5cde648413777a03a52e5db3/buyer/sessions 
+qJcI <—— 204 No Content (<—> 1.9 ms)
+TQOI ——> GET /api/users/5cde648413777a03a52e5db3/buyer/sessions 
+TQOI <—— 200 OK 1.51 KB application/json; charset=utf-8 (<—> 32.0 ms)
+RFFU ——> OPTIONS /api/properties/find-by-ids 
+RFFU <—— 204 No Content (<—> 6.5 ms)
+feKS ——> POST /api/properties/find-by-ids 48 B application/json;charset=UTF-8
+feKS <—— 200 OK 581 B application/json; charset=utf-8 (<—> 9.7 ms)
+M54S ——> OPTIONS /api/sessions/get/5cde97534e293a1a7217975f 
+M54S <—— 204 No Content (<—> 4.4 ms)
+kDx1 ——> GET /api/sessions/get/5cde97534e293a1a7217975f 
+kDx1 <—— 200 OK 1.51 KB application/json; charset=utf-8 (<—> 51.9 ms)
+o6X3 ——> OPTIONS /api/properties/5cde94394e293a1a72179736 
+o6X3 <—— 204 No Content (<—> 0.8 ms)
+aSsC ——> GET /api/properties/5cde94394e293a1a72179736 
+aSsC <—— 200 OK 575 B application/json; charset=utf-8 (<—> 16.3 ms)
+ydur ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/title-deed/ttd 
+ydur <—— 204 No Content (<—> 3.5 ms)
+AzHi ——> GET /api/sessions/5cde97534e293a1a7217975f/title-deed/ttd 
+AzHi <—— 200 OK image/jpeg (<—> 240.6 ms)
+ke8f ——> OPTIONS /api/users/5cde650513777a03a52e5db5/seller/sessions 
+ke8f <—— 204 No Content (<—> 2.9 ms)
+efCn ——> GET /api/users/5cde650513777a03a52e5db5/seller/sessions 
+efCn <—— 304 Not Modified (<—> 26.6 ms)
+dpJe ——> OPTIONS /api/properties/find-by-ids 
+dpJe <—— 204 No Content (<—> 6.4 ms)
+DEia ——> POST /api/properties/find-by-ids 48 B application/json;charset=utf-8
+DEia <—— 200 OK 581 B application/json; charset=utf-8 (<—> 14.6 ms)
+e3CE ——> OPTIONS /api/sessions/get/5cde97534e293a1a7217975f 
+e3CE <—— 204 No Content (<—> 1.0 ms)
+93d9 ——> GET /api/sessions/get/5cde97534e293a1a7217975f 
+93d9 <—— 200 OK 1.51 KB application/json; charset=utf-8 (<—> 10.3 ms)
+zxRk ——> OPTIONS /api/properties/5cde94394e293a1a72179736 
+zxRk <—— 204 No Content (<—> 0.6 ms)
+KQb8 ——> GET /api/properties/5cde94394e293a1a72179736 
+KQb8 <—— 304 Not Modified (<—> 16.6 ms)
+uBva ——> OPTIONS /api/sessions/get/5cde97534e293a1a7217975f 
+uBva <—— 204 No Content (<—> 0.6 ms)
+aJnR ——> GET /api/sessions/get/5cde97534e293a1a7217975f 
+aJnR <—— 200 OK 1.51 KB application/json; charset=utf-8 (<—> 7.3 ms)
+Iqyf ——> OPTIONS /api/properties/5cde94394e293a1a72179736 
+Iqyf <—— 204 No Content (<—> 0.7 ms)
+s5qf ——> GET /api/properties/5cde94394e293a1a72179736 
+s5qf <—— 304 Not Modified (<—> 7.3 ms)
+7LZB ——> OPTIONS /api/sessions/get/5cde97534e293a1a7217975f 
+7LZB <—— 204 No Content (<—> 1.1 ms)
+MVeq ——> GET /api/sessions/get/5cde97534e293a1a7217975f 
+MVeq <—— 304 Not Modified (<—> 9.3 ms)
+yK4k ——> OPTIONS /api/users/5cde650513777a03a52e5db5/seller/sessions 
+yK4k <—— 204 No Content (<—> 0.6 ms)
+w6cQ ——> GET /api/users/5cde650513777a03a52e5db5/seller/sessions 
+w6cQ <—— 200 OK 1.51 KB application/json; charset=utf-8 (<—> 13.3 ms)
+mVVw ——> OPTIONS /api/properties/find-by-ids 
+mVVw <—— 204 No Content (<—> 0.6 ms)
+m9cu ——> POST /api/properties/find-by-ids 48 B application/json;charset=utf-8
+m9cu <—— 200 OK 581 B application/json; charset=utf-8 (<—> 6.8 ms)
+vrFz ——> PUT /api/land-registry/update-entry 261 B application/json;charset=utf-8
+vrFz <—— 200 OK 276 B application/json; charset=utf-8 (<—> 7.8 ms)
+qOJy ——> POST /api/sessions/5cde97534e293a1a7217975f/upload-tdd 15 B application/json;charset=utf-8
+5cde98784e293a1a72179781
+{ n: 1, nModified: 1, ok: 1 }
+qOJy <—— 200 OK 22 B application/json; charset=utf-8 (<—> 54.5 ms)
+nZex ——> GET /api/sessions/5cde97534e293a1a7217975f/title-deed/tdd 
+nZex <—— 200 OK application/pdf (<—> 27.6 ms)
+xsfn ——> OPTIONS /api/sessions/get/5cde97534e293a1a7217975f 
+xsfn <—— 204 No Content (<—> 0.7 ms)
+3RTj ——> GET /api/sessions/get/5cde97534e293a1a7217975f 
+3RTj <—— 200 OK 1.54 KB application/json; charset=utf-8 (<—> 9.1 ms)
+g2Ds ——> OPTIONS /api/properties/5cde94394e293a1a72179736 
+g2Ds <—— 204 No Content (<—> 0.8 ms)
+d3bI ——> GET /api/properties/5cde94394e293a1a72179736 
+d3bI <—— 304 Not Modified (<—> 6.1 ms)
+WHip ——> OPTIONS /api/sessions/get/5cde97534e293a1a7217975f 
+WHip <—— 204 No Content (<—> 0.7 ms)
+Zve8 ——> GET /api/sessions/get/5cde97534e293a1a7217975f 
+Zve8 <—— 304 Not Modified (<—> 10.2 ms)
+8pj4 ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+8pj4 <—— 204 No Content (<—> 0.9 ms)
+giY1 ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 140 B application/json;charset=utf-8
+Updating session with id: 5cde97534e293a1a7217975f
+giY1 <—— 200 OK 56 B text/html; charset=utf-8 (<—> 5.1 ms)
+IwPe ——> OPTIONS /api/properties/5cde94394e293a1a72179736 
+IwPe <—— 204 No Content (<—> 0.8 ms)
+vjxL ——> GET /api/properties/5cde94394e293a1a72179736 
+vjxL <—— 304 Not Modified (<—> 8.1 ms)
+JVXD ——> OPTIONS /api/properties/5cde94394e293a1a72179736 
+JVXD <—— 204 No Content (<—> 1.0 ms)
+Y6qD ——> GET /api/properties/5cde94394e293a1a72179736 
+Y6qD <—— 304 Not Modified (<—> 9.5 ms)
+gD8N ——> OPTIONS /api/sessions/get/5cde97534e293a1a7217975f 
+gD8N <—— 204 No Content (<—> 1.0 ms)
+Krl9 ——> GET /api/sessions/get/5cde97534e293a1a7217975f 
+Krl9 <—— 200 OK 1.54 KB application/json; charset=utf-8 (<—> 7.4 ms)
+bknS ——> OPTIONS /api/sessions/get/5cde97534e293a1a7217975f 
+bknS <—— 204 No Content (<—> 14.5 ms)
+u0I2 ——> GET /api/sessions/get/5cde97534e293a1a7217975f 
+u0I2 <—— 200 OK 1.54 KB application/json; charset=utf-8 (<—> 21.1 ms)
+OKPB ——> OPTIONS /api/properties/5cde94394e293a1a72179736 
+OKPB <—— 204 No Content (<—> 1.3 ms)
+ojRi ——> GET /api/properties/5cde94394e293a1a72179736 
+ojRi <—— 304 Not Modified (<—> 24.9 ms)
+eoXx ——> OPTIONS /api/properties/5cde94394e293a1a72179736 
+eoXx <—— 204 No Content (<—> 1.1 ms)
+23qM ——> GET /api/properties/5cde94394e293a1a72179736 
+23qM <—— 304 Not Modified (<—> 6.2 ms)
+QFLi ——> OPTIONS /api/sessions/get/5cde97534e293a1a7217975f 
+QFLi <—— 204 No Content (<—> 0.9 ms)
+tsUi ——> GET /api/sessions/get/5cde97534e293a1a7217975f 
+tsUi <—— 304 Not Modified (<—> 6.3 ms)
+O18F ——> OPTIONS /api/properties/5cde94394e293a1a72179736 
+O18F <—— 204 No Content (<—> 0.7 ms)
+1Mnq ——> GET /api/properties/5cde94394e293a1a72179736 
+1Mnq <—— 304 Not Modified (<—> 7.4 ms)
+kQ57 ——> OPTIONS /api/properties/5cde94394e293a1a72179736 
+kQ57 <—— 204 No Content (<—> 1.2 ms)
+rVnX ——> GET /api/properties/5cde94394e293a1a72179736 
+rVnX <—— 304 Not Modified (<—> 7.5 ms)
+zmcw ——> OPTIONS /api/properties/5cde94394e293a1a72179736 
+zmcw <—— 204 No Content (<—> 1.1 ms)
+HwtM ——> GET /api/properties/5cde94394e293a1a72179736 
+HwtM <—— 304 Not Modified (<—> 6.6 ms)
+VQZA ——> OPTIONS /api/sessions/get/5cde97534e293a1a7217975f 
+VQZA <—— 204 No Content (<—> 1.0 ms)
+jFTg ——> GET /api/sessions/get/5cde97534e293a1a7217975f 
+jFTg <—— 304 Not Modified (<—> 7.9 ms)
+NUq1 ——> OPTIONS /api/properties/5cde94394e293a1a72179736 
+NUq1 <—— 204 No Content (<—> 0.7 ms)
+ZheL ——> GET /api/properties/5cde94394e293a1a72179736 
+ZheL <—— 304 Not Modified (<—> 5.7 ms)
+q9EE ——> OPTIONS /api/properties/5cde94394e293a1a72179736 
+q9EE <—— 204 No Content (<—> 0.9 ms)
+VYb2 ——> GET /api/properties/5cde94394e293a1a72179736 
+VYb2 <—— 304 Not Modified (<—> 6.9 ms)
+auDP ——> OPTIONS /api/sessions/get/5cde97534e293a1a7217975f 
+auDP <—— 204 No Content (<—> 0.9 ms)
+ABoA ——> GET /api/sessions/get/5cde97534e293a1a7217975f 
+ABoA <—— 304 Not Modified (<—> 9.2 ms)
+bYHc ——> OPTIONS /api/properties/5cde94394e293a1a72179736 
+bYHc <—— 204 No Content (<—> 0.7 ms)
+BQWq ——> GET /api/properties/5cde94394e293a1a72179736 
+BQWq <—— 304 Not Modified (<—> 7.3 ms)
+ziZS ——> OPTIONS /api/sessions/get/5cde97534e293a1a7217975f 
+ziZS <—— 204 No Content (<—> 0.8 ms)
+OvKj ——> GET /api/sessions/get/5cde97534e293a1a7217975f 
+OvKj <—— 304 Not Modified (<—> 7.7 ms)
+D5Rq ——> OPTIONS /api/properties/5cde94394e293a1a72179736 
+D5Rq <—— 204 No Content (<—> 1.9 ms)
+GNlp ——> GET /api/properties/5cde94394e293a1a72179736 
+GNlp <—— 304 Not Modified (<—> 8.0 ms)
+6pqs ——> OPTIONS /api/properties/5cde94394e293a1a72179736 
+6pqs <—— 204 No Content (<—> 0.8 ms)
+1N5g ——> GET /api/properties/5cde94394e293a1a72179736 
+1N5g <—— 304 Not Modified (<—> 8.7 ms)
+1fVm ——> OPTIONS /api/properties/5cde94394e293a1a72179736 
+1fVm <—— 204 No Content (<—> 0.8 ms)
+UMNB ——> GET /api/properties/5cde94394e293a1a72179736 
+UMNB <—— 304 Not Modified (<—> 6.7 ms)
+ZVLd ——> OPTIONS /api/users/5cde650513777a03a52e5db5/seller/sessions 
+ZVLd <—— 204 No Content (<—> 0.8 ms)
+7KQQ ——> GET /api/users/5cde650513777a03a52e5db5/seller/sessions 
+7KQQ <—— 200 OK 1.54 KB application/json; charset=utf-8 (<—> 12.7 ms)
+ZnL5 ——> OPTIONS /api/properties/find-by-ids 
+ZnL5 <—— 204 No Content (<—> 0.8 ms)
+CSNf ——> POST /api/properties/find-by-ids 48 B application/json;charset=utf-8
+CSNf <—— 200 OK 581 B application/json; charset=utf-8 (<—> 7.3 ms)
+26pD ——> OPTIONS /api/sessions/get/5cde97534e293a1a7217975f 
+26pD <—— 204 No Content (<—> 0.7 ms)
+e0Rm ——> GET /api/sessions/get/5cde97534e293a1a7217975f 
+e0Rm <—— 200 OK 1.54 KB application/json; charset=utf-8 (<—> 8.1 ms)
+KpxA ——> OPTIONS /api/properties/5cde94394e293a1a72179736 
+KpxA <—— 204 No Content (<—> 1.0 ms)
+9elM ——> GET /api/properties/5cde94394e293a1a72179736 
+9elM <—— 304 Not Modified (<—> 6.7 ms)
+9Ei9 ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/title-deed/tdd 
+9Ei9 <—— 204 No Content (<—> 0.6 ms)
+6ntW ——> GET /api/sessions/5cde97534e293a1a7217975f/title-deed/tdd 
+6ntW <—— 200 OK application/pdf (<—> 26.0 ms)
+wCXK ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/title-deed/tdd 
+wCXK <—— 204 No Content (<—> 0.7 ms)
+Tfsi ——> GET /api/sessions/5cde97534e293a1a7217975f/title-deed/tdd 
+Tfsi <—— 200 OK application/pdf (<—> 21.9 ms)
+LA9x ——> OPTIONS /api/sessions/get/5cde97534e293a1a7217975f 
+LA9x <—— 204 No Content (<—> 0.9 ms)
+ouTG ——> GET /api/sessions/get/5cde97534e293a1a7217975f 
+ouTG <—— 304 Not Modified (<—> 8.2 ms)
+2NWR ——> OPTIONS /api/properties/5cde94394e293a1a72179736 
+2NWR <—— 204 No Content (<—> 0.9 ms)
+gaSk ——> GET /api/properties/5cde94394e293a1a72179736 
+gaSk <—— 304 Not Modified (<—> 6.4 ms)
+SJye ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/title-deed/tdd 
+SJye <—— 204 No Content (<—> 0.9 ms)
+K1wl ——> GET /api/sessions/5cde97534e293a1a7217975f/title-deed/tdd 
+K1wl <—— 200 OK application/pdf (<—> 24.4 ms)
+GShA ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/title-deed/tdd 
+GShA <—— 204 No Content (<—> 0.9 ms)
+WA0V ——> GET /api/sessions/5cde97534e293a1a7217975f/title-deed/tdd 
+WA0V <—— 200 OK application/pdf (<—> 29.0 ms)
+i3JL ——> OPTIONS /api/sessions/get/5cde97534e293a1a7217975f 
+i3JL <—— 204 No Content (<—> 1.1 ms)
+wkUH ——> GET /api/sessions/get/5cde97534e293a1a7217975f 
+wkUH <—— 304 Not Modified (<—> 8.5 ms)
+ZUxG ——> OPTIONS /api/properties/5cde94394e293a1a72179736 
+ZUxG <—— 204 No Content (<—> 1.0 ms)
+Gw5d ——> GET /api/properties/5cde94394e293a1a72179736 
+Gw5d <—— 304 Not Modified (<—> 9.3 ms)
+cGtK ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/title-deed/tdd 
+cGtK <—— 204 No Content (<—> 1.0 ms)
+8YbC ——> GET /api/sessions/5cde97534e293a1a7217975f/title-deed/tdd 
+8YbC <—— 200 OK application/pdf (<—> 28.5 ms)
+7uyU ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/title-deed/tdd 
+7uyU <—— 204 No Content (<—> 0.8 ms)
+loz3 ——> GET /api/sessions/5cde97534e293a1a7217975f/title-deed/tdd 
+loz3 <—— 200 OK application/pdf (<—> 24.2 ms)
+Hfm2 ——> OPTIONS /api/properties/5cde94394e293a1a72179736 
+Hfm2 <—— 204 No Content (<—> 1.2 ms)
+H68V ——> GET /api/properties/5cde94394e293a1a72179736 
+H68V <—— 304 Not Modified (<—> 6.8 ms)
+Zgdx ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/title-deed/tdd 
+Zgdx <—— 204 No Content (<—> 1.4 ms)
+NMF2 ——> GET /api/sessions/5cde97534e293a1a7217975f/title-deed/tdd 
+NMF2 <—— 200 OK application/pdf (<—> 23.5 ms)
+LCdV ——> OPTIONS /api/sessions/get/5cde97534e293a1a7217975f 
+LCdV <—— 204 No Content (<—> 0.7 ms)
+IXkL ——> GET /api/sessions/get/5cde97534e293a1a7217975f 
+IXkL <—— 304 Not Modified (<—> 7.0 ms)
+V26z ——> OPTIONS /api/sessions/get/5cde97534e293a1a7217975f 
+V26z <—— 204 No Content (<—> 0.8 ms)
+0XmS ——> GET /api/sessions/get/5cde97534e293a1a7217975f 
+0XmS <—— 304 Not Modified (<—> 5.8 ms)
+bhlp ——> OPTIONS /api/properties/5cde94394e293a1a72179736 
+bhlp <—— 204 No Content (<—> 0.8 ms)
+M4jq ——> GET /api/properties/5cde94394e293a1a72179736 
+M4jq <—— 304 Not Modified (<—> 6.4 ms)
+zeXk ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/title-deed/tdd 
+zeXk <—— 204 No Content (<—> 0.5 ms)
+iwet ——> GET /api/sessions/5cde97534e293a1a7217975f/title-deed/tdd 
+iwet <—— 200 OK application/pdf (<—> 25.1 ms)
+s57w ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/title-deed/tdd 
+s57w <—— 204 No Content (<—> 0.6 ms)
+wPmD ——> GET /api/sessions/5cde97534e293a1a7217975f/title-deed/tdd 
+wPmD <—— 200 OK application/pdf (<—> 21.6 ms)
+VJzK ——> OPTIONS /api/properties/5cde94394e293a1a72179736 
+VJzK <—— 204 No Content (<—> 1.5 ms)
+b7PD ——> GET /api/properties/5cde94394e293a1a72179736 
+b7PD <—— 304 Not Modified (<—> 7.0 ms)
+ugCS ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/title-deed/tdd 
+ugCS <—— 204 No Content (<—> 0.6 ms)
+LVOO ——> GET /api/sessions/5cde97534e293a1a7217975f/title-deed/tdd 
+LVOO <—— 200 OK application/pdf (<—> 21.7 ms)
+EkMs ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/title-deed/tdd 
+EkMs <—— 204 No Content (<—> 0.7 ms)
+yNH2 ——> GET /api/sessions/5cde97534e293a1a7217975f/title-deed/tdd 
+yNH2 <—— 200 OK application/pdf (<—> 24.4 ms)
+mbo1 ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+mbo1 <—— 204 No Content (<—> 1.0 ms)
+dFaj ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 66 B application/json;charset=utf-8
+Updating session with id: 5cde97534e293a1a7217975f
+dFaj <—— 200 OK 56 B text/html; charset=utf-8 (<—> 5.6 ms)
+x6I6 ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+x6I6 <—— 204 No Content (<—> 1.5 ms)
+AS1K ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+AS1K <—— 204 No Content (<—> 0.7 ms)
+EdHo ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+EdHo <—— 204 No Content (<—> 0.5 ms)
+6frQ ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+6frQ <—— 204 No Content (<—> 0.9 ms)
+VB60 ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 66 B application/json;charset=utf-8
+Updating session with id: 5cde97534e293a1a7217975f
+VB60 <—— 200 OK 56 B text/html; charset=utf-8 (<—> 5.3 ms)
+l8wM ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+l8wM <—— 204 No Content (<—> 0.7 ms)
+VCme ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+VCme <—— 204 No Content (<—> 0.6 ms)
+HFme ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 66 B application/json;charset=utf-8
+Updating session with id: 5cde97534e293a1a7217975f
+1OAq ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 66 B application/json;charset=utf-8
+Updating session with id: 5cde97534e293a1a7217975f
+HFme <—— 200 OK 56 B text/html; charset=utf-8 (<—> 5.7 ms)
+w2ii ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 66 B application/json;charset=utf-8
+Updating session with id: 5cde97534e293a1a7217975f
+1OAq <—— 200 OK 56 B text/html; charset=utf-8 (<—> 8.4 ms)
+LO2X ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 66 B application/json;charset=utf-8
+Updating session with id: 5cde97534e293a1a7217975f
+w2ii <—— 200 OK 56 B text/html; charset=utf-8 (<—> 7.4 ms)
+sDx4 ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 66 B application/json;charset=utf-8
+Updating session with id: 5cde97534e293a1a7217975f
+LO2X <—— 200 OK 56 B text/html; charset=utf-8 (<—> 8.0 ms)
+sDx4 <—— 200 OK 56 B text/html; charset=utf-8 (<—> 5.0 ms)
+RfFG ——> OPTIONS /api/users/5cde650513777a03a52e5db5/seller/sessions 
+RfFG <—— 204 No Content (<—> 0.7 ms)
+JLOM ——> GET /api/users/5cde650513777a03a52e5db5/seller/sessions 
+JLOM <—— 200 OK 1.54 KB application/json; charset=utf-8 (<—> 11.7 ms)
+gxKc ——> OPTIONS /api/properties/find-by-ids 
+gxKc <—— 204 No Content (<—> 0.6 ms)
+nS51 ——> POST /api/properties/find-by-ids 48 B application/json;charset=utf-8
+nS51 <—— 200 OK 581 B application/json; charset=utf-8 (<—> 4.4 ms)
+VP32 ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+VP32 <—— 204 No Content (<—> 0.8 ms)
+yWn7 ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 66 B application/json;charset=utf-8
+Updating session with id: 5cde97534e293a1a7217975f
+yWn7 <—— 200 OK 56 B text/html; charset=utf-8 (<—> 4.8 ms)
+DGzP ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+DGzP <—— 204 No Content (<—> 0.8 ms)
+tRmv ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+tRmv <—— 204 No Content (<—> 0.9 ms)
+MxSY ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+MxSY <—— 204 No Content (<—> 0.7 ms)
+dEnr ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+dEnr <—— 204 No Content (<—> 0.4 ms)
+P50y ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+P50y <—— 204 No Content (<—> 0.6 ms)
+0jVo ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 66 B application/json;charset=utf-8
+Updating session with id: 5cde97534e293a1a7217975f
+0jVo <—— 200 OK 56 B text/html; charset=utf-8 (<—> 4.8 ms)
+Ieu4 ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 66 B application/json;charset=utf-8
+Updating session with id: 5cde97534e293a1a7217975f
+vsb8 ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 66 B application/json;charset=utf-8
+Updating session with id: 5cde97534e293a1a7217975f
+Ieu4 <—— 200 OK 56 B text/html; charset=utf-8 (<—> 6.7 ms)
+MCEn ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 66 B application/json;charset=utf-8
+Updating session with id: 5cde97534e293a1a7217975f
+Qv4R ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 66 B application/json;charset=utf-8
+Updating session with id: 5cde97534e293a1a7217975f
+vsb8 <—— 200 OK 56 B text/html; charset=utf-8 (<—> 9.0 ms)
+MCEn <—— 200 OK 56 B text/html; charset=utf-8 (<—> 6.2 ms)
+Qv4R <—— 200 OK 56 B text/html; charset=utf-8 (<—> 5.4 ms)
+xf9y ——> OPTIONS /api/sessions/get/5cde97534e293a1a7217975f 
+xf9y <—— 204 No Content (<—> 9.7 ms)
+2CwZ ——> GET /api/sessions/get/5cde97534e293a1a7217975f 
+2CwZ <—— 200 OK 1.53 KB application/json; charset=utf-8 (<—> 47.3 ms)
+QNc6 ——> OPTIONS /api/properties/5cde94394e293a1a72179736 
+QNc6 <—— 204 No Content (<—> 0.8 ms)
+JlzO ——> GET /api/properties/5cde94394e293a1a72179736 
+JlzO <—— 304 Not Modified (<—> 17.2 ms)
+DtIa ——> GET /api/properties/5cde94394e293a1a72179736 
+DtIa <—— 304 Not Modified (<—> 148.2 ms)
+ZmkA ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+ZmkA <—— 204 No Content (<—> 0.7 ms)
+VPgL ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+VPgL <—— 204 No Content (<—> 0.6 ms)
+yBji ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 66 B application/json;charset=utf-8
+Updating session with id: 5cde97534e293a1a7217975f
+yBji <—— 200 OK 56 B text/html; charset=utf-8 (<—> 5.8 ms)
+8370 ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+8370 <—— 204 No Content (<—> 0.9 ms)
+FB1w ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+FB1w <—— 204 No Content (<—> 0.8 ms)
+VVXp ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+VVXp <—— 204 No Content (<—> 0.8 ms)
+7Zn9 ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 66 B application/json;charset=utf-8
+Updating session with id: 5cde97534e293a1a7217975f
+F4kp ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 66 B application/json;charset=utf-8
+Updating session with id: 5cde97534e293a1a7217975f
+p9nj ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+p9nj <—— 204 No Content (<—> 1.4 ms)
+TyPt ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+TyPt <—— 204 No Content (<—> 0.9 ms)
+7Zn9 <—— 200 OK 56 B text/html; charset=utf-8 (<—> 11.7 ms)
+F4kp <—— 200 OK 56 B text/html; charset=utf-8 (<—> 12.5 ms)
+huwa ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 66 B application/json;charset=utf-8
+Updating session with id: 5cde97534e293a1a7217975f
+ocKN ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 66 B application/json;charset=utf-8
+Updating session with id: 5cde97534e293a1a7217975f
+huwa <—— 200 OK 56 B text/html; charset=utf-8 (<—> 6.4 ms)
+ZvKf ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 66 B application/json;charset=utf-8
+Updating session with id: 5cde97534e293a1a7217975f
+ocKN <—— 200 OK 56 B text/html; charset=utf-8 (<—> 13.7 ms)
+a1bK ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 66 B application/json;charset=utf-8
+Updating session with id: 5cde97534e293a1a7217975f
+ZvKf <—— 200 OK 56 B text/html; charset=utf-8 (<—> 16.2 ms)
+a1bK <—— 200 OK 56 B text/html; charset=utf-8 (<—> 11.0 ms)
+iuFb ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+iuFb <—— 204 No Content (<—> 3.6 ms)
+mXiA ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 66 B application/json;charset=utf-8
+Updating session with id: 5cde97534e293a1a7217975f
+EeZi ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+EeZi <—— 204 No Content (<—> 3.1 ms)
+aNLA ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+aNLA <—— 204 No Content (<—> 9.8 ms)
+mXiA <—— 200 OK 56 B text/html; charset=utf-8 (<—> 25.9 ms)
+aLCX ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 66 B application/json;charset=utf-8
+Updating session with id: 5cde97534e293a1a7217975f
+C24o ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+C24o <—— 204 No Content (<—> 2.4 ms)
+aLCX <—— 200 OK 56 B text/html; charset=utf-8 (<—> 39.8 ms)
+eGyN ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+eGyN <—— 204 No Content (<—> 1.7 ms)
+nMWE ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 66 B application/json;charset=utf-8
+Updating session with id: 5cde97534e293a1a7217975f
+u2iK ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 66 B application/json;charset=utf-8
+Updating session with id: 5cde97534e293a1a7217975f
+yvks ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+yvks <—— 204 No Content (<—> 1.4 ms)
+aTkE ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+aTkE <—— 204 No Content (<—> 3.0 ms)
+nMWE <—— 200 OK 56 B text/html; charset=utf-8 (<—> 23.6 ms)
+u2iK <—— 200 OK 56 B text/html; charset=utf-8 (<—> 26.9 ms)
+ed20 ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 66 B application/json;charset=utf-8
+Updating session with id: 5cde97534e293a1a7217975f
+sZy8 ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 66 B application/json;charset=utf-8
+Updating session with id: 5cde97534e293a1a7217975f
+Cfoe ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 66 B application/json;charset=utf-8
+Updating session with id: 5cde97534e293a1a7217975f
+ed20 <—— 200 OK 56 B text/html; charset=utf-8 (<—> 13.8 ms)
+sZy8 <—— 200 OK 56 B text/html; charset=utf-8 (<—> 21.4 ms)
+Cfoe <—— 200 OK 56 B text/html; charset=utf-8 (<—> 22.5 ms)
+yOA7 ——> OPTIONS /api/sessions/get/5cde97534e293a1a7217975f 
+yOA7 <—— 204 No Content (<—> 1.8 ms)
+C3eR ——> GET /api/sessions/get/5cde97534e293a1a7217975f 
+C3eR <—— 304 Not Modified (<—> 7.3 ms)
+EPNF ——> GET /api/sessions/get/5cde97534e293a1a7217975f 
+EPNF <—— 304 Not Modified (<—> 71.6 ms)
+YvGA ——> OPTIONS /api/properties/5cde94394e293a1a72179736 
+YvGA <—— 204 No Content (<—> 0.7 ms)
+2nv3 ——> GET /api/properties/5cde94394e293a1a72179736 
+2nv3 <—— 304 Not Modified (<—> 14.5 ms)
+GFrK ——> OPTIONS /api/sessions/get/5cde97534e293a1a7217975f 
+GFrK <—— 204 No Content (<—> 0.5 ms)
+1iXk ——> GET /api/sessions/get/5cde97534e293a1a7217975f 
+1iXk <—— 304 Not Modified (<—> 18.7 ms)
+mHaZ ——> GET /api/properties/5cde94394e293a1a72179736 
+mHaZ <—— 304 Not Modified (<—> 25.5 ms)
+uvGt ——> GET /api/sessions/get/5cde97534e293a1a7217975f 
+uvGt <—— 304 Not Modified (<—> 5.6 ms)
+cImo ——> GET /api/properties/5cde94394e293a1a72179736 
+cImo <—— 304 Not Modified (<—> 23.9 ms)
+Tye9 ——> GET /api/sessions/get/5cde97534e293a1a7217975f 
+Tye9 <—— 304 Not Modified (<—> 8.5 ms)
+7ZGG ——> OPTIONS /api/users/5cde648413777a03a52e5db3/buyer/sessions 
+7ZGG <—— 204 No Content (<—> 1.3 ms)
+FA4h ——> GET /api/users/5cde648413777a03a52e5db3/buyer/sessions 
+FA4h <—— 200 OK 1.54 KB application/json; charset=utf-8 (<—> 17.0 ms)
+MmuE ——> OPTIONS /api/properties/find-by-ids 
+MmuE <—— 204 No Content (<—> 0.5 ms)
+QCTj ——> POST /api/properties/find-by-ids 48 B application/json;charset=UTF-8
+QCTj <—— 200 OK 581 B application/json; charset=utf-8 (<—> 7.2 ms)
+Rj5Z ——> GET /api/sessions/get/5cde97534e293a1a7217975f 
+Rj5Z <—— 304 Not Modified (<—> 11.7 ms)
+lpda ——> OPTIONS /api/properties/5cde94394e293a1a72179736 
+lpda <—— 204 No Content (<—> 0.6 ms)
+d18Q ——> GET /api/properties/5cde94394e293a1a72179736 
+d18Q <—— 304 Not Modified (<—> 11.2 ms)
+GM1D ——> GET /api/properties/5cde94394e293a1a72179736 
+GM1D <—— 304 Not Modified (<—> 19.3 ms)
+zFOG ——> OPTIONS /api/properties/5cde94394e293a1a72179736 
+zFOG <—— 204 No Content (<—> 1.2 ms)
+UC1Z ——> GET /api/properties/5cde94394e293a1a72179736 
+UC1Z <—— 200 OK 575 B application/json; charset=utf-8 (<—> 80.4 ms)
+aXVx ——> OPTIONS /api/sessions/get/5cde97534e293a1a7217975f 
+aXVx <—— 204 No Content (<—> 0.5 ms)
+UIvg ——> GET /api/sessions/get/5cde97534e293a1a7217975f 
+UIvg <—— 200 OK 1.53 KB application/json; charset=utf-8 (<—> 12.0 ms)
+pIVQ ——> OPTIONS /api/properties/5cde94394e293a1a72179736 
+pIVQ <—— 204 No Content (<—> 0.9 ms)
+6pdu ——> GET /api/properties/5cde94394e293a1a72179736 
+6pdu <—— 200 OK 575 B application/json; charset=utf-8 (<—> 15.7 ms)
+oePu ——> OPTIONS /api/sessions/get/5cde97534e293a1a7217975f 
+oePu <—— 204 No Content (<—> 0.6 ms)
+BgzM ——> GET /api/sessions/get/5cde97534e293a1a7217975f 
+BgzM <—— 200 OK 1.53 KB application/json; charset=utf-8 (<—> 21.9 ms)
+ThUw ——> OPTIONS /api/properties/5cde94394e293a1a72179736 
+ThUw <—— 204 No Content (<—> 0.6 ms)
+d2VM ——> GET /api/properties/5cde94394e293a1a72179736 
+d2VM <—— 200 OK 575 B application/json; charset=utf-8 (<—> 17.7 ms)
+QTQ0 ——> OPTIONS /api/properties/5cde94394e293a1a72179736 
+QTQ0 <—— 204 No Content (<—> 71.6 ms)
+NcrU ——> GET /api/properties/5cde94394e293a1a72179736 
+NcrU <—— 200 OK 575 B application/json; charset=utf-8 (<—> 160.2 ms)
+G29A ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/title-deed/tdd 
+G29A <—— 204 No Content (<—> 4.2 ms)
+xlu8 ——> GET /api/sessions/5cde97534e293a1a7217975f/title-deed/tdd 
+xlu8 <—— 200 OK application/pdf (<—> 33.9 ms)
+Ts2d ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/title-deed/tdd 
+Ts2d <—— 204 No Content (<—> 4.0 ms)
+oVQX ——> GET /api/sessions/5cde97534e293a1a7217975f/title-deed/tdd 
+oVQX <—— 200 OK application/pdf (<—> 47.5 ms)
+wsuD ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+wsuD <—— 204 No Content (<—> 0.7 ms)
+zol2 ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+zol2 <—— 204 No Content (<—> 0.8 ms)
+DGYI ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+DGYI <—— 204 No Content (<—> 1.6 ms)
+cVw8 ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+cVw8 <—— 204 No Content (<—> 0.7 ms)
+deXO ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+deXO <—— 204 No Content (<—> 0.7 ms)
+Pb0Z ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+Pb0Z <—— 204 No Content (<—> 0.8 ms)
+m4C5 ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+m4C5 <—— 204 No Content (<—> 1.2 ms)
+VE8n ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 66 B application/json;charset=UTF-8
+Updating session with id: 5cde97534e293a1a7217975f
+VE8n <—— 200 OK 56 B text/html; charset=utf-8 (<—> 7.7 ms)
+ASuI ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 66 B application/json;charset=UTF-8
+Updating session with id: 5cde97534e293a1a7217975f
+caTn ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 66 B application/json;charset=UTF-8
+Updating session with id: 5cde97534e293a1a7217975f
+ASuI <—— 200 OK 56 B text/html; charset=utf-8 (<—> 13.7 ms)
+caTn <—— 200 OK 56 B text/html; charset=utf-8 (<—> 9.8 ms)
+H3YS ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 66 B application/json;charset=UTF-8
+Updating session with id: 5cde97534e293a1a7217975f
+yHpR ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 66 B application/json;charset=UTF-8
+Updating session with id: 5cde97534e293a1a7217975f
+H3YS <—— 200 OK 56 B text/html; charset=utf-8 (<—> 7.7 ms)
+8n4X ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 66 B application/json;charset=UTF-8
+Updating session with id: 5cde97534e293a1a7217975f
+yHpR <—— 200 OK 56 B text/html; charset=utf-8 (<—> 8.6 ms)
+75LS ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 66 B application/json;charset=UTF-8
+Updating session with id: 5cde97534e293a1a7217975f
+8n4X <—— 200 OK 56 B text/html; charset=utf-8 (<—> 10.0 ms)
+75LS <—— 200 OK 56 B text/html; charset=utf-8 (<—> 8.4 ms)
+uiHO ——> OPTIONS /api/users/5cde648413777a03a52e5db3/buyer/sessions 
+uiHO <—— 204 No Content (<—> 5.0 ms)
+wDpL ——> GET /api/users/5cde648413777a03a52e5db3/buyer/sessions 
+wDpL <—— 200 OK 1.54 KB application/json; charset=utf-8 (<—> 24.5 ms)
+TP9s ——> OPTIONS /api/properties/find-by-ids 
+TP9s <—— 204 No Content (<—> 0.8 ms)
+Vt2B ——> POST /api/properties/find-by-ids 48 B application/json;charset=UTF-8
+Vt2B <—— 200 OK 581 B application/json; charset=utf-8 (<—> 7.6 ms)
+UhYl ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+UhYl <—— 204 No Content (<—> 0.6 ms)
+7hKH ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+7hKH <—— 204 No Content (<—> 0.7 ms)
+aWas ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+aWas <—— 204 No Content (<—> 0.8 ms)
+Pe8y ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+Pe8y <—— 204 No Content (<—> 1.6 ms)
+qQ3P ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+qQ3P <—— 204 No Content (<—> 0.8 ms)
+aD1H ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+aD1H <—— 204 No Content (<—> 1.2 ms)
+Eikh ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 66 B application/json;charset=UTF-8
+Updating session with id: 5cde97534e293a1a7217975f
+HYgs ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 66 B application/json;charset=UTF-8
+Updating session with id: 5cde97534e293a1a7217975f
+I0SW ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 66 B application/json;charset=UTF-8
+Updating session with id: 5cde97534e293a1a7217975f
+HYgs <—— 200 OK 56 B text/html; charset=utf-8 (<—> 8.2 ms)
+Eikh <—— 200 OK 56 B text/html; charset=utf-8 (<—> 16.9 ms)
+I0SW <—— 200 OK 56 B text/html; charset=utf-8 (<—> 7.6 ms)
+EuXm ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 66 B application/json;charset=UTF-8
+Updating session with id: 5cde97534e293a1a7217975f
+r0OS ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 66 B application/json;charset=UTF-8
+Updating session with id: 5cde97534e293a1a7217975f
+EuXm <—— 200 OK 56 B text/html; charset=utf-8 (<—> 5.6 ms)
+rz2m ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 66 B application/json;charset=UTF-8
+Updating session with id: 5cde97534e293a1a7217975f
+r0OS <—— 200 OK 56 B text/html; charset=utf-8 (<—> 11.2 ms)
+rz2m <—— 200 OK 56 B text/html; charset=utf-8 (<—> 7.4 ms)
+4uNd ——> OPTIONS /api/users/5cde650513777a03a52e5db5/seller/sessions 
+4uNd <—— 204 No Content (<—> 0.9 ms)
+vUkP ——> GET /api/users/5cde650513777a03a52e5db5/seller/sessions 
+vUkP <—— 304 Not Modified (<—> 14.9 ms)
+6piK ——> OPTIONS /api/properties/find-by-ids 
+6piK <—— 204 No Content (<—> 0.7 ms)
+VMbo ——> POST /api/properties/find-by-ids 48 B application/json;charset=utf-8
+VMbo <—— 200 OK 581 B application/json; charset=utf-8 (<—> 4.0 ms)
+GSPO ——> OPTIONS /api/sessions/get/5cde97534e293a1a7217975f 
+GSPO <—— 204 No Content (<—> 0.6 ms)
+EX1z ——> GET /api/sessions/get/5cde97534e293a1a7217975f 
+EX1z <—— 200 OK 1.53 KB application/json; charset=utf-8 (<—> 7.7 ms)
+Wcps ——> OPTIONS /api/properties/5cde94394e293a1a72179736 
+Wcps <—— 204 No Content (<—> 0.6 ms)
+Ca8Q ——> GET /api/properties/5cde94394e293a1a72179736 
+Ca8Q <—— 304 Not Modified (<—> 7.4 ms)
+QbXI ——> OPTIONS /api/sessions/get/5cde97534e293a1a7217975f 
+QbXI <—— 204 No Content (<—> 1.7 ms)
+75KB ——> GET /api/sessions/get/5cde97534e293a1a7217975f 
+75KB <—— 304 Not Modified (<—> 7.4 ms)
+tyUF ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+tyUF <—— 204 No Content (<—> 0.9 ms)
+2WD5 ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+2WD5 <—— 204 No Content (<—> 0.6 ms)
+pe1Q ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+pe1Q <—— 204 No Content (<—> 0.9 ms)
+8giH ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+8giH <—— 204 No Content (<—> 1.3 ms)
+VN14 ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+VN14 <—— 204 No Content (<—> 0.9 ms)
+GwYI ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+GwYI <—— 204 No Content (<—> 0.7 ms)
+TUO6 ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+TUO6 <—— 204 No Content (<—> 0.7 ms)
+9FE3 ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 66 B application/json;charset=UTF-8
+Updating session with id: 5cde97534e293a1a7217975f
+lAtM ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 66 B application/json;charset=UTF-8
+Updating session with id: 5cde97534e293a1a7217975f
+9FE3 <—— 200 OK 56 B text/html; charset=utf-8 (<—> 10.3 ms)
+G8IJ ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 66 B application/json;charset=UTF-8
+Updating session with id: 5cde97534e293a1a7217975f
+lAtM <—— 200 OK 56 B text/html; charset=utf-8 (<—> 8.2 ms)
+Ie6i ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 66 B application/json;charset=UTF-8
+Updating session with id: 5cde97534e293a1a7217975f
+G8IJ <—— 200 OK 56 B text/html; charset=utf-8 (<—> 5.8 ms)
+Ie6i <—— 200 OK 56 B text/html; charset=utf-8 (<—> 3.9 ms)
+LwAj ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 66 B application/json;charset=UTF-8
+Updating session with id: 5cde97534e293a1a7217975f
+i5E9 ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 66 B application/json;charset=UTF-8
+Updating session with id: 5cde97534e293a1a7217975f
+LwAj <—— 200 OK 56 B text/html; charset=utf-8 (<—> 7.5 ms)
+11Am ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 66 B application/json;charset=UTF-8
+Updating session with id: 5cde97534e293a1a7217975f
+i5E9 <—— 200 OK 56 B text/html; charset=utf-8 (<—> 10.9 ms)
+11Am <—— 200 OK 56 B text/html; charset=utf-8 (<—> 8.5 ms)
+BOBd ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+BOBd <—— 204 No Content (<—> 1.4 ms)
+l6LQ ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+l6LQ <—— 204 No Content (<—> 0.9 ms)
+15dO ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+15dO <—— 204 No Content (<—> 0.9 ms)
+pnB9 ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+pnB9 <—— 204 No Content (<—> 0.9 ms)
+8RnN ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+8RnN <—— 204 No Content (<—> 0.7 ms)
+mv92 ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+mv92 <—— 204 No Content (<—> 2.8 ms)
+INt8 ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 66 B application/json;charset=UTF-8
+Updating session with id: 5cde97534e293a1a7217975f
+INt8 <—— 200 OK 56 B text/html; charset=utf-8 (<—> 7.1 ms)
+hTVf ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 66 B application/json;charset=UTF-8
+Updating session with id: 5cde97534e293a1a7217975f
+hTVf <—— 200 OK 56 B text/html; charset=utf-8 (<—> 8.1 ms)
+9cxD ——> OPTIONS /api/sessions/5cde97534e293a1a7217975f/update 
+9cxD <—— 204 No Content (<—> 1.0 ms)
+Ik8l ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 66 B application/json;charset=UTF-8
+Updating session with id: 5cde97534e293a1a7217975f
+ahrb ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 66 B application/json;charset=UTF-8
+Updating session with id: 5cde97534e293a1a7217975f
+Ik8l <—— 200 OK 56 B text/html; charset=utf-8 (<—> 7.2 ms)
+qftu ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 66 B application/json;charset=UTF-8
+Updating session with id: 5cde97534e293a1a7217975f
+ahrb <—— 200 OK 56 B text/html; charset=utf-8 (<—> 9.4 ms)
+qftu <—— 200 OK 56 B text/html; charset=utf-8 (<—> 7.8 ms)
+kNxA ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 66 B application/json;charset=UTF-8
+Updating session with id: 5cde97534e293a1a7217975f
+kNxA <—— 200 OK 56 B text/html; charset=utf-8 (<—> 5.7 ms)
+J4cx ——> PUT /api/sessions/5cde97534e293a1a7217975f/update 66 B application/json;charset=UTF-8
+Updating session with id: 5cde97534e293a1a7217975f
+J4cx <—— 200 OK 56 B text/html; charset=utf-8 (<—> 6.2 ms)

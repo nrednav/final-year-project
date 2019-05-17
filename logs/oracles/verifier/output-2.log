@@ -1,0 +1,17 @@
+Found event:-
+ verification_requested
+Requesting information from land registry...
+Got information from land registry...
+Verifying information received...
+{ liens: false,
+  _id: '5cde94914e293a1a72179737',
+  property_uid:
+   '0x2e9f28d8824e603397acab7dbdf8f64552bb48cd94d0f336e3d95ba1d940c511',
+  owner_id: '5cde650513777a03a52e5db5',
+  title_deed_hash:
+   '0x6b59c366286f85d8cf3b4e5509982a7f5fa02d837c67221784d2b470e7aaa69a',
+  __v: 0 }
+This property has no liens attached
+{ n: 1, nModified: 1, ok: 1 }
+Successfully notified user
+ { n: 1, nModified: 1, ok: 1 }

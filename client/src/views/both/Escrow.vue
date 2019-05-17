@@ -73,6 +73,7 @@
 			<v-card
 				v-if="activeMiniStage == 2"
 				class="primary p_text--text pa-4 ec-ms2-card display-1">
+				TRANSFER IN PROGRESS
 			</v-card>
 
 			<v-card
@@ -80,12 +81,29 @@
 				class="primary p_text--text pa-4 ec-ms3-card display-1">
 
 				<v-btn
-					v-if="user_type == 'seller' && miniStageStatus(3) == 'In Progress'"
+					v-if="miniStageStatus(3) != 'Pending'"
 					@click="downloadDocument('tdd')"
 					outline
 					color="p_orange"
 					class="title ec-button">
 					DOWNLOAD
+				</v-btn>
+
+				<v-btn
+					v-if="miniStageStatus(3) != 'Pending' && downloadClicked"
+					@click="acceptTDD"
+					outline
+					color="p_blue"
+					class="title ec-button">
+					ACCEPT
+				</v-btn>
+
+				<v-btn
+					v-if="miniStageStatus(3) != 'Pending' && downloadClicked"
+					outline
+					color="p_red"
+					class="title ec-button">
+					REJECT
 				</v-btn>
 
 			</v-card>
@@ -167,9 +185,9 @@ export default {
 				if (docType === 'ttd') {
 					fileName = 'title-transfer-document'
 				} else if (docType === 'tdd') {
-					fileName = 'title-deed-draft'
+					fileName = 'title-deed-draft.pdf'
 				} else if (docType === 'tdo') {
-					fileName = 'title-deed'
+					fileName = 'title-deed.pdf'
 				}
 
 				FileSaver.saveAs(response.data, fileName, { type: fileType })
@@ -188,8 +206,30 @@ export default {
 				value: web3.utils.toWei(price.toString(), 'ether')
 			}).on('confirmation', (confirmationNumber, receipt) => {
 				console.log(receipt)
-				this.$router.push('/buyer/sessions/' + this.session._id)
+				this.$router.push('/buyer/sessions/')
 			}).catch((error) => console.log(error))
+		},
+
+		async acceptTDD () {
+			let requestUrl = `http://localhost:3000/api/sessions/${this.session._id}/title-deed/tdd`
+			let config = { headers: { Authorization: 'a1b2c3d4e5f6g7' } }
+			axios.get(requestUrl, config).then(async (response) => {
+				let titleDraftHash = await web3.utils.sha3(response.data)
+				let sessionIdHash = await web3.utils.sha3(this.session._id)
+				escrow.address = await escrowFactory.methods.get_escrow(sessionIdHash).call()
+
+				escrow.methods.title_draft_greenlight(titleDraftHash, true).send({
+					from: this.selectedAddr
+				}).on('confirmation', (cn, receipt) => {
+					console.log(receipt)
+					let updateOptions = {
+						$set: {
+							'stages.4.mini_stages.3.status': 'ADG'
+						}
+					}
+					this.updateSession(updateOptions, true)
+				})
+			})
 		},
 
 		async createEscrow () {
@@ -200,7 +240,7 @@ export default {
 						from: this.selectedAddr,
 						gasPrice: web3.utils.toWei('42', 'gwei')
 					}).on('confirmation', (confirmationNumber, receipt) => {
-						this.$router.push(`/seller/sessions/${this.session._id}`)
+						this.$router.push('/seller/sessions/')
 					}).catch((error) => console.log(error))
 				} else {
 					alert('Please switch accounts to the one you used during registration')
@@ -218,7 +258,7 @@ export default {
 					'stages.4.mini_stages.2.status': 'In Progress'
 				}
 			}
-			this.updateSession(updateOptions)
+			this.updateSession(updateOptions, false)
 
 			let sessionIdHash = await web3.utils.sha3(this.session._id)
 			escrow.address = await escrowFactory.methods.get_escrow(sessionIdHash).call()
@@ -229,7 +269,7 @@ export default {
 			}).catch((error) => console.log(error))
 		},
 
-		updateSession (updateOptions) {
+		updateSession (updateOptions, redirect) {
 			var requestUrl = `http://localhost:3000/api/sessions/${this.session._id}/update`
 			var config = { headers: { Authorization: 'a1b2c3d4e5f6g7' } }
 			var body = {
@@ -238,6 +278,9 @@ export default {
 
 			axios.put(requestUrl, body, config).then((response) => {
 				console.log(response)
+				if (redirect) {
+					this.$router.push(`/${this.user_type}/sessions`)
+				}
 			}).catch((error) => console.log(error))
 		},
 

@@ -8,6 +8,7 @@ var mongoose = require('mongoose');
 var multer = require('multer');
 var gridFsStorage = require('multer-gridfs-storage');
 var grid = require('gridfs-stream');
+var PDFDocument = require('pdfkit');
 
 const Session = require('../../../db/models/Session').Session;
 const User = require('../../../db/models/User').User;
@@ -74,55 +75,33 @@ router.post('/:session_id/upload-ttd', upload.single('file'), (req, res, next) =
 /* POST - upload title deed draft */
 router.post('/:session_id/upload-tdd', (req, res, next) => {
 	var ws = gfs.createWriteStream({
-		filename: 'title-deed-draft.txt'
+		filename: 'title-deed-draft.pdf',
+		content_type: 'application/pdf'
 	});
-	ws.on('close', (file) => {
+
+	const titleDeedDraft = new PDFDocument;
+	titleDeedDraft.pipe(ws);
+	titleDeedDraft.text('Title deed draft copy');
+	titleDeedDraft.end();
+
+	ws.on('close', (pdf) => {
+		console.log(pdf._id);
 		Session.updateOne({
-			_id: req.params.session_id
-		}, {
-			$set: {
-				'stages.4.mini_stages.3.title_deed_draft_id': file._id
+			_id: new mongoose.Types.ObjectId(req.params.session_id)
+		}, { $set: {
+				'stages.4.mini_stages.3.title_deed_draft_id': pdf._id
 			}
 		}, (error, result) => {
 			if (error) {
 				console.log(error);
 			} else {
+				console.log(result);
 				res.json({
 					message: 'uploaded'
 				});
 			}
 		});
 	});
-	req.pipe(ws);
-});
-
-/* POST - upload title deed draft */
-router.post('/:session_id/upload-tdd-test', upload.single('file'), (req, res, next) => {
-	console.log(req);
-	res.send('ok');
-//		filename: 'title-deed-draft.txt'
-//	});
-//	ws.on('close', (file) => {
-//		res.json({
-//			file
-//		});
-//	});
-//	req.pipe(ws);
-//	Session.updateOne({
-//		_id: req.params.session_id
-//	}, {
-//		$set: {
-//			'stages.4.mini_stages.3.title_deed_draft_id': fileId
-//		}
-//	}, (error, result) => {
-//		if (error) {
-//			console.log(error);
-//		} else {
-//			res.json({
-//				message: 'uploaded'
-//			});
-//		}
-//	});
 });
 
 /* GET - documents for title deed (draft, final, transfer) */
@@ -147,25 +126,37 @@ router.get('/:session_id/title-deed/:type', (req, res, next) => {
 });
 
 /* POST - upload title deed */
-router.post('/:session_id/upload-td', upload.single('file'), (req, res, next) => {
-	var fileId = req.file.id
-	Session.updateOne({
-		_id: req.params.session_id
-	}, {
-		$set: {
-			'stages.4.mini_stages.3.status': 'Completed',
-			'active_mini_stage': 4,
-			'stages.4.mini_stages.4.status': 'In Progress',
-			'stages.4.mini_stages.4.title_deed_id': fileId
-		}
-	}, (error, result) => {
-		if (error) {
-			console.log(error);
-		} else {
-			res.json({
-				message: 'uploaded'
-			});
-		}
+router.post('/:session_id/upload-td', (req, res, next) => {
+	var ws = gfs.createWriteStream({
+		filename: 'title-deed.pdf',
+		content_type: 'application/pdf'
+	});
+
+	const titleDeed = new PDFDocument;
+	titleDeed.pipe(ws);
+	titleDeed.text('Title deed original');
+	titleDeed.end();
+
+	ws.on('close', (pdf) => {
+		console.log(pdf._id);
+		Session.updateOne({
+			_id: new mongoose.Types.ObjectId(req.params.session_id)
+		}, {
+			$set: {
+				'stages.4.mini_stages.3.status': 'Completed',
+				'active_mini_stage': 4,
+				'stages.4.mini_stages.4.status': 'In Progress',
+				'stages.4.mini_stages.4.title_deed_id': pdf._id
+			}
+		}, (error, result) => {
+			if (error) {
+				console.log(error);
+			} else {
+				res.json({
+					message: 'uploaded'
+				});
+			}
+		});
 	});
 });
 

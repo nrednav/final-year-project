@@ -1,0 +1,525 @@
+/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babel-core/lib/transformation/file/index.js:558
+      throw err;
+      ^
+
+SyntaxError: /c/Users/Vandern Rodrigues/Projects/fyp/oracles/src/escrowOracle.js: await is a reserved word (268:24)
+  266 | 		axios.get(requestUrl, config).then((response) => {
+  267 | 
+> 268 | 			let titleDraftHash = await this.web3.utils.sha3(response.data);
+      | 			                     ^
+  269 | 			let nodeAddress = "0x8a23c7c42333ed6be5a68c24031cd7a737fbcbe8";
+  270 | 			await web3.eth.personal.unlockAccount(nodeAddress, String(1234), 1000);
+  271 | 
+    at Parser.pp$5.raise (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4454:13)
+    at Parser.pp$3.checkReservedWord (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4347:10)
+    at Parser.pp$3.parseIdentifier (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4324:10)
+    at Parser.pp$3.parseExprAtom (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3648:21)
+    at Parser.pp$3.parseExprSubscripts (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3494:19)
+    at Parser.pp$3.parseMaybeUnary (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3474:19)
+    at Parser.pp$3.parseExprOps (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3404:19)
+    at Parser.pp$3.parseMaybeConditional (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3381:19)
+    at Parser.pp$3.parseMaybeAssign (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3344:19)
+    at Parser.pp$1.parseVar (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:2340:24)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! oracles@1.0.0 escrow: `babel-node ./src/escrowOracle.js`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the oracles@1.0.0 escrow script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/vandern/.npm/_logs/2019-05-17T11_00_35_482Z-debug.log
+/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babel-core/lib/transformation/file/index.js:558
+      throw err;
+      ^
+
+SyntaxError: /c/Users/Vandern Rodrigues/Projects/fyp/oracles/src/escrowOracle.js: await is a reserved word (268:24)
+  266 | 		axios.get(requestUrl, config).then((response) => {
+  267 | 
+> 268 | 			let titleDraftHash = await this.web3.utils.sha3(response.data);
+      | 			                     ^
+  269 | 			let nodeAddress = "0x8a23c7c42333ed6be5a68c24031cd7a737fbcbe8";
+  270 | 			await web3.eth.personal.unlockAccount(nodeAddress, String(1234), 1000);
+  271 | 
+    at Parser.pp$5.raise (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4454:13)
+    at Parser.pp$3.checkReservedWord (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4347:10)
+    at Parser.pp$3.parseIdentifier (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4324:10)
+    at Parser.pp$3.parseExprAtom (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3648:21)
+    at Parser.pp$3.parseExprSubscripts (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3494:19)
+    at Parser.pp$3.parseMaybeUnary (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3474:19)
+    at Parser.pp$3.parseExprOps (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3404:19)
+    at Parser.pp$3.parseMaybeConditional (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3381:19)
+    at Parser.pp$3.parseMaybeAssign (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3344:19)
+    at Parser.pp$1.parseVar (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:2340:24)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! oracles@1.0.0 escrow: `babel-node ./src/escrowOracle.js`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the oracles@1.0.0 escrow script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/vandern/.npm/_logs/2019-05-17T11_00_38_018Z-debug.log
+/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babel-core/lib/transformation/file/index.js:558
+      throw err;
+      ^
+
+SyntaxError: /c/Users/Vandern Rodrigues/Projects/fyp/oracles/src/escrowOracle.js: await is a reserved word (268:24)
+  266 | 		axios.get(requestUrl, config).then((response) => {
+  267 | 
+> 268 | 			let titleDraftHash = await this.web3.utils.sha3(response.data);
+      | 			                     ^
+  269 | 			let nodeAddress = "0x8a23c7c42333ed6be5a68c24031cd7a737fbcbe8";
+  270 | 			await web3.eth.personal.unlockAccount(nodeAddress, String(1234), 1000);
+  271 | 
+    at Parser.pp$5.raise (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4454:13)
+    at Parser.pp$3.checkReservedWord (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4347:10)
+    at Parser.pp$3.parseIdentifier (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4324:10)
+    at Parser.pp$3.parseExprAtom (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3648:21)
+    at Parser.pp$3.parseExprSubscripts (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3494:19)
+    at Parser.pp$3.parseMaybeUnary (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3474:19)
+    at Parser.pp$3.parseExprOps (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3404:19)
+    at Parser.pp$3.parseMaybeConditional (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3381:19)
+    at Parser.pp$3.parseMaybeAssign (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3344:19)
+    at Parser.pp$1.parseVar (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:2340:24)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! oracles@1.0.0 escrow: `babel-node ./src/escrowOracle.js`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the oracles@1.0.0 escrow script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/vandern/.npm/_logs/2019-05-17T11_00_40_694Z-debug.log
+/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babel-core/lib/transformation/file/index.js:558
+      throw err;
+      ^
+
+SyntaxError: /c/Users/Vandern Rodrigues/Projects/fyp/oracles/src/escrowOracle.js: await is a reserved word (268:24)
+  266 | 		axios.get(requestUrl, config).then((response) => {
+  267 | 
+> 268 | 			let titleDraftHash = await this.web3.utils.sha3(response.data);
+      | 			                     ^
+  269 | 			let nodeAddress = "0x8a23c7c42333ed6be5a68c24031cd7a737fbcbe8";
+  270 | 			await web3.eth.personal.unlockAccount(nodeAddress, String(1234), 1000);
+  271 | 
+    at Parser.pp$5.raise (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4454:13)
+    at Parser.pp$3.checkReservedWord (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4347:10)
+    at Parser.pp$3.parseIdentifier (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4324:10)
+    at Parser.pp$3.parseExprAtom (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3648:21)
+    at Parser.pp$3.parseExprSubscripts (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3494:19)
+    at Parser.pp$3.parseMaybeUnary (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3474:19)
+    at Parser.pp$3.parseExprOps (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3404:19)
+    at Parser.pp$3.parseMaybeConditional (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3381:19)
+    at Parser.pp$3.parseMaybeAssign (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3344:19)
+    at Parser.pp$1.parseVar (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:2340:24)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! oracles@1.0.0 escrow: `babel-node ./src/escrowOracle.js`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the oracles@1.0.0 escrow script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/vandern/.npm/_logs/2019-05-17T11_00_43_298Z-debug.log
+/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babel-core/lib/transformation/file/index.js:558
+      throw err;
+      ^
+
+SyntaxError: /c/Users/Vandern Rodrigues/Projects/fyp/oracles/src/escrowOracle.js: await is a reserved word (268:24)
+  266 | 		axios.get(requestUrl, config).then((response) => {
+  267 | 
+> 268 | 			let titleDraftHash = await this.web3.utils.sha3(response.data);
+      | 			                     ^
+  269 | 			let nodeAddress = "0x8a23c7c42333ed6be5a68c24031cd7a737fbcbe8";
+  270 | 			await web3.eth.personal.unlockAccount(nodeAddress, String(1234), 1000);
+  271 | 
+    at Parser.pp$5.raise (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4454:13)
+    at Parser.pp$3.checkReservedWord (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4347:10)
+    at Parser.pp$3.parseIdentifier (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4324:10)
+    at Parser.pp$3.parseExprAtom (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3648:21)
+    at Parser.pp$3.parseExprSubscripts (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3494:19)
+    at Parser.pp$3.parseMaybeUnary (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3474:19)
+    at Parser.pp$3.parseExprOps (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3404:19)
+    at Parser.pp$3.parseMaybeConditional (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3381:19)
+    at Parser.pp$3.parseMaybeAssign (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3344:19)
+    at Parser.pp$1.parseVar (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:2340:24)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! oracles@1.0.0 escrow: `babel-node ./src/escrowOracle.js`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the oracles@1.0.0 escrow script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/vandern/.npm/_logs/2019-05-17T11_00_45_859Z-debug.log
+/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babel-core/lib/transformation/file/index.js:558
+      throw err;
+      ^
+
+SyntaxError: /c/Users/Vandern Rodrigues/Projects/fyp/oracles/src/escrowOracle.js: await is a reserved word (268:24)
+  266 | 		axios.get(requestUrl, config).then((response) => {
+  267 | 
+> 268 | 			let titleDraftHash = await this.web3.utils.sha3(response.data);
+      | 			                     ^
+  269 | 			let nodeAddress = "0x8a23c7c42333ed6be5a68c24031cd7a737fbcbe8";
+  270 | 			await web3.eth.personal.unlockAccount(nodeAddress, String(1234), 1000);
+  271 | 
+    at Parser.pp$5.raise (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4454:13)
+    at Parser.pp$3.checkReservedWord (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4347:10)
+    at Parser.pp$3.parseIdentifier (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4324:10)
+    at Parser.pp$3.parseExprAtom (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3648:21)
+    at Parser.pp$3.parseExprSubscripts (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3494:19)
+    at Parser.pp$3.parseMaybeUnary (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3474:19)
+    at Parser.pp$3.parseExprOps (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3404:19)
+    at Parser.pp$3.parseMaybeConditional (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3381:19)
+    at Parser.pp$3.parseMaybeAssign (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3344:19)
+    at Parser.pp$1.parseVar (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:2340:24)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! oracles@1.0.0 escrow: `babel-node ./src/escrowOracle.js`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the oracles@1.0.0 escrow script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/vandern/.npm/_logs/2019-05-17T11_00_48_405Z-debug.log
+/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babel-core/lib/transformation/file/index.js:558
+      throw err;
+      ^
+
+SyntaxError: /c/Users/Vandern Rodrigues/Projects/fyp/oracles/src/escrowOracle.js: await is a reserved word (268:24)
+  266 | 		axios.get(requestUrl, config).then((response) => {
+  267 | 
+> 268 | 			let titleDraftHash = await this.web3.utils.sha3(response.data);
+      | 			                     ^
+  269 | 			let nodeAddress = "0x8a23c7c42333ed6be5a68c24031cd7a737fbcbe8";
+  270 | 			await web3.eth.personal.unlockAccount(nodeAddress, String(1234), 1000);
+  271 | 
+    at Parser.pp$5.raise (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4454:13)
+    at Parser.pp$3.checkReservedWord (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4347:10)
+    at Parser.pp$3.parseIdentifier (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4324:10)
+    at Parser.pp$3.parseExprAtom (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3648:21)
+    at Parser.pp$3.parseExprSubscripts (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3494:19)
+    at Parser.pp$3.parseMaybeUnary (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3474:19)
+    at Parser.pp$3.parseExprOps (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3404:19)
+    at Parser.pp$3.parseMaybeConditional (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3381:19)
+    at Parser.pp$3.parseMaybeAssign (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3344:19)
+    at Parser.pp$1.parseVar (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:2340:24)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! oracles@1.0.0 escrow: `babel-node ./src/escrowOracle.js`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the oracles@1.0.0 escrow script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/vandern/.npm/_logs/2019-05-17T11_00_51_136Z-debug.log
+/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babel-core/lib/transformation/file/index.js:558
+      throw err;
+      ^
+
+SyntaxError: /c/Users/Vandern Rodrigues/Projects/fyp/oracles/src/escrowOracle.js: await is a reserved word (268:24)
+  266 | 		axios.get(requestUrl, config).then((response) => {
+  267 | 
+> 268 | 			let titleDraftHash = await this.web3.utils.sha3(response.data);
+      | 			                     ^
+  269 | 			let nodeAddress = "0x8a23c7c42333ed6be5a68c24031cd7a737fbcbe8";
+  270 | 			await web3.eth.personal.unlockAccount(nodeAddress, String(1234), 1000);
+  271 | 
+    at Parser.pp$5.raise (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4454:13)
+    at Parser.pp$3.checkReservedWord (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4347:10)
+    at Parser.pp$3.parseIdentifier (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4324:10)
+    at Parser.pp$3.parseExprAtom (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3648:21)
+    at Parser.pp$3.parseExprSubscripts (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3494:19)
+    at Parser.pp$3.parseMaybeUnary (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3474:19)
+    at Parser.pp$3.parseExprOps (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3404:19)
+    at Parser.pp$3.parseMaybeConditional (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3381:19)
+    at Parser.pp$3.parseMaybeAssign (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3344:19)
+    at Parser.pp$1.parseVar (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:2340:24)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! oracles@1.0.0 escrow: `babel-node ./src/escrowOracle.js`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the oracles@1.0.0 escrow script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/vandern/.npm/_logs/2019-05-17T11_00_53_760Z-debug.log
+/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babel-core/lib/transformation/file/index.js:558
+      throw err;
+      ^
+
+SyntaxError: /c/Users/Vandern Rodrigues/Projects/fyp/oracles/src/escrowOracle.js: await is a reserved word (268:24)
+  266 | 		axios.get(requestUrl, config).then((response) => {
+  267 | 
+> 268 | 			let titleDraftHash = await this.web3.utils.sha3(response.data);
+      | 			                     ^
+  269 | 			let nodeAddress = "0x8a23c7c42333ed6be5a68c24031cd7a737fbcbe8";
+  270 | 			await web3.eth.personal.unlockAccount(nodeAddress, String(1234), 1000);
+  271 | 
+    at Parser.pp$5.raise (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4454:13)
+    at Parser.pp$3.checkReservedWord (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4347:10)
+    at Parser.pp$3.parseIdentifier (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4324:10)
+    at Parser.pp$3.parseExprAtom (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3648:21)
+    at Parser.pp$3.parseExprSubscripts (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3494:19)
+    at Parser.pp$3.parseMaybeUnary (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3474:19)
+    at Parser.pp$3.parseExprOps (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3404:19)
+    at Parser.pp$3.parseMaybeConditional (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3381:19)
+    at Parser.pp$3.parseMaybeAssign (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3344:19)
+    at Parser.pp$1.parseVar (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:2340:24)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! oracles@1.0.0 escrow: `babel-node ./src/escrowOracle.js`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the oracles@1.0.0 escrow script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/vandern/.npm/_logs/2019-05-17T11_00_56_309Z-debug.log
+/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babel-core/lib/transformation/file/index.js:558
+      throw err;
+      ^
+
+SyntaxError: /c/Users/Vandern Rodrigues/Projects/fyp/oracles/src/escrowOracle.js: await is a reserved word (268:24)
+  266 | 		axios.get(requestUrl, config).then((response) => {
+  267 | 
+> 268 | 			let titleDraftHash = await this.web3.utils.sha3(response.data);
+      | 			                     ^
+  269 | 			let nodeAddress = "0x8a23c7c42333ed6be5a68c24031cd7a737fbcbe8";
+  270 | 			await web3.eth.personal.unlockAccount(nodeAddress, String(1234), 1000);
+  271 | 
+    at Parser.pp$5.raise (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4454:13)
+    at Parser.pp$3.checkReservedWord (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4347:10)
+    at Parser.pp$3.parseIdentifier (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4324:10)
+    at Parser.pp$3.parseExprAtom (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3648:21)
+    at Parser.pp$3.parseExprSubscripts (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3494:19)
+    at Parser.pp$3.parseMaybeUnary (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3474:19)
+    at Parser.pp$3.parseExprOps (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3404:19)
+    at Parser.pp$3.parseMaybeConditional (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3381:19)
+    at Parser.pp$3.parseMaybeAssign (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3344:19)
+    at Parser.pp$1.parseVar (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:2340:24)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! oracles@1.0.0 escrow: `babel-node ./src/escrowOracle.js`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the oracles@1.0.0 escrow script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/vandern/.npm/_logs/2019-05-17T11_00_58_892Z-debug.log
+/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babel-core/lib/transformation/file/index.js:558
+      throw err;
+      ^
+
+SyntaxError: /c/Users/Vandern Rodrigues/Projects/fyp/oracles/src/escrowOracle.js: await is a reserved word (268:24)
+  266 | 		axios.get(requestUrl, config).then((response) => {
+  267 | 
+> 268 | 			let titleDraftHash = await this.web3.utils.sha3(response.data);
+      | 			                     ^
+  269 | 			let nodeAddress = "0x8a23c7c42333ed6be5a68c24031cd7a737fbcbe8";
+  270 | 			await web3.eth.personal.unlockAccount(nodeAddress, String(1234), 1000);
+  271 | 
+    at Parser.pp$5.raise (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4454:13)
+    at Parser.pp$3.checkReservedWord (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4347:10)
+    at Parser.pp$3.parseIdentifier (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4324:10)
+    at Parser.pp$3.parseExprAtom (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3648:21)
+    at Parser.pp$3.parseExprSubscripts (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3494:19)
+    at Parser.pp$3.parseMaybeUnary (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3474:19)
+    at Parser.pp$3.parseExprOps (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3404:19)
+    at Parser.pp$3.parseMaybeConditional (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3381:19)
+    at Parser.pp$3.parseMaybeAssign (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3344:19)
+    at Parser.pp$1.parseVar (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:2340:24)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! oracles@1.0.0 escrow: `babel-node ./src/escrowOracle.js`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the oracles@1.0.0 escrow script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/vandern/.npm/_logs/2019-05-17T11_01_01_484Z-debug.log
+/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babel-core/lib/transformation/file/index.js:558
+      throw err;
+      ^
+
+SyntaxError: /c/Users/Vandern Rodrigues/Projects/fyp/oracles/src/escrowOracle.js: await is a reserved word (268:24)
+  266 | 		axios.get(requestUrl, config).then((response) => {
+  267 | 
+> 268 | 			let titleDraftHash = await this.web3.utils.sha3(response.data);
+      | 			                     ^
+  269 | 			let nodeAddress = "0x8a23c7c42333ed6be5a68c24031cd7a737fbcbe8";
+  270 | 			await web3.eth.personal.unlockAccount(nodeAddress, String(1234), 1000);
+  271 | 
+    at Parser.pp$5.raise (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4454:13)
+    at Parser.pp$3.checkReservedWord (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4347:10)
+    at Parser.pp$3.parseIdentifier (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4324:10)
+    at Parser.pp$3.parseExprAtom (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3648:21)
+    at Parser.pp$3.parseExprSubscripts (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3494:19)
+    at Parser.pp$3.parseMaybeUnary (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3474:19)
+    at Parser.pp$3.parseExprOps (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3404:19)
+    at Parser.pp$3.parseMaybeConditional (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3381:19)
+    at Parser.pp$3.parseMaybeAssign (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3344:19)
+    at Parser.pp$1.parseVar (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:2340:24)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! oracles@1.0.0 escrow: `babel-node ./src/escrowOracle.js`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the oracles@1.0.0 escrow script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/vandern/.npm/_logs/2019-05-17T11_01_04_056Z-debug.log
+/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babel-core/lib/transformation/file/index.js:558
+      throw err;
+      ^
+
+SyntaxError: /c/Users/Vandern Rodrigues/Projects/fyp/oracles/src/escrowOracle.js: await is a reserved word (268:24)
+  266 | 		axios.get(requestUrl, config).then((response) => {
+  267 | 
+> 268 | 			let titleDraftHash = await this.web3.utils.sha3(response.data);
+      | 			                     ^
+  269 | 			let nodeAddress = "0x8a23c7c42333ed6be5a68c24031cd7a737fbcbe8";
+  270 | 			await web3.eth.personal.unlockAccount(nodeAddress, String(1234), 1000);
+  271 | 
+    at Parser.pp$5.raise (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4454:13)
+    at Parser.pp$3.checkReservedWord (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4347:10)
+    at Parser.pp$3.parseIdentifier (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4324:10)
+    at Parser.pp$3.parseExprAtom (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3648:21)
+    at Parser.pp$3.parseExprSubscripts (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3494:19)
+    at Parser.pp$3.parseMaybeUnary (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3474:19)
+    at Parser.pp$3.parseExprOps (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3404:19)
+    at Parser.pp$3.parseMaybeConditional (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3381:19)
+    at Parser.pp$3.parseMaybeAssign (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3344:19)
+    at Parser.pp$1.parseVar (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:2340:24)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! oracles@1.0.0 escrow: `babel-node ./src/escrowOracle.js`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the oracles@1.0.0 escrow script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/vandern/.npm/_logs/2019-05-17T11_01_06_669Z-debug.log
+/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babel-core/lib/transformation/file/index.js:558
+      throw err;
+      ^
+
+SyntaxError: /c/Users/Vandern Rodrigues/Projects/fyp/oracles/src/escrowOracle.js: await is a reserved word (268:24)
+  266 | 		axios.get(requestUrl, config).then((response) => {
+  267 | 
+> 268 | 			let titleDraftHash = await this.web3.utils.sha3(response.data);
+      | 			                     ^
+  269 | 			let nodeAddress = "0x8a23c7c42333ed6be5a68c24031cd7a737fbcbe8";
+  270 | 			await web3.eth.personal.unlockAccount(nodeAddress, String(1234), 1000);
+  271 | 
+    at Parser.pp$5.raise (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4454:13)
+    at Parser.pp$3.checkReservedWord (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4347:10)
+    at Parser.pp$3.parseIdentifier (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4324:10)
+    at Parser.pp$3.parseExprAtom (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3648:21)
+    at Parser.pp$3.parseExprSubscripts (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3494:19)
+    at Parser.pp$3.parseMaybeUnary (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3474:19)
+    at Parser.pp$3.parseExprOps (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3404:19)
+    at Parser.pp$3.parseMaybeConditional (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3381:19)
+    at Parser.pp$3.parseMaybeAssign (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3344:19)
+    at Parser.pp$1.parseVar (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:2340:24)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! oracles@1.0.0 escrow: `babel-node ./src/escrowOracle.js`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the oracles@1.0.0 escrow script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/vandern/.npm/_logs/2019-05-17T11_01_09_242Z-debug.log
+/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babel-core/lib/transformation/file/index.js:558
+      throw err;
+      ^
+
+SyntaxError: /c/Users/Vandern Rodrigues/Projects/fyp/oracles/src/escrowOracle.js: await is a reserved word (268:24)
+  266 | 		axios.get(requestUrl, config).then((response) => {
+  267 | 
+> 268 | 			let titleDraftHash = await this.web3.utils.sha3(response.data);
+      | 			                     ^
+  269 | 			let nodeAddress = "0x8a23c7c42333ed6be5a68c24031cd7a737fbcbe8";
+  270 | 			await web3.eth.personal.unlockAccount(nodeAddress, String(1234), 1000);
+  271 | 
+    at Parser.pp$5.raise (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4454:13)
+    at Parser.pp$3.checkReservedWord (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4347:10)
+    at Parser.pp$3.parseIdentifier (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4324:10)
+    at Parser.pp$3.parseExprAtom (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3648:21)
+    at Parser.pp$3.parseExprSubscripts (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3494:19)
+    at Parser.pp$3.parseMaybeUnary (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3474:19)
+    at Parser.pp$3.parseExprOps (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3404:19)
+    at Parser.pp$3.parseMaybeConditional (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3381:19)
+    at Parser.pp$3.parseMaybeAssign (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3344:19)
+    at Parser.pp$1.parseVar (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:2340:24)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! oracles@1.0.0 escrow: `babel-node ./src/escrowOracle.js`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the oracles@1.0.0 escrow script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/vandern/.npm/_logs/2019-05-17T11_01_12_021Z-debug.log
+(node:7587) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
+(node:7587) UnhandledPromiseRejectionWarning: ReferenceError: sessionId is not defined
+    at escrowOracle._callee8$ (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/src/escrowOracle.js:264:58)
+    at tryCatch (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/@babel/runtime/node_modules/regenerator-runtime/runtime.js:45:40)
+    at Generator.invoke [as _invoke] (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/@babel/runtime/node_modules/regenerator-runtime/runtime.js:271:22)
+    at Generator.prototype.(anonymous function) [as next] (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/@babel/runtime/node_modules/regenerator-runtime/runtime.js:97:21)
+    at step (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/src/escrowOracle.js:31:191)
+    at /c/Users/Vandern Rodrigues/Projects/fyp/oracles/src/escrowOracle.js:31:437
+    at new Promise (<anonymous>)
+    at escrowOracle.<anonymous> (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/src/escrowOracle.js:31:99)
+    at escrowOracle.respondToTTR (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/src/escrowOracle.js:523:18)
+    at /c/Users/Vandern Rodrigues/Projects/fyp/oracles/src/escrowOracle.js:258:9
+    at processTicksAndRejections (internal/process/next_tick.js:81:5)
+(node:7587) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 1)
+(node:7587) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+(node:7679) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
+events.js:173
+      throw er; // Unhandled 'error' event
+      ^
+
+TypeError: Cannot read property 'property_id' of null
+    at /c/Users/Vandern Rodrigues/Projects/fyp/oracles/src/escrowOracle.js:312:30
+    at /c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/mongoose/lib/model.js:4731:16
+    at /c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/mongoose/lib/query.js:4229:12
+    at model.Query.Query._completeOne (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/mongoose/lib/query.js:1972:12)
+    at Immediate.Query.base.findOne.call (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/mongoose/lib/query.js:2032:10)
+    at Immediate.<anonymous> (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/mquery/lib/utils.js:116:16)
+    at processImmediate (timers.js:638:19)
+    at process.topLevelDomainCallback (domain.js:136:23)
+Emitted 'error' event at:
+    at /c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/mongoose/lib/model.js:4733:13
+    at /c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/mongoose/lib/query.js:4229:12
+    [... lines matching original stack trace ...]
+    at process.topLevelDomainCallback (domain.js:136:23)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! oracles@1.0.0 escrow: `babel-node ./src/escrowOracle.js`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the oracles@1.0.0 escrow script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/vandern/.npm/_logs/2019-05-17T12_08_52_078Z-debug.log
+(node:8991) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
