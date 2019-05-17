@@ -87,6 +87,7 @@
 					@click="acceptTTD"
 					outline
 					color="p_blue"
+					:class="{'disable-click': decisionMade}"
 					class="title ec-button accept-ttd-btn">
 					ACCEPT
 				</v-btn>
@@ -115,18 +116,28 @@
 				v-if="activeMiniStage == 2"
 				class="primary p_yellow--text pa-4 text-xs-center ec-ms2-card display-1">
 				TRANSFER IN PROGRESS
+				<v-progress-circular
+					:size="100"
+					:width="10"
+					color="p_green"
+					indeterminate>
+				</v-progress-circular>
 			</v-card>
 
 			<v-card
 				v-if="activeMiniStage == 3"
 				class="primary p_text--text pa-4 ec-ms3-card display-1">
 
+				<div class="pa-4 headline tdd-info">
+					Please review the draft title deed and submit your decision.
+				</div>
+
 				<v-btn
 					v-if="miniStageStatus(3) != 'Pending'"
 					@click="downloadDocument('tdd')"
 					outline
 					color="p_orange"
-					class="title ec-button">
+					class="title ec-button download-tdd-btn">
 					DOWNLOAD
 				</v-btn>
 
@@ -135,7 +146,8 @@
 					@click="acceptTDD"
 					outline
 					color="p_blue"
-					class="title ec-button">
+					:class="{'disable-click': decisionMade}"
+					class="title ec-button accept-tdd-btn">
 					ACCEPT
 				</v-btn>
 
@@ -143,7 +155,8 @@
 					v-if="miniStageStatus(3) != 'Pending' && downloadClicked"
 					outline
 					color="p_red"
-					class="title ec-button">
+					:class="{'disable-click': true}"
+					class="title ec-button reject-tdd-btn">
 					REJECT
 				</v-btn>
 
@@ -184,7 +197,8 @@ export default {
 			ttdHash: '',
 			ttdUploaded: false,
 			selectedAddr: '',
-			downloadClicked: false
+			downloadClicked: false,
+			decisionMade: false
 		}
 	},
 
@@ -246,6 +260,7 @@ export default {
 		},
 
 		async acceptTTD () {
+			this.decisionMade = true
 			let ttdHash = this.session.stages['4'].mini_stages['1'].title_transfer_document_hash
 			let price = this.property.details.listing_price / 1000
 			let sessionIdHash = await web3.utils.sha3(this.session._id)
@@ -258,10 +273,14 @@ export default {
 			}).on('confirmation', (confirmationNumber, receipt) => {
 				console.log(receipt)
 				this.$router.push('/buyer/sessions/')
-			}).catch((error) => console.log(error))
+			}).catch((error) => {
+				console.log(error)
+				this.decisionMade = false
+			})
 		},
 
 		async acceptTDD () {
+			this.decisionMade = true
 			let requestUrl = `http://localhost:3000/api/sessions/${this.session._id}/title-deed/tdd`
 			let config = { headers: { Authorization: 'a1b2c3d4e5f6g7' } }
 			axios.get(requestUrl, config).then(async (response) => {
@@ -279,7 +298,13 @@ export default {
 						}
 					}
 					this.updateSession(updateOptions, true)
+				}).catch((error) => {
+					console.log(error)
+					this.decisionMade = false
 				})
+			}).catch((error) => {
+				console.log(error)
+				this.decisionMade = false
 			})
 		},
 
@@ -479,6 +504,34 @@ export default {
 .ec-ms2-card {
 	border-radius: 25px;
 }
+
+.ec-ms3-card {
+	border-radius: 25px;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(2, minmax(1fr, auto));
+	grid-gap: 2vmax;
+}
+
+	.tdd-info {
+		grid-column: 1 / 3;
+		grid-row: 1;
+	}
+
+	.download-tdd-btn {
+		grid-column: 3;
+		grid-row: 1;
+	}
+
+	.accept-tdd-btn {
+		grid-column: 3;
+		grid-row: 2;
+	}
+
+	.reject-tdd-btn {
+		grid-column: 2;
+		grid-row: 2;
+	}
 
 .ec-button {
 	height: 10vh;
