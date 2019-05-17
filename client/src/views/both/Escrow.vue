@@ -56,6 +56,7 @@
 					@click="$refs.ecFileInput.click()"
 					outline
 					color="p_purple"
+					:class="{'disable-click': decisionMade}"
 					class="title ec-button upload-ttd-btn">
 					UPLOAD DOCUMENT
 				</v-btn>
@@ -69,6 +70,7 @@
 					@click="createEscrow"
 					outline
 					color="p_blue"
+					:class="{'disable-click': decisionMade}"
 					class="title ec-button create-escrow-btn">
 					CREATE ESCROW
 				</v-btn>
@@ -106,6 +108,7 @@
 					@click="requestTitleTransfer"
 					outline
 					color="p_blue"
+					:class="{'disable-click': decisionMade}"
 					class="title ec-button ec-request-tt-btn">
 					REQUEST TITLE TRANSFER
 				</v-btn>
@@ -167,7 +170,29 @@
 			<v-card
 				v-if="activeMiniStage == 4"
 				class="primary p_text--text pa-4 ec-ms4-card display-1">
-				Mini stage 4
+
+				<div class="ec-finish-date headline">
+					Finish date:
+				</div>
+				<div class="ec-finish-date-value headline p_yellow--text">
+					{{ session.stages['4'].mini_stages['4'].finished_at }}
+				</div>
+
+				<div
+					v-if="user_type == 'buyer' && miniStageStatus(4) == 'Completed'"
+					class="download-tdo-info headline">
+					Final title deed copy:
+				</div>
+
+				<v-btn
+					v-if="user_type == 'buyer' && miniStageStatus(4) == 'Completed'"
+					@click="downloadDocument('tdo')"
+					outline
+					color="p_orange"
+					class="title ec-button download-tdo-btn">
+					DOWNLOAD
+				</v-btn>
+
 			</v-card>
 
 			<v-btn
@@ -311,6 +336,7 @@ export default {
 		},
 
 		async createEscrow () {
+			this.decisionMade = true
 			if (this.selectedAddr !== '') {
 				if (this.selectedAddr === this.user_object.account_address) {
 					let sessionIdHash = await web3.utils.sha3(this.session._id)
@@ -319,16 +345,22 @@ export default {
 						gasPrice: web3.utils.toWei('42', 'gwei')
 					}).once('confirmation', (confirmationNumber, receipt) => {
 						this.$router.push('/seller/sessions/')
-					}).catch((error) => console.log(error))
+					}).catch((error) => {
+						console.log(error)
+						this.decisionMade = false
+					})
 				} else {
 					alert('Please switch accounts to the one you used during registration')
+					this.decisionMade = false
 				}
 			} else {
 				alert('Please login to metamask to continue')
+				this.decisionMade = false
 			}
 		},
 
 		async requestTitleTransfer () {
+			this.decisionMade = true
 			let updateOptions = {
 				$set: {
 					'stages.4.mini_stages.1.status': 'Completed',
@@ -343,7 +375,10 @@ export default {
 				from: this.selectedAddr
 			}).once('confirmation', (confirmationNumber, receipt) => {
 				console.log(receipt)
-			}).catch((error) => console.log(error))
+			}).catch((error) => {
+				console.log(error)
+				this.decisionMade = false
+			})
 
 			this.updateSession(updateOptions, false)
 		},
@@ -531,6 +566,36 @@ export default {
 	}
 
 	.reject-tdd-btn {
+		grid-column: 2;
+		grid-row: 2;
+	}
+
+.ec-ms4-card {
+	border-radius: 25px;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(2, minmax(1fr, auto));
+	grid-gap: 2vmax;
+	justify-items: center;
+	align-items: center;
+}
+
+	.ec-finish-date {
+		grid-column: 1;
+		grid-row: 1;
+	}
+
+	.ec-finish-date-value {
+		grid-column: 2;
+		grid-row: 1;
+	}
+
+	.download-tdo-info {
+		grid-column: 1;
+		grid-row: 2;
+	}
+
+	.download-tdo-btn {
 		grid-column: 2;
 		grid-row: 2;
 	}

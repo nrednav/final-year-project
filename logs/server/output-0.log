@@ -1593,3 +1593,646 @@ gRM4 ——> OPTIONS /api/properties/5cdf1611c8f28350063e626f
 gRM4 <—— 204 No Content (<—> 1.0 ms)
 bL9j ——> GET /api/properties/5cdf1611c8f28350063e626f 
 bL9j <—— 304 Not Modified (<—> 9.5 ms)
+E9w1 ——> OPTIONS /api/users/5cdf1536c8f28350063e6264/buyer/sessions 
+E9w1 <—— 204 No Content (<—> 4.4 ms)
+8MSv ——> GET /api/users/5cdf1536c8f28350063e6264/buyer/sessions 
+8MSv <—— 200 OK 15 B application/json; charset=utf-8 (<—> 44.1 ms)
+SLQj ——> OPTIONS /api/properties/find-by-ids 
+SLQj <—— 204 No Content (<—> 0.7 ms)
+sMkY ——> POST /api/properties/find-by-ids 20 B application/json;charset=utf-8
+sMkY <—— 200 OK 17 B application/json; charset=utf-8 (<—> 7.7 ms)
+0E7a ——> OPTIONS / 
+0E7a <—— 204 No Content (<—> 0.7 ms)
+0Yjp ——> GET / 
+0Yjp <—— 304 Not Modified (<—> 1.7 ms)
+mZqG ——> OPTIONS /api/users/get/5cdf1536c8f28350063e6264 
+mZqG <—— 204 No Content (<—> 0.6 ms)
+Qmdm ——> GET /api/users/get/5cdf1536c8f28350063e6264 
+Qmdm <—— 304 Not Modified (<—> 6.2 ms)
+Xvvi ——> OPTIONS /api/users/5cdf159fc8f28350063e6266/properties 
+Xvvi <—— 204 No Content (<—> 10.9 ms)
+IYNr ——> GET /api/users/5cdf159fc8f28350063e6266/properties 
+IYNr <—— 304 Not Modified (<—> 27.1 ms)
+CaQS ——> OPTIONS / 
+CaQS <—— 204 No Content (<—> 2.7 ms)
+62mK ——> GET / 
+62mK <—— 304 Not Modified (<—> 12.9 ms)
+JFEW ——> OPTIONS /api/users/get/5cdf159fc8f28350063e6266 
+JFEW <—— 204 No Content (<—> 1.0 ms)
+zyKP ——> GET /api/users/get/5cdf159fc8f28350063e6266 
+zyKP <—— 304 Not Modified (<—> 17.6 ms)
+yApD ——> OPTIONS / 
+yApD <—— 204 No Content (<—> 12.3 ms)
+Pnyz ——> OPTIONS / 
+Pnyz <—— 204 No Content (<—> 30.5 ms)
+90Po ——> GET / 
+90Po <—— 304 Not Modified (<—> 35.5 ms)
+S0J6 ——> GET / 
+hzdt ——> OPTIONS /api/users/get/5cdf1536c8f28350063e6264 
+hzdt <—— 204 No Content (<—> 3.8 ms)
+Auqp ——> GET /api/users/get/5cdf1536c8f28350063e6264 
+S0J6 <—— 304 Not Modified (<—> 43.6 ms)
+BMUe ——> OPTIONS /api/users/get/5cdf159fc8f28350063e6266 
+BMUe <—— 204 No Content (<—> 3.0 ms)
+Auqp <—— 304 Not Modified (<—> 57.0 ms)
+6mqy ——> GET /api/users/get/5cdf159fc8f28350063e6266 
+6mqy <—— 304 Not Modified (<—> 60.5 ms)
+CrZx ——> OPTIONS / 
+CrZx <—— 204 No Content (<—> 40.1 ms)
+xT9U ——> GET / 
+xT9U <—— 304 Not Modified (<—> 41.6 ms)
+7QbX ——> OPTIONS /api/users/get/5cdf1536c8f28350063e6264 
+7QbX <—— 204 No Content (<—> 30.8 ms)
+RPWH ——> GET /api/users/get/5cdf1536c8f28350063e6264 
+3Mts ——> OPTIONS / 
+3Mts <—— 204 No Content (<—> 2.3 ms)
+Owyn ——> GET / 
+RPWH <—— 304 Not Modified (<—> 36.9 ms)
+Owyn <—— 304 Not Modified (<—> 82.2 ms)
+ssjD ——> OPTIONS /api/users/get/5cdf159fc8f28350063e6266 
+ssjD <—— 204 No Content (<—> 12.6 ms)
+VYnv ——> GET /api/users/get/5cdf159fc8f28350063e6266 
+VYnv <—— 304 Not Modified (<—> 19.6 ms)
+h7i4 ——> OPTIONS / 
+h7i4 <—— 204 No Content (<—> 0.8 ms)
+cYNM ——> GET / 
+cYNM <—— 304 Not Modified (<—> 1.8 ms)
+3ZAO ——> OPTIONS /api/users/get/5cdf159fc8f28350063e6266 
+3ZAO <—— 204 No Content (<—> 1.1 ms)
+npPO ——> GET /api/users/get/5cdf159fc8f28350063e6266 
+npPO <—— 304 Not Modified (<—> 12.3 ms)
+4UMX ——> OPTIONS /api/users/5cdf1536c8f28350063e6264/buyer/sessions 
+4UMX <—— 204 No Content (<—> 0.6 ms)
+66p6 ——> GET /api/users/5cdf1536c8f28350063e6264/buyer/sessions 
+66p6 <—— 304 Not Modified (<—> 10.2 ms)
+Ocpb ——> OPTIONS /api/properties/find-by-ids 
+Ocpb <—— 204 No Content (<—> 0.9 ms)
+Jdkg ——> POST /api/properties/find-by-ids 20 B application/json;charset=utf-8
+Jdkg <—— 200 OK 17 B application/json; charset=utf-8 (<—> 5.7 ms)
+c9JO ——> OPTIONS / 
+c9JO <—— 204 No Content (<—> 0.9 ms)
+ykEU ——> GET / 
+ykEU <—— 304 Not Modified (<—> 1.9 ms)
+tZVd ——> OPTIONS /api/users/get/5cdf1536c8f28350063e6264 
+tZVd <—— 204 No Content (<—> 0.9 ms)
+pwfF ——> GET /api/users/get/5cdf1536c8f28350063e6264 
+pwfF <—— 304 Not Modified (<—> 7.2 ms)
+qSjC ——> OPTIONS / 
+qSjC <—— 204 No Content (<—> 0.7 ms)
+Duiz ——> GET / 
+Duiz <—— 304 Not Modified (<—> 1.6 ms)
+lJEW ——> OPTIONS /api/users/get/5cdf1536c8f28350063e6264 
+lJEW <—— 204 No Content (<—> 0.7 ms)
+5vjS ——> GET /api/users/get/5cdf1536c8f28350063e6264 
+5vjS <—— 304 Not Modified (<—> 6.4 ms)
+pxP1 ——> OPTIONS /api/users/5cdf1536c8f28350063e6264/seller/sessions 
+pxP1 <—— 204 No Content (<—> 1.1 ms)
+8L5l ——> GET /api/users/5cdf1536c8f28350063e6264/seller/sessions 
+8L5l <—— 304 Not Modified (<—> 14.2 ms)
+Ugrw ——> OPTIONS /api/properties/find-by-ids 
+Ugrw <—— 204 No Content (<—> 0.6 ms)
+zSgk ——> POST /api/properties/find-by-ids 48 B application/json;charset=utf-8
+zSgk <—— 200 OK 592 B application/json; charset=utf-8 (<—> 7.3 ms)
+1pWl ——> OPTIONS / 
+1pWl <—— 204 No Content (<—> 14.2 ms)
+LbQe ——> GET / 
+LbQe <—— 304 Not Modified (<—> 22.9 ms)
+XER3 ——> OPTIONS /api/users/get/5cdf159fc8f28350063e6266 
+XER3 <—— 204 No Content (<—> 1.0 ms)
+rwCD ——> GET /api/users/get/5cdf159fc8f28350063e6266 
+rwCD <—— 304 Not Modified (<—> 10.3 ms)
+Lc5H ——> OPTIONS /api/users/5cdf159fc8f28350063e6266/buyer/sessions 
+Lc5H <—— 204 No Content (<—> 0.8 ms)
+ovND ——> GET /api/users/5cdf159fc8f28350063e6266/buyer/sessions 
+ovND <—— 304 Not Modified (<—> 40.0 ms)
+eCCp ——> OPTIONS /api/properties/find-by-ids 
+eCCp <—— 204 No Content (<—> 11.0 ms)
+NTMB ——> POST /api/properties/find-by-ids 48 B application/json;charset=UTF-8
+NTMB <—— 200 OK 592 B application/json; charset=utf-8 (<—> 34.4 ms)
+Ka8Q ——> OPTIONS /api/sessions/get/5cdf1667c8f28350063e6273 
+Ka8Q <—— 204 No Content (<—> 0.8 ms)
+2g5D ——> GET /api/sessions/get/5cdf1667c8f28350063e6273 
+2g5D <—— 304 Not Modified (<—> 15.7 ms)
+CDGf ——> OPTIONS /api/properties/5cdf1611c8f28350063e626f 
+CDGf <—— 204 No Content (<—> 61.8 ms)
+xvQF ——> GET /api/properties/5cdf1611c8f28350063e626f 
+xvQF <—— 304 Not Modified (<—> 82.7 ms)
+I9YG ——> OPTIONS /api/sessions/get/5cdf1667c8f28350063e6273 
+I9YG <—— 204 No Content (<—> 0.7 ms)
+s9rc ——> GET /api/sessions/get/5cdf1667c8f28350063e6273 
+s9rc <—— 304 Not Modified (<—> 7.3 ms)
+Wk9i ——> OPTIONS /api/properties/5cdf1611c8f28350063e626f 
+Wk9i <—— 204 No Content (<—> 1.1 ms)
+y7cJ ——> GET /api/properties/5cdf1611c8f28350063e626f 
+y7cJ <—— 304 Not Modified (<—> 7.1 ms)
+SRTd ——> OPTIONS /api/properties/5cdf1611c8f28350063e626f 
+SRTd <—— 204 No Content (<—> 1.2 ms)
+KIKo ——> GET /api/properties/5cdf1611c8f28350063e626f 
+KIKo <—— 304 Not Modified (<—> 7.3 ms)
+zTOp ——> OPTIONS /api/properties/5cdf1611c8f28350063e626f 
+zTOp <—— 204 No Content (<—> 1.1 ms)
+wkIn ——> GET /api/properties/5cdf1611c8f28350063e626f 
+wkIn <—— 304 Not Modified (<—> 8.5 ms)
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+
+> server@0.0.0 dev /c/Users/Vandern Rodrigues/Projects/fyp/server
+> nodemon ./bin/www
+
+[33m[nodemon] 1.19.0[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching: *.*[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+ZaeQ ——> OPTIONS /api/sessions/get/5cdf1667c8f28350063e6273 
+ZaeQ <—— 204 No Content (<—> 7.0 ms)
+Pcf4 ——> GET /api/sessions/get/5cdf1667c8f28350063e6273 
+Pcf4 <—— 304 Not Modified (<—> 56.7 ms)
+RZBX ——> OPTIONS /api/properties/5cdf1611c8f28350063e626f 
+RZBX <—— 204 No Content (<—> 14.8 ms)
+nxz4 ——> GET /api/properties/5cdf1611c8f28350063e626f 
+nxz4 <—— 304 Not Modified (<—> 44.2 ms)
+xXMu ——> OPTIONS /api/sessions/5cdf1667c8f28350063e6273/title-deed/tdo 
+xXMu <—— 204 No Content (<—> 38.4 ms)
+z3qt ——> GET /api/sessions/5cdf1667c8f28350063e6273/title-deed/tdo 
+z3qt <—— 200 OK application/pdf (<—> 126.7 ms)
+E98F ——> OPTIONS /api/properties/5cdf1611c8f28350063e626f 
+E98F <—— 204 No Content (<—> 1.1 ms)
+qGEl ——> GET /api/properties/5cdf1611c8f28350063e626f 
+qGEl <—— 304 Not Modified (<—> 13.6 ms)
+55XP ——> OPTIONS /api/properties/5cdf1611c8f28350063e626f 
+55XP <—— 204 No Content (<—> 1.6 ms)
+OG5T ——> GET /api/properties/5cdf1611c8f28350063e626f 
+OG5T <—— 200 OK 586 B application/json; charset=utf-8 (<—> 12.4 ms)
+d0t3 ——> OPTIONS /api/properties/5cdf1611c8f28350063e626f 
+d0t3 <—— 204 No Content (<—> 0.9 ms)
+r5KV ——> GET /api/properties/5cdf1611c8f28350063e626f 
+r5KV <—— 304 Not Modified (<—> 8.9 ms)
+fkhI ——> OPTIONS /api/properties/5cdf1611c8f28350063e626f 
+fkhI <—— 204 No Content (<—> 1.9 ms)
+Ty7f ——> GET /api/properties/5cdf1611c8f28350063e626f 
+Ty7f <—— 200 OK 586 B application/json; charset=utf-8 (<—> 9.2 ms)
+a5d7 ——> OPTIONS /api/properties/5cdf1611c8f28350063e626f 
+a5d7 <—— 204 No Content (<—> 1.7 ms)
+Nsgc ——> GET /api/properties/5cdf1611c8f28350063e626f 
+Nsgc <—— 304 Not Modified (<—> 42.9 ms)
+onfH ——> OPTIONS /api/properties/5cdf1611c8f28350063e626f 
+onfH <—— 204 No Content (<—> 1.6 ms)
+OcPT ——> GET /api/properties/5cdf1611c8f28350063e626f 
+OcPT <—— 200 OK 586 B application/json; charset=utf-8 (<—> 51.3 ms)
+StsZ ——> OPTIONS /api/properties/5cdf1611c8f28350063e626f 
+StsZ <—— 204 No Content (<—> 0.9 ms)
+SI9t ——> GET /api/properties/5cdf1611c8f28350063e626f 
+SI9t <—— 304 Not Modified (<—> 10.8 ms)
+bOTL ——> OPTIONS /api/properties/5cdf1611c8f28350063e626f 
+bOTL <—— 204 No Content (<—> 3.2 ms)
+UoqU ——> GET /api/properties/5cdf1611c8f28350063e626f 
+UoqU <—— 200 OK 586 B application/json; charset=utf-8 (<—> 7.7 ms)
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+
+> server@0.0.0 dev /c/Users/Vandern Rodrigues/Projects/fyp/server
+> nodemon ./bin/www
+
+[33m[nodemon] 1.19.0[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching: *.*[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+ed5D ——> OPTIONS /api/properties/5cdf1611c8f28350063e626f 
+ed5D <—— 204 No Content (<—> 12.8 ms)
+62Rj ——> GET /api/properties/5cdf1611c8f28350063e626f 
+62Rj <—— 200 OK 586 B application/json; charset=utf-8 (<—> 134.8 ms)
+ALnC ——> OPTIONS /api/sessions/get/5cdf1667c8f28350063e6273 
+ALnC <—— 204 No Content (<—> 2.6 ms)
+LPsI ——> GET /api/sessions/get/5cdf1667c8f28350063e6273 
+LPsI <—— 200 OK 1.58 KB application/json; charset=utf-8 (<—> 13.1 ms)
+Me1f ——> OPTIONS /api/properties/5cdf1611c8f28350063e626f 
+Me1f <—— 204 No Content (<—> 0.8 ms)
+sqNi ——> GET /api/properties/5cdf1611c8f28350063e626f 
+sqNi <—— 304 Not Modified (<—> 7.6 ms)
+GEII ——> OPTIONS /api/sessions/get/5cdf1667c8f28350063e6273 
+GEII <—— 204 No Content (<—> 81.8 ms)
+J9OC ——> GET /api/sessions/get/5cdf1667c8f28350063e6273 
+J9OC <—— 200 OK 1.58 KB application/json; charset=utf-8 (<—> 134.8 ms)
+dJWK ——> OPTIONS /api/properties/5cdf1611c8f28350063e626f 
+dJWK <—— 204 No Content (<—> 5.7 ms)
+2yk0 ——> GET /api/properties/5cdf1611c8f28350063e626f 
+2yk0 <—— 200 OK 586 B application/json; charset=utf-8 (<—> 16.9 ms)
+MJfi ——> OPTIONS /api/sessions/get/5cdf1667c8f28350063e6273 
+MJfi <—— 204 No Content (<—> 0.8 ms)
+E4vo ——> GET /api/sessions/get/5cdf1667c8f28350063e6273 
+E4vo <—— 304 Not Modified (<—> 12.4 ms)
+Kmfo ——> OPTIONS /api/properties/5cdf1611c8f28350063e626f 
+Kmfo <—— 204 No Content (<—> 0.9 ms)
+3qJc ——> GET /api/properties/5cdf1611c8f28350063e626f 
+3qJc <—— 304 Not Modified (<—> 11.4 ms)
+tt59 ——> GET /api/sessions/get/5cdf1667c8f28350063e6273 
+tt59 <—— 304 Not Modified (<—> 15.0 ms)
+HXFl ——> OPTIONS /api/properties/5cdf1611c8f28350063e626f 
+HXFl <—— 204 No Content (<—> 2.6 ms)
+GPsW ——> GET /api/properties/5cdf1611c8f28350063e626f 
+GPsW <—— 304 Not Modified (<—> 7.7 ms)
+0iwK ——> OPTIONS /api/sessions/get/5cdf1667c8f28350063e6273 
+0iwK <—— 204 No Content (<—> 0.7 ms)
+sFrv ——> GET /api/sessions/get/5cdf1667c8f28350063e6273 
+sFrv <—— 200 OK 1.57 KB application/json; charset=utf-8 (<—> 8.0 ms)
+dire ——> OPTIONS /api/properties/5cdf1611c8f28350063e626f 
+dire <—— 204 No Content (<—> 0.9 ms)
+SK6S ——> GET /api/properties/5cdf1611c8f28350063e626f 
+SK6S <—— 304 Not Modified (<—> 7.3 ms)
+bOEY ——> OPTIONS /api/properties/5cdf1611c8f28350063e626f 
+bOEY <—— 204 No Content (<—> 4.8 ms)
+upxT ——> GET /api/properties/5cdf1611c8f28350063e626f 
+upxT <—— 304 Not Modified (<—> 15.3 ms)
+TZb9 ——> OPTIONS /api/sessions/get/5cdf1667c8f28350063e6273 
+TZb9 <—— 204 No Content (<—> 2.5 ms)
+s052 ——> GET /api/sessions/get/5cdf1667c8f28350063e6273 
+s052 <—— 200 OK 1.57 KB application/json; charset=utf-8 (<—> 27.8 ms)
+yhlv ——> OPTIONS /api/properties/5cdf1611c8f28350063e626f 
+yhlv <—— 204 No Content (<—> 3.2 ms)
+DgB2 ——> GET /api/properties/5cdf1611c8f28350063e626f 
+DgB2 <—— 304 Not Modified (<—> 17.2 ms)
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+
+> server@0.0.0 dev /c/Users/Vandern Rodrigues/Projects/fyp/server
+> nodemon ./bin/www
+
+[33m[nodemon] 1.19.0[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching: *.*[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+
+> server@0.0.0 dev /c/Users/Vandern Rodrigues/Projects/fyp/server
+> nodemon ./bin/www
+
+[33m[nodemon] 1.19.0[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching: *.*[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+iKJu ——> OPTIONS /api/users/5cdf1536c8f28350063e6264/seller/sessions 
+iKJu <—— 204 No Content (<—> 4.5 ms)
+1hho ——> GET /api/users/5cdf1536c8f28350063e6264/seller/sessions 
+1hho <—— 200 OK 1.58 KB application/json; charset=utf-8 (<—> 95.4 ms)
+tWdh ——> OPTIONS /api/properties/find-by-ids 
+tWdh <—— 204 No Content (<—> 1.1 ms)
+9xIG ——> POST /api/properties/find-by-ids 48 B application/json;charset=utf-8
+9xIG <—— 200 OK 592 B application/json; charset=utf-8 (<—> 100.2 ms)
+nf6G ——> OPTIONS /api/sessions/get/5cdf1667c8f28350063e6273 
+nf6G <—— 204 No Content (<—> 1.0 ms)
+QVO3 ——> GET /api/sessions/get/5cdf1667c8f28350063e6273 
+QVO3 <—— 200 OK 1.57 KB application/json; charset=utf-8 (<—> 13.7 ms)
+YxEG ——> OPTIONS /api/properties/5cdf1611c8f28350063e626f 
+YxEG <—— 204 No Content (<—> 0.9 ms)
+5LAw ——> GET /api/properties/5cdf1611c8f28350063e626f 
+5LAw <—— 304 Not Modified (<—> 6.9 ms)
+em4h ——> OPTIONS /api/sessions/get/5cdf1667c8f28350063e6273 
+em4h <—— 204 No Content (<—> 0.9 ms)
+vYNn ——> GET /api/sessions/get/5cdf1667c8f28350063e6273 
+vYNn <—— 304 Not Modified (<—> 9.4 ms)
+7l5B ——> OPTIONS /api/users/5cdf159fc8f28350063e6266/buyer/sessions 
+7l5B <—— 204 No Content (<—> 1.8 ms)
+ZErz ——> GET /api/users/5cdf159fc8f28350063e6266/buyer/sessions 
+ZErz <—— 200 OK 1.58 KB application/json; charset=utf-8 (<—> 41.0 ms)
+qwE4 ——> OPTIONS /api/properties/find-by-ids 
+qwE4 <—— 204 No Content (<—> 2.6 ms)
+pBBs ——> POST /api/properties/find-by-ids 48 B application/json;charset=UTF-8
+pBBs <—— 200 OK 592 B application/json; charset=utf-8 (<—> 14.9 ms)
+uUAG ——> OPTIONS /api/sessions/get/5cdf1667c8f28350063e6273 
+uUAG <—— 204 No Content (<—> 1.4 ms)
+VSgE ——> GET /api/sessions/get/5cdf1667c8f28350063e6273 
+VSgE <—— 200 OK 1.57 KB application/json; charset=utf-8 (<—> 13.2 ms)
+s6m0 ——> OPTIONS /api/properties/5cdf1611c8f28350063e626f 
+s6m0 <—— 204 No Content (<—> 1.0 ms)
+Ce6n ——> GET /api/properties/5cdf1611c8f28350063e626f 
+Ce6n <—— 304 Not Modified (<—> 11.9 ms)
+p2Wv ——> OPTIONS /api/sessions/5cdf1667c8f28350063e6273/title-deed/tdo 
+p2Wv <—— 204 No Content (<—> 2.4 ms)
+dxCv ——> GET /api/sessions/5cdf1667c8f28350063e6273/title-deed/tdo 
+dxCv <—— 200 OK application/pdf (<—> 55.3 ms)
+wfUK ——> OPTIONS /api/sessions/get/5cdf1667c8f28350063e6273 
+wfUK <—— 204 No Content (<—> 4.2 ms)
+HuiL ——> GET /api/sessions/get/5cdf1667c8f28350063e6273 
+HuiL <—— 304 Not Modified (<—> 21.4 ms)
+qgQf ——> OPTIONS /api/users/5cdf159fc8f28350063e6266/buyer/sessions 
+qgQf <—— 204 No Content (<—> 4.7 ms)
+97r9 ——> GET /api/users/5cdf159fc8f28350063e6266/buyer/sessions 
+97r9 <—— 304 Not Modified (<—> 36.2 ms)
+sAl3 ——> OPTIONS /api/properties/find-by-ids 
+sAl3 <—— 204 No Content (<—> 1.8 ms)
+PIr1 ——> POST /api/properties/find-by-ids 48 B application/json;charset=UTF-8
+PIr1 <—— 200 OK 592 B application/json; charset=utf-8 (<—> 12.1 ms)
+qMA7 ——> OPTIONS /api/users/5cdf1536c8f28350063e6264/seller/sessions 
+qMA7 <—— 204 No Content (<—> 0.7 ms)
+gT3Z ——> GET /api/users/5cdf1536c8f28350063e6264/seller/sessions 
+gT3Z <—— 304 Not Modified (<—> 13.4 ms)
+XpCU ——> OPTIONS /api/properties/find-by-ids 
+XpCU <—— 204 No Content (<—> 0.9 ms)
+XNv6 ——> POST /api/properties/find-by-ids 48 B application/json;charset=utf-8
+XNv6 <—— 200 OK 592 B application/json; charset=utf-8 (<—> 8.8 ms)
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+
+> server@0.0.0 dev /c/Users/Vandern Rodrigues/Projects/fyp/server
+> nodemon ./bin/www
+
+[33m[nodemon] 1.19.0[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching: *.*[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+nQTK ——> OPTIONS / 
+nQTK <—— 204 No Content (<—> 4.6 ms)
+axNy ——> GET / 
+axNy <—— 304 Not Modified (<—> 16.1 ms)
+35YN ——> OPTIONS /api/users/get/5cdf1536c8f28350063e6264 
+35YN <—— 204 No Content (<—> 0.7 ms)
+ssLZ ——> GET /api/users/get/5cdf1536c8f28350063e6264 
+ssLZ <—— 304 Not Modified (<—> 38.9 ms)
+29Sd ——> OPTIONS / 
+29Sd <—— 204 No Content (<—> 3.6 ms)
+O7P0 ——> GET / 
+O7P0 <—— 304 Not Modified (<—> 1.6 ms)
+94bK ——> OPTIONS /api/users/get/5cdf159fc8f28350063e6266 
+94bK <—— 204 No Content (<—> 1.0 ms)
+F24t ——> GET /api/users/get/5cdf159fc8f28350063e6266 
+F24t <—— 304 Not Modified (<—> 15.4 ms)
+NKh1 ——> OPTIONS / 
+NKh1 <—— 204 No Content (<—> 0.6 ms)
+wHy4 ——> GET / 
+wHy4 <—— 304 Not Modified (<—> 5.2 ms)
+nqcx ——> OPTIONS /api/users/get/5cdf159fc8f28350063e6266 
+nqcx <—— 204 No Content (<—> 1.1 ms)
+hm8Y ——> GET /api/users/get/5cdf159fc8f28350063e6266 
+hm8Y <—— 304 Not Modified (<—> 13.6 ms)
+a7PB ——> OPTIONS / 
+a7PB <—— 204 No Content (<—> 0.9 ms)
+88Ld ——> GET / 
+88Ld <—— 304 Not Modified (<—> 1.6 ms)
+KqeG ——> OPTIONS /api/users/get/5cdf1536c8f28350063e6264 
+KqeG <—— 204 No Content (<—> 0.6 ms)
+1B1f ——> GET /api/users/get/5cdf1536c8f28350063e6264 
+1B1f <—— 304 Not Modified (<—> 6.6 ms)
+StFT ——> OPTIONS / 
+StFT <—— 204 No Content (<—> 1.0 ms)
+9LcF ——> GET / 
+9LcF <—— 304 Not Modified (<—> 1.5 ms)
+EKPI ——> OPTIONS /api/users/get/5cdf159fc8f28350063e6266 
+EKPI <—— 204 No Content (<—> 1.3 ms)
+Mw80 ——> GET /api/users/get/5cdf159fc8f28350063e6266 
+Mw80 <—— 304 Not Modified (<—> 7.8 ms)
+fGU8 ——> OPTIONS / 
+fGU8 <—— 204 No Content (<—> 0.5 ms)
+N71e ——> GET / 
+N71e <—— 304 Not Modified (<—> 1.4 ms)
+A3U7 ——> OPTIONS /api/users/get/5cdf1536c8f28350063e6264 
+A3U7 <—— 204 No Content (<—> 0.8 ms)
+JTMY ——> GET /api/users/get/5cdf1536c8f28350063e6264 
+JTMY <—— 304 Not Modified (<—> 7.8 ms)
+5Rkk ——> OPTIONS / 
+5Rkk <—— 204 No Content (<—> 1.6 ms)
+gzfn ——> GET / 
+gzfn <—— 304 Not Modified (<—> 1.5 ms)
+nBy0 ——> OPTIONS /api/users/get/5cdf159fc8f28350063e6266 
+nBy0 <—— 204 No Content (<—> 0.6 ms)
+fzQh ——> GET /api/users/get/5cdf159fc8f28350063e6266 
+fzQh <—— 304 Not Modified (<—> 6.4 ms)
+ivNj ——> OPTIONS / 
+ivNj <—— 204 No Content (<—> 0.6 ms)
+FAzw ——> GET / 
+FAzw <—— 304 Not Modified (<—> 1.3 ms)
+pjPO ——> OPTIONS /api/users/get/5cdf1536c8f28350063e6264 
+pjPO <—— 204 No Content (<—> 1.0 ms)
+Wx8f ——> GET /api/users/get/5cdf1536c8f28350063e6264 
+Wx8f <—— 304 Not Modified (<—> 6.8 ms)
+mGrG ——> OPTIONS / 
+mGrG <—— 204 No Content (<—> 1.0 ms)
+JZeB ——> GET / 
+JZeB <—— 304 Not Modified (<—> 1.3 ms)
+7Qkh ——> OPTIONS /api/users/get/5cdf159fc8f28350063e6266 
+7Qkh <—— 204 No Content (<—> 0.6 ms)
+5MMc ——> GET /api/users/get/5cdf159fc8f28350063e6266 
+5MMc <—— 304 Not Modified (<—> 6.7 ms)
+utIT ——> OPTIONS / 
+utIT <—— 204 No Content (<—> 1.0 ms)
+rGBe ——> GET / 
+rGBe <—— 304 Not Modified (<—> 1.6 ms)
+hO5R ——> OPTIONS /api/users/get/5cdf1536c8f28350063e6264 
+hO5R <—— 204 No Content (<—> 0.8 ms)
+w4Uv ——> GET /api/users/get/5cdf1536c8f28350063e6264 
+w4Uv <—— 304 Not Modified (<—> 6.5 ms)
+i0lp ——> OPTIONS / 
+i0lp <—— 204 No Content (<—> 1.0 ms)
+nBbh ——> GET / 
+nBbh <—— 304 Not Modified (<—> 3.7 ms)
+EjhP ——> OPTIONS /api/users/get/5cdf159fc8f28350063e6266 
+EjhP <—— 204 No Content (<—> 1.0 ms)
+Vbgg ——> GET /api/users/get/5cdf159fc8f28350063e6266 
+Vbgg <—— 304 Not Modified (<—> 7.7 ms)
+qw8Z ——> OPTIONS / 
+qw8Z <—— 204 No Content (<—> 1.2 ms)
+FpyS ——> GET / 
+FpyS <—— 304 Not Modified (<—> 2.5 ms)
+O8g0 ——> OPTIONS /api/users/get/5cdf159fc8f28350063e6266 
+O8g0 <—— 204 No Content (<—> 1.4 ms)
+ZF6F ——> GET /api/users/get/5cdf159fc8f28350063e6266 
+ZF6F <—— 304 Not Modified (<—> 8.8 ms)
+zcj9 ——> OPTIONS / 
+zcj9 <—— 204 No Content (<—> 0.7 ms)
+GSuP ——> GET / 
+GSuP <—— 304 Not Modified (<—> 2.3 ms)
+cHrI ——> OPTIONS /api/users/get/5cdf1536c8f28350063e6264 
+cHrI <—— 204 No Content (<—> 0.8 ms)
+Dieu ——> GET /api/users/get/5cdf1536c8f28350063e6264 
+Dieu <—— 304 Not Modified (<—> 8.2 ms)
+NpZF ——> OPTIONS / 
+NpZF <—— 204 No Content (<—> 1.5 ms)
+XAqy ——> GET / 
+XAqy <—— 304 Not Modified (<—> 3.0 ms)
+igvy ——> OPTIONS /api/users/get/5cdf1536c8f28350063e6264 
+igvy <—— 204 No Content (<—> 0.8 ms)
+STva ——> GET /api/users/get/5cdf1536c8f28350063e6264 
+STva <—— 304 Not Modified (<—> 5.8 ms)
+4Xhi ——> OPTIONS / 
+4Xhi <—— 204 No Content (<—> 0.7 ms)
+eszB ——> GET / 
+eszB <—— 304 Not Modified (<—> 1.6 ms)
+NVoH ——> OPTIONS /api/users/get/5cdf159fc8f28350063e6266 
+NVoH <—— 204 No Content (<—> 0.5 ms)
+4E8C ——> GET /api/users/get/5cdf159fc8f28350063e6266 
+4E8C <—— 304 Not Modified (<—> 8.1 ms)
+uBfs ——> OPTIONS / 
+uBfs <—— 204 No Content (<—> 0.6 ms)
+asMf ——> GET / 
+asMf <—— 304 Not Modified (<—> 3.4 ms)
+0lUN ——> OPTIONS /api/users/get/5cdf1536c8f28350063e6264 
+0lUN <—— 204 No Content (<—> 0.6 ms)
+Ro5n ——> GET /api/users/get/5cdf1536c8f28350063e6264 
+Ro5n <—— 304 Not Modified (<—> 7.0 ms)
+ELgS ——> OPTIONS / 
+ELgS <—— 204 No Content (<—> 1.2 ms)
+tOpt ——> OPTIONS / 
+tOpt <—— 204 No Content (<—> 0.7 ms)
+gwJf ——> GET / 
+gwJf <—— 304 Not Modified (<—> 1.5 ms)
+p2hG ——> GET / 
+p2hG <—— 304 Not Modified (<—> 1.5 ms)
+xt7a ——> OPTIONS /api/users/get/5cdf159fc8f28350063e6266 
+xt7a <—— 204 No Content (<—> 1.0 ms)
+MgnF ——> GET /api/users/get/5cdf159fc8f28350063e6266 
+MgnF <—— 304 Not Modified (<—> 7.0 ms)
+NvU0 ——> OPTIONS /api/users/get/5cdf1536c8f28350063e6264 
+NvU0 <—— 204 No Content (<—> 0.7 ms)
+HnjX ——> GET /api/users/get/5cdf1536c8f28350063e6264 
+HnjX <—— 304 Not Modified (<—> 8.4 ms)
+Ik0s ——> OPTIONS /api/users/5cdf159fc8f28350063e6266/buyer/sessions 
+Ik0s <—— 204 No Content (<—> 4.9 ms)
+SX2o ——> GET /api/users/5cdf159fc8f28350063e6266/buyer/sessions 
+SX2o <—— 304 Not Modified (<—> 29.8 ms)
+yuXu ——> OPTIONS /api/properties/find-by-ids 
+yuXu <—— 204 No Content (<—> 5.4 ms)
+nAEH ——> POST /api/properties/find-by-ids 48 B application/json;charset=UTF-8
+nAEH <—— 200 OK 592 B application/json; charset=utf-8 (<—> 37.1 ms)
+Jpmn ——> OPTIONS /api/sessions/get/5cdf1667c8f28350063e6273 
+Jpmn <—— 204 No Content (<—> 3.2 ms)
+YIQB ——> GET /api/sessions/get/5cdf1667c8f28350063e6273 
+YIQB <—— 304 Not Modified (<—> 13.4 ms)
+59DV ——> OPTIONS /api/properties/5cdf1611c8f28350063e626f 
+59DV <—— 204 No Content (<—> 17.3 ms)
+zYNt ——> GET /api/properties/5cdf1611c8f28350063e626f 
+zYNt <—— 304 Not Modified (<—> 20.2 ms)
+IRlt ——> OPTIONS /api/sessions/get/5cdf1667c8f28350063e6273 
+IRlt <—— 204 No Content (<—> 2.2 ms)
+pYLo ——> GET /api/sessions/get/5cdf1667c8f28350063e6273 
+pYLo <—— 304 Not Modified (<—> 17.8 ms)
+Leau ——> OPTIONS /api/users/5cdf159fc8f28350063e6266/buyer/sessions 
+Leau <—— 204 No Content (<—> 95.4 ms)
+hKAm ——> GET /api/users/5cdf159fc8f28350063e6266/buyer/sessions 
+hKAm <—— 304 Not Modified (<—> 90.3 ms)
+r5FV ——> OPTIONS /api/properties/find-by-ids 
+r5FV <—— 204 No Content (<—> 0.9 ms)
+1TYi ——> POST /api/properties/find-by-ids 48 B application/json;charset=UTF-8
+1TYi <—— 200 OK 592 B application/json; charset=utf-8 (<—> 11.2 ms)
+aeca ——> OPTIONS /api/users/5cdf159fc8f28350063e6266/buyer/sessions 
+aeca <—— 204 No Content (<—> 0.8 ms)
+Tjd0 ——> GET /api/users/5cdf159fc8f28350063e6266/buyer/sessions 
+Tjd0 <—— 304 Not Modified (<—> 14.9 ms)
+qMJH ——> OPTIONS /api/properties/find-by-ids 
+qMJH <—— 204 No Content (<—> 0.8 ms)
+8Jf4 ——> POST /api/properties/find-by-ids 48 B application/json;charset=UTF-8
+8Jf4 <—— 200 OK 592 B application/json; charset=utf-8 (<—> 6.6 ms)
+vaiS ——> OPTIONS /api/users/5cdf1536c8f28350063e6264/seller/sessions 
+vaiS <—— 204 No Content (<—> 1.3 ms)
+Rdly ——> GET /api/users/5cdf1536c8f28350063e6264/seller/sessions 
+Rdly <—— 304 Not Modified (<—> 15.7 ms)
+HQ8x ——> OPTIONS /api/properties/find-by-ids 
+HQ8x <—— 204 No Content (<—> 0.6 ms)
+tngk ——> POST /api/properties/find-by-ids 48 B application/json;charset=utf-8
+tngk <—— 200 OK 592 B application/json; charset=utf-8 (<—> 8.2 ms)
+8Q0u ——> OPTIONS /api/sessions/get/5cdf1667c8f28350063e6273 
+8Q0u <—— 204 No Content (<—> 0.8 ms)
+Ke5X ——> GET /api/sessions/get/5cdf1667c8f28350063e6273 
+Ke5X <—— 304 Not Modified (<—> 8.9 ms)
+k0M1 ——> OPTIONS /api/users/5cdf1536c8f28350063e6264/seller/sessions 
+k0M1 <—— 204 No Content (<—> 0.8 ms)
+e84n ——> GET /api/users/5cdf1536c8f28350063e6264/seller/sessions 
+e84n <—— 304 Not Modified (<—> 14.1 ms)
+7v01 ——> OPTIONS /api/properties/find-by-ids 
+7v01 <—— 204 No Content (<—> 0.5 ms)
+0lxe ——> POST /api/properties/find-by-ids 48 B application/json;charset=utf-8
+0lxe <—— 200 OK 592 B application/json; charset=utf-8 (<—> 7.3 ms)
+ZOtm ——> OPTIONS /api/users/5cdf159fc8f28350063e6266/buyer/sessions 
+ZOtm <—— 204 No Content (<—> 0.8 ms)
+iEwB ——> GET /api/users/5cdf159fc8f28350063e6266/buyer/sessions 
+iEwB <—— 304 Not Modified (<—> 51.3 ms)
+Qrk9 ——> OPTIONS /api/properties/find-by-ids 
+Qrk9 <—— 204 No Content (<—> 0.6 ms)
+84ai ——> POST /api/properties/find-by-ids 48 B application/json;charset=UTF-8
+84ai <—— 200 OK 592 B application/json; charset=utf-8 (<—> 9.7 ms)
+xHu8 ——> OPTIONS /api/users/5cdf159fc8f28350063e6266/buyer/sessions 
+xHu8 <—— 204 No Content (<—> 0.8 ms)
+Lwvq ——> GET /api/users/5cdf159fc8f28350063e6266/buyer/sessions 
+Lwvq <—— 304 Not Modified (<—> 21.8 ms)
+jJ1W ——> OPTIONS /api/properties/find-by-ids 
+jJ1W <—— 204 No Content (<—> 0.6 ms)
+FYVO ——> POST /api/properties/find-by-ids 48 B application/json;charset=UTF-8
+FYVO <—— 200 OK 592 B application/json; charset=utf-8 (<—> 5.5 ms)
+lqfj ——> OPTIONS /api/users/5cdf1536c8f28350063e6264/seller/sessions 
+lqfj <—— 204 No Content (<—> 0.9 ms)
+bkdF ——> GET /api/users/5cdf1536c8f28350063e6264/seller/sessions 
+bkdF <—— 304 Not Modified (<—> 10.3 ms)
+CG5h ——> OPTIONS /api/properties/find-by-ids 
+CG5h <—— 204 No Content (<—> 0.5 ms)
+OS3S ——> POST /api/properties/find-by-ids 48 B application/json;charset=utf-8
+OS3S <—— 200 OK 592 B application/json; charset=utf-8 (<—> 6.4 ms)
+K4dY ——> OPTIONS /api/users/5cdf159fc8f28350063e6266/buyer/sessions 
+K4dY <—— 204 No Content (<—> 0.6 ms)
+sdU7 ——> GET /api/users/5cdf159fc8f28350063e6266/buyer/sessions 
+sdU7 <—— 304 Not Modified (<—> 12.6 ms)
+NyAM ——> OPTIONS /api/properties/find-by-ids 
+NyAM <—— 204 No Content (<—> 0.8 ms)
+Ze6L ——> POST /api/properties/find-by-ids 48 B application/json;charset=UTF-8
+Ze6L <—— 200 OK 592 B application/json; charset=utf-8 (<—> 7.2 ms)
+GicY ——> OPTIONS /api/users/5cdf159fc8f28350063e6266/buyer/sessions 
+GicY <—— 204 No Content (<—> 0.6 ms)
+5j5M ——> GET /api/users/5cdf159fc8f28350063e6266/buyer/sessions 
+5j5M <—— 304 Not Modified (<—> 16.6 ms)
+PU1v ——> OPTIONS /api/properties/find-by-ids 
+PU1v <—— 204 No Content (<—> 0.8 ms)
+uGZn ——> POST /api/properties/find-by-ids 48 B application/json;charset=UTF-8
+uGZn <—— 200 OK 592 B application/json; charset=utf-8 (<—> 7.3 ms)
+ePaH ——> OPTIONS /api/users/5cdf1536c8f28350063e6264/seller/sessions 
+ePaH <—— 204 No Content (<—> 0.5 ms)
+UVin ——> GET /api/users/5cdf1536c8f28350063e6264/seller/sessions 
+UVin <—— 304 Not Modified (<—> 11.2 ms)
+KnYC ——> OPTIONS /api/properties/find-by-ids 
+KnYC <—— 204 No Content (<—> 0.6 ms)
+s7Fm ——> POST /api/properties/find-by-ids 48 B application/json;charset=utf-8
+s7Fm <—— 200 OK 592 B application/json; charset=utf-8 (<—> 5.6 ms)
+wH0q ——> OPTIONS /api/users/5cdf1536c8f28350063e6264/seller/sessions 
+wH0q <—— 204 No Content (<—> 1.2 ms)
+LZNX ——> GET /api/users/5cdf1536c8f28350063e6264/seller/sessions 
+LZNX <—— 304 Not Modified (<—> 11.5 ms)
+XtKz ——> OPTIONS /api/properties/find-by-ids 
+XtKz <—— 204 No Content (<—> 0.8 ms)
+s6bb ——> POST /api/properties/find-by-ids 48 B application/json;charset=utf-8
+s6bb <—— 200 OK 592 B application/json; charset=utf-8 (<—> 6.6 ms)
+Kb24 ——> OPTIONS /api/users/5cdf159fc8f28350063e6266/buyer/sessions 
+Kb24 <—— 204 No Content (<—> 1.2 ms)
+jOeT ——> GET /api/users/5cdf159fc8f28350063e6266/buyer/sessions 
+jOeT <—— 304 Not Modified (<—> 17.2 ms)
+3TwF ——> OPTIONS /api/properties/find-by-ids 
+3TwF <—— 204 No Content (<—> 0.6 ms)
+JrFZ ——> POST /api/properties/find-by-ids 48 B application/json;charset=UTF-8
+JrFZ <—— 200 OK 592 B application/json; charset=utf-8 (<—> 7.6 ms)
+8eZR ——> OPTIONS /api/sessions/get/5cdf1667c8f28350063e6273 
+8eZR <—— 204 No Content (<—> 1.5 ms)
+WnAC ——> GET /api/sessions/get/5cdf1667c8f28350063e6273 
+WnAC <—— 304 Not Modified (<—> 9.0 ms)
+xEpH ——> OPTIONS /api/users/5cdf1536c8f28350063e6264/seller/sessions 
+xEpH <—— 204 No Content (<—> 0.8 ms)
+Uj2h ——> GET /api/users/5cdf1536c8f28350063e6264/seller/sessions 
+Uj2h <—— 304 Not Modified (<—> 12.9 ms)
+kzTS ——> OPTIONS /api/properties/find-by-ids 
+kzTS <—— 204 No Content (<—> 0.6 ms)
+uvBt ——> POST /api/properties/find-by-ids 48 B application/json;charset=utf-8
+uvBt <—— 200 OK 592 B application/json; charset=utf-8 (<—> 8.5 ms)
+TGyW ——> OPTIONS /api/users/5cdf1536c8f28350063e6264/seller/sessions 
+TGyW <—— 204 No Content (<—> 0.7 ms)
+L7Az ——> GET /api/users/5cdf1536c8f28350063e6264/seller/sessions 
+L7Az <—— 304 Not Modified (<—> 13.4 ms)
+F3ou ——> OPTIONS /api/properties/find-by-ids 
+F3ou <—— 204 No Content (<—> 0.7 ms)
+oQ1s ——> POST /api/properties/find-by-ids 48 B application/json;charset=utf-8
+oQ1s <—— 200 OK 592 B application/json; charset=utf-8 (<—> 7.7 ms)
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+
+> server@0.0.0 dev /c/Users/Vandern Rodrigues/Projects/fyp/server
+> nodemon ./bin/www
+
+[33m[nodemon] 1.19.0[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching: *.*[39m
+[32m[nodemon] starting `node ./bin/www`[39m

@@ -141,14 +141,18 @@ router.post('/:session_id/upload-td', (req, res, next) => {
 
 	ws.on('close', (pdf) => {
 		console.log(pdf._id);
+		let dateToday = new Date().toISOString.replace('T', ' ').substr(0, 16)
 		Session.updateOne({
 			_id: new mongoose.Types.ObjectId(req.params.session_id)
 		}, {
 			$set: {
 				'stages.4.mini_stages.3.status': 'Completed',
 				'stages.4.active_mini_stage': 4,
-				'stages.4.mini_stages.4.status': 'In Progress',
-				'stages.4.mini_stages.4.title_deed_id': pdf._id
+				'stages.4.mini_stages.4.status': 'Completed',
+				'stages.4.mini_stages.4.title_deed_id': pdf._id,
+				'stages.4.mini_stages.4.finished_at': dateToday,
+				'stages.4.status': 'Completed',
+				'progress': 4
 			}
 		}, (error, result) => {
 			if (error) {

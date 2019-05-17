@@ -10,9 +10,17 @@
 				</v-card>
 
 				<v-card class="info-panel primary text-xs-center pa-4 p_text--text">
+
+					<v-card-text
+						class="display-1 pa-4 p_blue--text">
+						{{ user_type.toUpperCase() }}
+					</v-card-text>
+
 					<v-responsive>
-						<v-img :src="picture" max-height="200">
-						</v-img>
+						<v-avatar size="200">
+							<v-img :src="picture" max-height="200">
+							</v-img>
+						</v-avatar>
 					</v-responsive>
 
 					<v-card-text class="headline">
@@ -45,9 +53,17 @@
 
 			<v-container v-if="user_type == 'seller'" class="seller-dashboard white--text">
 				<v-card class="info-panel primary text-xs-center pa-4 p_text--text">
+
+					<v-card-text
+						class="display-1 pa-4 p_blue--text">
+						{{ user_type.toUpperCase() }}
+					</v-card-text>
+
 					<v-responsive>
-						<v-img :src="picture" max-height="150">
-						</v-img>
+						<v-avatar size="200">
+							<v-img :src="picture" max-height="200">
+							</v-img>
+						</v-avatar>
 					</v-responsive>
 
 					<v-card-text class="headline">

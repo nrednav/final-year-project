@@ -6,11 +6,11 @@
 - [ ] Finish escrow stage interface + backend
 - [ ] Try putting entire project into docker, via dockerfile (so as to manage dependencies)
 purchased arrays
-- [ ] Add heading to buyer and seller dashboards to identify them
-- [ ] Set progress to '4'
-- [ ] After escrow is finished, show one final interface which says session is complete and shows the necessary information to both the buyer and seller
-	- [ ] For the buyer, show a button to download the original title deed
-	- [ ] For both, show the date the escrow finished
+- [x] Add heading to buyer and seller dashboards to identify them
+- [x] Set progress to '4'
+- [x] After escrow is finished, show one final interface which says session is complete and shows the necessary information to both the buyer and seller
+	- [x] For the buyer, show a button to download the original title deed
+	- [x] For both, show the date the escrow finished
 - [ ] Clean up all comments across all files
 - [ ] Add mocha tests for changes to Holding Deposit & Escrow smart contracts
 

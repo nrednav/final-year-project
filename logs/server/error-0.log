@@ -12,3 +12,36 @@
 (node:20486) DeprecationWarning: collection.findAndModify is deprecated. Use findOneAndUpdate, findOneAndReplace or findOneAndDelete instead.
 (node:20486) DeprecationWarning: GridStore is deprecated, and will be removed in a future version. Please use GridFSBucket instead
 (node:20486) DeprecationWarning: collection.save is deprecated. Use insertOne, insertMany, updateOne, or updateMany instead.
+(node:21695) DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
+(node:21695) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
+(node:21695) DeprecationWarning: GridStore is deprecated, and will be removed in a future version. Please use GridFSBucket instead
+(node:21855) DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
+(node:21855) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
+/c/Users/Vandern Rodrigues/Projects/fyp/server/routes/api/session/index.js:155
+				'progress': 4
+				^^^^^^^^^^
+
+SyntaxError: Unexpected string
+    at Module._compile (internal/modules/cjs/loader.js:743:23)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:810:10)
+    at Module.load (internal/modules/cjs/loader.js:666:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:606:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:598:3)
+    at Module.require (internal/modules/cjs/loader.js:705:19)
+    at require (internal/modules/cjs/helpers.js:14:16)
+    at Object.<anonymous> (/c/Users/Vandern Rodrigues/Projects/fyp/server/app.js:14:21)
+    at Module._compile (internal/modules/cjs/loader.js:799:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:810:10)
+    at Module.load (internal/modules/cjs/loader.js:666:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:606:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:598:3)
+    at Module.require (internal/modules/cjs/loader.js:705:19)
+    at require (internal/modules/cjs/helpers.js:14:16)
+    at Object.<anonymous> (/c/Users/Vandern Rodrigues/Projects/fyp/server/bin/www:7:11)
+(node:22005) DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
+(node:22005) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
+(node:22005) DeprecationWarning: GridStore is deprecated, and will be removed in a future version. Please use GridFSBucket instead
+(node:22060) DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
+(node:22060) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
+(node:22650) DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
+(node:22650) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
