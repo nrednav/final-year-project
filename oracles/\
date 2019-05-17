@@ -254,7 +254,7 @@ export default {
 			let updateOptions = {
 				$set: {
 					'stages.4.mini_stages.1.status': 'Completed',
-					'stages.4.active_mini_stage': 2,
+					'active_mini_stage': 2,
 					'stages.4.mini_stages.2.status': 'In Progress'
 				}
 			}

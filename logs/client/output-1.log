@@ -1,9 +1,9 @@
- WAIT  Compiling...11:15:56 AM
+ WAIT  Compiling...2:08:39 PM
 
 yarn run v1.15.2
 $ vue-cli-service serve
  INFO  Starting development server...
- DONE  Compiled successfully in 31719ms11:16:32 AM
+ DONE  Compiled successfully in 21118ms2:09:06 PM
 
 
   App running at:
@@ -13,12 +13,12 @@ $ vue-cli-service serve
   Note that the development build is not optimized.
   To create a production build, run yarn build.
 
- WAIT  Compiling...11:20:32 AM
+ WAIT  Compiling...2:09:59 PM
 
 yarn run v1.15.2
 $ vue-cli-service serve
  INFO  Starting development server...
- DONE  Compiled successfully in 24767ms11:21:02 AM
+ DONE  Compiled successfully in 20105ms2:10:23 PM
 
 
   App running at:
@@ -28,12 +28,12 @@ $ vue-cli-service serve
   Note that the development build is not optimized.
   To create a production build, run yarn build.
 
- WAIT  Compiling...11:21:32 AM
+ WAIT  Compiling...2:12:37 PM
 
 yarn run v1.15.2
 $ vue-cli-service serve
  INFO  Starting development server...
- DONE  Compiled successfully in 26331ms11:22:04 AM
+ DONE  Compiled successfully in 18249ms2:13:00 PM
 
 
   App running at:
@@ -43,12 +43,12 @@ $ vue-cli-service serve
   Note that the development build is not optimized.
   To create a production build, run yarn build.
 
- WAIT  Compiling...11:23:47 AM
+ WAIT  Compiling...2:13:13 PM
 
 yarn run v1.15.2
 $ vue-cli-service serve
  INFO  Starting development server...
- DONE  Compiled successfully in 24867ms11:24:17 AM
+ DONE  Compiled successfully in 19469ms2:13:36 PM
 
 
   App running at:
@@ -58,12 +58,12 @@ $ vue-cli-service serve
   Note that the development build is not optimized.
   To create a production build, run yarn build.
 
- WAIT  Compiling...11:25:21 AM
+ WAIT  Compiling...2:30:23 PM
 
 yarn run v1.15.2
 $ vue-cli-service serve
  INFO  Starting development server...
- DONE  Compiled successfully in 31211ms11:25:57 AM
+ DONE  Compiled successfully in 20000ms2:30:47 PM
 
 
   App running at:
@@ -73,12 +73,10 @@ $ vue-cli-service serve
   Note that the development build is not optimized.
   To create a production build, run yarn build.
 
- WAIT  Compiling...11:31:29 AM
-
 yarn run v1.15.2
 $ vue-cli-service serve
  INFO  Starting development server...
- DONE  Compiled successfully in 26999ms11:32:01 AM
+ DONE  Compiled successfully in 16721ms2:34:47 PM
 
 
   App running at:
@@ -88,176 +86,57 @@ $ vue-cli-service serve
   Note that the development build is not optimized.
   To create a production build, run yarn build.
 
- WAIT  Compiling...11:36:20 AM
+ WAIT  Compiling...2:35:41 PM
 
-yarn run v1.15.2
-$ vue-cli-service serve
- INFO  Starting development server...
-yarn run v1.15.2
-$ vue-cli-service serve
- INFO  Starting development server...
- DONE  Compiled successfully in 24652ms11:36:52 AM
+ DONE  Compiled successfully in 474ms2:35:42 PM
 
 
   App running at:
   - Local:   http://localhost:8080/ 
   - Network: http://192.168.0.15:8080/
 
-yarn run v1.15.2
-$ vue-cli-service serve
- INFO  Starting development server...
-yarn run v1.15.2
-$ vue-cli-service serve
- INFO  Starting development server...
-yarn run v1.15.2
-$ vue-cli-service serve
- INFO  Starting development server...
-yarn run v1.15.2
-$ vue-cli-service serve
- INFO  Starting development server...
- DONE  Compiled successfully in 26397ms11:38:19 AM
+ WAIT  Compiling...2:35:58 PM
+
+ DONE  Compiled successfully in 380ms2:35:58 PM
 
 
   App running at:
   - Local:   http://localhost:8080/ 
   - Network: http://192.168.0.15:8080/
 
-  Note that the development build is not optimized.
-  To create a production build, run yarn build.
+ WAIT  Compiling...2:36:04 PM
 
- WAIT  Compiling...11:59:58 AM
-
-yarn run v1.15.2
-$ vue-cli-service serve
- INFO  Starting development server...
- WARNING  Compiled with 1 warnings12:00:21 PM
-
-Module Warning (from ./node_modules/eslint-loader/index.js):
-error: 'sessionId' is not defined (no-undef) at src/views/both/Escrow.vue:214:59:
-  212 | 
-  213 | 		async acceptTDD () {
-> 214 | 			let requestUrl = `http://localhost:3000/api/sessions/${sessionId}/title-deed/tdd`
-      | 			                                                       ^
-  215 | 			let config = { headers: { Authorization: 'a1b2c3d4e5f6g7' } }
-  216 | 			axios.get(requestUrl, config).then(async (response) => {
-  217 | 
-
-
-error: Block must not be padded by blank lines (padded-blocks) at src/views/both/Escrow.vue:216:59:
-  214 | 			let requestUrl = `http://localhost:3000/api/sessions/${sessionId}/title-deed/tdd`
-  215 | 			let config = { headers: { Authorization: 'a1b2c3d4e5f6g7' } }
-> 216 | 			axios.get(requestUrl, config).then(async (response) => {
-      | 			                                                       ^
-  217 | 
-  218 | 				let titleDraftHash = await this.web3.utils.sha3(response.data);
-  219 | 				let sessionIdHash = await web3.utils.sha3(this.session._id)
-
-
-error: Extra semicolon (semi) at src/views/both/Escrow.vue:218:67:
-  216 | 			axios.get(requestUrl, config).then(async (response) => {
-  217 | 
-> 218 | 				let titleDraftHash = await this.web3.utils.sha3(response.data);
-      | 				                                                              ^
-  219 | 				let sessionIdHash = await web3.utils.sha3(this.session._id)
-  220 | 				escrow.address = await escrowFactory.methods.get_escrow(sessionIdHash).call()
-  221 | 
-
-
-3 errors found.
-2 errors potentially fixable with the `--fix` option.
-
-You may use special comments to disable some warnings.
-Use // eslint-disable-next-line to ignore the next line.
-Use /* eslint-disable */ to ignore all warnings in a file.
-
-  App running at:
-  - Local:   http://localhost:8080/ 
-  - Network: http://192.168.0.15:8080/
-
-  Note that the development build is not optimized.
-  To create a production build, run yarn build.
-
- WAIT  Compiling...12:00:29 PM
-
-yarn run v1.15.2
-$ vue-cli-service serve
- INFO  Starting development server...
-yarn run v1.15.2
-$ vue-cli-service serve
- INFO  Starting development server...
-yarn run v1.15.2
-$ vue-cli-service serve
- INFO  Starting development server...
-yarn run v1.15.2
-$ vue-cli-service serve
- INFO  Starting development server...
- DONE  Compiled successfully in 21792ms12:01:41 PM
+ DONE  Compiled successfully in 372ms2:36:04 PM
 
 
   App running at:
   - Local:   http://localhost:8080/ 
   - Network: http://192.168.0.15:8080/
 
-  Note that the development build is not optimized.
-  To create a production build, run yarn build.
+ WAIT  Compiling...2:36:10 PM
 
- WAIT  Compiling...12:02:10 PM
-
-yarn run v1.15.2
-$ vue-cli-service serve
- INFO  Starting development server...
- DONE  Compiled successfully in 19313ms12:02:35 PM
+ DONE  Compiled successfully in 267ms2:36:10 PM
 
 
   App running at:
   - Local:   http://localhost:8080/ 
   - Network: http://192.168.0.15:8080/
 
-  Note that the development build is not optimized.
-  To create a production build, run yarn build.
+ WAIT  Compiling...2:36:22 PM
 
- WAIT  Compiling...12:02:54 PM
-
-yarn run v1.15.2
-$ vue-cli-service serve
- INFO  Starting development server...
- DONE  Compiled successfully in 19506ms12:03:18 PM
+ DONE  Compiled successfully in 309ms2:36:23 PM
 
 
   App running at:
   - Local:   http://localhost:8080/ 
   - Network: http://192.168.0.15:8080/
 
-  Note that the development build is not optimized.
-  To create a production build, run yarn build.
+ WAIT  Compiling...2:36:28 PM
 
- WAIT  Compiling...12:03:44 PM
-
-yarn run v1.15.2
-$ vue-cli-service serve
- INFO  Starting development server...
- DONE  Compiled successfully in 20318ms12:04:09 PM
+ DONE  Compiled successfully in 406ms2:36:29 PM
 
 
   App running at:
   - Local:   http://localhost:8080/ 
   - Network: http://192.168.0.15:8080/
-
-  Note that the development build is not optimized.
-  To create a production build, run yarn build.
-
- WAIT  Compiling...12:07:50 PM
-
-yarn run v1.15.2
-$ vue-cli-service serve
- INFO  Starting development server...
- DONE  Compiled successfully in 24471ms12:08:18 PM
-
-
-  App running at:
-  - Local:   http://localhost:8080/ 
-  - Network: http://192.168.0.15:8080/
-
-  Note that the development build is not optimized.
-  To create a production build, run yarn build.
 

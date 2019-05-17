@@ -1,0 +1,20 @@
+(node:9204) DeprecationWarning: Mongoose: `findOneAndUpdate()` and `findOneAndDelete()` without the `useFindAndModify` option set to false are deprecated. See: https://mongoosejs.com/docs/deprecations.html#-findandmodify-
+(node:9204) DeprecationWarning: collection.findAndModify is deprecated. Use findOneAndUpdate, findOneAndReplace or findOneAndDelete instead.
+(node:9204) DeprecationWarning: collection.save is deprecated. Use insertOne, insertMany, updateOne, or updateMany instead.
+(node:9609) DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
+(node:9609) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
+(node:9609) DeprecationWarning: GridStore is deprecated, and will be removed in a future version. Please use GridFSBucket instead
+(node:10200) DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
+(node:10200) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
+(node:10312) DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
+(node:10312) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
+(node:11411) DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
+(node:11411) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
+(node:11411) DeprecationWarning: Mongoose: `findOneAndUpdate()` and `findOneAndDelete()` without the `useFindAndModify` option set to false are deprecated. See: https://mongoosejs.com/docs/deprecations.html#-findandmodify-
+(node:11411) DeprecationWarning: collection.findAndModify is deprecated. Use findOneAndUpdate, findOneAndReplace or findOneAndDelete instead.
+(node:11411) DeprecationWarning: GridStore is deprecated, and will be removed in a future version. Please use GridFSBucket instead
+(node:11411) DeprecationWarning: collection.save is deprecated. Use insertOne, insertMany, updateOne, or updateMany instead.
+(node:11845) DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
+(node:11845) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
+(node:11900) DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
+(node:11900) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.

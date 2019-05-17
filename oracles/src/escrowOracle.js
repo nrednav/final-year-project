@@ -148,6 +148,11 @@ class escrowOracle {
 				console.log(err);
 			} else if (session) {
 				console.log(session);
+
+			//	var oldPropertyUID;
+			//	var buyerName;
+			//	var titleDeedHash;
+
 				console.log('Collecting necessary information for title transfer...');
 
 				// Get old property uid first
@@ -200,17 +205,8 @@ class escrowOracle {
 													'stages.4.mini_stages.3.status': 'In Progress'
 												}
 											}
-											Session.updateOne({
-												_id: session._id
-											}, updateOptions, (err, result) => {
-												if (err) {
-													throw err;
-												} else  {
-													console.log(result);
-													console.log(`Successfully updated Session #: ${session._id}`);
-													this.uploadTitleDeedDraft(session._id);
-												}
-											});
+											this.updateSession(sellerAddress, buyerAddress, updateOptions);
+											this.uploadTitleDeedDraft(session._id);
 										}).catch((error) => console.log(error));
 									}
 								});
@@ -233,11 +229,27 @@ class escrowOracle {
 			if (err) {
 				throw err;
 			} else {
-				let requestUrl = `http://localhost:3000/api/sessions/${session._id}/upload-td`
-				let config = { headers: { Authorization: 'a1b2c3d4e5f6g7' } }
-				axios.post(requestUrl, { upload: true }, config).then((response) => {
-					console.log(response);
-				}).catch((error) => console.log(error));
+
+				fs.writeFile('./titleDeed.txt', 'Title Deed', (err) => {
+					if (err) {
+						throw err;
+					} else {
+						console.log('Created title deed');
+						const titleDeed = fs.readFileSync(path.resolve(__dirname,
+							'./titleDeed.txt'));
+
+						// Make request to session server router to upload file
+						let requestUrl = `http://localhost:3000/api/sessions/${sessionId}/upload-td`
+						let config = { headers: { Authorization: 'a1b2c3d4e5f6g7' } }
+
+						let formData = new FormData();
+						formData.append('file', titleDeed);
+
+						axios.post(requestUrl, formData, config).then((response) => {
+							console.log(response);
+						}).catch((error) => console.log(error));
+					}
+				});
 			}
 		});
 	}
@@ -251,31 +263,40 @@ class escrowOracle {
 		 * AND THEN TEST IT USING THE NODE CONSOLE &
 		 * ALSO TEST IT USING POSTMAN
 		 */
-		let requestUrl = `http://localhost:3000/api/sessions/${sessionId}/upload-tdd`
-		let config = { headers: { Authorization: 'a1b2c3d4e5f6g7' } }
-		axios.post(requestUrl, { upload: true } , config).then((response) => {
-			console.log(response.data);
-			this.respondToTTR(sessionId);
-		}).catch((error) => console.log(error));
+		fs.writeFile(path.join(__dirname, '/titleDeedDraft.txt'), 'Title Deed Draft', (err) => {
+			if (err) {
+				throw err;
+			} else {
+				console.log('Created title deed draft');
+				const titleDeedDraft = fs.readFileSync(path.join(__dirname,
+					'/titleDeedDraft.txt'));
+
+				// Make request to session server router to upload file
+				let requestUrl = `http://localhost:3000/api/sessions/${sessionId}/upload-tdd`
+				let config = { headers: { Authorization: 'a1b2c3d4e5f6g7' } }
+
+				let formData = new FormData();
+				formData.append('file', titleDeedDraft);
+
+				axios.post(requestUrl, formData, config).then((response) => {
+					console.log(response);
+					this.respondToTTR(titleDeedDraft);
+				}).catch((error) => console.log(error));
+			}
+		});
 	}
 
-	async respondToTTR(sessionId) {
-		// Get file
-		let requestUrl = `http://localhost:3000/api/sessions/${sessionId}/title-deed/tdd`
-		let config = { headers: { Authorization: 'a1b2c3d4e5f6g7' } }
-		axios.get(requestUrl, config).then(async (response) => {
+	async respondToTTR(file) {
+		let titleDraftHash = await this.web3.utils.sha3(file);
+		let nodeAddress = "0x8a23c7c42333ed6be5a68c24031cd7a737fbcbe8";
+		await web3.eth.personal.unlockAccount(nodeAddress, String(1234), 1000);
 
-			let titleDraftHash = await this.web3.utils.sha3(response.data);
-			let nodeAddress = "0x8a23c7c42333ed6be5a68c24031cd7a737fbcbe8";
-			await web3.eth.personal.unlockAccount(nodeAddress, String(1234), 1000);
-
-			let tx = this.contract.methods.title_transfer_response(titleDraftHash).send({
-				from: nodeAddress,
-				gasPrice: 42000
-			}).once('receipt', (receipt) => {
-				console.log(receipt);
-			}).catch((error) => console.log(error))
-		});
+		let tx = this.contract.methods.title_transfer_response(titleDraftHash).send({
+			from: nodeAddress,
+			gasPrice: 42000
+		}).once('receipt', (receipt) => {
+			console.log(receipt);
+		}).catch((error) => console.log(error))
 	}
 
 	updateSession(sellerAddress, buyerAddress, updateOptions) {
@@ -322,7 +343,7 @@ class escrowOracle {
 						this.deletePropertyImage(image_ids[i]);
 					}
 
-					this.deleteProperty(property, propertyId);
+					this.transferPropertyOwnership(property, session.seller_id, session.buyer_id);
 				});
 			}
 		});
@@ -337,15 +358,45 @@ class escrowOracle {
 	}
 
 	// Delete property by id
-	deleteProperty(property, propertyId) {
-		Property.deleteOne({
-			_id: propertyId
-		}, (err) => {
-			if (err) {
-				throw err
-			} else {
-				console.log('successfully deleted property from seller');
+	transferPropertyOwnership(property, from, to) {
+		// Find the seller
+		User.updateOne({
+			_id: from
+		}, {
+			$pull: {
+				'profiles.seller.properties': property._id
 			}
+		}, (err, result) => {
+			if (err) throw err;
+			console.log('Removed property from seller');
+			console.log(result);
+		});
+
+		// Transfer property to buyer
+		User.updateOne({
+			_id: to
+		}, {
+			$push: {
+				'profiles.seller.properties': property._id
+			}
+		}, (err, result) => {
+			if (err) throw err;
+			console.log('Added property to buyer');
+			console.log(result);
+		});
+
+		// Update property information
+		Property.updateOne({
+			_id: property._id
+		}, {
+			'details.owner': to,
+			'verified': 0,
+			'listed': false,
+			'session_underway': false
+		}, (err, result) => {
+			if (err) throw err;
+			console.log('Updated property information to set buyer as owner');
+			console.log(result);
 		});
 	}
 }

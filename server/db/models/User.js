@@ -44,8 +44,7 @@ const UserSchema = new mongoose.Schema({
 					type: Date,
 					default: Date.now
 				}
-			}],
-			purchased: []
+			}]
 		},
 		seller: {
 			verified_count: {
@@ -70,8 +69,7 @@ const UserSchema = new mongoose.Schema({
 						default: Date.now
 					}
 				}
-			],
-			sold: []
+			]
 		}
 	}
 });
