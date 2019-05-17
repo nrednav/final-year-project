@@ -1,29 +1,26 @@
 # Implementation Checklist
 
+---
+
 ## Backlog
 - [ ] Finish escrow stage interface + backend
 - [ ] Try putting entire project into docker, via dockerfile (so as to manage dependencies)
-- [ ] Prevent session duplication when seller tries to click accept on an offer, in which
-a session already exists with the offer makers and sellers id's
 purchased arrays
-- [ ] Handle upload of title draft document
-- [ ] When escrow finishes, remove the property (mimic the button from "view property" interface)
-	- [ ] Set progress to '4'
-- [ ] Remove sold and purchased arrays from the user model
-- [x] Remove the leave session button
+- [ ] Add heading to buyer and seller dashboards to identify them
+- [ ] Set progress to '4'
 - [ ] After escrow is finished, show one final interface which says session is complete and shows the necessary information to both the buyer and seller
-	- [ ] For the seller, show the tx receipt
-	- [ ] For the buyer, show the holding deposit tx receipt, the tx receipt, a button to download the title deed
+	- [ ] For the buyer, show a button to download the original title deed
 	- [ ] For both, show the date the escrow finished
-- [ ] Rename some oracles to services because they're not only serving as oracles
 - [ ] Clean up all comments across all files
 - [ ] Add mocha tests for changes to Holding Deposit & Escrow smart contracts
 
-## Stuff to do at end
+---
+
+## Future work considerations
 - [ ] Display offers to buyer
 	- [ ] Offer status, property id, timestamp
-- [ ] Fix add property preview image from going over the date picker
 - [ ] Prevent users from accessing other users property information
+- [ ] Fix add property preview image from going over the date picker
 - [ ] Prevent sellers from making offers on their own property
 	- [ ] Filter the search results
 - [ ] Prevent sellers from making multiple offers against the same property
@@ -76,19 +73,19 @@ purchased arrays
 		- [x] SearchResults (copy of seller's property list)
 	- [x] Create seller interfaces
 		- [x] Add offer panel under 'view property' panel
-	- [ ] Create interfaces involving both
+	- [x] Create interfaces involving both
 		- [ ] Offers (carbon copy of notifications)
 			* Static information on cards, no click to view more functionality
-		- [ ] Escrow
+		- [x] Escrow
 		- [ ] Notifications (mini copy of sellers prop list)
 		- [x] Holding Deposit
 		- [x]	Background Screening
 		- [x] SessionList (copy of seller's property list)
 		- [x] ViewSession
-- [ ] Create NodeJS oracles
+- [x] Create NodeJS oracles
 	- [x] Create verifier oracle
 	- [x] Create hd oracle
-	- [ ] Create escrow oracle
+	- [x] Create escrow oracle
 
 ## Setup the server
 - [x] Create the server using express-generator
@@ -125,7 +122,7 @@ purchased arrays
 - [ ] Add mongodb server
 
 ## Test the entire platform
-- [ ] Open two clients on different ports
+- [x] Open two clients on different ports
 
 ## Final work
 - [ ] Create project makefile/script

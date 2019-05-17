@@ -1425,3 +1425,171 @@ anRL ——> OPTIONS /api/properties/5cdf1611c8f28350063e626f
 anRL <—— 204 No Content (<—> 2.3 ms)
 F1ao ——> GET /api/properties/5cdf1611c8f28350063e626f 
 F1ao <—— 200 OK 586 B application/json; charset=utf-8 (<—> 9.6 ms)
+qamv ——> OPTIONS /api/sessions/get/5cdf1667c8f28350063e6273 
+qamv <—— 204 No Content (<—> 0.6 ms)
+lfpz ——> GET /api/sessions/get/5cdf1667c8f28350063e6273 
+lfpz <—— 304 Not Modified (<—> 8.0 ms)
+bMd4 ——> OPTIONS /api/users/5cdf1536c8f28350063e6264/seller/sessions 
+bMd4 <—— 204 No Content (<—> 0.7 ms)
+Wnqn ——> GET /api/users/5cdf1536c8f28350063e6264/seller/sessions 
+Wnqn <—— 304 Not Modified (<—> 11.9 ms)
+IFPL ——> OPTIONS /api/properties/find-by-ids 
+IFPL <—— 204 No Content (<—> 0.7 ms)
+eqLD ——> POST /api/properties/find-by-ids 48 B application/json;charset=utf-8
+eqLD <—— 200 OK 592 B application/json; charset=utf-8 (<—> 6.2 ms)
+8QBQ ——> OPTIONS /api/sessions/get/5cdf1667c8f28350063e6273 
+8QBQ <—— 204 No Content (<—> 1.0 ms)
+Q1xS ——> GET /api/sessions/get/5cdf1667c8f28350063e6273 
+Q1xS <—— 304 Not Modified (<—> 7.3 ms)
+62qV ——> OPTIONS /api/properties/5cdf1611c8f28350063e626f 
+62qV <—— 204 No Content (<—> 1.2 ms)
+Lxls ——> GET /api/properties/5cdf1611c8f28350063e626f 
+Lxls <—— 304 Not Modified (<—> 6.4 ms)
+aMsW ——> OPTIONS / 
+aMsW <—— 204 No Content (<—> 0.5 ms)
+HceD ——> GET / 
+HceD <—— 304 Not Modified (<—> 2.3 ms)
+rdFK ——> OPTIONS /api/users/get/5cdf1536c8f28350063e6264 
+rdFK <—— 204 No Content (<—> 0.6 ms)
+s1T6 ——> GET /api/users/get/5cdf1536c8f28350063e6264 
+s1T6 <—— 304 Not Modified (<—> 7.1 ms)
+UBHw ——> OPTIONS / 
+UBHw <—— 204 No Content (<—> 0.6 ms)
+osyr ——> GET / 
+osyr <—— 304 Not Modified (<—> 18.6 ms)
+l2Wc ——> OPTIONS /api/users/get/5cdf159fc8f28350063e6266 
+l2Wc <—— 204 No Content (<—> 6.1 ms)
+IlnY ——> GET /api/users/get/5cdf159fc8f28350063e6266 
+IlnY <—— 304 Not Modified (<—> 17.3 ms)
+1hLx ——> OPTIONS / 
+1hLx <—— 204 No Content (<—> 0.7 ms)
+Ic1X ——> GET / 
+Ic1X <—— 304 Not Modified (<—> 2.4 ms)
+8Zxd ——> OPTIONS /api/users/get/5cdf159fc8f28350063e6266 
+8Zxd <—— 204 No Content (<—> 4.2 ms)
+mBtU ——> GET /api/users/get/5cdf159fc8f28350063e6266 
+mBtU <—— 304 Not Modified (<—> 55.5 ms)
+bNbV ——> OPTIONS /api/users/5cdf159fc8f28350063e6266/buyer/sessions 
+bNbV <—— 204 No Content (<—> 0.6 ms)
+fkwD ——> GET /api/users/5cdf159fc8f28350063e6266/buyer/sessions 
+fkwD <—— 304 Not Modified (<—> 31.5 ms)
+g3bG ——> OPTIONS /api/properties/find-by-ids 
+g3bG <—— 204 No Content (<—> 0.7 ms)
+9K63 ——> POST /api/properties/find-by-ids 48 B application/json;charset=UTF-8
+9K63 <—— 200 OK 592 B application/json; charset=utf-8 (<—> 57.5 ms)
+bEBs ——> OPTIONS / 
+bEBs <—— 204 No Content (<—> 1.0 ms)
+bN3R ——> GET / 
+bN3R <—— 304 Not Modified (<—> 1.5 ms)
+ZZq8 ——> OPTIONS /api/users/get/5cdf159fc8f28350063e6266 
+ZZq8 <—— 204 No Content (<—> 0.8 ms)
+cFsV ——> GET /api/users/get/5cdf159fc8f28350063e6266 
+cFsV <—— 304 Not Modified (<—> 12.9 ms)
+awSB ——> OPTIONS / 
+awSB <—— 204 No Content (<—> 1.9 ms)
+575R ——> GET / 
+575R <—— 304 Not Modified (<—> 3.9 ms)
+95w4 ——> OPTIONS /api/users/get/5cdf159fc8f28350063e6266 
+95w4 <—— 204 No Content (<—> 0.6 ms)
+S1B4 ——> GET /api/users/get/5cdf159fc8f28350063e6266 
+S1B4 <—— 304 Not Modified (<—> 8.0 ms)
+WIIm ——> OPTIONS / 
+WIIm <—— 204 No Content (<—> 0.7 ms)
+CqTc ——> GET / 
+CqTc <—— 304 Not Modified (<—> 6.3 ms)
+xmks ——> OPTIONS /api/users/get/5cdf159fc8f28350063e6266 
+xmks <—— 204 No Content (<—> 1.6 ms)
+SLbw ——> GET /api/users/get/5cdf159fc8f28350063e6266 
+SLbw <—— 304 Not Modified (<—> 10.1 ms)
+8nxP ——> OPTIONS /api/properties/5cdf1611c8f28350063e626f 
+8nxP <—— 204 No Content (<—> 1.1 ms)
+LfJs ——> GET /api/properties/5cdf1611c8f28350063e626f 
+LfJs <—— 304 Not Modified (<—> 12.2 ms)
+A8Ox ——> OPTIONS / 
+A8Ox <—— 204 No Content (<—> 0.6 ms)
+YhFQ ——> GET / 
+YhFQ <—— 304 Not Modified (<—> 2.2 ms)
+ka3w ——> OPTIONS /api/users/get/5cdf159fc8f28350063e6266 
+ka3w <—— 204 No Content (<—> 1.6 ms)
+wtm7 ——> GET /api/users/get/5cdf159fc8f28350063e6266 
+wtm7 <—— 304 Not Modified (<—> 18.0 ms)
+vEnF ——> OPTIONS / 
+vEnF <—— 204 No Content (<—> 1.0 ms)
+b9yJ ——> GET / 
+b9yJ <—— 304 Not Modified (<—> 1.8 ms)
+AFCS ——> OPTIONS /api/users/get/5cdf1536c8f28350063e6264 
+AFCS <—— 204 No Content (<—> 1.0 ms)
+lwbj ——> GET /api/users/get/5cdf1536c8f28350063e6264 
+lwbj <—— 304 Not Modified (<—> 7.5 ms)
+2I3n ——> OPTIONS /api/users/5cdf1536c8f28350063e6264/properties 
+2I3n <—— 204 No Content (<—> 0.8 ms)
+Fq22 ——> GET /api/users/5cdf1536c8f28350063e6264/properties 
+Fq22 <—— 304 Not Modified (<—> 12.9 ms)
+CYMu ——> OPTIONS / 
+CYMu <—— 204 No Content (<—> 0.7 ms)
+D4Ob ——> GET / 
+D4Ob <—— 304 Not Modified (<—> 1.6 ms)
+2VTN ——> OPTIONS /api/users/get/5cdf1536c8f28350063e6264 
+2VTN <—— 204 No Content (<—> 0.7 ms)
+xnBG ——> GET /api/users/get/5cdf1536c8f28350063e6264 
+xnBG <—— 304 Not Modified (<—> 8.5 ms)
+rOe3 ——> OPTIONS /api/users/5cdf1536c8f28350063e6264/properties 
+rOe3 <—— 204 No Content (<—> 1.4 ms)
+yiTw ——> GET /api/users/5cdf1536c8f28350063e6264/properties 
+yiTw <—— 304 Not Modified (<—> 15.3 ms)
+5Goo ——> OPTIONS / 
+5Goo <—— 204 No Content (<—> 1.4 ms)
+3In1 ——> GET / 
+3In1 <—— 304 Not Modified (<—> 1.8 ms)
+b0vm ——> OPTIONS /api/users/get/5cdf1536c8f28350063e6264 
+b0vm <—— 204 No Content (<—> 0.7 ms)
+bwjb ——> GET /api/users/get/5cdf1536c8f28350063e6264 
+bwjb <—— 304 Not Modified (<—> 6.8 ms)
+gfGG ——> OPTIONS /api/users/5cdf1536c8f28350063e6264/properties 
+gfGG <—— 204 No Content (<—> 1.3 ms)
+yJ5s ——> GET /api/users/5cdf1536c8f28350063e6264/properties 
+yJ5s <—— 304 Not Modified (<—> 12.4 ms)
+BgaY ——> OPTIONS / 
+BgaY <—— 204 No Content (<—> 0.9 ms)
+Ui3z ——> GET / 
+Ui3z <—— 304 Not Modified (<—> 1.5 ms)
+P6gz ——> OPTIONS /api/users/get/5cdf1536c8f28350063e6264 
+P6gz <—— 204 No Content (<—> 0.6 ms)
+HZD6 ——> GET /api/users/get/5cdf1536c8f28350063e6264 
+HZD6 <—— 304 Not Modified (<—> 6.0 ms)
+P9eR ——> OPTIONS / 
+P9eR <—— 204 No Content (<—> 0.6 ms)
+1Olf ——> GET / 
+1Olf <—— 304 Not Modified (<—> 2.8 ms)
+O7u8 ——> OPTIONS /api/users/get/5cdf1536c8f28350063e6264 
+O7u8 <—— 204 No Content (<—> 0.6 ms)
+UEVi ——> GET /api/users/get/5cdf1536c8f28350063e6264 
+UEVi <—— 304 Not Modified (<—> 6.8 ms)
+uyng ——> OPTIONS /api/users/5cdf1536c8f28350063e6264/properties 
+uyng <—— 204 No Content (<—> 0.6 ms)
+Dmq7 ——> GET /api/users/5cdf1536c8f28350063e6264/properties 
+Dmq7 <—— 304 Not Modified (<—> 13.8 ms)
+r8Cx ——> OPTIONS / 
+r8Cx <—— 204 No Content (<—> 0.8 ms)
+YpYn ——> GET / 
+YpYn <—— 304 Not Modified (<—> 1.8 ms)
+nm4V ——> OPTIONS /api/users/get/5cdf1536c8f28350063e6264 
+nm4V <—— 204 No Content (<—> 0.7 ms)
+g87H ——> GET /api/users/get/5cdf1536c8f28350063e6264 
+g87H <—— 304 Not Modified (<—> 6.5 ms)
+6mAC ——> OPTIONS / 
+6mAC <—— 204 No Content (<—> 1.2 ms)
+gPF0 ——> GET / 
+gPF0 <—— 304 Not Modified (<—> 1.6 ms)
+LBVi ——> OPTIONS /api/users/get/5cdf159fc8f28350063e6266 
+LBVi <—— 204 No Content (<—> 1.7 ms)
+ejiy ——> GET /api/users/get/5cdf159fc8f28350063e6266 
+ejiy <—— 304 Not Modified (<—> 14.2 ms)
+QQzx ——> OPTIONS /api/users/5cdf159fc8f28350063e6266/properties 
+QQzx <—— 204 No Content (<—> 1.3 ms)
+o9Q7 ——> GET /api/users/5cdf159fc8f28350063e6266/properties 
+o9Q7 <—— 304 Not Modified (<—> 27.0 ms)
+gRM4 ——> OPTIONS /api/properties/5cdf1611c8f28350063e626f 
+gRM4 <—— 204 No Content (<—> 1.0 ms)
+bL9j ——> GET /api/properties/5cdf1611c8f28350063e626f 
+bL9j <—— 304 Not Modified (<—> 9.5 ms)
