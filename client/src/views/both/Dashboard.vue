@@ -26,8 +26,6 @@
 						<br><br>
 						# Offers: {{ buyer_profile.offers.length }}
 						<br><br>
-						# Purchased: {{ buyer_profile.purchased.length }}
-						<br><br>
 						# Sessions: {{ buyer_profile.sessions.length }}
 					</v-card-text>
 				</v-card>
@@ -66,8 +64,6 @@
 						# Verified: {{ seller_profile.verified_count }}
 						<br><br>
 						# Listed: {{ seller_profile.listed_count }}
-						<br><br>
-						# Sold: {{ seller_profile.sold.length }}
 						<br><br>
 						# Sessions: {{ seller_profile.sessions.length }}
 					</v-card-text>

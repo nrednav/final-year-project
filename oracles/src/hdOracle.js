@@ -50,7 +50,7 @@ class HdOracle {
 
 			// Listen release holding deposit event
 			this.escrow_contract.events.release_holding_deposit({
-				fromBlock: "latest",
+				fromBlock: 0,
 				toBlock: "latest"
 			}, async (error, event) => {
 				if (error) {
@@ -106,7 +106,7 @@ class HdOracle {
 		Session.findOne({
 			seller_address: sellerAddress.toLowerCase(),
 			buyer_address: buyerAddress.toLowerCase()
-		}, (err, session) => {
+		}, async (err, session) => {
 			if (err) throw err;
 
 			console.log('Getting hd contract address from session...');

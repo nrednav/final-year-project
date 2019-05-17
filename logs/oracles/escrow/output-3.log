@@ -1,16 +1,22 @@
+
+> oracles@1.0.0 escrow /c/Users/Vandern Rodrigues/Projects/fyp/oracles
+> babel-node ./src/escrowOracle.js
+
+The escrow oracle is now listening for events...
+Escrow Oracle started...
 Found event:-
  buyer_deposit_complete
-{ address: '0xb4E100C620F307243729f56D1852C0f3310B675a',
-  blockNumber: 6159,
+{ address: '0x46D1a3a211c5A261ED481f6d871DE4e4a0D50048',
+  blockNumber: 248,
   transactionHash:
-   '0x270291bf34d323a9790b6c90e37f0e3a239a7585692f42a01f8ec7ce122c2bb8',
+   '0x30b60aaf9426bb597a66dd89bb244bbc1867b0d1a59e09d3829283628d09046b',
   transactionIndex: 0,
   blockHash:
-   '0x4e81b7af8797b9818c21ca3bf9f947917eb5786fbd1d9d2c5f84e8078719ffa5',
+   '0x3a6a7b1744652c87844c8dccc9fa73f6ee1fec625fcc10e1eebc813ae7c9a3b0',
   logIndex: 0,
   removed: false,
   id:
-   'log_0x50cd68f2a01e28b0444547e359a26111edaf724072f86d15888f15c91e732fb3',
+   'log_0x407e71555e4c83bdacf34f23413f9ad0b1bfcc850855c7e128c3b73ad7abdf72',
   returnValues: {},
   event: 'buyer_deposit_complete',
   signature:
@@ -21,20 +27,20 @@ Found event:-
       [ '0x43270d591744ea0d1e0029cd7d0c92a69a1e4d6d14aa575c812c62300dc42b03' ] } }
 Getting participants...
 Updating session...
-Successfully updated Session #: 5cdf0e23bf2cce2e7cd9d555
+Successfully updated Session #: 5cdf1667c8f28350063e6273
 Found event:-
  title_transfer_requested
-{ address: '0xb4E100C620F307243729f56D1852C0f3310B675a',
-  blockNumber: 6173,
+{ address: '0x46D1a3a211c5A261ED481f6d871DE4e4a0D50048',
+  blockNumber: 261,
   transactionHash:
-   '0x2bfe5ded00552470cf833f6cc89528afd7983796b8c4937a4f2024cdca3a8c8a',
+   '0xe4c5891fbce2cce211b3c52aa6feff4db60f7137f47267f5e2c8d829e1510cbd',
   transactionIndex: 0,
   blockHash:
-   '0xb7a726377494fdcc45255f2bec412086302f12769e534e12ea3db222b7f248b2',
+   '0x2e5c4ac1949330bcdf4abd13b6866a2c6a4cdd69d6c5f57d259e141cfd890bc8',
   logIndex: 0,
   removed: false,
   id:
-   'log_0x1e8f8cddd0b6ba819886a8f64ef71d654ffe666d8be5c8d37a498470200b1b55',
+   'log_0x421656904f2ba741a663833f67b0f65f4fb24cc594e307bc73893a773fea1466',
   returnValues: {},
   event: 'title_transfer_requested',
   signature:
@@ -47,25 +53,25 @@ Found event:-
    { '1':
       { name: 'Holding Deposit',
         status: 'Completed',
-        holding_deposit_address: '0x88CeB2Ae57E8406a619fFB5C729E8e8Ac3654DdF',
+        holding_deposit_address: '0x924ad28B07db87ADbCC7356c9171cF8fe44B4F3F',
         deposit_amount: 2500,
         deposit_status: 'Paid',
-        deadline: 2019-09-01T00:00:00.000Z },
+        deadline: 2019-09-09T00:00:00.000Z },
      '2':
       { name: 'Background Screening',
         status: 'Completed',
         verification_status: 'Verified',
         buyer_screening_uid:
-         '0xa2de3e308513e18e48235674020e8483efe97e0c2a8a492df2ec4d82597954b4' },
+         '0xac4a446b5498631132babbd0a105ca52196b1318f69a410f99790505fa671cf6' },
      '3':
       { sc_hashes: [Object],
         name: 'Sales Contract',
         status: 'Completed',
         contract_status: 'Signed',
-        sale_contract_id: '5cdf0e7abf2cce2e7cd9d556',
-        signed_sale_contract_id: '5cdf0e86bf2cce2e7cd9d55e',
+        sale_contract_id: '5cdf16cec8f28350063e6274',
+        signed_sale_contract_id: '5cdf16d9c8f28350063e627a',
         sc_hash_status: false,
-        agreed_sale_price: 45000 },
+        agreed_sale_price: 75000 },
      '4':
       { mini_stages: [Object],
         name: 'Escrow',
@@ -73,13 +79,13 @@ Found event:-
         escrow_contract_address: '',
         active_mini_stage: 2 } },
   progress: 3,
-  _id: 5cdf0e23bf2cce2e7cd9d555,
-  property_id: '5cdf0dcabf2cce2e7cd9d4a0',
-  buyer_id: '5cdec8da3c651b2c930758d0',
-  seller_id: '5cdec80a3c651b2c930758c7',
-  buyer_address: '0xd6de2756a197e80f70b801ffafd7174199d40692',
-  seller_address: '0x0d66e9b15546868953af4a5228964a81c886522d',
-  created_at: 2019-05-17T19:40:19.137Z,
+  _id: 5cdf1667c8f28350063e6273,
+  property_id: '5cdf1611c8f28350063e626f',
+  buyer_id: '5cdf159fc8f28350063e6266',
+  seller_id: '5cdf1536c8f28350063e6264',
+  buyer_address: '0xe6bf10ffadd7571fccece7dc0247e30d37f02b88',
+  seller_address: '0xe2a2ef60fcb1f39186d8261b0951fbd178650f3b',
+  created_at: 2019-05-17T20:15:35.735Z,
   __v: 0 }
 Collecting necessary information for title transfer...
 Generating new property uid...
@@ -87,42 +93,21 @@ Transferring title...
 Successfully transfered title: 
 [object Object]
 { n: 1, nModified: 1, ok: 1 }
-Successfully updated Session #: 5cdf0e23bf2cce2e7cd9d555
+Successfully updated Session #: 5cdf1667c8f28350063e6273
 { message: 'uploaded' }
 Found event:-
- escrow_closed
-{ address: '0xb4E100C620F307243729f56D1852C0f3310B675a',
-  blockNumber: 6198,
-  transactionHash:
-   '0xee3371a7ebb19b8baaa97268572a5dd96e3f00b97767ca62e24841e5c25bfb1d',
-  transactionIndex: 0,
-  blockHash:
-   '0xa73c8bd107e28b437faa2504ee8bafb2846780938880d1032b03940e45f435c4',
-  logIndex: 3,
-  removed: false,
-  id:
-   'log_0xdad8fbba54214ed21877897904965717c786f7c98467263c6015383172579706',
-  returnValues: {},
-  event: 'escrow_closed',
-  signature:
-   '0xe1760e1470c9ffbe1944bf685aff5b043b446cc4cbb2ca06dfe196a5c031008f',
-  raw:
-   { data: null,
-     topics:
-      [ '0xe1760e1470c9ffbe1944bf685aff5b043b446cc4cbb2ca06dfe196a5c031008f' ] } }
-Found event:-
  commit_title_transfer
-{ address: '0xb4E100C620F307243729f56D1852C0f3310B675a',
-  blockNumber: 6198,
+{ address: '0x46D1a3a211c5A261ED481f6d871DE4e4a0D50048',
+  blockNumber: 285,
   transactionHash:
-   '0xee3371a7ebb19b8baaa97268572a5dd96e3f00b97767ca62e24841e5c25bfb1d',
+   '0x199f6164fd5fcea2f397922051b18033980c56c08f295850d9ac66db59dff394',
   transactionIndex: 0,
   blockHash:
-   '0xa73c8bd107e28b437faa2504ee8bafb2846780938880d1032b03940e45f435c4',
+   '0xb570a47144d8ac46116810a26d204ad4c49083cee1da8f7e95497e24c5b57285',
   logIndex: 0,
   removed: false,
   id:
-   'log_0x63ebd730f429182ac4a4ca7b4edbd59a3db334c428cb76b64a5b391eeea1f8f0',
+   'log_0xa6695316b8b7f2becdef8a038382e6d23476d8e01c5bd87c6a2e6221ebe4d545',
   returnValues: {},
   event: 'commit_title_transfer',
   signature:
@@ -131,11 +116,32 @@ Found event:-
    { data: null,
      topics:
       [ '0x15bcf09c9c3c9a97f930a992ea1d7cebdaf63d8f42692f9147beadd45d835629' ] } }
-Removed property from seller
+Found event:-
+ escrow_closed
+{ address: '0x46D1a3a211c5A261ED481f6d871DE4e4a0D50048',
+  blockNumber: 285,
+  transactionHash:
+   '0x199f6164fd5fcea2f397922051b18033980c56c08f295850d9ac66db59dff394',
+  transactionIndex: 0,
+  blockHash:
+   '0xb570a47144d8ac46116810a26d204ad4c49083cee1da8f7e95497e24c5b57285',
+  logIndex: 3,
+  removed: false,
+  id:
+   'log_0xc029f4ac8868aa84a1c26cfbac9a5238a2b7d83a52ffb25c08a8e42d3b953284',
+  returnValues: {},
+  event: 'escrow_closed',
+  signature:
+   '0xe1760e1470c9ffbe1944bf685aff5b043b446cc4cbb2ca06dfe196a5c031008f',
+  raw:
+   { data: null,
+     topics:
+      [ '0xe1760e1470c9ffbe1944bf685aff5b043b446cc4cbb2ca06dfe196a5c031008f' ] } }
+Updated property information to set buyer as owner
 { n: 1, nModified: 1, ok: 1 }
 Added property to buyer
 { n: 1, nModified: 1, ok: 1 }
-Updated property information to set buyer as owner
+Removed property from seller
 { n: 1, nModified: 1, ok: 1 }
 { status: 200,
   statusText: 'OK',
@@ -145,7 +151,7 @@ Updated property information to set buyer as owner
      'content-type': 'application/json; charset=utf-8',
      'content-length': '22',
      etag: 'W/"16-uLmXED9y+nvsaXhkkRngekVCElY"',
-     date: 'Fri, 17 May 2019 19:44:52 GMT',
+     date: 'Fri, 17 May 2019 20:20:47 GMT',
      connection: 'close' },
   config:
    { adapter: [Function: httpAdapter],
@@ -164,7 +170,7 @@ Updated property information to set buyer as owner
         'Content-Length': 15 },
      method: 'post',
      url:
-      'http://localhost:3000/api/sessions/5cdf0e23bf2cce2e7cd9d555/upload-td',
+      'http://localhost:3000/api/sessions/5cdf1667c8f28350063e6273/upload-td',
      data: '{"upload":true}' },
   request:
    ClientRequest {
@@ -215,7 +221,7 @@ Updated property information to set buyer as owner
         _server: null,
         parser: null,
         _httpMessage: [Circular],
-        [Symbol(asyncId)]: 2492,
+        [Symbol(asyncId)]: 3396,
         [Symbol(kHandle)]: [TCP],
         [Symbol(lastWriteQueueSize)]: 0,
         [Symbol(timeout)]: null,
@@ -242,14 +248,14 @@ Updated property information to set buyer as owner
         _server: null,
         parser: null,
         _httpMessage: [Circular],
-        [Symbol(asyncId)]: 2492,
+        [Symbol(asyncId)]: 3396,
         [Symbol(kHandle)]: [TCP],
         [Symbol(lastWriteQueueSize)]: 0,
         [Symbol(timeout)]: null,
         [Symbol(kBytesRead)]: 0,
         [Symbol(kBytesWritten)]: 0 },
      _header:
-      'POST /api/sessions/5cdf0e23bf2cce2e7cd9d555/upload-td HTTP/1.1\r\nAccept: application/json, text/plain, */*\r\nContent-Type: application/json;charset=utf-8\r\nAuthorization: a1b2c3d4e5f6g7\r\nUser-Agent: axios/0.18.0\r\nContent-Length: 15\r\nHost: localhost:3000\r\nConnection: close\r\n\r\n',
+      'POST /api/sessions/5cdf1667c8f28350063e6273/upload-td HTTP/1.1\r\nAccept: application/json, text/plain, */*\r\nContent-Type: application/json;charset=utf-8\r\nAuthorization: a1b2c3d4e5f6g7\r\nUser-Agent: axios/0.18.0\r\nContent-Length: 15\r\nHost: localhost:3000\r\nConnection: close\r\n\r\n',
      _onPendingData: [Function: noopPendingOutput],
      agent:
       Agent {
@@ -269,7 +275,7 @@ Updated property information to set buyer as owner
      socketPath: undefined,
      timeout: undefined,
      method: 'POST',
-     path: '/api/sessions/5cdf0e23bf2cce2e7cd9d555/upload-td',
+     path: '/api/sessions/5cdf1667c8f28350063e6273/upload-td',
      _ended: true,
      res:
       IncomingMessage {
@@ -299,7 +305,7 @@ Updated property information to set buyer as owner
         _dumped: false,
         req: [Circular],
         responseUrl:
-         'http://localhost:3000/api/sessions/5cdf0e23bf2cce2e7cd9d555/upload-td',
+         'http://localhost:3000/api/sessions/5cdf1667c8f28350063e6273/upload-td',
         redirects: [] },
      aborted: false,
      timeoutCb: null,
@@ -323,7 +329,7 @@ Updated property information to set buyer as owner
         _onNativeResponse: [Function],
         _currentRequest: [Circular],
         _currentUrl:
-         'http://localhost:3000/api/sessions/5cdf0e23bf2cce2e7cd9d555/upload-td' },
+         'http://localhost:3000/api/sessions/5cdf1667c8f28350063e6273/upload-td' },
      [Symbol(isCorked)]: false,
      [Symbol(outHeadersKey)]:
       [Object: null prototype] {
@@ -335,8 +341,8 @@ Updated property information to set buyer as owner
         host: [Array] } },
   data: { message: 'uploaded' } }
 { blockHash:
-   '0x0f63055a67a310f62d89e78e2420fc0732f5a959b9a08a6fba73fbaed601a79d',
-  blockNumber: 6176,
+   '0x3ce794e70569d32d2c7ec1c319a904e495c7c5b69bfed12c6568fcf9deb6488e',
+  blockNumber: 264,
   contractAddress: null,
   cumulativeGasUsed: 44291,
   from: '0x8a23c7C42333ed6be5a68c24031cd7A737fbcBE8',
@@ -344,16 +350,10 @@ Updated property information to set buyer as owner
   logsBloom:
    '0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000',
   status: true,
-  to: '0xb4E100C620F307243729f56D1852C0f3310B675a',
+  to: '0x46D1a3a211c5A261ED481f6d871DE4e4a0D50048',
   transactionHash:
-   '0xf2aec6d12c5bfbeb434b709fcc0739889dd64e4c5cc14097a87027415a7d9f95',
+   '0xe7a4318038d3e37c37275892558edf4798b5c5fd3d570ecb8ee6e44ced876a09',
   transactionIndex: 0,
   nonce: undefined,
   gas: undefined,
   events: {} }
-
-> oracles@1.0.0 escrow /c/Users/Vandern Rodrigues/Projects/fyp/oracles
-> babel-node ./src/escrowOracle.js
-
-The escrow oracle is now listening for events...
-Escrow Oracle started...

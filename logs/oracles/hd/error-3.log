@@ -1,4 +1,771 @@
-(node:904) UnhandledPromiseRejectionWarning: #<_Event>
-(node:904) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 1)
-(node:904) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
-(node:11391) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
+/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babel-core/lib/transformation/file/index.js:558
+      throw err;
+      ^
+
+SyntaxError: /c/Users/Vandern Rodrigues/Projects/fyp/oracles/src/hdOracle.js: await is a reserved word (118:3)
+  116 | 			console.log('Configuring node address...');
+  117 | 			let nodeAddress = "0x8a23c7c42333ed6be5a68c24031cd7a737fbcbe8";
+> 118 | 			await web3.eth.personal.unlockAccount(nodeAddress, String(1234), 1000);
+      | 			^
+  119 | 
+  120 | 			console.log('Releasing deposit...');
+  121 | 			let tx = hdContract.methods.release_deposit().send({
+    at Parser.pp$5.raise (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4454:13)
+    at Parser.pp$3.checkReservedWord (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4347:10)
+    at Parser.pp$3.parseIdentifier (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4324:10)
+    at Parser.pp$3.parseExprAtom (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3648:21)
+    at Parser.pp$3.parseExprSubscripts (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3494:19)
+    at Parser.pp$3.parseMaybeUnary (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3474:19)
+    at Parser.pp$3.parseExprOps (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3404:19)
+    at Parser.pp$3.parseMaybeConditional (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3381:19)
+    at Parser.pp$3.parseMaybeAssign (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3344:19)
+    at Parser.pp$3.parseExpression (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3306:19)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! oracles@1.0.0 hd: `babel-node ./src/hdOracle.js`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the oracles@1.0.0 hd script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/vandern/.npm/_logs/2019-05-17T19_50_18_242Z-debug.log
+/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babel-core/lib/transformation/file/index.js:558
+      throw err;
+      ^
+
+SyntaxError: /c/Users/Vandern Rodrigues/Projects/fyp/oracles/src/hdOracle.js: await is a reserved word (118:3)
+  116 | 			console.log('Configuring node address...');
+  117 | 			let nodeAddress = "0x8a23c7c42333ed6be5a68c24031cd7a737fbcbe8";
+> 118 | 			await web3.eth.personal.unlockAccount(nodeAddress, String(1234), 1000);
+      | 			^
+  119 | 
+  120 | 			console.log('Releasing deposit...');
+  121 | 			let tx = hdContract.methods.release_deposit().send({
+    at Parser.pp$5.raise (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4454:13)
+    at Parser.pp$3.checkReservedWord (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4347:10)
+    at Parser.pp$3.parseIdentifier (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4324:10)
+    at Parser.pp$3.parseExprAtom (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3648:21)
+    at Parser.pp$3.parseExprSubscripts (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3494:19)
+    at Parser.pp$3.parseMaybeUnary (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3474:19)
+    at Parser.pp$3.parseExprOps (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3404:19)
+    at Parser.pp$3.parseMaybeConditional (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3381:19)
+    at Parser.pp$3.parseMaybeAssign (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3344:19)
+    at Parser.pp$3.parseExpression (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3306:19)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! oracles@1.0.0 hd: `babel-node ./src/hdOracle.js`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the oracles@1.0.0 hd script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/vandern/.npm/_logs/2019-05-17T19_50_20_410Z-debug.log
+/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babel-core/lib/transformation/file/index.js:558
+      throw err;
+      ^
+
+SyntaxError: /c/Users/Vandern Rodrigues/Projects/fyp/oracles/src/hdOracle.js: await is a reserved word (118:3)
+  116 | 			console.log('Configuring node address...');
+  117 | 			let nodeAddress = "0x8a23c7c42333ed6be5a68c24031cd7a737fbcbe8";
+> 118 | 			await web3.eth.personal.unlockAccount(nodeAddress, String(1234), 1000);
+      | 			^
+  119 | 
+  120 | 			console.log('Releasing deposit...');
+  121 | 			let tx = hdContract.methods.release_deposit().send({
+    at Parser.pp$5.raise (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4454:13)
+    at Parser.pp$3.checkReservedWord (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4347:10)
+    at Parser.pp$3.parseIdentifier (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4324:10)
+    at Parser.pp$3.parseExprAtom (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3648:21)
+    at Parser.pp$3.parseExprSubscripts (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3494:19)
+    at Parser.pp$3.parseMaybeUnary (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3474:19)
+    at Parser.pp$3.parseExprOps (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3404:19)
+    at Parser.pp$3.parseMaybeConditional (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3381:19)
+    at Parser.pp$3.parseMaybeAssign (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3344:19)
+    at Parser.pp$3.parseExpression (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3306:19)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! oracles@1.0.0 hd: `babel-node ./src/hdOracle.js`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the oracles@1.0.0 hd script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/vandern/.npm/_logs/2019-05-17T19_50_22_710Z-debug.log
+/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babel-core/lib/transformation/file/index.js:558
+      throw err;
+      ^
+
+SyntaxError: /c/Users/Vandern Rodrigues/Projects/fyp/oracles/src/hdOracle.js: await is a reserved word (118:3)
+  116 | 			console.log('Configuring node address...');
+  117 | 			let nodeAddress = "0x8a23c7c42333ed6be5a68c24031cd7a737fbcbe8";
+> 118 | 			await web3.eth.personal.unlockAccount(nodeAddress, String(1234), 1000);
+      | 			^
+  119 | 
+  120 | 			console.log('Releasing deposit...');
+  121 | 			let tx = hdContract.methods.release_deposit().send({
+    at Parser.pp$5.raise (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4454:13)
+    at Parser.pp$3.checkReservedWord (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4347:10)
+    at Parser.pp$3.parseIdentifier (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4324:10)
+    at Parser.pp$3.parseExprAtom (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3648:21)
+    at Parser.pp$3.parseExprSubscripts (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3494:19)
+    at Parser.pp$3.parseMaybeUnary (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3474:19)
+    at Parser.pp$3.parseExprOps (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3404:19)
+    at Parser.pp$3.parseMaybeConditional (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3381:19)
+    at Parser.pp$3.parseMaybeAssign (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3344:19)
+    at Parser.pp$3.parseExpression (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3306:19)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! oracles@1.0.0 hd: `babel-node ./src/hdOracle.js`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the oracles@1.0.0 hd script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/vandern/.npm/_logs/2019-05-17T19_50_24_889Z-debug.log
+/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babel-core/lib/transformation/file/index.js:558
+      throw err;
+      ^
+
+SyntaxError: /c/Users/Vandern Rodrigues/Projects/fyp/oracles/src/hdOracle.js: await is a reserved word (118:3)
+  116 | 			console.log('Configuring node address...');
+  117 | 			let nodeAddress = "0x8a23c7c42333ed6be5a68c24031cd7a737fbcbe8";
+> 118 | 			await web3.eth.personal.unlockAccount(nodeAddress, String(1234), 1000);
+      | 			^
+  119 | 
+  120 | 			console.log('Releasing deposit...');
+  121 | 			let tx = hdContract.methods.release_deposit().send({
+    at Parser.pp$5.raise (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4454:13)
+    at Parser.pp$3.checkReservedWord (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4347:10)
+    at Parser.pp$3.parseIdentifier (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4324:10)
+    at Parser.pp$3.parseExprAtom (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3648:21)
+    at Parser.pp$3.parseExprSubscripts (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3494:19)
+    at Parser.pp$3.parseMaybeUnary (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3474:19)
+    at Parser.pp$3.parseExprOps (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3404:19)
+    at Parser.pp$3.parseMaybeConditional (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3381:19)
+    at Parser.pp$3.parseMaybeAssign (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3344:19)
+    at Parser.pp$3.parseExpression (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3306:19)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! oracles@1.0.0 hd: `babel-node ./src/hdOracle.js`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the oracles@1.0.0 hd script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/vandern/.npm/_logs/2019-05-17T19_50_27_159Z-debug.log
+/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babel-core/lib/transformation/file/index.js:558
+      throw err;
+      ^
+
+SyntaxError: /c/Users/Vandern Rodrigues/Projects/fyp/oracles/src/hdOracle.js: await is a reserved word (118:3)
+  116 | 			console.log('Configuring node address...');
+  117 | 			let nodeAddress = "0x8a23c7c42333ed6be5a68c24031cd7a737fbcbe8";
+> 118 | 			await web3.eth.personal.unlockAccount(nodeAddress, String(1234), 1000);
+      | 			^
+  119 | 
+  120 | 			console.log('Releasing deposit...');
+  121 | 			let tx = hdContract.methods.release_deposit().send({
+    at Parser.pp$5.raise (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4454:13)
+    at Parser.pp$3.checkReservedWord (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4347:10)
+    at Parser.pp$3.parseIdentifier (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4324:10)
+    at Parser.pp$3.parseExprAtom (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3648:21)
+    at Parser.pp$3.parseExprSubscripts (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3494:19)
+    at Parser.pp$3.parseMaybeUnary (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3474:19)
+    at Parser.pp$3.parseExprOps (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3404:19)
+    at Parser.pp$3.parseMaybeConditional (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3381:19)
+    at Parser.pp$3.parseMaybeAssign (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3344:19)
+    at Parser.pp$3.parseExpression (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3306:19)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! oracles@1.0.0 hd: `babel-node ./src/hdOracle.js`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the oracles@1.0.0 hd script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/vandern/.npm/_logs/2019-05-17T19_50_29_414Z-debug.log
+/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babel-core/lib/transformation/file/index.js:558
+      throw err;
+      ^
+
+SyntaxError: /c/Users/Vandern Rodrigues/Projects/fyp/oracles/src/hdOracle.js: await is a reserved word (118:3)
+  116 | 			console.log('Configuring node address...');
+  117 | 			let nodeAddress = "0x8a23c7c42333ed6be5a68c24031cd7a737fbcbe8";
+> 118 | 			await web3.eth.personal.unlockAccount(nodeAddress, String(1234), 1000);
+      | 			^
+  119 | 
+  120 | 			console.log('Releasing deposit...');
+  121 | 			let tx = hdContract.methods.release_deposit().send({
+    at Parser.pp$5.raise (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4454:13)
+    at Parser.pp$3.checkReservedWord (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4347:10)
+    at Parser.pp$3.parseIdentifier (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4324:10)
+    at Parser.pp$3.parseExprAtom (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3648:21)
+    at Parser.pp$3.parseExprSubscripts (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3494:19)
+    at Parser.pp$3.parseMaybeUnary (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3474:19)
+    at Parser.pp$3.parseExprOps (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3404:19)
+    at Parser.pp$3.parseMaybeConditional (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3381:19)
+    at Parser.pp$3.parseMaybeAssign (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3344:19)
+    at Parser.pp$3.parseExpression (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3306:19)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! oracles@1.0.0 hd: `babel-node ./src/hdOracle.js`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the oracles@1.0.0 hd script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/vandern/.npm/_logs/2019-05-17T19_50_31_873Z-debug.log
+/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babel-core/lib/transformation/file/index.js:558
+      throw err;
+      ^
+
+SyntaxError: /c/Users/Vandern Rodrigues/Projects/fyp/oracles/src/hdOracle.js: await is a reserved word (118:3)
+  116 | 			console.log('Configuring node address...');
+  117 | 			let nodeAddress = "0x8a23c7c42333ed6be5a68c24031cd7a737fbcbe8";
+> 118 | 			await web3.eth.personal.unlockAccount(nodeAddress, String(1234), 1000);
+      | 			^
+  119 | 
+  120 | 			console.log('Releasing deposit...');
+  121 | 			let tx = hdContract.methods.release_deposit().send({
+    at Parser.pp$5.raise (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4454:13)
+    at Parser.pp$3.checkReservedWord (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4347:10)
+    at Parser.pp$3.parseIdentifier (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4324:10)
+    at Parser.pp$3.parseExprAtom (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3648:21)
+    at Parser.pp$3.parseExprSubscripts (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3494:19)
+    at Parser.pp$3.parseMaybeUnary (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3474:19)
+    at Parser.pp$3.parseExprOps (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3404:19)
+    at Parser.pp$3.parseMaybeConditional (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3381:19)
+    at Parser.pp$3.parseMaybeAssign (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3344:19)
+    at Parser.pp$3.parseExpression (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3306:19)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! oracles@1.0.0 hd: `babel-node ./src/hdOracle.js`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the oracles@1.0.0 hd script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/vandern/.npm/_logs/2019-05-17T19_50_34_215Z-debug.log
+/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babel-core/lib/transformation/file/index.js:558
+      throw err;
+      ^
+
+SyntaxError: /c/Users/Vandern Rodrigues/Projects/fyp/oracles/src/hdOracle.js: await is a reserved word (118:3)
+  116 | 			console.log('Configuring node address...');
+  117 | 			let nodeAddress = "0x8a23c7c42333ed6be5a68c24031cd7a737fbcbe8";
+> 118 | 			await web3.eth.personal.unlockAccount(nodeAddress, String(1234), 1000);
+      | 			^
+  119 | 
+  120 | 			console.log('Releasing deposit...');
+  121 | 			let tx = hdContract.methods.release_deposit().send({
+    at Parser.pp$5.raise (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4454:13)
+    at Parser.pp$3.checkReservedWord (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4347:10)
+    at Parser.pp$3.parseIdentifier (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4324:10)
+    at Parser.pp$3.parseExprAtom (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3648:21)
+    at Parser.pp$3.parseExprSubscripts (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3494:19)
+    at Parser.pp$3.parseMaybeUnary (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3474:19)
+    at Parser.pp$3.parseExprOps (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3404:19)
+    at Parser.pp$3.parseMaybeConditional (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3381:19)
+    at Parser.pp$3.parseMaybeAssign (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3344:19)
+    at Parser.pp$3.parseExpression (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3306:19)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! oracles@1.0.0 hd: `babel-node ./src/hdOracle.js`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the oracles@1.0.0 hd script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/vandern/.npm/_logs/2019-05-17T19_50_36_341Z-debug.log
+/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babel-core/lib/transformation/file/index.js:558
+      throw err;
+      ^
+
+SyntaxError: /c/Users/Vandern Rodrigues/Projects/fyp/oracles/src/hdOracle.js: await is a reserved word (118:3)
+  116 | 			console.log('Configuring node address...');
+  117 | 			let nodeAddress = "0x8a23c7c42333ed6be5a68c24031cd7a737fbcbe8";
+> 118 | 			await web3.eth.personal.unlockAccount(nodeAddress, String(1234), 1000);
+      | 			^
+  119 | 
+  120 | 			console.log('Releasing deposit...');
+  121 | 			let tx = hdContract.methods.release_deposit().send({
+    at Parser.pp$5.raise (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4454:13)
+    at Parser.pp$3.checkReservedWord (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4347:10)
+    at Parser.pp$3.parseIdentifier (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4324:10)
+    at Parser.pp$3.parseExprAtom (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3648:21)
+    at Parser.pp$3.parseExprSubscripts (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3494:19)
+    at Parser.pp$3.parseMaybeUnary (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3474:19)
+    at Parser.pp$3.parseExprOps (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3404:19)
+    at Parser.pp$3.parseMaybeConditional (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3381:19)
+    at Parser.pp$3.parseMaybeAssign (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3344:19)
+    at Parser.pp$3.parseExpression (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3306:19)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! oracles@1.0.0 hd: `babel-node ./src/hdOracle.js`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the oracles@1.0.0 hd script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/vandern/.npm/_logs/2019-05-17T19_50_38_519Z-debug.log
+/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babel-core/lib/transformation/file/index.js:558
+      throw err;
+      ^
+
+SyntaxError: /c/Users/Vandern Rodrigues/Projects/fyp/oracles/src/hdOracle.js: await is a reserved word (118:3)
+  116 | 			console.log('Configuring node address...');
+  117 | 			let nodeAddress = "0x8a23c7c42333ed6be5a68c24031cd7a737fbcbe8";
+> 118 | 			await web3.eth.personal.unlockAccount(nodeAddress, String(1234), 1000);
+      | 			^
+  119 | 
+  120 | 			console.log('Releasing deposit...');
+  121 | 			let tx = hdContract.methods.release_deposit().send({
+    at Parser.pp$5.raise (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4454:13)
+    at Parser.pp$3.checkReservedWord (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4347:10)
+    at Parser.pp$3.parseIdentifier (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4324:10)
+    at Parser.pp$3.parseExprAtom (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3648:21)
+    at Parser.pp$3.parseExprSubscripts (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3494:19)
+    at Parser.pp$3.parseMaybeUnary (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3474:19)
+    at Parser.pp$3.parseExprOps (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3404:19)
+    at Parser.pp$3.parseMaybeConditional (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3381:19)
+    at Parser.pp$3.parseMaybeAssign (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3344:19)
+    at Parser.pp$3.parseExpression (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3306:19)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! oracles@1.0.0 hd: `babel-node ./src/hdOracle.js`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the oracles@1.0.0 hd script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/vandern/.npm/_logs/2019-05-17T19_50_40_645Z-debug.log
+/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babel-core/lib/transformation/file/index.js:558
+      throw err;
+      ^
+
+SyntaxError: /c/Users/Vandern Rodrigues/Projects/fyp/oracles/src/hdOracle.js: await is a reserved word (118:3)
+  116 | 			console.log('Configuring node address...');
+  117 | 			let nodeAddress = "0x8a23c7c42333ed6be5a68c24031cd7a737fbcbe8";
+> 118 | 			await web3.eth.personal.unlockAccount(nodeAddress, String(1234), 1000);
+      | 			^
+  119 | 
+  120 | 			console.log('Releasing deposit...');
+  121 | 			let tx = hdContract.methods.release_deposit().send({
+    at Parser.pp$5.raise (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4454:13)
+    at Parser.pp$3.checkReservedWord (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4347:10)
+    at Parser.pp$3.parseIdentifier (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4324:10)
+    at Parser.pp$3.parseExprAtom (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3648:21)
+    at Parser.pp$3.parseExprSubscripts (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3494:19)
+    at Parser.pp$3.parseMaybeUnary (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3474:19)
+    at Parser.pp$3.parseExprOps (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3404:19)
+    at Parser.pp$3.parseMaybeConditional (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3381:19)
+    at Parser.pp$3.parseMaybeAssign (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3344:19)
+    at Parser.pp$3.parseExpression (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3306:19)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! oracles@1.0.0 hd: `babel-node ./src/hdOracle.js`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the oracles@1.0.0 hd script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/vandern/.npm/_logs/2019-05-17T19_50_42_802Z-debug.log
+/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babel-core/lib/transformation/file/index.js:558
+      throw err;
+      ^
+
+SyntaxError: /c/Users/Vandern Rodrigues/Projects/fyp/oracles/src/hdOracle.js: await is a reserved word (118:3)
+  116 | 			console.log('Configuring node address...');
+  117 | 			let nodeAddress = "0x8a23c7c42333ed6be5a68c24031cd7a737fbcbe8";
+> 118 | 			await web3.eth.personal.unlockAccount(nodeAddress, String(1234), 1000);
+      | 			^
+  119 | 
+  120 | 			console.log('Releasing deposit...');
+  121 | 			let tx = hdContract.methods.release_deposit().send({
+    at Parser.pp$5.raise (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4454:13)
+    at Parser.pp$3.checkReservedWord (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4347:10)
+    at Parser.pp$3.parseIdentifier (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4324:10)
+    at Parser.pp$3.parseExprAtom (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3648:21)
+    at Parser.pp$3.parseExprSubscripts (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3494:19)
+    at Parser.pp$3.parseMaybeUnary (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3474:19)
+    at Parser.pp$3.parseExprOps (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3404:19)
+    at Parser.pp$3.parseMaybeConditional (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3381:19)
+    at Parser.pp$3.parseMaybeAssign (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3344:19)
+    at Parser.pp$3.parseExpression (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3306:19)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! oracles@1.0.0 hd: `babel-node ./src/hdOracle.js`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the oracles@1.0.0 hd script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/vandern/.npm/_logs/2019-05-17T19_50_44_947Z-debug.log
+/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babel-core/lib/transformation/file/index.js:558
+      throw err;
+      ^
+
+SyntaxError: /c/Users/Vandern Rodrigues/Projects/fyp/oracles/src/hdOracle.js: await is a reserved word (118:3)
+  116 | 			console.log('Configuring node address...');
+  117 | 			let nodeAddress = "0x8a23c7c42333ed6be5a68c24031cd7a737fbcbe8";
+> 118 | 			await web3.eth.personal.unlockAccount(nodeAddress, String(1234), 1000);
+      | 			^
+  119 | 
+  120 | 			console.log('Releasing deposit...');
+  121 | 			let tx = hdContract.methods.release_deposit().send({
+    at Parser.pp$5.raise (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4454:13)
+    at Parser.pp$3.checkReservedWord (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4347:10)
+    at Parser.pp$3.parseIdentifier (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4324:10)
+    at Parser.pp$3.parseExprAtom (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3648:21)
+    at Parser.pp$3.parseExprSubscripts (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3494:19)
+    at Parser.pp$3.parseMaybeUnary (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3474:19)
+    at Parser.pp$3.parseExprOps (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3404:19)
+    at Parser.pp$3.parseMaybeConditional (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3381:19)
+    at Parser.pp$3.parseMaybeAssign (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3344:19)
+    at Parser.pp$3.parseExpression (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3306:19)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! oracles@1.0.0 hd: `babel-node ./src/hdOracle.js`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the oracles@1.0.0 hd script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/vandern/.npm/_logs/2019-05-17T19_50_47_076Z-debug.log
+/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babel-core/lib/transformation/file/index.js:558
+      throw err;
+      ^
+
+SyntaxError: /c/Users/Vandern Rodrigues/Projects/fyp/oracles/src/hdOracle.js: await is a reserved word (118:3)
+  116 | 			console.log('Configuring node address...');
+  117 | 			let nodeAddress = "0x8a23c7c42333ed6be5a68c24031cd7a737fbcbe8";
+> 118 | 			await web3.eth.personal.unlockAccount(nodeAddress, String(1234), 1000);
+      | 			^
+  119 | 
+  120 | 			console.log('Releasing deposit...');
+  121 | 			let tx = hdContract.methods.release_deposit().send({
+    at Parser.pp$5.raise (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4454:13)
+    at Parser.pp$3.checkReservedWord (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4347:10)
+    at Parser.pp$3.parseIdentifier (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4324:10)
+    at Parser.pp$3.parseExprAtom (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3648:21)
+    at Parser.pp$3.parseExprSubscripts (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3494:19)
+    at Parser.pp$3.parseMaybeUnary (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3474:19)
+    at Parser.pp$3.parseExprOps (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3404:19)
+    at Parser.pp$3.parseMaybeConditional (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3381:19)
+    at Parser.pp$3.parseMaybeAssign (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3344:19)
+    at Parser.pp$3.parseExpression (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3306:19)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! oracles@1.0.0 hd: `babel-node ./src/hdOracle.js`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the oracles@1.0.0 hd script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/vandern/.npm/_logs/2019-05-17T19_50_49_340Z-debug.log
+/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babel-core/lib/transformation/file/index.js:558
+      throw err;
+      ^
+
+SyntaxError: /c/Users/Vandern Rodrigues/Projects/fyp/oracles/src/hdOracle.js: await is a reserved word (118:3)
+  116 | 			console.log('Configuring node address...');
+  117 | 			let nodeAddress = "0x8a23c7c42333ed6be5a68c24031cd7a737fbcbe8";
+> 118 | 			await web3.eth.personal.unlockAccount(nodeAddress, String(1234), 1000);
+      | 			^
+  119 | 
+  120 | 			console.log('Releasing deposit...');
+  121 | 			let tx = hdContract.methods.release_deposit().send({
+    at Parser.pp$5.raise (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4454:13)
+    at Parser.pp$3.checkReservedWord (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4347:10)
+    at Parser.pp$3.parseIdentifier (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4324:10)
+    at Parser.pp$3.parseExprAtom (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3648:21)
+    at Parser.pp$3.parseExprSubscripts (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3494:19)
+    at Parser.pp$3.parseMaybeUnary (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3474:19)
+    at Parser.pp$3.parseExprOps (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3404:19)
+    at Parser.pp$3.parseMaybeConditional (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3381:19)
+    at Parser.pp$3.parseMaybeAssign (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3344:19)
+    at Parser.pp$3.parseExpression (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3306:19)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! oracles@1.0.0 hd: `babel-node ./src/hdOracle.js`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the oracles@1.0.0 hd script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/vandern/.npm/_logs/2019-05-17T19_50_51_651Z-debug.log
+/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babel-core/lib/transformation/file/index.js:558
+      throw err;
+      ^
+
+SyntaxError: /c/Users/Vandern Rodrigues/Projects/fyp/oracles/src/hdOracle.js: await is a reserved word (118:3)
+  116 | 			console.log('Configuring node address...');
+  117 | 			let nodeAddress = "0x8a23c7c42333ed6be5a68c24031cd7a737fbcbe8";
+> 118 | 			await web3.eth.personal.unlockAccount(nodeAddress, String(1234), 1000);
+      | 			^
+  119 | 
+  120 | 			console.log('Releasing deposit...');
+  121 | 			let tx = hdContract.methods.release_deposit().send({
+    at Parser.pp$5.raise (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4454:13)
+    at Parser.pp$3.checkReservedWord (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4347:10)
+    at Parser.pp$3.parseIdentifier (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4324:10)
+    at Parser.pp$3.parseExprAtom (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3648:21)
+    at Parser.pp$3.parseExprSubscripts (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3494:19)
+    at Parser.pp$3.parseMaybeUnary (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3474:19)
+    at Parser.pp$3.parseExprOps (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3404:19)
+    at Parser.pp$3.parseMaybeConditional (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3381:19)
+    at Parser.pp$3.parseMaybeAssign (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3344:19)
+    at Parser.pp$3.parseExpression (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3306:19)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! oracles@1.0.0 hd: `babel-node ./src/hdOracle.js`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the oracles@1.0.0 hd script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/vandern/.npm/_logs/2019-05-17T19_50_53_920Z-debug.log
+/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babel-core/lib/transformation/file/index.js:558
+      throw err;
+      ^
+
+SyntaxError: /c/Users/Vandern Rodrigues/Projects/fyp/oracles/src/hdOracle.js: await is a reserved word (118:3)
+  116 | 			console.log('Configuring node address...');
+  117 | 			let nodeAddress = "0x8a23c7c42333ed6be5a68c24031cd7a737fbcbe8";
+> 118 | 			await web3.eth.personal.unlockAccount(nodeAddress, String(1234), 1000);
+      | 			^
+  119 | 
+  120 | 			console.log('Releasing deposit...');
+  121 | 			let tx = hdContract.methods.release_deposit().send({
+    at Parser.pp$5.raise (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4454:13)
+    at Parser.pp$3.checkReservedWord (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4347:10)
+    at Parser.pp$3.parseIdentifier (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4324:10)
+    at Parser.pp$3.parseExprAtom (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3648:21)
+    at Parser.pp$3.parseExprSubscripts (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3494:19)
+    at Parser.pp$3.parseMaybeUnary (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3474:19)
+    at Parser.pp$3.parseExprOps (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3404:19)
+    at Parser.pp$3.parseMaybeConditional (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3381:19)
+    at Parser.pp$3.parseMaybeAssign (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3344:19)
+    at Parser.pp$3.parseExpression (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3306:19)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! oracles@1.0.0 hd: `babel-node ./src/hdOracle.js`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the oracles@1.0.0 hd script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/vandern/.npm/_logs/2019-05-17T19_50_56_333Z-debug.log
+/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babel-core/lib/transformation/file/index.js:558
+      throw err;
+      ^
+
+SyntaxError: /c/Users/Vandern Rodrigues/Projects/fyp/oracles/src/hdOracle.js: await is a reserved word (118:3)
+  116 | 			console.log('Configuring node address...');
+  117 | 			let nodeAddress = "0x8a23c7c42333ed6be5a68c24031cd7a737fbcbe8";
+> 118 | 			await web3.eth.personal.unlockAccount(nodeAddress, String(1234), 1000);
+      | 			^
+  119 | 
+  120 | 			console.log('Releasing deposit...');
+  121 | 			let tx = hdContract.methods.release_deposit().send({
+    at Parser.pp$5.raise (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4454:13)
+    at Parser.pp$3.checkReservedWord (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4347:10)
+    at Parser.pp$3.parseIdentifier (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4324:10)
+    at Parser.pp$3.parseExprAtom (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3648:21)
+    at Parser.pp$3.parseExprSubscripts (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3494:19)
+    at Parser.pp$3.parseMaybeUnary (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3474:19)
+    at Parser.pp$3.parseExprOps (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3404:19)
+    at Parser.pp$3.parseMaybeConditional (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3381:19)
+    at Parser.pp$3.parseMaybeAssign (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3344:19)
+    at Parser.pp$3.parseExpression (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3306:19)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! oracles@1.0.0 hd: `babel-node ./src/hdOracle.js`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the oracles@1.0.0 hd script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/vandern/.npm/_logs/2019-05-17T19_50_58_521Z-debug.log
+/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babel-core/lib/transformation/file/index.js:558
+      throw err;
+      ^
+
+SyntaxError: /c/Users/Vandern Rodrigues/Projects/fyp/oracles/src/hdOracle.js: await is a reserved word (118:3)
+  116 | 			console.log('Configuring node address...');
+  117 | 			let nodeAddress = "0x8a23c7c42333ed6be5a68c24031cd7a737fbcbe8";
+> 118 | 			await web3.eth.personal.unlockAccount(nodeAddress, String(1234), 1000);
+      | 			^
+  119 | 
+  120 | 			console.log('Releasing deposit...');
+  121 | 			let tx = hdContract.methods.release_deposit().send({
+    at Parser.pp$5.raise (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4454:13)
+    at Parser.pp$3.checkReservedWord (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4347:10)
+    at Parser.pp$3.parseIdentifier (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4324:10)
+    at Parser.pp$3.parseExprAtom (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3648:21)
+    at Parser.pp$3.parseExprSubscripts (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3494:19)
+    at Parser.pp$3.parseMaybeUnary (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3474:19)
+    at Parser.pp$3.parseExprOps (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3404:19)
+    at Parser.pp$3.parseMaybeConditional (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3381:19)
+    at Parser.pp$3.parseMaybeAssign (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3344:19)
+    at Parser.pp$3.parseExpression (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3306:19)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! oracles@1.0.0 hd: `babel-node ./src/hdOracle.js`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the oracles@1.0.0 hd script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/vandern/.npm/_logs/2019-05-17T19_51_00_815Z-debug.log
+/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babel-core/lib/transformation/file/index.js:558
+      throw err;
+      ^
+
+SyntaxError: /c/Users/Vandern Rodrigues/Projects/fyp/oracles/src/hdOracle.js: await is a reserved word (118:3)
+  116 | 			console.log('Configuring node address...');
+  117 | 			let nodeAddress = "0x8a23c7c42333ed6be5a68c24031cd7a737fbcbe8";
+> 118 | 			await web3.eth.personal.unlockAccount(nodeAddress, String(1234), 1000);
+      | 			^
+  119 | 
+  120 | 			console.log('Releasing deposit...');
+  121 | 			let tx = hdContract.methods.release_deposit().send({
+    at Parser.pp$5.raise (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4454:13)
+    at Parser.pp$3.checkReservedWord (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4347:10)
+    at Parser.pp$3.parseIdentifier (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4324:10)
+    at Parser.pp$3.parseExprAtom (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3648:21)
+    at Parser.pp$3.parseExprSubscripts (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3494:19)
+    at Parser.pp$3.parseMaybeUnary (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3474:19)
+    at Parser.pp$3.parseExprOps (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3404:19)
+    at Parser.pp$3.parseMaybeConditional (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3381:19)
+    at Parser.pp$3.parseMaybeAssign (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3344:19)
+    at Parser.pp$3.parseExpression (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3306:19)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! oracles@1.0.0 hd: `babel-node ./src/hdOracle.js`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the oracles@1.0.0 hd script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/vandern/.npm/_logs/2019-05-17T19_51_03_076Z-debug.log
+/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babel-core/lib/transformation/file/index.js:558
+      throw err;
+      ^
+
+SyntaxError: /c/Users/Vandern Rodrigues/Projects/fyp/oracles/src/hdOracle.js: await is a reserved word (118:3)
+  116 | 			console.log('Configuring node address...');
+  117 | 			let nodeAddress = "0x8a23c7c42333ed6be5a68c24031cd7a737fbcbe8";
+> 118 | 			await web3.eth.personal.unlockAccount(nodeAddress, String(1234), 1000);
+      | 			^
+  119 | 
+  120 | 			console.log('Releasing deposit...');
+  121 | 			let tx = hdContract.methods.release_deposit().send({
+    at Parser.pp$5.raise (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4454:13)
+    at Parser.pp$3.checkReservedWord (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4347:10)
+    at Parser.pp$3.parseIdentifier (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4324:10)
+    at Parser.pp$3.parseExprAtom (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3648:21)
+    at Parser.pp$3.parseExprSubscripts (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3494:19)
+    at Parser.pp$3.parseMaybeUnary (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3474:19)
+    at Parser.pp$3.parseExprOps (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3404:19)
+    at Parser.pp$3.parseMaybeConditional (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3381:19)
+    at Parser.pp$3.parseMaybeAssign (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3344:19)
+    at Parser.pp$3.parseExpression (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3306:19)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! oracles@1.0.0 hd: `babel-node ./src/hdOracle.js`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the oracles@1.0.0 hd script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/vandern/.npm/_logs/2019-05-17T19_51_05_313Z-debug.log
+/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babel-core/lib/transformation/file/index.js:558
+      throw err;
+      ^
+
+SyntaxError: /c/Users/Vandern Rodrigues/Projects/fyp/oracles/src/hdOracle.js: await is a reserved word (118:3)
+  116 | 			console.log('Configuring node address...');
+  117 | 			let nodeAddress = "0x8a23c7c42333ed6be5a68c24031cd7a737fbcbe8";
+> 118 | 			await web3.eth.personal.unlockAccount(nodeAddress, String(1234), 1000);
+      | 			^
+  119 | 
+  120 | 			console.log('Releasing deposit...');
+  121 | 			let tx = hdContract.methods.release_deposit().send({
+    at Parser.pp$5.raise (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4454:13)
+    at Parser.pp$3.checkReservedWord (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4347:10)
+    at Parser.pp$3.parseIdentifier (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4324:10)
+    at Parser.pp$3.parseExprAtom (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3648:21)
+    at Parser.pp$3.parseExprSubscripts (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3494:19)
+    at Parser.pp$3.parseMaybeUnary (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3474:19)
+    at Parser.pp$3.parseExprOps (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3404:19)
+    at Parser.pp$3.parseMaybeConditional (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3381:19)
+    at Parser.pp$3.parseMaybeAssign (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3344:19)
+    at Parser.pp$3.parseExpression (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3306:19)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! oracles@1.0.0 hd: `babel-node ./src/hdOracle.js`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the oracles@1.0.0 hd script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/vandern/.npm/_logs/2019-05-17T19_51_07_506Z-debug.log
+/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babel-core/lib/transformation/file/index.js:558
+      throw err;
+      ^
+
+SyntaxError: /c/Users/Vandern Rodrigues/Projects/fyp/oracles/src/hdOracle.js: await is a reserved word (118:3)
+  116 | 			console.log('Configuring node address...');
+  117 | 			let nodeAddress = "0x8a23c7c42333ed6be5a68c24031cd7a737fbcbe8";
+> 118 | 			await web3.eth.personal.unlockAccount(nodeAddress, String(1234), 1000);
+      | 			^
+  119 | 
+  120 | 			console.log('Releasing deposit...');
+  121 | 			let tx = hdContract.methods.release_deposit().send({
+    at Parser.pp$5.raise (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4454:13)
+    at Parser.pp$3.checkReservedWord (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4347:10)
+    at Parser.pp$3.parseIdentifier (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:4324:10)
+    at Parser.pp$3.parseExprAtom (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3648:21)
+    at Parser.pp$3.parseExprSubscripts (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3494:19)
+    at Parser.pp$3.parseMaybeUnary (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3474:19)
+    at Parser.pp$3.parseExprOps (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3404:19)
+    at Parser.pp$3.parseMaybeConditional (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3381:19)
+    at Parser.pp$3.parseMaybeAssign (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3344:19)
+    at Parser.pp$3.parseExpression (/c/Users/Vandern Rodrigues/Projects/fyp/oracles/node_modules/babylon/lib/index.js:3306:19)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! oracles@1.0.0 hd: `babel-node ./src/hdOracle.js`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the oracles@1.0.0 hd script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/vandern/.npm/_logs/2019-05-17T19_51_09_798Z-debug.log
+(node:18437) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
+(node:18504) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
+(node:18982) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.

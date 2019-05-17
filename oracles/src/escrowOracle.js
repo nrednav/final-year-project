@@ -295,8 +295,8 @@ class escrowOracle {
 
 	requestPropertyRemoval(sellerAddress, buyerAddress) {
 		Session.findOne({
-			seller_address: sellerAddress,
-			buyer_address: buyerAddress
+			seller_address: sellerAddress.toLowerCase(),
+			buyer_address: buyerAddress.toLowerCase()
 		}, (err, session) => {
 			if (err) {
 				throw err

@@ -4,12 +4,12 @@ Requesting information from land registry...
 Got information from land registry...
 Verifying information received...
 { liens: false,
-  _id: '5cdebef30804a223f47ba48c',
+  _id: '5cdf0ddcbf2cce2e7cd9d552',
   property_uid:
-   '0x1f0c5478bad59feb1f8a67792b038347324dbc06cdd676c170b9c337fa71b306',
-  owner_id: '5cde650513777a03a52e5db5',
+   '0xe5d16095b18ec6a725c619e9792306c0f35a166b2819e339f1c58bddb21a1ca3',
+  owner_id: '5cdec80a3c651b2c930758c7',
   title_deed_hash:
-   '0x48e75513c47cd91ce0226d4070c7d48dd91932d2c892dcf4117108154a2b9835',
+   '0x058af0c642e8c15c2769f00164d22258ac8bab02004757e748e6b4af01babfd9',
   __v: 0 }
 This property has no liens attached
 { n: 1, nModified: 1, ok: 1 }
@@ -21,45 +21,3 @@ Successfully notified user
 
 The verifier oracle is now listening for events...
 Oracle started...
-Error: could not find any accounts
-[object Object]
-
-> oracles@1.0.0 verifier /c/Users/Vandern Rodrigues/Projects/fyp/oracles
-> babel-node ./src/verifierOracle.js
-
-The verifier oracle is now listening for events...
-Oracle started...
-Found event:-
- verification_requested
-Requesting information from land registry...
-Got information from land registry...
-Verifying information received...
-{ liens: false,
-  _id: '5cdec87a3c651b2c930758cf',
-  property_uid:
-   '0x54fe933ee7e58023c660e1a412840e256aae761e770b35d1f8de8c3dc6be8361',
-  owner_id: '5cdec80a3c651b2c930758c7',
-  title_deed_hash:
-   '0x2d6b8f3e8b436981b3ace76982ee4f8209d1f8dd4cf4aac7d63c071dc5169941',
-  __v: 0 }
-This property has no liens attached
-Successfully notified user
- { n: 1, nModified: 1, ok: 1 }
-{ n: 1, nModified: 1, ok: 1 }
-Found event:-
- verification_requested
-Requesting information from land registry...
-Got information from land registry...
-Verifying information received...
-{ liens: false,
-  _id: '5cded91ebf2cce2e7cd9d3b0',
-  property_uid:
-   '0x9387771e125104c3dd230242f5bf6fa410c8d5586e765c5da4c71af7c3212fa0',
-  owner_id: '5cdec80a3c651b2c930758c7',
-  title_deed_hash:
-   '0x808ecbc07a07034a725f799a833d9400156c8fd09c129f48689c6aabe212e8f8',
-  __v: 0 }
-This property has no liens attached
-{ n: 1, nModified: 1, ok: 1 }
-Successfully notified user
- { n: 1, nModified: 1, ok: 1 }

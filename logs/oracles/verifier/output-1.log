@@ -1,0 +1,23 @@
+
+> oracles@1.0.0 verifier /c/Users/Vandern Rodrigues/Projects/fyp/oracles
+> babel-node ./src/verifierOracle.js
+
+The verifier oracle is now listening for events...
+Oracle started...
+Found event:-
+ verification_requested
+Requesting information from land registry...
+Got information from land registry...
+Verifying information received...
+{ liens: false,
+  _id: '5cdf161ac8f28350063e6270',
+  property_uid:
+   '0x9cc316807690c4b4d889d38a475974fe5b7ee9f92489d7b24682630f58668dd8',
+  owner_id: '5cdf1536c8f28350063e6264',
+  title_deed_hash:
+   '0x6063c68af5415f3b7c9458593100ebebd6c7418eb18ebdbb3fd767bf915d6535',
+  __v: 0 }
+This property has no liens attached
+{ n: 1, nModified: 1, ok: 1 }
+Successfully notified user
+ { n: 1, nModified: 1, ok: 1 }

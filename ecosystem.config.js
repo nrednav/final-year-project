@@ -18,26 +18,26 @@ module.exports = {
 				NODE_ENV: 'production'
 			}
 		},
-		{
-			name: 'client',
-			cwd: './client',
-			script: 'yarn',
-			args: 'serve',
-			interpreter: '/bin/bash',
-			output: '../logs/client/output.log',
-			error: '../logs/client/error.log',
-			// Options reference: https://pm2.io/doc/en/runtime/reference/ecosystem-file/
-			instances: 1,
-			autorestart: true,
-			watch: true,
-			max_memory_restart: '1G',
-			env: {
-				NODE_ENV: 'development'
-			},
-			env_production: {
-				NODE_ENV: 'production'
-			}
-		},
+	//	{
+	//		name: 'client',
+	//		cwd: './client',
+	//		script: 'yarn',
+	//		args: 'serve',
+	//		interpreter: '/bin/bash',
+	//		output: '../logs/client/output.log',
+	//		error: '../logs/client/error.log',
+	//		// Options reference: https://pm2.io/doc/en/runtime/reference/ecosystem-file/
+	//		instances: 1,
+	//		autorestart: true,
+	//		watch: true,
+	//		max_memory_restart: '1G',
+	//		env: {
+	//			NODE_ENV: 'development'
+	//		},
+	//		env_production: {
+	//			NODE_ENV: 'production'
+	//		}
+	//	},
 		{
 			name: 'verifier_oracle',
 			cwd: './oracles',

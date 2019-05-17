@@ -1,474 +1,16 @@
 Found event:-
  funds_deposited
 { address: '0x88CeB2Ae57E8406a619fFB5C729E8e8Ac3654DdF',
-  blockNumber: 7881,
+  blockNumber: 6127,
   transactionHash:
-   '0x76cc6eb488babf5f79ea525d2e5b52fb00c38fe06fd268577523a87e021d33cd',
+   '0x71b8030e623861f77e239dc030470cd8611fd81608a516045b21089020e3e598',
   transactionIndex: 0,
   blockHash:
-   '0xac75f4ab759963c1d787d32eef23f1aad34b98a8064de83f2561846bfe0e0d39',
+   '0xc241a2fa4295899be41df10c76893ed422f521deb3000dbaa542741c1bef636d',
   logIndex: 0,
   removed: false,
   id:
-   'log_0x520736cda0b8821559659ed1bc1e755839039ebcfc070d6b22d67d1cabb8e07f',
-  returnValues:
-   { '0': '0x5d722814B213600fC7F520c1DE42dde1fA9E57e1',
-     '1': BigNumber { _hex: '0x063eb89da4ed0000' },
-     buyer: '0x5d722814B213600fC7F520c1DE42dde1fA9E57e1',
-     value: BigNumber { _hex: '0x063eb89da4ed0000' } },
-  event: 'funds_deposited',
-  signature:
-   '0xc7c1b3f805ded913973a32415839b51f7472b046809d3a83a85aea15693330d1',
-  raw:
-   { data:
-      '0x0000000000000000000000005d722814b213600fc7f520c1de42dde1fa9e57e1000000000000000000000000000000000000000000000000063eb89da4ed0000',
-     topics:
-      [ '0xc7c1b3f805ded913973a32415839b51f7472b046809d3a83a85aea15693330d1' ] } }
-{ '0': '0x28ECF3c553961B48Eb883Ee3eB720F4a3114A508',
-  '1': '0x5d722814B213600fC7F520c1DE42dde1fA9E57e1' }
-{ status: 200,
-  statusText: 'OK',
-  headers:
-   { 'x-powered-by': 'Express',
-     'access-control-allow-origin': '*',
-     'content-type': 'text/html; charset=utf-8',
-     'content-length': '56',
-     etag: 'W/"38-7gkri+3W6e0m8u8j4jroLRdCx6Y"',
-     date: 'Fri, 17 May 2019 14:05:01 GMT',
-     connection: 'close' },
-  config:
-   { adapter: [Function: httpAdapter],
-     transformRequest: { '0': [Function: transformRequest] },
-     transformResponse: { '0': [Function: transformResponse] },
-     timeout: 0,
-     xsrfCookieName: 'XSRF-TOKEN',
-     xsrfHeaderName: 'X-XSRF-TOKEN',
-     maxContentLength: -1,
-     validateStatus: [Function: validateStatus],
-     headers:
-      { Accept: 'application/json, text/plain, */*',
-        'Content-Type': 'application/json;charset=utf-8',
-        Authorization: 'a1b2c3d4e5f6g7',
-        'User-Agent': 'axios/0.18.0',
-        'Content-Length': 104 },
-     method: 'put',
-     url:
-      'http://localhost:3000/api/sessions/5cdebf3b0804a223f47ba48f/update',
-     data:
-      '{"updateOptions":{"$set":{"stages.1.deposit_status":"Paid","stages.1.status":"Completed","progress":1}}}' },
-  request:
-   ClientRequest {
-     _events:
-      [Object: null prototype] {
-        socket: [Function],
-        abort: [Function],
-        aborted: [Function],
-        error: [Function],
-        timeout: [Function],
-        prefinish: [Function: requestOnPrefinish] },
-     _eventsCount: 6,
-     _maxListeners: undefined,
-     outputData: [],
-     outputSize: 0,
-     writable: true,
-     _last: true,
-     chunkedEncoding: false,
-     shouldKeepAlive: false,
-     useChunkedEncodingByDefault: true,
-     sendDate: false,
-     _removedConnection: false,
-     _removedContLen: false,
-     _removedTE: false,
-     _contentLength: null,
-     _hasBody: true,
-     _trailer: '',
-     finished: true,
-     _headerSent: true,
-     socket:
-      Socket {
-        connecting: false,
-        _hadError: false,
-        _parent: null,
-        _host: 'localhost',
-        _readableState: [ReadableState],
-        readable: true,
-        _events: [Object],
-        _eventsCount: 7,
-        _maxListeners: undefined,
-        _writableState: [WritableState],
-        writable: false,
-        allowHalfOpen: false,
-        _sockname: null,
-        _pendingData: null,
-        _pendingEncoding: '',
-        server: null,
-        _server: null,
-        parser: null,
-        _httpMessage: [Circular],
-        [Symbol(asyncId)]: 47266,
-        [Symbol(kHandle)]: [TCP],
-        [Symbol(lastWriteQueueSize)]: 0,
-        [Symbol(timeout)]: null,
-        [Symbol(kBytesRead)]: 0,
-        [Symbol(kBytesWritten)]: 0 },
-     connection:
-      Socket {
-        connecting: false,
-        _hadError: false,
-        _parent: null,
-        _host: 'localhost',
-        _readableState: [ReadableState],
-        readable: true,
-        _events: [Object],
-        _eventsCount: 7,
-        _maxListeners: undefined,
-        _writableState: [WritableState],
-        writable: false,
-        allowHalfOpen: false,
-        _sockname: null,
-        _pendingData: null,
-        _pendingEncoding: '',
-        server: null,
-        _server: null,
-        parser: null,
-        _httpMessage: [Circular],
-        [Symbol(asyncId)]: 47266,
-        [Symbol(kHandle)]: [TCP],
-        [Symbol(lastWriteQueueSize)]: 0,
-        [Symbol(timeout)]: null,
-        [Symbol(kBytesRead)]: 0,
-        [Symbol(kBytesWritten)]: 0 },
-     _header:
-      'PUT /api/sessions/5cdebf3b0804a223f47ba48f/update HTTP/1.1\r\nAccept: application/json, text/plain, */*\r\nContent-Type: application/json;charset=utf-8\r\nAuthorization: a1b2c3d4e5f6g7\r\nUser-Agent: axios/0.18.0\r\nContent-Length: 104\r\nHost: localhost:3000\r\nConnection: close\r\n\r\n',
-     _onPendingData: [Function: noopPendingOutput],
-     agent:
-      Agent {
-        _events: [Object],
-        _eventsCount: 1,
-        _maxListeners: undefined,
-        defaultPort: 80,
-        protocol: 'http:',
-        options: [Object],
-        requests: {},
-        sockets: [Object],
-        freeSockets: {},
-        keepAliveMsecs: 1000,
-        keepAlive: false,
-        maxSockets: Infinity,
-        maxFreeSockets: 256 },
-     socketPath: undefined,
-     timeout: undefined,
-     method: 'PUT',
-     path: '/api/sessions/5cdebf3b0804a223f47ba48f/update',
-     _ended: true,
-     res:
-      IncomingMessage {
-        _readableState: [ReadableState],
-        readable: false,
-        _events: [Object],
-        _eventsCount: 3,
-        _maxListeners: undefined,
-        socket: [Socket],
-        connection: [Socket],
-        httpVersionMajor: 1,
-        httpVersionMinor: 1,
-        httpVersion: '1.1',
-        complete: true,
-        headers: [Object],
-        rawHeaders: [Array],
-        trailers: {},
-        rawTrailers: [],
-        aborted: false,
-        upgrade: false,
-        url: '',
-        method: null,
-        statusCode: 200,
-        statusMessage: 'OK',
-        client: [Socket],
-        _consuming: false,
-        _dumped: false,
-        req: [Circular],
-        responseUrl:
-         'http://localhost:3000/api/sessions/5cdebf3b0804a223f47ba48f/update',
-        redirects: [] },
-     aborted: false,
-     timeoutCb: null,
-     upgradeOrConnect: false,
-     parser: null,
-     maxHeadersCount: null,
-     _redirectable:
-      Writable {
-        _writableState: [WritableState],
-        writable: true,
-        _events: [Object],
-        _eventsCount: 2,
-        _maxListeners: undefined,
-        _options: [Object],
-        _ended: true,
-        _ending: true,
-        _redirectCount: 0,
-        _redirects: [],
-        _requestBodyLength: 104,
-        _requestBodyBuffers: [],
-        _onNativeResponse: [Function],
-        _currentRequest: [Circular],
-        _currentUrl:
-         'http://localhost:3000/api/sessions/5cdebf3b0804a223f47ba48f/update' },
-     [Symbol(isCorked)]: false,
-     [Symbol(outHeadersKey)]:
-      [Object: null prototype] {
-        accept: [Array],
-        'content-type': [Array],
-        authorization: [Array],
-        'user-agent': [Array],
-        'content-length': [Array],
-        host: [Array] } },
-  data: 'Successfully updated Session #: 5cdebf3b0804a223f47ba48f' }
-
-> oracles@1.0.0 hd /c/Users/Vandern Rodrigues/Projects/fyp/oracles
-> babel-node ./src/hdOracle.js
-
-The HD oracle is now listening for events...
-Oracle started...
-Found event:-
- funds_deposited
-{ address: '0x924ad28B07db87ADbCC7356c9171cF8fe44B4F3F',
-  blockNumber: 235,
-  transactionHash:
-   '0xa7e5d8757d2c36d90a1110b92eb27544acf490185612227943d7a05803cefec1',
-  transactionIndex: 0,
-  blockHash:
-   '0x27771d7997107b3a91645647d9bdcb996d23a1e4bbd7b5cffe8f734b0e6fbd7c',
-  logIndex: 0,
-  removed: false,
-  id:
-   'log_0x494f60f530d85508f132956727aa63a25236696c8b0ac538f20a0f65f832055a',
-  returnValues:
-   { '0': '0xD6DE2756a197e80f70B801fFafd7174199D40692',
-     '1': BigNumber { _hex: '0x0214e8348c4f0000' },
-     buyer: '0xD6DE2756a197e80f70B801fFafd7174199D40692',
-     value: BigNumber { _hex: '0x0214e8348c4f0000' } },
-  event: 'funds_deposited',
-  signature:
-   '0xc7c1b3f805ded913973a32415839b51f7472b046809d3a83a85aea15693330d1',
-  raw:
-   { data:
-      '0x000000000000000000000000d6de2756a197e80f70b801ffafd7174199d406920000000000000000000000000000000000000000000000000214e8348c4f0000',
-     topics:
-      [ '0xc7c1b3f805ded913973a32415839b51f7472b046809d3a83a85aea15693330d1' ] } }
-{ '0': '0x0D66e9b15546868953aF4a5228964A81C886522d',
-  '1': '0xD6DE2756a197e80f70B801fFafd7174199D40692' }
-{ status: 200,
-  statusText: 'OK',
-  headers:
-   { 'x-powered-by': 'Express',
-     'access-control-allow-origin': '*',
-     'content-type': 'text/html; charset=utf-8',
-     'content-length': '56',
-     etag: 'W/"38-BmcleGqfSmWh74UtwyWzrDNWT4E"',
-     date: 'Fri, 17 May 2019 14:46:43 GMT',
-     connection: 'close' },
-  config:
-   { adapter: [Function: httpAdapter],
-     transformRequest: { '0': [Function: transformRequest] },
-     transformResponse: { '0': [Function: transformResponse] },
-     timeout: 0,
-     xsrfCookieName: 'XSRF-TOKEN',
-     xsrfHeaderName: 'X-XSRF-TOKEN',
-     maxContentLength: -1,
-     validateStatus: [Function: validateStatus],
-     headers:
-      { Accept: 'application/json, text/plain, */*',
-        'Content-Type': 'application/json;charset=utf-8',
-        Authorization: 'a1b2c3d4e5f6g7',
-        'User-Agent': 'axios/0.18.0',
-        'Content-Length': 104 },
-     method: 'put',
-     url:
-      'http://localhost:3000/api/sessions/5cdec90c3c651b2c930758d4/update',
-     data:
-      '{"updateOptions":{"$set":{"stages.1.deposit_status":"Paid","stages.1.status":"Completed","progress":1}}}' },
-  request:
-   ClientRequest {
-     _events:
-      [Object: null prototype] {
-        socket: [Function],
-        abort: [Function],
-        aborted: [Function],
-        error: [Function],
-        timeout: [Function],
-        prefinish: [Function: requestOnPrefinish] },
-     _eventsCount: 6,
-     _maxListeners: undefined,
-     outputData: [],
-     outputSize: 0,
-     writable: true,
-     _last: true,
-     chunkedEncoding: false,
-     shouldKeepAlive: false,
-     useChunkedEncodingByDefault: true,
-     sendDate: false,
-     _removedConnection: false,
-     _removedContLen: false,
-     _removedTE: false,
-     _contentLength: null,
-     _hasBody: true,
-     _trailer: '',
-     finished: true,
-     _headerSent: true,
-     socket:
-      Socket {
-        connecting: false,
-        _hadError: false,
-        _parent: null,
-        _host: 'localhost',
-        _readableState: [ReadableState],
-        readable: true,
-        _events: [Object],
-        _eventsCount: 7,
-        _maxListeners: undefined,
-        _writableState: [WritableState],
-        writable: false,
-        allowHalfOpen: false,
-        _sockname: null,
-        _pendingData: null,
-        _pendingEncoding: '',
-        server: null,
-        _server: null,
-        parser: null,
-        _httpMessage: [Circular],
-        [Symbol(asyncId)]: 1588,
-        [Symbol(kHandle)]: [TCP],
-        [Symbol(lastWriteQueueSize)]: 0,
-        [Symbol(timeout)]: null,
-        [Symbol(kBytesRead)]: 0,
-        [Symbol(kBytesWritten)]: 0 },
-     connection:
-      Socket {
-        connecting: false,
-        _hadError: false,
-        _parent: null,
-        _host: 'localhost',
-        _readableState: [ReadableState],
-        readable: true,
-        _events: [Object],
-        _eventsCount: 7,
-        _maxListeners: undefined,
-        _writableState: [WritableState],
-        writable: false,
-        allowHalfOpen: false,
-        _sockname: null,
-        _pendingData: null,
-        _pendingEncoding: '',
-        server: null,
-        _server: null,
-        parser: null,
-        _httpMessage: [Circular],
-        [Symbol(asyncId)]: 1588,
-        [Symbol(kHandle)]: [TCP],
-        [Symbol(lastWriteQueueSize)]: 0,
-        [Symbol(timeout)]: null,
-        [Symbol(kBytesRead)]: 0,
-        [Symbol(kBytesWritten)]: 0 },
-     _header:
-      'PUT /api/sessions/5cdec90c3c651b2c930758d4/update HTTP/1.1\r\nAccept: application/json, text/plain, */*\r\nContent-Type: application/json;charset=utf-8\r\nAuthorization: a1b2c3d4e5f6g7\r\nUser-Agent: axios/0.18.0\r\nContent-Length: 104\r\nHost: localhost:3000\r\nConnection: close\r\n\r\n',
-     _onPendingData: [Function: noopPendingOutput],
-     agent:
-      Agent {
-        _events: [Object],
-        _eventsCount: 1,
-        _maxListeners: undefined,
-        defaultPort: 80,
-        protocol: 'http:',
-        options: [Object],
-        requests: {},
-        sockets: [Object],
-        freeSockets: {},
-        keepAliveMsecs: 1000,
-        keepAlive: false,
-        maxSockets: Infinity,
-        maxFreeSockets: 256 },
-     socketPath: undefined,
-     timeout: undefined,
-     method: 'PUT',
-     path: '/api/sessions/5cdec90c3c651b2c930758d4/update',
-     _ended: true,
-     res:
-      IncomingMessage {
-        _readableState: [ReadableState],
-        readable: false,
-        _events: [Object],
-        _eventsCount: 3,
-        _maxListeners: undefined,
-        socket: [Socket],
-        connection: [Socket],
-        httpVersionMajor: 1,
-        httpVersionMinor: 1,
-        httpVersion: '1.1',
-        complete: true,
-        headers: [Object],
-        rawHeaders: [Array],
-        trailers: {},
-        rawTrailers: [],
-        aborted: false,
-        upgrade: false,
-        url: '',
-        method: null,
-        statusCode: 200,
-        statusMessage: 'OK',
-        client: [Socket],
-        _consuming: false,
-        _dumped: false,
-        req: [Circular],
-        responseUrl:
-         'http://localhost:3000/api/sessions/5cdec90c3c651b2c930758d4/update',
-        redirects: [] },
-     aborted: false,
-     timeoutCb: null,
-     upgradeOrConnect: false,
-     parser: null,
-     maxHeadersCount: null,
-     _redirectable:
-      Writable {
-        _writableState: [WritableState],
-        writable: true,
-        _events: [Object],
-        _eventsCount: 2,
-        _maxListeners: undefined,
-        _options: [Object],
-        _ended: true,
-        _ending: true,
-        _redirectCount: 0,
-        _redirects: [],
-        _requestBodyLength: 104,
-        _requestBodyBuffers: [],
-        _onNativeResponse: [Function],
-        _currentRequest: [Circular],
-        _currentUrl:
-         'http://localhost:3000/api/sessions/5cdec90c3c651b2c930758d4/update' },
-     [Symbol(isCorked)]: false,
-     [Symbol(outHeadersKey)]:
-      [Object: null prototype] {
-        accept: [Array],
-        'content-type': [Array],
-        authorization: [Array],
-        'user-agent': [Array],
-        'content-length': [Array],
-        host: [Array] } },
-  data: 'Successfully updated Session #: 5cdec90c3c651b2c930758d4' }
-Found event:-
- funds_deposited
-{ address: '0x7fF70145687f7da4E22C9BC35A8B968f3b5c672f',
-  blockNumber: 1628,
-  transactionHash:
-   '0xc7b473089a7fdd664e89a7519bad84367580d2ec0ec6b0a73f8fa7850d44c85a',
-  transactionIndex: 0,
-  blockHash:
-   '0xf359f55c9f2212431b8142b9cc133d0bf8c0fa72e8a90e56e3abf53a226dff49',
-  logIndex: 0,
-  removed: false,
-  id:
-   'log_0x1f7d317135141ed480c51b77fc7fb346ab37fb91464c48acdf1b8ea72c706938',
+   'log_0x3bfee1287105df3661848ea25b72ecb2845a4af190427b3731e081c632d102ea',
   returnValues:
    { '0': '0xD6DE2756a197e80f70B801fFafd7174199D40692',
      '1': BigNumber { _hex: '0x03782dace9d90000' },
@@ -491,8 +33,8 @@ Found event:-
      'access-control-allow-origin': '*',
      'content-type': 'text/html; charset=utf-8',
      'content-length': '56',
-     etag: 'W/"38-hcIMkZLKNezzKHjLuoYnvQHktB4"',
-     date: 'Fri, 17 May 2019 15:56:22 GMT',
+     etag: 'W/"38-5x+VVLWKr1ApxJm4Xs8XcIhSlDQ"',
+     date: 'Fri, 17 May 2019 19:41:19 GMT',
      connection: 'close' },
   config:
    { adapter: [Function: httpAdapter],
@@ -511,7 +53,7 @@ Found event:-
         'Content-Length': 104 },
      method: 'put',
      url:
-      'http://localhost:3000/api/sessions/5cded95cbf2cce2e7cd9d3b3/update',
+      'http://localhost:3000/api/sessions/5cdf0e23bf2cce2e7cd9d555/update',
      data:
       '{"updateOptions":{"$set":{"stages.1.deposit_status":"Paid","stages.1.status":"Completed","progress":1}}}' },
   request:
@@ -563,7 +105,7 @@ Found event:-
         _server: null,
         parser: null,
         _httpMessage: [Circular],
-        [Symbol(asyncId)]: 9976,
+        [Symbol(asyncId)]: 37060,
         [Symbol(kHandle)]: [TCP],
         [Symbol(lastWriteQueueSize)]: 0,
         [Symbol(timeout)]: null,
@@ -590,14 +132,14 @@ Found event:-
         _server: null,
         parser: null,
         _httpMessage: [Circular],
-        [Symbol(asyncId)]: 9976,
+        [Symbol(asyncId)]: 37060,
         [Symbol(kHandle)]: [TCP],
         [Symbol(lastWriteQueueSize)]: 0,
         [Symbol(timeout)]: null,
         [Symbol(kBytesRead)]: 0,
         [Symbol(kBytesWritten)]: 0 },
      _header:
-      'PUT /api/sessions/5cded95cbf2cce2e7cd9d3b3/update HTTP/1.1\r\nAccept: application/json, text/plain, */*\r\nContent-Type: application/json;charset=utf-8\r\nAuthorization: a1b2c3d4e5f6g7\r\nUser-Agent: axios/0.18.0\r\nContent-Length: 104\r\nHost: localhost:3000\r\nConnection: close\r\n\r\n',
+      'PUT /api/sessions/5cdf0e23bf2cce2e7cd9d555/update HTTP/1.1\r\nAccept: application/json, text/plain, */*\r\nContent-Type: application/json;charset=utf-8\r\nAuthorization: a1b2c3d4e5f6g7\r\nUser-Agent: axios/0.18.0\r\nContent-Length: 104\r\nHost: localhost:3000\r\nConnection: close\r\n\r\n',
      _onPendingData: [Function: noopPendingOutput],
      agent:
       Agent {
@@ -617,7 +159,7 @@ Found event:-
      socketPath: undefined,
      timeout: undefined,
      method: 'PUT',
-     path: '/api/sessions/5cded95cbf2cce2e7cd9d3b3/update',
+     path: '/api/sessions/5cdf0e23bf2cce2e7cd9d555/update',
      _ended: true,
      res:
       IncomingMessage {
@@ -647,7 +189,7 @@ Found event:-
         _dumped: false,
         req: [Circular],
         responseUrl:
-         'http://localhost:3000/api/sessions/5cded95cbf2cce2e7cd9d3b3/update',
+         'http://localhost:3000/api/sessions/5cdf0e23bf2cce2e7cd9d555/update',
         redirects: [] },
      aborted: false,
      timeoutCb: null,
@@ -671,7 +213,7 @@ Found event:-
         _onNativeResponse: [Function],
         _currentRequest: [Circular],
         _currentUrl:
-         'http://localhost:3000/api/sessions/5cded95cbf2cce2e7cd9d3b3/update' },
+         'http://localhost:3000/api/sessions/5cdf0e23bf2cce2e7cd9d555/update' },
      [Symbol(isCorked)]: false,
      [Symbol(outHeadersKey)]:
       [Object: null prototype] {
@@ -681,4 +223,306 @@ Found event:-
         'user-agent': [Array],
         'content-length': [Array],
         host: [Array] } },
-  data: 'Successfully updated Session #: 5cded95cbf2cce2e7cd9d3b3' }
+  data: 'Successfully updated Session #: 5cdf0e23bf2cce2e7cd9d555' }
+
+> oracles@1.0.0 hd /c/Users/Vandern Rodrigues/Projects/fyp/oracles
+> babel-node ./src/hdOracle.js
+
+
+> oracles@1.0.0 hd /c/Users/Vandern Rodrigues/Projects/fyp/oracles
+> babel-node ./src/hdOracle.js
+
+
+> oracles@1.0.0 hd /c/Users/Vandern Rodrigues/Projects/fyp/oracles
+> babel-node ./src/hdOracle.js
+
+
+> oracles@1.0.0 hd /c/Users/Vandern Rodrigues/Projects/fyp/oracles
+> babel-node ./src/hdOracle.js
+
+
+> oracles@1.0.0 hd /c/Users/Vandern Rodrigues/Projects/fyp/oracles
+> babel-node ./src/hdOracle.js
+
+
+> oracles@1.0.0 hd /c/Users/Vandern Rodrigues/Projects/fyp/oracles
+> babel-node ./src/hdOracle.js
+
+
+> oracles@1.0.0 hd /c/Users/Vandern Rodrigues/Projects/fyp/oracles
+> babel-node ./src/hdOracle.js
+
+
+> oracles@1.0.0 hd /c/Users/Vandern Rodrigues/Projects/fyp/oracles
+> babel-node ./src/hdOracle.js
+
+
+> oracles@1.0.0 hd /c/Users/Vandern Rodrigues/Projects/fyp/oracles
+> babel-node ./src/hdOracle.js
+
+
+> oracles@1.0.0 hd /c/Users/Vandern Rodrigues/Projects/fyp/oracles
+> babel-node ./src/hdOracle.js
+
+
+> oracles@1.0.0 hd /c/Users/Vandern Rodrigues/Projects/fyp/oracles
+> babel-node ./src/hdOracle.js
+
+
+> oracles@1.0.0 hd /c/Users/Vandern Rodrigues/Projects/fyp/oracles
+> babel-node ./src/hdOracle.js
+
+
+> oracles@1.0.0 hd /c/Users/Vandern Rodrigues/Projects/fyp/oracles
+> babel-node ./src/hdOracle.js
+
+
+> oracles@1.0.0 hd /c/Users/Vandern Rodrigues/Projects/fyp/oracles
+> babel-node ./src/hdOracle.js
+
+
+> oracles@1.0.0 hd /c/Users/Vandern Rodrigues/Projects/fyp/oracles
+> babel-node ./src/hdOracle.js
+
+
+> oracles@1.0.0 hd /c/Users/Vandern Rodrigues/Projects/fyp/oracles
+> babel-node ./src/hdOracle.js
+
+
+> oracles@1.0.0 hd /c/Users/Vandern Rodrigues/Projects/fyp/oracles
+> babel-node ./src/hdOracle.js
+
+
+> oracles@1.0.0 hd /c/Users/Vandern Rodrigues/Projects/fyp/oracles
+> babel-node ./src/hdOracle.js
+
+
+> oracles@1.0.0 hd /c/Users/Vandern Rodrigues/Projects/fyp/oracles
+> babel-node ./src/hdOracle.js
+
+
+> oracles@1.0.0 hd /c/Users/Vandern Rodrigues/Projects/fyp/oracles
+> babel-node ./src/hdOracle.js
+
+
+> oracles@1.0.0 hd /c/Users/Vandern Rodrigues/Projects/fyp/oracles
+> babel-node ./src/hdOracle.js
+
+
+> oracles@1.0.0 hd /c/Users/Vandern Rodrigues/Projects/fyp/oracles
+> babel-node ./src/hdOracle.js
+
+
+> oracles@1.0.0 hd /c/Users/Vandern Rodrigues/Projects/fyp/oracles
+> babel-node ./src/hdOracle.js
+
+
+> oracles@1.0.0 hd /c/Users/Vandern Rodrigues/Projects/fyp/oracles
+> babel-node ./src/hdOracle.js
+
+
+> oracles@1.0.0 hd /c/Users/Vandern Rodrigues/Projects/fyp/oracles
+> babel-node ./src/hdOracle.js
+
+The HD oracle is now listening for events...
+Oracle started...
+Found event:-
+ release_holding_deposit
+{ address: '0x46D1a3a211c5A261ED481f6d871DE4e4a0D50048',
+  blockNumber: 432,
+  transactionHash:
+   '0xa25cae3766c15e301d00e222c6746679feb4b9c758e8fca99f733e6331827439',
+  transactionIndex: 0,
+  blockHash:
+   '0x6566ebb54486d9c5060a8c809be9f62b395eb2f37257cc6065fa456c77f2e942',
+  logIndex: 2,
+  removed: false,
+  id:
+   'log_0x3fe3f566008d8a513ecf34dc1437e0e5c96ca15e5537f8848cab386240a1a9fa',
+  returnValues: {},
+  event: 'release_holding_deposit',
+  signature:
+   '0x54dd20ef2439b3205844bab91564715a17fa06e8eb9cedcd5c1898a892501641',
+  raw:
+   { data: null,
+     topics:
+      [ '0x54dd20ef2439b3205844bab91564715a17fa06e8eb9cedcd5c1898a892501641' ] } }
+Found event:-
+ release_holding_deposit
+{ address: '0xF24029A0a501aa2694ee3b32b60a68069675E6fC',
+  blockNumber: 5044,
+  transactionHash:
+   '0xa288820785ed1ff1dbcee98ed621165ec131bdedb4a917588e3b0a4f6a95c57f',
+  transactionIndex: 0,
+  blockHash:
+   '0xef5aa8aa3a1ec94c84a5dc331b54ffe07069f37579367191f38098fdfccbe218',
+  logIndex: 2,
+  removed: false,
+  id:
+   'log_0xd88bdb625ee5102cd346554fa6972370d76f45ea06cb70729453c9fcee032df3',
+  returnValues: {},
+  event: 'release_holding_deposit',
+  signature:
+   '0x54dd20ef2439b3205844bab91564715a17fa06e8eb9cedcd5c1898a892501641',
+  raw:
+   { data: null,
+     topics:
+      [ '0x54dd20ef2439b3205844bab91564715a17fa06e8eb9cedcd5c1898a892501641' ] } }
+Found event:-
+ release_holding_deposit
+{ address: '0x7d64d94f145626bdE46694Cbf73213fBaB3e3297',
+  blockNumber: 5280,
+  transactionHash:
+   '0x9fbe9a57778e3797edd7de4b7b22b57edcb03ac56d4ab02ce7707f1851897c48',
+  transactionIndex: 0,
+  blockHash:
+   '0x949b8a193d8c0bd721ebcb47a77113e29955c410ab0a952fd9fbf949c7cad562',
+  logIndex: 2,
+  removed: false,
+  id:
+   'log_0x37f8005a80dbdecdf0c98aa6d95990b1e07790b391eaf79d97c8cb84bdaffe56',
+  returnValues: {},
+  event: 'release_holding_deposit',
+  signature:
+   '0x54dd20ef2439b3205844bab91564715a17fa06e8eb9cedcd5c1898a892501641',
+  raw:
+   { data: null,
+     topics:
+      [ '0x54dd20ef2439b3205844bab91564715a17fa06e8eb9cedcd5c1898a892501641' ] } }
+Found event:-
+ release_holding_deposit
+{ address: '0xb4E100C620F307243729f56D1852C0f3310B675a',
+  blockNumber: 6198,
+  transactionHash:
+   '0xee3371a7ebb19b8baaa97268572a5dd96e3f00b97767ca62e24841e5c25bfb1d',
+  transactionIndex: 0,
+  blockHash:
+   '0xa73c8bd107e28b437faa2504ee8bafb2846780938880d1032b03940e45f435c4',
+  logIndex: 2,
+  removed: false,
+  id:
+   'log_0xb2df562efe84b7338679d81d593e60a5e1ca69902bd1fd8691b50d95e6df170f',
+  returnValues: {},
+  event: 'release_holding_deposit',
+  signature:
+   '0x54dd20ef2439b3205844bab91564715a17fa06e8eb9cedcd5c1898a892501641',
+  raw:
+   { data: null,
+     topics:
+      [ '0x54dd20ef2439b3205844bab91564715a17fa06e8eb9cedcd5c1898a892501641' ] } }
+Getting hd contract address from session...
+Configuring node address...
+Getting hd contract address from session...
+Configuring node address...
+Getting hd contract address from session...
+Configuring node address...
+Getting hd contract address from session...
+Configuring node address...
+Releasing deposit...
+Releasing deposit...
+Releasing deposit...
+Releasing deposit...
+
+> oracles@1.0.0 hd /c/Users/Vandern Rodrigues/Projects/fyp/oracles
+> babel-node ./src/hdOracle.js
+
+The HD oracle is now listening for events...
+Oracle started...
+Found event:-
+ release_holding_deposit
+{ address: '0x46D1a3a211c5A261ED481f6d871DE4e4a0D50048',
+  blockNumber: 432,
+  transactionHash:
+   '0xa25cae3766c15e301d00e222c6746679feb4b9c758e8fca99f733e6331827439',
+  transactionIndex: 0,
+  blockHash:
+   '0x6566ebb54486d9c5060a8c809be9f62b395eb2f37257cc6065fa456c77f2e942',
+  logIndex: 2,
+  removed: false,
+  id:
+   'log_0x3fe3f566008d8a513ecf34dc1437e0e5c96ca15e5537f8848cab386240a1a9fa',
+  returnValues: {},
+  event: 'release_holding_deposit',
+  signature:
+   '0x54dd20ef2439b3205844bab91564715a17fa06e8eb9cedcd5c1898a892501641',
+  raw:
+   { data: null,
+     topics:
+      [ '0x54dd20ef2439b3205844bab91564715a17fa06e8eb9cedcd5c1898a892501641' ] } }
+Found event:-
+ release_holding_deposit
+{ address: '0xF24029A0a501aa2694ee3b32b60a68069675E6fC',
+  blockNumber: 5044,
+  transactionHash:
+   '0xa288820785ed1ff1dbcee98ed621165ec131bdedb4a917588e3b0a4f6a95c57f',
+  transactionIndex: 0,
+  blockHash:
+   '0xef5aa8aa3a1ec94c84a5dc331b54ffe07069f37579367191f38098fdfccbe218',
+  logIndex: 2,
+  removed: false,
+  id:
+   'log_0xd88bdb625ee5102cd346554fa6972370d76f45ea06cb70729453c9fcee032df3',
+  returnValues: {},
+  event: 'release_holding_deposit',
+  signature:
+   '0x54dd20ef2439b3205844bab91564715a17fa06e8eb9cedcd5c1898a892501641',
+  raw:
+   { data: null,
+     topics:
+      [ '0x54dd20ef2439b3205844bab91564715a17fa06e8eb9cedcd5c1898a892501641' ] } }
+Found event:-
+ release_holding_deposit
+{ address: '0x7d64d94f145626bdE46694Cbf73213fBaB3e3297',
+  blockNumber: 5280,
+  transactionHash:
+   '0x9fbe9a57778e3797edd7de4b7b22b57edcb03ac56d4ab02ce7707f1851897c48',
+  transactionIndex: 0,
+  blockHash:
+   '0x949b8a193d8c0bd721ebcb47a77113e29955c410ab0a952fd9fbf949c7cad562',
+  logIndex: 2,
+  removed: false,
+  id:
+   'log_0x37f8005a80dbdecdf0c98aa6d95990b1e07790b391eaf79d97c8cb84bdaffe56',
+  returnValues: {},
+  event: 'release_holding_deposit',
+  signature:
+   '0x54dd20ef2439b3205844bab91564715a17fa06e8eb9cedcd5c1898a892501641',
+  raw:
+   { data: null,
+     topics:
+      [ '0x54dd20ef2439b3205844bab91564715a17fa06e8eb9cedcd5c1898a892501641' ] } }
+Found event:-
+ release_holding_deposit
+{ address: '0xb4E100C620F307243729f56D1852C0f3310B675a',
+  blockNumber: 6198,
+  transactionHash:
+   '0xee3371a7ebb19b8baaa97268572a5dd96e3f00b97767ca62e24841e5c25bfb1d',
+  transactionIndex: 0,
+  blockHash:
+   '0xa73c8bd107e28b437faa2504ee8bafb2846780938880d1032b03940e45f435c4',
+  logIndex: 2,
+  removed: false,
+  id:
+   'log_0xb2df562efe84b7338679d81d593e60a5e1ca69902bd1fd8691b50d95e6df170f',
+  returnValues: {},
+  event: 'release_holding_deposit',
+  signature:
+   '0x54dd20ef2439b3205844bab91564715a17fa06e8eb9cedcd5c1898a892501641',
+  raw:
+   { data: null,
+     topics:
+      [ '0x54dd20ef2439b3205844bab91564715a17fa06e8eb9cedcd5c1898a892501641' ] } }
+Getting hd contract address from session...
+Configuring node address...
+Getting hd contract address from session...
+Configuring node address...
+Getting hd contract address from session...
+Configuring node address...
+Getting hd contract address from session...
+Configuring node address...
+
+> oracles@1.0.0 hd /c/Users/Vandern Rodrigues/Projects/fyp/oracles
+> babel-node ./src/hdOracle.js
+
+The HD oracle is now listening for events...
+Oracle started...

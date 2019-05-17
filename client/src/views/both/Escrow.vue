@@ -128,7 +128,9 @@
 				v-if="activeMiniStage == 3"
 				class="primary p_text--text pa-4 ec-ms3-card display-1">
 
-				<div class="pa-4 headline tdd-info">
+				<div
+					v-if="miniStageStatus(3) != 'Pending'"
+					class="pa-4 headline tdd-info">
 					Please review the draft title deed and submit your decision.
 				</div>
 
@@ -270,7 +272,7 @@ export default {
 			escrow.methods.deposit(ttdHash).send({
 				from: this.selectedAddr,
 				value: web3.utils.toWei(price.toString(), 'ether')
-			}).on('confirmation', (confirmationNumber, receipt) => {
+			}).once('confirmation', (confirmationNumber, receipt) => {
 				console.log(receipt)
 				this.$router.push('/buyer/sessions/')
 			}).catch((error) => {
@@ -290,7 +292,7 @@ export default {
 
 				escrow.methods.title_draft_greenlight(titleDraftHash, true).send({
 					from: this.selectedAddr
-				}).on('confirmation', (cn, receipt) => {
+				}).once('confirmation', (cn, receipt) => {
 					console.log(receipt)
 					let updateOptions = {
 						$set: {
@@ -315,7 +317,7 @@ export default {
 					escrowFactory.methods.open_escrow(this.ttdHash, sessionIdHash).send({
 						from: this.selectedAddr,
 						gasPrice: web3.utils.toWei('42', 'gwei')
-					}).on('confirmation', (confirmationNumber, receipt) => {
+					}).once('confirmation', (confirmationNumber, receipt) => {
 						this.$router.push('/seller/sessions/')
 					}).catch((error) => console.log(error))
 				} else {
