@@ -1,0 +1,27 @@
+(node:24088) DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
+(node:24088) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
+(node:24191) DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
+(node:24191) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
+(node:24375) DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
+(node:24375) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
+(node:24375) DeprecationWarning: GridStore is deprecated, and will be removed in a future version. Please use GridFSBucket instead
+(node:24453) DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
+(node:24453) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
+(node:24504) DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
+(node:24504) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
+(node:24555) DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
+(node:24555) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
+(node:24555) DeprecationWarning: GridStore is deprecated, and will be removed in a future version. Please use GridFSBucket instead
+(node:24555) DeprecationWarning: collection.save is deprecated. Use insertOne, insertMany, updateOne, or updateMany instead.
+(node:24633) DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
+(node:24633) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
+(node:24633) DeprecationWarning: GridStore is deprecated, and will be removed in a future version. Please use GridFSBucket instead
+(node:24633) DeprecationWarning: collection.save is deprecated. Use insertOne, insertMany, updateOne, or updateMany instead.
+(node:24778) DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
+(node:24778) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
+(node:24829) DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
+(node:24829) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
+(node:24888) DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
+(node:24888) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
+(node:25304) DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
+(node:25304) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.

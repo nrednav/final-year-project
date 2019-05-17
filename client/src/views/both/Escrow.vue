@@ -78,7 +78,16 @@
 			<v-card
 				v-if="activeMiniStage == 3"
 				class="primary p_text--text pa-4 ec-ms3-card display-1">
-				Mini stage 3
+
+				<v-btn
+					v-if="user_type == 'seller' && miniStageStatus(3) == 'In Progress'"
+					@click="downloadDocument('tdd')"
+					outline
+					color="p_orange"
+					class="title ec-button">
+					DOWNLOAD
+				</v-btn>
+
 			</v-card>
 
 			<v-card

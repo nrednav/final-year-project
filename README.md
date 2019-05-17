@@ -6,6 +6,7 @@
 - [ ] Prevent session duplication when seller tries to click accept on an offer, in which
 a session already exists with the offer makers and sellers id's
 purchased arrays
+- [ ] Handle upload of title draft document
 - [ ] When escrow finishes, remove the property (mimic the button from "view property" interface)
 	- [ ] Set progress to '4'
 - [ ] Remove sold and purchased arrays from the user model

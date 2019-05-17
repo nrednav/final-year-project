@@ -74,7 +74,7 @@ router.post('/:session_id/upload-ttd', upload.single('file'), (req, res, next) =
 /* POST - upload title deed draft */
 router.post('/:session_id/upload-tdd', (req, res, next) => {
 	var ws = gfs.createWriteStream({
-		filename: 'title-deed-draft'
+		filename: 'title-deed-draft.txt'
 	});
 	ws.on('close', (file) => {
 		Session.updateOne({
@@ -97,8 +97,17 @@ router.post('/:session_id/upload-tdd', (req, res, next) => {
 });
 
 /* POST - upload title deed draft */
-//router.post('/:session_id/upload-tdd', upload.single('file'), (req, res, next) => {
-//	var fileId = req.file.id
+router.post('/:session_id/upload-tdd-test', upload.single('file'), (req, res, next) => {
+	console.log(req);
+	res.send('ok');
+//		filename: 'title-deed-draft.txt'
+//	});
+//	ws.on('close', (file) => {
+//		res.json({
+//			file
+//		});
+//	});
+//	req.pipe(ws);
 //	Session.updateOne({
 //		_id: req.params.session_id
 //	}, {
@@ -114,7 +123,7 @@ router.post('/:session_id/upload-tdd', (req, res, next) => {
 //			});
 //		}
 //	});
-//});
+});
 
 /* GET - documents for title deed (draft, final, transfer) */
 router.get('/:session_id/title-deed/:type', (req, res, next) => {

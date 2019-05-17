@@ -1,13 +1,947 @@
-mqJW ——> OPTIONS /api/properties/5cddaeef8d2edd3c96c06fde 
-mqJW <—— 204 No Content (<—> 0.9 ms)
-WTQ1 ——> GET /api/properties/5cddaeef8d2edd3c96c06fde 
-WTQ1 <—— 304 Not Modified (<—> 13.8 ms)
-LQMj ——> OPTIONS /api/sessions/5cddb1b38d2edd3c96c06ff2/update 
-LQMj <—— 204 No Content (<—> 0.9 ms)
-OS2o ——> PUT /api/sessions/5cddb1b38d2edd3c96c06ff2/update 140 B application/json;charset=utf-8
-Updating session with id: 5cddb1b38d2edd3c96c06ff2
-OS2o <—— 200 OK 56 B text/html; charset=utf-8 (<—> 6.5 ms)
-2hda ——> PUT /api/land-registry/update-entry 261 B application/json;charset=utf-8
-2hda <—— 200 OK 276 B application/json; charset=utf-8 (<—> 8.2 ms)
-zYWY ——> POST /api/sessions/5cddb1b38d2edd3c96c06ff2/upload-tdd application/x-www-form-urlencoded
-zYWY <—— 200 OK 22 B application/json; charset=utf-8 (<—> 30.5 ms)
+H6PM ——> POST /api/sessions/5cddb1b38d2edd3c96c06ff2/upload-tdd-test application/x-www-form-urlencoded
+[Object: null prototype] {
+  '----------------------------888963386271360997591901\r\nContent-Disposition: form-data; name':
+   '"file"; filename="titleDeedDraft.txt"\r\nContent-Type: text/plain\r\n\r\nTitle deed draft\r\n----------------------------888963386271360997591901--\r\n' }
+H6PM <—— 200 OK 15 B application/json; charset=utf-8 (<—> 6.4 ms)
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+
+> server@0.0.0 dev /c/Users/Vandern Rodrigues/Projects/fyp/server
+> nodemon ./bin/www
+
+[33m[nodemon] 1.19.0[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching: *.*[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+Q2UU ——> POST /api/sessions/5cddb1b38d2edd3c96c06ff2/upload-tdd-test application/x-www-form-urlencoded
+undefined
+Q2UU —X— connection closed before res end/flush
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+
+> server@0.0.0 dev /c/Users/Vandern Rodrigues/Projects/fyp/server
+> nodemon ./bin/www
+
+[33m[nodemon] 1.19.0[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching: *.*[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+FBht ——> POST /api/sessions/5cddb1b38d2edd3c96c06ff2/upload-tdd-test application/x-www-form-urlencoded
+undefined
+FBht <—— 200 OK 18 B application/json; charset=utf-8 (<—> 29.4 ms)
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+
+> server@0.0.0 dev /c/Users/Vandern Rodrigues/Projects/fyp/server
+> nodemon ./bin/www
+
+[33m[nodemon] 1.19.0[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching: *.*[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+
+> server@0.0.0 dev /c/Users/Vandern Rodrigues/Projects/fyp/server
+> nodemon ./bin/www
+
+[33m[nodemon] 1.19.0[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching: *.*[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+lc5e ——> POST /api/sessions/5cddb1b38d2edd3c96c06ff2/upload-tdd-test application/x-www-form-urlencoded
+lc5e <—— 200 OK 263 B application/json; charset=utf-8 (<—> 29.7 ms)
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+
+> server@0.0.0 dev /c/Users/Vandern Rodrigues/Projects/fyp/server
+> nodemon ./bin/www
+
+[33m[nodemon] 1.19.0[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching: *.*[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+
+> server@0.0.0 dev /c/Users/Vandern Rodrigues/Projects/fyp/server
+> nodemon ./bin/www
+
+[33m[nodemon] 1.19.0[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching: *.*[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+
+> server@0.0.0 dev /c/Users/Vandern Rodrigues/Projects/fyp/server
+> nodemon ./bin/www
+
+[33m[nodemon] 1.19.0[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching: *.*[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+HNxJ ——> POST /api/sessions/5cddb1b38d2edd3c96c06ff2/upload-tdd-test application/x-www-form-urlencoded
+HNxJ <—— 200 OK 14 B application/json; charset=utf-8 (<—> 30.6 ms)
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+
+> server@0.0.0 dev /c/Users/Vandern Rodrigues/Projects/fyp/server
+> nodemon ./bin/www
+
+[33m[nodemon] 1.19.0[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching: *.*[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+3vHe ——> POST /api/sessions/5cddb1b38d2edd3c96c06ff2/upload-tdd-test application/x-www-form-urlencoded
+3vHe <—— 200 OK 14 B application/json; charset=utf-8 (<—> 29.6 ms)
+wlcJ ——> POST /api/sessions/5cddb1b38d2edd3c96c06ff2/upload-tdd-test application/x-www-form-urlencoded
+wlcJ <—— 200 OK 14 B application/json; charset=utf-8 (<—> 6.7 ms)
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+
+> server@0.0.0 dev /c/Users/Vandern Rodrigues/Projects/fyp/server
+> nodemon ./bin/www
+
+[33m[nodemon] 1.19.0[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching: *.*[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+
+> server@0.0.0 dev /c/Users/Vandern Rodrigues/Projects/fyp/server
+> nodemon ./bin/www
+
+[33m[nodemon] 1.19.0[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching: *.*[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+
+> server@0.0.0 dev /c/Users/Vandern Rodrigues/Projects/fyp/server
+> nodemon ./bin/www
+
+[33m[nodemon] 1.19.0[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching: *.*[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+4V7j ——> POST /api/sessions/5cddb1b38d2edd3c96c06ff2/upload-tdd-test application/x-www-form-urlencoded
+IncomingMessage {
+  _readableState:
+   ReadableState {
+     objectMode: false,
+     highWaterMark: 16384,
+     buffer: BufferList { head: null, tail: null, length: 0 },
+     length: 0,
+     pipes: null,
+     pipesCount: 0,
+     flowing: true,
+     ended: true,
+     endEmitted: true,
+     reading: false,
+     sync: false,
+     needReadable: false,
+     emittedReadable: false,
+     readableListening: false,
+     resumeScheduled: false,
+     paused: false,
+     emitClose: true,
+     autoDestroy: false,
+     destroyed: false,
+     defaultEncoding: 'utf8',
+     awaitDrain: 0,
+     readingMore: false,
+     decoder: null,
+     encoding: null },
+  readable: false,
+  _events:
+   [Object: null prototype] { end: [Function: resetHeadersTimeoutOnReqEnd] },
+  _eventsCount: 1,
+  _maxListeners: undefined,
+  socket:
+   Socket {
+     connecting: false,
+     _hadError: false,
+     _parent: null,
+     _host: null,
+     _readableState:
+      ReadableState {
+        objectMode: false,
+        highWaterMark: 16384,
+        buffer: BufferList { head: null, tail: null, length: 0 },
+        length: 0,
+        pipes: null,
+        pipesCount: 0,
+        flowing: true,
+        ended: false,
+        endEmitted: false,
+        reading: true,
+        sync: false,
+        needReadable: true,
+        emittedReadable: false,
+        readableListening: false,
+        resumeScheduled: false,
+        paused: false,
+        emitClose: false,
+        autoDestroy: false,
+        destroyed: false,
+        defaultEncoding: 'utf8',
+        awaitDrain: 0,
+        readingMore: false,
+        decoder: null,
+        encoding: null },
+     readable: true,
+     _events:
+      [Object: null prototype] {
+        end: [Array],
+        drain: [Array],
+        timeout: [Function: socketOnTimeout],
+        data: [Function: bound socketOnData],
+        error: [Function: socketOnError],
+        close: [Array],
+        resume: [Function: onSocketResume],
+        pause: [Function: onSocketPause] },
+     _eventsCount: 8,
+     _maxListeners: undefined,
+     _writableState:
+      WritableState {
+        objectMode: false,
+        highWaterMark: 16384,
+        finalCalled: false,
+        needDrain: false,
+        ending: false,
+        ended: false,
+        finished: false,
+        destroyed: false,
+        decodeStrings: false,
+        defaultEncoding: 'utf8',
+        length: 0,
+        writing: false,
+        corked: 0,
+        sync: true,
+        bufferProcessing: false,
+        onwrite: [Function: bound onwrite],
+        writecb: null,
+        writelen: 0,
+        bufferedRequest: null,
+        lastBufferedRequest: null,
+        pendingcb: 0,
+        prefinished: false,
+        errorEmitted: false,
+        emitClose: false,
+        autoDestroy: false,
+        bufferedRequestCount: 0,
+        corkedRequestsFree: [Object] },
+     writable: true,
+     allowHalfOpen: true,
+     _sockname: null,
+     _pendingData: null,
+     _pendingEncoding: '',
+     server:
+      Server {
+        _events: [Object],
+        _eventsCount: 4,
+        _maxListeners: undefined,
+        _connections: 1,
+        _handle: [TCP],
+        _usingWorkers: false,
+        _workers: [],
+        _unref: false,
+        allowHalfOpen: true,
+        pauseOnConnect: false,
+        httpAllowHalfOpen: false,
+        timeout: 120000,
+        keepAliveTimeout: 5000,
+        maxHeadersCount: null,
+        headersTimeout: 40000,
+        _connectionKey: '6::::3000',
+        [Symbol(IncomingMessage)]: [Function: IncomingMessage],
+        [Symbol(ServerResponse)]: [Function: ServerResponse],
+        [Symbol(asyncId)]: 30 },
+     _server:
+      Server {
+        _events: [Object],
+        _eventsCount: 4,
+        _maxListeners: undefined,
+        _connections: 1,
+        _handle: [TCP],
+        _usingWorkers: false,
+        _workers: [],
+        _unref: false,
+        allowHalfOpen: true,
+        pauseOnConnect: false,
+        httpAllowHalfOpen: false,
+        timeout: 120000,
+        keepAliveTimeout: 5000,
+        maxHeadersCount: null,
+        headersTimeout: 40000,
+        _connectionKey: '6::::3000',
+        [Symbol(IncomingMessage)]: [Function: IncomingMessage],
+        [Symbol(ServerResponse)]: [Function: ServerResponse],
+        [Symbol(asyncId)]: 30 },
+     timeout: 120000,
+     parser:
+      HTTPParser {
+        '0': [Function: parserOnHeaders],
+        '1': [Function: parserOnHeadersComplete],
+        '2': [Function: parserOnBody],
+        '3': [Function: parserOnMessageComplete],
+        '4': [Function: bound onParserExecute],
+        _headers: [],
+        _url: '',
+        socket: [Circular],
+        incoming: [Circular],
+        outgoing: null,
+        maxHeaderPairs: 2000,
+        _consumed: true,
+        onIncoming: [Function: bound parserOnIncoming],
+        parsingHeadersStart: 1558051110393,
+        [Symbol(isReused)]: true },
+     on: [Function: socketOnWrap],
+     _paused: false,
+     _httpMessage:
+      ServerResponse {
+        _events: [Object],
+        _eventsCount: 2,
+        _maxListeners: undefined,
+        outputData: [],
+        outputSize: 0,
+        writable: true,
+        _last: false,
+        chunkedEncoding: false,
+        shouldKeepAlive: false,
+        useChunkedEncodingByDefault: true,
+        sendDate: true,
+        _removedConnection: false,
+        _removedContLen: false,
+        _removedTE: false,
+        _contentLength: null,
+        _hasBody: true,
+        _trailer: '',
+        finished: false,
+        _headerSent: false,
+        socket: [Circular],
+        connection: [Circular],
+        _header: null,
+        _onPendingData: [Function: bound updateOutgoingData],
+        _sent100: false,
+        _expect_continue: false,
+        req: [Circular],
+        locals: [Object: null prototype] {},
+        [Symbol(isCorked)]: false,
+        [Symbol(outHeadersKey)]: [Object] },
+     [Symbol(asyncId)]: 812,
+     [Symbol(kHandle)]:
+      TCP {
+        reading: true,
+        onread: [Function: onStreamRead],
+        onconnection: null,
+        _consumed: true,
+        [Symbol(owner)]: [Circular] },
+     [Symbol(lastWriteQueueSize)]: 0,
+     [Symbol(timeout)]:
+      Timeout {
+        _idleTimeout: 120000,
+        _idlePrev: [TimersList],
+        _idleNext: [TimersList],
+        _idleStart: 70774,
+        _onTimeout: [Function: bound ],
+        _timerArgs: undefined,
+        _repeat: null,
+        _destroyed: false,
+        [Symbol(refed)]: false,
+        [Symbol(asyncId)]: 813,
+        [Symbol(triggerId)]: 812 },
+     [Symbol(kBytesRead)]: 0,
+     [Symbol(kBytesWritten)]: 0 },
+  connection:
+   Socket {
+     connecting: false,
+     _hadError: false,
+     _parent: null,
+     _host: null,
+     _readableState:
+      ReadableState {
+        objectMode: false,
+        highWaterMark: 16384,
+        buffer: BufferList { head: null, tail: null, length: 0 },
+        length: 0,
+        pipes: null,
+        pipesCount: 0,
+        flowing: true,
+        ended: false,
+        endEmitted: false,
+        reading: true,
+        sync: false,
+        needReadable: true,
+        emittedReadable: false,
+        readableListening: false,
+        resumeScheduled: false,
+        paused: false,
+        emitClose: false,
+        autoDestroy: false,
+        destroyed: false,
+        defaultEncoding: 'utf8',
+        awaitDrain: 0,
+        readingMore: false,
+        decoder: null,
+        encoding: null },
+     readable: true,
+     _events:
+      [Object: null prototype] {
+        end: [Array],
+        drain: [Array],
+        timeout: [Function: socketOnTimeout],
+        data: [Function: bound socketOnData],
+        error: [Function: socketOnError],
+        close: [Array],
+        resume: [Function: onSocketResume],
+        pause: [Function: onSocketPause] },
+     _eventsCount: 8,
+     _maxListeners: undefined,
+     _writableState:
+      WritableState {
+        objectMode: false,
+        highWaterMark: 16384,
+        finalCalled: false,
+        needDrain: false,
+        ending: false,
+        ended: false,
+        finished: false,
+        destroyed: false,
+        decodeStrings: false,
+        defaultEncoding: 'utf8',
+        length: 0,
+        writing: false,
+        corked: 0,
+        sync: true,
+        bufferProcessing: false,
+        onwrite: [Function: bound onwrite],
+        writecb: null,
+        writelen: 0,
+        bufferedRequest: null,
+        lastBufferedRequest: null,
+        pendingcb: 0,
+        prefinished: false,
+        errorEmitted: false,
+        emitClose: false,
+        autoDestroy: false,
+        bufferedRequestCount: 0,
+        corkedRequestsFree: [Object] },
+     writable: true,
+     allowHalfOpen: true,
+     _sockname: null,
+     _pendingData: null,
+     _pendingEncoding: '',
+     server:
+      Server {
+        _events: [Object],
+        _eventsCount: 4,
+        _maxListeners: undefined,
+        _connections: 1,
+        _handle: [TCP],
+        _usingWorkers: false,
+        _workers: [],
+        _unref: false,
+        allowHalfOpen: true,
+        pauseOnConnect: false,
+        httpAllowHalfOpen: false,
+        timeout: 120000,
+        keepAliveTimeout: 5000,
+        maxHeadersCount: null,
+        headersTimeout: 40000,
+        _connectionKey: '6::::3000',
+        [Symbol(IncomingMessage)]: [Function: IncomingMessage],
+        [Symbol(ServerResponse)]: [Function: ServerResponse],
+        [Symbol(asyncId)]: 30 },
+     _server:
+      Server {
+        _events: [Object],
+        _eventsCount: 4,
+        _maxListeners: undefined,
+        _connections: 1,
+        _handle: [TCP],
+        _usingWorkers: false,
+        _workers: [],
+        _unref: false,
+        allowHalfOpen: true,
+        pauseOnConnect: false,
+        httpAllowHalfOpen: false,
+        timeout: 120000,
+        keepAliveTimeout: 5000,
+        maxHeadersCount: null,
+        headersTimeout: 40000,
+        _connectionKey: '6::::3000',
+        [Symbol(IncomingMessage)]: [Function: IncomingMessage],
+        [Symbol(ServerResponse)]: [Function: ServerResponse],
+        [Symbol(asyncId)]: 30 },
+     timeout: 120000,
+     parser:
+      HTTPParser {
+        '0': [Function: parserOnHeaders],
+        '1': [Function: parserOnHeadersComplete],
+        '2': [Function: parserOnBody],
+        '3': [Function: parserOnMessageComplete],
+        '4': [Function: bound onParserExecute],
+        _headers: [],
+        _url: '',
+        socket: [Circular],
+        incoming: [Circular],
+        outgoing: null,
+        maxHeaderPairs: 2000,
+        _consumed: true,
+        onIncoming: [Function: bound parserOnIncoming],
+        parsingHeadersStart: 1558051110393,
+        [Symbol(isReused)]: true },
+     on: [Function: socketOnWrap],
+     _paused: false,
+     _httpMessage:
+      ServerResponse {
+        _events: [Object],
+        _eventsCount: 2,
+        _maxListeners: undefined,
+        outputData: [],
+        outputSize: 0,
+        writable: true,
+        _last: false,
+        chunkedEncoding: false,
+        shouldKeepAlive: false,
+        useChunkedEncodingByDefault: true,
+        sendDate: true,
+        _removedConnection: false,
+        _removedContLen: false,
+        _removedTE: false,
+        _contentLength: null,
+        _hasBody: true,
+        _trailer: '',
+        finished: false,
+        _headerSent: false,
+        socket: [Circular],
+        connection: [Circular],
+        _header: null,
+        _onPendingData: [Function: bound updateOutgoingData],
+        _sent100: false,
+        _expect_continue: false,
+        req: [Circular],
+        locals: [Object: null prototype] {},
+        [Symbol(isCorked)]: false,
+        [Symbol(outHeadersKey)]: [Object] },
+     [Symbol(asyncId)]: 812,
+     [Symbol(kHandle)]:
+      TCP {
+        reading: true,
+        onread: [Function: onStreamRead],
+        onconnection: null,
+        _consumed: true,
+        [Symbol(owner)]: [Circular] },
+     [Symbol(lastWriteQueueSize)]: 0,
+     [Symbol(timeout)]:
+      Timeout {
+        _idleTimeout: 120000,
+        _idlePrev: [TimersList],
+        _idleNext: [TimersList],
+        _idleStart: 70774,
+        _onTimeout: [Function: bound ],
+        _timerArgs: undefined,
+        _repeat: null,
+        _destroyed: false,
+        [Symbol(refed)]: false,
+        [Symbol(asyncId)]: 813,
+        [Symbol(triggerId)]: 812 },
+     [Symbol(kBytesRead)]: 0,
+     [Symbol(kBytesWritten)]: 0 },
+  httpVersionMajor: 1,
+  httpVersionMinor: 1,
+  httpVersion: '1.1',
+  complete: true,
+  headers:
+   { accept: 'application/json, text/plain, */*',
+     'content-type': 'application/x-www-form-urlencoded',
+     authorization: 'a1b2c3d4e5f6g7',
+     'user-agent': 'axios/0.18.0',
+     host: 'localhost:3000',
+     connection: 'close',
+     'transfer-encoding': 'chunked' },
+  rawHeaders:
+   [ 'Accept',
+     'application/json, text/plain, */*',
+     'Content-Type',
+     'application/x-www-form-urlencoded',
+     'Authorization',
+     'a1b2c3d4e5f6g7',
+     'User-Agent',
+     'axios/0.18.0',
+     'Host',
+     'localhost:3000',
+     'Connection',
+     'close',
+     'Transfer-Encoding',
+     'chunked' ],
+  trailers: {},
+  rawTrailers: [],
+  aborted: false,
+  upgrade: false,
+  url: '/5cddb1b38d2edd3c96c06ff2/upload-tdd-test',
+  method: 'POST',
+  statusCode: null,
+  statusMessage: null,
+  client:
+   Socket {
+     connecting: false,
+     _hadError: false,
+     _parent: null,
+     _host: null,
+     _readableState:
+      ReadableState {
+        objectMode: false,
+        highWaterMark: 16384,
+        buffer: BufferList { head: null, tail: null, length: 0 },
+        length: 0,
+        pipes: null,
+        pipesCount: 0,
+        flowing: true,
+        ended: false,
+        endEmitted: false,
+        reading: true,
+        sync: false,
+        needReadable: true,
+        emittedReadable: false,
+        readableListening: false,
+        resumeScheduled: false,
+        paused: false,
+        emitClose: false,
+        autoDestroy: false,
+        destroyed: false,
+        defaultEncoding: 'utf8',
+        awaitDrain: 0,
+        readingMore: false,
+        decoder: null,
+        encoding: null },
+     readable: true,
+     _events:
+      [Object: null prototype] {
+        end: [Array],
+        drain: [Array],
+        timeout: [Function: socketOnTimeout],
+        data: [Function: bound socketOnData],
+        error: [Function: socketOnError],
+        close: [Array],
+        resume: [Function: onSocketResume],
+        pause: [Function: onSocketPause] },
+     _eventsCount: 8,
+     _maxListeners: undefined,
+     _writableState:
+      WritableState {
+        objectMode: false,
+        highWaterMark: 16384,
+        finalCalled: false,
+        needDrain: false,
+        ending: false,
+        ended: false,
+        finished: false,
+        destroyed: false,
+        decodeStrings: false,
+        defaultEncoding: 'utf8',
+        length: 0,
+        writing: false,
+        corked: 0,
+        sync: true,
+        bufferProcessing: false,
+        onwrite: [Function: bound onwrite],
+        writecb: null,
+        writelen: 0,
+        bufferedRequest: null,
+        lastBufferedRequest: null,
+        pendingcb: 0,
+        prefinished: false,
+        errorEmitted: false,
+        emitClose: false,
+        autoDestroy: false,
+        bufferedRequestCount: 0,
+        corkedRequestsFree: [Object] },
+     writable: true,
+     allowHalfOpen: true,
+     _sockname: null,
+     _pendingData: null,
+     _pendingEncoding: '',
+     server:
+      Server {
+        _events: [Object],
+        _eventsCount: 4,
+        _maxListeners: undefined,
+        _connections: 1,
+        _handle: [TCP],
+        _usingWorkers: false,
+        _workers: [],
+        _unref: false,
+        allowHalfOpen: true,
+        pauseOnConnect: false,
+        httpAllowHalfOpen: false,
+        timeout: 120000,
+        keepAliveTimeout: 5000,
+        maxHeadersCount: null,
+        headersTimeout: 40000,
+        _connectionKey: '6::::3000',
+        [Symbol(IncomingMessage)]: [Function: IncomingMessage],
+        [Symbol(ServerResponse)]: [Function: ServerResponse],
+        [Symbol(asyncId)]: 30 },
+     _server:
+      Server {
+        _events: [Object],
+        _eventsCount: 4,
+        _maxListeners: undefined,
+        _connections: 1,
+        _handle: [TCP],
+        _usingWorkers: false,
+        _workers: [],
+        _unref: false,
+        allowHalfOpen: true,
+        pauseOnConnect: false,
+        httpAllowHalfOpen: false,
+        timeout: 120000,
+        keepAliveTimeout: 5000,
+        maxHeadersCount: null,
+        headersTimeout: 40000,
+        _connectionKey: '6::::3000',
+        [Symbol(IncomingMessage)]: [Function: IncomingMessage],
+        [Symbol(ServerResponse)]: [Function: ServerResponse],
+        [Symbol(asyncId)]: 30 },
+     timeout: 120000,
+     parser:
+      HTTPParser {
+        '0': [Function: parserOnHeaders],
+        '1': [Function: parserOnHeadersComplete],
+        '2': [Function: parserOnBody],
+        '3': [Function: parserOnMessageComplete],
+        '4': [Function: bound onParserExecute],
+        _headers: [],
+        _url: '',
+        socket: [Circular],
+        incoming: [Circular],
+        outgoing: null,
+        maxHeaderPairs: 2000,
+        _consumed: true,
+        onIncoming: [Function: bound parserOnIncoming],
+        parsingHeadersStart: 1558051110393,
+        [Symbol(isReused)]: true },
+     on: [Function: socketOnWrap],
+     _paused: false,
+     _httpMessage:
+      ServerResponse {
+        _events: [Object],
+        _eventsCount: 2,
+        _maxListeners: undefined,
+        outputData: [],
+        outputSize: 0,
+        writable: true,
+        _last: false,
+        chunkedEncoding: false,
+        shouldKeepAlive: false,
+        useChunkedEncodingByDefault: true,
+        sendDate: true,
+        _removedConnection: false,
+        _removedContLen: false,
+        _removedTE: false,
+        _contentLength: null,
+        _hasBody: true,
+        _trailer: '',
+        finished: false,
+        _headerSent: false,
+        socket: [Circular],
+        connection: [Circular],
+        _header: null,
+        _onPendingData: [Function: bound updateOutgoingData],
+        _sent100: false,
+        _expect_continue: false,
+        req: [Circular],
+        locals: [Object: null prototype] {},
+        [Symbol(isCorked)]: false,
+        [Symbol(outHeadersKey)]: [Object] },
+     [Symbol(asyncId)]: 812,
+     [Symbol(kHandle)]:
+      TCP {
+        reading: true,
+        onread: [Function: onStreamRead],
+        onconnection: null,
+        _consumed: true,
+        [Symbol(owner)]: [Circular] },
+     [Symbol(lastWriteQueueSize)]: 0,
+     [Symbol(timeout)]:
+      Timeout {
+        _idleTimeout: 120000,
+        _idlePrev: [TimersList],
+        _idleNext: [TimersList],
+        _idleStart: 70774,
+        _onTimeout: [Function: bound ],
+        _timerArgs: undefined,
+        _repeat: null,
+        _destroyed: false,
+        [Symbol(refed)]: false,
+        [Symbol(asyncId)]: 813,
+        [Symbol(triggerId)]: 812 },
+     [Symbol(kBytesRead)]: 0,
+     [Symbol(kBytesWritten)]: 0 },
+  _consuming: true,
+  _dumped: false,
+  next: [Function: next],
+  baseUrl: '/api/sessions',
+  originalUrl: '/api/sessions/5cddb1b38d2edd3c96c06ff2/upload-tdd-test',
+  _parsedUrl:
+   Url {
+     protocol: null,
+     slashes: null,
+     auth: null,
+     host: null,
+     port: null,
+     hostname: null,
+     hash: null,
+     search: null,
+     query: null,
+     pathname: '/5cddb1b38d2edd3c96c06ff2/upload-tdd-test',
+     path: '/5cddb1b38d2edd3c96c06ff2/upload-tdd-test',
+     href: '/5cddb1b38d2edd3c96c06ff2/upload-tdd-test',
+     _raw: '/5cddb1b38d2edd3c96c06ff2/upload-tdd-test' },
+  params: { session_id: '5cddb1b38d2edd3c96c06ff2' },
+  query: {},
+  res:
+   ServerResponse {
+     _events:
+      [Object: null prototype] { finish: [Array], close: [Function: handleUnexpectedClose] },
+     _eventsCount: 2,
+     _maxListeners: undefined,
+     outputData: [],
+     outputSize: 0,
+     writable: true,
+     _last: false,
+     chunkedEncoding: false,
+     shouldKeepAlive: false,
+     useChunkedEncodingByDefault: true,
+     sendDate: true,
+     _removedConnection: false,
+     _removedContLen: false,
+     _removedTE: false,
+     _contentLength: null,
+     _hasBody: true,
+     _trailer: '',
+     finished: false,
+     _headerSent: false,
+     socket:
+      Socket {
+        connecting: false,
+        _hadError: false,
+        _parent: null,
+        _host: null,
+        _readableState: [ReadableState],
+        readable: true,
+        _events: [Object],
+        _eventsCount: 8,
+        _maxListeners: undefined,
+        _writableState: [WritableState],
+        writable: true,
+        allowHalfOpen: true,
+        _sockname: null,
+        _pendingData: null,
+        _pendingEncoding: '',
+        server: [Server],
+        _server: [Server],
+        timeout: 120000,
+        parser: [HTTPParser],
+        on: [Function: socketOnWrap],
+        _paused: false,
+        _httpMessage: [Circular],
+        [Symbol(asyncId)]: 812,
+        [Symbol(kHandle)]: [TCP],
+        [Symbol(lastWriteQueueSize)]: 0,
+        [Symbol(timeout)]:
+         Timeout {
+           _idleTimeout: 120000,
+           _idlePrev: [TimersList],
+           _idleNext: [TimersList],
+           _idleStart: 70774,
+           _onTimeout: [Function: bound ],
+           _timerArgs: undefined,
+           _repeat: null,
+           _destroyed: false,
+           [Symbol(refed)]: false,
+           [Symbol(asyncId)]: 813,
+           [Symbol(triggerId)]: 812 },
+        [Symbol(kBytesRead)]: 0,
+        [Symbol(kBytesWritten)]: 0 },
+     connection:
+      Socket {
+        connecting: false,
+        _hadError: false,
+        _parent: null,
+        _host: null,
+        _readableState: [ReadableState],
+        readable: true,
+        _events: [Object],
+        _eventsCount: 8,
+        _maxListeners: undefined,
+        _writableState: [WritableState],
+        writable: true,
+        allowHalfOpen: true,
+        _sockname: null,
+        _pendingData: null,
+        _pendingEncoding: '',
+        server: [Server],
+        _server: [Server],
+        timeout: 120000,
+        parser: [HTTPParser],
+        on: [Function: socketOnWrap],
+        _paused: false,
+        _httpMessage: [Circular],
+        [Symbol(asyncId)]: 812,
+        [Symbol(kHandle)]: [TCP],
+        [Symbol(lastWriteQueueSize)]: 0,
+        [Symbol(timeout)]:
+         Timeout {
+           _idleTimeout: 120000,
+           _idlePrev: [TimersList],
+           _idleNext: [TimersList],
+           _idleStart: 70774,
+           _onTimeout: [Function: bound ],
+           _timerArgs: undefined,
+           _repeat: null,
+           _destroyed: false,
+           [Symbol(refed)]: false,
+           [Symbol(asyncId)]: 813,
+           [Symbol(triggerId)]: 812 },
+        [Symbol(kBytesRead)]: 0,
+        [Symbol(kBytesWritten)]: 0 },
+     _header: null,
+     _onPendingData: [Function: bound updateOutgoingData],
+     _sent100: false,
+     _expect_continue: false,
+     req: [Circular],
+     locals: [Object: null prototype] {},
+     [Symbol(isCorked)]: false,
+     [Symbol(outHeadersKey)]:
+      [Object: null prototype] {
+        'x-powered-by': [Array],
+        'access-control-allow-origin': [Array] } },
+  body:
+   [Object: null prototype] {
+     '----------------------------619918879114634204862739\r\nContent-Disposition: form-data; name':
+      '"file"\r\nContent-Type: application/octet-stream\r\n\r\nhello world\r\n----------------------------619918879114634204862739--\r\n' },
+  _body: true,
+  length: undefined,
+  secret: undefined,
+  cookies: [Object: null prototype] {},
+  signedCookies: [Object: null prototype] {},
+  route:
+   Route {
+     path: '/:session_id/upload-tdd-test',
+     stack: [ [Layer], [Layer] ],
+     methods: { post: true } } }
+4V7j <—— 200 OK 2 B text/html; charset=utf-8 (<—> 43.4 ms)
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+
+> server@0.0.0 dev /c/Users/Vandern Rodrigues/Projects/fyp/server
+> nodemon ./bin/www
+
+[33m[nodemon] 1.19.0[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching: *.*[39m
+[32m[nodemon] starting `node ./bin/www`[39m
