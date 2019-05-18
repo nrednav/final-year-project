@@ -63,10 +63,8 @@ export default {
 
 	methods: {
 
-		acceptOffer (index, offerId, buyerId, buyerAddress) {
-			var duplicateSession = this.isDuplicateSession(this.user_id, buyerId)
-
-			console.log(duplicateSession)
+		async acceptOffer (index, offerId, buyerId, buyerAddress) {
+			var duplicateSession = await this.isDuplicateSession(this.user_id, buyerId)
 
 			if (!duplicateSession) {
 				var sellerId = this.user_id
@@ -105,8 +103,7 @@ export default {
 			}
 
 			let response = await axios.get(requestUrl, config)
-			if (response.data.exists) return true
-			return false
+			return response.data.exists
 		},
 
 		rejectOffer (index, offerId) {
