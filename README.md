@@ -3,17 +3,6 @@
 ---
 
 ## Backlog
-- [ ] Create dockerfile with ubuntu as base image and install necessary dependencies in it (such as pm2 etc)
-	- [ ] Move client, server and oracles into a custom docker image?
-	- [ ] Have the network and contract directories outside and usable with docker-compose and truffle
-	- [ ] Remove unused attributes from all models
-purchased arrays
-- [x] Add heading to buyer and seller dashboards to identify them
-- [x] Set progress to '4'
-- [x] After escrow is finished, show one final interface which says session is complete and shows the necessary information to both the buyer and seller
-	- [x] For the buyer, show a button to download the original title deed
-	- [x] For both, show the date the escrow finished
-- [ ] Clean up all comments across all files
 - [ ] Add mocha tests for changes to Holding Deposit & Escrow smart contracts
 
 ---
@@ -62,7 +51,7 @@ purchased arrays
 - [x] Configure vue-router
 	- [x] Create routes folder with routes.js
 	- [x] Import routes.js into router.js and set it on the vue-router
-- [ ] Create user interfaces w/ Vuetify
+- [x] Create user interfaces w/ Vuetify
 	- [x] Create registration interfaces
 		- [x] Create the signup/login slider form
 			- [x] Add client-side validation manually
@@ -120,21 +109,15 @@ purchased arrays
 - [ ] ...
 
 ## Setup the main docker network
-- [ ] Add private blockchain network
-- [ ] Add mongodb server
+- [x] Add private blockchain network
+- [x] Add mongodb server
 
 ## Test the entire platform
 - [x] Open two clients on different ports
 
 ## Final work
-- [ ] Create project makefile/script
-	- [ ] Start/Stop/Restart network
-	- [ ] Use truffle to deploy contracts
-	- [ ] Open 3 additional sessions
-		- [ ] Start oracles
-		- [ ] Start client
-		- [ ] Start server
 - [ ] Create instruction files
   - [ ] File containing all the versions of tools/software used
   - [ ] File containing instructions on how to setup the project
 - [ ] Create "list_of_ports.txt" file to keep track of all ports actively used in the project
+- [ ] Add comments wherever necessary
