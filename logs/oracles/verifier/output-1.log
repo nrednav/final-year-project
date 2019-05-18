@@ -21,3 +21,9 @@ This property has no liens attached
 { n: 1, nModified: 1, ok: 1 }
 Successfully notified user
  { n: 1, nModified: 1, ok: 1 }
+
+> oracles@1.0.0 verifier /c/Users/Vandern Rodrigues/Projects/fyp/oracles
+> babel-node ./src/verifierOracle.js
+
+The verifier oracle is now listening for events...
+Oracle started...

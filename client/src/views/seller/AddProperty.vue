@@ -179,8 +179,6 @@ export default {
 					this.errors.push('Please enter a number for the bedroom count')
 				} else if (isNaN(details.bathroom_count)) {
 					this.errors.push('Please enter a number for the bathroom count')
-				} else if (this.images.length < 1) {
-					this.errors.push('Please upload at least one image of your property.')
 				} else if (details.address.country === '') {
 					this.errors.push('Please select a country')
 				} else if (details.address.city === 'default') {

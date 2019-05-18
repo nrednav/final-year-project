@@ -357,3 +357,9 @@ Removed property from seller
   nonce: undefined,
   gas: undefined,
   events: {} }
+
+> oracles@1.0.0 escrow /c/Users/Vandern Rodrigues/Projects/fyp/oracles
+> babel-node ./src/escrowOracle.js
+
+The escrow oracle is now listening for events...
+Escrow Oracle started...

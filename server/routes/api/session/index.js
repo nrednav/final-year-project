@@ -141,7 +141,7 @@ router.post('/:session_id/upload-td', (req, res, next) => {
 
 	ws.on('close', (pdf) => {
 		console.log(pdf._id);
-		let dateToday = new Date().toISOString.replace('T', ' ').substr(0, 16)
+		let dateToday = new Date().toISOString().replace('T', ' ').substr(0, 16)
 		Session.updateOne({
 			_id: new mongoose.Types.ObjectId(req.params.session_id)
 		}, {

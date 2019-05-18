@@ -305,3 +305,9 @@ Releasing deposit...
         signature:
          '0x75aae55e48045fff0a38d59d6294adad5fc9412f4561917a364e47e2aeab1367',
         raw: [Object] } } }
+
+> oracles@1.0.0 hd /c/Users/Vandern Rodrigues/Projects/fyp/oracles
+> babel-node ./src/hdOracle.js
+
+The HD oracle is now listening for events...
+Oracle started...

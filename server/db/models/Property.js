@@ -99,11 +99,6 @@ const PropertySchema = new mongoose.Schema({
 	}
 });
 
-PropertySchema.path('details.images').validate((value) => {
-	return value.length;
-}, "'Images' cannot be an empty array");
-
-
 PropertySchema.index({ 'details.name': 1, 'details.description': 1, 'details.address': 1 }, { unique: true });
 
 const Property = db.model('Property', PropertySchema);

@@ -2236,3 +2236,272 @@ oQ1s <—— 200 OK 592 B application/json; charset=utf-8 (<—> 7.7 ms)
 [33m[nodemon] to restart at any time, enter `rs`[39m
 [33m[nodemon] watching: *.*[39m
 [32m[nodemon] starting `node ./bin/www`[39m
+
+> server@0.0.0 dev /c/Users/Vandern Rodrigues/Projects/fyp/server
+> nodemon ./bin/www
+
+[33m[nodemon] 1.19.0[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching: *.*[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+
+> server@0.0.0 dev /c/Users/Vandern Rodrigues/Projects/fyp/server
+> nodemon ./bin/www
+
+[33m[nodemon] 1.19.0[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching: *.*[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+
+> server@0.0.0 dev /c/Users/Vandern Rodrigues/Projects/fyp/server
+> nodemon ./bin/www
+
+[33m[nodemon] 1.19.0[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching: *.*[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+t03L ——> OPTIONS /api/auth/register 
+t03L <—— 204 No Content (<—> 3.0 ms)
+EDSo ——> POST /api/auth/register 127 B application/json;charset=utf-8
+{ profiles:
+   { buyer: { notifications: [], sessions: [], offers: [] },
+     seller:
+      { verified_count: 0,
+        listed_count: 0,
+        properties: [],
+        sessions: [],
+        notifications: [] } },
+  _id: 5ce002de12d8b4072543351e,
+  email: 'tj@gmail.com',
+  password:
+   '$2b$05$cJ7QgyeY.WRa7yzp3s8DY.uOlhx9QEQaSzbnx.T2LTMJSww9oA4bS',
+  name: 'tom jenkins',
+  account_address: '0x738b315addc41813055f88f759f9b1ecafc3b36e',
+  created_at: 2019-05-18T13:04:30.271Z,
+  __v: 0 }
+EDSo <—— 200 OK 53 B application/json; charset=utf-8 (<—> 85.9 ms)
+0EVS ——> OPTIONS /api/screening/add-report 
+0EVS <—— 204 No Content (<—> 0.9 ms)
+JVJK ——> POST /api/screening/add-report 176 B application/json;charset=utf-8
+{ profiles:
+   { buyer: { notifications: [], sessions: [], offers: [] },
+     seller:
+      { verified_count: 0,
+        listed_count: 0,
+        properties: [],
+        sessions: [],
+        notifications: [] } },
+  _id: 5ce002de12d8b4072543351e,
+  email: 'tj@gmail.com',
+  password:
+   '$2b$05$cJ7QgyeY.WRa7yzp3s8DY.uOlhx9QEQaSzbnx.T2LTMJSww9oA4bS',
+  name: 'tom jenkins',
+  account_address: '0x738b315addc41813055f88f759f9b1ecafc3b36e',
+  created_at: 2019-05-18T13:04:30.271Z,
+  __v: 0 }
+JVJK <—— 200 OK 438 B application/json; charset=utf-8 (<—> 296.5 ms)
+Sending ether now...
+dtlG ——> OPTIONS /api/auth/login 
+dtlG <—— 204 No Content (<—> 1.0 ms)
+ibx9 ——> POST /api/auth/login 106 B application/json;charset=utf-8
+ibx9 <—— 200 OK 215 B application/json; charset=utf-8 (<—> 14.7 ms)
+EVme ——> OPTIONS / 
+EVme <—— 204 No Content (<—> 0.8 ms)
+25X7 ——> GET / 
+25X7 <—— 200 OK 120 B application/json; charset=utf-8 (<—> 5.2 ms)
+LJ9Y ——> OPTIONS /api/users/get/5ce002de12d8b4072543351e 
+LJ9Y <—— 204 No Content (<—> 0.6 ms)
+6kW2 ——> GET /api/users/get/5ce002de12d8b4072543351e 
+6kW2 <—— 200 OK 447 B application/json; charset=utf-8 (<—> 7.8 ms)
+2Sx1 ——> OPTIONS /api/properties/create 
+2Sx1 <—— 204 No Content (<—> 0.7 ms)
+YwqS ——> POST /api/properties/create 5.88 MB multipart/form-data; boundary=---------------------------29889371918340
+Creating a new property
+{ fieldname: 'files',
+  originalname: 'Application 2016-08-16_16-08-47.jpg',
+  encoding: '7bit',
+  mimetype: 'image/jpeg',
+  id: 5ce002fc12d8b40725433520,
+  filename: '1ae5cf866beab9b96d1ac56d433d894b.jpg',
+  metadata: null,
+  bucketName: 'fs',
+  chunkSize: 261120,
+  size: 1574391,
+  md5: '574ffd73e6b96f246b4dc21c9288dbc0',
+  uploadDate: 2019-05-18T13:05:01.501Z,
+  contentType: 'image/jpeg' }
+{ fieldname: 'files',
+  originalname: 'Application 2016-08-16_16-09-59.jpg',
+  encoding: '7bit',
+  mimetype: 'image/jpeg',
+  id: 5ce002fc12d8b40725433521,
+  filename: 'dd640d7df405776a9ecc9dc11f0e1afc.jpg',
+  metadata: null,
+  bucketName: 'fs',
+  chunkSize: 261120,
+  size: 1458933,
+  md5: 'f3b379f33abc402657802019cdd15371',
+  uploadDate: 2019-05-18T13:05:01.421Z,
+  contentType: 'image/jpeg' }
+{ fieldname: 'files',
+  originalname: 'Application 2016-08-16_16-08-35.jpg',
+  encoding: '7bit',
+  mimetype: 'image/jpeg',
+  id: 5ce002fc12d8b40725433522,
+  filename: '6ca183a6dafbae5bb745d33ed8ba5fab.jpg',
+  metadata: null,
+  bucketName: 'fs',
+  chunkSize: 261120,
+  size: 1503594,
+  md5: '19695210be9a0e692db27c73cfcafa67',
+  uploadDate: 2019-05-18T13:05:01.535Z,
+  contentType: 'image/jpeg' }
+{ fieldname: 'files',
+  originalname: 'Application 2016-08-16_16-10-13.jpg',
+  encoding: '7bit',
+  mimetype: 'image/jpeg',
+  id: 5ce002fc12d8b40725433523,
+  filename: '7a56bb4d5c11c457aa20230744740647.jpg',
+  metadata: null,
+  bucketName: 'fs',
+  chunkSize: 261120,
+  size: 1625134,
+  md5: '69e3c360c7fd38b5432382a37296175b',
+  uploadDate: 2019-05-18T13:05:01.337Z,
+  contentType: 'image/jpeg' }
+Successfully added property 5ce002fd12d8b4072543353e to user 5ce002de12d8b4072543351e
+YwqS <—— 200 OK 629 B application/json; charset=utf-8 (<—> 1527.5 ms)
+MrLV ——> OPTIONS / 
+MrLV <—— 204 No Content (<—> 2.1 ms)
+ARC6 ——> GET / 
+ARC6 <—— 304 Not Modified (<—> 2.1 ms)
+PjY4 ——> OPTIONS /api/users/get/5ce002de12d8b4072543351e 
+PjY4 <—— 204 No Content (<—> 0.9 ms)
+APtx ——> GET /api/users/get/5ce002de12d8b4072543351e 
+APtx <—— 200 OK 473 B application/json; charset=utf-8 (<—> 6.3 ms)
+z8nT ——> OPTIONS /api/properties/create 
+z8nT <—— 204 No Content (<—> 0.5 ms)
+RT4X ——> POST /api/properties/create 515 B multipart/form-data; boundary=---------------------------186711621711440
+Creating a new property
+Successfully added property 5ce0030e12d8b4072543353f to user 5ce002de12d8b4072543351e
+RT4X <—— 200 OK 524 B application/json; charset=utf-8 (<—> 16.9 ms)
+INbH ——> OPTIONS / 
+INbH <—— 204 No Content (<—> 0.6 ms)
+YqBo ——> GET / 
+YqBo <—— 304 Not Modified (<—> 2.1 ms)
+Vrmj ——> OPTIONS /api/users/get/5ce002de12d8b4072543351e 
+Vrmj <—— 204 No Content (<—> 0.8 ms)
+T91c ——> GET /api/users/get/5ce002de12d8b4072543351e 
+T91c <—— 200 OK 500 B application/json; charset=utf-8 (<—> 7.9 ms)
+Q8ir ——> OPTIONS /api/users/5ce002de12d8b4072543351e/properties 
+Q8ir <—— 204 No Content (<—> 2.8 ms)
+Se9y ——> GET /api/users/5ce002de12d8b4072543351e/properties 
+Se9y <—— 200 OK 1.12 KB application/json; charset=utf-8 (<—> 15.2 ms)
+0lEz ——> OPTIONS /api/properties/5ce002fd12d8b4072543353e 
+0lEz <—— 204 No Content (<—> 0.8 ms)
+WixB ——> GET /api/properties/5ce002fd12d8b4072543353e 
+WixB <—— 200 OK 629 B application/json; charset=utf-8 (<—> 7.4 ms)
+{ blockHash:
+   '0x8f5fa65b91e7d86daf5b21eeab6179f723e7605b4eec576105a410fc61741645',
+  blockNumber: 179,
+  contractAddress: null,
+  cumulativeGasUsed: 21000,
+  from: '0x8a23c7C42333ed6be5a68c24031cd7A737fbcBE8',
+  gasUsed: 21000,
+  logs: [],
+  logsBloom:
+   '0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000',
+  status: true,
+  to: '0x738b315addc41813055f88F759f9B1EcAfc3B36E',
+  transactionHash:
+   '0x083c8ca0ba7a35ef0ffded39ca2300650174599a9b86f1bc287dd8b32e3f6a1a',
+  transactionIndex: 0,
+  nonce: undefined,
+  gas: undefined }
+Wx3D ——> OPTIONS /api/properties/5ce002fd12d8b4072543353e 
+Wx3D <—— 204 No Content (<—> 0.5 ms)
+uCxz ——> GET /api/properties/5ce002fd12d8b4072543353e 
+uCxz <—— 304 Not Modified (<—> 5.7 ms)
+QrHr ——> OPTIONS /api/auth/login 
+QrHr <—— 204 No Content (<—> 0.5 ms)
+wKw9 ——> POST /api/auth/login 107 B application/json;charset=utf-8
+Error: Incorrect email, password or account address
+    at handleError (/c/Users/Vandern Rodrigues/Projects/fyp/server/routes/api/auth/index.js:149:16)
+    at UserModel.findOne.then.user (/c/Users/Vandern Rodrigues/Projects/fyp/server/routes/api/auth/index.js:136:5)
+    at processTicksAndRejections (internal/process/next_tick.js:81:5)
+wKw9 <—— 500 Internal Server Error 531 B text/html; charset=utf-8 (<—> 535.5 ms)
+kfwt ——> OPTIONS /api/auth/login 
+kfwt <—— 204 No Content (<—> 3.1 ms)
+hivj ——> POST /api/auth/login 106 B application/json;charset=utf-8
+Error: Incorrect email, password or account address
+    at handleError (/c/Users/Vandern Rodrigues/Projects/fyp/server/routes/api/auth/index.js:149:16)
+    at UserModel.findOne.then.user (/c/Users/Vandern Rodrigues/Projects/fyp/server/routes/api/auth/index.js:136:5)
+    at processTicksAndRejections (internal/process/next_tick.js:81:5)
+hivj <—— 500 Internal Server Error 531 B text/html; charset=utf-8 (<—> 17.9 ms)
+o4K0 ——> OPTIONS /api/auth/login 
+o4K0 <—— 204 No Content (<—> 0.7 ms)
+ujyZ ——> POST /api/auth/login 105 B application/json;charset=utf-8
+Error: Incorrect email, password or account address
+    at handleError (/c/Users/Vandern Rodrigues/Projects/fyp/server/routes/api/auth/index.js:149:16)
+    at bcrypt.compare (/c/Users/Vandern Rodrigues/Projects/fyp/server/routes/api/auth/index.js:131:7)
+ujyZ <—— 500 Internal Server Error 448 B text/html; charset=utf-8 (<—> 32.3 ms)
+qjxI ——> OPTIONS /api/auth/login 
+qjxI <—— 204 No Content (<—> 0.7 ms)
+ClIN ——> POST /api/auth/login 106 B application/json;charset=utf-8
+ClIN <—— 200 OK 215 B application/json; charset=utf-8 (<—> 12.1 ms)
+bb9P ——> OPTIONS / 
+bb9P <—— 204 No Content (<—> 0.7 ms)
+IoUH ——> GET / 
+IoUH <—— 200 OK 120 B application/json; charset=utf-8 (<—> 1.6 ms)
+FOx7 ——> OPTIONS /api/users/get/5ce002de12d8b4072543351e 
+FOx7 <—— 204 No Content (<—> 0.5 ms)
+X1Ew ——> GET /api/users/get/5ce002de12d8b4072543351e 
+X1Ew <—— 304 Not Modified (<—> 6.1 ms)
+z2ON ——> OPTIONS /api/users/5ce002de12d8b4072543351e/properties 
+z2ON <—— 204 No Content (<—> 0.5 ms)
+5mOJ ——> GET /api/users/5ce002de12d8b4072543351e/properties 
+5mOJ <—— 304 Not Modified (<—> 14.2 ms)
+eyaZ ——> OPTIONS /api/properties/5ce0030e12d8b4072543353f 
+eyaZ <—— 204 No Content (<—> 0.6 ms)
+KGt7 ——> GET /api/properties/5ce0030e12d8b4072543353f 
+KGt7 <—— 200 OK 524 B application/json; charset=utf-8 (<—> 5.4 ms)
+A95E ——> OPTIONS / 
+A95E <—— 204 No Content (<—> 0.6 ms)
+0UHd ——> GET / 
+0UHd <—— 304 Not Modified (<—> 1.4 ms)
+u3AS ——> OPTIONS /api/users/get/5ce002de12d8b4072543351e 
+u3AS <—— 204 No Content (<—> 0.7 ms)
+wBpM ——> GET /api/users/get/5ce002de12d8b4072543351e 
+wBpM <—— 304 Not Modified (<—> 6.6 ms)
+wlG2 ——> OPTIONS /api/users/5ce002de12d8b4072543351e/properties 
+wlG2 <—— 204 No Content (<—> 0.7 ms)
+380d ——> GET /api/users/5ce002de12d8b4072543351e/properties 
+380d <—— 304 Not Modified (<—> 11.3 ms)
+rxQ7 ——> OPTIONS /api/properties/5ce002fd12d8b4072543353e 
+rxQ7 <—— 204 No Content (<—> 0.6 ms)
+BkvB ——> GET /api/properties/5ce002fd12d8b4072543353e 
+BkvB <—— 304 Not Modified (<—> 5.8 ms)
+lvbU ——> OPTIONS /api/users/5ce002de12d8b4072543351e/properties 
+lvbU <—— 204 No Content (<—> 0.8 ms)
+5WVB ——> GET /api/users/5ce002de12d8b4072543351e/properties 
+5WVB <—— 304 Not Modified (<—> 11.5 ms)
+MNda ——> OPTIONS /api/users/5ce002de12d8b4072543351e/properties 
+MNda <—— 204 No Content (<—> 0.6 ms)
+aofs ——> GET /api/users/5ce002de12d8b4072543351e/properties 
+aofs <—— 304 Not Modified (<—> 11.9 ms)
+4j7s ——> OPTIONS /api/properties/5ce002fd12d8b4072543353e 
+4j7s <—— 204 No Content (<—> 0.9 ms)
+wTnL ——> GET /api/properties/5ce002fd12d8b4072543353e 
+wTnL <—— 304 Not Modified (<—> 4.9 ms)
+3DfU ——> OPTIONS / 
+3DfU <—— 204 No Content (<—> 0.6 ms)
+FIqm ——> GET / 
+FIqm <—— 304 Not Modified (<—> 1.6 ms)
+Rwla ——> OPTIONS /api/users/get/5ce002de12d8b4072543351e 
+Rwla <—— 204 No Content (<—> 0.5 ms)
+rpzG ——> GET /api/users/get/5ce002de12d8b4072543351e 
+rpzG <—— 304 Not Modified (<—> 5.2 ms)
