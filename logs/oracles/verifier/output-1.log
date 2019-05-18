@@ -27,3 +27,37 @@ Successfully notified user
 
 The verifier oracle is now listening for events...
 Oracle started...
+Found event:-
+ verification_requested
+Requesting information from land registry...
+Got information from land registry...
+Verifying information received...
+{ liens: false,
+  _id: '5ce0061912d8b40725433540',
+  property_uid:
+   '0x1f342f5e7711d159bc9fa65a60d231e56edf45f0d9b2e0b994c8c0c658bd1a4e',
+  owner_id: '5ce002de12d8b4072543351e',
+  title_deed_hash:
+   '0x56d1f07bb2cc8aa4cf544f2c0ee9a8059980a1876b536142d96b80ee44d6895a',
+  __v: 0 }
+This property has no liens attached
+{ n: 1, nModified: 1, ok: 1 }
+Successfully notified user
+ { n: 1, nModified: 1, ok: 1 }
+Found event:-
+ verification_requested
+Requesting information from land registry...
+Got information from land registry...
+Verifying information received...
+{ liens: false,
+  _id: '5ce00fac304eee09b5b35180',
+  property_uid:
+   '0x382e590078ba8a4e866c020ba674121c7e65bb832ab71c0e903d63c308cae162',
+  owner_id: '5ce002de12d8b4072543351e',
+  title_deed_hash:
+   '0xe9a04a783a998eff5aa3b30c7c5c6088fd31ecaea753048312c7ec2cb7055f77',
+  __v: 0 }
+This property has no liens attached
+{ n: 1, nModified: 1, ok: 1 }
+Successfully notified user
+ { n: 1, nModified: 1, ok: 1 }

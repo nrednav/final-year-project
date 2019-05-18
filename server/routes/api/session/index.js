@@ -13,10 +13,8 @@ var PDFDocument = require('pdfkit');
 const Session = require('../../../db/models/Session').Session;
 const User = require('../../../db/models/User').User;
 
-// Setup DB
+// Setup Database connections & multer/gridFS
 const mongoUri = 'mongodb://localhost:27017/fyp';
-
-// Create connection
 const conn = mongoose.createConnection(mongoUri, {
 	useNewUrlParser: true
 });
@@ -46,6 +44,10 @@ var storage = new gridFsStorage({
 	}
 });
 const upload = multer({ storage });
+
+/*
+ * ROUTE HANDLERS
+ */
 
 /* POST - upload title transfer document*/
 router.post('/:session_id/upload-ttd', upload.single('file'), (req, res, next) => {
@@ -269,6 +271,24 @@ router.get('/get/:session_id', (req, res, next) => {
 		res.json({
 			result: result
 		});
+	});
+});
+
+/* GET - check if session exists with buyer and seller id's */
+router.get('/exists/', (req, res, next) => {
+	let sellerId = req.query.sellerId
+	let buyerId = req.query.buyerId
+
+	Session.findOne({
+		seller_id: sellerId,
+		buyer_id: buyerId
+	}, (err, session) => {
+		if (err) throw err;
+		if (session) {
+			res.json({ exists: true });
+		} else {
+			res.json({ exists: false });
+		}
 	});
 });
 

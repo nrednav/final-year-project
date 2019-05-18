@@ -2505,3 +2505,1599 @@ Rwla ——> OPTIONS /api/users/get/5ce002de12d8b4072543351e
 Rwla <—— 204 No Content (<—> 0.5 ms)
 rpzG ——> GET /api/users/get/5ce002de12d8b4072543351e 
 rpzG <—— 304 Not Modified (<—> 5.2 ms)
+iPAf ——> OPTIONS /api/users/5ce002de12d8b4072543351e/properties 
+iPAf <—— 204 No Content (<—> 0.5 ms)
+nkuj ——> GET /api/users/5ce002de12d8b4072543351e/properties 
+nkuj <—— 304 Not Modified (<—> 10.2 ms)
+pUBa ——> OPTIONS /api/properties/5ce002fd12d8b4072543353e 
+pUBa <—— 204 No Content (<—> 0.5 ms)
+m0IE ——> GET /api/properties/5ce002fd12d8b4072543353e 
+m0IE <—— 304 Not Modified (<—> 6.5 ms)
+Kht5 ——> OPTIONS /api/properties/5ce002fd12d8b4072543353e 
+Kht5 <—— 204 No Content (<—> 0.8 ms)
+If7W ——> GET /api/properties/5ce002fd12d8b4072543353e 
+If7W <—— 304 Not Modified (<—> 5.9 ms)
+cSwA ——> OPTIONS /api/land-registry/add-entry 
+cSwA <—— 204 No Content (<—> 0.9 ms)
+Cxdt ——> POST /api/land-registry/add-entry 210 B application/json;charset=utf-8
+object
+Cxdt <—— 200 OK 50 B application/json; charset=utf-8 (<—> 7.8 ms)
+jdO7 ——> OPTIONS /api/properties/5ce002fd12d8b4072543353e/update 
+jdO7 <—— 204 No Content (<—> 0.8 ms)
+jQls ——> PUT /api/properties/5ce002fd12d8b4072543353e/update 105 B application/json;charset=utf-8
+Got request....
+Options received are:-
+{ 'details.property_uid':
+   '0x1f342f5e7711d159bc9fa65a60d231e56edf45f0d9b2e0b994c8c0c658bd1a4e' }
+{ options:
+   { 'details.property_uid':
+      '0x1f342f5e7711d159bc9fa65a60d231e56edf45f0d9b2e0b994c8c0c658bd1a4e' } }
+Commiting update now...
+{ n: 1, nModified: 1, ok: 1 }
+jQls <—— 200 OK 39 B application/json; charset=utf-8 (<—> 6.6 ms)
+ty37 ——> OPTIONS /api/properties/5ce002fd12d8b4072543353e/update 
+ty37 <—— 204 No Content (<—> 0.7 ms)
+fSsm ——> PUT /api/properties/5ce002fd12d8b4072543353e/update 26 B application/json;charset=utf-8
+Got request....
+Options received are:-
+{ verified: 1 }
+{ options: { verified: 1 } }
+Commiting update now...
+{ n: 1, nModified: 1, ok: 1 }
+fSsm <—— 200 OK 39 B application/json; charset=utf-8 (<—> 7.8 ms)
+KYFh ——> GET /api/land-registry/get-entry?property_uid=0x1f342f5e7711d159bc9fa65a60d231e56edf45f0d9b2e0b994c8c0c658bd1a4e 
+KYFh <—— 200 OK 275 B application/json; charset=utf-8 (<—> 7.6 ms)
+X2IY ——> OPTIONS /api/properties/5ce002fd12d8b4072543353e 
+X2IY <—— 204 No Content (<—> 1.2 ms)
+gI9c ——> GET /api/properties/5ce002fd12d8b4072543353e 
+gI9c <—— 200 OK 695 B application/json; charset=utf-8 (<—> 6.0 ms)
+1fLS ——> OPTIONS /api/properties/5ce002fd12d8b4072543353e/list 
+1fLS <—— 204 No Content (<—> 0.6 ms)
+Vuz5 ——> PUT /api/properties/5ce002fd12d8b4072543353e/list 52 B application/json;charset=utf-8
+true
+5ce002fd12d8b4072543353e
+Updated listed count on user profile { n: 1, nModified: 1, ok: 1 }
+Vuz5 <—— 200 OK 39 B application/json; charset=utf-8 (<—> 10.7 ms)
+9I2W ——> OPTIONS /api/users/5ce002de12d8b4072543351e/properties 
+9I2W <—— 204 No Content (<—> 0.5 ms)
+9mC1 ——> GET /api/users/5ce002de12d8b4072543351e/properties 
+9mC1 <—— 200 OK 1.19 KB application/json; charset=utf-8 (<—> 12.1 ms)
+5Gnx ——> OPTIONS /api/auth/register 
+5Gnx <—— 204 No Content (<—> 0.7 ms)
+5F8D ——> POST /api/auth/register 132 B application/json;charset=UTF-8
+{ profiles:
+   { buyer: { notifications: [], sessions: [], offers: [] },
+     seller:
+      { verified_count: 0,
+        listed_count: 0,
+        properties: [],
+        sessions: [],
+        notifications: [] } },
+  _id: 5ce0080c12d8b40725433541,
+  email: 'buyer@gmail.com',
+  password:
+   '$2b$05$zO3nIosYghKJ2ZfgX/iKA.2kdPhk8EquVhu7XJjCUa1.Yf7WDDfnS',
+  name: 'Buyer Johnson',
+  account_address: '0xa62c17eed6b99ab241f21a30fa07be19fac3ad64',
+  created_at: 2019-05-18T13:26:36.426Z,
+  __v: 0 }
+5F8D <—— 200 OK 53 B application/json; charset=utf-8 (<—> 18.1 ms)
+c87Z ——> OPTIONS /api/screening/add-report 
+c87Z <—— 204 No Content (<—> 1.4 ms)
+QVrb ——> POST /api/screening/add-report 176 B application/json;charset=UTF-8
+{ profiles:
+   { buyer: { notifications: [], sessions: [], offers: [] },
+     seller:
+      { verified_count: 0,
+        listed_count: 0,
+        properties: [],
+        sessions: [],
+        notifications: [] } },
+  _id: 5ce0080c12d8b40725433541,
+  email: 'buyer@gmail.com',
+  password:
+   '$2b$05$zO3nIosYghKJ2ZfgX/iKA.2kdPhk8EquVhu7XJjCUa1.Yf7WDDfnS',
+  name: 'Buyer Johnson',
+  account_address: '0xa62c17eed6b99ab241f21a30fa07be19fac3ad64',
+  created_at: 2019-05-18T13:26:36.426Z,
+  __v: 0 }
+QVrb <—— 200 OK 443 B application/json; charset=utf-8 (<—> 27.1 ms)
+Sending ether now...
+e1KQ ——> OPTIONS /api/auth/login 
+e1KQ <—— 204 No Content (<—> 2.1 ms)
+ZGz2 ——> POST /api/auth/login 109 B application/json;charset=UTF-8
+ZGz2 <—— 200 OK 219 B application/json; charset=utf-8 (<—> 19.9 ms)
+f2pw ——> OPTIONS / 
+f2pw <—— 204 No Content (<—> 5.4 ms)
+BhEy ——> GET / 
+BhEy <—— 200 OK 123 B application/json; charset=utf-8 (<—> 3.8 ms)
+xAvp ——> OPTIONS /api/users/get/5ce0080c12d8b40725433541 
+xAvp <—— 204 No Content (<—> 4.7 ms)
+vkZm ——> GET /api/users/get/5ce0080c12d8b40725433541 
+vkZm <—— 200 OK 452 B application/json; charset=utf-8 (<—> 14.4 ms)
+icVw ——> OPTIONS /api/properties/search?country=Albania&city=Petran&type=Apartment&bedcount=2&bathcount=2&minprice=1&maxprice=123213123 
+icVw <—— 204 No Content (<—> 2.3 ms)
+5cbi ——> GET /api/properties/search?country=Albania&city=Petran&type=Apartment&bedcount=2&bathcount=2&minprice=1&maxprice=123213123 
+[ { details:
+     { address: [Object],
+       property_uid:
+        '0x1f342f5e7711d159bc9fa65a60d231e56edf45f0d9b2e0b994c8c0c658bd1a4e',
+       images: [Array],
+       name: 'gfhfghgfhgfhfgh',
+       description: 'dfdsfdsf',
+       type: 'Attached House',
+       bedroom_count: 2,
+       bathroom_count: 2,
+       size: 'gfhfghgfhgfhfgh',
+       listing_price: 23123213,
+       deposit: 213321,
+       available_from: 2019-05-01T00:00:00.000Z,
+       owner: '5ce002de12d8b4072543351e' },
+    verified: 2,
+    listed: true,
+    session_underway: false,
+    _id: 5ce002fd12d8b4072543353e,
+    offers: [],
+    __v: 0 } ]
+5cbi <—— 200 OK 700 B application/json; charset=utf-8 (<—> 11.3 ms)
+NG0j ——> OPTIONS /api/properties/5ce002fd12d8b4072543353e?country=Albania&city=Petran&type=Apartment&bedcount=2&bathcount=2&minprice=1&maxprice=123213123 
+NG0j <—— 204 No Content (<—> 0.9 ms)
+UB4y ——> GET /api/properties/5ce002fd12d8b4072543353e?country=Albania&city=Petran&type=Apartment&bedcount=2&bathcount=2&minprice=1&maxprice=123213123 
+UB4y <—— 200 OK 694 B application/json; charset=utf-8 (<—> 5.2 ms)
+{ blockHash:
+   '0x94c87e1f2dd669ddc85c52de793a0b3ab729d2bfd20978874e13dbd25f4e8156',
+  blockNumber: 621,
+  contractAddress: null,
+  cumulativeGasUsed: 21000,
+  from: '0x8a23c7C42333ed6be5a68c24031cd7A737fbcBE8',
+  gasUsed: 21000,
+  logs: [],
+  logsBloom:
+   '0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000',
+  status: true,
+  to: '0xa62C17EeD6b99Ab241F21A30Fa07be19FAC3AD64',
+  transactionHash:
+   '0x392b8482fd2eac14746ce61f943edb0df806260304cac4448cd198211deeb9ee',
+  transactionIndex: 0,
+  nonce: undefined,
+  gas: undefined }
+RmT3 ——> OPTIONS /api/properties/5ce002fd12d8b4072543353e/add-offer?country=Albania&city=Petran&type=Apartment&bedcount=2&bathcount=2&minprice=1&maxprice=123213123 
+RmT3 <—— 204 No Content (<—> 19.6 ms)
+kdU3 ——> POST /api/properties/5ce002fd12d8b4072543353e/add-offer?country=Albania&city=Petran&type=Apartment&bedcount=2&bathcount=2&minprice=1&maxprice=123213123 193 B application/json;charset=UTF-8
+{ n: 1, nModified: 1, ok: 1 }
+kdU3 <—— 200 OK 39 B application/json; charset=utf-8 (<—> 43.9 ms)
+tglq ——> OPTIONS / 
+tglq <—— 204 No Content (<—> 2.4 ms)
+Yfud ——> GET / 
+Yfud <—— 304 Not Modified (<—> 3.4 ms)
+acaS ——> OPTIONS /api/users/get/5ce0080c12d8b40725433541 
+acaS <—— 204 No Content (<—> 0.8 ms)
+PqVd ——> GET /api/users/get/5ce0080c12d8b40725433541 
+PqVd <—— 200 OK 580 B application/json; charset=utf-8 (<—> 7.6 ms)
+eAkm ——> OPTIONS /api/properties/5ce002fd12d8b4072543353e 
+eAkm <—— 204 No Content (<—> 0.6 ms)
+eS1v ——> GET /api/properties/5ce002fd12d8b4072543353e 
+eS1v <—— 200 OK 917 B application/json; charset=utf-8 (<—> 7.0 ms)
+g6Yc ——> OPTIONS /api/properties/5ce002fd12d8b4072543353e/offers/accept 
+g6Yc <—— 204 No Content (<—> 0.5 ms)
+TuI1 ——> POST /api/properties/5ce002fd12d8b4072543353e/offers/accept 258 B application/json;charset=utf-8
+Updated property, removed offer and set session underway to true
+Requesting creaiton of session now
+Creating a session with the following details...
+[object Object]
+hLhz ——> POST /api/sessions/create 271 B application/json;charset=utf-8
+Creating a new session
+Linking session to participants...
+{ n: 1, nModified: 1, ok: 1 }
+Finished linking session to seller... now buyer...
+{ n: 1, nModified: 1, ok: 1 }
+Finished linking session to buyer
+hLhz <—— 200 OK 57 B application/json; charset=utf-8 (<—> 27.1 ms)
+TuI1 <—— 200 OK 46 B application/json; charset=utf-8 (<—> 48.3 ms)
+90l3 ——> OPTIONS /api/users/5ce002de12d8b4072543351e/properties 
+90l3 <—— 204 No Content (<—> 0.6 ms)
+4TUm ——> GET /api/users/5ce002de12d8b4072543351e/properties 
+4TUm <—— 200 OK 1.18 KB application/json; charset=utf-8 (<—> 13.2 ms)
+cQ6T ——> OPTIONS /api/users/5ce002de12d8b4072543351e/seller/sessions 
+cQ6T <—— 204 No Content (<—> 0.5 ms)
+si0D ——> GET /api/users/5ce002de12d8b4072543351e/seller/sessions 
+si0D <—— 200 OK 1.25 KB application/json; charset=utf-8 (<—> 14.3 ms)
+HiXT ——> OPTIONS /api/properties/find-by-ids 
+HiXT <—— 204 No Content (<—> 0.5 ms)
+bK4J ——> POST /api/properties/find-by-ids 48 B application/json;charset=utf-8
+bK4J <—— 200 OK 699 B application/json; charset=utf-8 (<—> 6.4 ms)
+MqCg ——> OPTIONS /api/sessions/get/5ce0087c12d8b40725433545 
+MqCg <—— 204 No Content (<—> 0.7 ms)
+EiMQ ——> GET /api/sessions/get/5ce0087c12d8b40725433545 
+EiMQ <—— 200 OK 1.25 KB application/json; charset=utf-8 (<—> 7.6 ms)
+xQju ——> OPTIONS /api/users/5ce0080c12d8b40725433541/buyer/sessions?country=Albania&city=Petran&type=Apartment&bedcount=2&bathcount=2&minprice=1&maxprice=123213123 
+xQju <—— 204 No Content (<—> 2.0 ms)
+1zid ——> GET /api/users/5ce0080c12d8b40725433541/buyer/sessions?country=Albania&city=Petran&type=Apartment&bedcount=2&bathcount=2&minprice=1&maxprice=123213123 
+1zid <—— 200 OK 1.25 KB application/json; charset=utf-8 (<—> 13.4 ms)
+LG93 ——> OPTIONS /api/properties/find-by-ids?country=Albania&city=Petran&type=Apartment&bedcount=2&bathcount=2&minprice=1&maxprice=123213123 
+LG93 <—— 204 No Content (<—> 0.5 ms)
+2qF0 ——> POST /api/properties/find-by-ids?country=Albania&city=Petran&type=Apartment&bedcount=2&bathcount=2&minprice=1&maxprice=123213123 48 B application/json;charset=UTF-8
+2qF0 <—— 200 OK 699 B application/json; charset=utf-8 (<—> 9.6 ms)
+Q1IU ——> OPTIONS /api/sessions/get/5ce0087c12d8b40725433545 
+Q1IU <—— 204 No Content (<—> 0.7 ms)
+oZhv ——> GET /api/sessions/get/5ce0087c12d8b40725433545 
+oZhv <—— 200 OK 1.25 KB application/json; charset=utf-8 (<—> 15.1 ms)
+MCvm ——> OPTIONS /api/sessions/5ce0087c12d8b40725433545/update 
+MCvm <—— 204 No Content (<—> 0.6 ms)
+RNzW ——> PUT /api/sessions/5ce0087c12d8b40725433545/update 156 B application/json;charset=utf-8
+Updating session with id: 5ce0087c12d8b40725433545
+RNzW <—— 200 OK 56 B text/html; charset=utf-8 (<—> 4.9 ms)
+iaAH ——> OPTIONS /api/sessions/get/5ce0087c12d8b40725433545 
+iaAH <—— 204 No Content (<—> 0.9 ms)
+UFbI ——> GET /api/sessions/get/5ce0087c12d8b40725433545 
+UFbI <—— 200 OK 1.26 KB application/json; charset=utf-8 (<—> 8.0 ms)
+35vl ——> OPTIONS /api/sessions/get/5ce0087c12d8b40725433545 
+35vl <—— 204 No Content (<—> 0.4 ms)
+BPNl ——> GET /api/sessions/get/5ce0087c12d8b40725433545 
+BPNl <—— 200 OK 1.26 KB application/json; charset=utf-8 (<—> 10.5 ms)
+xqMi ——> OPTIONS /api/sessions/5ce0087c12d8b40725433545/update 
+xqMi <—— 204 No Content (<—> 3.7 ms)
+BJUV ——> PUT /api/sessions/5ce0087c12d8b40725433545/update 108 B application/json;charset=UTF-8
+Updating session with id: 5ce0087c12d8b40725433545
+BJUV <—— 200 OK 56 B text/html; charset=utf-8 (<—> 15.1 ms)
+Oa8F ——> OPTIONS /api/sessions/get/5ce0087c12d8b40725433545 
+Oa8F <—— 204 No Content (<—> 0.6 ms)
+3ae5 ——> GET /api/sessions/get/5ce0087c12d8b40725433545 
+3ae5 <—— 200 OK 1.3 KB application/json; charset=utf-8 (<—> 8.3 ms)
+6awH ——> PUT /api/sessions/5ce0087c12d8b40725433545/update 104 B application/json;charset=utf-8
+Updating session with id: 5ce0087c12d8b40725433545
+6awH <—— 200 OK 56 B text/html; charset=utf-8 (<—> 14.7 ms)
+Yk8A ——> OPTIONS /api/sessions/get/5ce0087c12d8b40725433545 
+Yk8A <—— 204 No Content (<—> 0.4 ms)
+RNb3 ——> GET /api/sessions/get/5ce0087c12d8b40725433545 
+RNb3 <—— 200 OK 1.3 KB application/json; charset=utf-8 (<—> 9.3 ms)
+wYu3 ——> OPTIONS /api/sessions/get/5ce0087c12d8b40725433545 
+wYu3 <—— 204 No Content (<—> 1.0 ms)
+xUOD ——> GET /api/sessions/get/5ce0087c12d8b40725433545 
+xUOD <—— 200 OK 1.3 KB application/json; charset=utf-8 (<—> 10.2 ms)
+rKvD ——> OPTIONS /api/screening/get-report/0xa62c17eed6b99ab241f21a30fa07be19fac3ad64 
+rKvD <—— 204 No Content (<—> 0.5 ms)
+yotX ——> GET /api/screening/get-report/0xa62c17eed6b99ab241f21a30fa07be19fac3ad64 
+Got report... verifying now.
+Verification finished... sending result
+yotX <—— 200 OK 102 B application/json; charset=utf-8 (<—> 7.1 ms)
+TdxK ——> OPTIONS /api/sessions/5ce0087c12d8b40725433545/update 
+TdxK <—— 204 No Content (<—> 0.9 ms)
+vgvk ——> PUT /api/sessions/5ce0087c12d8b40725433545/update 213 B application/json;charset=utf-8
+Updating session with id: 5ce0087c12d8b40725433545
+vgvk <—— 200 OK 56 B text/html; charset=utf-8 (<—> 4.3 ms)
+cLnK ——> OPTIONS /api/sessions/get/5ce0087c12d8b40725433545 
+cLnK <—— 204 No Content (<—> 0.8 ms)
+T3q9 ——> GET /api/sessions/get/5ce0087c12d8b40725433545 
+T3q9 <—— 200 OK 1.37 KB application/json; charset=utf-8 (<—> 6.5 ms)
+FEKv ——> OPTIONS /api/sessions/5ce0087c12d8b40725433545/upload-sc 
+FEKv <—— 204 No Content (<—> 0.7 ms)
+XVKH ——> POST /api/sessions/5ce0087c12d8b40725433545/upload-sc 1.61 MB multipart/form-data; boundary=---------------------------300971351122904
+{ n: 1, nModified: 1, ok: 1 }
+XVKH <—— 200 OK 22 B application/json; charset=utf-8 (<—> 142.2 ms)
+92Eh ——> OPTIONS /api/sessions/get/5ce0087c12d8b40725433545 
+92Eh <—— 204 No Content (<—> 0.5 ms)
+H9CF ——> GET /api/sessions/get/5ce0087c12d8b40725433545 
+H9CF <—— 200 OK 1.39 KB application/json; charset=utf-8 (<—> 8.7 ms)
+Tpzn ——> OPTIONS /api/sessions/get/5ce0087c12d8b40725433545 
+Tpzn <—— 204 No Content (<—> 6.9 ms)
+vpOn ——> GET /api/sessions/get/5ce0087c12d8b40725433545 
+vpOn <—— 200 OK 1.39 KB application/json; charset=utf-8 (<—> 10.6 ms)
+gd0O ——> OPTIONS /api/sessions/5ce0087c12d8b40725433545/upload-ssc 
+gd0O <—— 204 No Content (<—> 15.7 ms)
+8W6f ——> POST /api/sessions/5ce0087c12d8b40725433545/upload-ssc 1.84 MB multipart/form-data; boundary=----WebKitFormBoundaryzHnPOerZ0pCYTtg8
+{ n: 1, nModified: 1, ok: 1 }
+8W6f <—— 200 OK 22 B application/json; charset=utf-8 (<—> 1351.6 ms)
+NcnK ——> OPTIONS /api/sessions/get/5ce0087c12d8b40725433545 
+NcnK <—— 204 No Content (<—> 4.9 ms)
+PrcT ——> GET /api/sessions/get/5ce0087c12d8b40725433545 
+PrcT <—— 200 OK 1.42 KB application/json; charset=utf-8 (<—> 33.7 ms)
+VObq ——> GET /api/sessions/get/5ce0087c12d8b40725433545 
+VObq <—— 304 Not Modified (<—> 15.0 ms)
+2kyw ——> OPTIONS /api/sessions/get/5ce0087c12d8b40725433545 
+2kyw <—— 204 No Content (<—> 0.6 ms)
+N4BC ——> GET /api/sessions/get/5ce0087c12d8b40725433545 
+N4BC <—— 200 OK 1.42 KB application/json; charset=utf-8 (<—> 8.3 ms)
+GQl8 ——> OPTIONS /api/sessions/5ce0087c12d8b40725433545/update 
+GQl8 <—— 204 No Content (<—> 0.6 ms)
+9I5r ——> PUT /api/sessions/5ce0087c12d8b40725433545/update 107 B application/json;charset=utf-8
+Updating session with id: 5ce0087c12d8b40725433545
+9I5r <—— 200 OK 56 B text/html; charset=utf-8 (<—> 5.2 ms)
+ZXgG ——> OPTIONS /api/sessions/get/5ce0087c12d8b40725433545 
+ZXgG <—— 204 No Content (<—> 0.5 ms)
+rk35 ——> GET /api/sessions/get/5ce0087c12d8b40725433545 
+rk35 <—— 200 OK 1.42 KB application/json; charset=utf-8 (<—> 7.2 ms)
+oMZJ ——> OPTIONS /api/sessions/get/5ce0087c12d8b40725433545 
+oMZJ <—— 204 No Content (<—> 6.0 ms)
+SHq2 ——> GET /api/sessions/get/5ce0087c12d8b40725433545 
+SHq2 <—— 200 OK 1.42 KB application/json; charset=utf-8 (<—> 7.6 ms)
+jLmj ——> OPTIONS /api/properties/5ce002fd12d8b4072543353e 
+jLmj <—— 204 No Content (<—> 0.6 ms)
+4u7L ——> GET /api/properties/5ce002fd12d8b4072543353e 
+4u7L <—— 200 OK 693 B application/json; charset=utf-8 (<—> 5.9 ms)
+bD6S ——> OPTIONS /api/sessions/5ce0087c12d8b40725433545/upload-ttd 
+bD6S <—— 204 No Content (<—> 1.2 ms)
+f14H ——> POST /api/sessions/5ce0087c12d8b40725433545/upload-ttd 3.13 MB multipart/form-data; boundary=---------------------------2525331714278
+f14H <—— 200 OK 22 B application/json; charset=utf-8 (<—> 304.9 ms)
+djzv ——> OPTIONS /api/users/5ce002de12d8b4072543351e/seller/sessions 
+djzv <—— 204 No Content (<—> 0.8 ms)
+w2RW ——> GET /api/users/5ce002de12d8b4072543351e/seller/sessions 
+w2RW <—— 200 OK 1.51 KB application/json; charset=utf-8 (<—> 13.0 ms)
+XbXY ——> OPTIONS /api/properties/find-by-ids 
+XbXY <—— 204 No Content (<—> 0.8 ms)
+wi5m ——> POST /api/properties/find-by-ids 48 B application/json;charset=utf-8
+wi5m <—— 200 OK 699 B application/json; charset=utf-8 (<—> 6.3 ms)
+VWFq ——> OPTIONS /api/sessions/get/5ce0087c12d8b40725433545 
+VWFq <—— 204 No Content (<—> 0.6 ms)
+ZHZO ——> GET /api/sessions/get/5ce0087c12d8b40725433545 
+ZHZO <—— 200 OK 1.51 KB application/json; charset=utf-8 (<—> 6.6 ms)
+rmID ——> OPTIONS /api/properties/5ce002fd12d8b4072543353e 
+rmID <—— 204 No Content (<—> 0.6 ms)
+pcwK ——> GET /api/properties/5ce002fd12d8b4072543353e 
+pcwK <—— 304 Not Modified (<—> 7.3 ms)
+uOIq ——> OPTIONS /api/sessions/get/5ce0087c12d8b40725433545 
+uOIq <—— 204 No Content (<—> 1.9 ms)
+Nbjd ——> GET /api/sessions/get/5ce0087c12d8b40725433545 
+Nbjd <—— 200 OK 1.51 KB application/json; charset=utf-8 (<—> 20.0 ms)
+7kbw ——> OPTIONS /api/properties/5ce002fd12d8b4072543353e 
+7kbw <—— 204 No Content (<—> 5.6 ms)
+J2Wd ——> GET /api/properties/5ce002fd12d8b4072543353e 
+J2Wd <—— 200 OK 693 B application/json; charset=utf-8 (<—> 9.2 ms)
+yNfM ——> OPTIONS /api/sessions/5ce0087c12d8b40725433545/title-deed/ttd 
+yNfM <—— 204 No Content (<—> 1.4 ms)
+oo4E ——> GET /api/sessions/5ce0087c12d8b40725433545/title-deed/ttd 
+oo4E <—— 200 OK image/png (<—> 404.6 ms)
+khj3 ——> OPTIONS /api/users/5ce0080c12d8b40725433541/buyer/sessions 
+khj3 <—— 204 No Content (<—> 1.8 ms)
+VJde ——> GET /api/users/5ce0080c12d8b40725433541/buyer/sessions 
+VJde <—— 200 OK 1.51 KB application/json; charset=utf-8 (<—> 63.7 ms)
+DHUM ——> OPTIONS /api/properties/find-by-ids 
+DHUM <—— 204 No Content (<—> 0.8 ms)
+DFU7 ——> POST /api/properties/find-by-ids 48 B application/json;charset=UTF-8
+DFU7 <—— 200 OK 699 B application/json; charset=utf-8 (<—> 13.0 ms)
+FmZv ——> OPTIONS /api/sessions/get/5ce0087c12d8b40725433545 
+FmZv <—— 204 No Content (<—> 1.2 ms)
+GB8l ——> GET /api/sessions/get/5ce0087c12d8b40725433545 
+GB8l <—— 200 OK 1.51 KB application/json; charset=utf-8 (<—> 9.5 ms)
+zGpw ——> OPTIONS /api/properties/5ce002fd12d8b4072543353e 
+zGpw <—— 204 No Content (<—> 2.7 ms)
+Tj7V ——> GET /api/properties/5ce002fd12d8b4072543353e 
+Tj7V <—— 304 Not Modified (<—> 5.9 ms)
+VIta ——> OPTIONS /api/properties/5ce002fd12d8b4072543353e 
+VIta <—— 204 No Content (<—> 0.8 ms)
+kM8J ——> GET /api/properties/5ce002fd12d8b4072543353e 
+kM8J <—— 304 Not Modified (<—> 8.6 ms)
+5roS ——> OPTIONS /api/sessions/get/5ce0087c12d8b40725433545 
+5roS <—— 204 No Content (<—> 0.6 ms)
+Jbgb ——> GET /api/sessions/get/5ce0087c12d8b40725433545 
+Jbgb <—— 200 OK 1.51 KB application/json; charset=utf-8 (<—> 7.7 ms)
+c3vo ——> OPTIONS /api/properties/5ce002fd12d8b4072543353e 
+c3vo <—— 204 No Content (<—> 0.9 ms)
+ac4F ——> GET /api/properties/5ce002fd12d8b4072543353e 
+ac4F <—— 304 Not Modified (<—> 6.2 ms)
+JvbX ——> OPTIONS /api/sessions/get/5ce0087c12d8b40725433545 
+JvbX <—— 204 No Content (<—> 3.8 ms)
+Ap8K ——> GET /api/sessions/get/5ce0087c12d8b40725433545 
+Ap8K <—— 304 Not Modified (<—> 8.8 ms)
+Jntg ——> OPTIONS /api/properties/5ce002fd12d8b4072543353e 
+Jntg <—— 204 No Content (<—> 2.1 ms)
+aINW ——> GET /api/properties/5ce002fd12d8b4072543353e 
+aINW <—— 304 Not Modified (<—> 7.7 ms)
+TVtd ——> GET /api/sessions/get/5ce0087c12d8b40725433545 
+TVtd <—— 304 Not Modified (<—> 7.8 ms)
+EPI0 ——> OPTIONS /api/sessions/5ce0087c12d8b40725433545/update 
+EPI0 <—— 204 No Content (<—> 0.5 ms)
+0jtB ——> PUT /api/sessions/5ce0087c12d8b40725433545/update 149 B application/json;charset=utf-8
+Updating session with id: 5ce0087c12d8b40725433545
+0jtB <—— 200 OK 56 B text/html; charset=utf-8 (<—> 6.8 ms)
+ySGE ——> PUT /api/land-registry/update-entry 261 B application/json;charset=utf-8
+ySGE <—— 200 OK 276 B application/json; charset=utf-8 (<—> 6.4 ms)
+JZXC ——> POST /api/sessions/5ce0087c12d8b40725433545/upload-tdd 15 B application/json;charset=utf-8
+5ce009cb12d8b40725433566
+{ n: 1, nModified: 1, ok: 1 }
+JZXC <—— 200 OK 22 B application/json; charset=utf-8 (<—> 296.6 ms)
+xhTw ——> GET /api/sessions/5ce0087c12d8b40725433545/title-deed/tdd 
+xhTw <—— 200 OK application/pdf (<—> 24.6 ms)
+ZFpR ——> OPTIONS /api/sessions/get/5ce0087c12d8b40725433545 
+ZFpR <—— 204 No Content (<—> 0.8 ms)
+BEtB ——> GET /api/sessions/get/5ce0087c12d8b40725433545 
+BEtB <—— 200 OK 1.54 KB application/json; charset=utf-8 (<—> 9.8 ms)
+8VDJ ——> OPTIONS /api/properties/5ce002fd12d8b4072543353e 
+8VDJ <—— 204 No Content (<—> 0.8 ms)
+uWKh ——> GET /api/properties/5ce002fd12d8b4072543353e 
+uWKh <—— 304 Not Modified (<—> 6.1 ms)
+kDYK ——> OPTIONS /api/users/5ce0080c12d8b40725433541/buyer/sessions 
+kDYK <—— 204 No Content (<—> 1.9 ms)
+Wynj ——> GET /api/users/5ce0080c12d8b40725433541/buyer/sessions 
+Wynj <—— 200 OK 1.55 KB application/json; charset=utf-8 (<—> 18.8 ms)
+EWQH ——> OPTIONS /api/properties/find-by-ids 
+EWQH <—— 204 No Content (<—> 3.8 ms)
+7oHr ——> POST /api/properties/find-by-ids 48 B application/json;charset=UTF-8
+7oHr <—— 200 OK 699 B application/json; charset=utf-8 (<—> 14.8 ms)
+AEq4 ——> OPTIONS /api/sessions/get/5ce0087c12d8b40725433545 
+AEq4 <—— 204 No Content (<—> 1.5 ms)
+yXrL ——> GET /api/sessions/get/5ce0087c12d8b40725433545 
+yXrL <—— 200 OK 1.54 KB application/json; charset=utf-8 (<—> 6.2 ms)
+7adF ——> OPTIONS /api/properties/5ce002fd12d8b4072543353e 
+7adF <—— 204 No Content (<—> 3.4 ms)
+ksam ——> GET /api/properties/5ce002fd12d8b4072543353e 
+ksam <—— 304 Not Modified (<—> 27.5 ms)
+dfNe ——> OPTIONS /api/sessions/5ce0087c12d8b40725433545/title-deed/tdd 
+dfNe <—— 204 No Content (<—> 0.7 ms)
+5DxL ——> GET /api/sessions/5ce0087c12d8b40725433545/title-deed/tdd 
+5DxL <—— 200 OK application/pdf (<—> 25.1 ms)
+Fmk8 ——> OPTIONS /api/sessions/5ce0087c12d8b40725433545/title-deed/tdd 
+Fmk8 <—— 204 No Content (<—> 0.6 ms)
+NoYV ——> GET /api/sessions/5ce0087c12d8b40725433545/title-deed/tdd 
+NoYV <—— 200 OK application/pdf (<—> 24.4 ms)
+DsQa ——> OPTIONS /api/sessions/5ce0087c12d8b40725433545/update 
+DsQa <—— 204 No Content (<—> 0.5 ms)
+uVJr ——> PUT /api/sessions/5ce0087c12d8b40725433545/update 66 B application/json;charset=utf-8
+Updating session with id: 5ce0087c12d8b40725433545
+uVJr <—— 200 OK 56 B text/html; charset=utf-8 (<—> 5.5 ms)
+hBc4 ——> OPTIONS /api/users/5ce002de12d8b4072543351e/seller/sessions 
+hBc4 <—— 204 No Content (<—> 0.5 ms)
+IXUx ——> GET /api/users/5ce002de12d8b4072543351e/seller/sessions 
+IXUx <—— 200 OK 1.54 KB application/json; charset=utf-8 (<—> 11.5 ms)
+hUVm ——> OPTIONS /api/properties/find-by-ids 
+hUVm <—— 204 No Content (<—> 0.5 ms)
+Z9kh ——> POST /api/properties/find-by-ids 48 B application/json;charset=utf-8
+Z9kh <—— 200 OK 699 B application/json; charset=utf-8 (<—> 6.1 ms)
+KeRZ ——> OPTIONS /api/sessions/5ce0087c12d8b40725433545/title-deed/tdd 
+KeRZ <—— 204 No Content (<—> 0.5 ms)
+3VEL ——> GET /api/sessions/5ce0087c12d8b40725433545/title-deed/tdd 
+3VEL <—— 200 OK application/pdf (<—> 48.2 ms)
+ytx2 ——> GET /api/sessions/5ce0087c12d8b40725433545/title-deed/tdd 
+ytx2 <—— 200 OK application/pdf (<—> 37.4 ms)
+P4Lo ——> POST /api/sessions/5ce0087c12d8b40725433545/upload-td 15 B application/json;charset=utf-8
+Creating original title deed
+5ce00a1912d8b4072543356d
+P4Lo <—— 200 OK 22 B application/json; charset=utf-8 (<—> 78.4 ms)
+oxos ——> OPTIONS /api/sessions/5ce0087c12d8b40725433545/update 
+oxos <—— 204 No Content (<—> 8.9 ms)
+gTfz ——> PUT /api/sessions/5ce0087c12d8b40725433545/update 66 B application/json;charset=UTF-8
+Updating session with id: 5ce0087c12d8b40725433545
+gTfz <—— 200 OK 56 B text/html; charset=utf-8 (<—> 14.9 ms)
+rKGp ——> OPTIONS /api/users/5ce0080c12d8b40725433541/buyer/sessions 
+rKGp <—— 204 No Content (<—> 3.9 ms)
+b0KI ——> GET /api/users/5ce0080c12d8b40725433541/buyer/sessions 
+b0KI <—— 200 OK 1.58 KB application/json; charset=utf-8 (<—> 39.2 ms)
+DfwW ——> OPTIONS /api/properties/find-by-ids 
+DfwW <—— 204 No Content (<—> 0.6 ms)
+zxZX ——> POST /api/properties/find-by-ids 48 B application/json;charset=UTF-8
+zxZX <—— 200 OK 701 B application/json; charset=utf-8 (<—> 19.8 ms)
+TKaS ——> OPTIONS /api/sessions/get/5ce0087c12d8b40725433545 
+TKaS <—— 204 No Content (<—> 2.3 ms)
+OvrN ——> GET /api/sessions/get/5ce0087c12d8b40725433545 
+OvrN <—— 200 OK 1.57 KB application/json; charset=utf-8 (<—> 5.9 ms)
+GcXw ——> OPTIONS /api/properties/5ce002fd12d8b4072543353e 
+GcXw <—— 204 No Content (<—> 1.8 ms)
+Rk6z ——> GET /api/properties/5ce002fd12d8b4072543353e 
+Rk6z <—— 200 OK 695 B application/json; charset=utf-8 (<—> 5.3 ms)
+Bd2H ——> GET /api/sessions/get/5ce0087c12d8b40725433545 
+Bd2H <—— 304 Not Modified (<—> 6.8 ms)
+8gYA ——> OPTIONS /api/users/5ce0080c12d8b40725433541/buyer/sessions 
+8gYA <—— 204 No Content (<—> 5.8 ms)
+Tch3 ——> GET /api/users/5ce0080c12d8b40725433541/buyer/sessions 
+Tch3 <—— 304 Not Modified (<—> 25.2 ms)
+saPV ——> OPTIONS /api/properties/find-by-ids 
+saPV <—— 204 No Content (<—> 2.1 ms)
+g0Wc ——> POST /api/properties/find-by-ids 48 B application/json;charset=UTF-8
+g0Wc <—— 200 OK 701 B application/json; charset=utf-8 (<—> 87.6 ms)
+znS5 ——> OPTIONS /api/sessions/get/5ce0087c12d8b40725433545 
+znS5 <—— 204 No Content (<—> 2.1 ms)
+Hjkh ——> GET /api/sessions/get/5ce0087c12d8b40725433545 
+Hjkh <—— 304 Not Modified (<—> 6.6 ms)
+8Bgp ——> OPTIONS /api/properties/5ce002fd12d8b4072543353e 
+8Bgp <—— 204 No Content (<—> 7.1 ms)
+kxip ——> GET /api/properties/5ce002fd12d8b4072543353e 
+kxip <—— 304 Not Modified (<—> 26.5 ms)
+YTkc ——> OPTIONS /api/sessions/5ce0087c12d8b40725433545/title-deed/tdo 
+YTkc <—— 204 No Content (<—> 1.6 ms)
+gx2N ——> GET /api/sessions/5ce0087c12d8b40725433545/title-deed/tdo 
+gx2N <—— 200 OK application/pdf (<—> 27.7 ms)
+fgMs ——> OPTIONS /api/sessions/get/5ce0087c12d8b40725433545 
+fgMs <—— 204 No Content (<—> 0.7 ms)
+QqRm ——> GET /api/sessions/get/5ce0087c12d8b40725433545 
+QqRm <—— 304 Not Modified (<—> 12.8 ms)
+uAvS ——> OPTIONS /api/sessions/get/5ce0087c12d8b40725433545 
+uAvS <—— 204 No Content (<—> 0.7 ms)
+E41b ——> GET /api/sessions/get/5ce0087c12d8b40725433545 
+E41b <—— 200 OK 1.57 KB application/json; charset=utf-8 (<—> 7.2 ms)
+8GQd ——> OPTIONS /api/users/5ce002de12d8b4072543351e/seller/sessions 
+8GQd <—— 204 No Content (<—> 0.6 ms)
+aKBT ——> GET /api/users/5ce002de12d8b4072543351e/seller/sessions 
+aKBT <—— 200 OK 1.58 KB application/json; charset=utf-8 (<—> 12.6 ms)
+lO3k ——> OPTIONS /api/properties/find-by-ids 
+lO3k <—— 204 No Content (<—> 0.9 ms)
+ttqD ——> POST /api/properties/find-by-ids 48 B application/json;charset=utf-8
+ttqD <—— 200 OK 701 B application/json; charset=utf-8 (<—> 6.0 ms)
+K1U6 ——> OPTIONS /api/sessions/get/5ce0087c12d8b40725433545 
+K1U6 <—— 204 No Content (<—> 0.6 ms)
+DBr1 ——> GET /api/sessions/get/5ce0087c12d8b40725433545 
+DBr1 <—— 304 Not Modified (<—> 6.0 ms)
+B1BO ——> OPTIONS /api/properties/5ce002fd12d8b4072543353e 
+B1BO <—— 204 No Content (<—> 0.6 ms)
+sl1P ——> GET /api/properties/5ce002fd12d8b4072543353e 
+sl1P <—— 200 OK 695 B application/json; charset=utf-8 (<—> 7.7 ms)
+xF91 ——> OPTIONS /api/sessions/get/5ce0087c12d8b40725433545 
+xF91 <—— 204 No Content (<—> 0.6 ms)
+lBuz ——> GET /api/sessions/get/5ce0087c12d8b40725433545 
+lBuz <—— 304 Not Modified (<—> 7.9 ms)
+qirB ——> OPTIONS /api/users/5ce002de12d8b4072543351e/properties 
+qirB <—— 204 No Content (<—> 0.6 ms)
+aF6O ——> GET /api/users/5ce002de12d8b4072543351e/properties 
+aF6O <—— 200 OK 530 B application/json; charset=utf-8 (<—> 10.2 ms)
+TiIk ——> OPTIONS / 
+TiIk <—— 204 No Content (<—> 16.5 ms)
+t7BR ——> GET / 
+t7BR <—— 304 Not Modified (<—> 5.5 ms)
+ZZYZ ——> OPTIONS /api/users/get/5ce0080c12d8b40725433541 
+ZZYZ <—— 204 No Content (<—> 2.2 ms)
+qEQy ——> GET /api/users/get/5ce0080c12d8b40725433541 
+qEQy <—— 200 OK 632 B application/json; charset=utf-8 (<—> 21.3 ms)
+DkGX ——> GET / 
+DkGX <—— 304 Not Modified (<—> 2.9 ms)
+6gBw ——> GET /api/users/get/5ce0080c12d8b40725433541 
+6gBw <—— 304 Not Modified (<—> 12.1 ms)
+imQt ——> OPTIONS /api/users/5ce0080c12d8b40725433541/properties 
+imQt <—— 204 No Content (<—> 5.2 ms)
+dIa1 ——> GET /api/users/5ce0080c12d8b40725433541/properties 
+dIa1 <—— 200 OK 701 B application/json; charset=utf-8 (<—> 11.2 ms)
+0Y2H ——> OPTIONS /api/properties/5ce002fd12d8b4072543353e 
+0Y2H <—— 204 No Content (<—> 3.1 ms)
+ymLh ——> GET /api/properties/5ce002fd12d8b4072543353e 
+ymLh <—— 304 Not Modified (<—> 8.7 ms)
+lDgF ——> GET /api/users/5ce0080c12d8b40725433541/properties 
+lDgF <—— 304 Not Modified (<—> 13.5 ms)
+MPBI ——> OPTIONS /api/properties/5ce0030e12d8b4072543353f 
+MPBI <—— 204 No Content (<—> 0.5 ms)
+c1IF ——> GET /api/properties/5ce0030e12d8b4072543353f 
+c1IF <—— 304 Not Modified (<—> 7.1 ms)
+Hrf1 ——> OPTIONS /api/users/5ce002de12d8b4072543351e/properties 
+Hrf1 <—— 204 No Content (<—> 0.9 ms)
+wyhH ——> GET /api/users/5ce002de12d8b4072543351e/properties 
+wyhH <—— 304 Not Modified (<—> 12.1 ms)
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+
+> server@0.0.0 dev /c/Users/Vandern Rodrigues/Projects/fyp/server
+> nodemon ./bin/www
+
+[33m[nodemon] 1.19.0[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching: *.*[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+
+> server@0.0.0 dev /c/Users/Vandern Rodrigues/Projects/fyp/server
+> nodemon ./bin/www
+
+[33m[nodemon] 1.19.0[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching: *.*[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+
+> server@0.0.0 dev /c/Users/Vandern Rodrigues/Projects/fyp/server
+> nodemon ./bin/www
+
+[33m[nodemon] 1.19.0[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching: *.*[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+
+> server@0.0.0 dev /c/Users/Vandern Rodrigues/Projects/fyp/server
+> nodemon ./bin/www
+
+[33m[nodemon] 1.19.0[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching: *.*[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+JBLe ——> OPTIONS /api/properties/5ce0030e12d8b4072543353f 
+JBLe <—— 204 No Content (<—> 3.2 ms)
+ez2V ——> GET /api/properties/5ce0030e12d8b4072543353f 
+ez2V <—— 304 Not Modified (<—> 33.2 ms)
+fMAq ——> OPTIONS /api/properties/5ce0030e12d8b4072543353f 
+fMAq <—— 204 No Content (<—> 0.8 ms)
+b9QH ——> GET /api/properties/5ce0030e12d8b4072543353f 
+b9QH <—— 304 Not Modified (<—> 9.7 ms)
+73SJ ——> OPTIONS /api/land-registry/add-entry 
+73SJ <—— 204 No Content (<—> 1.0 ms)
+pg1B ——> POST /api/land-registry/add-entry 210 B application/json;charset=utf-8
+object
+pg1B <—— 200 OK 50 B application/json; charset=utf-8 (<—> 43.0 ms)
+wRSk ——> OPTIONS /api/properties/5ce0030e12d8b4072543353f/update 
+wRSk <—— 204 No Content (<—> 1.3 ms)
+ELBc ——> OPTIONS /api/properties/5ce0030e12d8b4072543353f/update 
+ELBc <—— 204 No Content (<—> 1.0 ms)
+R43m ——> PUT /api/properties/5ce0030e12d8b4072543353f/update 105 B application/json;charset=utf-8
+Got request....
+Options received are:-
+{ 'details.property_uid':
+   '0x382e590078ba8a4e866c020ba674121c7e65bb832ab71c0e903d63c308cae162' }
+{ options:
+   { 'details.property_uid':
+      '0x382e590078ba8a4e866c020ba674121c7e65bb832ab71c0e903d63c308cae162' } }
+Commiting update now...
+4hLf ——> PUT /api/properties/5ce0030e12d8b4072543353f/update 26 B application/json;charset=utf-8
+Got request....
+Options received are:-
+{ verified: 1 }
+{ options: { verified: 1 } }
+Commiting update now...
+{ n: 1, nModified: 1, ok: 1 }
+R43m <—— 200 OK 39 B application/json; charset=utf-8 (<—> 21.0 ms)
+{ n: 1, nModified: 1, ok: 1 }
+4hLf <—— 200 OK 39 B application/json; charset=utf-8 (<—> 9.8 ms)
+BtDN ——> OPTIONS /api/properties/5ce0030e12d8b4072543353f/update 
+BtDN <—— 204 No Content (<—> 1.5 ms)
+ioK0 ——> PUT /api/properties/5ce0030e12d8b4072543353f/update 26 B application/json;charset=utf-8
+Got request....
+Options received are:-
+{ verified: 0 }
+{ options: { verified: 0 } }
+Commiting update now...
+{ n: 1, nModified: 1, ok: 1 }
+ioK0 <—— 200 OK 39 B application/json; charset=utf-8 (<—> 12.2 ms)
+6XpB ——> OPTIONS /api/properties/5ce0030e12d8b4072543353f/update 
+6XpB <—— 204 No Content (<—> 0.9 ms)
+kkVn ——> PUT /api/properties/5ce0030e12d8b4072543353f/update 26 B application/json;charset=utf-8
+Got request....
+Options received are:-
+{ verified: 1 }
+{ options: { verified: 1 } }
+Commiting update now...
+{ n: 1, nModified: 1, ok: 1 }
+kkVn <—— 200 OK 39 B application/json; charset=utf-8 (<—> 5.4 ms)
+0Zyj ——> GET /api/land-registry/get-entry?property_uid=0x382e590078ba8a4e866c020ba674121c7e65bb832ab71c0e903d63c308cae162 
+0Zyj <—— 200 OK 275 B application/json; charset=utf-8 (<—> 7.4 ms)
+ZPql ——> OPTIONS /api/properties/5ce0030e12d8b4072543353f 
+ZPql <—— 204 No Content (<—> 0.8 ms)
+0luX ——> GET /api/properties/5ce0030e12d8b4072543353f 
+0luX <—— 200 OK 590 B application/json; charset=utf-8 (<—> 8.7 ms)
+ZcZX ——> OPTIONS /api/properties/5ce0030e12d8b4072543353f/list 
+ZcZX <—— 204 No Content (<—> 0.5 ms)
+Crgr ——> PUT /api/properties/5ce0030e12d8b4072543353f/list 52 B application/json;charset=utf-8
+true
+5ce0030e12d8b4072543353f
+Updated listed count on user profile { n: 1, nModified: 1, ok: 1 }
+Crgr <—— 200 OK 39 B application/json; charset=utf-8 (<—> 12.3 ms)
+LVPc ——> OPTIONS /api/users/5ce002de12d8b4072543351e/properties 
+LVPc <—— 204 No Content (<—> 0.6 ms)
+e9c6 ——> GET /api/users/5ce002de12d8b4072543351e/properties 
+e9c6 <—— 200 OK 595 B application/json; charset=utf-8 (<—> 14.7 ms)
+qhP8 ——> OPTIONS / 
+qhP8 <—— 204 No Content (<—> 0.9 ms)
+tOt7 ——> GET / 
+tOt7 <—— 304 Not Modified (<—> 2.4 ms)
+arWJ ——> OPTIONS /api/users/get/5ce0080c12d8b40725433541 
+arWJ <—— 204 No Content (<—> 0.5 ms)
+GKL7 ——> GET /api/users/get/5ce0080c12d8b40725433541 
+GKL7 <—— 304 Not Modified (<—> 31.1 ms)
+uWWa ——> GET / 
+uWWa <—— 304 Not Modified (<—> 2.6 ms)
+1npF ——> GET /api/users/get/5ce0080c12d8b40725433541 
+1npF <—— 304 Not Modified (<—> 8.5 ms)
+P2p6 ——> OPTIONS /api/properties/search?country=Andorra&city=Encamp&type=Apartment&bedcount=2&bathcount=2&minprice=1&maxprice=123213123 
+P2p6 <—— 204 No Content (<—> 0.5 ms)
+B27C ——> GET /api/properties/search?country=Andorra&city=Encamp&type=Apartment&bedcount=2&bathcount=2&minprice=1&maxprice=123213123 
+[ { details:
+     { address: [Object],
+       property_uid:
+        '0x382e590078ba8a4e866c020ba674121c7e65bb832ab71c0e903d63c308cae162',
+       images: [],
+       name: 'fdsfsdfsdfsdfdsf',
+       description: 'dsadasdasd',
+       type: 'Townhouse',
+       bedroom_count: 2,
+       bathroom_count: 2,
+       size: 'fdsfsdfsdfsdfdsf',
+       listing_price: 12312312,
+       deposit: 3213213,
+       available_from: 2019-05-01T00:00:00.000Z,
+       owner: '5ce002de12d8b4072543351e' },
+    verified: 2,
+    listed: true,
+    session_underway: false,
+    _id: 5ce0030e12d8b4072543353f,
+    offers: [],
+    __v: 0 } ]
+B27C <—— 200 OK 595 B application/json; charset=utf-8 (<—> 14.6 ms)
+MKFx ——> OPTIONS /api/properties/5ce0030e12d8b4072543353f?country=Andorra&city=Encamp&type=Apartment&bedcount=2&bathcount=2&minprice=1&maxprice=123213123 
+MKFx <—— 204 No Content (<—> 0.6 ms)
+uDTg ——> GET /api/properties/5ce0030e12d8b4072543353f?country=Andorra&city=Encamp&type=Apartment&bedcount=2&bathcount=2&minprice=1&maxprice=123213123 
+uDTg <—— 200 OK 589 B application/json; charset=utf-8 (<—> 6.2 ms)
+9eJR ——> OPTIONS /api/properties/5ce0030e12d8b4072543353f/add-offer?country=Andorra&city=Encamp&type=Apartment&bedcount=2&bathcount=2&minprice=1&maxprice=123213123 
+9eJR <—— 204 No Content (<—> 0.7 ms)
+lBsc ——> POST /api/properties/5ce0030e12d8b4072543353f/add-offer?country=Andorra&city=Encamp&type=Apartment&bedcount=2&bathcount=2&minprice=1&maxprice=123213123 194 B application/json;charset=UTF-8
+{ n: 1, nModified: 1, ok: 1 }
+lBsc <—— 200 OK 39 B application/json; charset=utf-8 (<—> 11.8 ms)
+R74t ——> OPTIONS / 
+R74t <—— 204 No Content (<—> 2.7 ms)
+xzhQ ——> GET / 
+xzhQ <—— 304 Not Modified (<—> 2.8 ms)
+jr3C ——> OPTIONS /api/users/get/5ce0080c12d8b40725433541 
+jr3C <—— 204 No Content (<—> 0.5 ms)
+JLs7 ——> GET /api/users/get/5ce0080c12d8b40725433541 
+JLs7 <—— 200 OK 762 B application/json; charset=utf-8 (<—> 5.7 ms)
+G19A ——> OPTIONS /api/properties/5ce0030e12d8b4072543353f 
+G19A <—— 204 No Content (<—> 0.8 ms)
+kkRA ——> GET /api/properties/5ce0030e12d8b4072543353f 
+kkRA <—— 200 OK 813 B application/json; charset=utf-8 (<—> 8.5 ms)
+ryj5 ——> OPTIONS /api/users/5ce002de12d8b4072543351e/properties 
+ryj5 <—— 204 No Content (<—> 0.6 ms)
+Rqaj ——> GET /api/users/5ce002de12d8b4072543351e/properties 
+Rqaj <—— 200 OK 819 B application/json; charset=utf-8 (<—> 12.4 ms)
+sTNp ——> OPTIONS /api/properties/5ce0030e12d8b4072543353f 
+sTNp <—— 204 No Content (<—> 0.6 ms)
+g2FM ——> GET /api/properties/5ce0030e12d8b4072543353f 
+g2FM <—— 304 Not Modified (<—> 6.4 ms)
+CFhD ——> OPTIONS /api/sessions/exists?sellerId=5ce002de12d8b4072543351e&buyerId=5ce0080c12d8b40725433541 
+CFhD <—— 204 No Content (<—> 0.7 ms)
+RJDn ——> OPTIONS /api/properties/5ce0030e12d8b4072543353f/offers/accept 
+RJDn <—— 204 No Content (<—> 0.4 ms)
+9rVM ——> GET /api/sessions/exists?sellerId=5ce002de12d8b4072543351e&buyerId=5ce0080c12d8b40725433541 
+t4iZ ——> POST /api/properties/5ce0030e12d8b4072543353f/offers/accept 258 B application/json;charset=utf-8
+9rVM <—— 200 OK 15 B application/json; charset=utf-8 (<—> 14.8 ms)
+Updated property, removed offer and set session underway to true
+Requesting creaiton of session now
+Creating a session with the following details...
+[object Object]
+GEAA ——> POST /api/sessions/create 271 B application/json;charset=utf-8
+Creating a new session
+Linking session to participants...
+{ n: 1, nModified: 1, ok: 1 }
+Finished linking session to seller... now buyer...
+{ n: 1, nModified: 1, ok: 1 }
+Finished linking session to buyer
+GEAA <—— 200 OK 57 B application/json; charset=utf-8 (<—> 24.2 ms)
+t4iZ <—— 200 OK 46 B application/json; charset=utf-8 (<—> 46.8 ms)
+CyQR ——> OPTIONS /api/properties/5ce0030e12d8b4072543353f 
+CyQR <—— 204 No Content (<—> 0.5 ms)
+5wa7 ——> GET /api/properties/5ce0030e12d8b4072543353f 
+5wa7 <—— 200 OK 588 B application/json; charset=utf-8 (<—> 9.4 ms)
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+
+> server@0.0.0 dev /c/Users/Vandern Rodrigues/Projects/fyp/server
+> nodemon ./bin/www
+
+[33m[nodemon] 1.19.0[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching: *.*[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+
+> server@0.0.0 dev /c/Users/Vandern Rodrigues/Projects/fyp/server
+> nodemon ./bin/www
+
+[33m[nodemon] 1.19.0[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching: *.*[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+1Y2c ——> OPTIONS /api/users/5ce002de12d8b4072543351e/properties 
+1Y2c <—— 204 No Content (<—> 4.0 ms)
+EvV7 ——> GET /api/users/5ce002de12d8b4072543351e/properties 
+EvV7 <—— 200 OK 595 B application/json; charset=utf-8 (<—> 46.2 ms)
+ZY53 ——> OPTIONS /api/properties/5ce0030e12d8b4072543353f 
+ZY53 <—— 204 No Content (<—> 0.8 ms)
+EfyZ ——> GET /api/properties/5ce0030e12d8b4072543353f 
+EfyZ <—— 200 OK 589 B application/json; charset=utf-8 (<—> 9.1 ms)
+2BfS ——> OPTIONS /api/properties/5ce0030e12d8b4072543353f 
+2BfS <—— 204 No Content (<—> 6.0 ms)
+Zcj0 ——> GET /api/properties/5ce0030e12d8b4072543353f 
+Zcj0 <—— 200 OK 589 B application/json; charset=utf-8 (<—> 14.6 ms)
+CyE0 ——> OPTIONS /api/properties/5ce0030e12d8b4072543353f/add-offer 
+CyE0 <—— 204 No Content (<—> 1.1 ms)
+bfef ——> POST /api/properties/5ce0030e12d8b4072543353f/add-offer 193 B application/json;charset=UTF-8
+{ n: 1, nModified: 1, ok: 1 }
+bfef <—— 200 OK 39 B application/json; charset=utf-8 (<—> 42.1 ms)
+s4wP ——> OPTIONS /api/properties/5ce0030e12d8b4072543353f 
+s4wP <—— 204 No Content (<—> 0.7 ms)
+FBMr ——> GET /api/properties/5ce0030e12d8b4072543353f 
+FBMr <—— 200 OK 812 B application/json; charset=utf-8 (<—> 16.0 ms)
+WhuA ——> OPTIONS /api/sessions/exists?sellerId=5ce002de12d8b4072543351e&buyerId=5ce0080c12d8b40725433541 
+WhuA <—— 204 No Content (<—> 0.9 ms)
+281E ——> OPTIONS /api/properties/5ce0030e12d8b4072543353f/offers/accept 
+281E <—— 204 No Content (<—> 0.8 ms)
+MPbi ——> GET /api/sessions/exists?sellerId=5ce002de12d8b4072543351e&buyerId=5ce0080c12d8b40725433541 
+kIfw ——> POST /api/properties/5ce0030e12d8b4072543353f/offers/accept 258 B application/json;charset=utf-8
+Updated property, removed offer and set session underway to true
+Requesting creaiton of session now
+Creating a session with the following details...
+[object Object]
+{ stages:
+   { '1':
+      { name: 'Holding Deposit',
+        status: 'Completed',
+        holding_deposit_address: '0x924ad28B07db87ADbCC7356c9171cF8fe44B4F3F',
+        deposit_amount: 2500,
+        deposit_status: 'Paid',
+        deadline: 2019-09-09T00:00:00.000Z },
+     '2':
+      { name: 'Background Screening',
+        status: 'Completed',
+        verification_status: 'Verified',
+        buyer_screening_uid:
+         '0x1b447cddfac8f88f2ddb395e7ce1979072dc6cefb667af31b36904c4e2c39170' },
+     '3':
+      { sc_hashes: [Object],
+        name: 'Sales Contract',
+        status: 'Completed',
+        contract_status: 'Signed',
+        sale_contract_id: '5ce008e812d8b40725433546',
+        signed_sale_contract_id: '5ce008f012d8b4072543354e',
+        sc_hash_status: false,
+        agreed_sale_price: 23123213 },
+     '4':
+      { mini_stages: [Object],
+        name: 'Escrow',
+        status: 'Completed',
+        escrow_contract_address: '',
+        active_mini_stage: 4 } },
+  progress: 4,
+  _id: 5ce0087c12d8b40725433545,
+  property_id: '5ce002fd12d8b4072543353e',
+  buyer_id: '5ce0080c12d8b40725433541',
+  seller_id: '5ce002de12d8b4072543351e',
+  buyer_address: '0xa62c17eed6b99ab241f21a30fa07be19fac3ad64',
+  seller_address: '0x738b315addc41813055f88f759f9b1ecafc3b36e',
+  created_at: 2019-05-18T13:28:28.233Z,
+  __v: 0 }
+MPbi <—— 304 Not Modified (<—> 33.1 ms)
+CsV4 ——> POST /api/sessions/create 271 B application/json;charset=utf-8
+Creating a new session
+Linking session to participants...
+{ n: 1, nModified: 1, ok: 1 }
+Finished linking session to seller... now buyer...
+{ n: 1, nModified: 1, ok: 1 }
+Finished linking session to buyer
+CsV4 <—— 200 OK 57 B application/json; charset=utf-8 (<—> 37.7 ms)
+kIfw <—— 200 OK 46 B application/json; charset=utf-8 (<—> 75.4 ms)
+oZsy ——> OPTIONS /api/users/5ce002de12d8b4072543351e/properties 
+oZsy <—— 204 No Content (<—> 0.6 ms)
+kwVA ——> GET /api/users/5ce002de12d8b4072543351e/properties 
+kwVA <—— 200 OK 594 B application/json; charset=utf-8 (<—> 17.0 ms)
+C8D3 ——> OPTIONS /api/properties/5ce0030e12d8b4072543353f 
+C8D3 <—— 204 No Content (<—> 0.7 ms)
+bsNr ——> GET /api/properties/5ce0030e12d8b4072543353f 
+bsNr <—— 200 OK 588 B application/json; charset=utf-8 (<—> 6.9 ms)
+e7ex ——> OPTIONS /api/properties/5ce0030e12d8b4072543353f 
+e7ex <—— 204 No Content (<—> 0.7 ms)
+7pBz ——> GET /api/properties/5ce0030e12d8b4072543353f 
+7pBz <—— 200 OK 589 B application/json; charset=utf-8 (<—> 9.5 ms)
+uzaA ——> OPTIONS /api/properties/5ce0030e12d8b4072543353f 
+uzaA <—— 204 No Content (<—> 4.2 ms)
+wti9 ——> GET /api/properties/5ce0030e12d8b4072543353f 
+wti9 <—— 304 Not Modified (<—> 8.5 ms)
+1yZ3 ——> OPTIONS /api/properties/5ce0030e12d8b4072543353f/add-offer 
+1yZ3 <—— 204 No Content (<—> 1.3 ms)
+Hw0e ——> POST /api/properties/5ce0030e12d8b4072543353f/add-offer 195 B application/json;charset=UTF-8
+{ n: 1, nModified: 1, ok: 1 }
+Hw0e <—— 200 OK 39 B application/json; charset=utf-8 (<—> 32.1 ms)
+Wc5A ——> OPTIONS /api/properties/5ce0030e12d8b4072543353f 
+Wc5A <—— 204 No Content (<—> 0.8 ms)
+NWVD ——> GET /api/properties/5ce0030e12d8b4072543353f 
+NWVD <—— 200 OK 814 B application/json; charset=utf-8 (<—> 6.1 ms)
+YX9Q ——> OPTIONS /api/sessions/exists?sellerId=5ce002de12d8b4072543351e&buyerId=5ce0080c12d8b40725433541 
+YX9Q <—— 204 No Content (<—> 0.9 ms)
+nSDZ ——> OPTIONS /api/properties/5ce0030e12d8b4072543353f/offers/accept 
+nSDZ <—— 204 No Content (<—> 0.8 ms)
+nZgP ——> GET /api/sessions/exists?sellerId=5ce002de12d8b4072543351e&buyerId=5ce0080c12d8b40725433541 
+qOMu ——> POST /api/properties/5ce0030e12d8b4072543353f/offers/accept 258 B application/json;charset=utf-8
+{ stages:
+   { '1':
+      { name: 'Holding Deposit',
+        status: 'Completed',
+        holding_deposit_address: '0x924ad28B07db87ADbCC7356c9171cF8fe44B4F3F',
+        deposit_amount: 2500,
+        deposit_status: 'Paid',
+        deadline: 2019-09-09T00:00:00.000Z },
+     '2':
+      { name: 'Background Screening',
+        status: 'Completed',
+        verification_status: 'Verified',
+        buyer_screening_uid:
+         '0x1b447cddfac8f88f2ddb395e7ce1979072dc6cefb667af31b36904c4e2c39170' },
+     '3':
+      { sc_hashes: [Object],
+        name: 'Sales Contract',
+        status: 'Completed',
+        contract_status: 'Signed',
+        sale_contract_id: '5ce008e812d8b40725433546',
+        signed_sale_contract_id: '5ce008f012d8b4072543354e',
+        sc_hash_status: false,
+        agreed_sale_price: 23123213 },
+     '4':
+      { mini_stages: [Object],
+        name: 'Escrow',
+        status: 'Completed',
+        escrow_contract_address: '',
+        active_mini_stage: 4 } },
+  progress: 4,
+  _id: 5ce0087c12d8b40725433545,
+  property_id: '5ce002fd12d8b4072543353e',
+  buyer_id: '5ce0080c12d8b40725433541',
+  seller_id: '5ce002de12d8b4072543351e',
+  buyer_address: '0xa62c17eed6b99ab241f21a30fa07be19fac3ad64',
+  seller_address: '0x738b315addc41813055f88f759f9b1ecafc3b36e',
+  created_at: 2019-05-18T13:28:28.233Z,
+  __v: 0 }
+nZgP <—— 304 Not Modified (<—> 12.6 ms)
+Updated property, removed offer and set session underway to true
+Requesting creaiton of session now
+Creating a session with the following details...
+[object Object]
+74RP ——> POST /api/sessions/create 271 B application/json;charset=utf-8
+Creating a new session
+Linking session to participants...
+{ n: 1, nModified: 1, ok: 1 }
+Finished linking session to seller... now buyer...
+{ n: 1, nModified: 1, ok: 1 }
+Finished linking session to buyer
+74RP <—— 200 OK 57 B application/json; charset=utf-8 (<—> 21.8 ms)
+qOMu <—— 200 OK 46 B application/json; charset=utf-8 (<—> 38.3 ms)
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+
+> server@0.0.0 dev /c/Users/Vandern Rodrigues/Projects/fyp/server
+> nodemon ./bin/www
+
+[33m[nodemon] 1.19.0[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching: *.*[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+jQtY ——> OPTIONS /api/properties/5ce0030e12d8b4072543353f 
+jQtY <—— 204 No Content (<—> 12.6 ms)
+MCXp ——> GET /api/properties/5ce0030e12d8b4072543353f 
+MCXp <—— 200 OK 589 B application/json; charset=utf-8 (<—> 79.0 ms)
+iPA6 ——> OPTIONS /api/properties/5ce0030e12d8b4072543353f 
+iPA6 <—— 204 No Content (<—> 3.3 ms)
+SYT3 ——> GET /api/properties/5ce0030e12d8b4072543353f 
+SYT3 <—— 304 Not Modified (<—> 87.2 ms)
+ZgqW ——> OPTIONS /api/properties/5ce0030e12d8b4072543353f/add-offer 
+ZgqW <—— 204 No Content (<—> 1.7 ms)
+Q3Pb ——> POST /api/properties/5ce0030e12d8b4072543353f/add-offer 194 B application/json;charset=UTF-8
+{ n: 1, nModified: 1, ok: 1 }
+Q3Pb <—— 200 OK 39 B application/json; charset=utf-8 (<—> 58.6 ms)
+FXxE ——> OPTIONS /api/properties/5ce0030e12d8b4072543353f 
+FXxE <—— 204 No Content (<—> 1.3 ms)
+brb5 ——> GET /api/properties/5ce0030e12d8b4072543353f 
+brb5 <—— 200 OK 813 B application/json; charset=utf-8 (<—> 9.6 ms)
+mnFN ——> OPTIONS /api/sessions/exists?sellerId=5ce002de12d8b4072543351e&buyerId=5ce0080c12d8b40725433541 
+mnFN <—— 204 No Content (<—> 0.9 ms)
+cBVW ——> OPTIONS /api/properties/5ce0030e12d8b4072543353f/offers/accept 
+cBVW <—— 204 No Content (<—> 0.9 ms)
+Rows ——> GET /api/sessions/exists?sellerId=5ce002de12d8b4072543351e&buyerId=5ce0080c12d8b40725433541 
+HGUp ——> POST /api/properties/5ce0030e12d8b4072543353f/offers/accept 258 B application/json;charset=utf-8
+Rows <—— 304 Not Modified (<—> 19.6 ms)
+Updated property, removed offer and set session underway to true
+Requesting creaiton of session now
+Creating a session with the following details...
+[object Object]
+cVf9 ——> POST /api/sessions/create 271 B application/json;charset=utf-8
+Creating a new session
+Linking session to participants...
+{ n: 1, nModified: 1, ok: 1 }
+Finished linking session to seller... now buyer...
+{ n: 1, nModified: 1, ok: 1 }
+Finished linking session to buyer
+cVf9 <—— 200 OK 57 B application/json; charset=utf-8 (<—> 34.9 ms)
+HGUp <—— 200 OK 46 B application/json; charset=utf-8 (<—> 64.0 ms)
+XCLq ——> OPTIONS /api/properties/5ce0030e12d8b4072543353f 
+XCLq <—— 204 No Content (<—> 0.5 ms)
+L28T ——> GET /api/properties/5ce0030e12d8b4072543353f 
+L28T <—— 200 OK 589 B application/json; charset=utf-8 (<—> 7.5 ms)
+FNG0 ——> OPTIONS /api/properties/5ce0030e12d8b4072543353f 
+FNG0 <—— 204 No Content (<—> 0.7 ms)
+Ach9 ——> GET /api/properties/5ce0030e12d8b4072543353f 
+Ach9 <—— 304 Not Modified (<—> 9.3 ms)
+iKwC ——> OPTIONS /api/properties/5ce0030e12d8b4072543353f/add-offer 
+iKwC <—— 204 No Content (<—> 1.3 ms)
+TmqQ ——> POST /api/properties/5ce0030e12d8b4072543353f/add-offer 195 B application/json;charset=UTF-8
+{ n: 1, nModified: 1, ok: 1 }
+TmqQ <—— 200 OK 39 B application/json; charset=utf-8 (<—> 11.7 ms)
+XVbm ——> OPTIONS /api/properties/5ce0030e12d8b4072543353f 
+XVbm <—— 204 No Content (<—> 1.9 ms)
+YeH0 ——> GET /api/properties/5ce0030e12d8b4072543353f 
+YeH0 <—— 200 OK 814 B application/json; charset=utf-8 (<—> 7.5 ms)
+MZB2 ——> OPTIONS /api/sessions/exists?sellerId=5ce002de12d8b4072543351e&buyerId=5ce0080c12d8b40725433541 
+MZB2 <—— 204 No Content (<—> 0.8 ms)
+MX3y ——> OPTIONS /api/properties/5ce0030e12d8b4072543353f/offers/accept 
+MX3y <—— 204 No Content (<—> 0.9 ms)
+6RfX ——> GET /api/sessions/exists?sellerId=5ce002de12d8b4072543351e&buyerId=5ce0080c12d8b40725433541 
+er9D ——> POST /api/properties/5ce0030e12d8b4072543353f/offers/accept 258 B application/json;charset=utf-8
+6RfX <—— 304 Not Modified (<—> 11.2 ms)
+Updated property, removed offer and set session underway to true
+Requesting creaiton of session now
+Creating a session with the following details...
+[object Object]
+arG1 ——> POST /api/sessions/create 271 B application/json;charset=utf-8
+Found a session
+Error: Session with that property already exists
+    at handleError (/c/Users/Vandern Rodrigues/Projects/fyp/server/routes/api/session/index.js:377:16)
+    at Session.findOne.then.session (/c/Users/Vandern Rodrigues/Projects/fyp/server/routes/api/session/index.js:303:4)
+    at processTicksAndRejections (internal/process/next_tick.js:81:5)
+arG1 <—— 500 Internal Server Error 532 B text/html; charset=utf-8 (<—> 397.5 ms)
+{ Error: Request failed with status code 500
+    at createError (/c/Users/Vandern Rodrigues/Projects/fyp/server/node_modules/axios/lib/core/createError.js:16:15)
+    at settle (/c/Users/Vandern Rodrigues/Projects/fyp/server/node_modules/axios/lib/core/settle.js:18:12)
+    at IncomingMessage.handleStreamEnd (/c/Users/Vandern Rodrigues/Projects/fyp/server/node_modules/axios/lib/adapters/http.js:201:11)
+    at IncomingMessage.emit (events.js:202:15)
+    at endReadableNT (_stream_readable.js:1132:12)
+    at processTicksAndRejections (internal/process/next_tick.js:76:17)
+  config:
+   { adapter: [Function: httpAdapter],
+     transformRequest: { '0': [Function: transformRequest] },
+     transformResponse: { '0': [Function: transformResponse] },
+     timeout: 0,
+     xsrfCookieName: 'XSRF-TOKEN',
+     xsrfHeaderName: 'X-XSRF-TOKEN',
+     maxContentLength: -1,
+     validateStatus: [Function: validateStatus],
+     headers:
+      { Accept: 'application/json, text/plain, */*',
+        'Content-Type': 'application/json;charset=utf-8',
+        Authorization: 'a1b2c3d4e5f6g7',
+        'User-Agent': 'axios/0.18.0',
+        'Content-Length': 271 },
+     method: 'post',
+     url: 'http://localhost:3000/api/sessions/create',
+     data:
+      '{"buyer_id":"5ce0080c12d8b40725433541","seller_id":"5ce002de12d8b4072543351e","property_id":"5ce0030e12d8b4072543353f","buyer_address":"0xa62c17eed6b99ab241f21a30fa07be19fac3ad64","seller_address":"0x738b315addc41813055f88f759f9b1ecafc3b36e","agreed_sale_price":12312312}' },
+  request:
+   ClientRequest {
+     _events:
+      [Object: null prototype] {
+        socket: [Function],
+        abort: [Function],
+        aborted: [Function],
+        error: [Function],
+        timeout: [Function],
+        prefinish: [Function: requestOnPrefinish] },
+     _eventsCount: 6,
+     _maxListeners: undefined,
+     outputData: [],
+     outputSize: 0,
+     writable: true,
+     _last: true,
+     chunkedEncoding: false,
+     shouldKeepAlive: false,
+     useChunkedEncodingByDefault: true,
+     sendDate: false,
+     _removedConnection: false,
+     _removedContLen: false,
+     _removedTE: false,
+     _contentLength: null,
+     _hasBody: true,
+     _trailer: '',
+     finished: true,
+     _headerSent: true,
+     socket:
+      Socket {
+        connecting: false,
+        _hadError: false,
+        _parent: null,
+        _host: 'localhost',
+        _readableState: [ReadableState],
+        readable: true,
+        _events: [Object],
+        _eventsCount: 7,
+        _maxListeners: undefined,
+        _writableState: [WritableState],
+        writable: false,
+        allowHalfOpen: false,
+        _sockname: null,
+        _pendingData: null,
+        _pendingEncoding: '',
+        server: null,
+        _server: null,
+        parser: null,
+        _httpMessage: [Circular],
+        [Symbol(asyncId)]: 2797,
+        [Symbol(kHandle)]: [TCP],
+        [Symbol(lastWriteQueueSize)]: 0,
+        [Symbol(timeout)]: null,
+        [Symbol(kBytesRead)]: 0,
+        [Symbol(kBytesWritten)]: 0 },
+     connection:
+      Socket {
+        connecting: false,
+        _hadError: false,
+        _parent: null,
+        _host: 'localhost',
+        _readableState: [ReadableState],
+        readable: true,
+        _events: [Object],
+        _eventsCount: 7,
+        _maxListeners: undefined,
+        _writableState: [WritableState],
+        writable: false,
+        allowHalfOpen: false,
+        _sockname: null,
+        _pendingData: null,
+        _pendingEncoding: '',
+        server: null,
+        _server: null,
+        parser: null,
+        _httpMessage: [Circular],
+        [Symbol(asyncId)]: 2797,
+        [Symbol(kHandle)]: [TCP],
+        [Symbol(lastWriteQueueSize)]: 0,
+        [Symbol(timeout)]: null,
+        [Symbol(kBytesRead)]: 0,
+        [Symbol(kBytesWritten)]: 0 },
+     _header:
+      'POST /api/sessions/create HTTP/1.1\r\nAccept: application/json, text/plain, */*\r\nContent-Type: application/json;charset=utf-8\r\nAuthorization: a1b2c3d4e5f6g7\r\nUser-Agent: axios/0.18.0\r\nContent-Length: 271\r\nHost: localhost:3000\r\nConnection: close\r\n\r\n',
+     _onPendingData: [Function: noopPendingOutput],
+     agent:
+      Agent {
+        _events: [Object],
+        _eventsCount: 1,
+        _maxListeners: undefined,
+        defaultPort: 80,
+        protocol: 'http:',
+        options: [Object],
+        requests: {},
+        sockets: [Object],
+        freeSockets: {},
+        keepAliveMsecs: 1000,
+        keepAlive: false,
+        maxSockets: Infinity,
+        maxFreeSockets: 256 },
+     socketPath: undefined,
+     timeout: undefined,
+     method: 'POST',
+     path: '/api/sessions/create',
+     _ended: true,
+     res:
+      IncomingMessage {
+        _readableState: [ReadableState],
+        readable: false,
+        _events: [Object],
+        _eventsCount: 3,
+        _maxListeners: undefined,
+        socket: [Socket],
+        connection: [Socket],
+        httpVersionMajor: 1,
+        httpVersionMinor: 1,
+        httpVersion: '1.1',
+        complete: true,
+        headers: [Object],
+        rawHeaders: [Array],
+        trailers: {},
+        rawTrailers: [],
+        aborted: false,
+        upgrade: false,
+        url: '',
+        method: null,
+        statusCode: 500,
+        statusMessage: 'Internal Server Error',
+        client: [Socket],
+        _consuming: false,
+        _dumped: false,
+        req: [Circular],
+        responseUrl: 'http://localhost:3000/api/sessions/create',
+        redirects: [] },
+     aborted: false,
+     timeoutCb: null,
+     upgradeOrConnect: false,
+     parser: null,
+     maxHeadersCount: null,
+     _redirectable:
+      Writable {
+        _writableState: [WritableState],
+        writable: true,
+        _events: [Object],
+        _eventsCount: 2,
+        _maxListeners: undefined,
+        _options: [Object],
+        _ended: true,
+        _ending: true,
+        _redirectCount: 0,
+        _redirects: [],
+        _requestBodyLength: 271,
+        _requestBodyBuffers: [],
+        _onNativeResponse: [Function],
+        _currentRequest: [Circular],
+        _currentUrl: 'http://localhost:3000/api/sessions/create' },
+     [Symbol(isCorked)]: false,
+     [Symbol(outHeadersKey)]:
+      [Object: null prototype] {
+        accept: [Array],
+        'content-type': [Array],
+        authorization: [Array],
+        'user-agent': [Array],
+        'content-length': [Array],
+        host: [Array] } },
+  response:
+   { status: 500,
+     statusText: 'Internal Server Error',
+     headers:
+      { 'x-powered-by': 'Express',
+        'access-control-allow-origin': '*',
+        'content-type': 'text/html; charset=utf-8',
+        'content-length': '532',
+        etag: 'W/"214-ZtC/GFrGi3M7EC4v37O9N0ffSVw"',
+        date: 'Sat, 18 May 2019 14:16:09 GMT',
+        connection: 'close' },
+     config:
+      { adapter: [Function: httpAdapter],
+        transformRequest: [Object],
+        transformResponse: [Object],
+        timeout: 0,
+        xsrfCookieName: 'XSRF-TOKEN',
+        xsrfHeaderName: 'X-XSRF-TOKEN',
+        maxContentLength: -1,
+        validateStatus: [Function: validateStatus],
+        headers: [Object],
+        method: 'post',
+        url: 'http://localhost:3000/api/sessions/create',
+        data:
+         '{"buyer_id":"5ce0080c12d8b40725433541","seller_id":"5ce002de12d8b4072543351e","property_id":"5ce0030e12d8b4072543353f","buyer_address":"0xa62c17eed6b99ab241f21a30fa07be19fac3ad64","seller_address":"0x738b315addc41813055f88f759f9b1ecafc3b36e","agreed_sale_price":12312312}' },
+     request:
+      ClientRequest {
+        _events: [Object],
+        _eventsCount: 6,
+        _maxListeners: undefined,
+        outputData: [],
+        outputSize: 0,
+        writable: true,
+        _last: true,
+        chunkedEncoding: false,
+        shouldKeepAlive: false,
+        useChunkedEncodingByDefault: true,
+        sendDate: false,
+        _removedConnection: false,
+        _removedContLen: false,
+        _removedTE: false,
+        _contentLength: null,
+        _hasBody: true,
+        _trailer: '',
+        finished: true,
+        _headerSent: true,
+        socket: [Socket],
+        connection: [Socket],
+        _header:
+         'POST /api/sessions/create HTTP/1.1\r\nAccept: application/json, text/plain, */*\r\nContent-Type: application/json;charset=utf-8\r\nAuthorization: a1b2c3d4e5f6g7\r\nUser-Agent: axios/0.18.0\r\nContent-Length: 271\r\nHost: localhost:3000\r\nConnection: close\r\n\r\n',
+        _onPendingData: [Function: noopPendingOutput],
+        agent: [Agent],
+        socketPath: undefined,
+        timeout: undefined,
+        method: 'POST',
+        path: '/api/sessions/create',
+        _ended: true,
+        res: [IncomingMessage],
+        aborted: false,
+        timeoutCb: null,
+        upgradeOrConnect: false,
+        parser: null,
+        maxHeadersCount: null,
+        _redirectable: [Writable],
+        [Symbol(isCorked)]: false,
+        [Symbol(outHeadersKey)]: [Object] },
+     data:
+      '<!DOCTYPE html><html><head><title></title><link rel="stylesheet" href="/stylesheets/style.css"></head><body><h1>Session with that property already exists</h1><h2></h2><pre>Error: Session with that property already exists\n    at handleError (/c/Users/Vandern Rodrigues/Projects/fyp/server/routes/api/session/index.js:377:16)\n    at Session.findOne.then.session (/c/Users/Vandern Rodrigues/Projects/fyp/server/routes/api/session/index.js:303:4)\n    at processTicksAndRejections (internal/process/next_tick.js:81:5)</pre></body></html>' } }
+er9D —X— connection closed before res end/flush
+I3bY ——> POST /api/properties/5ce0030e12d8b4072543353f/offers/accept 258 B application/json;charset=utf-8
+Updated property, removed offer and set session underway to true
+Requesting creaiton of session now
+Creating a session with the following details...
+[object Object]
+k9cr ——> POST /api/sessions/create 271 B application/json;charset=utf-8
+Found a session
+Error: Session with that property already exists
+    at handleError (/c/Users/Vandern Rodrigues/Projects/fyp/server/routes/api/session/index.js:377:16)
+    at Session.findOne.then.session (/c/Users/Vandern Rodrigues/Projects/fyp/server/routes/api/session/index.js:303:4)
+    at processTicksAndRejections (internal/process/next_tick.js:81:5)
+k9cr <—— 500 Internal Server Error 532 B text/html; charset=utf-8 (<—> 27.6 ms)
+{ Error: Request failed with status code 500
+    at createError (/c/Users/Vandern Rodrigues/Projects/fyp/server/node_modules/axios/lib/core/createError.js:16:15)
+    at settle (/c/Users/Vandern Rodrigues/Projects/fyp/server/node_modules/axios/lib/core/settle.js:18:12)
+    at IncomingMessage.handleStreamEnd (/c/Users/Vandern Rodrigues/Projects/fyp/server/node_modules/axios/lib/adapters/http.js:201:11)
+    at IncomingMessage.emit (events.js:202:15)
+    at endReadableNT (_stream_readable.js:1132:12)
+    at processTicksAndRejections (internal/process/next_tick.js:76:17)
+  config:
+   { adapter: [Function: httpAdapter],
+     transformRequest: { '0': [Function: transformRequest] },
+     transformResponse: { '0': [Function: transformResponse] },
+     timeout: 0,
+     xsrfCookieName: 'XSRF-TOKEN',
+     xsrfHeaderName: 'X-XSRF-TOKEN',
+     maxContentLength: -1,
+     validateStatus: [Function: validateStatus],
+     headers:
+      { Accept: 'application/json, text/plain, */*',
+        'Content-Type': 'application/json;charset=utf-8',
+        Authorization: 'a1b2c3d4e5f6g7',
+        'User-Agent': 'axios/0.18.0',
+        'Content-Length': 271 },
+     method: 'post',
+     url: 'http://localhost:3000/api/sessions/create',
+     data:
+      '{"buyer_id":"5ce0080c12d8b40725433541","seller_id":"5ce002de12d8b4072543351e","property_id":"5ce0030e12d8b4072543353f","buyer_address":"0xa62c17eed6b99ab241f21a30fa07be19fac3ad64","seller_address":"0x738b315addc41813055f88f759f9b1ecafc3b36e","agreed_sale_price":12312312}' },
+  request:
+   ClientRequest {
+     _events:
+      [Object: null prototype] {
+        socket: [Function],
+        abort: [Function],
+        aborted: [Function],
+        error: [Function],
+        timeout: [Function],
+        prefinish: [Function: requestOnPrefinish] },
+     _eventsCount: 6,
+     _maxListeners: undefined,
+     outputData: [],
+     outputSize: 0,
+     writable: true,
+     _last: true,
+     chunkedEncoding: false,
+     shouldKeepAlive: false,
+     useChunkedEncodingByDefault: true,
+     sendDate: false,
+     _removedConnection: false,
+     _removedContLen: false,
+     _removedTE: false,
+     _contentLength: null,
+     _hasBody: true,
+     _trailer: '',
+     finished: true,
+     _headerSent: true,
+     socket:
+      Socket {
+        connecting: false,
+        _hadError: false,
+        _parent: null,
+        _host: 'localhost',
+        _readableState: [ReadableState],
+        readable: true,
+        _events: [Object],
+        _eventsCount: 7,
+        _maxListeners: undefined,
+        _writableState: [WritableState],
+        writable: false,
+        allowHalfOpen: false,
+        _sockname: null,
+        _pendingData: null,
+        _pendingEncoding: '',
+        server: null,
+        _server: null,
+        parser: null,
+        _httpMessage: [Circular],
+        [Symbol(asyncId)]: 4067,
+        [Symbol(kHandle)]: [TCP],
+        [Symbol(lastWriteQueueSize)]: 0,
+        [Symbol(timeout)]: null,
+        [Symbol(kBytesRead)]: 0,
+        [Symbol(kBytesWritten)]: 0 },
+     connection:
+      Socket {
+        connecting: false,
+        _hadError: false,
+        _parent: null,
+        _host: 'localhost',
+        _readableState: [ReadableState],
+        readable: true,
+        _events: [Object],
+        _eventsCount: 7,
+        _maxListeners: undefined,
+        _writableState: [WritableState],
+        writable: false,
+        allowHalfOpen: false,
+        _sockname: null,
+        _pendingData: null,
+        _pendingEncoding: '',
+        server: null,
+        _server: null,
+        parser: null,
+        _httpMessage: [Circular],
+        [Symbol(asyncId)]: 4067,
+        [Symbol(kHandle)]: [TCP],
+        [Symbol(lastWriteQueueSize)]: 0,
+        [Symbol(timeout)]: null,
+        [Symbol(kBytesRead)]: 0,
+        [Symbol(kBytesWritten)]: 0 },
+     _header:
+      'POST /api/sessions/create HTTP/1.1\r\nAccept: application/json, text/plain, */*\r\nContent-Type: application/json;charset=utf-8\r\nAuthorization: a1b2c3d4e5f6g7\r\nUser-Agent: axios/0.18.0\r\nContent-Length: 271\r\nHost: localhost:3000\r\nConnection: close\r\n\r\n',
+     _onPendingData: [Function: noopPendingOutput],
+     agent:
+      Agent {
+        _events: [Object],
+        _eventsCount: 1,
+        _maxListeners: undefined,
+        defaultPort: 80,
+        protocol: 'http:',
+        options: [Object],
+        requests: {},
+        sockets: [Object],
+        freeSockets: {},
+        keepAliveMsecs: 1000,
+        keepAlive: false,
+        maxSockets: Infinity,
+        maxFreeSockets: 256 },
+     socketPath: undefined,
+     timeout: undefined,
+     method: 'POST',
+     path: '/api/sessions/create',
+     _ended: true,
+     res:
+      IncomingMessage {
+        _readableState: [ReadableState],
+        readable: false,
+        _events: [Object],
+        _eventsCount: 3,
+        _maxListeners: undefined,
+        socket: [Socket],
+        connection: [Socket],
+        httpVersionMajor: 1,
+        httpVersionMinor: 1,
+        httpVersion: '1.1',
+        complete: true,
+        headers: [Object],
+        rawHeaders: [Array],
+        trailers: {},
+        rawTrailers: [],
+        aborted: false,
+        upgrade: false,
+        url: '',
+        method: null,
+        statusCode: 500,
+        statusMessage: 'Internal Server Error',
+        client: [Socket],
+        _consuming: false,
+        _dumped: false,
+        req: [Circular],
+        responseUrl: 'http://localhost:3000/api/sessions/create',
+        redirects: [] },
+     aborted: false,
+     timeoutCb: null,
+     upgradeOrConnect: false,
+     parser: null,
+     maxHeadersCount: null,
+     _redirectable:
+      Writable {
+        _writableState: [WritableState],
+        writable: true,
+        _events: [Object],
+        _eventsCount: 2,
+        _maxListeners: undefined,
+        _options: [Object],
+        _ended: true,
+        _ending: true,
+        _redirectCount: 0,
+        _redirects: [],
+        _requestBodyLength: 271,
+        _requestBodyBuffers: [],
+        _onNativeResponse: [Function],
+        _currentRequest: [Circular],
+        _currentUrl: 'http://localhost:3000/api/sessions/create' },
+     [Symbol(isCorked)]: false,
+     [Symbol(outHeadersKey)]:
+      [Object: null prototype] {
+        accept: [Array],
+        'content-type': [Array],
+        authorization: [Array],
+        'user-agent': [Array],
+        'content-length': [Array],
+        host: [Array] } },
+  response:
+   { status: 500,
+     statusText: 'Internal Server Error',
+     headers:
+      { 'x-powered-by': 'Express',
+        'access-control-allow-origin': '*',
+        'content-type': 'text/html; charset=utf-8',
+        'content-length': '532',
+        etag: 'W/"214-ZtC/GFrGi3M7EC4v37O9N0ffSVw"',
+        date: 'Sat, 18 May 2019 14:18:09 GMT',
+        connection: 'close' },
+     config:
+      { adapter: [Function: httpAdapter],
+        transformRequest: [Object],
+        transformResponse: [Object],
+        timeout: 0,
+        xsrfCookieName: 'XSRF-TOKEN',
+        xsrfHeaderName: 'X-XSRF-TOKEN',
+        maxContentLength: -1,
+        validateStatus: [Function: validateStatus],
+        headers: [Object],
+        method: 'post',
+        url: 'http://localhost:3000/api/sessions/create',
+        data:
+         '{"buyer_id":"5ce0080c12d8b40725433541","seller_id":"5ce002de12d8b4072543351e","property_id":"5ce0030e12d8b4072543353f","buyer_address":"0xa62c17eed6b99ab241f21a30fa07be19fac3ad64","seller_address":"0x738b315addc41813055f88f759f9b1ecafc3b36e","agreed_sale_price":12312312}' },
+     request:
+      ClientRequest {
+        _events: [Object],
+        _eventsCount: 6,
+        _maxListeners: undefined,
+        outputData: [],
+        outputSize: 0,
+        writable: true,
+        _last: true,
+        chunkedEncoding: false,
+        shouldKeepAlive: false,
+        useChunkedEncodingByDefault: true,
+        sendDate: false,
+        _removedConnection: false,
+        _removedContLen: false,
+        _removedTE: false,
+        _contentLength: null,
+        _hasBody: true,
+        _trailer: '',
+        finished: true,
+        _headerSent: true,
+        socket: [Socket],
+        connection: [Socket],
+        _header:
+         'POST /api/sessions/create HTTP/1.1\r\nAccept: application/json, text/plain, */*\r\nContent-Type: application/json;charset=utf-8\r\nAuthorization: a1b2c3d4e5f6g7\r\nUser-Agent: axios/0.18.0\r\nContent-Length: 271\r\nHost: localhost:3000\r\nConnection: close\r\n\r\n',
+        _onPendingData: [Function: noopPendingOutput],
+        agent: [Agent],
+        socketPath: undefined,
+        timeout: undefined,
+        method: 'POST',
+        path: '/api/sessions/create',
+        _ended: true,
+        res: [IncomingMessage],
+        aborted: false,
+        timeoutCb: null,
+        upgradeOrConnect: false,
+        parser: null,
+        maxHeadersCount: null,
+        _redirectable: [Writable],
+        [Symbol(isCorked)]: false,
+        [Symbol(outHeadersKey)]: [Object] },
+     data:
+      '<!DOCTYPE html><html><head><title></title><link rel="stylesheet" href="/stylesheets/style.css"></head><body><h1>Session with that property already exists</h1><h2></h2><pre>Error: Session with that property already exists\n    at handleError (/c/Users/Vandern Rodrigues/Projects/fyp/server/routes/api/session/index.js:377:16)\n    at Session.findOne.then.session (/c/Users/Vandern Rodrigues/Projects/fyp/server/routes/api/session/index.js:303:4)\n    at processTicksAndRejections (internal/process/next_tick.js:81:5)</pre></body></html>' } }
+I3bY —X— connection closed before res end/flush
+6f2l ——> OPTIONS /api/properties/5ce0030e12d8b4072543353f 
+6f2l <—— 204 No Content (<—> 1.3 ms)
+AWgv ——> GET /api/properties/5ce0030e12d8b4072543353f 
+AWgv <—— 200 OK 589 B application/json; charset=utf-8 (<—> 8.6 ms)
+NIxW ——> OPTIONS /api/properties/5ce0030e12d8b4072543353f 
+NIxW <—— 204 No Content (<—> 82.3 ms)
+88o1 ——> GET /api/properties/5ce0030e12d8b4072543353f 
+88o1 <—— 304 Not Modified (<—> 84.9 ms)
+tHu4 ——> OPTIONS /api/properties/5ce0030e12d8b4072543353f/add-offer 
+tHu4 <—— 204 No Content (<—> 2.6 ms)
+118V ——> POST /api/properties/5ce0030e12d8b4072543353f/add-offer 194 B application/json;charset=UTF-8
+{ n: 1, nModified: 1, ok: 1 }
+118V <—— 200 OK 39 B application/json; charset=utf-8 (<—> 15.3 ms)
+esEb ——> OPTIONS /api/properties/5ce0030e12d8b4072543353f 
+esEb <—— 204 No Content (<—> 0.8 ms)
+74QD ——> GET /api/properties/5ce0030e12d8b4072543353f 
+74QD <—— 200 OK 813 B application/json; charset=utf-8 (<—> 8.7 ms)
+bn9T ——> OPTIONS /api/sessions/exists?sellerId=5ce002de12d8b4072543351e&buyerId=5ce0080c12d8b40725433541 
+bn9T <—— 204 No Content (<—> 1.5 ms)
+7YlQ ——> GET /api/sessions/exists?sellerId=5ce002de12d8b4072543351e&buyerId=5ce0080c12d8b40725433541 
+7YlQ <—— 304 Not Modified (<—> 6.9 ms)
+I4Pl ——> OPTIONS /api/sessions/exists?sellerId=5ce002de12d8b4072543351e&buyerId=5ce0080c12d8b40725433541 
+I4Pl <—— 204 No Content (<—> 0.6 ms)
+BhaV ——> GET /api/sessions/exists?sellerId=5ce002de12d8b4072543351e&buyerId=5ce0080c12d8b40725433541 
+BhaV <—— 304 Not Modified (<—> 8.1 ms)
+kMkl ——> OPTIONS /api/sessions/exists?sellerId=5ce002de12d8b4072543351e&buyerId=5ce0080c12d8b40725433541 
+kMkl <—— 204 No Content (<—> 0.6 ms)
+A21t ——> GET /api/sessions/exists?sellerId=5ce002de12d8b4072543351e&buyerId=5ce0080c12d8b40725433541 
+A21t <—— 304 Not Modified (<—> 9.3 ms)
+gqSk ——> OPTIONS /api/properties/5ce0030e12d8b4072543353f/offers/reject 
+gqSk <—— 204 No Content (<—> 0.7 ms)
+NWhI ——> POST /api/properties/5ce0030e12d8b4072543353f/offers/reject 38 B application/json;charset=utf-8
+{ n: 1, nModified: 1, ok: 1 }
+NWhI <—— 200 OK 39 B application/json; charset=utf-8 (<—> 7.9 ms)
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+
+> server@0.0.0 dev /c/Users/Vandern Rodrigues/Projects/fyp/server
+> nodemon ./bin/www
+
+[33m[nodemon] 1.19.0[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching: *.*[39m
+[32m[nodemon] starting `node ./bin/www`[39m

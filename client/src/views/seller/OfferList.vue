@@ -62,26 +62,51 @@ export default {
 	props: ['offers', 'propertyId', 'property'],
 
 	methods: {
-		acceptOffer (index, offerId, buyerId, buyerAddress) {
-			var sellerId = this.user_id
-			var sellerAddress = this.user_object.account_address
-			var listingPrice = this.property.details.listing_price
 
-			var body = {
-				offerId,
-				buyerId,
-				buyerAddress,
-				sellerId,
-				sellerAddress,
-				listingPrice
+		acceptOffer (index, offerId, buyerId, buyerAddress) {
+			var duplicateSession = this.isDuplicateSession(this.user_id, buyerId)
+
+			console.log(duplicateSession)
+
+			if (!duplicateSession) {
+				var sellerId = this.user_id
+				var sellerAddress = this.user_object.account_address
+				var listingPrice = this.property.details.listing_price
+
+				var body = {
+					offerId,
+					buyerId,
+					buyerAddress,
+					sellerId,
+					sellerAddress,
+					listingPrice
+				}
+
+				axios.post(apiUrl + this.propertyId + '/offers/accept', body,
+					this.route_config).then((response) => {
+					this.removeOfferFromList(index)
+					this.decisionMade = true
+				}).catch((error) => console.log(error))
+			} else {
+				alert('There is/has been a session underway between you and bidder')
+			}
+		},
+
+		async isDuplicateSession (sellerId, buyerId) {
+			let requestUrl = 'http://localhost:3000/api/sessions/exists'
+			let config = {
+				headers: {
+					Authorization: 'a1b2c3d4e5f6g7'
+				},
+				params: {
+					sellerId: sellerId,
+					buyerId: buyerId
+				}
 			}
 
-			axios.post(apiUrl + this.propertyId + '/offers/accept', body,
-				this.route_config).then((response) => {
-				this.removeOfferFromList(index)
-				this.decisionMade = true
-			})
-				.catch((error) => console.log(error))
+			let response = await axios.get(requestUrl, config)
+			if (response.data.exists) return true
+			return false
 		},
 
 		rejectOffer (index, offerId) {

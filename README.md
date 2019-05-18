@@ -4,11 +4,9 @@
 
 ## Backlog
 - [ ] Create dockerfile with ubuntu as base image and install necessary dependencies in it (such as pm2 etc)
-- [ ] Test app on ubuntu laptop & mac
-- [ ] Finish escrow stage interface + backend
-	- [ ] Add buyer & seller draft greenlights to session model so that conditional rendering can prevent them from re-submitting their greenlight
+	- [ ] Move client, server and oracles into a custom docker image?
+	- [ ] Have the network and contract directories outside and usable with docker-compose and truffle
 	- [ ] Remove unused attributes from all models
-- [ ] Try putting entire project into docker, via dockerfile (so as to manage dependencies)
 purchased arrays
 - [x] Add heading to buyer and seller dashboards to identify them
 - [x] Set progress to '4'

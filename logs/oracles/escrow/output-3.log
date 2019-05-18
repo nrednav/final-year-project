@@ -363,3 +363,356 @@ Removed property from seller
 
 The escrow oracle is now listening for events...
 Escrow Oracle started...
+Found event:-
+ buyer_deposit_complete
+{ address: '0x46D1a3a211c5A261ED481f6d871DE4e4a0D50048',
+  blockNumber: 718,
+  transactionHash:
+   '0x18032e03f7ea675b6c70bc14c4c5827e1cd09b1f799d8de4c1266b92a021b519',
+  transactionIndex: 0,
+  blockHash:
+   '0x0d7f6bad252ce97573b41cc2428e9d14ae61f26238d601757a11b45982d606ca',
+  logIndex: 0,
+  removed: false,
+  id:
+   'log_0x7fd04364894c15549477bbbff66fd3f1e4d6ab2773332da08121edbfbf089794',
+  returnValues: {},
+  event: 'buyer_deposit_complete',
+  signature:
+   '0x43270d591744ea0d1e0029cd7d0c92a69a1e4d6d14aa575c812c62300dc42b03',
+  raw:
+   { data: null,
+     topics:
+      [ '0x43270d591744ea0d1e0029cd7d0c92a69a1e4d6d14aa575c812c62300dc42b03' ] } }
+Getting participants...
+Updating session...
+Successfully updated Session #: 5ce0087c12d8b40725433545
+Found event:-
+ title_transfer_requested
+{ address: '0x46D1a3a211c5A261ED481f6d871DE4e4a0D50048',
+  blockNumber: 768,
+  transactionHash:
+   '0xf0817010671827bef3409c21158817237012b13ef5a42117713f4f7874d77f01',
+  transactionIndex: 0,
+  blockHash:
+   '0xc4467b5f1b489ffa053f42af44bd02ac2e94772cb1c8dfe918cd367d868bc25d',
+  logIndex: 0,
+  removed: false,
+  id:
+   'log_0xbb9502af2ded277b26085c2464a3c71024f3f833fca13792835334bf7628d201',
+  returnValues: {},
+  event: 'title_transfer_requested',
+  signature:
+   '0xa65551aa3a105e8f97709f58b42ccca7365b7f76b8ae65c2257b92c3b088a7a5',
+  raw:
+   { data: null,
+     topics:
+      [ '0xa65551aa3a105e8f97709f58b42ccca7365b7f76b8ae65c2257b92c3b088a7a5' ] } }
+{ stages:
+   { '1':
+      { name: 'Holding Deposit',
+        status: 'Completed',
+        holding_deposit_address: '0x924ad28B07db87ADbCC7356c9171cF8fe44B4F3F',
+        deposit_amount: 2500,
+        deposit_status: 'Paid',
+        deadline: 2019-09-09T00:00:00.000Z },
+     '2':
+      { name: 'Background Screening',
+        status: 'Completed',
+        verification_status: 'Verified',
+        buyer_screening_uid:
+         '0x1b447cddfac8f88f2ddb395e7ce1979072dc6cefb667af31b36904c4e2c39170' },
+     '3':
+      { sc_hashes: [Object],
+        name: 'Sales Contract',
+        status: 'Completed',
+        contract_status: 'Signed',
+        sale_contract_id: '5ce008e812d8b40725433546',
+        signed_sale_contract_id: '5ce008f012d8b4072543354e',
+        sc_hash_status: false,
+        agreed_sale_price: 23123213 },
+     '4':
+      { mini_stages: [Object],
+        name: 'Escrow',
+        status: 'In Progress',
+        escrow_contract_address: '',
+        active_mini_stage: 2 } },
+  progress: 3,
+  _id: 5ce0087c12d8b40725433545,
+  property_id: '5ce002fd12d8b4072543353e',
+  buyer_id: '5ce0080c12d8b40725433541',
+  seller_id: '5ce002de12d8b4072543351e',
+  buyer_address: '0xa62c17eed6b99ab241f21a30fa07be19fac3ad64',
+  seller_address: '0x738b315addc41813055f88f759f9b1ecafc3b36e',
+  created_at: 2019-05-18T13:28:28.233Z,
+  __v: 0 }
+Collecting necessary information for title transfer...
+Generating new property uid...
+Transferring title...
+Successfully transfered title: 
+[object Object]
+{ n: 1, nModified: 1, ok: 1 }
+Successfully updated Session #: 5ce0087c12d8b40725433545
+{ message: 'uploaded' }
+{ blockHash:
+   '0x53858cbebfeef73040ca63ad4fc644223fd6679355e0ac76e5167032b8ffb685',
+  blockNumber: 770,
+  contractAddress: null,
+  cumulativeGasUsed: 44291,
+  from: '0x8a23c7C42333ed6be5a68c24031cd7A737fbcBE8',
+  gasUsed: 44291,
+  logsBloom:
+   '0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000',
+  status: true,
+  to: '0x46D1a3a211c5A261ED481f6d871DE4e4a0D50048',
+  transactionHash:
+   '0xd5c60f155c5a85ea6190cf112f70d2c44933d9ce521ab4b47cbb388fd47eb005',
+  transactionIndex: 0,
+  nonce: undefined,
+  gas: undefined,
+  events: {} }
+Found event:-
+ commit_title_transfer
+{ address: '0x46D1a3a211c5A261ED481f6d871DE4e4a0D50048',
+  blockNumber: 794,
+  transactionHash:
+   '0x93ebd3d0e9eab5ccd9dcfff2e4df1dd590023a544d7e8ab98ef8a561be4ac14d',
+  transactionIndex: 0,
+  blockHash:
+   '0x9eec42cc6f49de371ec8ea7b87b71f28e5495354c99ba04219f8063051568c14',
+  logIndex: 0,
+  removed: false,
+  id:
+   'log_0x7e84b8e5d042739a92733c35ca66eb4a8cff43eaf21bd8c08849a553aa5d07fc',
+  returnValues: {},
+  event: 'commit_title_transfer',
+  signature:
+   '0x15bcf09c9c3c9a97f930a992ea1d7cebdaf63d8f42692f9147beadd45d835629',
+  raw:
+   { data: null,
+     topics:
+      [ '0x15bcf09c9c3c9a97f930a992ea1d7cebdaf63d8f42692f9147beadd45d835629' ] } }
+Found event:-
+ escrow_closed
+{ address: '0x46D1a3a211c5A261ED481f6d871DE4e4a0D50048',
+  blockNumber: 794,
+  transactionHash:
+   '0x93ebd3d0e9eab5ccd9dcfff2e4df1dd590023a544d7e8ab98ef8a561be4ac14d',
+  transactionIndex: 0,
+  blockHash:
+   '0x9eec42cc6f49de371ec8ea7b87b71f28e5495354c99ba04219f8063051568c14',
+  logIndex: 3,
+  removed: false,
+  id:
+   'log_0x188eb031f3bb74a410147ef0aadb35eec509eebbdedf15db809ec89193799cba',
+  returnValues: {},
+  event: 'escrow_closed',
+  signature:
+   '0xe1760e1470c9ffbe1944bf685aff5b043b446cc4cbb2ca06dfe196a5c031008f',
+  raw:
+   { data: null,
+     topics:
+      [ '0xe1760e1470c9ffbe1944bf685aff5b043b446cc4cbb2ca06dfe196a5c031008f' ] } }
+Removed property from seller
+{ n: 1, nModified: 1, ok: 1 }
+Added property to buyer
+{ n: 1, nModified: 1, ok: 1 }
+Updated property information to set buyer as owner
+{ n: 1, nModified: 1, ok: 1 }
+{ status: 200,
+  statusText: 'OK',
+  headers:
+   { 'x-powered-by': 'Express',
+     'access-control-allow-origin': '*',
+     'content-type': 'application/json; charset=utf-8',
+     'content-length': '22',
+     etag: 'W/"16-uLmXED9y+nvsaXhkkRngekVCElY"',
+     date: 'Sat, 18 May 2019 13:35:21 GMT',
+     connection: 'close' },
+  config:
+   { adapter: [Function: httpAdapter],
+     transformRequest: { '0': [Function: transformRequest] },
+     transformResponse: { '0': [Function: transformResponse] },
+     timeout: 0,
+     xsrfCookieName: 'XSRF-TOKEN',
+     xsrfHeaderName: 'X-XSRF-TOKEN',
+     maxContentLength: -1,
+     validateStatus: [Function: validateStatus],
+     headers:
+      { Accept: 'application/json, text/plain, */*',
+        'Content-Type': 'application/json;charset=utf-8',
+        Authorization: 'a1b2c3d4e5f6g7',
+        'User-Agent': 'axios/0.18.0',
+        'Content-Length': 15 },
+     method: 'post',
+     url:
+      'http://localhost:3000/api/sessions/5ce0087c12d8b40725433545/upload-td',
+     data: '{"upload":true}' },
+  request:
+   ClientRequest {
+     _events:
+      [Object: null prototype] {
+        socket: [Function],
+        abort: [Function],
+        aborted: [Function],
+        error: [Function],
+        timeout: [Function],
+        prefinish: [Function: requestOnPrefinish] },
+     _eventsCount: 6,
+     _maxListeners: undefined,
+     outputData: [],
+     outputSize: 0,
+     writable: true,
+     _last: true,
+     chunkedEncoding: false,
+     shouldKeepAlive: false,
+     useChunkedEncodingByDefault: true,
+     sendDate: false,
+     _removedConnection: false,
+     _removedContLen: false,
+     _removedTE: false,
+     _contentLength: null,
+     _hasBody: true,
+     _trailer: '',
+     finished: true,
+     _headerSent: true,
+     socket:
+      Socket {
+        connecting: false,
+        _hadError: false,
+        _parent: null,
+        _host: 'localhost',
+        _readableState: [ReadableState],
+        readable: true,
+        _events: [Object],
+        _eventsCount: 7,
+        _maxListeners: undefined,
+        _writableState: [WritableState],
+        writable: false,
+        allowHalfOpen: false,
+        _sockname: null,
+        _pendingData: null,
+        _pendingEncoding: '',
+        server: null,
+        _server: null,
+        parser: null,
+        _httpMessage: [Circular],
+        [Symbol(asyncId)]: 9211,
+        [Symbol(kHandle)]: [TCP],
+        [Symbol(lastWriteQueueSize)]: 0,
+        [Symbol(timeout)]: null,
+        [Symbol(kBytesRead)]: 0,
+        [Symbol(kBytesWritten)]: 0 },
+     connection:
+      Socket {
+        connecting: false,
+        _hadError: false,
+        _parent: null,
+        _host: 'localhost',
+        _readableState: [ReadableState],
+        readable: true,
+        _events: [Object],
+        _eventsCount: 7,
+        _maxListeners: undefined,
+        _writableState: [WritableState],
+        writable: false,
+        allowHalfOpen: false,
+        _sockname: null,
+        _pendingData: null,
+        _pendingEncoding: '',
+        server: null,
+        _server: null,
+        parser: null,
+        _httpMessage: [Circular],
+        [Symbol(asyncId)]: 9211,
+        [Symbol(kHandle)]: [TCP],
+        [Symbol(lastWriteQueueSize)]: 0,
+        [Symbol(timeout)]: null,
+        [Symbol(kBytesRead)]: 0,
+        [Symbol(kBytesWritten)]: 0 },
+     _header:
+      'POST /api/sessions/5ce0087c12d8b40725433545/upload-td HTTP/1.1\r\nAccept: application/json, text/plain, */*\r\nContent-Type: application/json;charset=utf-8\r\nAuthorization: a1b2c3d4e5f6g7\r\nUser-Agent: axios/0.18.0\r\nContent-Length: 15\r\nHost: localhost:3000\r\nConnection: close\r\n\r\n',
+     _onPendingData: [Function: noopPendingOutput],
+     agent:
+      Agent {
+        _events: [Object],
+        _eventsCount: 1,
+        _maxListeners: undefined,
+        defaultPort: 80,
+        protocol: 'http:',
+        options: [Object],
+        requests: {},
+        sockets: [Object],
+        freeSockets: {},
+        keepAliveMsecs: 1000,
+        keepAlive: false,
+        maxSockets: Infinity,
+        maxFreeSockets: 256 },
+     socketPath: undefined,
+     timeout: undefined,
+     method: 'POST',
+     path: '/api/sessions/5ce0087c12d8b40725433545/upload-td',
+     _ended: true,
+     res:
+      IncomingMessage {
+        _readableState: [ReadableState],
+        readable: false,
+        _events: [Object],
+        _eventsCount: 3,
+        _maxListeners: undefined,
+        socket: [Socket],
+        connection: [Socket],
+        httpVersionMajor: 1,
+        httpVersionMinor: 1,
+        httpVersion: '1.1',
+        complete: true,
+        headers: [Object],
+        rawHeaders: [Array],
+        trailers: {},
+        rawTrailers: [],
+        aborted: false,
+        upgrade: false,
+        url: '',
+        method: null,
+        statusCode: 200,
+        statusMessage: 'OK',
+        client: [Socket],
+        _consuming: false,
+        _dumped: false,
+        req: [Circular],
+        responseUrl:
+         'http://localhost:3000/api/sessions/5ce0087c12d8b40725433545/upload-td',
+        redirects: [] },
+     aborted: false,
+     timeoutCb: null,
+     upgradeOrConnect: false,
+     parser: null,
+     maxHeadersCount: null,
+     _redirectable:
+      Writable {
+        _writableState: [WritableState],
+        writable: true,
+        _events: [Object],
+        _eventsCount: 2,
+        _maxListeners: undefined,
+        _options: [Object],
+        _ended: true,
+        _ending: true,
+        _redirectCount: 0,
+        _redirects: [],
+        _requestBodyLength: 15,
+        _requestBodyBuffers: [],
+        _onNativeResponse: [Function],
+        _currentRequest: [Circular],
+        _currentUrl:
+         'http://localhost:3000/api/sessions/5ce0087c12d8b40725433545/upload-td' },
+     [Symbol(isCorked)]: false,
+     [Symbol(outHeadersKey)]:
+      [Object: null prototype] {
+        accept: [Array],
+        'content-type': [Array],
+        authorization: [Array],
+        'user-agent': [Array],
+        'content-length': [Array],
+        host: [Array] } },
+  data: { message: 'uploaded' } }

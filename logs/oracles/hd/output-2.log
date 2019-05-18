@@ -311,3 +311,304 @@ Releasing deposit...
 
 The HD oracle is now listening for events...
 Oracle started...
+Found event:-
+ funds_deposited
+{ address: '0x924ad28B07db87ADbCC7356c9171cF8fe44B4F3F',
+  blockNumber: 685,
+  transactionHash:
+   '0xaabdd6fb7c4348300bea9c18fcb59354e517f8534de62d69af6b74ca6dd27b3b',
+  transactionIndex: 0,
+  blockHash:
+   '0x9b8a47ab31a10e1ad05227bfa28c8aaa1f172672df92d4b4cfa22b8d8b8e09c9',
+  logIndex: 0,
+  removed: false,
+  id:
+   'log_0xaea179fe9ae4727efe51e7fc5a58e7cc63e6d20db05f5d7ddc2c098d68414416',
+  returnValues:
+   { '0': '0xa62C17EeD6b99Ab241F21A30Fa07be19FAC3AD64',
+     '1': BigNumber { _hex: '0x03782dace9d90000' },
+     buyer: '0xa62C17EeD6b99Ab241F21A30Fa07be19FAC3AD64',
+     value: BigNumber { _hex: '0x03782dace9d90000' } },
+  event: 'funds_deposited',
+  signature:
+   '0xc7c1b3f805ded913973a32415839b51f7472b046809d3a83a85aea15693330d1',
+  raw:
+   { data:
+      '0x000000000000000000000000a62c17eed6b99ab241f21a30fa07be19fac3ad6400000000000000000000000000000000000000000000000003782dace9d90000',
+     topics:
+      [ '0xc7c1b3f805ded913973a32415839b51f7472b046809d3a83a85aea15693330d1' ] } }
+{ '0': '0x738b315addc41813055f88F759f9B1EcAfc3B36E',
+  '1': '0xa62C17EeD6b99Ab241F21A30Fa07be19FAC3AD64' }
+{ status: 200,
+  statusText: 'OK',
+  headers:
+   { 'x-powered-by': 'Express',
+     'access-control-allow-origin': '*',
+     'content-type': 'text/html; charset=utf-8',
+     'content-length': '56',
+     etag: 'W/"38-hAuIHMVyuvC8cUnwky8SFDaUmWI"',
+     date: 'Sat, 18 May 2019 13:29:54 GMT',
+     connection: 'close' },
+  config:
+   { adapter: [Function: httpAdapter],
+     transformRequest: { '0': [Function: transformRequest] },
+     transformResponse: { '0': [Function: transformResponse] },
+     timeout: 0,
+     xsrfCookieName: 'XSRF-TOKEN',
+     xsrfHeaderName: 'X-XSRF-TOKEN',
+     maxContentLength: -1,
+     validateStatus: [Function: validateStatus],
+     headers:
+      { Accept: 'application/json, text/plain, */*',
+        'Content-Type': 'application/json;charset=utf-8',
+        Authorization: 'a1b2c3d4e5f6g7',
+        'User-Agent': 'axios/0.18.0',
+        'Content-Length': 104 },
+     method: 'put',
+     url:
+      'http://localhost:3000/api/sessions/5ce0087c12d8b40725433545/update',
+     data:
+      '{"updateOptions":{"$set":{"stages.1.deposit_status":"Paid","stages.1.status":"Completed","progress":1}}}' },
+  request:
+   ClientRequest {
+     _events:
+      [Object: null prototype] {
+        socket: [Function],
+        abort: [Function],
+        aborted: [Function],
+        error: [Function],
+        timeout: [Function],
+        prefinish: [Function: requestOnPrefinish] },
+     _eventsCount: 6,
+     _maxListeners: undefined,
+     outputData: [],
+     outputSize: 0,
+     writable: true,
+     _last: true,
+     chunkedEncoding: false,
+     shouldKeepAlive: false,
+     useChunkedEncodingByDefault: true,
+     sendDate: false,
+     _removedConnection: false,
+     _removedContLen: false,
+     _removedTE: false,
+     _contentLength: null,
+     _hasBody: true,
+     _trailer: '',
+     finished: true,
+     _headerSent: true,
+     socket:
+      Socket {
+        connecting: false,
+        _hadError: false,
+        _parent: null,
+        _host: 'localhost',
+        _readableState: [ReadableState],
+        readable: true,
+        _events: [Object],
+        _eventsCount: 7,
+        _maxListeners: undefined,
+        _writableState: [WritableState],
+        writable: false,
+        allowHalfOpen: false,
+        _sockname: null,
+        _pendingData: null,
+        _pendingEncoding: '',
+        server: null,
+        _server: null,
+        parser: null,
+        _httpMessage: [Circular],
+        [Symbol(asyncId)]: 3858,
+        [Symbol(kHandle)]: [TCP],
+        [Symbol(lastWriteQueueSize)]: 0,
+        [Symbol(timeout)]: null,
+        [Symbol(kBytesRead)]: 0,
+        [Symbol(kBytesWritten)]: 0 },
+     connection:
+      Socket {
+        connecting: false,
+        _hadError: false,
+        _parent: null,
+        _host: 'localhost',
+        _readableState: [ReadableState],
+        readable: true,
+        _events: [Object],
+        _eventsCount: 7,
+        _maxListeners: undefined,
+        _writableState: [WritableState],
+        writable: false,
+        allowHalfOpen: false,
+        _sockname: null,
+        _pendingData: null,
+        _pendingEncoding: '',
+        server: null,
+        _server: null,
+        parser: null,
+        _httpMessage: [Circular],
+        [Symbol(asyncId)]: 3858,
+        [Symbol(kHandle)]: [TCP],
+        [Symbol(lastWriteQueueSize)]: 0,
+        [Symbol(timeout)]: null,
+        [Symbol(kBytesRead)]: 0,
+        [Symbol(kBytesWritten)]: 0 },
+     _header:
+      'PUT /api/sessions/5ce0087c12d8b40725433545/update HTTP/1.1\r\nAccept: application/json, text/plain, */*\r\nContent-Type: application/json;charset=utf-8\r\nAuthorization: a1b2c3d4e5f6g7\r\nUser-Agent: axios/0.18.0\r\nContent-Length: 104\r\nHost: localhost:3000\r\nConnection: close\r\n\r\n',
+     _onPendingData: [Function: noopPendingOutput],
+     agent:
+      Agent {
+        _events: [Object],
+        _eventsCount: 1,
+        _maxListeners: undefined,
+        defaultPort: 80,
+        protocol: 'http:',
+        options: [Object],
+        requests: {},
+        sockets: [Object],
+        freeSockets: {},
+        keepAliveMsecs: 1000,
+        keepAlive: false,
+        maxSockets: Infinity,
+        maxFreeSockets: 256 },
+     socketPath: undefined,
+     timeout: undefined,
+     method: 'PUT',
+     path: '/api/sessions/5ce0087c12d8b40725433545/update',
+     _ended: true,
+     res:
+      IncomingMessage {
+        _readableState: [ReadableState],
+        readable: false,
+        _events: [Object],
+        _eventsCount: 3,
+        _maxListeners: undefined,
+        socket: [Socket],
+        connection: [Socket],
+        httpVersionMajor: 1,
+        httpVersionMinor: 1,
+        httpVersion: '1.1',
+        complete: true,
+        headers: [Object],
+        rawHeaders: [Array],
+        trailers: {},
+        rawTrailers: [],
+        aborted: false,
+        upgrade: false,
+        url: '',
+        method: null,
+        statusCode: 200,
+        statusMessage: 'OK',
+        client: [Socket],
+        _consuming: false,
+        _dumped: false,
+        req: [Circular],
+        responseUrl:
+         'http://localhost:3000/api/sessions/5ce0087c12d8b40725433545/update',
+        redirects: [] },
+     aborted: false,
+     timeoutCb: null,
+     upgradeOrConnect: false,
+     parser: null,
+     maxHeadersCount: null,
+     _redirectable:
+      Writable {
+        _writableState: [WritableState],
+        writable: true,
+        _events: [Object],
+        _eventsCount: 2,
+        _maxListeners: undefined,
+        _options: [Object],
+        _ended: true,
+        _ending: true,
+        _redirectCount: 0,
+        _redirects: [],
+        _requestBodyLength: 104,
+        _requestBodyBuffers: [],
+        _onNativeResponse: [Function],
+        _currentRequest: [Circular],
+        _currentUrl:
+         'http://localhost:3000/api/sessions/5ce0087c12d8b40725433545/update' },
+     [Symbol(isCorked)]: false,
+     [Symbol(outHeadersKey)]:
+      [Object: null prototype] {
+        accept: [Array],
+        'content-type': [Array],
+        authorization: [Array],
+        'user-agent': [Array],
+        'content-length': [Array],
+        host: [Array] } },
+  data: 'Successfully updated Session #: 5ce0087c12d8b40725433545' }
+Found event:-
+ release_holding_deposit
+{ address: '0x46D1a3a211c5A261ED481f6d871DE4e4a0D50048',
+  blockNumber: 794,
+  transactionHash:
+   '0x93ebd3d0e9eab5ccd9dcfff2e4df1dd590023a544d7e8ab98ef8a561be4ac14d',
+  transactionIndex: 0,
+  blockHash:
+   '0x9eec42cc6f49de371ec8ea7b87b71f28e5495354c99ba04219f8063051568c14',
+  logIndex: 2,
+  removed: false,
+  id:
+   'log_0x77ce458308a0f941b9337f627c96e3c61a7b0e0ea3e515fd323124c700459186',
+  returnValues: {},
+  event: 'release_holding_deposit',
+  signature:
+   '0x54dd20ef2439b3205844bab91564715a17fa06e8eb9cedcd5c1898a892501641',
+  raw:
+   { data: null,
+     topics:
+      [ '0x54dd20ef2439b3205844bab91564715a17fa06e8eb9cedcd5c1898a892501641' ] } }
+Getting hd contract address from session...
+Configuring node address...
+Releasing deposit...
+{ blockHash:
+   '0xbd9221472e34e67ecb9d7265590dd5ed497b848ddb386fea18cadf54a8d09d5b',
+  blockNumber: 796,
+  contractAddress: null,
+  cumulativeGasUsed: 28455,
+  from: '0x8a23c7C42333ed6be5a68c24031cd7A737fbcBE8',
+  gasUsed: 28455,
+  logsBloom:
+   '0x00000000000040000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000002000000400000000000200000000000000000000000000800000000000004000000000000000000000000000000000000000000000000000000000000000000000000000000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000',
+  status: true,
+  to: '0x924ad28B07db87ADbCC7356c9171cF8fe44B4F3F',
+  transactionHash:
+   '0x6763e0118f92081ce50e3e01a69e9e0ee7423f29fe375484b1e63dea2529ffd5',
+  transactionIndex: 0,
+  nonce: undefined,
+  gas: undefined,
+  events:
+   { deposit_withdrawn:
+      { address: '0x924ad28B07db87ADbCC7356c9171cF8fe44B4F3F',
+        blockNumber: 796,
+        transactionHash:
+         '0x6763e0118f92081ce50e3e01a69e9e0ee7423f29fe375484b1e63dea2529ffd5',
+        transactionIndex: 0,
+        blockHash:
+         '0xbd9221472e34e67ecb9d7265590dd5ed497b848ddb386fea18cadf54a8d09d5b',
+        logIndex: 0,
+        removed: false,
+        id:
+         'log_0xbd7ca757ab3444cc10c01badc3cb64a8dfb2e695241a6cb82a16fa5e6582f23a',
+        returnValues: [Object],
+        event: 'deposit_withdrawn',
+        signature:
+         '0x39bb2fc047ce133db19b8ea5f97f0f5a13a5b2ecfffcbd5df2caaf2edcddc9e0',
+        raw: [Object] },
+     hd_closed:
+      { address: '0x924ad28B07db87ADbCC7356c9171cF8fe44B4F3F',
+        blockNumber: 796,
+        transactionHash:
+         '0x6763e0118f92081ce50e3e01a69e9e0ee7423f29fe375484b1e63dea2529ffd5',
+        transactionIndex: 0,
+        blockHash:
+         '0xbd9221472e34e67ecb9d7265590dd5ed497b848ddb386fea18cadf54a8d09d5b',
+        logIndex: 1,
+        removed: false,
+        id:
+         'log_0xc609aea82290ee47f3f1e21dd97dd2e1866e73a8ad6fac4f1106b2553eca3052',
+        returnValues: {},
+        event: 'hd_closed',
+        signature:
+         '0x75aae55e48045fff0a38d59d6294adad5fc9412f4561917a364e47e2aeab1367',
+        raw: [Object] } } }
