@@ -1,3 +1,4 @@
 (node:17347) DeprecationWarning: GridStore is deprecated, and will be removed in a future version. Please use GridFSBucket instead
 (node:17347) DeprecationWarning: collection.remove is deprecated. Use deleteOne, deleteMany, or bulkWrite instead.
 (node:19037) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
+(node:5690) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.

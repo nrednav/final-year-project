@@ -71,3 +71,11 @@ SyntaxError: Unexpected string
 (node:3269) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
 (node:3387) DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
 (node:3387) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
+(node:3599) DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
+(node:3599) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
+(node:3654) DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
+(node:3654) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
+(node:4318) DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
+(node:4318) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
+(node:5710) DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
+(node:5710) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.

@@ -1,2 +1,3 @@
 (node:20460) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
 (node:1626) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
+(node:4298) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.

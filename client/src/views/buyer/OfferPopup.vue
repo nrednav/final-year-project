@@ -55,6 +55,7 @@ export default {
 	},
 	methods: {
 		submitOffer () {
+			// Validate submission
 			if (this.price === '') {
 				alert('Please enter a value for your offer price')
 			} else if (this.price.match(/[a-z]/i)) {
@@ -62,7 +63,7 @@ export default {
 			} else if (this.price <= 0) {
 				alert('Please enter a positive non-zero value for your offer')
 			} else {
-				// add offer to property
+				// Add the offer to the property after all checks
 				var propertyId = this.$route.params.property_id
 				const body = {
 					property_id: propertyId,

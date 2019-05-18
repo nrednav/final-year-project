@@ -769,3 +769,4 @@ npm ERR!     /home/vandern/.npm/_logs/2019-05-17T19_51_09_798Z-debug.log
 (node:18437) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
 (node:18504) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
 (node:18982) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
+(node:5684) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.

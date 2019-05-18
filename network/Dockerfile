@@ -1,3 +1,3 @@
 FROM ethereum/client-go:stable
-COPY . /dummy_net
+COPY . /main_network
 RUN apk update && apk add bash

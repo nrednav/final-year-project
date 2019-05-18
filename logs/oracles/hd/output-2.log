@@ -612,3 +612,33 @@ Releasing deposit...
         signature:
          '0x75aae55e48045fff0a38d59d6294adad5fc9412f4561917a364e47e2aeab1367',
         raw: [Object] } } }
+
+> oracles@1.0.0 hd /c/Users/Vandern Rodrigues/Projects/fyp/oracles
+> babel-node ./src/hdOracle.js
+
+The HD oracle is now listening for events...
+Oracle started...
+Found event:-
+ release_holding_deposit
+{ address: '0x46D1a3a211c5A261ED481f6d871DE4e4a0D50048',
+  blockNumber: 794,
+  transactionHash:
+   '0x93ebd3d0e9eab5ccd9dcfff2e4df1dd590023a544d7e8ab98ef8a561be4ac14d',
+  transactionIndex: 0,
+  blockHash:
+   '0x9eec42cc6f49de371ec8ea7b87b71f28e5495354c99ba04219f8063051568c14',
+  logIndex: 2,
+  removed: false,
+  id:
+   'log_0x77ce458308a0f941b9337f627c96e3c61a7b0e0ea3e515fd323124c700459186',
+  returnValues: {},
+  event: 'release_holding_deposit',
+  signature:
+   '0x54dd20ef2439b3205844bab91564715a17fa06e8eb9cedcd5c1898a892501641',
+  raw:
+   { data: null,
+     topics:
+      [ '0x54dd20ef2439b3205844bab91564715a17fa06e8eb9cedcd5c1898a892501641' ] } }
+Getting hd contract address from session...
+Configuring node address...
+Releasing deposit...

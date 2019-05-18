@@ -187,6 +187,8 @@ router.post('/:property_id/add-offer', (req, res, next) => {
 		buyer_name: req.body.buyer_name,
 		price: body.offer
 	}
+
+	// Add the offer to the property
 	Property.updateOne({
 		_id: body.property_id
 	}, {
@@ -196,6 +198,7 @@ router.post('/:property_id/add-offer', (req, res, next) => {
 	}, (err, result) => {
 		if (err) console.log(err);
 
+		// Add the offer to the buyer's list of offers
 		User.updateOne({
 			_id: req.body.user_id
 		}, {

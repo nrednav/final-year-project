@@ -1,0 +1,5 @@
+.git
+client/node_modules
+oracles/node_modules
+server/node_modules
+network

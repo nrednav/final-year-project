@@ -2,13 +2,13 @@ version: '3.2'
 services:
    auth1:
       build: ./
-      image: ethereum/client-go:dummmy_net
+      image: ethereum/client-go:main_network
       container_name: auth1
       depends_on:
          - bootnode
       entrypoint: /bin/bash
       command:
-         /dummy_net/run_auth1.sh
+         /main_network/run_auth1.sh
       ports:
          - 9546:9546
          - 10546:10546
@@ -17,17 +17,17 @@ services:
          dn:
             ipv4_address: 172.26.0.5
       volumes:
-         - authority1:/dummy_net/.auth1
+         - authority1:/main_network/.auth1
 
    auth2:
       build: ./
-      image: ethereum/client-go:dummmy_net
+      image: ethereum/client-go:main_network
       container_name: auth2
       depends_on:
          - bootnode
       entrypoint: /bin/bash
       command:
-         /dummy_net/run_auth2.sh
+         /main_network/run_auth2.sh
       ports:
          - 9547:9547
          - 10547:10547
@@ -36,17 +36,17 @@ services:
          dn:
             ipv4_address: 172.26.0.4
       volumes:
-         - authority2:/dummy_net/.auth2
+         - authority2:/main_network/.auth2
 
    bootnode:
       build:
          context: ./
          dockerfile: ./.bootnode/Dockerfile
-      image: ethereum/client-go:alltools-dummmy_net
+      image: ethereum/client-go:alltools-main_network
       container_name: bootnode
       command:
          bootnode
-         -nodekey /dummy_net/.bootnode/boot.key
+         -nodekey /main_network/.bootnode/boot.key
       ports:
          - 30301:30301
       networks:
