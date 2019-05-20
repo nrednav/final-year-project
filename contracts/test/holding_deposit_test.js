@@ -132,20 +132,12 @@ contract("HoldingDepositFactory", accounts => {
 		});
 
 
-		describe("Complete Holding Deposit from start to finish", () => {
+		describe("Handles a Complete Holding Deposit from start to finish", () => {
 			it("forfeits deposit", async () => {
 				// Buyer deposits funds
 				let tx1 = await hd.deposit_funds({
 					from: accounts[1],
 					value: web3.utils.toWei('5', 'ether')
-				});
-
-				// Buyer and seller approve of updates to deposit status
-				let tx2_buyer = await hd.approve_deposit_status_update({
-					from: accounts[1]
-				});
-				let tx2_seller = await hd.approve_deposit_status_update({
-					from: accounts[0]
 				});
 
 				let deposit_refundable_1 = await hd.is_refundable();
