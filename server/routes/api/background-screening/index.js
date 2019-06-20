@@ -5,7 +5,9 @@ var router = express.Router();
 const ScreeningReport = require('../../../db/models/ScreeningReport').ScreeningReport;
 const User = require('../../../db/models/User').User;
 
-/* Create report */
+/**
+ * @desc - Creates an entry in the background screening database
+ */
 router.post('/add-report', (req, res, next) => {
 	let buyer_address = req.body.account_address;
 	let screening_uid = req.body.uid;
@@ -33,7 +35,9 @@ router.post('/add-report', (req, res, next) => {
 	});
 });
 
-/* Verify user */
+/**
+ * @desc - Retrieves the background screening report beloning to a user account address
+ */
 router.get('/get-report/:user_address', (req, res, next) => {
 	const auth_header = req.get('authorization');
 

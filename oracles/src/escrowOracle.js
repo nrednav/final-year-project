@@ -251,8 +251,11 @@ class escrowOracle {
 		}).catch((error) => console.log(error));
 	}
 
+	/**
+	 * @desc - Handles response to a title transfer request
+	 */
 	async respondToTTR(sessionId) {
-		// Get file
+		// Get title deed draft document
 		let requestUrl = `http://localhost:3000/api/sessions/${sessionId}/title-deed/tdd`
 		let config = { headers: { Authorization: 'a1b2c3d4e5f6g7' } }
 		axios.get(requestUrl, config).then(async (response) => {

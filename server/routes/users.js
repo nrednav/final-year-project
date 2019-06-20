@@ -6,14 +6,16 @@ const User = require('../db/models/User').User;
 const Property = require('../db/models/Property').Property;
 const Session = require('../db/models/Session').Session;
 
-/* GET users listing. */
+/* GET - users listing. */
 router.get('/', function(req, res, next) {
-	res.send('respond with a resource');
+	res.send('...');
 });
 
-/* GET user */
+/* GET - User by ID */
 router.get('/get/:id', (req, res, next) => {
+
 	const user_id = req.params.id;
+
 	User.findOne({
 		_id: user_id
 	}, (err, result) => {
@@ -24,16 +26,21 @@ router.get('/get/:id', (req, res, next) => {
 			user
 		});
 	});
+
 });
 
-/* GET user properties */
+/* GET - Properties owned by a user */
 router.get('/:user_id/properties', (req, res, next) => {
+
 	const user_id = new mongoose.Types.ObjectId(req.params.user_id);
+
 	User.findOne({
 		_id: user_id
 	}, (err, result) => {
 		if (err) console.error(err);
+
 		let property_ids = result.profiles.seller.properties;
+
 		Property.find({
 			_id: {$in: property_ids}
 		}, (err, result) => {
@@ -43,12 +50,15 @@ router.get('/:user_id/properties', (req, res, next) => {
 			});
 		});
 	});
+
 });
 
-/* GET user sessions */
+/* GET - Sessions that a user is part of */
 router.get('/:user_id/:user_type/sessions', (req, res, next) => {
+
 	const user_id = new mongoose.Types.ObjectId(req.params.user_id);
 	const user_type = req.params.user_type
+
 	User.findOne({
 		_id: user_id
 	}, (err, result) => {
@@ -70,13 +80,17 @@ router.get('/:user_id/:user_type/sessions', (req, res, next) => {
 			});
 		});
 	});
+
 });
 
-/* PUT update user */
+/* PUT - Remove property from user's owned properties */
 router.put('/:user_id/remove/:property_id', (req, res, next) => {
+
 	console.log(req.params);
+
 	let user_id = new mongoose.Types.ObjectId(req.params.user_id)
 	let property_id = new mongoose.Types.ObjectId(req.params.property_id)
+
 	User.update({}, {
 		$pull: {
 			'profiles.seller.properties':  property_id
@@ -88,15 +102,7 @@ router.put('/:user_id/remove/:property_id', (req, res, next) => {
 			result
 		});
 	});
-});
 
-function getProperty(property_id) {
-	Property.findOne({
-		_id: property_id
-	}, (err, result) => {
-		if (err) console.error(err);
-		console.log(result);
-	});
-}
+});
 
 module.exports = router;

@@ -1,2 +1,27 @@
 (node:18927) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
 (node:5683) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
+(node:7271) UnhandledPromiseRejectionWarning: Error: connect ECONNREFUSED 127.0.0.1:27017
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1083:14)
+(node:7271) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 1)
+(node:7271) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+(node:8383) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
+
+/c/Users/Vandern Rodrigues/Projects/fyp/oracles/src/verifierOracle.js:58
+											throw error;
+											^
+[object Object]
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! oracles@1.0.0 verifier: `babel-node ./src/verifierOracle.js`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the oracles@1.0.0 verifier script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/vandern/.npm/_logs/2019-05-21T12_34_05_318Z-debug.log
+(node:9148) UnhandledPromiseRejectionWarning: Error: connect ECONNREFUSED 127.0.0.1:27017
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1083:14)
+(node:9148) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 1)
+(node:9148) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+(node:3244) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.

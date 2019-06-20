@@ -1,3 +1,4 @@
+// Import dependencies
 var express = require('express');
 var mongoose = require('mongoose');
 var path = require('path');
@@ -12,10 +13,12 @@ var axios = require('axios');
 var Property = require('../../../db/models/Property').Property;
 var User = require('../../../db/models/User').User;
 
-// DB Setup
-const mongo_uri = 'mongodb://localhost:27017/fyp';
 
-// Create connection
+/**
+ * DB Configuration
+ */
+
+const mongo_uri = 'mongodb://localhost:27017/fyp';
 const conn = mongoose.createConnection(mongo_uri, {
 	useNewUrlParser: true
 });
@@ -25,6 +28,9 @@ conn.once('open', () => {
 	gfs = grid(conn.db);
 });
 
+/**
+ * Configure multer
+ */
 var storage = new grid_fs_storage({
 	url: 'mongodb://localhost:27017/fyp',
 	file: (req, file) => {
@@ -47,7 +53,9 @@ var storage = new grid_fs_storage({
 const upload = multer({ storage });
 
 
-/* SEARCH for properties via text indexing */
+/**
+ * @desc - parse and execute property search queries
+ */
 router.get('/search', (req, res, next) => {
 	let country = req.query.country
 	let city = req.query.city
@@ -76,7 +84,6 @@ router.get('/search', (req, res, next) => {
 				}
 			},
 			{
-
 				'details.bathroom_count': {
 					$lte: bath_count
 				}
@@ -92,7 +99,9 @@ router.get('/search', (req, res, next) => {
 	});
 });
 
-/* GET property listing. */
+/**
+ * @desc - Get all properties in database
+ */
 router.get('/', function(req, res, next) {
 	Property.find((err, docs) => {
 		if (err) console.error(err);
@@ -102,7 +111,9 @@ router.get('/', function(req, res, next) {
 	});
 });
 
-/* Get properties based on some array */
+/**
+ * @desc - Find properties using an array of property ID's
+ */
 router.post('/find-by-ids', (req, res, next) => {
 	var property_ids = JSON.parse(req.body.propertyIds);
 	Property.find({
@@ -115,7 +126,9 @@ router.post('/find-by-ids', (req, res, next) => {
 	});
 });
 
-/* GET property by id*/
+/**
+ * @desc - Get property by property ID
+ */
 router.get('/:property_id', (req, res, next) => {
 	const property_id = req.params.property_id;
 	Property.findOne({
@@ -128,7 +141,9 @@ router.get('/:property_id', (req, res, next) => {
 	});
 });
 
-/* GET property images */
+/**
+ * @desc - Get images beloning to a single property
+ */
 router.get('/:property_id/images/:image_id', (req, res, next) => {
 	let imageId = req.params.image_id
 	console.log(imageId)
@@ -143,7 +158,9 @@ router.get('/:property_id/images/:image_id', (req, res, next) => {
 });
 
 
-/* PUT - update property details */
+/**
+ * @desc - Update a property's listing status
+ */
 router.put('/:property_id/list', (req, res, next) => {
 	console.log(req.body.listed)
 	console.log(req.params.property_id)
@@ -152,9 +169,10 @@ router.put('/:property_id/list', (req, res, next) => {
 	Property.updateOne({
 		_id: req.params.property_id
 	}, {$set: { listed: req.body.listed }}, (err, result) => {
-		// Update listed count on user profile
+
 		var inc_amount;
 		if (req.body.listed) {
+			// Increment listed count if listing set to true
 			User.updateOne({
 				_id: req.body.user_id
 			}, { $inc: { 'profiles.seller.listed_count': 1 }}, (err, result) => {
@@ -165,6 +183,7 @@ router.put('/:property_id/list', (req, res, next) => {
 				});
 			});
 		} else {
+			// Decrement listed count if listing set to false
 			User.updateOne({
 				_id: req.body.user_id
 			}, { $inc: { 'profiles.seller.listed_count': -1 }}, (err, result) => {
@@ -178,7 +197,9 @@ router.put('/:property_id/list', (req, res, next) => {
 	});
 });
 
-/* POST - add offer */
+/**
+ * @desc - Adds offer submitted by buyer to list of offers on property
+ */
 router.post('/:property_id/add-offer', (req, res, next) => {
 	const body = req.body
 	const offer = {
@@ -218,7 +239,9 @@ router.post('/:property_id/add-offer', (req, res, next) => {
 	});
 });
 
-/* PUT - update property with options */
+/**
+ * @desc- General route handler that updates a property using object submitted
+ */
 router.put('/:property_id/update', (req, res, next) => {
 	console.log('Got request....');
 	console.log('Options received are:-');
@@ -236,7 +259,9 @@ router.put('/:property_id/update', (req, res, next) => {
 	});
 });
 
-/* POST - create a property */
+/**
+ * @desc - Create a property in the property database using details submitted by seller
+ */
 router.post('/create', upload.array('files'), (req, res, next) => {
 	let new_property = JSON.parse(req.body.property);
 	Property.findOne({
@@ -280,7 +305,9 @@ router.post('/create', upload.array('files'), (req, res, next) => {
 		});
 });
 
-/* DELETE - delete a property */
+/**
+ * @desc- Initiates deletion of a property from the property database
+ */
 router.delete('/delete/:property_id', (req, res, next) => {
 
 	let image_ids = []
@@ -299,7 +326,9 @@ router.delete('/delete/:property_id', (req, res, next) => {
 	});
 });
 
-/* Accept offer */
+/**
+ * @desc - Removes the offer and initiates a session
+ */
 router.post('/:property_id/offers/accept', (req, res, next) => {
 	Property.updateOne({
 		_id: req.params.property_id,
@@ -323,7 +352,9 @@ router.post('/:property_id/offers/accept', (req, res, next) => {
 	});
 });
 
-/* Reject offer */
+/**
+ * @desc - Removes the offer from the associated property
+ */
 router.post('/:property_id/offers/reject', (req, res, next) => {
 	Property.updateOne({
 		_id: req.params.property_id,
@@ -339,7 +370,11 @@ router.post('/:property_id/offers/reject', (req, res, next) => {
 	});
 });
 
-
+/**
+ * @desc - Requests creation of a session using the session API
+ * @params
+ *		- details: Buyer's and seller's information required for session creation
+ */
 function createSession(details, res, next) {
 	console.log('Creating a session with the following details...\n' + details);
 	axios.post('http://localhost:3000/api/sessions/create', details, {
@@ -353,6 +388,11 @@ function createSession(details, res, next) {
 	}).catch((error) => console.log(error));
 }
 
+/**
+ * @desc - Delete's a property image from the gridFS store
+ * @params
+ *		- image_id: Object ID of the file to remove
+ */
 function deletePropertyImage(image_id) {
 	gfs.remove({
 		_id: image_id
@@ -361,7 +401,9 @@ function deletePropertyImage(image_id) {
 	});
 }
 
-// Delete property by id
+/**
+ * @desc - Remove's a property from the properties database
+ */
 function deleteProperty(property, property_id, res, next) {
 	Property.deleteOne({
 		_id: property_id
@@ -371,6 +413,10 @@ function deleteProperty(property, property_id, res, next) {
 	});
 }
 
+/**
+ * @desc - Update's the property meta information counts that will be 
+ * displayed on the seller's dashboard
+ */
 function updateProfileCounts(owner_id, res, next) {
 	User.updateOne({
 		_id: owner_id,

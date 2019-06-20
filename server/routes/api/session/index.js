@@ -1,7 +1,6 @@
+// Import dependencies
 var express = require('express');
 var router = express.Router();
-
-// DB dependencies
 var crypto = require('crypto');
 var path = require('path');
 var mongoose = require('mongoose');
@@ -13,7 +12,9 @@ var PDFDocument = require('pdfkit');
 const Session = require('../../../db/models/Session').Session;
 const User = require('../../../db/models/User').User;
 
-// Setup Database connections & multer/gridFS
+/**
+ * Configure DB 
+ */
 const mongoUri = 'mongodb://localhost:27017/fyp';
 const conn = mongoose.createConnection(mongoUri, {
 	useNewUrlParser: true
@@ -24,6 +25,9 @@ conn.once('open', () => {
 	gfs = grid(conn.db, mongoose.mongo);
 });
 
+/**
+ * Configure Multer
+ */
 var storage = new gridFsStorage({
 	url: 'mongodb://localhost:27017/fyp',
 	file: (req, file) => {

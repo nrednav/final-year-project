@@ -1,11 +1,14 @@
 const jwt = require('jsonwebtoken');
 
+/**
+ * @desc - verifies a JWT sent in a requests authorization header
+ */
 function verify_token(req, res, next) {
 	const auth_header = req.get('authorization');
 
 	if (auth_header) {
 		const token = auth_header.split(' ')[1];
-		if (token) {
+		if (token) { // If authorization header exists, verify it
 			jwt.verify(token, process.env.TOKEN_SECRET, (error, user) => {
 				if (error) console.error(error);
 				req.user = user;
@@ -21,6 +24,9 @@ function verify_token(req, res, next) {
 	}
 }
 
+/**
+ * @desc - Verifies if user is logged in when making requests to a guarded route
+ */
 function verify_login_status(req, res, next) {
 	if (req.user) {
 		next();
@@ -32,6 +38,9 @@ function verify_login_status(req, res, next) {
 	}
 }
 
+/**
+ * @desc - Verifies the auth header of requests to certain API's
+ */
 function verify_requester(req, res, next) {
 	const auth_header = req.get('authorization')
 

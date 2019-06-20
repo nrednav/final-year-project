@@ -27,3 +27,48 @@ Oracle started...
 
 The verifier oracle is now listening for events...
 Oracle started...
+
+> oracles@1.0.0 verifier /c/Users/Vandern Rodrigues/Projects/fyp/oracles
+> babel-node ./src/verifierOracle.js
+
+The verifier oracle is now listening for events...
+Oracle started...
+Error: could not find any accounts
+[object Object]
+
+> oracles@1.0.0 verifier /c/Users/Vandern Rodrigues/Projects/fyp/oracles
+> babel-node ./src/verifierOracle.js
+
+The verifier oracle is now listening for events...
+Oracle started...
+
+> oracles@1.0.0 verifier /c/Users/Vandern Rodrigues/Projects/fyp/oracles
+> babel-node ./src/verifierOracle.js
+
+The verifier oracle is now listening for events...
+Oracle started...
+Error: could not find any accounts
+[object Object]
+
+> oracles@1.0.0 verifier /c/Users/Vandern Rodrigues/Projects/fyp/oracles
+> babel-node ./src/verifierOracle.js
+
+The verifier oracle is now listening for events...
+Oracle started...
+Found event:-
+ verification_requested
+Requesting information from land registry...
+Got information from land registry...
+Verifying information received...
+{ liens: false,
+  _id: '5d0bc06a3271d50ce79212c3',
+  property_uid:
+   '0x8c908ebff6c8fa2385c3141fd16462b61590ae45c18492fa8d316417bcfc77b3',
+  owner_id: '5d0bc0313271d50ce79212bc',
+  title_deed_hash:
+   '0xf47560dc9bc3fbd14683746660ff659153bcfc51c04057d566a6cb66d50f6af5',
+  __v: 0 }
+This property has no liens attached
+{ n: 1, nModified: 1, ok: 1 }
+Successfully notified user
+ { n: 1, nModified: 1, ok: 1 }

@@ -4141,3 +4141,239 @@ pBzH <—— 304 Not Modified (<—> 36.8 ms)
 [33m[nodemon] to restart at any time, enter `rs`[39m
 [33m[nodemon] watching: *.*[39m
 [32m[nodemon] starting `node ./bin/www`[39m
+
+> server@0.0.0 dev /c/Users/Vandern Rodrigues/Projects/fyp/server
+> nodemon ./bin/www
+
+[33m[nodemon] 1.19.0[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching: *.*[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+
+> server@0.0.0 dev /c/Users/Vandern Rodrigues/Projects/fyp/server
+> nodemon ./bin/www
+
+[33m[nodemon] 1.19.0[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching: *.*[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+
+> server@0.0.0 dev /c/Users/Vandern Rodrigues/Projects/fyp/server
+> nodemon ./bin/www
+
+[33m[nodemon] 1.19.0[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching: *.*[39m
+[32m[nodemon] starting `node ./bin/www`[39m
+u7r7 ——> OPTIONS /api/auth/register 
+u7r7 <—— 204 No Content (<—> 4.5 ms)
+o6k2 ——> POST /api/auth/register 128 B application/json;charset=UTF-8
+{ profiles:
+   { buyer: { notifications: [], sessions: [], offers: [] },
+     seller:
+      { verified_count: 0,
+        listed_count: 0,
+        properties: [],
+        sessions: [],
+        notifications: [] } },
+  _id: 5d0bc0313271d50ce79212bc,
+  email: 'bob@gmail.com',
+  password:
+   '$2b$05$GP3Pfh/eDr7cHMufUAFHqu4GQmY0Mck1t/FYV2Gy0I/xmjxfJk1FW',
+  name: 'Bob Jenkins',
+  account_address: '0xf157af9407a817181d19a9eb6ee2dfc7039742a4',
+  created_at: 2019-06-20T17:19:45.227Z,
+  __v: 0 }
+o6k2 <—— 200 OK 53 B application/json; charset=utf-8 (<—> 146.2 ms)
+goG4 ——> OPTIONS /api/screening/add-report 
+goG4 <—— 204 No Content (<—> 0.8 ms)
+cq1I ——> POST /api/screening/add-report 176 B application/json;charset=UTF-8
+{ profiles:
+   { buyer: { notifications: [], sessions: [], offers: [] },
+     seller:
+      { verified_count: 0,
+        listed_count: 0,
+        properties: [],
+        sessions: [],
+        notifications: [] } },
+  _id: 5d0bc0313271d50ce79212bc,
+  email: 'bob@gmail.com',
+  password:
+   '$2b$05$GP3Pfh/eDr7cHMufUAFHqu4GQmY0Mck1t/FYV2Gy0I/xmjxfJk1FW',
+  name: 'Bob Jenkins',
+  account_address: '0xf157af9407a817181d19a9eb6ee2dfc7039742a4',
+  created_at: 2019-06-20T17:19:45.227Z,
+  __v: 0 }
+cq1I <—— 200 OK 439 B application/json; charset=utf-8 (<—> 351.5 ms)
+Sending ether now...
+u3Mb ——> OPTIONS /api/auth/login 
+u3Mb <—— 204 No Content (<—> 0.6 ms)
+CKZ6 ——> POST /api/auth/login 107 B application/json;charset=UTF-8
+CKZ6 <—— 200 OK 216 B application/json; charset=utf-8 (<—> 16.0 ms)
+At3K ——> OPTIONS / 
+At3K <—— 204 No Content (<—> 1.2 ms)
+lNEg ——> GET / 
+lNEg <—— 200 OK 121 B application/json; charset=utf-8 (<—> 11.1 ms)
+F1TZ ——> OPTIONS /api/users/get/5d0bc0313271d50ce79212bc 
+F1TZ <—— 204 No Content (<—> 1.0 ms)
+S19L ——> GET /api/users/get/5d0bc0313271d50ce79212bc 
+S19L <—— 200 OK 448 B application/json; charset=utf-8 (<—> 10.2 ms)
+LNgD ——> OPTIONS /api/properties/create 
+LNgD <—— 204 No Content (<—> 0.7 ms)
+WlWw ——> POST /api/properties/create 691.76 KB multipart/form-data; boundary=----WebKitFormBoundary5AmHbfAGa6C7s3CM
+Creating a new property
+{ fieldname: 'files',
+  originalname: 'avatar tree.jpg',
+  encoding: '7bit',
+  mimetype: 'image/jpeg',
+  id: 5d0bc0603271d50ce79212be,
+  filename: '85aa3cd887000e1b4184cdd5a091a93a.jpg',
+  metadata: null,
+  bucketName: 'fs',
+  chunkSize: 261120,
+  size: 707738,
+  md5: 'bcc040b09139a338a1fe7a55ec55c759',
+  uploadDate: 2019-06-20T17:20:33.130Z,
+  contentType: 'image/jpeg' }
+Successfully added property 5d0bc0613271d50ce79212c2 to user 5d0bc0313271d50ce79212bc
+WlWw <—— 200 OK 520 B application/json; charset=utf-8 (<—> 1124.7 ms)
+sq81 ——> OPTIONS / 
+sq81 <—— 204 No Content (<—> 1.1 ms)
+6UPj ——> GET / 
+6UPj <—— 304 Not Modified (<—> 2.0 ms)
+cg31 ——> OPTIONS /api/users/get/5d0bc0313271d50ce79212bc 
+cg31 <—— 204 No Content (<—> 1.4 ms)
+Wvak ——> GET /api/users/get/5d0bc0313271d50ce79212bc 
+Wvak <—— 200 OK 474 B application/json; charset=utf-8 (<—> 8.6 ms)
+70Xu ——> OPTIONS /api/users/5d0bc0313271d50ce79212bc/properties 
+70Xu <—— 204 No Content (<—> 0.7 ms)
+MMbB ——> GET /api/users/5d0bc0313271d50ce79212bc/properties 
+MMbB <—— 200 OK 526 B application/json; charset=utf-8 (<—> 24.5 ms)
+JIXR ——> OPTIONS /api/properties/5d0bc0613271d50ce79212c2 
+JIXR <—— 204 No Content (<—> 0.7 ms)
+YXah ——> GET /api/properties/5d0bc0613271d50ce79212c2 
+YXah <—— 200 OK 520 B application/json; charset=utf-8 (<—> 8.6 ms)
+IcGn ——> GET /api/properties/5d0bc0613271d50ce79212c2 
+IcGn <—— 304 Not Modified (<—> 8.6 ms)
+U1Ch ——> OPTIONS /api/land-registry/add-entry 
+U1Ch <—— 204 No Content (<—> 2.3 ms)
+7KsT ——> POST /api/land-registry/add-entry 210 B application/json;charset=UTF-8
+object
+7KsT <—— 200 OK 50 B application/json; charset=utf-8 (<—> 8.7 ms)
+AOJi ——> OPTIONS /api/properties/5d0bc0613271d50ce79212c2/update 
+AOJi <—— 204 No Content (<—> 1.0 ms)
+VTwO ——> PUT /api/properties/5d0bc0613271d50ce79212c2/update 105 B application/json;charset=UTF-8
+Got request....
+Options received are:-
+{ 'details.property_uid':
+   '0x8c908ebff6c8fa2385c3141fd16462b61590ae45c18492fa8d316417bcfc77b3' }
+{ options:
+   { 'details.property_uid':
+      '0x8c908ebff6c8fa2385c3141fd16462b61590ae45c18492fa8d316417bcfc77b3' } }
+Commiting update now...
+{ n: 1, nModified: 1, ok: 1 }
+VTwO <—— 200 OK 39 B application/json; charset=utf-8 (<—> 7.0 ms)
+nh6O ——> PUT /api/properties/5d0bc0613271d50ce79212c2/update 26 B application/json;charset=UTF-8
+Got request....
+Options received are:-
+{ verified: 1 }
+{ options: { verified: 1 } }
+Commiting update now...
+{ n: 1, nModified: 1, ok: 1 }
+nh6O <—— 200 OK 39 B application/json; charset=utf-8 (<—> 7.0 ms)
+sKrf ——> GET /api/land-registry/get-entry?property_uid=0x8c908ebff6c8fa2385c3141fd16462b61590ae45c18492fa8d316417bcfc77b3 
+sKrf <—— 200 OK 275 B application/json; charset=utf-8 (<—> 8.3 ms)
+{ blockHash:
+   '0xb138b24038bc4e67f13040f56c6fce247c5899485839ba96833f9aa80e3890c0',
+  blockNumber: 101,
+  contractAddress: null,
+  cumulativeGasUsed: 21000,
+  from: '0x8a23c7C42333ed6be5a68c24031cd7A737fbcBE8',
+  gasUsed: 21000,
+  logs: [],
+  logsBloom:
+   '0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000',
+  status: true,
+  to: '0xF157Af9407a817181D19a9Eb6eE2dFc7039742A4',
+  transactionHash:
+   '0x511a3942d968a83121b1f6aa485f887fea1b35c4b9cfaa2c9aa504012e300dfb',
+  transactionIndex: 0,
+  nonce: undefined,
+  gas: undefined }
+xWIB ——> OPTIONS /api/properties/5d0bc0613271d50ce79212c2 
+xWIB <—— 204 No Content (<—> 1.0 ms)
+oHEC ——> GET /api/properties/5d0bc0613271d50ce79212c2 
+oHEC <—— 200 OK 586 B application/json; charset=utf-8 (<—> 10.5 ms)
+zNkY ——> OPTIONS /api/properties/5d0bc0613271d50ce79212c2/list 
+zNkY <—— 204 No Content (<—> 0.7 ms)
+0NmJ ——> PUT /api/properties/5d0bc0613271d50ce79212c2/list 52 B application/json;charset=UTF-8
+true
+5d0bc0613271d50ce79212c2
+Updated listed count on user profile { n: 1, nModified: 1, ok: 1 }
+0NmJ <—— 200 OK 39 B application/json; charset=utf-8 (<—> 13.4 ms)
+0i4J ——> OPTIONS /api/users/5d0bc0313271d50ce79212bc/properties 
+0i4J <—— 204 No Content (<—> 0.6 ms)
+Bs7t ——> GET /api/users/5d0bc0313271d50ce79212bc/properties 
+Bs7t <—— 200 OK 591 B application/json; charset=utf-8 (<—> 20.6 ms)
+KsvO ——> OPTIONS / 
+KsvO <—— 204 No Content (<—> 0.7 ms)
+KFw4 ——> GET / 
+KFw4 <—— 304 Not Modified (<—> 1.7 ms)
+jLmq ——> OPTIONS /api/users/get/5d0bc0313271d50ce79212bc 
+jLmq <—— 204 No Content (<—> 5.1 ms)
+mQXH ——> GET /api/users/get/5d0bc0313271d50ce79212bc 
+mQXH <—— 200 OK 668 B application/json; charset=utf-8 (<—> 11.3 ms)
+hhlf ——> OPTIONS /api/users/5d0bc0313271d50ce79212bc/properties 
+hhlf <—— 204 No Content (<—> 0.7 ms)
+FUJO ——> GET /api/users/5d0bc0313271d50ce79212bc/properties 
+FUJO <—— 304 Not Modified (<—> 14.3 ms)
+zF9g ——> OPTIONS /api/properties/5d0bc0613271d50ce79212c2 
+zF9g <—— 204 No Content (<—> 0.7 ms)
+xtuM ——> GET /api/properties/5d0bc0613271d50ce79212c2 
+xtuM <—— 200 OK 585 B application/json; charset=utf-8 (<—> 6.0 ms)
+mslc ——> OPTIONS /api/properties/5d0bc0613271d50ce79212c2/list 
+mslc <—— 204 No Content (<—> 0.9 ms)
+zUip ——> PUT /api/properties/5d0bc0613271d50ce79212c2/list 53 B application/json;charset=UTF-8
+false
+5d0bc0613271d50ce79212c2
+Updated listed count on user profile { n: 1, nModified: 1, ok: 1 }
+zUip <—— 200 OK 39 B application/json; charset=utf-8 (<—> 10.4 ms)
+GP1t ——> GET /api/users/5d0bc0313271d50ce79212bc/properties 
+GP1t <—— 200 OK 592 B application/json; charset=utf-8 (<—> 17.4 ms)
+lGgN ——> OPTIONS / 
+lGgN <—— 204 No Content (<—> 0.7 ms)
+lMu9 ——> GET / 
+lMu9 <—— 304 Not Modified (<—> 1.9 ms)
+mGRA ——> OPTIONS /api/users/get/5d0bc0313271d50ce79212bc 
+mGRA <—— 204 No Content (<—> 1.2 ms)
+wNpR ——> GET /api/users/get/5d0bc0313271d50ce79212bc 
+wNpR <—— 200 OK 668 B application/json; charset=utf-8 (<—> 7.7 ms)
+OMHx ——> OPTIONS /api/users/5d0bc0313271d50ce79212bc/properties 
+OMHx <—— 204 No Content (<—> 1.2 ms)
+h2gA ——> GET /api/users/5d0bc0313271d50ce79212bc/properties 
+h2gA <—— 304 Not Modified (<—> 19.4 ms)
+9bQr ——> OPTIONS /api/properties/5d0bc0613271d50ce79212c2 
+9bQr <—— 204 No Content (<—> 0.8 ms)
+Ozgb ——> GET /api/properties/5d0bc0613271d50ce79212c2 
+Ozgb <—— 200 OK 586 B application/json; charset=utf-8 (<—> 7.2 ms)
+U2Ix ——> OPTIONS /api/properties/delete/5d0bc0613271d50ce79212c2 
+U2Ix <—— 204 No Content (<—> 0.9 ms)
+g40h ——> DELETE /api/properties/delete/5d0bc0613271d50ce79212c2 
+Updated listed count on user profile { n: 0, nModified: 0, ok: 1 }
+g40h <—— 200 OK 39 B application/json; charset=utf-8 (<—> 47.1 ms)
+o3gB ——> OPTIONS /api/users/5d0bc0313271d50ce79212bc/remove/5d0bc0613271d50ce79212c2 
+o3gB <—— 204 No Content (<—> 3.1 ms)
+Y575 ——> PUT /api/users/5d0bc0313271d50ce79212bc/remove/5d0bc0613271d50ce79212c2 33 B application/json;charset=UTF-8
+{ user_id: '5d0bc0313271d50ce79212bc',
+  property_id: '5d0bc0613271d50ce79212c2' }
+Y575 <—— 200 OK 39 B application/json; charset=utf-8 (<—> 8.5 ms)
+FyFC ——> GET /api/users/5d0bc0313271d50ce79212bc/properties 
+FyFC <—— 200 OK 17 B application/json; charset=utf-8 (<—> 14.0 ms)
+nwBk ——> OPTIONS / 
+nwBk <—— 204 No Content (<—> 0.8 ms)
+Lyc9 ——> GET / 
+Lyc9 <—— 304 Not Modified (<—> 2.0 ms)
+8MZS ——> OPTIONS /api/users/get/5d0bc0313271d50ce79212bc 
+8MZS <—— 204 No Content (<—> 0.6 ms)
+XYun ——> GET /api/users/get/5d0bc0313271d50ce79212bc 
+XYun <—— 200 OK 642 B application/json; charset=utf-8 (<—> 8.7 ms)

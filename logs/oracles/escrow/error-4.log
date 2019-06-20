@@ -2,3 +2,21 @@
 (node:17347) DeprecationWarning: collection.remove is deprecated. Use deleteOne, deleteMany, or bulkWrite instead.
 (node:19037) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
 (node:5690) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
+(node:7291) UnhandledPromiseRejectionWarning: Error: connect ECONNREFUSED 127.0.0.1:27017
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1083:14)
+(node:7291) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 1)
+(node:7291) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+(node:7291) UnhandledPromiseRejectionWarning: Error: connect ECONNREFUSED 127.0.0.1:27017
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1083:14)
+(node:7291) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+(node:8397) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
+(node:8397) UnhandledPromiseRejectionWarning: #<_Event>
+(node:8397) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 1)
+(node:8397) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+(node:8397) UnhandledPromiseRejectionWarning: #<_Event>
+(node:8397) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+(node:8397) UnhandledPromiseRejectionWarning: #<_Event>
+(node:8397) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 3)
+(node:8397) UnhandledPromiseRejectionWarning: #<_Event>
+(node:8397) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 4)
+(node:3272) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
