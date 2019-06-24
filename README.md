@@ -52,6 +52,9 @@ The main elements of this architecture were developed using the following techno
 3. Storage - MongoDB
 4. Oracles - NodeJS
 5. Network - Docker (Geth nodes + MongoDB server)
+6. Smart Contracts
+    - written using Solidity
+    - compiled and deployed using the Truffle framework
 
 
 ## Project Setup + Usage
@@ -124,3 +127,6 @@ The main elements of this architecture were developed using the following techno
 
 
 ## Video Demonstration
+
+## Contact
+For any additional queries, feel free to get in touch with me at: `nrednav@gmail.com`
