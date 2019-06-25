@@ -30,24 +30,24 @@
       "signature": "0x75e36616"
     }
   ],
-  "bytecode": "0x608060405234801561001057600080fd5b5060db8061001f6000396000f3fe6080604052348015600f57600080fd5b50600436106045576000357c01000000000000000000000000000000000000000000000000000000009004806375e3661614604a575b600080fd5b607360048036036020811015605e57600080fd5b81019080803590602001909291905050506075565b005b7fe67ea319ad509472f8fe19f76c94905173d83826e5405408a0f4f22aa90934c9816040518082815260200191505060405180910390a15056fea165627a7a723058208b69e8e3e37bfa90330a9a5b01d8a0d00c1232c13bd3d9a0b39fced9a2cbabe50029",
-  "deployedBytecode": "0x6080604052348015600f57600080fd5b50600436106045576000357c01000000000000000000000000000000000000000000000000000000009004806375e3661614604a575b600080fd5b607360048036036020811015605e57600080fd5b81019080803590602001909291905050506075565b005b7fe67ea319ad509472f8fe19f76c94905173d83826e5405408a0f4f22aa90934c9816040518082815260200191505060405180910390a15056fea165627a7a723058208b69e8e3e37bfa90330a9a5b01d8a0d00c1232c13bd3d9a0b39fced9a2cbabe50029",
-  "sourceMap": "24:201:3:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;24:201:3;;;;;;;",
-  "deployedSourceMap": "24:201:3:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;24:201:3;;;;;;;;;;;;;;;;;;;;125:98;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;125:98:3;;;;;;;;;;;;;;;;;:::i;:::-;;;182:37;205:13;182:37;;;;;;;;;;;;;;;;;;125:98;:::o",
-  "source": "pragma solidity 0.5.7;\n\ncontract Verifier {\n\n\t// Events\n\tevent verification_requested(bytes32 property_uid);\n\n\t// Functions\n\tfunction verify(bytes32 _property_uid)\n\tpublic\n\t{\n\t\temit verification_requested(_property_uid);\n\t}\n}\n",
-  "sourcePath": "/c/Users/Vandern Rodrigues/Projects/fyp/contracts/contracts/Verifier.sol",
+  "bytecode": "0x608060405234801561001057600080fd5b5060db8061001f6000396000f3fe6080604052348015600f57600080fd5b50600436106045576000357c01000000000000000000000000000000000000000000000000000000009004806375e3661614604a575b600080fd5b607360048036036020811015605e57600080fd5b81019080803590602001909291905050506075565b005b7fe67ea319ad509472f8fe19f76c94905173d83826e5405408a0f4f22aa90934c9816040518082815260200191505060405180910390a15056fea165627a7a72305820eca0f5eea18164992fbf3be2794aa3c4dd6648777826fc09d05f333cc47cca460029",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b50600436106045576000357c01000000000000000000000000000000000000000000000000000000009004806375e3661614604a575b600080fd5b607360048036036020811015605e57600080fd5b81019080803590602001909291905050506075565b005b7fe67ea319ad509472f8fe19f76c94905173d83826e5405408a0f4f22aa90934c9816040518082815260200191505060405180910390a15056fea165627a7a72305820eca0f5eea18164992fbf3be2794aa3c4dd6648777826fc09d05f333cc47cca460029",
+  "sourceMap": "26:212:3:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;26:212:3;;;;;;;",
+  "deployedSourceMap": "26:212:3:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;26:212:3;;;;;;;;;;;;;;;;;;;;133:102;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;133:102:3;;;;;;;;;;;;;;;;;:::i;:::-;;;193:37;216:13;193:37;;;;;;;;;;;;;;;;;;133:102;:::o",
+  "source": "pragma solidity 0.5.7;\r\n\r\ncontract Verifier {\r\n\r\n\t// Events\r\n\tevent verification_requested(bytes32 property_uid);\r\n\r\n\t// Functions\r\n\tfunction verify(bytes32 _property_uid)\r\n\tpublic\r\n\t{\r\n\t\temit verification_requested(_property_uid);\r\n\t}\r\n}\r\n",
+  "sourcePath": "/c/Users/Vandern Rodrigues/Projects/University Work/fyp-test-3/contracts/contracts/Verifier.sol",
   "ast": {
-    "absolutePath": "/c/Users/Vandern Rodrigues/Projects/fyp/contracts/contracts/Verifier.sol",
+    "absolutePath": "/c/Users/Vandern Rodrigues/Projects/University Work/fyp-test-3/contracts/contracts/Verifier.sol",
     "exportedSymbols": {
       "Verifier": [
-        807
+        923
       ]
     },
-    "id": 808,
+    "id": 924,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 792,
+        "id": 908,
         "literals": [
           "solidity",
           "0.5",
@@ -62,9 +62,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 807,
+        "id": 923,
         "linearizedBaseContracts": [
-          807
+          923
         ],
         "name": "Verifier",
         "nodeType": "ContractDefinition",
@@ -72,21 +72,21 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 796,
+            "id": 912,
             "name": "verification_requested",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 795,
+              "id": 911,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 794,
+                  "id": 910,
                   "indexed": false,
                   "name": "property_uid",
                   "nodeType": "VariableDeclaration",
-                  "scope": 796,
-                  "src": "86:20:3",
+                  "scope": 912,
+                  "src": "91:20:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -94,10 +94,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 793,
+                    "id": 909,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "86:7:3",
+                    "src": "91:7:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -107,15 +107,15 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "85:22:3"
+              "src": "90:22:3"
             },
-            "src": "57:51:3"
+            "src": "62:51:3"
           },
           {
             "body": {
-              "id": 805,
+              "id": 921,
               "nodeType": "Block",
-              "src": "173:50:3",
+              "src": "183:52:3",
               "statements": [
                 {
                   "eventCall": {
@@ -123,12 +123,12 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 802,
+                        "id": 918,
                         "name": "_property_uid",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 798,
-                        "src": "205:13:3",
+                        "referencedDeclaration": 914,
+                        "src": "216:13:3",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
                           "typeString": "bytes32"
@@ -142,18 +142,18 @@
                           "typeString": "bytes32"
                         }
                       ],
-                      "id": 801,
+                      "id": 917,
                       "name": "verification_requested",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 796,
-                      "src": "182:22:3",
+                      "referencedDeclaration": 912,
+                      "src": "193:22:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_bytes32_$returns$__$",
                         "typeString": "function (bytes32)"
                       }
                     },
-                    "id": 803,
+                    "id": 919,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -161,36 +161,36 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "182:37:3",
+                    "src": "193:37:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 804,
+                  "id": 920,
                   "nodeType": "EmitStatement",
-                  "src": "177:42:3"
+                  "src": "188:42:3"
                 }
               ]
             },
             "documentation": null,
-            "id": 806,
+            "id": 922,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "verify",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 799,
+              "id": 915,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 798,
+                  "id": 914,
                   "name": "_property_uid",
                   "nodeType": "VariableDeclaration",
-                  "scope": 806,
-                  "src": "141:21:3",
+                  "scope": 922,
+                  "src": "149:21:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -198,10 +198,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 797,
+                    "id": 913,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "141:7:3",
+                    "src": "149:7:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -211,39 +211,39 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "140:23:3"
+              "src": "148:23:3"
             },
             "returnParameters": {
-              "id": 800,
+              "id": 916,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "173:0:3"
+              "src": "183:0:3"
             },
-            "scope": 807,
-            "src": "125:98:3",
+            "scope": 923,
+            "src": "133:102:3",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 808,
-        "src": "24:201:3"
+        "scope": 924,
+        "src": "26:212:3"
       }
     ],
-    "src": "0:226:3"
+    "src": "0:240:3"
   },
   "legacyAST": {
-    "absolutePath": "/c/Users/Vandern Rodrigues/Projects/fyp/contracts/contracts/Verifier.sol",
+    "absolutePath": "/c/Users/Vandern Rodrigues/Projects/University Work/fyp-test-3/contracts/contracts/Verifier.sol",
     "exportedSymbols": {
       "Verifier": [
-        807
+        923
       ]
     },
-    "id": 808,
+    "id": 924,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 792,
+        "id": 908,
         "literals": [
           "solidity",
           "0.5",
@@ -258,9 +258,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 807,
+        "id": 923,
         "linearizedBaseContracts": [
-          807
+          923
         ],
         "name": "Verifier",
         "nodeType": "ContractDefinition",
@@ -268,21 +268,21 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 796,
+            "id": 912,
             "name": "verification_requested",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 795,
+              "id": 911,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 794,
+                  "id": 910,
                   "indexed": false,
                   "name": "property_uid",
                   "nodeType": "VariableDeclaration",
-                  "scope": 796,
-                  "src": "86:20:3",
+                  "scope": 912,
+                  "src": "91:20:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -290,10 +290,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 793,
+                    "id": 909,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "86:7:3",
+                    "src": "91:7:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -303,15 +303,15 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "85:22:3"
+              "src": "90:22:3"
             },
-            "src": "57:51:3"
+            "src": "62:51:3"
           },
           {
             "body": {
-              "id": 805,
+              "id": 921,
               "nodeType": "Block",
-              "src": "173:50:3",
+              "src": "183:52:3",
               "statements": [
                 {
                   "eventCall": {
@@ -319,12 +319,12 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 802,
+                        "id": 918,
                         "name": "_property_uid",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 798,
-                        "src": "205:13:3",
+                        "referencedDeclaration": 914,
+                        "src": "216:13:3",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
                           "typeString": "bytes32"
@@ -338,18 +338,18 @@
                           "typeString": "bytes32"
                         }
                       ],
-                      "id": 801,
+                      "id": 917,
                       "name": "verification_requested",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 796,
-                      "src": "182:22:3",
+                      "referencedDeclaration": 912,
+                      "src": "193:22:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_bytes32_$returns$__$",
                         "typeString": "function (bytes32)"
                       }
                     },
-                    "id": 803,
+                    "id": 919,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -357,36 +357,36 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "182:37:3",
+                    "src": "193:37:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 804,
+                  "id": 920,
                   "nodeType": "EmitStatement",
-                  "src": "177:42:3"
+                  "src": "188:42:3"
                 }
               ]
             },
             "documentation": null,
-            "id": 806,
+            "id": 922,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "verify",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 799,
+              "id": 915,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 798,
+                  "id": 914,
                   "name": "_property_uid",
                   "nodeType": "VariableDeclaration",
-                  "scope": 806,
-                  "src": "141:21:3",
+                  "scope": 922,
+                  "src": "149:21:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -394,10 +394,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 797,
+                    "id": 913,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "141:7:3",
+                    "src": "149:7:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -407,26 +407,26 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "140:23:3"
+              "src": "148:23:3"
             },
             "returnParameters": {
-              "id": 800,
+              "id": 916,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "173:0:3"
+              "src": "183:0:3"
             },
-            "scope": 807,
-            "src": "125:98:3",
+            "scope": 923,
+            "src": "133:102:3",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 808,
-        "src": "24:201:3"
+        "scope": 924,
+        "src": "26:212:3"
       }
     ],
-    "src": "0:226:3"
+    "src": "0:240:3"
   },
   "compiler": {
     "name": "solc",
@@ -437,7 +437,7 @@
       "events": {},
       "links": {},
       "address": "0xC984601F953b2AB3157E83732786026CA066635c",
-      "transactionHash": "0xc008578b11bf8dbe725dbbf9d834d18713a37b9d0cda871eab26db32f5d3f9eb"
+      "transactionHash": "0x6a5ed2fc996febdc901c18a22deaa41c76dd2a11199f402f08f5f8127d61464d"
     },
     "5777": {
       "events": {},
@@ -465,7 +465,7 @@
     }
   },
   "schemaVersion": "3.0.5",
-  "updatedAt": "2019-06-20T17:16:10.340Z",
+  "updatedAt": "2019-06-25T01:22:07.005Z",
   "devdoc": {
     "methods": {}
   },
