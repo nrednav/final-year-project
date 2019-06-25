@@ -1,8 +1,7 @@
 # Final Year Project
-Leveraging the use of blockchain and smart contract technology to facilitate real-estate transactions.
+Leveraging the use of blockchain and smart contract technology to facilitate real-estate property transactions.
 
 <img src="assets/banner.png">
-
 
 ## Overview
 ### What
@@ -56,8 +55,9 @@ The main elements of this architecture were developed using the following techno
     - written using Solidity
     - compiled and deployed using the Truffle framework
 
-
-## Project Setup + Usage
+<br>
+    
+## Project Setup
 
 ### Platform, Software & Tool Requirements
 
@@ -125,8 +125,42 @@ The main elements of this architecture were developed using the following techno
 1. The web application was designed to support any resolution above 1920x1080. For resolutions lower than this or if any interface appears to clip past the screen, please try decreasing the browser's zoom level.
 2. If when executing any of the installation based code above, there appear any errors with regards to the absence of tools such as Make, please try installing the essential build tools package: `sudo apt-get update && apt-get install -y build-essential`.
 
+<br>
+
+## Usage
+
+A typical residential real-estate transaction begins when a property is listed on the market and offers can be made towards it. Usage of this platform was designed to mimic that, however before a property can be listed, the seller must have it verified.
+
+An example transaction from start to finish proceeds as follows:-
+
+| Buyer | Both | Seller |
+| --- | --- | --- |
+|| Both parties register with the platform. ||
+||| The seller proceeds to add details about their property. |
+||| Before this property can be listed on the platform, it needs to be verified. |
+||| The seller requests verification by uploading a copy of their title deed. |
+||| Once verification is obtained, the seller can now choose to list their property. |
+|The buyer searches for properties on the platform. |||
+| When they find a property they like, they submit an offer towards it. |||
+||| The seller is able to view submitted offers towards their property and select one to proceed further with. |
+||| When an offer is selected, it creates a session between the buyer and seller. |
+||| Stage 1 of the session involves having the seller acquire a holding deposit from the buyer towards the property. This is done by having the seller make a request with the deposit amount + deadline. |
+| The buyer pays the holding deposit. |||
+||| The seller obtains verification of the buyer. |
+||| The seller uploads the sales contract. |
+| The buyer signs and uploads the signed sales contract. |||
+||| The seller can then choose to continue to the final stage of the session. |
+||| The seller uploads the title transfer document and creates the escrow. |
+| The buyer can download the title transfer document and then simultaneously approve and deposit the final payment towards the property. |||
+||| Once the seller sees that the final deposit was made, they can request the final title transfer. |
+|| Both parties receive a draft copy of the final title deed, to which they are required to indicate their acceptance/rejection of its contents. ||
+|| When the smart contract receives two greenlights for the draft title deed's contents, it will carry out the final disbursement by sending the buyer a finalized copy of the property title deed and the seller, the final payment. ||
+
+> Note:- Due to the scope of the final year project, I have chosen to only implement the use case wherein both parties are in complete agreement throughout all phases of the real-estate transaction.  
+This is not true for many real-estate transactions that take place in the real industry today and such cases need to be treated with care as funds are held wthin smart contracts. 
 
 ## Video Demonstration
+A demo run of the entire platform simulating a real estate transaction can be seen at: https://youtu.be/it1gYBL2Uf8.
 
 ## Contact
 For any additional queries, feel free to get in touch with me at: `nrednav@gmail.com`
