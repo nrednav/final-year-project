@@ -3,7 +3,13 @@ Leveraging the use of blockchain and smart contract technology to facilitate rea
 
 <img src="assets/banner.png">
 
-## Overview
+# Table of contents
+1. [Overview](#overview)
+2. [Project Setup](#project-setup)
+3. [Usage](#usage)
+4. [Video Demonstration](#video-demo)
+
+## Overview <a name="overview"></a>
 ### What
 The focus of this project was to develop a *proof of concept* digital platform that simulates the processes of buying and selling property, in the residential real-estate industry, using blockchain and smart contract technology.
 
@@ -57,7 +63,7 @@ The main elements of this architecture were developed using the following techno
 
 <br>
     
-## Project Setup
+## Project Setup <a name="project-setup"></a>
 
 ### Platform, Software & Tool Requirements
 
@@ -127,7 +133,7 @@ The main elements of this architecture were developed using the following techno
 
 <br>
 
-## Usage
+## Usage <a name="usage"></a>
 
 A typical residential real-estate transaction begins when a property is listed on the market and offers can be made towards it. Usage of this platform was designed to mimic that, however before a property can be listed, the seller must have it verified.
 
@@ -159,7 +165,7 @@ An example transaction from start to finish proceeds as follows:-
 > Note:- Due to the scope of the final year project, I have chosen to only implement the use case wherein both parties are in complete agreement throughout all phases of the real-estate transaction.  
 This is not true for many real-estate transactions that take place in the real industry today and such cases need to be treated with care as funds are held wthin smart contracts. 
 
-## Video Demonstration
+## Video Demonstration <a name="video-demo"></a>
 A demo run of the entire platform simulating a real estate transaction can be seen at: https://youtu.be/it1gYBL2Uf8.
 
 ## Contact
