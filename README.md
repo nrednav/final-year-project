@@ -167,6 +167,3 @@ This is not true for many real-estate transactions that take place in the real i
 
 ## Video Demonstration <a name="video-demo"></a>
 A demo run of the entire platform simulating a real estate transaction can be seen at: https://youtu.be/it1gYBL2Uf8.
-
-## Contact
-For any additional queries, feel free to get in touch with me at: `nrednav@gmail.com`
