@@ -166,7 +166,7 @@ yarn run escrow
    - Open the Metamask extension
      - Navigate to Settings > Networks > Add a network
      - Fill in the details as follows:
-     - <img src="assets/metamask_network_settings.png" />
+     - <img src="assets/metamask_network_settings.png" width="320" />
      - Switch to the newly added `Dev` Network
        - You should see a balance of $1,000,000
 
