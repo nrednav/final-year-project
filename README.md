@@ -80,6 +80,14 @@ I tested the project using the following software versions:
 
 For Metamask, you can simply use the latest version available.
 
+If you're wondering how to install `yarn v1.15.2 or truffle 5.0.9`, run the
+following:
+
+```bash
+npm install -g yarn@1.15.2
+npm install -g truffle@5.0.9
+```
+
 #### Operating Systems Tested
 
 1. Ubuntu 18.04 - Windows Subsystem for Linux (WSL)
@@ -105,7 +113,7 @@ For Metamask, you can simply use the latest version available.
    - Run: `docker-compose build`
    - Run: `docker-compose up -d`
    - Run: `docker ps -a` and confirm that there are 4 containers running (auth1, auth2, bootnode, mongodb_server)
-   - Verify that the authority nodes are running & mining: `docker logs --tail 15 auth1`
+   - Verify that the authority nodes are up & mining: `docker logs --tail 15 auth1`
    - Navigate back to the root directory
 
 3. Navigate to the `contracts` directory
