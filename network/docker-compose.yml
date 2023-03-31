@@ -1,80 +1,76 @@
-version: '3.2'
+version: "3.2"
 services:
-   auth1:
-      build: ./
-      image: ethereum/client-go:main_network
-      container_name: auth1
-      depends_on:
-         - bootnode
-      entrypoint: /bin/bash
-      command:
-         /main_network/run_auth1.sh
-      ports:
-         - 9546:9546
-         - 10546:10546
-         - 30303:30303
-      networks:
-         dn:
-            ipv4_address: 172.26.0.5
-      volumes:
-         - authority1:/main_network/.auth1
+  auth1:
+    build: ./
+    image: ethereum/client-go:main_network
+    container_name: auth1
+    depends_on:
+      - bootnode
+    entrypoint: /bin/bash
+    command: /main_network/run_auth1.sh
+    ports:
+      - 9546:9546
+      - 10546:10546
+      - 30303:30303
+    networks:
+      dn:
+        ipv4_address: 172.26.0.5
+    volumes:
+      - authority1:/main_network/.auth1
 
-   auth2:
-      build: ./
-      image: ethereum/client-go:main_network
-      container_name: auth2
-      depends_on:
-         - bootnode
-      entrypoint: /bin/bash
-      command:
-         /main_network/run_auth2.sh
-      ports:
-         - 9547:9547
-         - 10547:10547
-         - 30305:30303
-      networks:
-         dn:
-            ipv4_address: 172.26.0.4
-      volumes:
-         - authority2:/main_network/.auth2
+  auth2:
+    build: ./
+    image: ethereum/client-go:main_network
+    container_name: auth2
+    depends_on:
+      - bootnode
+    entrypoint: /bin/bash
+    command: /main_network/run_auth2.sh
+    ports:
+      - 9547:9547
+      - 10547:10547
+      - 30305:30303
+    networks:
+      dn:
+        ipv4_address: 172.26.0.4
+    volumes:
+      - authority2:/main_network/.auth2
 
-   bootnode:
-      build:
-         context: ./
-         dockerfile: ./.bootnode/Dockerfile
-      image: ethereum/client-go:alltools-main_network
-      container_name: bootnode
-      command:
-         bootnode
-         -nodekey /main_network/.bootnode/boot.key
-      ports:
-         - 30301:30301
-      networks:
-         dn:
-            ipv4_address: 172.26.0.3
+  bootnode:
+    build:
+      context: ./
+      dockerfile: ./.bootnode/Dockerfile
+    image: ethereum/client-go:alltools-main_network
+    container_name: bootnode
+    command: bootnode
+      -nodekey /main_network/.bootnode/boot.key
+    ports:
+      - 30301:30301
+    networks:
+      dn:
+        ipv4_address: 172.26.0.3
 
-   mongodb_server:
-      image: mongo:latest
-      container_name: mongodb_server
-      volumes:
-         - mongodb-data:/data/db
-         - mongodb-config:/data/configdb
-      ports:
-         - "127.0.0.1:27017:27017"
-      networks:
-         dn:
-            ipv4_address: 172.26.0.7
+  mongodb_server:
+    image: mongo:4.0
+    container_name: mongodb_server
+    volumes:
+      - mongodb-data:/data/db
+      - mongodb-config:/data/configdb
+    ports:
+      - "127.0.0.1:27017:27017"
+    networks:
+      dn:
+        ipv4_address: 172.26.0.7
 
 volumes:
-   authority1:
-   authority2:
-   mongodb-data:
-   mongodb-config:
-
-networks:
-   dn:
-      driver: bridge
-      ipam:
-         driver: default
-         config:
-         - subnet: 172.26.0.0/24
+  authority1:
+    authority2:
+      mongodb-data:
+        mongodb-config:
+          networks:
+            dn:
+              driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.26.0.0/24
