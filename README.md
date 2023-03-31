@@ -67,24 +67,18 @@ The main elements of this architecture were developed using the following techno
    - compiled and deployed using the Truffle framework
 
 <br>
-    
+
 ## Project Setup <a name="project-setup"></a>
 
 ### Platform, Software & Tool Requirements
 
-> Note:- The software version's mentioned below are what I used when testing the project,
-> you may run into issues if you try to run this project using other versions.
+> Updated (2023)
 
-To run this project, the following software and version numbers are required:-
+I tested the project using the following software versions:
 
-1. **Docker** - Version 2.0.0.3 (31259) or later
-2. **Docker-Compose** - 1.23.2 or later
-3. **Geth client** - Version 1.8.23-stable
-4. **NodeJS** - v11.12.0
-5. **Truffle** - v5.0.9
-6. **Process Manager 2 (pm2)** - v3.3.1
-7. **Yarn Package Manager** - v1.15.2
-8. **Metamask Browser Plugin** - v6.5.3
+<img src="assets/software_versions.png">
+
+For Metamask, you can simply use the latest version available.
 
 #### Operating Systems Tested
 
@@ -100,40 +94,77 @@ To run this project, the following software and version numbers are required:-
 
 ### Setup Instructions
 
-1. Ensure you have the above software installed
+1. Ensure you have installed the software mentioned above
+
+   - Try to use the same versions that I have, as this project was developed 4
+     years ago a lot has changed since then, so using later versions might pose
+     some issues
+
 2. Navigate to the `network` directory
-   - Run: `docker-compose build`.
-   - Once that's done, run: `docker-compose up -d`.
-   - Verify that the network was setup correctly by running `docker ps` to see a list of containers created.
-   - Further verify that the authority nodes are up and mining, by running: `docker logs --tail 15 auth1`.
-   - Navigate back to the root directory.
+
+   - Run: `docker-compose build`
+   - Run: `docker-compose up -d`
+   - Run: `docker ps -a` and confirm that there are 4 containers running (auth1, auth2, bootnode, mongodb_server)
+   - Verify that the authority nodes are running & mining: `docker logs --tail 15 auth1`
+   - Navigate back to the root directory
+
 3. Navigate to the `contracts` directory
-   - Execute the truffle migrations with: `truffle migrate --network development --reset`
-   - Once that is complete, navigate back to the root directory.
-4. Navigate into each of the following directories, one at a time, and run: `npm install` to install the necessary dependencies.
-   - Client
-   - Server
-   - Oracles
-5. Navigate to the root directory
-   - Ensure you have _pm2_ and the _yarn_ package manager installed.
-   - Run: `pm2 start`, this will start the client, server and oracle processes.
-   - Verify that the client, server and oracles are all online in the console output.
-   - Run: `pm2 logs client` to check if the client has fully loaded up yet
-6. Proceed to open up 2 **_different_** web browsers.
-   - I will assume `Browser A = Firefox Quantum` and `Browser B = Brave Browser`.
-7. In Browser A,
+
+   - Run: `truffle migrate --network development --reset`
+   - Navigate back to the root directory
+
+4. Start the client
+
+```bash
+cd client
+yarn install --ignore-engines
+yarn serve
+```
+
+5. Start the server
+
+```bash
+cd server
+yarn install --ignore-engines
+yarn dev
+```
+
+6. Start the oracles
+
+```bash
+cd oracles
+yarn install --ignore-engines
+
+# In 3 separate terminal sessions, run:
+yarn run verifier
+yarn run hd
+yarn run escrow
+```
+
+7. There should be a total of 5 node processes running after steps 4-6
+
+   - Client, Server, 3 Oracles (Verifier, HD, Escrow)
+
+8. Proceed to open up 2 **_different_** web browsers.
+
+   - I will assume `Browser A = Firefox` and `Browser B = Chrome`.
+
+9. In Browser A,
+
    - Ensure you have installed and configured the Metamask browser extension/plugin.
    - Navigate to `http://localhost:8080`
-   - Open the metamask extension
-     - Click on the avatar in the top right corner
-     - Navigate to `Settings -> Networks`
-     - Click on _Add Network_
-     - Give the network a name of your choice
-     - For the RPC URL, enter the following: `http://localhost:10546` and save the changes.
-     - Now select the newly added network from the list of available networks.
-8. Repeat the steps for Browser A in Browser B
-9. You will now have 2 browsers, both of which will have Metamask configured to connect to an authority node in the private ethereum network.
-10. Proceed to use one browser as the _Buyer_ and the other as the _Seller_.
+   - Click `Register` in the bottom-left
+   - You will be prompted to connect the app to Metamask, accept & proceed
+   - Open the Metamask extension
+     - Navigate to Settings > Networks > Add a network
+     - Fill in the details as follows:
+     - <img src="assets/metamask_network_settings.png" />
+     - Switch to the newly added `Dev` Network
+       - You should see a balance of $1,000,000
+
+10. Repeat Step 9 for Browser B
+11. You will now have 2 browsers, both of which will have Metamask configured to connect to an authority node in the private ethereum network
+12. Proceed to use one browser as the `Buyer` and the other as the `Seller`
 
 #### Additional Info
 
@@ -171,7 +202,7 @@ An example transaction from start to finish proceeds as follows:-
 |                                                                                                                                        | Both parties receive a draft copy of the final title deed, to which they are required to indicate their acceptance/rejection of its contents.                                                                                      |                                                                                                                                                                                                       |
 |                                                                                                                                        | When the smart contract receives two greenlights for the draft title deed's contents, it will carry out the final disbursement by sending the buyer a finalized copy of the property title deed and the seller, the final payment. |                                                                                                                                                                                                       |
 
-> Note:- Due to the scope of the final year project, I have chosen to only implement the use case wherein both parties are in complete agreement throughout all phases of the real-estate transaction.  
+> Note:- Due to the scope of the final year project, I have chosen to only implement the use case wherein both parties are in complete agreement throughout all phases of the real-estate transaction.
 > This is not true for many real-estate transactions that take place in the real industry today and such cases need to be treated with care as funds are held wthin smart contracts.
 
 ## Video Demonstration <a name="video-demo"></a>
