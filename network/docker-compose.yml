@@ -64,12 +64,13 @@ services:
 
 volumes:
   authority1:
-    authority2:
-      mongodb-data:
-        mongodb-config:
-          networks:
-            dn:
-              driver: bridge
+  authority2:
+  mongodb-data:
+  mongodb-config:
+
+networks:
+  dn:
+    driver: bridge
     ipam:
       driver: default
       config:
