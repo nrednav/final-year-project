@@ -1,5 +1,9 @@
 # Final Year Project
 
+> :warning: This repository is no longer being actively maintained. You may
+> experience some issues caused by outdated package versions & Node engine
+> compatibility.
+
 Leveraging the use of blockchain and smart contract technology to facilitate real-estate property transactions.
 
 <img src="assets/banner.png">
